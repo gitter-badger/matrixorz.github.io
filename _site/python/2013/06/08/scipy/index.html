@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Just Pic!</title>
+    <title>resolution to scipy installation error</title>
     
     <meta name="author" content="Hai">
 
@@ -108,40 +108,21 @@
     <div class="container-narrow">
 
       <div class="content">
-        
-<div class="page-header">
-  <h1>Just Pic!  <small>Blogs</small></h1>
-</div>
+        <p>安装scipy时出现Blas错误时，需安装以下几个包：</p>
 
-<div class="row-fluid">
-  <div class="span12">
-    <ul class='posts'>
-  
-    <li><span>11 Jun 2013</span> &raquo; <a href='/2013/06/11/plan-in-june-11'>Plan in June 11</a></li>
-  
-    <li><span>11 Jun 2013</span> &raquo; <a href='/network,plsa/2013/06/11/network-text-analysis'>Network Text Analysis</a></li>
-  
-    <li><span>08 Jun 2013</span> &raquo; <a href='/python/2013/06/08/scipy'>resolution to scipy installation error</a></li>
-  
-    <li><span>06 Jun 2013</span> &raquo; <a href='/linux/2013/06/06/wine'>install wine on ubuntu 12.04</a></li>
-  
-    <li><span>05 Jun 2013</span> &raquo; <a href='/python/yt-project/2013/06/05/installhdf5'>install hdf5 on ubuntu</a></li>
-  
-    <li><span>05 Jun 2013</span> &raquo; <a href='/2013/06/05/resume'>Resume</a></li>
-  
-    <li><span>04 Jun 2013</span> &raquo; <a href='/justpic/2013/06/04/welcome-to-justpic'>Welcome to just pic!</a></li>
-  
-    <li><span>03 Jun 2013</span> &raquo; <a href='/2013/06/03/loginpython'>python logging</a></li>
-  
-    <li><span>03 Jun 2013</span> &raquo; <a href='/machine/learning/2013/06/03/deeplearn'>deeplearning</a></li>
-  
-    <li><span>29 Dec 2011</span> &raquo; <a href='/lessons/2011/12/29/jekyll-introduction'>Jekyll Introduction</a></li>
-  
-</ul>
-  </div>
-</div>
+<pre><code>apt-get libblas3gf libblas-doc libblas-dev liblapack3gf liblapack-doc liblapack-dev</code></pre>
 
+<p>安装matplib出现ft2build.h等头文件无法找出时，解决方法： 具体解决方案如下： （1）安装freetype2开发包：</p>
 
+<pre><code>sudo apt-get install libfreetype6-dev</code></pre>
+
+<p>（2）安装png开发包：</p>
+
+<pre><code>sudo apt-get install libpng-dev</code></pre>
+
+<p>（3）安装matplotlib:</p>
+
+<pre><code>sudo python setup.py install</code></pre>
       </div>
       <hr>
       <footer>

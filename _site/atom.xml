@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-06-11T00:26:03+08:00</updated>
+ <updated>2013-06-11T15:06:00+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
@@ -13,24 +13,75 @@
 
  
  <entry>
-   <title>Scipy</title>
-   <link href="http://matrixorz.github.io/2013/06/08/scipy"/>
-   <updated>2013-06-08T00:00:00+08:00</updated>
-   <id>http://matrixorz.github.io/2013/06/08/scipy</id>
-   <content type="html">&lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：apt-get libblas3gf libblas-doc libblas-dev&lt;/p&gt;
-
-&lt;p&gt;liblapack3gf liblapack-doc liblapack-dev 安装matplib出现ft2build.h等头文件无法找出时，解决方法： 具体解决方案如下： （1）安装freetype2开发包： 　　sudo apt-get install libfreetype6-dev （2）安装png开发包： 　　 sudo apt-get install libpng-dev （3）安装matplotlib 　　sudo python setup.py install&lt;/p&gt;</content>
+   <title>Plan in June 11</title>
+   <link href="http://matrixorz.github.io/2013/06/11/plan-in-june-11"/>
+   <updated>2013-06-11T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/06/11/plan-in-june-11</id>
+   <content type="html"></content>
  </entry>
  
  <entry>
-   <title>Wine</title>
-   <link href="http://matrixorz.github.io/2013/06/06/wine"/>
+   <title>Network Text Analysis</title>
+   <link href="http://matrixorz.github.io/network,plsa/2013/06/11/network-text-analysis"/>
+   <updated>2013-06-11T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/network,plsa/2013/06/11/network-text-analysis</id>
+   <content type="html">&lt;h1 id='_'&gt;网络 文本语义分析&lt;/h1&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>resolution to scipy installation error</title>
+   <link href="http://matrixorz.github.io/python/2013/06/08/scipy"/>
+   <updated>2013-06-08T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/python/2013/06/08/scipy</id>
+   <content type="html">&lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get libblas3gf libblas-doc libblas-dev liblapack3gf liblapack-doc liblapack-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装matplib出现ft2build.h等头文件无法找出时，解决方法： 具体解决方案如下： （1）安装freetype2开发包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libfreetype6-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（2）安装png开发包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libpng-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（3）安装matplotlib:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo python setup.py install&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install wine on ubuntu 12.04</title>
+   <link href="http://matrixorz.github.io/linux/2013/06/06/wine"/>
    <updated>2013-06-06T00:00:00+08:00</updated>
-   <id>http://matrixorz.github.io/2013/06/06/wine</id>
-   <content type="html">sudo setcap CAP_NET_RAW=ep /usr/bin/wine
+   <id>http://matrixorz.github.io/linux/2013/06/06/wine</id>
+   <content type="html">&lt;h1 id='wine_error'&gt;Wine error&lt;/h1&gt;
+
+&lt;p&gt;Code for install wine:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo setcap CAP_NET_RAW=ep /usr/bin/wine
 sudo setcap CAP_NET_RAW=ep /usr/bin/wineserver
-sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
-</content>
+sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install hdf5 on ubuntu</title>
+   <link href="http://matrixorz.github.io/python/yt-project/2013/06/05/installhdf5"/>
+   <updated>2013-06-05T19:11:11+08:00</updated>
+   <id>http://matrixorz.github.io/python/yt-project/2013/06/05/installhdf5</id>
+   <content type="html">&lt;h1 id='install_hdf5_on_ubuntu_1204'&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+
+&lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
+
+&lt;p&gt;possibly you will have to build it from source to get everything right.&lt;/p&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install devscripts equivs ubuntu-dev-tools 
+pull-debian-source hdf5 experimental    
+cd hdf5-*
+sudo mk-build-deps -ir
+debuild -us -uc&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  <entry>
@@ -40,7 +91,9 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
    <id>http://matrixorz.github.io/2013/06/05/resume</id>
    <content type="html">&lt;h1 id='hai_cao'&gt;Hai Cao&lt;/h1&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;a href='mailto:matrix.orz@gmail.com'&gt;&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/em&gt;&lt;a href='http://justpic.org'&gt;http://justpic.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href='mailto:matrix.orz@gmail.com'&gt;&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href='http://justpic.org'&gt;http://justpic.org&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id='background'&gt;Background&lt;/h2&gt;
 
@@ -62,24 +115,6 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
  </entry>
  
  <entry>
-   <title>install hdf5 on ubuntu</title>
-   <link href="http://matrixorz.github.io/2013/06/05/installhdf5"/>
-   <updated>2013-06-05T00:00:00+08:00</updated>
-   <id>http://matrixorz.github.io/2013/06/05/installhdf5</id>
-   <content type="html">you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.
-
-possibly you will have to build it from source to get everything right.
-Code:
-apt-get install devscripts equivs ubuntu-dev-tools
-pull-debian-source hdf5 experimental
-cd hdf5-*
-sudo mk-build-deps -ir
-debuild -us -uc
-#pick the library packages from ../*deb
-</content>
- </entry>
- 
- <entry>
    <title>Welcome to just pic!</title>
    <link href="http://matrixorz.github.io/justpic/2013/06/04/welcome-to-justpic"/>
    <updated>2013-06-04T07:40:26+08:00</updated>
@@ -94,40 +129,49 @@ debuild -us -uc
  
  <entry>
    <title>python logging</title>
-   <link href="http://matrixorz.github.io/2013/06/03/logging"/>
+   <link href="http://matrixorz.github.io/2013/06/03/loginpython"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
-   <id>http://matrixorz.github.io/2013/06/03/logging</id>
-   <content type="html">&lt;h2&gt; python logging &lt;/h2&gt;
+   <id>http://matrixorz.github.io/2013/06/03/loginpython</id>
+   <content type="html">&lt;h1 id='python_logging'&gt;python logging&lt;/h1&gt;
+
+&lt;p&gt;python logging&lt;/p&gt;
+
 &lt;p&gt;pythonbrew一个新的管理包?&lt;/p&gt;
-&lt;p&gt;1.每个module，class都用自己的logger，当你写的code，是一个被人使用的module，请不要去做多余的设定
-2.logger的名字为了要能方便的找出问题，所以不要乱取，通常都是以module或是class的名称来命名
-3.logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子
 
+&lt;ul&gt;
+&lt;li&gt;
+&lt;li&gt;每个module，class都用自己的logger，当你写的code，是一个被人使用的module，请不要去做多余的设定&lt;/li&gt;
+&lt;/li&gt;
 
-&lt;/p&gt;
-&lt;p&gt;03 Jun 2013&lt;/p&gt;
-</content>
+&lt;li&gt;
+&lt;li&gt;logger的名字为了要能方便的找出问题，所以不要乱取，通常都是以module或是class的名称来命名&lt;/li&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;li&gt;logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子&lt;/li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;03 Jun 2013&lt;/p&gt;</content>
  </entry>
  
  <entry>
    <title>deeplearning</title>
-   <link href="http://matrixorz.github.io/2013/06/03/deeplearn"/>
+   <link href="http://matrixorz.github.io/machine/learning/2013/06/03/deeplearn"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
-   <id>http://matrixorz.github.io/2013/06/03/deeplearn</id>
-   <content type="html">&lt;h2&gt; deeplearning &lt;/h2&gt;
-&lt;p&gt;推荐：&lt;a href=&quot;deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deeplearning&lt;/a&gt;
+   <id>http://matrixorz.github.io/machine/learning/2013/06/03/deeplearn</id>
+   <content type="html">&lt;h2&gt; deeplearning &lt;/h2&gt;&lt;p&gt;推荐：&lt;a href='deepleaning.net/tutorial/deeplearning.pdf'&gt;deeplearning学习&lt;/a&gt;
 &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DEEP BELIEF NETWORKS:(DBN)&lt;/li&gt;
+&lt;/ol&gt;
 
-10.DEEP BELIEF NETWORKS:(DBN)
-机器学习的两次浪潮：
-浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
-这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。
-深度学习：
-很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化&quot;(layer-wisepre-training)来有效克服。
+&lt;p&gt;机器学习的两次浪潮：&lt;/p&gt;
 
+&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等 这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
 
-&lt;p&gt;03 Jun 2013&lt;/p&gt;
-</content>
+&lt;p&gt;深度学习： 很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化&amp;#8221;(layer-wisepre-training)来有效克服。&lt;/p&gt;
+&lt;p&gt;03 Jun 2013&lt;/p&gt;</content>
  </entry>
  
  <entry>
