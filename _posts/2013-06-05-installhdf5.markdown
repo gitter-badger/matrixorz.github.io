@@ -15,4 +15,3 @@ Code:
     cd hdf5-*
     sudo mk-build-deps -ir
     debuild -us -uc
-#=>pick the library packages from ../*deb
