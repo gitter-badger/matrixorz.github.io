@@ -6,6 +6,7 @@ catogories: aboutme
 
 #Hai Cao
  *<matrix.orz@gmail.com>
+
  *<http://justpic.org>
 ##Background
  I am a software developer with an interest in communication and design.I enjoy experimenting with new 
