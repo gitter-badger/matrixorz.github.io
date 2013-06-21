@@ -9,6 +9,7 @@ http://matrixorz.github.io/categories.html
 http://matrixorz.github.io/tags.html
 http://matrixorz.github.io/atom.xml
 
+http://matrixorz.github.io/2013/06/14/com-learning
 http://matrixorz.github.io/2013/06/11/protobuffer
 http://matrixorz.github.io/2013/06/11/plan-in-june-11
 http://matrixorz.github.io/network,plsa/2013/06/11/network-text-analysis

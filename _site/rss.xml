@@ -5,10 +5,18 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-06-11T16:48:04+08:00</lastBuildDate>
-        <pubDate>2013-06-11T16:48:04+08:00</pubDate>
+        <lastBuildDate>2013-06-14T16:30:38+08:00</lastBuildDate>
+        <pubDate>2013-06-14T16:30:38+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>com learning</title>
+                <description>&lt;a href='http://www.vckbase.com/index.php/wv/1315'&gt;COM Learning&lt;/a&gt;</description>
+                <link>http://matrixorz.github.io/2013/06/14/com-learning</link>
+                <guid>http://matrixorz.github.io/2013/06/14/com-learning</guid>
+                <pubDate>2013-06-14T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>protobuffer</title>

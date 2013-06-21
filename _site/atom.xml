@@ -4,13 +4,21 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-06-11T16:48:04+08:00</updated>
+ <updated>2013-06-14T16:30:38+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
    <email>matrix.orz@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>com learning</title>
+   <link href="http://matrixorz.github.io/2013/06/14/com-learning"/>
+   <updated>2013-06-14T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/06/14/com-learning</id>
+   <content type="html">&lt;a href='http://www.vckbase.com/index.php/wv/1315'&gt;COM Learning&lt;/a&gt;</content>
+ </entry>
  
  <entry>
    <title>protobuffer</title>
