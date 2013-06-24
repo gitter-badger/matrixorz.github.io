@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-06-23T16:50:33+08:00</updated>
+ <updated>2013-06-24T21:56:44+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
@@ -86,7 +86,17 @@
 &lt;p&gt;程序代码块： 与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来 要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入 This is a normal paragraph:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;This is a code block
-import sys&lt;/code&gt;&lt;/pre&gt;</content>
+import sys&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;分割线： 你可以在一行中用三个或以上的星号、减号、底线来建立一个分割线行内不能有其他东西，你也可以再星号中插入空白&lt;/p&gt;
+&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;
+&lt;p&gt;区段元素 markdown支持两种形式的连接语法：行内和参考两种形式 不管哪种，链接的文字要用【放括号】百标记&lt;br /&gt;This is &lt;a href='http://example.com/' title='Title'&gt;an example&lt;/a&gt; inline link&lt;br /&gt;&lt;a href='http://example.net/'&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+
+&lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径： See my&lt;a href='/about/'&gt;about&lt;/a&gt;page for details.&lt;/p&gt;
+
+&lt;p&gt;来个程序用多个反引号来包含&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;import sys&lt;/code&gt;&lt;/p&gt;</content>
  </entry>
  
  <entry>
