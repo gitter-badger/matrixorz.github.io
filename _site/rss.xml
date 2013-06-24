@@ -5,10 +5,97 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-06-14T16:30:38+08:00</lastBuildDate>
-        <pubDate>2013-06-14T16:30:38+08:00</pubDate>
+        <lastBuildDate>2013-06-23T16:50:33+08:00</lastBuildDate>
+        <pubDate>2013-06-23T16:50:33+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>markdown test</title>
+                <description></description>
+                <link>http://matrixorz.github.io/2013/06/23/markdown-test</link>
+                <guid>http://matrixorz.github.io/2013/06/23/markdown-test</guid>
+                <pubDate>2013-06-23T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>markdown测试</title>
+                <description>&lt;p&gt;一个段落是由一个以上相连接的行句组成，而一个以上的空行会切分出不同的段落（空行的定义是显示上看起来像是空行，便会被视为空行，比方说，若某一行只包含空白和tab，则该行也会被视为空行），一般的段落不许要用空白或段行缩排。&lt;/p&gt;
+
+&lt;p&gt;「一個以上相連接的行句組成」這句話其實暗示了 Markdown 允許段落內的強迫斷行，這個特性和其他大部分的 text-to-HTML 格式不一樣（包括 MovableType 的「Convert Line Breaks」選項），其它的格式會把每個斷行都轉成 &lt;br /&gt; 標籤。&lt;/p&gt;
+
+&lt;h1 id='this_is_an_h1'&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id='this_is_an_h2'&gt;This is an H2&lt;/h2&gt;
+
+&lt;p&gt;Blockquotes&lt;br /&gt;markdown 使用email形式的区块引言，如果你很熟悉如何再email信件中引言，你就知道怎么再markdown文件中建立一个区块引言，那会看起来像是你强迫段行然后在每行的最前面加上&amp;gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote with two paragraphs.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p&gt;
+
+&lt;p&gt;Donec sit amet nisl. blabla&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;markdown也允许你只在整个段落的第一行最前面加上&amp;gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a block&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ksjfkfkfj&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Donecfkkf&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;blabla&lt;/p&gt;
+
+&lt;p&gt;区块引言可以有阶层&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this is the first level of quoting&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this is the nested blockquote&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Back to the first level&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;引言的区块内可以使用其他的markdown语法，包括标题、清单、程序代码块等：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h2 id='this_is_a_header'&gt;This is a header&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;This is the first item&lt;/li&gt;
+
+&lt;li&gt;This is the second list item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here&amp;#8217;s some example code:&lt;/p&gt;
+&lt;a href='justpic.org'&gt;justpic&lt;/a&gt;
+&lt;p&gt;return shell_exec(&amp;#8220;echo $input|$markdown_script&amp;#8221;);&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;程序代码块： 与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来 要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入 This is a normal paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a code block
+import sys&lt;/code&gt;&lt;/pre&gt;</description>
+                <link>http://matrixorz.github.io/2013/06/23/markdown</link>
+                <guid>http://matrixorz.github.io/2013/06/23/markdown</guid>
+                <pubDate>2013-06-23T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>new post</title>
+                <description>&lt;h1 id='622'&gt;6月22日小结&lt;/h1&gt;
+
+&lt;p&gt;写个总结，python学习情况停滞不前，最大的困难还是不能专心做一件事情，注意力容易分散，接下来的时间里，要以论文为主，学会总结，翻译英文文章，机器学习的学习还没有完，要每天一总结，学到了什么，还有什么不懂的，英语的学习还是以shanbay为主，注重效果，不要太看重计划。&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/06/22/new-post</link>
+                <guid>http://matrixorz.github.io/2013/06/22/new-post</guid>
+                <pubDate>2013-06-22T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>com learning</title>
