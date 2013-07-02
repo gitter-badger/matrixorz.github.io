@@ -5,10 +5,64 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-06-24T21:56:44+08:00</lastBuildDate>
-        <pubDate>2013-06-24T21:56:44+08:00</pubDate>
+        <lastBuildDate>2013-07-02T23:07:39+08:00</lastBuildDate>
+        <pubDate>2013-07-02T23:07:39+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Run Multiple-python on your ubuntu</title>
+                <description>&lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;建立软链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;virtualenv -p /usr/bin/python3.3 python3.3env
+virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok!&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</link>
+                <guid>http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</guid>
+                <pubDate>2013-07-02T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>text mining</title>
+                <description>&lt;p&gt;why,why i have no idea in my mind?&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/07/01/text-mining</link>
+                <guid>http://matrixorz.github.io/2013/07/01/text-mining</guid>
+                <pubDate>2013-07-01T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>lucene</title>
+                <description></description>
+                <link>http://matrixorz.github.io/2013/07/01/lucene</link>
+                <guid>http://matrixorz.github.io/2013/07/01/lucene</guid>
+                <pubDate>2013-07-01T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>no plan</title>
+                <description>&lt;p&gt;计划如下： TextMining计划 Startups课程 Trade Analysis项目跟进&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/06/29/no-plan</link>
+                <guid>http://matrixorz.github.io/2013/06/29/no-plan</guid>
+                <pubDate>2013-06-29T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>markdown test</title>

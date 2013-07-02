@@ -4,13 +4,67 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-06-24T21:56:44+08:00</updated>
+ <updated>2013-07-02T23:07:39+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
    <email>matrix.orz@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Run Multiple-python on your ubuntu</title>
+   <link href="http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv"/>
+   <updated>2013-07-02T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</id>
+   <content type="html">&lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;建立软链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;virtualenv -p /usr/bin/python3.3 python3.3env
+virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>text mining</title>
+   <link href="http://matrixorz.github.io/2013/07/01/text-mining"/>
+   <updated>2013-07-01T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/01/text-mining</id>
+   <content type="html">&lt;p&gt;why,why i have no idea in my mind?&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>lucene</title>
+   <link href="http://matrixorz.github.io/2013/07/01/lucene"/>
+   <updated>2013-07-01T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/01/lucene</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>no plan</title>
+   <link href="http://matrixorz.github.io/2013/06/29/no-plan"/>
+   <updated>2013-06-29T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/06/29/no-plan</id>
+   <content type="html">&lt;p&gt;计划如下： TextMining计划 Startups课程 Trade Analysis项目跟进&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>markdown test</title>
