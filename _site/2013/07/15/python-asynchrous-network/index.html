@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>python asynchrous network</title>
+	<meta name="author" content="Hai">
+	<link href='/assets/themes/the-program/css/style.css' rel="stylesheet" media="all">
+	<link href="http://feeds.feedburner.com/" rel="alternate" title="python asynchrous network" type="application/atom+xml">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+</head>
+<body>
+
+<div id="page" class="hentry">
+	<header class="the-header">
+		<div class="unit-head">
+			<div class="unit-inner unit-head-inner">
+				<nav class="nav-global">
+					<ul>
+						<li class="logo"><a href="/">Just Pic</a></li>
+						<li class="archive"><a href="/archive.html">archive</a></li>
+						<li class="page"><a href="/pages.html">pages</a></li>
+						<li class="category"><a href="/categories.html">categories</a></li>
+						<li class="tag"><a href="/tags.html">tags</a></li>
+						<li class="forkme"><div><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=plusjade&repo=jekyll-bootstrap&type=fork&count=true"
+									allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe></div></li>
+					</ul>
+				</nav>
+			</div><!-- unit-inner -->
+		</div><!-- unit-head -->
+	</header>
+	<div class="body" role="main">
+		<div class="unit-body">
+			<div class="unit-inner unit-body-inner">
+				<div class="entry-content">
+					
+<article class="unit-article layout-post">
+	<div class="unit-inner unit-article-inner">
+		<div class="content">
+			<header>
+				<div class="unit-head">
+					<div class="unit-inner unit-head-inner">
+						<h1 class="h2 entry-title">python asynchrous network</h1>
+					</div><!-- unit-inner -->
+				</div><!-- unit-head -->
+			</header>
+
+			<div class="bd">
+				<div class="entry-content">
+					<hr />
+<h2 id='selectpollepoll_test_in_python'>select,poll,epoll test in python</h2>
+
+<p>select code:</p>
+
+<pre><code>import select
+import socket
+import Queue
+
+#create a socket
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+#set option reused
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+
+server_address=(&#39;localhost&#39;,10001)
+server.bind(server_address)
+
+server.listen(10)
+
+#sockets from which we except to read
+inputs=[server]
+
+#sockets from which we expect to write
+outputs=[]
+
+#Outgoing message queues (socket:Queue)
+message_queues={}
+
+#A optional parameter for select is TIMEOUT
+timeout=20
+
+while inputs:
+    print &quot;waiting for next event&quot;
+    #first parameter--read list,second parameter--write list,third parameter--error list
+    readable,writable,exceptional=select.select(inputs,outputs,inputs,timeout)
+
+    #when timeout reached,select return three empty list
+    if not (readable or writable or exceptional):
+        print &quot;Time out!&quot;
+        break;
+    for s in readable:
+        if s is server:
+            #A &quot;readable&quot; socket is ready to accept a connection
+            connection,client_address=s.accept()
+            print &quot;  connection from&quot;,client_address
+            connection.setblocking(0)
+            inputs.append(connection)
+            message_queues[connection]=Queue.Queue()
+        else:
+            data=s.recv(1024)
+            if data:
+                print &quot;received &quot;,data, &quot;from &quot;,s.getpeername()
+                message_queues[s].put(data)
+                #Add output  channel for response
+                if s not in outputs:
+                    outputs.append(s)
+            else:
+                #Interpret empty result as closed connection
+                print &quot; closing&quot;, client_address
+                if s in outputs:
+                    outputs.remove(s)
+                inputs.remove(s)
+                s.close()
+                #remove message queue
+                del message_queues[s]
+    for s in writable:
+        try:
+            next_msg=message_queues[s].get_nowait()
+        except Queue.Empty:
+            print &quot; &quot;,s.getpeername,&quot; queue empty&quot;
+            outputs.remove(s)
+        else:
+            print &quot;sending &quot;,next_msg,&quot; to&quot;,s.getpeername()
+            s.send(next_msg)
+    for s in exceptional:
+        print &quot; exception condition on &quot;,s.getpeername()
+        #stop listening for input on the connection
+        inputs.remove(s)
+        if s in outputs:
+            outputs.remove(s)
+        s.close()
+        #Remove message queue</code></pre>
+
+<p><strong><em>polltest</em></strong></p>
+
+<pre><code>import socket
+import select
+import Queue
+
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+server_address=(&quot;localhost&quot;,10001)
+
+print &quot;Starting up on %s port %s&quot; % server_address
+server.bind(server_address)
+server.listen(5)
+message_queues={}
+#The timeout value is represente in milliseconds,instead of seconds
+timeout=100
+#Create a limit for the next
+READ_ONLY=(select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR)
+READ_WRITE=(READ_ONLY|select.POLLOUT)
+
+#set up the poller
+poller=select.poll()
+poller.register(server,READ_ONLY)
+#map file descriptors to socket objects
+fd_to_socket={server.fileno():server,}
+while True:
+    print &quot;Waiting for the next event&quot;
+    events=poller.poll(timeout)
+    print &quot;*&quot;*20
+    print len(events)
+    print events
+    print &quot;*&quot;*20
+    for fd,flag in events:
+        s=fd_to_socket[fd]
+        if flag &amp; (select.POLLIN|select.POLLPRI):
+            if s is server:
+                #A readable socket is ready to accept a connection
+                connection,client_address=s.accept()
+                print &quot;Connection &quot;,client_address
+                connection.setblocking(False)
+
+                fd_to_socket[connection.fileno()]=connection
+                poller.register(connection,READ_ONLY)
+
+                #Give the connection a queue to send data
+                message_queues[connection]=Queue.Queue
+            else:
+                data=s.recv(1024)
+                if data:
+                    # A readable client socket has data
+                    print &quot; received %s from %s &quot; % (data,s.getpeername())
+                    message_queues[s].put(data)
+                    poller.modify(s,READ_WRITE)
+                else:
+                    #Close the connection
+                    print &quot; closing &quot;,s.getpeername()
+                    #Stop listening for input on the connection
+                    poller.unregister(s)
+                    s.close()
+                    del message_queues[s]
+        elif flag &amp; select.POLLHUP:
+            #A client that &quot;Hang up&quot;,to be closed.
+            print &quot;closing &quot;,s.getpeername,&quot;(HUP)&quot;
+            poller.unregister(s)
+            s.close()
+        elif flag &amp; select.POLLOUT:
+            #SOCKET is ready to send DATA,if there is any to send
+            try:
+                next_msg=message_queues[s].get_nowait()
+            except Queue.Empty:
+                #No messages waiting so stop checking
+                print s.getpeername,&quot; queue empty&quot;
+                poller.modify(s,READ_ONLY)
+            else:
+                print &quot; sending %s to %s&quot; %(next_msg,s.getpeername())
+                s.send(next_msg)
+        elif flag &amp; select.POLLERR:
+            #Any events with POLLER cause the server to close the sockets
+            print &quot; exception on&quot;,s.getpeername()
+            poller.unregister(s)
+            s.close()
+            del message_queues[s]</code></pre>
+
+<p><strong><em>epoll test</em></strong></p>
+
+<pre><code>import socket,logging
+import select,errno
+
+logger=logging.getLogger(&quot;network-server&quot;)
+
+def InitLog():
+    logger.setLevel(logging.DEBUG)
+
+    fh=logging.FileHandler(&quot;network-server.log&quot;)
+    fh.setLevel(logging.DEBUG)
+    ch=logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+
+    formatter=logging.Formatter(&quot;%(asctime)s - %(name)s - %(levelname)s -%(message)s&quot;)
+    ch.setFormatter(formatter)
+    fh.setFormatter(formatter)
+
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+
+if __name__==&quot;__main__&quot;:
+    InitLog()
+
+    try:
+        listen_fd=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    except socket.error,msg:
+        logger.error(&quot;create a socket failed&quot;)
+
+    try:
+        listen_fd.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+    except socket.error,msg:
+        logger.error(&quot;setsocketopt error&quot;)
+
+    try:
+        listen_fd.bind((&#39;&#39;,10001))
+    except socket.error,msg:
+        logger.error(&quot;listen file id bind ip error&quot;)
+
+    try:
+        listen_fd.listen(10)
+    except socket.error,msg:
+        logger.error(msg)
+    try:
+        epoll_fd=select.epoll()
+        epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
+    except select.error,msg:
+        logger.error(msg)
+    
+    connections={}
+    addresses={}
+    datalist={}
+    while True:
+        epoll_list = epoll_fd.poll()
+        for fd,events in epoll_list:
+            if fd==listen_fd.fileno():
+                conn,addr=listen_fd.accept()
+                logger.debug(&quot;accept connction from  %s,%d,fd = %d&quot; %(addr[0],addr[1],conn.fileno()))
+                conn.setblocking(0)
+                epoll_fd.register(conn.fileno(),select.EPOLLIN|select.EPOLLET)
+                connections[conn.fileno()]=conn 
+                addresses[conn.fileno()]=addr
+            elif select.EPOLLIN  &amp; events:
+                datas=&#39;&#39;
+                while True:
+                    try:
+                        data=connections[fd].recv(10)
+                        if not data and not datas:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.debug(&quot;%s,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
+                            
+                            break
+                        else:
+                            datas+=data 
+                    except socket.error,msg:
+                        if msg.errno==errno.EAGAIN:
+                            logger.debug(&quot;%s receive %s&quot; % (fd,datas))
+                            datalist[fd]=datas
+                            epoll_fd.modify(fd,select.EPOLLET|select.EPOLLOUT)
+                            break
+                        else:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.error(msg)
+                            break
+            elif select.EPOLLHUP &amp; events:
+                epoll_fd.unregister(fd)
+                connections[fd].close()
+                logger.debug(&quot;%s ,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
+            elif select.EPOLLOUT &amp; events:
+                sendLen=0
+                while True:
+                    sendLen += connections[fd].send(datalist[fd][sendLen:])
+                    if sendLen == len(datalist[fd]):
+                         break
+                epoll_fd.modify(fd,select.EPOLLIN|select.EPOLLET)
+            else:
+                continue</code></pre>
+
+<p><strong><em>common client</em></strong></p>
+
+<pre><code>import socket
+messages = [&quot;This is the message&quot;,
+         &quot;It will be send&quot;,
+         &quot;in parts&quot;]
+
+print &quot;Connect to the server&quot;
+
+server_address=(&quot;localhost&quot;,10001)
+
+#Create a TCP/IP sock
+socks=[]
+for i in range(10):
+     socks.append(socket.socket(socket.AF_INET,socket.SOCK_STREAM))
+
+for s in socks:
+    s.connect(server_address)
+
+counter=0
+for message in messages:
+    for s in socks:
+        counter+=1
+        print &quot; %s sending %s &quot;%(s.getpeername(),message+&quot; version &quot;+str(counter))
+        s.send(message+&quot; version &quot;+str(counter))
+    for s in socks:
+        data=s.recv(1024)
+        print &quot; %s received %s &quot; % (s.getpeername(),data)
+        if not data:
+            print &quot;closing socket&quot;,s.getpeername()
+            s.close()</code></pre>
+					<div class="meta">
+						<p class="date-publish">
+							Published: 
+							<date class="date-pub" title="2013-07-15T00:00:00+08:00" datetime="2013-07-15T00:00:00+08:00" pubdate>
+							<span class="month"><abbr>July</abbr></span>
+							<span class="day">15</span>
+							<span class="year">2013</span>
+							</date>
+						</p>
+						<ul class="list-category list-linear">
+							<li class="list-head">category: </li>
+							
+							
+
+
+  
+    
+  
+
+
+						</ul>
+						<ul class="list-tag list-linear">
+							<li class="list-head">tags: </li>
+							
+							
+
+
+  
+    
+  
+
+
+
+						</ul>
+					</div><!-- meta -->
+				</div><!-- entry-content -->
+				<div class="misc-content">
+					<div class="social">
+						<ul class="list-linear">
+							<li><div class="twitter-tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="matrixorz" data-lang="en">Tweet</a></div></li>
+							<li><div class="twitter-follow"><a href="https://twitter.com/matrixorz" class="twitter-follow-button" data-show-count="false" data-lang="en"></a></div></li>
+						</ul>
+					</div>
+					<div class="comment">
+					
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+					</div>
+				</div><!-- misc-content -->
+			</div><!-- bd -->
+			<footer class="unit-foot">
+				<div class="unit-inner unit-foot-inner">
+					<nav class="pagination">
+						<ul>
+							
+							<li class="prev"><a class="internal" rel="prev"  href="/2013/07/05/mysql-export-and-import" title="View mysql export and import">&laquo; mysql export and import</a></li>
+							
+							
+							
+						</ul>
+					</nav>
+					<p class="gotop">
+						<a href="#page">Back to Top</a>
+					</p>
+				</div>
+			</footer>
+
+		</div><!-- content -->
+	</div><!-- unit-inner -->
+</article>
+
+
+				</div>
+			</div><!-- unit-inner -->
+		</div><!-- unit-body -->
+	</div><!-- body -->
+	<footer class="the-footer">
+		<div class="unit-foot">
+			<div class="unit-inner unit-foot-inner">
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Hai</span> - <span class="fn email">matrix.orz@gmail.com</span></address></li>
+						<li class="github"><a href="http://github.com/matrixorz/" rel="me">github.com/matrixorz</a></li>
+						<li class="twitter"><a href="http://twitter.com/matrixorz/" rel="me">twitter.com/matrixorz</a></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/">Subscribe to RSS Feed</a></li>
+					</ul>
+				</div><!-- misc -->
+				<p class="licence">
+					Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
+					Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+				</p>
+			</div><!-- unit-foot-inner -->
+		</div><!-- unit-foot -->
+	</footer>
+</div><!-- page -->
+<script>
+	(function(d, s) {
+		var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.src = url; js.id = id;
+		fjs.parentNode.insertBefore(js, fjs);
+		};
+	load('//platform.twitter.com/widgets.js', 'tweetjs');
+	// load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
+	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/2013/07/15/python-asynchrous-network" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+	}(document, 'script'));
+</script>
+<script>
+/*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
+(function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);
+</script>
+  
+  
+</body>
+</html>
+

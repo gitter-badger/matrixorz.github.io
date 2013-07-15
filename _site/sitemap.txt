@@ -9,7 +9,11 @@ http://matrixorz.github.io/categories.html
 http://matrixorz.github.io/tags.html
 http://matrixorz.github.io/atom.xml
 
+http://matrixorz.github.io/2013/07/15/python-asynchrous-network
+http://matrixorz.github.io/2013/07/05/mysql-export-and-import
 http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv
+http://matrixorz.github.io/2013/07/02/1
+http://matrixorz.github.io/2013/07/02/
 http://matrixorz.github.io/2013/07/01/text-mining
 http://matrixorz.github.io/2013/07/01/lucene
 http://matrixorz.github.io/2013/06/29/no-plan
