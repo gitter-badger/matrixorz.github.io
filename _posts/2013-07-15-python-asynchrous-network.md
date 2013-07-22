@@ -310,7 +310,9 @@ select,poll,epoll test in python
                 print "closing socket",s.getpeername()
                 s.close()
     
-    
+ 针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html
+ 
+ 针对asyncore的介绍和使用有很好的一篇博客：blog.csdn.net/livefun/article/details/8721772
     
     
         
