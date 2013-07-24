@@ -5,17 +5,37 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-07-15T11:27:45+08:00</lastBuildDate>
-        <pubDate>2013-07-15T11:27:45+08:00</pubDate>
+        <lastBuildDate>2013-07-24T17:50:03+08:00</lastBuildDate>
+        <pubDate>2013-07-24T17:50:03+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>memo on the trade</title>
+                <description>&lt;p&gt;RTA&lt;/p&gt;
+
+&lt;p&gt;www.lowindata.com&lt;/p&gt;
+
+&lt;p&gt;backbonejs:www.icoding.co/2012/04/backbonejs-html-2&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/07/22/memo-on-the-trade</link>
+                <guid>http://matrixorz.github.io/2013/07/22/memo-on-the-trade</guid>
+                <pubDate>2013-07-22T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>backbonejs</title>
+                <description></description>
+                <link>http://matrixorz.github.io/2013/07/21/backbonejs</link>
+                <guid>http://matrixorz.github.io/2013/07/21/backbonejs</guid>
+                <pubDate>2013-07-21T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>python asynchrous network</title>
                 <description>&lt;hr /&gt;
 &lt;h2 id='selectpollepoll_test_in_python'&gt;select,poll,epoll test in python&lt;/h2&gt;
 
-&lt;p&gt;select code:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;select test&lt;/em&gt;&lt;/strong&gt; selecttest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import select
 import socket
@@ -96,7 +116,7 @@ while inputs:
         s.close()
         #Remove message queue&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;polltest&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;polltest&lt;/em&gt;&lt;/strong&gt; polltest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import socket
 import select
@@ -180,7 +200,7 @@ while True:
             s.close()
             del message_queues[s]&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;epoll test&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;epoll test&lt;/em&gt;&lt;/strong&gt; epolltest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import socket,logging
 import select,errno
@@ -281,7 +301,7 @@ if __name__==&amp;quot;__main__&amp;quot;:
             else:
                 continue&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;common client&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;common client&lt;/em&gt;&lt;/strong&gt; commontest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import socket
 messages = [&amp;quot;This is the message&amp;quot;,
@@ -311,7 +331,13 @@ for message in messages:
         print &amp;quot; %s received %s &amp;quot; % (s.getpeername(),data)
         if not data:
             print &amp;quot;closing socket&amp;quot;,s.getpeername()
-            s.close()&lt;/code&gt;&lt;/pre&gt;</description>
+            s.close()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html&lt;/p&gt;
+
+&lt;p&gt;针对asyncore的介绍和使用有很好的两篇博客： blog.csdn.net/livefun/article/details/8721772&lt;/p&gt;
+
+&lt;p&gt;http://www.nightmare.com/medusa/async_sockets.html&lt;/p&gt;</description>
                 <link>http://matrixorz.github.io/2013/07/15/python-asynchrous-network</link>
                 <guid>http://matrixorz.github.io/2013/07/15/python-asynchrous-network</guid>
                 <pubDate>2013-07-15T00:00:00+08:00</pubDate>

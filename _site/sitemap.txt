@@ -9,6 +9,8 @@ http://matrixorz.github.io/categories.html
 http://matrixorz.github.io/tags.html
 http://matrixorz.github.io/atom.xml
 
+http://matrixorz.github.io/2013/07/22/memo-on-the-trade
+http://matrixorz.github.io/2013/07/21/backbonejs
 http://matrixorz.github.io/2013/07/15/python-asynchrous-network
 http://matrixorz.github.io/2013/07/05/mysql-export-and-import
 http://matrixorz.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv

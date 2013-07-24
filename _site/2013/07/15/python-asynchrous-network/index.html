@@ -54,7 +54,7 @@
 					<hr />
 <h2 id='selectpollepoll_test_in_python'>select,poll,epoll test in python</h2>
 
-<p>select code:</p>
+<p><strong><em>select test</em></strong> selecttest.py</p>
 
 <pre><code>import select
 import socket
@@ -135,7 +135,7 @@ while inputs:
         s.close()
         #Remove message queue</code></pre>
 
-<p><strong><em>polltest</em></strong></p>
+<p><strong><em>polltest</em></strong> polltest.py</p>
 
 <pre><code>import socket
 import select
@@ -219,7 +219,7 @@ while True:
             s.close()
             del message_queues[s]</code></pre>
 
-<p><strong><em>epoll test</em></strong></p>
+<p><strong><em>epoll test</em></strong> epolltest.py</p>
 
 <pre><code>import socket,logging
 import select,errno
@@ -320,7 +320,7 @@ if __name__==&quot;__main__&quot;:
             else:
                 continue</code></pre>
 
-<p><strong><em>common client</em></strong></p>
+<p><strong><em>common client</em></strong> commontest.py</p>
 
 <pre><code>import socket
 messages = [&quot;This is the message&quot;,
@@ -351,6 +351,12 @@ for message in messages:
         if not data:
             print &quot;closing socket&quot;,s.getpeername()
             s.close()</code></pre>
+
+<p>针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html</p>
+
+<p>针对asyncore的介绍和使用有很好的两篇博客： blog.csdn.net/livefun/article/details/8721772</p>
+
+<p>http://www.nightmare.com/medusa/async_sockets.html</p>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
@@ -427,6 +433,10 @@ for message in messages:
 							<li class="prev"><a class="internal" rel="prev"  href="/2013/07/05/mysql-export-and-import" title="View mysql export and import">&laquo; mysql export and import</a></li>
 							
 							
+							<li class="pipe"> | </li>
+							
+							
+							<li class="next"><a class="internal" rel="next"  href="/2013/07/21/backbonejs" title="View backbonejs">backbonejs &raquo;</a></li>
 							
 						</ul>
 					</nav>
