@@ -7,10 +7,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>memo on the trade</title>
+	<title>sqlalchemy dynamic mapping</title>
 	<meta name="author" content="Hai">
 	<link href='/assets/themes/the-program/css/style.css' rel="stylesheet" media="all">
-	<link href="http://feeds.feedburner.com/" rel="alternate" title="memo on the trade" type="application/atom+xml">
+	<link href="http://feeds.feedburner.com/" rel="alternate" title="sqlalchemy dynamic mapping" type="application/atom+xml">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
 </head>
 <body>
@@ -44,24 +44,42 @@
 			<header>
 				<div class="unit-head">
 					<div class="unit-inner unit-head-inner">
-						<h1 class="h2 entry-title">memo on the trade</h1>
+						<h1 class="h2 entry-title">sqlalchemy dynamic mapping</h1>
 					</div><!-- unit-inner -->
 				</div><!-- unit-head -->
 			</header>
 
 			<div class="bd">
 				<div class="entry-content">
-					<p>RTA</p>
+					<pre><code>from sqlalchemy import *
+from sqlalchemy.orm import *
 
-<p>www.lowindata.com</p>
+metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
+t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
+metadata.create_all()
 
-<p>backbonejs:www.icoding.co/2012/04/backbonejs-html-2</p>
+def map_class_to_some_table(cls,table,entity_name,**kw):
+    newcls=type(entity_name,(cls,),{})
+    mapper(newcls,table,**kw)
+    return newcls
+   
+class Foo(object):
+    pass
+
+T1Foo=map_class_to_some_table(Foo,t1,&quot;T1Foo&quot;)
+T2Foo=map_class_to_some_table(Foo,t2,&quot;T2Foo&quot;)
+
+sess=sessionmaker()()
+sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
+print sess.query(T1Foo).all()
+print sess.query(T2Foo).all()</code></pre>
 					<div class="meta">
 						<p class="date-publish">
 							Published: 
-							<date class="date-pub" title="2013-07-22T00:00:00+08:00" datetime="2013-07-22T00:00:00+08:00" pubdate>
+							<date class="date-pub" title="2013-07-26T00:00:00+08:00" datetime="2013-07-26T00:00:00+08:00" pubdate>
 							<span class="month"><abbr>July</abbr></span>
-							<span class="day">22</span>
+							<span class="day">26</span>
 							<span class="year">2013</span>
 							</date>
 						</p>
@@ -129,13 +147,13 @@
 					<nav class="pagination">
 						<ul>
 							
-							<li class="prev"><a class="internal" rel="prev"  href="/2013/07/21/backbonejs" title="View backbonejs">&laquo; backbonejs</a></li>
+							<li class="prev"><a class="internal" rel="prev"  href="/2013/07/26/premature-optimization" title="View premature optimization">&laquo; premature optimization</a></li>
 							
 							
 							<li class="pipe"> | </li>
 							
 							
-							<li class="next"><a class="internal" rel="next"  href="/2013/07/26/premature-optimization" title="View premature optimization">premature optimization &raquo;</a></li>
+							<li class="next"><a class="internal" rel="next"  href="/2013/07/28/webpy-note" title="View web.py note">web.py note &raquo;</a></li>
 							
 						</ul>
 					</nav>
@@ -183,7 +201,7 @@
 		};
 	load('//platform.twitter.com/widgets.js', 'tweetjs');
 	// load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
-	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/2013/07/22/memo-on-the-trade" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+	// load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="/2013/07/26/sqlalchemy-dynamic-mapping" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
 	}(document, 'script'));
 </script>
 <script>

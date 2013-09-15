@@ -4,13 +4,151 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-07-24T17:50:03+08:00</updated>
+ <updated>2013-09-11T17:03:51+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
    <email>matrix.orz@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>tt</title>
+   <link href="http://matrixorz.github.io/2013/09/11/tt"/>
+   <updated>2013-09-11T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/09/11/tt</id>
+   <content type="html">&lt;p&gt;2789987&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>machine learning in action</title>
+   <link href="http://matrixorz.github.io/2013/08/08/machine-learning-in-action"/>
+   <updated>2013-08-08T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/08/08/machine-learning-in-action</id>
+   <content type="html">&lt;p&gt;https://github.com/pbharrin/machinelearninginaction zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>webpy</title>
+   <link href="http://matrixorz.github.io/2013/08/06/webpy"/>
+   <updated>2013-08-06T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/08/06/webpy</id>
+   <content type="html">&lt;p&gt;webpy 中文文档学习目录&lt;/p&gt;
+
+&lt;p&gt;web py 安装 webpy webpy3.0 新手指南 webpy CookBook&lt;/p&gt;
+
+&lt;h2 id='webpy'&gt;webpy基本应用:&lt;/h2&gt;
+
+&lt;p&gt;Hello World 提供静态文件访问 理解URL控制 跳转与重定向 使用子应用 提供XML访问 从post读取原始数据&lt;/p&gt;
+
+&lt;h2 id='id2'&gt;高级应用:&lt;/h2&gt;
+
+&lt;p&gt;用web.ctx获得客户端信息 应用处理器，添加钩子和卸载钩子 如何使用web.background 自定义NotFound信息 如何流传输大文件 对自带的webserver日志进行操作 用cherrypy提供SSL支持 实时语言切换&lt;/p&gt;
+
+&lt;h2 id='sessions_and_user_state_'&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
+
+&lt;p&gt;如何使用Session 如何在调试模式下使用Session 在template中使用session 如何操作Cookie 用户认证 一个在postgreSQL数据库环境下的用户认证的例子 如何在子应用中操作Session&lt;/p&gt;
+
+&lt;h2 id='utils_'&gt;Utils 实用工具&lt;/h2&gt;
+
+&lt;p&gt;如何发送邮件 如何利用Gmail发送邮件 使用soaplib实现webservice&lt;/p&gt;
+
+&lt;h2 id='templates_'&gt;Templates 模板&lt;/h2&gt;
+
+&lt;p&gt;Templetor: web.py 模板系统 使用站点布局模板 交替式风格 (未译) 导入函数到模板中 (未译) 模板文件中的i18n支持 在web.py中使用Mako模板引擎 在web.py中使用Cheetah模板引擎 在web.py中使用Jinja2模板引擎 如何在谷歌应用程序引擎使用模板&lt;/p&gt;
+
+&lt;h2 id='testing_'&gt;Testing 测试:&lt;/h2&gt;
+
+&lt;p&gt;Testing with Paste and Nose (未译) RESTful doctesting using an application&amp;#8217;s request method (未译)&lt;/p&gt;
+
+&lt;h2 id='user_input_'&gt;User input 用户输入:&lt;/h2&gt;
+
+&lt;p&gt;文件上传 保存上传的文件 上传文件大小限定 通过 web.input 接受用户输入 怎样使用表单 显示个别表单字段&lt;/p&gt;
+
+&lt;h2 id='database_'&gt;Database 数据库&lt;/h2&gt;
+
+&lt;p&gt;使用多数据库 Select: 查询数据 Update: 更新数据 Delete: 删除数据 Insert: 新增数据 Query: 高级数据库查询 怎样使用数据库事务 使用 sqlalchemy 整合 SQLite UDF (用户定义函数) 到 webpy 数据库层 使用字典动态构造where子句&lt;/p&gt;
+
+&lt;h2 id='deployment_'&gt;Deployment 部署:&lt;/h2&gt;
+
+&lt;p&gt;通过Fastcgi和lighttpd部署 通过Webpy和Nginx with FastCGI搭建Web.py CGI deployment through Apache (未译) mod-pythondeployment through Apache (requested) 通过Apache和mod-wsgi部署 mod-wsgi deployment through Nginx (未译) Fastcgi deployment through Nginx (未译)&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>trade memo 1</title>
+   <link href="http://matrixorz.github.io/2013/07/29/trade-memo-1"/>
+   <updated>2013-07-29T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/29/trade-memo-1</id>
+   <content type="html">&lt;p&gt;pyctp: https://code.google.com/p/pyctp/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>jquery add element in the html dom</title>
+   <link href="http://matrixorz.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
+   <updated>2013-07-29T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
+   <content type="html">&lt;p&gt;add one element in the parent var $li_1=$(&amp;#8221;&lt;li&gt;新增节点：数据结构&lt;/li&gt;&amp;#8221;); var $li_2=$(&amp;#8221;&lt;li&gt;新增节点：设计模式&lt;/li&gt;&amp;#8221;);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
+$parent.append($li_1);
+$parent.append($li_2);
+$parent.append($li_1).append($li_2);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;add attribute in the added element: var $li_1=$(&amp;#8221;&lt;li title='新增节点：数据结构'&gt;数据节点&lt;/li&gt;&amp;#8221;);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
+$parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>web.py note</title>
+   <link href="http://matrixorz.github.io/2013/07/28/webpy-note"/>
+   <updated>2013-07-28T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/28/webpy-note</id>
+   <content type="html">&lt;p&gt;web.ctx web.loadhook(handler)函数在web请求前执行handler函数 web.unloadhook(handler)函数在web请求后执行的handler函数&lt;/p&gt;
+
+&lt;p&gt;seeother:303临时重定向 redirect：301永久重定向&lt;/p&gt;
+
+&lt;p&gt;seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>sqlalchemy dynamic mapping</title>
+   <link href="http://matrixorz.github.io/2013/07/26/sqlalchemy-dynamic-mapping"/>
+   <updated>2013-07-26T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/26/sqlalchemy-dynamic-mapping</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;from sqlalchemy import *
+from sqlalchemy.orm import *
+
+metadata=MetaData(create_engine(&amp;quot;sqlite://&amp;quot;,echo=True)
+t1=Table(&amp;quot;t1&amp;quot;,metadata,Column(&amp;#39;id&amp;#39;,Integer,primary_key=True))
+t2=Table(&amp;quot;t2&amp;quot;,metadata,Column(&amp;quot;id&amp;quot;,Integer,primary_key=True))
+metadata.create_all()
+
+def map_class_to_some_table(cls,table,entity_name,**kw):
+    newcls=type(entity_name,(cls,),{})
+    mapper(newcls,table,**kw)
+    return newcls
+   
+class Foo(object):
+    pass
+
+T1Foo=map_class_to_some_table(Foo,t1,&amp;quot;T1Foo&amp;quot;)
+T2Foo=map_class_to_some_table(Foo,t2,&amp;quot;T2Foo&amp;quot;)
+
+sess=sessionmaker()()
+sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
+print sess.query(T1Foo).all()
+print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>premature optimization</title>
+   <link href="http://matrixorz.github.io/2013/07/26/premature-optimization"/>
+   <updated>2013-07-26T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/07/26/premature-optimization</id>
+   <content type="html">&lt;p&gt;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>memo on the trade</title>

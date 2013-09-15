@@ -9,6 +9,14 @@ http://matrixorz.github.io/categories.html
 http://matrixorz.github.io/tags.html
 http://matrixorz.github.io/atom.xml
 
+http://matrixorz.github.io/2013/09/11/tt
+http://matrixorz.github.io/2013/08/08/machine-learning-in-action
+http://matrixorz.github.io/2013/08/06/webpy
+http://matrixorz.github.io/2013/07/29/trade-memo-1
+http://matrixorz.github.io/2013/07/29/jquery-add-element-in-the-html-dom
+http://matrixorz.github.io/2013/07/28/webpy-note
+http://matrixorz.github.io/2013/07/26/sqlalchemy-dynamic-mapping
+http://matrixorz.github.io/2013/07/26/premature-optimization
 http://matrixorz.github.io/2013/07/22/memo-on-the-trade
 http://matrixorz.github.io/2013/07/21/backbonejs
 http://matrixorz.github.io/2013/07/15/python-asynchrous-network
