@@ -9,6 +9,22 @@ http://matrixorz.github.io/categories.html
 http://matrixorz.github.io/tags.html
 http://matrixorz.github.io/atom.xml
 
+http://matrixorz.github.io/2013/11/14/how-can-i-faced-my-fears-and-learned-to-be-good-at-math
+http://matrixorz.github.io/2013/11/10/a-little-surprised
+http://matrixorz.github.io/2013/11/09/data-analysis
+http://matrixorz.github.io/2013/11/07/brain-strom
+http://matrixorz.github.io/2013/11/06/python-web
+http://matrixorz.github.io/2013/11/05/leaning-python-site
+http://matrixorz.github.io/2013/11/04/deploy-python-on-nginx
+http://matrixorz.github.io/2013/10/27/install-project-on-preferati
+http://matrixorz.github.io/2013/10/26/how-to-write-a-crawler
+http://matrixorz.github.io/2013/10/22/qt-fourteen-steps
+http://matrixorz.github.io/2013/10/18/install-numpy-scipy-on-ubuntu
+http://matrixorz.github.io/2013/10/17/python-machine-learning
+http://matrixorz.github.io/2013/09/29/git
+http://matrixorz.github.io/2013/09/25/note-9_25
+http://matrixorz.github.io/2013/09/18/nginx-permission-root
+http://matrixorz.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network
 http://matrixorz.github.io/2013/09/11/tt
 http://matrixorz.github.io/2013/08/08/machine-learning-in-action
 http://matrixorz.github.io/2013/08/06/webpy

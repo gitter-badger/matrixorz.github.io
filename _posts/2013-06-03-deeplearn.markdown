@@ -7,7 +7,7 @@ categories: machine learning
 <h2> {{ page.title }} </h2>
 <p>推荐：<a href="deepleaning.net/tutorial/deeplearning.pdf">deeplearning学习</a>
 </p>
-
+[deeplearn]:http://markus.com/deep-learning-101/
 10.DEEP BELIEF NETWORKS:(DBN)
 
 机器学习的两次浪潮：
