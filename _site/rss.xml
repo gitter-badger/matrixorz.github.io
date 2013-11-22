@@ -5,10 +5,32 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-11-15T22:59:41+08:00</lastBuildDate>
-        <pubDate>2013-11-15T22:59:41+08:00</pubDate>
+        <lastBuildDate>2013-11-22T21:22:30+08:00</lastBuildDate>
+        <pubDate>2013-11-22T21:22:30+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>install World Community Grid on a headless Ubuntu Server</title>
+                <description>&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(you can also download it from wcg and install)&lt;/p&gt;
+
+&lt;p&gt;find your account key: boinccmd &amp;#8211;lookup_account http://www.worldcommunitygrid.org username password&lt;/p&gt;
+
+&lt;p&gt;You should get a response something like this dfb74c9b9&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;attach to your project boinccmd &amp;#8211;project_attach http://www.worldcommunitygrid.org dfb74c&amp;#8230;.&lt;/p&gt;
+
+&lt;p&gt;if you want to verify your attached enter the following command: boinccmd &amp;#8211;get_state&lt;/p&gt;
+
+&lt;p&gt;Futher resources:&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu&lt;/span&gt; &lt;span&gt;http://boinc.berkeley.edu/wiki/Client_configuration&lt;/span&gt; &lt;span&gt;http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot&lt;/span&gt; references: &lt;span&gt;blog.joelchristian.com/?p=291&lt;/span&gt; &lt;span&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/span&gt;&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</link>
+                <guid>http://matrixorz.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</guid>
+                <pubDate>2013-11-19T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>how can i faced my fears and learned to be good at math</title>
@@ -60,7 +82,11 @@
 
 &lt;pre&gt;&lt;code&gt;iterable=app(environ,start_response)
 for data in iterable:
-    #send data to client&lt;/code&gt;&lt;/pre&gt;</description>
+    #send data to client&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后续： &lt;span&gt;http://benosteen.wordpress.com&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</description>
                 <link>http://matrixorz.github.io/2013/11/06/python-web</link>
                 <guid>http://matrixorz.github.io/2013/11/06/python-web</guid>
                 <pubDate>2013-11-06T00:00:00+08:00</pubDate>
