@@ -24,9 +24,14 @@ if you want to verify your attached enter the following command:
 
 Futher resources:
 
-[http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu]
-[http://boinc.berkeley.edu/wiki/Client_configuration]
-[http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot]
+http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu
+
+http://boinc.berkeley.edu/wiki/Client_configuration
+
+http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot
+
 references:
-[blog.joelchristian.com/?p=291]
-[misctechmusings.com/linux/boinc-cli-for-world-community-grid/]
+
+blog.joelchristian.com/?p=291
+
+misctechmusings.com/linux/boinc-cli-for-world-community-grid/

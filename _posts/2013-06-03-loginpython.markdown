@@ -1,9 +1,14 @@
 ---
-layout: default
-title: "python logging"
+layout: post
+title: "python machine learning"
+description: ""
+category: 
+tags: []
 ---
+{% include JB/setup %}
+
 #python logging
-{{ page.title }} 
+
 
 pythonbrew一个新的管理包?
 
@@ -11,4 +16,3 @@ pythonbrew一个新的管理包?
 * 2.logger的名字为了要能方便的找出问题，所以不要乱取，通常都是以module或是class的名称来命名
 * 3.logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子
 
-{{ page.date | date_to_string }}

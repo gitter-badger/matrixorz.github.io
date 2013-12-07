@@ -7,8 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 
-[web.py源码解析](http://www.myexception.cn/perl-python/1351788.html)
-[WSGI](http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html)
+web.py源码解析:http://www.myexception.cn/perl-python/1351788.html
+WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html
 
 web server side:
 
@@ -22,7 +22,7 @@ web server side:
         
         
 后续：
-[http://benosteen.wordpress.com]
+http://benosteen.wordpress.com
 
 My swiss army toolkit for distributed/multiproesssing systems
         

@@ -4,13 +4,23 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-11-22T21:22:30+08:00</updated>
+ <updated>2013-12-07T20:16:34+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
    <email>matrix.orz@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>install redmine in ubuntu</title>
+   <link href="http://matrixorz.github.io/2013/12/04/install-redmine-in-ubuntu"/>
+   <updated>2013-12-04T00:00:00+08:00</updated>
+   <id>http://matrixorz.github.io/2013/12/04/install-redmine-in-ubuntu</id>
+   <content type="html">&lt;p&gt;install redmine on ubuntu12.04(http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04)&lt;/p&gt;
+
+&lt;p&gt;chmod 777 命令 来解决权限问题&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>install World Community Grid on a headless Ubuntu Server</title>
@@ -31,7 +41,17 @@
 
 &lt;p&gt;Futher resources:&lt;/p&gt;
 
-&lt;p&gt;&lt;span&gt;http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu&lt;/span&gt; &lt;span&gt;http://boinc.berkeley.edu/wiki/Client_configuration&lt;/span&gt; &lt;span&gt;http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot&lt;/span&gt; references: &lt;span&gt;blog.joelchristian.com/?p=291&lt;/span&gt; &lt;span&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/span&gt;&lt;/p&gt;</content>
+&lt;p&gt;http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu&lt;/p&gt;
+
+&lt;p&gt;http://boinc.berkeley.edu/wiki/Client_configuration&lt;/p&gt;
+
+&lt;p&gt;http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot&lt;/p&gt;
+
+&lt;p&gt;references:&lt;/p&gt;
+
+&lt;p&gt;blog.joelchristian.com/?p=291&lt;/p&gt;
+
+&lt;p&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -47,7 +67,7 @@
    <link href="http://matrixorz.github.io/2013/11/10/a-little-surprised"/>
    <updated>2013-11-10T00:00:00+08:00</updated>
    <id>http://matrixorz.github.io/2013/11/10/a-little-surprised</id>
-   <content type="html">&lt;p&gt;www.jstatsoft.org/v27 cos.name/2013/02/rise-of-the-machine/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;(www.jstatsoft.org/v27) cos.name/2013/02/rise-of-the-machine/&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -77,7 +97,7 @@
    <link href="http://matrixorz.github.io/2013/11/06/python-web"/>
    <updated>2013-11-06T00:00:00+08:00</updated>
    <id>http://matrixorz.github.io/2013/11/06/python-web</id>
-   <content type="html">&lt;p&gt;&lt;a href=&#39;http://www.myexception.cn/perl-python/1351788.html&#39;&gt;web.py源码解析&lt;/a&gt; &lt;a href=&#39;http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&#39;&gt;WSGI&lt;/a&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;web.py源码解析:http://www.myexception.cn/perl-python/1351788.html WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&lt;/p&gt;
 
 &lt;p&gt;web server side:&lt;/p&gt;
 
@@ -89,7 +109,7 @@
 for data in iterable:
     #send data to client&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;后续： &lt;span&gt;http://benosteen.wordpress.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;后续： http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</content>
  </entry>
@@ -101,15 +121,15 @@ for data in iterable:
    <id>http://matrixorz.github.io/2013/11/05/leaning-python-site</id>
    <content type="html">&lt;p&gt;basic:&lt;/p&gt;
 
-&lt;p&gt;&lt;span&gt;http://woodpecker.org.cn/abyteofpython_cn/chinese/&lt;/span&gt; &lt;span&gt;http://www.codecademy.com/zh/tracks/python&lt;/span&gt; &lt;span&gt;http://inventwithpython.com/chapters/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;http://woodpecker.org.cn/abyteofpython_cn/chinese/ http://www.codecademy.com/zh/tracks/python http://inventwithpython.com/chapters/&lt;/p&gt;
 
 &lt;p&gt;medium:&lt;/p&gt;
 
-&lt;p&gt;&lt;span&gt;https://github.com/gregmalcolm/python_koans&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;https://github.com/gregmalcolm/python_koans&lt;/p&gt;
 
-&lt;p&gt;advanced: &lt;span&gt;http://anandology.com/python-practice-book&lt;/span&gt; &lt;span&gt;www.kevinsheppard.com/images/0/09/Python_introduction.pdf&lt;/span&gt; &lt;span&gt;www.tuiku.com&lt;/span&gt; maybe is also good&lt;/p&gt;
+&lt;p&gt;advanced: http://anandology.com/python-practice-book www.kevinsheppard.com/images/0/09/Python_introduction.pdf www.tuiku.com maybe is also good&lt;/p&gt;
 
-&lt;p&gt;online game: &lt;span&gt;www.checkio.org&lt;/span&gt;&lt;/p&gt;</content>
+&lt;p&gt;online game: www.checkio.org&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -117,7 +137,9 @@ for data in iterable:
    <link href="http://matrixorz.github.io/2013/11/04/deploy-python-on-nginx"/>
    <updated>2013-11-04T00:00:00+08:00</updated>
    <id>http://matrixorz.github.io/2013/11/04/deploy-python-on-nginx</id>
-   <content type="html">&lt;p&gt;serholiu.com/tornado-nginx-supervisord http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;serholiu.com/tornado-nginx-supervisord&lt;/p&gt;
+
+&lt;p&gt;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -196,7 +218,7 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://matrixorz.github.io/2013/10/17/python-machine-learning"/>
    <updated>2013-10-17T00:00:00+08:00</updated>
    <id>http://matrixorz.github.io/2013/10/17/python-machine-learning</id>
-   <content type="html">&lt;p&gt;python machine learning&lt;span&gt;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&lt;/span&gt; http://www.yuanyong.org/blog/python/k-means-using-python&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;python machine learning(http://www.xavierdupre.fr/blog/2013-09-15_nojs.html) http://www.yuanyong.org/blog/python/k-means-using-python&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -1029,13 +1051,11 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  <entry>
-   <title>python logging</title>
+   <title>python machine learning</title>
    <link href="http://matrixorz.github.io/2013/06/03/loginpython"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
    <id>http://matrixorz.github.io/2013/06/03/loginpython</id>
    <content type="html">&lt;h1 id=&#39;python_logging&#39;&gt;python logging&lt;/h1&gt;
-
-&lt;p&gt;python logging&lt;/p&gt;
 
 &lt;p&gt;pythonbrew一个新的管理包?&lt;/p&gt;
 
@@ -1051,9 +1071,7 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;</content>
 &lt;li&gt;
 &lt;li&gt;logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子&lt;/li&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;03 Jun 2013&lt;/p&gt;</content>
+&lt;/ul&gt;</content>
  </entry>
  
  <entry>
