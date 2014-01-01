@@ -5,8 +5,8 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2013-12-07T20:16:34+08:00</lastBuildDate>
-        <pubDate>2013-12-07T20:16:34+08:00</pubDate>
+        <lastBuildDate>2014-01-01T16:45:48+08:00</lastBuildDate>
+        <pubDate>2014-01-01T16:45:48+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -104,7 +104,11 @@
 for data in iterable:
     #send data to client&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;后续： http://benosteen.wordpress.com&lt;/p&gt;
+&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
+
+&lt;p&gt;后续：&lt;/p&gt;
+
+&lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</description>
                 <link>http://matrixorz.github.io/2013/11/06/python-web</link>

@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://matrixorz.github.io/" rel="self"/>
  <link href="http://matrixorz.github.io"/>
- <updated>2013-12-07T20:16:34+08:00</updated>
+ <updated>2014-01-01T16:45:48+08:00</updated>
  <id>http://matrixorz.github.io</id>
  <author>
    <name>Hai</name>
@@ -109,7 +109,11 @@
 for data in iterable:
     #send data to client&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;后续： http://benosteen.wordpress.com&lt;/p&gt;
+&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
+
+&lt;p&gt;后续：&lt;/p&gt;
+
+&lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</content>
  </entry>

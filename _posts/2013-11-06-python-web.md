@@ -20,8 +20,11 @@ web server side:
     for data in iterable:
         #send data to client
         
-        
+ 
+WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）       
+
 后续：
+
 http://benosteen.wordpress.com
 
 My swiss army toolkit for distributed/multiproesssing systems
