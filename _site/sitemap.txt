@@ -57,7 +57,6 @@ http://matrixorz.github.io/python/2013/06/08/scipy
 http://matrixorz.github.io/linux/2013/06/06/wine
 http://matrixorz.github.io/python/yt-project/2013/06/05/installhdf5
 http://matrixorz.github.io/2013/06/05/resume
-http://matrixorz.github.io/justpic/2013/06/04/welcome-to-justpic
+http://matrixorz.github.io/justpic/2013/06/03/welcome-to-justpic
 http://matrixorz.github.io/2013/06/03/loginpython
 http://matrixorz.github.io/machine/learning/2013/06/03/deeplearn
-http://matrixorz.github.io/lessons/2011/12/29/jekyll-introduction

@@ -55,9 +55,9 @@
 
 <p>「一個以上相連接的行句組成」這句話其實暗示了 Markdown 允許段落內的強迫斷行，這個特性和其他大部分的 text-to-HTML 格式不一樣（包括 MovableType 的「Convert Line Breaks」選項），其它的格式會把每個斷行都轉成 <br /> 標籤。</p>
 
-<h1 id='this_is_an_h1'>This is an H1</h1>
+<h1 id="this_is_an_h1">This is an H1</h1>
 
-<h2 id='this_is_an_h2'>This is an H2</h2>
+<h2 id="this_is_an_h2">This is an H2</h2>
 
 <p>Blockquotes<br />markdown 使用email形式的区块引言，如果你很熟悉如何再email信件中引言，你就知道怎么再markdown文件中建立一个区块引言，那会看起来像是你强迫段行然后在每行的最前面加上&gt;:</p>
 
@@ -96,7 +96,7 @@
 <p>引言的区块内可以使用其他的markdown语法，包括标题、清单、程序代码块等：</p>
 
 <blockquote>
-<h2 id='this_is_a_header'>This is a header</h2>
+<h2 id="this_is_a_header">This is a header</h2>
 
 <ol>
 <li>This is the first item</li>
@@ -104,9 +104,11 @@
 <li>This is the second list item</li>
 </ol>
 
-<p>Here&#8217;s some example code:</p>
-<a href='justpic.org'>justpic</a>
-<p>return shell_exec(&#8220;echo $input|$markdown_script&#8221;);</p>
+<p>Here’s some example code:</p>
+
+<p><a href='justpic.org'>justpic</a></p>
+
+<p>return shell_exec(“echo $input|$markdown_script”);</p>
 </blockquote>
 
 <p>程序代码块： 与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来 要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入 This is a normal paragraph:</p>
@@ -116,9 +118,9 @@ import sys</code></pre>
 
 <p>分割线： 你可以在一行中用三个或以上的星号、减号、底线来建立一个分割线行内不能有其他东西，你也可以再星号中插入空白</p>
 <hr /><hr /><hr /><hr />
-<p>区段元素 markdown支持两种形式的连接语法：行内和参考两种形式 不管哪种，链接的文字要用【放括号】百标记<br />This is <a href='http://example.com/' title='Title'>an example</a> inline link<br /><a href='http://example.net/'>This link</a> has no title attribute.</p>
+<p>区段元素 markdown支持两种形式的连接语法：行内和参考两种形式 不管哪种，链接的文字要用【放括号】百标记<br />This is <a href="http://example.com/" title="Title">an example</a> inline link<br /><a href="http://example.net/">This link</a> has no title attribute.</p>
 
-<p>如果你是要链接到同样主机的资源，你可以使用相对路径： See my<a href='/about/'>about</a>page for details.</p>
+<p>如果你是要链接到同样主机的资源，你可以使用相对路径： See my<a href="/about/">about</a>page for details.</p>
 
 <p>来个程序用多个反引号来包含</p>
 
