@@ -5,10 +5,18 @@
         <description>Just Pic - Hai</description>
         <link>http://matrixorz.github.io</link>
         <link>http://matrixorz.github.io</link>
-        <lastBuildDate>2014-01-01T16:45:48+08:00</lastBuildDate>
-        <pubDate>2014-01-01T16:45:48+08:00</pubDate>
+        <lastBuildDate>2014-01-11T21:46:22+08:00</lastBuildDate>
+        <pubDate>2014-01-11T21:46:22+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>best award paper</title>
+                <description>&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;</description>
+                <link>http://matrixorz.github.io/2014/01/01/best-award-paper</link>
+                <guid>http://matrixorz.github.io/2014/01/01/best-award-paper</guid>
+                <pubDate>2014-01-01T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>install redmine in ubuntu</title>
