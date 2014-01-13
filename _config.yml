@@ -86,7 +86,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name :justpic 
+      short_name : justpic 
     livefyre :
       site_id : 
     intensedebate :
