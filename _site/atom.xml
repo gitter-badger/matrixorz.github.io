@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Just Pic</title>
+ <link href="http://username.github.io/" rel="self"/>
+ <link href="http://username.github.io"/>
+ <updated>2014-01-13T21:09:58+08:00</updated>
+ <id>http://username.github.io</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>best award paper</title>
+   <link href="http://username.github.io/2014/01/01/best-award-paper"/>
+   <updated>2014-01-01T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/01/01/best-award-paper</id>
+   <content type="html">&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install redmine in ubuntu</title>
+   <link href="http://username.github.io/2013/12/04/install-redmine-in-ubuntu"/>
+   <updated>2013-12-04T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</id>
+   <content type="html">&lt;p&gt;install redmine on ubuntu12.04(http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04)&lt;/p&gt;
+
+&lt;p&gt;chmod 777 命令 来解决权限问题&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install World Community Grid on a headless Ubuntu Server</title>
+   <link href="http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server"/>
+   <updated>2013-11-19T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(you can also download it from wcg and install)&lt;/p&gt;
+
+&lt;p&gt;find your account key: boinccmd –lookup_account http://www.worldcommunitygrid.org username password&lt;/p&gt;
+
+&lt;p&gt;You should get a response something like this dfb74c9b9&lt;/p&gt;
+
+&lt;p&gt;attach to your project boinccmd –project_attach http://www.worldcommunitygrid.org dfb74c….&lt;/p&gt;
+
+&lt;p&gt;if you want to verify your attached enter the following command: boinccmd –get_state&lt;/p&gt;
+
+&lt;p&gt;Futher resources:&lt;/p&gt;
+
+&lt;p&gt;http://boinc.berkeley.edu/wiki/installing_BOINC_ON_Ubuntu&lt;/p&gt;
+
+&lt;p&gt;http://boinc.berkeley.edu/wiki/Client_configuration&lt;/p&gt;
+
+&lt;p&gt;http://boinc.berkeley.edu/wiki/Stop_or_start_BOINC daemon_after_boot&lt;/p&gt;
+
+&lt;p&gt;references:&lt;/p&gt;
+
+&lt;p&gt;blog.joelchristian.com/?p=291&lt;/p&gt;
+
+&lt;p&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>how can i faced my fears and learned to be good at math</title>
+   <link href="http://username.github.io/2013/11/14/how-can-i-faced-my-fears-and-learned-to-be-good-at-math"/>
+   <updated>2013-11-14T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/14/how-can-i-faced-my-fears-and-learned-to-be-good-at-math</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>a little surprised</title>
+   <link href="http://username.github.io/2013/11/10/a-little-surprised"/>
+   <updated>2013-11-10T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/10/a-little-surprised</id>
+   <content type="html">&lt;p&gt;(www.jstatsoft.org/v27) cos.name/2013/02/rise-of-the-machine/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>data analysis</title>
+   <link href="http://username.github.io/2013/11/09/data-analysis"/>
+   <updated>2013-11-09T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/09/data-analysis</id>
+   <content type="html">&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>brain strom</title>
+   <link href="http://username.github.io/2013/11/07/brain-strom"/>
+   <updated>2013-11-07T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/07/brain-strom</id>
+   <content type="html">&lt;p&gt;server{ listen 4002; server_name localhost; access_log logs/access.log;&lt;/p&gt;
+
+&lt;p&gt;location / { proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginxX-Proxy true;&lt;/p&gt;
+
+&lt;p&gt;proxy_pass http://backend; proxy_redirect off;&lt;/p&gt;
+
+&lt;p&gt;proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection “upgrade”; } } upstream backend { server 127.0.0.1:3201; }&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>python web</title>
+   <link href="http://username.github.io/2013/11/06/python-web"/>
+   <updated>2013-11-06T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/06/python-web</id>
+   <content type="html">&lt;p&gt;web.py源码解析:http://www.myexception.cn/perl-python/1351788.html WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&lt;/p&gt;
+
+&lt;p&gt;web server side:&lt;/p&gt;
+
+&lt;p&gt;服务器必须做两件事情：&lt;/p&gt;
+
+&lt;p&gt;一个environ字典和一个start_response函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iterable=app(environ,start_response)
+for data in iterable:
+    #send data to client&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
+
+&lt;p&gt;后续：&lt;/p&gt;
+
+&lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
+
+&lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>leaning python site</title>
+   <link href="http://username.github.io/2013/11/05/leaning-python-site"/>
+   <updated>2013-11-05T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/05/leaning-python-site</id>
+   <content type="html">&lt;p&gt;basic:&lt;/p&gt;
+
+&lt;p&gt;http://woodpecker.org.cn/abyteofpython_cn/chinese/ http://www.codecademy.com/zh/tracks/python http://inventwithpython.com/chapters/&lt;/p&gt;
+
+&lt;p&gt;medium:&lt;/p&gt;
+
+&lt;p&gt;https://github.com/gregmalcolm/python_koans&lt;/p&gt;
+
+&lt;p&gt;advanced: http://anandology.com/python-practice-book www.kevinsheppard.com/images/0/09/Python_introduction.pdf www.tuiku.com maybe is also good&lt;/p&gt;
+
+&lt;p&gt;online game: www.checkio.org&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>deploy python on nginx</title>
+   <link href="http://username.github.io/2013/11/04/deploy-python-on-nginx"/>
+   <updated>2013-11-04T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/11/04/deploy-python-on-nginx</id>
+   <content type="html">&lt;p&gt;serholiu.com/tornado-nginx-supervisord&lt;/p&gt;
+
+&lt;p&gt;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install project on preferati</title>
+   <link href="http://username.github.io/2013/10/27/install-project-on-preferati"/>
+   <updated>2013-10-27T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/10/27/install-project-on-preferati</id>
+   <content type="html">&lt;p&gt;sudo apt-get install nginx sudo apt-get install git sudo apt-get install mysql-server sudo apt-get install python-dev&lt;/p&gt;
+
+&lt;p&gt;install easy_install on ubuntu: sudo apt-get install python-setuptools sudo easy_install virtualenv sudo easy_install pip virtualenv ~/trade source ~/trade/bin/activate install numpy scipy pandas and ta-lib sudo pip install Cython&lt;/p&gt;
+
+&lt;p&gt;—-due to blas libs—- sudo apt-get install gfortran libopenblas-dev liblapack-dev g++ pip install numpy pip install scipy&lt;/p&gt;
+
+&lt;h1 id=&quot;install_talib&quot;&gt;install ta-lib&lt;/h1&gt;
+
+&lt;p&gt;cd ~ wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz sudo apt-get install build-essential tar -zxvf ta-lib-0.4.0-src.tar.gz cd ta-lib-0.4.0 ./configure –prefix=/usr make sudo make install&lt;/p&gt;
+
+&lt;h1 id=&quot;install_gevent&quot;&gt;install gevent&lt;/h1&gt;
+
+&lt;p&gt;wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz tar -zxvf ./configure make sudo make install&lt;/p&gt;
+
+&lt;p&gt;cd ~/www git clone https://github.com/pydata/pandas.git git clone https://github.com/mrjbq7/ta-lib.git&lt;/p&gt;
+
+&lt;p&gt;update the nginx: sudo apt-get install python-software-properties sudo apt-get install sotware-properties-common sudo add-apt-repository ppa:nginx/stable sudo apt-get update sudo apt-get install nginx&lt;/p&gt;
+
+&lt;h1 id=&quot;mysql_init&quot;&gt;mysql init&lt;/h1&gt;
+
+&lt;p&gt;sudo apt-get install mysql-server libmysqld-dev pip install MySQL-python insert into mysql.user(Host,User,Password) values(“localhost”,”david”,password(“david”)); 用户授权： 给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。 mysql&amp;gt;grant all privileges on &lt;em&gt;.&lt;/em&gt; to david@localhost identified by ‘david’;&lt;/p&gt;
+
+&lt;h1 id=&quot;install_redis&quot;&gt;install redis&lt;/h1&gt;
+
+&lt;p&gt;http://rubyer.me/blog/638/ redis.io&lt;/p&gt;
+
+&lt;h1 id=&quot;uwsgi_or_gunicorn&quot;&gt;uwsgi or gunicorn&lt;/h1&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>how to write a crawler</title>
+   <link href="http://username.github.io/2013/10/26/how-to-write-a-crawler"/>
+   <updated>2013-10-26T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/10/26/how-to-write-a-crawler</id>
+   <content type="html">&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
+
+&lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>qt fourteen steps</title>
+   <link href="http://username.github.io/2013/10/22/qt-fourteen-steps"/>
+   <updated>2013-10-22T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/10/22/qt-fourteen-steps</id>
+   <content type="html">&lt;p&gt;1.Hello ,World!&lt;/p&gt;
+
+&lt;p&gt;2.调用退出 3.家庭价值 4.使用窗口部件 5.组装积木 6.组装丰富的积木！ 7.一个事物领导另一个 8.准备战斗 9.你可以使用加农炮了 10.像丝一样滑 11.给它一个炮弹 12.悬在空中的砖 13.游戏结束 14.面对墙壁&lt;/p&gt;
+
+&lt;p&gt;同普通的 C++ 成员函数一样，槽函数也分为三种类型，即 public slots、private slots 和 protected slots。 public slots：在这个区内声明的槽意味着任何对象都可将信号与之相连接。这对于组件编程非常有用，你可以创建彼此互不了解的对象，将它们的信号与槽进行连接以便信息能够正确的传递。 protected slots：在这个区内声明的槽意味着当前类及其子类可以将信号与之相连接。这适用于那些槽，它们是类实现的一部分，但是其界面接口却面向外部。 private slots：在这个区内声明的槽意味着只有类自己可以将信号与之相连接。这适用于联系非常紧密的类。&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install numpy scipy on ubuntu</title>
+   <link href="http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu"/>
+   <updated>2013-10-18T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;sudo pip install numpy
+sudo apt-get install libatlas-base-dev gfortran
+sudo pip install scipy
+sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>python machine learning</title>
+   <link href="http://username.github.io/2013/10/17/python-machine-learning"/>
+   <updated>2013-10-17T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/10/17/python-machine-learning</id>
+   <content type="html">&lt;p&gt;python machine learning(http://www.xavierdupre.fr/blog/2013-09-15_nojs.html) http://www.yuanyong.org/blog/python/k-means-using-python&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>git</title>
+   <link href="http://username.github.io/2013/09/29/git"/>
+   <updated>2013-09-29T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/09/29/git</id>
+   <content type="html">&lt;p&gt;https://gist.github.com/jbenet/ee6c9ac48068889b0912 http://gitref.cyj.me/zh/remotes/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>note 9_25</title>
+   <link href="http://username.github.io/2013/09/25/note-9_25"/>
+   <updated>2013-09-25T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/09/25/note-9_25</id>
+   <content type="html">&lt;p&gt;程序Trade的改进： matplotlib的融合web summary的更正&lt;/p&gt;
+
+&lt;p&gt;图像增强： 二值化 直方图均衡 膨胀，奇异点处理&lt;/p&gt;
+
+&lt;p&gt;手写笔迹识别&lt;/p&gt;
+
+&lt;p&gt;libsvm等多分类：&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>nginx permission root</title>
+   <link href="http://username.github.io/2013/09/18/nginx-permission-root"/>
+   <updated>2013-09-18T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/09/18/nginx-permission-root</id>
+   <content type="html">&lt;p&gt;nginx 13:permission denied solved: http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&lt;/p&gt;
+
+&lt;p&gt;The root directive is the problem here. Quote from the doc:&lt;/p&gt;
+
+&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
+
+&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:&lt;/p&gt;
+
+&lt;p&gt;location /map/ { alias /home/user/public_html/map/; } Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
+
+&lt;p&gt;share|improve this answer edited Jan 26 ‘12 at 15:30&lt;/p&gt;
+
+&lt;p&gt;answered Mar 12 ‘11 at 15:39&lt;/p&gt;
+
+&lt;p&gt;coredump 8,35011131 It shows up properly in access.log now, as /map/, but I still get a 403 forbidden error, public_html/ and every directory under it is 777, and I’ve tried chowning it to nginx and root, but I still get the 403 error. Any ideas? – Phase Mar 12 ‘11 at 17:25 @phase well I never had a similar problem, but check this link and this other one. Looks like lack of permission to read on each directory of the whole path you are serving (in your case, home, user, public_html and map). – coredump Mar 12 ‘11 at 20:00 You need to be careful with /s when using alias. The location and alias you posted will strip the / from the request, but the alias doesn’t add it back, so a request for /map/foo.html will actually look for /home/user/public_htmlfoo.html. When the location prefix matches the alias suffix, it’s easier to use use root /home/user/public_html. You could also fix it by just adding a / onto the end of the alias /home/user/public_html/map/;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>asynchrous,synchrous,blocking,unblocking network</title>
+   <link href="http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network"/>
+   <updated>2013-09-12T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</id>
+   <content type="html">&lt;p&gt;Linux下的五种I/O模型 阻塞I/O（blocking I/O） 非阻塞I/O（nonblocking I/O）&lt;br /&gt;I/O服用（select和poll）（I/O multiplexing） 信号驱动I/O（signal driven I/O（SIGIO）） 异步I/O（asynchronous I/O（the POSIX aio_functions)) 前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>tt</title>
+   <link href="http://username.github.io/2013/09/11/tt"/>
+   <updated>2013-09-11T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/09/11/tt</id>
+   <content type="html">&lt;p&gt;2789987&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>machine learning in action</title>
+   <link href="http://username.github.io/2013/08/08/machine-learning-in-action"/>
+   <updated>2013-08-08T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/08/08/machine-learning-in-action</id>
+   <content type="html">&lt;p&gt;https://github.com/pbharrin/machinelearninginaction zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>webpy</title>
+   <link href="http://username.github.io/2013/08/06/webpy"/>
+   <updated>2013-08-06T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/08/06/webpy</id>
+   <content type="html">&lt;p&gt;webpy 中文文档学习目录&lt;/p&gt;
+
+&lt;p&gt;web py 安装 webpy webpy3.0 新手指南 webpy CookBook&lt;/p&gt;
+
+&lt;h2 id=&quot;webpy&quot;&gt;webpy基本应用:&lt;/h2&gt;
+
+&lt;p&gt;Hello World 提供静态文件访问 理解URL控制 跳转与重定向 使用子应用 提供XML访问 从post读取原始数据&lt;/p&gt;
+
+&lt;h2 id=&quot;&quot;&gt;高级应用:&lt;/h2&gt;
+
+&lt;p&gt;用web.ctx获得客户端信息 应用处理器，添加钩子和卸载钩子 如何使用web.background 自定义NotFound信息 如何流传输大文件 对自带的webserver日志进行操作 用cherrypy提供SSL支持 实时语言切换&lt;/p&gt;
+
+&lt;h2 id=&quot;sessions_and_user_state_&quot;&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
+
+&lt;p&gt;如何使用Session 如何在调试模式下使用Session 在template中使用session 如何操作Cookie 用户认证 一个在postgreSQL数据库环境下的用户认证的例子 如何在子应用中操作Session&lt;/p&gt;
+
+&lt;h2 id=&quot;utils_&quot;&gt;Utils 实用工具&lt;/h2&gt;
+
+&lt;p&gt;如何发送邮件 如何利用Gmail发送邮件 使用soaplib实现webservice&lt;/p&gt;
+
+&lt;h2 id=&quot;templates_&quot;&gt;Templates 模板&lt;/h2&gt;
+
+&lt;p&gt;Templetor: web.py 模板系统 使用站点布局模板 交替式风格 (未译) 导入函数到模板中 (未译) 模板文件中的i18n支持 在web.py中使用Mako模板引擎 在web.py中使用Cheetah模板引擎 在web.py中使用Jinja2模板引擎 如何在谷歌应用程序引擎使用模板&lt;/p&gt;
+
+&lt;h2 id=&quot;testing_&quot;&gt;Testing 测试:&lt;/h2&gt;
+
+&lt;p&gt;Testing with Paste and Nose (未译) RESTful doctesting using an application’s request method (未译)&lt;/p&gt;
+
+&lt;h2 id=&quot;user_input_&quot;&gt;User input 用户输入:&lt;/h2&gt;
+
+&lt;p&gt;文件上传 保存上传的文件 上传文件大小限定 通过 web.input 接受用户输入 怎样使用表单 显示个别表单字段&lt;/p&gt;
+
+&lt;h2 id=&quot;database_&quot;&gt;Database 数据库&lt;/h2&gt;
+
+&lt;p&gt;使用多数据库 Select: 查询数据 Update: 更新数据 Delete: 删除数据 Insert: 新增数据 Query: 高级数据库查询 怎样使用数据库事务 使用 sqlalchemy 整合 SQLite UDF (用户定义函数) 到 webpy 数据库层 使用字典动态构造where子句&lt;/p&gt;
+
+&lt;h2 id=&quot;deployment_&quot;&gt;Deployment 部署:&lt;/h2&gt;
+
+&lt;p&gt;通过Fastcgi和lighttpd部署 通过Webpy和Nginx with FastCGI搭建Web.py CGI deployment through Apache (未译) mod-pythondeployment through Apache (requested) 通过Apache和mod-wsgi部署 mod-wsgi deployment through Nginx (未译) Fastcgi deployment through Nginx (未译)&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>trade memo 1</title>
+   <link href="http://username.github.io/2013/07/29/trade-memo-1"/>
+   <updated>2013-07-29T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/29/trade-memo-1</id>
+   <content type="html">&lt;p&gt;pyctp: https://code.google.com/p/pyctp/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>jquery add element in the html dom</title>
+   <link href="http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
+   <updated>2013-07-29T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
+   <content type="html">&lt;p&gt;add one element in the parent var $li_1=$(”&lt;li&gt;新增节点：数据结构&lt;/li&gt;”); var $li_2=$(”&lt;li&gt;新增节点：设计模式&lt;/li&gt;”);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
+$parent.append($li_1);
+$parent.append($li_2);
+$parent.append($li_1).append($li_2);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;add attribute in the added element: var $li_1=$(”&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;”);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
+$parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>web.py note</title>
+   <link href="http://username.github.io/2013/07/28/webpy-note"/>
+   <updated>2013-07-28T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/28/webpy-note</id>
+   <content type="html">&lt;p&gt;web.ctx web.loadhook(handler)函数在web请求前执行handler函数 web.unloadhook(handler)函数在web请求后执行的handler函数&lt;/p&gt;
+
+&lt;p&gt;seeother:303临时重定向 redirect：301永久重定向&lt;/p&gt;
+
+&lt;p&gt;seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>sqlalchemy dynamic mapping</title>
+   <link href="http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping"/>
+   <updated>2013-07-26T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;from sqlalchemy import *
+from sqlalchemy.orm import *
+
+metadata=MetaData(create_engine(&amp;quot;sqlite://&amp;quot;,echo=True)
+t1=Table(&amp;quot;t1&amp;quot;,metadata,Column(&amp;#39;id&amp;#39;,Integer,primary_key=True))
+t2=Table(&amp;quot;t2&amp;quot;,metadata,Column(&amp;quot;id&amp;quot;,Integer,primary_key=True))
+metadata.create_all()
+
+def map_class_to_some_table(cls,table,entity_name,**kw):
+    newcls=type(entity_name,(cls,),{})
+    mapper(newcls,table,**kw)
+    return newcls
+   
+class Foo(object):
+    pass
+
+T1Foo=map_class_to_some_table(Foo,t1,&amp;quot;T1Foo&amp;quot;)
+T2Foo=map_class_to_some_table(Foo,t2,&amp;quot;T2Foo&amp;quot;)
+
+sess=sessionmaker()()
+sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
+print sess.query(T1Foo).all()
+print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>premature optimization</title>
+   <link href="http://username.github.io/2013/07/26/premature-optimization"/>
+   <updated>2013-07-26T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/26/premature-optimization</id>
+   <content type="html">&lt;p&gt;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>memo on the trade</title>
+   <link href="http://username.github.io/2013/07/22/memo-on-the-trade"/>
+   <updated>2013-07-22T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/22/memo-on-the-trade</id>
+   <content type="html">&lt;p&gt;RTA&lt;/p&gt;
+
+&lt;p&gt;www.lowindata.com&lt;/p&gt;
+
+&lt;p&gt;backbonejs:www.icoding.co/2012/04/backbonejs-html-2&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>backbonejs</title>
+   <link href="http://username.github.io/2013/07/21/backbonejs"/>
+   <updated>2013-07-21T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/21/backbonejs</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>python asynchrous network</title>
+   <link href="http://username.github.io/2013/07/15/python-asynchrous-network"/>
+   <updated>2013-07-15T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/15/python-asynchrous-network</id>
+   <content type="html">&lt;hr /&gt;
+&lt;h2 id=&quot;selectpollepoll_test_in_python&quot;&gt;select,poll,epoll test in python&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;select test&lt;/em&gt;&lt;/strong&gt; selecttest.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import select
+import socket
+import Queue
+
+#create a socket
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+#set option reused
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+
+server_address=(&amp;#39;localhost&amp;#39;,10001)
+server.bind(server_address)
+
+server.listen(10)
+
+#sockets from which we except to read
+inputs=[server]
+
+#sockets from which we expect to write
+outputs=[]
+
+#Outgoing message queues (socket:Queue)
+message_queues={}
+
+#A optional parameter for select is TIMEOUT
+timeout=20
+
+while inputs:
+    print &amp;quot;waiting for next event&amp;quot;
+    #first parameter--read list,second parameter--write list,third parameter--error list
+    readable,writable,exceptional=select.select(inputs,outputs,inputs,timeout)
+
+    #when timeout reached,select return three empty list
+    if not (readable or writable or exceptional):
+        print &amp;quot;Time out!&amp;quot;
+        break;
+    for s in readable:
+        if s is server:
+            #A &amp;quot;readable&amp;quot; socket is ready to accept a connection
+            connection,client_address=s.accept()
+            print &amp;quot;  connection from&amp;quot;,client_address
+            connection.setblocking(0)
+            inputs.append(connection)
+            message_queues[connection]=Queue.Queue()
+        else:
+            data=s.recv(1024)
+            if data:
+                print &amp;quot;received &amp;quot;,data, &amp;quot;from &amp;quot;,s.getpeername()
+                message_queues[s].put(data)
+                #Add output  channel for response
+                if s not in outputs:
+                    outputs.append(s)
+            else:
+                #Interpret empty result as closed connection
+                print &amp;quot; closing&amp;quot;, client_address
+                if s in outputs:
+                    outputs.remove(s)
+                inputs.remove(s)
+                s.close()
+                #remove message queue
+                del message_queues[s]
+    for s in writable:
+        try:
+            next_msg=message_queues[s].get_nowait()
+        except Queue.Empty:
+            print &amp;quot; &amp;quot;,s.getpeername,&amp;quot; queue empty&amp;quot;
+            outputs.remove(s)
+        else:
+            print &amp;quot;sending &amp;quot;,next_msg,&amp;quot; to&amp;quot;,s.getpeername()
+            s.send(next_msg)
+    for s in exceptional:
+        print &amp;quot; exception condition on &amp;quot;,s.getpeername()
+        #stop listening for input on the connection
+        inputs.remove(s)
+        if s in outputs:
+            outputs.remove(s)
+        s.close()
+        #Remove message queue&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;polltest&lt;/em&gt;&lt;/strong&gt; polltest.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import socket
+import select
+import Queue
+
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+server_address=(&amp;quot;localhost&amp;quot;,10001)
+
+print &amp;quot;Starting up on %s port %s&amp;quot; % server_address
+server.bind(server_address)
+server.listen(5)
+message_queues={}
+#The timeout value is represente in milliseconds,instead of seconds
+timeout=100
+#Create a limit for the next
+READ_ONLY=(select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR)
+READ_WRITE=(READ_ONLY|select.POLLOUT)
+
+#set up the poller
+poller=select.poll()
+poller.register(server,READ_ONLY)
+#map file descriptors to socket objects
+fd_to_socket={server.fileno():server,}
+while True:
+    print &amp;quot;Waiting for the next event&amp;quot;
+    events=poller.poll(timeout)
+    print &amp;quot;*&amp;quot;*20
+    print len(events)
+    print events
+    print &amp;quot;*&amp;quot;*20
+    for fd,flag in events:
+        s=fd_to_socket[fd]
+        if flag &amp;amp; (select.POLLIN|select.POLLPRI):
+            if s is server:
+                #A readable socket is ready to accept a connection
+                connection,client_address=s.accept()
+                print &amp;quot;Connection &amp;quot;,client_address
+                connection.setblocking(False)
+
+                fd_to_socket[connection.fileno()]=connection
+                poller.register(connection,READ_ONLY)
+
+                #Give the connection a queue to send data
+                message_queues[connection]=Queue.Queue
+            else:
+                data=s.recv(1024)
+                if data:
+                    # A readable client socket has data
+                    print &amp;quot; received %s from %s &amp;quot; % (data,s.getpeername())
+                    message_queues[s].put(data)
+                    poller.modify(s,READ_WRITE)
+                else:
+                    #Close the connection
+                    print &amp;quot; closing &amp;quot;,s.getpeername()
+                    #Stop listening for input on the connection
+                    poller.unregister(s)
+                    s.close()
+                    del message_queues[s]
+        elif flag &amp;amp; select.POLLHUP:
+            #A client that &amp;quot;Hang up&amp;quot;,to be closed.
+            print &amp;quot;closing &amp;quot;,s.getpeername,&amp;quot;(HUP)&amp;quot;
+            poller.unregister(s)
+            s.close()
+        elif flag &amp;amp; select.POLLOUT:
+            #SOCKET is ready to send DATA,if there is any to send
+            try:
+                next_msg=message_queues[s].get_nowait()
+            except Queue.Empty:
+                #No messages waiting so stop checking
+                print s.getpeername,&amp;quot; queue empty&amp;quot;
+                poller.modify(s,READ_ONLY)
+            else:
+                print &amp;quot; sending %s to %s&amp;quot; %(next_msg,s.getpeername())
+                s.send(next_msg)
+        elif flag &amp;amp; select.POLLERR:
+            #Any events with POLLER cause the server to close the sockets
+            print &amp;quot; exception on&amp;quot;,s.getpeername()
+            poller.unregister(s)
+            s.close()
+            del message_queues[s]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;epoll test&lt;/em&gt;&lt;/strong&gt; epolltest.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import socket,logging
+import select,errno
+
+logger=logging.getLogger(&amp;quot;network-server&amp;quot;)
+
+def InitLog():
+    logger.setLevel(logging.DEBUG)
+
+    fh=logging.FileHandler(&amp;quot;network-server.log&amp;quot;)
+    fh.setLevel(logging.DEBUG)
+    ch=logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+
+    formatter=logging.Formatter(&amp;quot;%(asctime)s - %(name)s - %(levelname)s -%(message)s&amp;quot;)
+    ch.setFormatter(formatter)
+    fh.setFormatter(formatter)
+
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+
+if __name__==&amp;quot;__main__&amp;quot;:
+    InitLog()
+
+    try:
+        listen_fd=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    except socket.error,msg:
+        logger.error(&amp;quot;create a socket failed&amp;quot;)
+
+    try:
+        listen_fd.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+    except socket.error,msg:
+        logger.error(&amp;quot;setsocketopt error&amp;quot;)
+
+    try:
+        listen_fd.bind((&amp;#39;&amp;#39;,10001))
+    except socket.error,msg:
+        logger.error(&amp;quot;listen file id bind ip error&amp;quot;)
+
+    try:
+        listen_fd.listen(10)
+    except socket.error,msg:
+        logger.error(msg)
+    try:
+        epoll_fd=select.epoll()
+        epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
+    except select.error,msg:
+        logger.error(msg)
+    
+    connections={}
+    addresses={}
+    datalist={}
+    while True:
+        epoll_list = epoll_fd.poll()
+        for fd,events in epoll_list:
+            if fd==listen_fd.fileno():
+                conn,addr=listen_fd.accept()
+                logger.debug(&amp;quot;accept connction from  %s,%d,fd = %d&amp;quot; %(addr[0],addr[1],conn.fileno()))
+                conn.setblocking(0)
+                epoll_fd.register(conn.fileno(),select.EPOLLIN|select.EPOLLET)
+                connections[conn.fileno()]=conn 
+                addresses[conn.fileno()]=addr
+            elif select.EPOLLIN  &amp;amp; events:
+                datas=&amp;#39;&amp;#39;
+                while True:
+                    try:
+                        data=connections[fd].recv(10)
+                        if not data and not datas:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.debug(&amp;quot;%s,%d closed&amp;quot; % (addresses[fd][0],addresses[fd][1]))
+                            
+                            break
+                        else:
+                            datas+=data 
+                    except socket.error,msg:
+                        if msg.errno==errno.EAGAIN:
+                            logger.debug(&amp;quot;%s receive %s&amp;quot; % (fd,datas))
+                            datalist[fd]=datas
+                            epoll_fd.modify(fd,select.EPOLLET|select.EPOLLOUT)
+                            break
+                        else:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.error(msg)
+                            break
+            elif select.EPOLLHUP &amp;amp; events:
+                epoll_fd.unregister(fd)
+                connections[fd].close()
+                logger.debug(&amp;quot;%s ,%d closed&amp;quot; % (addresses[fd][0],addresses[fd][1]))
+            elif select.EPOLLOUT &amp;amp; events:
+                sendLen=0
+                while True:
+                    sendLen += connections[fd].send(datalist[fd][sendLen:])
+                    if sendLen == len(datalist[fd]):
+                         break
+                epoll_fd.modify(fd,select.EPOLLIN|select.EPOLLET)
+            else:
+                continue&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;common client&lt;/em&gt;&lt;/strong&gt; commontest.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import socket
+messages = [&amp;quot;This is the message&amp;quot;,
+         &amp;quot;It will be send&amp;quot;,
+         &amp;quot;in parts&amp;quot;]
+
+print &amp;quot;Connect to the server&amp;quot;
+
+server_address=(&amp;quot;localhost&amp;quot;,10001)
+
+#Create a TCP/IP sock
+socks=[]
+for i in range(10):
+     socks.append(socket.socket(socket.AF_INET,socket.SOCK_STREAM))
+
+for s in socks:
+    s.connect(server_address)
+
+counter=0
+for message in messages:
+    for s in socks:
+        counter+=1
+        print &amp;quot; %s sending %s &amp;quot;%(s.getpeername(),message+&amp;quot; version &amp;quot;+str(counter))
+        s.send(message+&amp;quot; version &amp;quot;+str(counter))
+    for s in socks:
+        data=s.recv(1024)
+        print &amp;quot; %s received %s &amp;quot; % (s.getpeername(),data)
+        if not data:
+            print &amp;quot;closing socket&amp;quot;,s.getpeername()
+            s.close()&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html&lt;/p&gt;
+
+&lt;p&gt;针对asyncore的介绍和使用有很好的两篇博客： blog.csdn.net/livefun/article/details/8721772&lt;/p&gt;
+
+&lt;p&gt;http://www.nightmare.com/medusa/async_sockets.html&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>mysql export and import</title>
+   <link href="http://username.github.io/2013/07/05/mysql-export-and-import"/>
+   <updated>2013-07-05T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/05/mysql-export-and-import</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Run Multiple-python on your ubuntu</title>
+   <link href="http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv"/>
+   <updated>2013-07-02T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</id>
+   <content type="html">&lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;建立软链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
+sudo apt-get update
+sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;virtualenv -p /usr/bin/python3.3 python3.3env
+virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>中文测试1</title>
+   <link href="http://username.github.io/2013/07/02/1"/>
+   <updated>2013-07-02T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/02/1</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>中文</title>
+   <link href="http://username.github.io/2013/07/02/"/>
+   <updated>2013-07-02T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>text mining</title>
+   <link href="http://username.github.io/2013/07/01/text-mining"/>
+   <updated>2013-07-01T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/01/text-mining</id>
+   <content type="html">&lt;p&gt;why,why i have no idea in my mind?&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>lucene</title>
+   <link href="http://username.github.io/2013/07/01/lucene"/>
+   <updated>2013-07-01T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/07/01/lucene</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>no plan</title>
+   <link href="http://username.github.io/2013/06/29/no-plan"/>
+   <updated>2013-06-29T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/29/no-plan</id>
+   <content type="html">&lt;p&gt;计划如下： TextMining计划 Startups课程 Trade Analysis项目跟进&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>markdown test</title>
+   <link href="http://username.github.io/2013/06/23/markdown-test"/>
+   <updated>2013-06-23T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/23/markdown-test</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>markdown测试</title>
+   <link href="http://username.github.io/2013/06/23/markdown"/>
+   <updated>2013-06-23T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/23/markdown</id>
+   <content type="html">&lt;p&gt;一个段落是由一个以上相连接的行句组成，而一个以上的空行会切分出不同的段落（空行的定义是显示上看起来像是空行，便会被视为空行，比方说，若某一行只包含空白和tab，则该行也会被视为空行），一般的段落不许要用空白或段行缩排。&lt;/p&gt;
+
+&lt;p&gt;「一個以上相連接的行句組成」這句話其實暗示了 Markdown 允許段落內的強迫斷行，這個特性和其他大部分的 text-to-HTML 格式不一樣（包括 MovableType 的「Convert Line Breaks」選項），其它的格式會把每個斷行都轉成 &lt;br /&gt; 標籤。&lt;/p&gt;
+
+&lt;h1 id=&quot;this_is_an_h1&quot;&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this_is_an_h2&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;p&gt;Blockquotes&lt;br /&gt;markdown 使用email形式的区块引言，如果你很熟悉如何再email信件中引言，你就知道怎么再markdown文件中建立一个区块引言，那会看起来像是你强迫段行然后在每行的最前面加上&amp;gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote with two paragraphs.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p&gt;
+
+&lt;p&gt;Donec sit amet nisl. blabla&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;markdown也允许你只在整个段落的第一行最前面加上&amp;gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is a block&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ksjfkfkfj&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Donecfkkf&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;blabla&lt;/p&gt;
+
+&lt;p&gt;区块引言可以有阶层&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this is the first level of quoting&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this is the nested blockquote&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Back to the first level&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;引言的区块内可以使用其他的markdown语法，包括标题、清单、程序代码块等：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h2 id=&quot;this_is_a_header&quot;&gt;This is a header&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;This is the first item&lt;/li&gt;
+
+&lt;li&gt;This is the second list item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here’s some example code:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;justpic.org&#39;&gt;justpic&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;return shell_exec(“echo $input|$markdown_script”);&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;程序代码块： 与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来 要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入 This is a normal paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a code block
+import sys&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;分割线： 你可以在一行中用三个或以上的星号、减号、底线来建立一个分割线行内不能有其他东西，你也可以再星号中插入空白&lt;/p&gt;
+&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;
+&lt;p&gt;区段元素 markdown支持两种形式的连接语法：行内和参考两种形式 不管哪种，链接的文字要用【放括号】百标记&lt;br /&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;an example&lt;/a&gt; inline link&lt;br /&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+
+&lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径： See my&lt;a href=&quot;/about/&quot;&gt;about&lt;/a&gt;page for details.&lt;/p&gt;
+
+&lt;p&gt;来个程序用多个反引号来包含&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;import sys&lt;/code&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>new post</title>
+   <link href="http://username.github.io/2013/06/22/new-post"/>
+   <updated>2013-06-22T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/22/new-post</id>
+   <content type="html">&lt;h1 id=&quot;622&quot;&gt;6月22日小结&lt;/h1&gt;
+
+&lt;p&gt;写个总结，python学习情况停滞不前，最大的困难还是不能专心做一件事情，注意力容易分散，接下来的时间里，要以论文为主，学会总结，翻译英文文章，机器学习的学习还没有完，要每天一总结，学到了什么，还有什么不懂的，英语的学习还是以shanbay为主，注重效果，不要太看重计划。&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>com learning</title>
+   <link href="http://username.github.io/2013/06/14/com-learning"/>
+   <updated>2013-06-14T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/14/com-learning</id>
+   <content type="html">&lt;p&gt;&lt;a href=&#39;http://www.vckbase.com/index.php/wv/1315&#39;&gt;COM Learning&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>protobuffer</title>
+   <link href="http://username.github.io/2013/06/11/protobuffer"/>
+   <updated>2013-06-11T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/11/protobuffer</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Plan in June 11</title>
+   <link href="http://username.github.io/2013/06/11/plan-in-june-11"/>
+   <updated>2013-06-11T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/11/plan-in-june-11</id>
+   <content type="html"></content>
+ </entry>
+ 
+ <entry>
+   <title>Network Text Analysis</title>
+   <link href="http://username.github.io/network,plsa/2013/06/11/network-text-analysis"/>
+   <updated>2013-06-11T00:00:00+08:00</updated>
+   <id>http://username.github.io/network,plsa/2013/06/11/network-text-analysis</id>
+   <content type="html">&lt;h1 id=&quot;_&quot;&gt;网络 文本语义分析&lt;/h1&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>resolution to scipy installation error</title>
+   <link href="http://username.github.io/python/2013/06/08/scipy"/>
+   <updated>2013-06-08T00:00:00+08:00</updated>
+   <id>http://username.github.io/python/2013/06/08/scipy</id>
+   <content type="html">&lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get libblas3gf libblas-doc libblas-dev liblapack3gf liblapack-doc liblapack-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装matplib出现ft2build.h等头文件无法找出时，解决方法： 具体解决方案如下： （1）安装freetype2开发包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libfreetype6-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（2）安装png开发包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libpng-dev&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;（3）安装matplotlib:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo python setup.py install&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install wine on ubuntu 12.04</title>
+   <link href="http://username.github.io/linux/2013/06/06/wine"/>
+   <updated>2013-06-06T00:00:00+08:00</updated>
+   <id>http://username.github.io/linux/2013/06/06/wine</id>
+   <content type="html">&lt;h1 id=&quot;wine_error&quot;&gt;Wine error&lt;/h1&gt;
+
+&lt;p&gt;Code for install wine:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo setcap CAP_NET_RAW=ep /usr/bin/wine
+sudo setcap CAP_NET_RAW=ep /usr/bin/wineserver
+sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>install hdf5 on ubuntu</title>
+   <link href="http://username.github.io/python/yt-project/2013/06/05/installhdf5"/>
+   <updated>2013-06-05T11:11:11Z</updated>
+   <id>http://username.github.io/python/yt-project/2013/06/05/installhdf5</id>
+   <content type="html">&lt;h1 id=&quot;install_hdf5_on_ubuntu_1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+
+&lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
+
+&lt;p&gt;possibly you will have to build it from source to get everything right.&lt;/p&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install devscripts equivs ubuntu-dev-tools 
+pull-debian-source hdf5 experimental    
+cd hdf5-*
+sudo mk-build-deps -ir
+debuild -us -uc&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Resume</title>
+   <link href="http://username.github.io/2013/06/05/resume"/>
+   <updated>2013-06-05T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/05/resume</id>
+   <content type="html">&lt;h1 id=&quot;hai_cao&quot;&gt;Hai Cao&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;mailto:&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;http://justpic.org&quot;&gt;http://justpic.org&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;I am a software developer with an interest in communication and design.I enjoy experimenting with new&lt;/p&gt;
+
+&lt;h2 id=&quot;education&quot;&gt;Education&lt;/h2&gt;
+
+&lt;p&gt;Computer Science and Technoly,M.S. Fall 2012-Spring 2015 Chongqing University,Chongqing&lt;/p&gt;
+
+&lt;h2 id=&quot;proficiency&quot;&gt;Proficiency&lt;/h2&gt;
+
+&lt;p&gt;python ,C++&lt;/p&gt;
+
+&lt;h2 id=&quot;expricence&quot;&gt;Expricence&lt;/h2&gt;
+
+&lt;h3 id=&quot;msra&quot;&gt;MSRA&lt;/h3&gt;
+
+&lt;h4 id=&quot;software_developer&quot;&gt;Software Developer-&lt;/h4&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Welcome to just pic!</title>
+   <link href="http://username.github.io/justpic/2013/06/03/welcome-to-justpic"/>
+   <updated>2013-06-03T23:40:26Z</updated>
+   <id>http://username.github.io/justpic/2013/06/03/welcome-to-justpic</id>
+   <content type="html">&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;ruby&#39;&gt;&lt;span class=&#39;k&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;print_hi&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nb&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt;
+  &lt;span class=&#39;nb&#39;&gt;puts&lt;/span&gt; &lt;span class=&#39;s2&#39;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&#39;si&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;nb&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;si&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;s2&#39;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&#39;k&#39;&gt;end&lt;/span&gt;
+&lt;span class=&#39;n&#39;&gt;print_hi&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;Leos&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt;
+&lt;span class=&#39;c1&#39;&gt;#=&amp;gt; prints &amp;#39;Hi, justpic&amp;#39; to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>python machine learning</title>
+   <link href="http://username.github.io/2013/06/03/loginpython"/>
+   <updated>2013-06-03T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/06/03/loginpython</id>
+   <content type="html">&lt;h1 id=&quot;python_logging&quot;&gt;python logging&lt;/h1&gt;
+
+&lt;p&gt;pythonbrew一个新的管理包?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1.每个module，class都用自己的logger，当你写的code，是一个被人使用的module，请不要去做多余的设定&lt;/li&gt;
+
+&lt;li&gt;2.logger的名字为了要能方便的找出问题，所以不要乱取，通常都是以module或是class的名称来命名&lt;/li&gt;
+
+&lt;li&gt;3.logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>deeplearning</title>
+   <link href="http://username.github.io/machine/learning/2013/06/03/deeplearn"/>
+   <updated>2013-06-03T00:00:00+08:00</updated>
+   <id>http://username.github.io/machine/learning/2013/06/03/deeplearn</id>
+   <content type="html">&lt;h2&gt; deeplearning &lt;/h2&gt;&lt;p&gt;推荐：&lt;a href=&#39;deepleaning.net/tutorial/deeplearning.pdf&#39;&gt;deeplearning学习&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;10.DEEP BELIEF NETWORKS:(DBN)&lt;/p&gt;
+
+&lt;p&gt;机器学习的两次浪潮：&lt;/p&gt;
+
+&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等 这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
+
+&lt;p&gt;深度学习： 很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化”(layer-wisepre-training)来有效克服。&lt;/p&gt;
+&lt;p&gt;03 Jun 2013&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Jekyll Introduction</title>
+   <link href="http://username.github.io/lessons/2011/12/29/jekyll-introduction"/>
+   <updated>2011-12-29T00:00:00+08:00</updated>
+   <id>http://username.github.io/lessons/2011/12/29/jekyll-introduction</id>
+   <content type="html">&lt;p&gt;This Jekyll introduction will outline specifically what Jekyll is and why you would want to use it. Directly following the intro we’ll learn exactly &lt;em&gt;how&lt;/em&gt; Jekyll does what it does.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;h3 id=&quot;what_is_jekyll&quot;&gt;What is Jekyll?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a parsing engine bundled as a ruby gem used to build static websites from dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as “a simple, blog aware, static site generator”.&lt;/p&gt;
+
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
+
+&lt;p&gt;This website is created with Jekyll. &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Sites&quot;&gt;Other Jekyll websites&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;what_does_jekyll_do&quot;&gt;What does Jekyll Do?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a ruby gem you install on your local system. Once there you can call &lt;code&gt;jekyll --server&lt;/code&gt; on a directory and provided that directory is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files, compute categories, tags, permalinks, and construct your pages from layout templates and partials.&lt;/p&gt;
+
+&lt;p&gt;Once parsed, Jekyll stores the result in a self-contained static &lt;code&gt;_site&lt;/code&gt; folder. The intention here is that you can serve all contents in this folder statically from a plain static web-server.&lt;/p&gt;
+
+&lt;p&gt;You can think of Jekyll as a normalish dynamic blog but rather than parsing content, templates, and tags on each request, Jekyll does this once &lt;em&gt;beforehand&lt;/em&gt; and caches the &lt;em&gt;entire website&lt;/em&gt; in a folder for serving statically.&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll_is_not_blogging_software&quot;&gt;Jekyll is Not Blogging Software&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Jekyll is a parsing engine.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Jekyll does not come with any content nor does it have any templates or design elements. This is a common source of confusion when getting started. Jekyll does not come with anything you actually use or see on your website - you have to make it.&lt;/p&gt;
+
+&lt;h3 id=&quot;why_should_i_care&quot;&gt;Why Should I Care?&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is very minimalistic and very efficient. The most important thing to realize about Jekyll is that it creates a static representation of your website requiring only a static web-server. Traditional dynamic blogs like Wordpress require a database and server-side code. Heavily trafficked dynamic blogs must employ a caching layer that ultimately performs the same job Jekyll sets out to do; serve static content.&lt;/p&gt;
+
+&lt;p&gt;Therefore if you like to keep things simple and you prefer the command-line over an admin panel UI then give Jekyll a try.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Developers like Jekyll because we can write content like we write code:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ability to write content in markdown or textile in your favorite text-editor.&lt;/li&gt;
+
+&lt;li&gt;Ability to write and preview your content via localhost.&lt;/li&gt;
+
+&lt;li&gt;No internet connection required.&lt;/li&gt;
+
+&lt;li&gt;Ability to publish via git.&lt;/li&gt;
+
+&lt;li&gt;Ability to host your blog on a static web-server.&lt;/li&gt;
+
+&lt;li&gt;Ability to host freely on GitHub Pages.&lt;/li&gt;
+
+&lt;li&gt;No database required.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;how_jekyll_works&quot;&gt;How Jekyll Works&lt;/h1&gt;
+
+&lt;p&gt;The following is a complete but concise outline of exactly how Jekyll works.&lt;/p&gt;
+
+&lt;p&gt;Be aware that core concepts are introduced in rapid succession without code examples. This information is not intended to specifically teach you how to do anything, rather it is intended to give you the &lt;em&gt;full picture&lt;/em&gt; relative to what is going on in Jekyll-world.&lt;/p&gt;
+
+&lt;p&gt;Learning these core concepts should help you avoid common frustrations and ultimately help you better understand the code examples contained throughout Jekyll-Bootstrap.&lt;/p&gt;
+
+&lt;h2 id=&quot;initial_setup&quot;&gt;Initial Setup&lt;/h2&gt;
+
+&lt;p&gt;After &lt;a href=&quot;/index.html#start-now&quot;&gt;installing jekyll&lt;/a&gt; you’ll need to format your website directory in a way jekyll expects. Jekyll-bootstrap conveniently provides the base directory format.&lt;/p&gt;
+
+&lt;h3 id=&quot;the_jekyll_application_base_format&quot;&gt;The Jekyll Application Base Format&lt;/h3&gt;
+
+&lt;p&gt;Jekyll expects your website directory to be laid out like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+|-- _config.yml
+|-- _includes
+|-- _layouts
+|   |-- default.html
+|   |-- post.html
+|-- _posts
+|   |-- 2011-10-25-open-source-is-good.markdown
+|   |-- 2011-04-26-hello-world.markdown
+|-- _site
+|-- index.html
+|-- assets
+    |-- css
+        |-- style.css
+    |-- javascripts&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;_config.yml&lt;/strong&gt; Stores configuration data.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;_includes&lt;/strong&gt; This folder is for partial views.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;_layouts&lt;/strong&gt; This folder is for the main templates your content will be inserted into. You can have different layouts for different pages or page sections.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;_posts&lt;/strong&gt; This folder contains your dynamic content/posts. the naming format is required to be &lt;code&gt;@YEAR-MONTH-DATE-title.MARKUP@&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;_site&lt;/strong&gt; This is where the generated site will be placed once Jekyll is done transforming it.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;assets&lt;/strong&gt; This folder is not part of the standard jekyll structure. The assets folder represents &lt;em&gt;any generic&lt;/em&gt; folder you happen to create in your root directory. Directories and files not properly formatted for jekyll will be left untouched for you to serve normally.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(read more: &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Usage&quot;&gt;https://github.com/mojombo/jekyll/wiki/Usage&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll_configuration&quot;&gt;Jekyll Configuration&lt;/h3&gt;
+
+&lt;p&gt;Jekyll supports various configuration options that are fully outlined here: (&lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Configuration&quot;&gt;https://github.com/mojombo/jekyll/wiki/Configuration&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&quot;content_in_jekyll&quot;&gt;Content in Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Content in Jekyll is either a post or a page. These content “objects” get inserted into one or more templates to build the final output for its respective static-page.&lt;/p&gt;
+
+&lt;h3 id=&quot;posts_and_pages&quot;&gt;Posts and Pages&lt;/h3&gt;
+
+&lt;p&gt;Both posts and pages should be written in markdown, textile, or HTML and may also contain Liquid templating syntax. Both posts and pages can have meta-data assigned on a per-page basis such as title, url path, as well as arbitrary custom meta-data.&lt;/p&gt;
+
+&lt;h3 id=&quot;working_with_posts&quot;&gt;Working With Posts&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Creating a Post&lt;/strong&gt; Posts are created by properly formatting a file and placing it the &lt;code&gt;_posts&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Formatting&lt;/strong&gt; A post must have a valid filename in the form &lt;code&gt;YEAR-MONTH-DATE-title.MARKUP&lt;/code&gt; and be placed in the &lt;code&gt;_posts&lt;/code&gt; directory. If the data format is invalid Jekyll will not recognize the file as a post. The date and title are automatically parsed from the filename of the post file. Additionally, each file must have &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter&quot;&gt;YAML Front-Matter&lt;/a&gt; prepended to its content. YAML Front-Matter is a valid YAML syntax specifying meta-data for the given file.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Order&lt;/strong&gt; Ordering is an important part of Jekyll but it is hard to specify a custom ordering strategy. Only reverse chronological and chronological ordering is supported in Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Since the date is hard-coded into the filename format, to change the order, you must change the dates in the filenames.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tags&lt;/strong&gt; Posts can have tags associated with them as part of their meta-data. Tags may be placed on posts by providing them in the post’s YAML front matter. You have access to the post-specific tags in the templates. These tags also get added to the sitewide collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Categories&lt;/strong&gt; Posts may be categorized by providing one or more categories in the YAML front matter. Categories offer more significance over tags in that they can be reflected in the URL path to the given post. Note categories in Jekyll work in a specific way. If you define more than one category you are defining a category hierarchy “set”. Example:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;pre&gt;&lt;code&gt;title :  Hello World
+categories : [lessons, beginner]&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;This defines the category hierarchy “lessons/beginner”. Note this is &lt;em&gt;one category&lt;/em&gt; node in Jekyll. You won’t find “lessons” and “beginner” as two separate categories unless you define them elsewhere as singular categories.&lt;/p&gt;
+
+&lt;h3 id=&quot;working_with_pages&quot;&gt;Working With Pages&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Creating a Page&lt;/strong&gt; Pages are created by properly formatting a file and placing it anywhere in the root directory or subdirectories that do &lt;em&gt;not&lt;/em&gt; start with an underscore.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Formatting&lt;/strong&gt; In order to register as a Jekyll page the file must contain &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter&quot;&gt;YAML Front-Matter&lt;/a&gt;. Registering a page means 1) that Jekyll will process the page and 2) that the page object will be available in the &lt;code&gt;site.pages&lt;/code&gt; array for inclusion into your templates.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Categories and Tags&lt;/strong&gt; Pages do not compute categories nor tags so defining them will have no effect.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sub-Directories&lt;/strong&gt; If pages are defined in sub-directories, the path to the page will be reflected in the url. Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+|-- people
+    |-- bob
+        |-- essay.html&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This page will be available at &lt;code&gt;http://yourdomain.com/people/bob/essay.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Recommended Pages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;index.html&lt;/strong&gt; You will always want to define the root index.html page as this will display on your root URL.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;404.html&lt;/strong&gt; Create a root 404.html page and GitHub Pages will serve it as your 404 response.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;sitemap.html&lt;/strong&gt; Generating a sitemap is good practice for SEO.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;about.html&lt;/strong&gt; A nice about page is easy to do and gives the human perspective to your website.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;templates_in_jekyll&quot;&gt;Templates in Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Templates are used to contain a page’s or post’s content. All templates have access to a global site object variable: &lt;code&gt;site&lt;/code&gt; as well as a page object variable: &lt;code&gt;page&lt;/code&gt;. The site variable holds all accessible content and metadata relative to the site. The page variable holds accessible data for the given page or post being rendered at that point.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create a Template&lt;/strong&gt; Templates are created by properly formatting a file and placing it in the &lt;code&gt;_layouts&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Formatting&lt;/strong&gt; Templates should be coded in HTML and contain YAML Front Matter. All templates can contain Liquid code to work with your site’s data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rending Page/Post Content in a Template&lt;/strong&gt; There is a special variable in all templates named : &lt;code&gt;content&lt;/code&gt;. The &lt;code&gt;content&lt;/code&gt; variable holds the page/post content including any sub-template content previously defined. Render the content variable wherever you want your main content to be injected into your template:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;...
+&amp;lt;body&amp;gt;
+  &amp;lt;div id=&quot;sidebar&quot;&amp;gt; ... &amp;lt;/div&amp;gt;
+  &amp;lt;div id=&quot;main&quot;&amp;gt;
+    &amp;#123;{content}&amp;#125;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+...&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;subtemplates&quot;&gt;Sub-Templates&lt;/h3&gt;
+
+&lt;p&gt;Sub-templates are exactly templates with the only difference being they define another “root” layout/template within their YAML Front Matter. This essentially means a template will render inside of another template.&lt;/p&gt;
+
+&lt;h3 id=&quot;includes&quot;&gt;Includes&lt;/h3&gt;
+
+&lt;p&gt;In Jekyll you can define include files by placing them in the &lt;code&gt;_includes&lt;/code&gt; folder. Includes are NOT templates, rather they are just code snippets that get included into templates. In this way, you can treat the code inside includes as if it was native to the parent template.&lt;/p&gt;
+
+&lt;p&gt;Any valid template code may be used in includes.&lt;/p&gt;
+
+&lt;h2 id=&quot;using_liquid_for_templating&quot;&gt;Using Liquid for Templating&lt;/h2&gt;
+
+&lt;p&gt;Templating is perhaps the most confusing and frustrating part of Jekyll. This is mainly due to the fact that Jekyll templates must use the Liquid Templating Language.&lt;/p&gt;
+
+&lt;h3 id=&quot;what_is_liquid&quot;&gt;What is Liquid?&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shopify/liquid&quot;&gt;Liquid&lt;/a&gt; is a secure templating language developed by &lt;a href=&quot;http://shopify.com&quot;&gt;Shopify&lt;/a&gt;. Liquid is designed for end-users to be able to execute logic within template files without imposing any security risk on the hosting server.&lt;/p&gt;
+
+&lt;p&gt;Jekyll uses Liquid to generate the post content within the final page layout structure and as the primary interface for working with your site and post/page data.&lt;/p&gt;
+
+&lt;h3 id=&quot;why_do_we_have_to_use_liquid&quot;&gt;Why Do We Have to Use Liquid?&lt;/h3&gt;
+
+&lt;p&gt;GitHub uses Jekyll to power &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;. GitHub cannot afford to run arbitrary code on their servers so they lock developers down via Liquid.&lt;/p&gt;
+
+&lt;h3 id=&quot;liquid_is_not_programmerfriendly&quot;&gt;Liquid is Not Programmer-Friendly.&lt;/h3&gt;
+
+&lt;p&gt;The short story is liquid is not real code and its not intended to execute real code. The point being you can’t do jackshit in liquid that hasn’t been allowed explicitly by the implementation. What’s more you can only access data-structures that have been explicitly passed to the template.&lt;/p&gt;
+
+&lt;p&gt;In Jekyll’s case it is not possible to alter what is passed to Liquid without hacking the gem or running custom plugins. Both of which cannot be supported by GitHub Pages.&lt;/p&gt;
+
+&lt;p&gt;As a programmer - this is very frustrating.&lt;/p&gt;
+
+&lt;p&gt;But rather than look a gift horse in the mouth we are going to suck it up and view it as an opportunity to work around limitations and adopt client-side solutions when possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Aside&lt;/strong&gt; My personal stance is to not invest time trying to hack liquid. It’s really unnecessary &lt;em&gt;from a programmer’s&lt;/em&gt; perspective. That is to say if you have the ability to run custom plugins (i.e. run arbitrary ruby code) you are better off sticking with ruby. Toward that end I’ve built &lt;a href=&quot;http://github.com/plusjade/mustache-with-jekyll&quot;&gt;Mustache-with-Jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;static_assets&quot;&gt;Static Assets&lt;/h2&gt;
+
+&lt;p&gt;Static assets are any file in the root or non-underscored subfolders that are not pages. That is they have no valid YAML Front Matter and are thus not treated as Jekyll Pages.&lt;/p&gt;
+
+&lt;p&gt;Static assets should be used for images, css, and javascript files.&lt;/p&gt;
+
+&lt;h2 id=&quot;how_jekyll_parses_files&quot;&gt;How Jekyll Parses Files&lt;/h2&gt;
+
+&lt;p&gt;Remember Jekyll is a processing engine. There are two main types of parsing in Jekyll.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Content parsing.&lt;/strong&gt; This is done with textile or markdown.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Template parsing.&lt;/strong&gt; This is done with the liquid templating language.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And thus there are two main types of file formats needed for this parsing.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Post and Page files.&lt;/strong&gt; All content in Jekyll is either a post or a page so valid posts and pages are parsed with markdown or textile.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Template files.&lt;/strong&gt; These files go in &lt;code&gt;_layouts&lt;/code&gt; folder and contain your blogs &lt;strong&gt;templates&lt;/strong&gt;. They should be made in HTML with the help of Liquid syntax. Since include files are simply injected into templates they are essentially parsed as if they were native to the template.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Arbitrary files and folders.&lt;/strong&gt; Files that &lt;em&gt;are not&lt;/em&gt; valid pages are treated as static content and pass through Jekyll untouched and reside on your blog in the exact structure and format they originally existed in.&lt;/p&gt;
+
+&lt;h3 id=&quot;formatting_files_for_parsing&quot;&gt;Formatting Files for Parsing.&lt;/h3&gt;
+
+&lt;p&gt;We’ve outlined the need for valid formatting using &lt;strong&gt;YAML Front Matter&lt;/strong&gt;. Templates, posts, and pages all need to provide valid YAML Front Matter even if the Matter is empty. This is the only way Jekyll knows you want the file processed.&lt;/p&gt;
+
+&lt;p&gt;YAML Front Matter must be prepended to the top of template/post/page files:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;pre&gt;&lt;code&gt;layout: post
+category : pages
+tags : [how-to, jekyll]&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;pre&gt;&lt;code&gt;... contents ...&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Three hyphens on a new line start the Front-Matter block and three hyphens on a new line end the block. The data inside the block must be valid YAML.&lt;/p&gt;
+
+&lt;p&gt;Configuration parameters for YAML Front-Matter is outlined here: &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter&quot;&gt;A comprehensive explanation of YAML Front Matter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;defining_layouts_for_posts_and_templates_parsing&quot;&gt;Defining Layouts for Posts and Templates Parsing.&lt;/h4&gt;
+
+&lt;p&gt;The &lt;code&gt;layout&lt;/code&gt; parameter in the YAML Front Matter defines the template file for which the given post or template should be injected into. If a template file specifies its own layout, it is effectively being used as a &lt;code&gt;sub-template.&lt;/code&gt; That is to say loading a post file into a template file that refers to another template file with work in the way you’d expect; as a nested sub-template.&lt;/p&gt;
+
+&lt;h2 id=&quot;how_jekyll_generates_the_final_static_files&quot;&gt;How Jekyll Generates the Final Static Files.&lt;/h2&gt;
+
+&lt;p&gt;Ultimately, Jekyll’s job is to generate a static representation of your website. The following is an outline of how that’s done:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jekyll collects data.&lt;/strong&gt; Jekyll scans the posts directory and collects all posts files as post objects. It then scans the layout assets and collects those and finally scans other directories in search of pages.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jekyll computes data.&lt;/strong&gt; Jekyll takes these objects, computes metadata (permalinks, tags, categories, titles, dates) from them and constructs one big &lt;code&gt;site&lt;/code&gt; object that holds all the posts, pages, layouts, and respective metadata. At this stage your site is one big computed ruby object.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jekyll liquifies posts and templates.&lt;/strong&gt; Next jekyll loops through each post file and converts (through markdown or textile) and &lt;strong&gt;liquifies&lt;/strong&gt; the post inside of its respective layout(s). Once the post is parsed and liquified inside the the proper layout structure, the layout itself is “liquified”. &lt;strong&gt;Liquification&lt;/strong&gt; is defined as follows: Jekyll initiates a Liquid template, and passes a simpler hash representation of the ruby site object as well as a simpler hash representation of the ruby post object. These simplified data structures are what you have access to in the templates.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jekyll generates output.&lt;/strong&gt; Finally the liquid templates are “rendered”, thereby processing any liquid syntax provided in the templates and saving the final, static representation of the file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Notes.&lt;/strong&gt; Because Jekyll computes the entire site in one fell swoop, each template is given access to a global &lt;code&gt;site&lt;/code&gt; hash that contains useful data. It is this data that you’ll iterate through and format using the Liquid tags and filters in order to render it onto a given page.&lt;/p&gt;
+
+&lt;p&gt;Remember, in Jekyll you are an end-user. Your API has only two components:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The manner in which you setup your directory.&lt;/li&gt;
+
+&lt;li&gt;The liquid syntax and variables passed into the liquid templates.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All the data objects available to you in the templates via Liquid are outlined in the &lt;strong&gt;API Section&lt;/strong&gt; of Jekyll-Bootstrap. You can also read the original documentation here: &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/Template-Data&quot;&gt;https://github.com/mojombo/jekyll/wiki/Template-Data&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I hope this paints a clearer picture of what Jekyll is doing and why it works the way it does. As noted, our main programming constraint is the fact that our API is limited to what is accessible via Liquid and Liquid only.&lt;/p&gt;
+
+&lt;p&gt;Jekyll-bootstrap is intended to provide helper methods and strategies aimed at making it more intuitive and easier to work with Jekyll =)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thank you&lt;/strong&gt; for reading this far.&lt;/p&gt;
+
+&lt;h2 id=&quot;next_steps&quot;&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;Please take a look at &lt;a href=&quot;&quot;&gt;&lt;/a&gt; or jump right into &lt;a href=&quot;&quot;&gt;Usage&lt;/a&gt; if you’d like.&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>

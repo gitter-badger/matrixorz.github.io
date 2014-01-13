@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Resume"
+catogories: aboutme
+---
+
+#Hai Cao
+ *<matrix.orz@gmail.com>*
+
+ *<http://justpic.org>*
+##Background
+ I am a software developer with an interest in communication and design.I enjoy experimenting with new 
+
+##Education
+Computer Science and Technoly,M.S.
+Fall 2012-Spring 2015
+Chongqing University,Chongqing
+
+##Proficiency
+python ,C++
+##Expricence
+###MSRA
+####Software Developer-
+

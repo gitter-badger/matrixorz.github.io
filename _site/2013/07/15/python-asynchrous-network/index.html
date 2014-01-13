@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>python asynchrous network &larr; </title>
+   <meta name="author" content="" />
+
+   <link rel="start" href="/" />
+
+	
+	
+	
+	
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/assets/themes/mark-reid/css/screen.css" type="text/css" />
+
+</head>
+<body id="">
+<div id="site">
+  
+  <div id="header">
+    <h1>
+    	<a href="/" title="Just Pic">Just Pic</a>
+    	<span class="byline">&larr; <a href="/"></a></span>
+    </h1>
+    <ul class="nav">
+      <li><a class="home" href="/">Home</a></li>
+      <li><a  href="/archive.html">Archive</a></li>
+      <li><a  href="/pages.html">Pages</a></li>
+      <li><a  href="/categories.html">Categories</a></li>
+      <li><a  href="/tags.html">Tags</a></li>
+    </ul>
+  </div>
+
+  
+<div id="page">
+	
+  <h1 class="emphnext">python asynchrous network</h1>
+  <ul class="tag_box inline">
+  
+  
+
+
+  
+    
+  
+
+
+
+  </ul>
+
+  <hr />
+<h2 id="selectpollepoll_test_in_python">select,poll,epoll test in python</h2>
+
+<p><strong><em>select test</em></strong> selecttest.py</p>
+
+<pre><code>import select
+import socket
+import Queue
+
+#create a socket
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+#set option reused
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+
+server_address=(&#39;localhost&#39;,10001)
+server.bind(server_address)
+
+server.listen(10)
+
+#sockets from which we except to read
+inputs=[server]
+
+#sockets from which we expect to write
+outputs=[]
+
+#Outgoing message queues (socket:Queue)
+message_queues={}
+
+#A optional parameter for select is TIMEOUT
+timeout=20
+
+while inputs:
+    print &quot;waiting for next event&quot;
+    #first parameter--read list,second parameter--write list,third parameter--error list
+    readable,writable,exceptional=select.select(inputs,outputs,inputs,timeout)
+
+    #when timeout reached,select return three empty list
+    if not (readable or writable or exceptional):
+        print &quot;Time out!&quot;
+        break;
+    for s in readable:
+        if s is server:
+            #A &quot;readable&quot; socket is ready to accept a connection
+            connection,client_address=s.accept()
+            print &quot;  connection from&quot;,client_address
+            connection.setblocking(0)
+            inputs.append(connection)
+            message_queues[connection]=Queue.Queue()
+        else:
+            data=s.recv(1024)
+            if data:
+                print &quot;received &quot;,data, &quot;from &quot;,s.getpeername()
+                message_queues[s].put(data)
+                #Add output  channel for response
+                if s not in outputs:
+                    outputs.append(s)
+            else:
+                #Interpret empty result as closed connection
+                print &quot; closing&quot;, client_address
+                if s in outputs:
+                    outputs.remove(s)
+                inputs.remove(s)
+                s.close()
+                #remove message queue
+                del message_queues[s]
+    for s in writable:
+        try:
+            next_msg=message_queues[s].get_nowait()
+        except Queue.Empty:
+            print &quot; &quot;,s.getpeername,&quot; queue empty&quot;
+            outputs.remove(s)
+        else:
+            print &quot;sending &quot;,next_msg,&quot; to&quot;,s.getpeername()
+            s.send(next_msg)
+    for s in exceptional:
+        print &quot; exception condition on &quot;,s.getpeername()
+        #stop listening for input on the connection
+        inputs.remove(s)
+        if s in outputs:
+            outputs.remove(s)
+        s.close()
+        #Remove message queue</code></pre>
+
+<p><strong><em>polltest</em></strong> polltest.py</p>
+
+<pre><code>import socket
+import select
+import Queue
+
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+server_address=(&quot;localhost&quot;,10001)
+
+print &quot;Starting up on %s port %s&quot; % server_address
+server.bind(server_address)
+server.listen(5)
+message_queues={}
+#The timeout value is represente in milliseconds,instead of seconds
+timeout=100
+#Create a limit for the next
+READ_ONLY=(select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR)
+READ_WRITE=(READ_ONLY|select.POLLOUT)
+
+#set up the poller
+poller=select.poll()
+poller.register(server,READ_ONLY)
+#map file descriptors to socket objects
+fd_to_socket={server.fileno():server,}
+while True:
+    print &quot;Waiting for the next event&quot;
+    events=poller.poll(timeout)
+    print &quot;*&quot;*20
+    print len(events)
+    print events
+    print &quot;*&quot;*20
+    for fd,flag in events:
+        s=fd_to_socket[fd]
+        if flag &amp; (select.POLLIN|select.POLLPRI):
+            if s is server:
+                #A readable socket is ready to accept a connection
+                connection,client_address=s.accept()
+                print &quot;Connection &quot;,client_address
+                connection.setblocking(False)
+
+                fd_to_socket[connection.fileno()]=connection
+                poller.register(connection,READ_ONLY)
+
+                #Give the connection a queue to send data
+                message_queues[connection]=Queue.Queue
+            else:
+                data=s.recv(1024)
+                if data:
+                    # A readable client socket has data
+                    print &quot; received %s from %s &quot; % (data,s.getpeername())
+                    message_queues[s].put(data)
+                    poller.modify(s,READ_WRITE)
+                else:
+                    #Close the connection
+                    print &quot; closing &quot;,s.getpeername()
+                    #Stop listening for input on the connection
+                    poller.unregister(s)
+                    s.close()
+                    del message_queues[s]
+        elif flag &amp; select.POLLHUP:
+            #A client that &quot;Hang up&quot;,to be closed.
+            print &quot;closing &quot;,s.getpeername,&quot;(HUP)&quot;
+            poller.unregister(s)
+            s.close()
+        elif flag &amp; select.POLLOUT:
+            #SOCKET is ready to send DATA,if there is any to send
+            try:
+                next_msg=message_queues[s].get_nowait()
+            except Queue.Empty:
+                #No messages waiting so stop checking
+                print s.getpeername,&quot; queue empty&quot;
+                poller.modify(s,READ_ONLY)
+            else:
+                print &quot; sending %s to %s&quot; %(next_msg,s.getpeername())
+                s.send(next_msg)
+        elif flag &amp; select.POLLERR:
+            #Any events with POLLER cause the server to close the sockets
+            print &quot; exception on&quot;,s.getpeername()
+            poller.unregister(s)
+            s.close()
+            del message_queues[s]</code></pre>
+
+<p><strong><em>epoll test</em></strong> epolltest.py</p>
+
+<pre><code>import socket,logging
+import select,errno
+
+logger=logging.getLogger(&quot;network-server&quot;)
+
+def InitLog():
+    logger.setLevel(logging.DEBUG)
+
+    fh=logging.FileHandler(&quot;network-server.log&quot;)
+    fh.setLevel(logging.DEBUG)
+    ch=logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+
+    formatter=logging.Formatter(&quot;%(asctime)s - %(name)s - %(levelname)s -%(message)s&quot;)
+    ch.setFormatter(formatter)
+    fh.setFormatter(formatter)
+
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+
+if __name__==&quot;__main__&quot;:
+    InitLog()
+
+    try:
+        listen_fd=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    except socket.error,msg:
+        logger.error(&quot;create a socket failed&quot;)
+
+    try:
+        listen_fd.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+    except socket.error,msg:
+        logger.error(&quot;setsocketopt error&quot;)
+
+    try:
+        listen_fd.bind((&#39;&#39;,10001))
+    except socket.error,msg:
+        logger.error(&quot;listen file id bind ip error&quot;)
+
+    try:
+        listen_fd.listen(10)
+    except socket.error,msg:
+        logger.error(msg)
+    try:
+        epoll_fd=select.epoll()
+        epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
+    except select.error,msg:
+        logger.error(msg)
+    
+    connections={}
+    addresses={}
+    datalist={}
+    while True:
+        epoll_list = epoll_fd.poll()
+        for fd,events in epoll_list:
+            if fd==listen_fd.fileno():
+                conn,addr=listen_fd.accept()
+                logger.debug(&quot;accept connction from  %s,%d,fd = %d&quot; %(addr[0],addr[1],conn.fileno()))
+                conn.setblocking(0)
+                epoll_fd.register(conn.fileno(),select.EPOLLIN|select.EPOLLET)
+                connections[conn.fileno()]=conn 
+                addresses[conn.fileno()]=addr
+            elif select.EPOLLIN  &amp; events:
+                datas=&#39;&#39;
+                while True:
+                    try:
+                        data=connections[fd].recv(10)
+                        if not data and not datas:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.debug(&quot;%s,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
+                            
+                            break
+                        else:
+                            datas+=data 
+                    except socket.error,msg:
+                        if msg.errno==errno.EAGAIN:
+                            logger.debug(&quot;%s receive %s&quot; % (fd,datas))
+                            datalist[fd]=datas
+                            epoll_fd.modify(fd,select.EPOLLET|select.EPOLLOUT)
+                            break
+                        else:
+                            epoll_fd.unregister(fd)
+                            connections[fd].close()
+                            logger.error(msg)
+                            break
+            elif select.EPOLLHUP &amp; events:
+                epoll_fd.unregister(fd)
+                connections[fd].close()
+                logger.debug(&quot;%s ,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
+            elif select.EPOLLOUT &amp; events:
+                sendLen=0
+                while True:
+                    sendLen += connections[fd].send(datalist[fd][sendLen:])
+                    if sendLen == len(datalist[fd]):
+                         break
+                epoll_fd.modify(fd,select.EPOLLIN|select.EPOLLET)
+            else:
+                continue</code></pre>
+
+<p><strong><em>common client</em></strong> commontest.py</p>
+
+<pre><code>import socket
+messages = [&quot;This is the message&quot;,
+         &quot;It will be send&quot;,
+         &quot;in parts&quot;]
+
+print &quot;Connect to the server&quot;
+
+server_address=(&quot;localhost&quot;,10001)
+
+#Create a TCP/IP sock
+socks=[]
+for i in range(10):
+     socks.append(socket.socket(socket.AF_INET,socket.SOCK_STREAM))
+
+for s in socks:
+    s.connect(server_address)
+
+counter=0
+for message in messages:
+    for s in socks:
+        counter+=1
+        print &quot; %s sending %s &quot;%(s.getpeername(),message+&quot; version &quot;+str(counter))
+        s.send(message+&quot; version &quot;+str(counter))
+    for s in socks:
+        data=s.recv(1024)
+        print &quot; %s received %s &quot; % (s.getpeername(),data)
+        if not data:
+            print &quot;closing socket&quot;,s.getpeername()
+            s.close()</code></pre>
+
+<p>针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html</p>
+
+<p>针对asyncore的介绍和使用有很好的两篇博客： blog.csdn.net/livefun/article/details/8721772</p>
+
+<p>http://www.nightmare.com/medusa/async_sockets.html</p>
+
+  <address class="signature">
+    <a class="author" href="/"></a> 
+    <span class="date">15 July 2013</span>
+    <span class="location"></span>
+  </address>
+  
+  <div class="prev-next">
+  
+    <a href="/2013/07/21/backbonejs" class="next" title="backbonejs">Next Post &rarr;</a>
+  
+  
+    <a href="/2013/07/05/mysql-export-and-import" class="prev" title="mysql export and import">&larr; Earlier Post</a>
+  
+  </div>
+  
+</div><!-- End Page -->
+
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = ''; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+
+  
+  <div id="footer">
+  	<address>
+  		<span class="copyright">
+  			Content by <a href="/info/site.html"></a>. Design by 
+  			<a href="http://mark.reid.name/">Mark Reid</a>
+  			<br/>
+  			(<a rel="licence" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Some rights reserved</a>)			
+  		</span>
+  		<span class="engine">
+  			Powered by <a href="http://github.com/mojombo/jekyll/" title="A static, minimalist CMS">Jekyll</a>
+  		</span>
+  	</address>
+  </div>
+  
+</div>
+
+<!--[if IE 6]>
+<script type="text/javascript"> 
+	/*Load jQuery if not already loaded*/ if(typeof jQuery == 'undefined'){ document.write("<script type=\"text/javascript\"   src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\"></"+"script>"); var __noconflict = true; } 
+	var IE6UPDATE_OPTIONS = {
+		icons_path: "http://static.ie6update.com/hosted/ie6update/images/"
+	}
+</script>
+<script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+<![endif]-->
+
+  
+</body>
+</html>
+
