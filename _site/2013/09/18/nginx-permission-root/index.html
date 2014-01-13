@@ -6,14 +6,12 @@
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title>nginx permission root &larr; </title>
-   <meta name="author" content="Hai" />
+   <meta name="author" content="" />
 
    <link rel="start" href="/" />
 
 	
 	
-	
-  	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/matrixorz" title="RSS feed" />
 	
 	
 
@@ -30,7 +28,7 @@
   <div id="header">
     <h1>
     	<a href="/" title="Just Pic">Just Pic</a>
-    	<span class="byline">&larr; <a href="/">Hai</a></span>
+    	<span class="byline">&larr; <a href="/"></a></span>
     </h1>
     <ul class="nav">
       <li><a class="home" href="/">Home</a></li>
@@ -75,7 +73,7 @@
 <p>coredump 8,35011131 It shows up properly in access.log now, as /map/, but I still get a 403 forbidden error, public_html/ and every directory under it is 777, and I’ve tried chowning it to nginx and root, but I still get the 403 error. Any ideas? – Phase Mar 12 ‘11 at 17:25 @phase well I never had a similar problem, but check this link and this other one. Looks like lack of permission to read on each directory of the whole path you are serving (in your case, home, user, public_html and map). – coredump Mar 12 ‘11 at 20:00 You need to be careful with /s when using alias. The location and alias you posted will strip the / from the request, but the alias doesn’t add it back, so a request for /map/foo.html will actually look for /home/user/public_htmlfoo.html. When the location prefix matches the alias suffix, it’s easier to use use root /home/user/public_html. You could also fix it by just adding a / onto the end of the alias /home/user/public_html/map/;</p>
 
   <address class="signature">
-    <a class="author" href="/">Hai</a> 
+    <a class="author" href="/"></a> 
     <span class="date">18 September 2013</span>
     <span class="location"></span>
   </address>
@@ -118,7 +116,7 @@
   <div id="footer">
   	<address>
   		<span class="copyright">
-  			Content by <a href="/info/site.html">Hai</a>. Design by 
+  			Content by <a href="/info/site.html"></a>. Design by 
   			<a href="http://mark.reid.name/">Mark Reid</a>
   			<br/>
   			(<a rel="licence" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Some rights reserved</a>)			
