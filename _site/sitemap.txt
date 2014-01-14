@@ -9,6 +9,7 @@ http://username.github.io/categories.html
 http://username.github.io/tags.html
 http://username.github.io/atom.xml
 
+http://username.github.io/2014/01/14/computational-science
 http://username.github.io/2014/01/01/best-award-paper
 http://username.github.io/2013/12/04/install-redmine-in-ubuntu
 http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server

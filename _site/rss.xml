@@ -5,10 +5,18 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-14T00:53:04+08:00</lastBuildDate>
-        <pubDate>2014-01-14T00:53:04+08:00</pubDate>
+        <lastBuildDate>2014-01-14T11:20:11+08:00</lastBuildDate>
+        <pubDate>2014-01-14T11:20:11+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>computational science</title>
+                <description>&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/01/14/computational-science</link>
+                <guid>http://username.github.io/2014/01/14/computational-science</guid>
+                <pubDate>2014-01-14T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>best award paper</title>

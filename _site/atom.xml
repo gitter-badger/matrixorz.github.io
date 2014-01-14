@@ -4,13 +4,21 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-01-14T00:53:04+08:00</updated>
+ <updated>2014-01-14T11:20:11+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>computational science</title>
+   <link href="http://username.github.io/2014/01/14/computational-science"/>
+   <updated>2014-01-14T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/01/14/computational-science</id>
+   <content type="html">&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>best award paper</title>
