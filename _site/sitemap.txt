@@ -42,8 +42,6 @@ http://username.github.io/2013/07/21/backbonejs
 http://username.github.io/2013/07/15/python-asynchrous-network
 http://username.github.io/2013/07/05/mysql-export-and-import
 http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv
-http://username.github.io/2013/07/02/1
-http://username.github.io/2013/07/02/
 http://username.github.io/2013/07/01/text-mining
 http://username.github.io/2013/07/01/lucene
 http://username.github.io/2013/06/29/no-plan

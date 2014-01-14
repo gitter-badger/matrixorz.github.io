@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-01-14T11:20:11+08:00</updated>
+ <updated>2014-01-14T14:41:48+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -798,22 +798,6 @@ sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;
 virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Ok!&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>中文测试1</title>
-   <link href="http://username.github.io/2013/07/02/1"/>
-   <updated>2013-07-02T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/02/1</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>中文</title>
-   <link href="http://username.github.io/2013/07/02/"/>
-   <updated>2013-07-02T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/</id>
-   <content type="html"></content>
  </entry>
  
  <entry>

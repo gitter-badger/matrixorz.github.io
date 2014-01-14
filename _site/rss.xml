@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-14T11:20:11+08:00</lastBuildDate>
-        <pubDate>2014-01-14T11:20:11+08:00</pubDate>
+        <lastBuildDate>2014-01-14T14:41:48+08:00</lastBuildDate>
+        <pubDate>2014-01-14T14:41:48+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -795,22 +795,6 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Ok!&lt;/p&gt;</description>
                 <link>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</link>
                 <guid>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</guid>
-                <pubDate>2013-07-02T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>中文测试1</title>
-                <description></description>
-                <link>http://username.github.io/2013/07/02/1</link>
-                <guid>http://username.github.io/2013/07/02/1</guid>
-                <pubDate>2013-07-02T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>中文</title>
-                <description></description>
-                <link>http://username.github.io/2013/07/02/</link>
-                <guid>http://username.github.io/2013/07/</guid>
                 <pubDate>2013-07-02T00:00:00+08:00</pubDate>
         </item>
 
