@@ -4,13 +4,23 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-01-14T14:41:48+08:00</updated>
+ <updated>2014-03-07T21:26:24+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>text analysis</title>
+   <link href="http://username.github.io/2014/02/07/text-analysis"/>
+   <updated>2014-02-07T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/02/07/text-analysis</id>
+   <content type="html">&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
+
+&lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>computational science</title>
@@ -366,14 +376,20 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
    <updated>2013-07-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
-   <content type="html">&lt;p&gt;add one element in the parent var $li_1=$(”&lt;li&gt;新增节点：数据结构&lt;/li&gt;”); var $li_2=$(”&lt;li&gt;新增节点：设计模式&lt;/li&gt;”);&lt;/p&gt;
+   <content type="html">&lt;p&gt;add one element in the parent var $li_1=$(”&lt;/p&gt;
+&lt;li&gt;新增节点：数据结构&lt;/li&gt;
+&lt;p&gt;”); var $li_2=$(”&lt;/p&gt;
+&lt;li&gt;新增节点：设计模式&lt;/li&gt;
+&lt;p&gt;”);&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
 $parent.append($li_1);
 $parent.append($li_2);
 $parent.append($li_1).append($li_2);&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;add attribute in the added element: var $li_1=$(”&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;”);&lt;/p&gt;
+&lt;p&gt;add attribute in the added element: var $li_1=$(”&lt;/p&gt;
+&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;
+&lt;p&gt;”);&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
 $parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
@@ -1008,7 +1024,13 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</c
 pull-debian-source hdf5 experimental    
 cd hdf5-*
 sudo mk-build-deps -ir
-debuild -us -uc&lt;/code&gt;&lt;/pre&gt;</content>
+debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上述方法现在已经不适用 由于本机为64bit linux： 采用下面方法进行设置： wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz&lt;/p&gt;
+
+&lt;p&gt;解压之，并在.bashrc中设置： export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared&lt;/p&gt;
+
+&lt;p&gt;安装 blosc 安装 lzo2-2 lzo2-dev sudo apt-get install lzo2-2 lzo2-dev&lt;/p&gt;</content>
  </entry>
  
  <entry>

@@ -17,3 +17,17 @@ Code:
     cd hdf5-*
     sudo mk-build-deps -ir
     debuild -us -uc
+
+上述方法现在已经不适用 
+由于本机为64bit linux：
+采用下面方法进行设置：
+    wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
+
+解压之，并在.bashrc中设置：
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
+    export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
+
+安装 blosc
+安装 lzo2-2 lzo2-dev
+    sudo apt-get install lzo2-2 lzo2-dev
+   
