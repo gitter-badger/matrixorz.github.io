@@ -1,4 +1,5 @@
 
+http://username.github.io/404.html
 http://username.github.io/index.html
 http://username.github.io/categories.html
 http://username.github.io/archive.html

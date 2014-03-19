@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Left
 
 Left is a clean, whitespace-happy layout for [Jekyll](https://github.com/mojombo/jekyll).
@@ -72,7 +71,6 @@ For all usage and documentation please see: <http://jekyllbootstrap.com>
 However, the actual API has not changed at all.
 You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
 
-<<<<<<< HEAD
 ## Contributing 
 
 This repository tracks 2 projects:
@@ -118,10 +116,8 @@ Translation : it might take a bit longer so please be patient! (but sincerely th
 **Jekyll-Bootstrap Documentation Website.**
 
 The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
->>>>>>> jekyllbootstrap/master
 
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
->>>>>>> 952ce67087ab971784b0f6d20d18be4ae908a127
