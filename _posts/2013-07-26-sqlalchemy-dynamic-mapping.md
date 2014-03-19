@@ -6,6 +6,8 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+#sqlalchemy动态映射
+代码如下:
 
     from sqlalchemy import *
     from sqlalchemy.orm import *

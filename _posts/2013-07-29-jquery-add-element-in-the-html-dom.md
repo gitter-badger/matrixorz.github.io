@@ -6,6 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+#使用jquery增加元素节点
 
 add one element in the parent
     var $li_1=$("<li>新增节点：数据结构</li>");

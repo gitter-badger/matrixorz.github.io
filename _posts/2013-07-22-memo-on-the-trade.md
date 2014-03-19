@@ -4,13 +4,16 @@ title: "memo on the trade"
 description: ""
 category: 
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 
-RTA
+RTA github
 
-www.lowindata.com
+[backbonejs note](www.lowindata.com)
 
-backbonejs:www.icoding.co/2012/04/backbonejs-html-2
+[backbonejs](www.icoding.co/2012/04/backbonejs-html-2)
+
+[pyctp](https://code.google.com/p/pyctp/)
 
 

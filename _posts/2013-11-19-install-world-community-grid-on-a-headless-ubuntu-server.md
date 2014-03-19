@@ -6,20 +6,24 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-
+在ubuntu上安装BOINC
+===================
     sudo apt-get aptitude install boinc-client
 (you can also download it from wcg and install)
 
 find your account key:
+
     boinccmd --lookup_account http://www.worldcommunitygrid.org username password
     
 You should get a response something like this
 dfb74c9b9...
 
 attach to your project
+
     boinccmd --project_attach http://www.worldcommunitygrid.org dfb74c....
     
 if you want to verify your attached enter the following command:
+
     boinccmd --get_state
 
 Futher resources:

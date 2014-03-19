@@ -6,22 +6,28 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+Learning Python Sites
+=====================
+**basic(初级)**
 
-basic:
+[A byte of Python(中文的)](http://woodpecker.org.cn/abyteofpython_cn/chinese/)
 
-http://woodpecker.org.cn/abyteofpython_cn/chinese/
-http://www.codecademy.com/zh/tracks/python
-http://inventwithpython.com/chapters/
+[codecademy课程](http://www.codecademy.com/zh/tracks/python)
 
-medium:
+[invent with python](http://inventwithpython.com/chapters/)
 
-https://github.com/gregmalcolm/python_koans
+**medium(中级)**
 
-advanced:
-http://anandology.com/python-practice-book
-www.kevinsheppard.com/images/0/09/Python_introduction.pdf
-www.tuiku.com maybe is also good
+通过改错学习python [TDD 模式学习python](https://github.com/gregmalcolm/python_koans)
+
+**advanced(高级)**
+
+[python practice book](http://anandology.com/python-practice-book)
+
+[python作统计分析](www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
+
+[tuiku](www.tuiku.com maybe) 
 
 online game:
-www.checkio.org
+[Game](www.checkio.org)
 

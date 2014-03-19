@@ -4,6 +4,7 @@ title: "computational science"
 description: ""
 category: 
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 

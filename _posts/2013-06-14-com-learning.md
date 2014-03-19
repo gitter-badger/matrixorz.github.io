@@ -7,4 +7,4 @@ tags: []
 ---
 {% include JB/setup %}
 
-<a href="http://www.vckbase.com/index.php/wv/1315" >COM Learning</a>
+[深入理解COM](http://www.vckbase.com/index.php/wv/1315)

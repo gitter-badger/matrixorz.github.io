@@ -12,22 +12,27 @@ possibly you will have to build it from source to get everything right.
 
 Code:
    
-    apt-get install devscripts equivs ubuntu-dev-tools 
-    pull-debian-source hdf5 experimental    
-    cd hdf5-*
-    sudo mk-build-deps -ir
-    debuild -us -uc
+    $apt-get install devscripts equivs ubuntu-dev-tools 
+    $pull-debian-source hdf5 experimental    
+    $cd hdf5-*
+    $sudo mk-build-deps -ir
+    $debuild -us -uc
 
-上述方法现在已经不适用 
-由于本机为64bit linux：
-采用下面方法进行设置：
-    wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
+上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,
+由于本机为64bit linux,下载64位下的二进制包：
 
-解压之，并在.bashrc中设置：
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
-    export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
+    $wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
 
-安装 blosc
+解压后，并在.bashrc中设置：
+
+    $export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
+    $export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
+    $source .bashrc
+安装 blosc (可选)
+
 安装 lzo2-2 lzo2-dev
+
     sudo apt-get install lzo2-2 lzo2-dev
+
+至此HDF5可用
    

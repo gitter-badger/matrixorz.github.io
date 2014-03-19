@@ -67,69 +67,83 @@
     October 27, 2013
   </section>
 
-  <p>sudo apt-get install nginx
+  <p>Install OpenQuant Project</p>
+
+<pre><code>sudo apt-get install nginx
 sudo apt-get install git
 sudo apt-get install mysql-server
-sudo apt-get install python-dev</p>
+sudo apt-get install python-dev
 
-<p>install easy_install on ubuntu:
+install easy_install on ubuntu:
 sudo apt-get install python-setuptools
 sudo easy_install virtualenv
 sudo easy_install pip
 virtualenv ~/trade
 source ~/trade/bin/activate
 install numpy scipy pandas and ta-lib
-sudo pip install Cython</p>
+sudo pip install Cython
+</code></pre>
 
-<p>&mdash;-due to blas libs&mdash;-
-sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+<p><strong>due to blas libs</strong></p>
+
+<pre><code>sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
 pip install numpy
-pip install scipy</p>
+pip install scipy
+</code></pre>
 
-<h1>install ta-lib</h1>
+<p><strong>install ta-lib</strong></p>
 
-<p>cd ~
+<pre><code>cd ~
 wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 sudo apt-get  install  build-essential
 tar -zxvf ta-lib-0.4.0-src.tar.gz
 cd ta-lib-0.4.0
-./configure &ndash;prefix=/usr
+./configure --prefix=/usr
 make
-sudo make install</p>
+sudo make install
+</code></pre>
 
-<h1>install gevent</h1>
+<p><strong>install gevent</strong>
+    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+    tar -zxvf
+    ./configure
+    make
+    sudo make install</p>
 
-<p>wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-tar -zxvf
-./configure
-make
-sudo make install</p>
-
-<p>cd ~/www
+<pre><code>cd ~/www
 git clone https://github.com/pydata/pandas.git
-git clone https://github.com/mrjbq7/ta-lib.git</p>
+git clone https://github.com/mrjbq7/ta-lib.git
+</code></pre>
 
-<p>update the nginx:
-sudo apt-get install python-software-properties
+<p><strong>update the nginx</strong></p>
+
+<pre><code>sudo apt-get install python-software-properties
 sudo apt-get install sotware-properties-common
 sudo add-apt-repository ppa:nginx/stable
 sudo apt-get update
-sudo apt-get install nginx</p>
+sudo apt-get install nginx
+</code></pre>
 
-<h1>mysql init</h1>
+<p><strong>mysql init</strong></p>
 
-<p>sudo apt-get install mysql-server libmysqld-dev
+<pre><code>sudo apt-get install mysql-server libmysqld-dev
 pip install MySQL-python
-insert into mysql.user(Host,User,Password) values(&ldquo;localhost&rdquo;,&ldquo;david&rdquo;,password(&ldquo;david&rdquo;));
-用户授权：
-给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。
-mysql>grant all privileges on <em>.</em> to david@localhost identified by &lsquo;david&rsquo;;</p>
+insert into mysql.user(Host,User,Password) values("localhost","david",password("david"));
+</code></pre>
 
-<h1>install redis</h1>
+<p><strong>用户授权</strong></p>
 
-<p>http://rubyer.me/blog/638/ redis.io</p>
+<p>给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
 
-<h1>uwsgi or gunicorn</h1>
+<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david';
+</code></pre>
+
+<p><strong>install redis</strong></p>
+
+<pre><code>http://rubyer.me/blog/638/ redis.io
+</code></pre>
+
+<p><strong>uwsgi or gunicorn(optional)</strong></p>
 
 
   <!-- TODO: bio here -->

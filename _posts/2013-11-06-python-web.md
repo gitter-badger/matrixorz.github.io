@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "python web"
+title: "understand WSGI"
 description: ""
 category: 
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 
-web.py源码解析:http://www.myexception.cn/perl-python/1351788.html
-WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html
+[web.py源码解析](http://www.myexception.cn/perl-python/1351788.html)
+[WSGI](http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html)
 
 web server side:
 

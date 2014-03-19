@@ -1,1 +1,7 @@
-this is a startup page
+---
+layout: page
+title: "startup"
+---
+
+Startups
+========

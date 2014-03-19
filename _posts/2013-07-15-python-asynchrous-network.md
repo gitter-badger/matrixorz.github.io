@@ -2,15 +2,15 @@
 layout: post
 title: "python asynchrous network"
 description: ""
-category: 
-tags: []
+category: python network 
+tags: [network]
 ---
 {% include JB/setup %}
 --------------------------------
 select,poll,epoll test in python
 --------------------------------
 
-***select test*** selecttest.py
+selecttest.py
 
     import select
     import socket
@@ -91,8 +91,7 @@ select,poll,epoll test in python
             s.close()
             #Remove message queue
 
-
-***polltest*** polltest.py
+polltest.py
     
     import socket
     import select
@@ -176,7 +175,7 @@ select,poll,epoll test in python
                 s.close()
                 del message_queues[s]
                 
-***epoll test*** epolltest.py
+epolltest.py
 
     import socket,logging
     import select,errno
@@ -277,8 +276,7 @@ select,poll,epoll test in python
                 else:
                     continue
     
-
-***common client***  commontest.py
+commontest.py(client code)
 
     import socket
     messages = ["This is the message",
@@ -309,13 +307,13 @@ select,poll,epoll test in python
             if not data:
                 print "closing socket",s.getpeername()
                 s.close()
-    
- 针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html
  
- 针对asyncore的介绍和使用有很好的两篇博客：
- blog.csdn.net/livefun/article/details/8721772
+**benchmark**
+
+ 针对epoll的使用有一篇很好的[博客](scotdoyle.com/python-epoll-howto.html)
  
- http://www.nightmare.com/medusa/async_sockets.html
+ 针对asyncore的介绍和使用有很好的两篇博客：[blog1](blog.csdn.net/livefun/article/details/8721772)
+  [blog2](http://www.nightmare.com/medusa/async_sockets.html)
     
     
         

@@ -4,6 +4,7 @@ title: "data analysis"
 description: ""
 category: 
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 

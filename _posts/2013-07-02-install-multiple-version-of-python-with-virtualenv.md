@@ -6,6 +6,8 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+#ubuntu上安装多个版本的python
+
 安装python3.3在ubuntu上
 
     sudo apt-get install python-software-properties

@@ -4,6 +4,7 @@ title: "qt fourteen steps"
 description: ""
 category: 
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 

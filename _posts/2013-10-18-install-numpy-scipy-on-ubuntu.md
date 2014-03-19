@@ -6,6 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+#linux上安装numpy scipy
 
     sudo pip install numpy
     sudo apt-get install libatlas-base-dev gfortran

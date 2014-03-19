@@ -67,8 +67,34 @@
     September 18, 2013
   </section>
 
-  <p>nginx 13:permission denied solved:
-http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain</p>
+  <h1>nginx 权限问题的解决方法</h1>
+
+<p>按照下面方法配置nginx时出现用户权限问题
+    server{
+    listen 4002;
+    server_name localhost;
+    access_log logs/access.log;</p>
+
+<pre><code>location / {
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header Host $http_host;
+   proxy_set_header X-NginxX-Proxy true;
+
+   proxy_pass http://backend;
+   proxy_redirect off;
+
+   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection "upgrade";
+   }
+   }
+ upstream backend {
+ server 127.0.0.1:3201;
+ }
+</code></pre>
+
+<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a></p>
 
 <p>The root directive is the problem here. Quote from the doc:</p>
 
@@ -76,21 +102,12 @@ http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-mult
 
 <p>Basically, only use root for real roots: if the content is to be at / use root. If it&rsquo;s going to end on a subfolder, use alias:</p>
 
-<p>location  /map/ {
+<pre><code>location  /map/ {
   alias  /home/user/public_html/map/;
 }
-Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map</p>
+</code></pre>
 
-<p>share|improve this answer
-edited Jan 26 &lsquo;12 at 15:30</p>
-
-<p>answered Mar 12 &lsquo;11 at 15:39</p>
-
-<p>coredump
-8,35011131
-It shows up properly in access.log now, as /map/, but I still get a 403 forbidden error, public_html/ and every directory under it is 777, and I&rsquo;ve tried chowning it to nginx and root, but I still get the 403 error. Any ideas? – Phase Mar 12 &lsquo;11 at 17:25
-@phase well I never had a similar problem, but check this link and this other one. Looks like lack of permission to read on each directory of the whole path you are serving (in your case, home, user, public_html and map). – coredump Mar 12 '11 at 20:00
-You need to be careful with /s when using alias. The location and alias you posted will strip the / from the request, but the alias doesn&rsquo;t add it back, so a request for /map/foo.html will actually look for /home/user/public_htmlfoo.html. When the location prefix matches the alias suffix, it&rsquo;s easier to use use root /home/user/public_html. You could also fix it by just adding a / onto the end of the alias /home/user/public_html/map/;</p>
+<p>Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map</p>
 
 
   <!-- TODO: bio here -->

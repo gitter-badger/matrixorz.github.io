@@ -6,6 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
+#webpy学习笔记
 
 web.ctx
 web.loadhook(handler)函数在web请求前执行handler函数

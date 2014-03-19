@@ -2,8 +2,9 @@
 layout: post
 title: "machine learning in action"
 description: ""
-category: 
+category: machine learning
 tags: []
+draft: true
 ---
 {% include JB/setup %}
 
