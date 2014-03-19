@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-03-19T21:51:42+08:00</lastBuildDate>
-        <pubDate>2014-03-19T21:51:42+08:00</pubDate>
+        <lastBuildDate>2014-03-19T22:09:54+08:00</lastBuildDate>
+        <pubDate>2014-03-19T22:09:54+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -608,20 +608,21 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
                 <title>jquery add element in the html dom</title>
                 <description>&lt;h1&gt;使用jquery增加元素节点&lt;/h1&gt;
 
-&lt;p&gt;add one element in the parent
-    var $li_1=$(&amp;ldquo;&lt;li&gt;新增节点：数据结构&lt;/li&gt;&amp;rdquo;);
-    var $li_2=$(&amp;ldquo;&lt;li&gt;新增节点：设计模式&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
+&lt;p&gt;add one element in the parent&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $parent=$(&quot;.nm_ul&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li&amp;gt;新增节点：数据结构&amp;lt;/li&amp;gt;&quot;);
+var $li_2=$(&quot;&amp;lt;li&amp;gt;新增节点：设计模式&amp;lt;/li&amp;gt;&quot;);
+
+var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 $parent.append($li_2);
 $parent.append($li_1).append($li_2);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;add attribute in the added element:
-    var $li_1=$(&amp;ldquo;&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
+&lt;p&gt;add attribute in the added element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $parent=$(&quot;.nm_ul&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title=&#39;新增节点：数据结构&#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
+var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 &lt;/code&gt;&lt;/pre&gt;
 </description>
