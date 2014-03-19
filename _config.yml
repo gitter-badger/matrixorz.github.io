@@ -1,3 +1,7 @@
+#URL
+#
+url: http://i.justpic.org/about
+root: /about/
 markdown: rdiscount
 pygments: true
 permalink: /posts/:title
