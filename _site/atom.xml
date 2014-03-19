@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-03-07T21:26:24+08:00</updated>
+ <updated>2014-03-19T10:26:54+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -13,13 +13,33 @@
 
  
  <entry>
+   <title>Sample draft post</title>
+   <link href="http://username.github.io/posts/2014/02/25/draft"/>
+   <updated>2014-02-25T00:00:00+08:00</updated>
+   <id>http://username.github.io/posts/2014/02/25/draft</id>
+   <content type="html">&lt;p&gt;This is a draft post that isn&amp;rsquo;t ready for the wild. See how it doesn&amp;rsquo;t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
+
+&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you&amp;rsquo;re off to the races.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
+install and set up Left for your own purposes.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
+&lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>text analysis</title>
    <link href="http://username.github.io/2014/02/07/text-analysis"/>
    <updated>2014-02-07T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/02/07/text-analysis</id>
    <content type="html">&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
 
-&lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;</content>
+&lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -27,7 +47,8 @@
    <link href="http://username.github.io/2014/01/14/computational-science"/>
    <updated>2014-01-14T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/01/14/computational-science</id>
-   <content type="html">&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -35,7 +56,8 @@
    <link href="http://username.github.io/2014/01/01/best-award-paper"/>
    <updated>2014-01-01T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/01/01/best-award-paper</id>
-   <content type="html">&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -45,7 +67,8 @@
    <id>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</id>
    <content type="html">&lt;p&gt;install redmine on ubuntu12.04(http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04)&lt;/p&gt;
 
-&lt;p&gt;chmod 777 命令 来解决权限问题&lt;/p&gt;</content>
+&lt;p&gt;chmod 777 命令 来解决权限问题&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -53,17 +76,22 @@
    <link href="http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server"/>
    <updated>2013-11-19T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</id>
-   <content type="html">&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client&lt;/code&gt;&lt;/pre&gt;
+   <content type="html">&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;(you can also download it from wcg and install)&lt;/p&gt;
 
-&lt;p&gt;find your account key: boinccmd –lookup_account http://www.worldcommunitygrid.org username password&lt;/p&gt;
+&lt;p&gt;find your account key:
+    boinccmd &amp;ndash;lookup_account http://www.worldcommunitygrid.org username password&lt;/p&gt;
 
-&lt;p&gt;You should get a response something like this dfb74c9b9&lt;/p&gt;
+&lt;p&gt;You should get a response something like this
+dfb74c9b9&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;attach to your project boinccmd –project_attach http://www.worldcommunitygrid.org dfb74c….&lt;/p&gt;
+&lt;p&gt;attach to your project
+    boinccmd &amp;ndash;project_attach http://www.worldcommunitygrid.org dfb74c&amp;hellip;.&lt;/p&gt;
 
-&lt;p&gt;if you want to verify your attached enter the following command: boinccmd –get_state&lt;/p&gt;
+&lt;p&gt;if you want to verify your attached enter the following command:
+    boinccmd &amp;ndash;get_state&lt;/p&gt;
 
 &lt;p&gt;Futher resources:&lt;/p&gt;
 
@@ -77,7 +105,8 @@
 
 &lt;p&gt;blog.joelchristian.com/?p=291&lt;/p&gt;
 
-&lt;p&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/p&gt;</content>
+&lt;p&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -85,7 +114,8 @@
    <link href="http://username.github.io/2013/11/14/how-can-i-faced-my-fears-and-learned-to-be-good-at-math"/>
    <updated>2013-11-14T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/14/how-can-i-faced-my-fears-and-learned-to-be-good-at-math</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -93,7 +123,9 @@
    <link href="http://username.github.io/2013/11/10/a-little-surprised"/>
    <updated>2013-11-10T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/10/a-little-surprised</id>
-   <content type="html">&lt;p&gt;(www.jstatsoft.org/v27) cos.name/2013/02/rise-of-the-machine/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;(www.jstatsoft.org/v27)
+cos.name/2013/02/rise-of-the-machine/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -101,7 +133,8 @@
    <link href="http://username.github.io/2013/11/09/data-analysis"/>
    <updated>2013-11-09T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/09/data-analysis</id>
-   <content type="html">&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -109,13 +142,29 @@
    <link href="http://username.github.io/2013/11/07/brain-strom"/>
    <updated>2013-11-07T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/07/brain-strom</id>
-   <content type="html">&lt;p&gt;server{ listen 4002; server_name localhost; access_log logs/access.log;&lt;/p&gt;
+   <content type="html">&lt;p&gt;server{
+listen 4002;
+server_name localhost;
+access_log logs/access.log;&lt;/p&gt;
 
-&lt;p&gt;location / { proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-NginxX-Proxy true;&lt;/p&gt;
+&lt;p&gt;location / {
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_set_header Host $http_host;
+   proxy_set_header X-NginxX-Proxy true;&lt;/p&gt;
 
-&lt;p&gt;proxy_pass http://backend; proxy_redirect off;&lt;/p&gt;
+&lt;p&gt;   proxy_pass http://backend;
+   proxy_redirect off;&lt;/p&gt;
 
-&lt;p&gt;proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection “upgrade”; } } upstream backend { server 127.0.0.1:3201; }&lt;/p&gt;</content>
+&lt;p&gt;   proxy_http_version 1.1;
+   proxy_set_header Upgrade $http_upgrade;
+   proxy_set_header Connection &amp;ldquo;upgrade&amp;rdquo;;
+   }
+   }
+ upstream backend {
+ server 127.0.0.1:3201;
+ }&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -123,7 +172,8 @@
    <link href="http://username.github.io/2013/11/06/python-web"/>
    <updated>2013-11-06T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/06/python-web</id>
-   <content type="html">&lt;p&gt;web.py源码解析:http://www.myexception.cn/perl-python/1351788.html WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&lt;/p&gt;
+   <content type="html">&lt;p&gt;web.py源码解析:http://www.myexception.cn/perl-python/1351788.html
+WSGI:http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&lt;/p&gt;
 
 &lt;p&gt;web server side:&lt;/p&gt;
 
@@ -133,7 +183,8 @@
 
 &lt;pre&gt;&lt;code&gt;iterable=app(environ,start_response)
 for data in iterable:
-    #send data to client&lt;/code&gt;&lt;/pre&gt;
+    #send data to client
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
 
@@ -141,7 +192,8 @@ for data in iterable:
 
 &lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
-&lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;</content>
+&lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -151,15 +203,22 @@ for data in iterable:
    <id>http://username.github.io/2013/11/05/leaning-python-site</id>
    <content type="html">&lt;p&gt;basic:&lt;/p&gt;
 
-&lt;p&gt;http://woodpecker.org.cn/abyteofpython_cn/chinese/ http://www.codecademy.com/zh/tracks/python http://inventwithpython.com/chapters/&lt;/p&gt;
+&lt;p&gt;http://woodpecker.org.cn/abyteofpython_cn/chinese/
+http://www.codecademy.com/zh/tracks/python
+http://inventwithpython.com/chapters/&lt;/p&gt;
 
 &lt;p&gt;medium:&lt;/p&gt;
 
 &lt;p&gt;https://github.com/gregmalcolm/python_koans&lt;/p&gt;
 
-&lt;p&gt;advanced: http://anandology.com/python-practice-book www.kevinsheppard.com/images/0/09/Python_introduction.pdf www.tuiku.com maybe is also good&lt;/p&gt;
+&lt;p&gt;advanced:
+http://anandology.com/python-practice-book
+www.kevinsheppard.com/images/0/09/Python_introduction.pdf
+www.tuiku.com maybe is also good&lt;/p&gt;
 
-&lt;p&gt;online game: www.checkio.org&lt;/p&gt;</content>
+&lt;p&gt;online game:
+www.checkio.org&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -169,7 +228,8 @@ for data in iterable:
    <id>http://username.github.io/2013/11/04/deploy-python-on-nginx</id>
    <content type="html">&lt;p&gt;serholiu.com/tornado-nginx-supervisord&lt;/p&gt;
 
-&lt;p&gt;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&lt;/p&gt;</content>
+&lt;p&gt;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -177,33 +237,70 @@ for data in iterable:
    <link href="http://username.github.io/2013/10/27/install-project-on-preferati"/>
    <updated>2013-10-27T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/27/install-project-on-preferati</id>
-   <content type="html">&lt;p&gt;sudo apt-get install nginx sudo apt-get install git sudo apt-get install mysql-server sudo apt-get install python-dev&lt;/p&gt;
+   <content type="html">&lt;p&gt;sudo apt-get install nginx
+sudo apt-get install git
+sudo apt-get install mysql-server
+sudo apt-get install python-dev&lt;/p&gt;
 
-&lt;p&gt;install easy_install on ubuntu: sudo apt-get install python-setuptools sudo easy_install virtualenv sudo easy_install pip virtualenv ~/trade source ~/trade/bin/activate install numpy scipy pandas and ta-lib sudo pip install Cython&lt;/p&gt;
+&lt;p&gt;install easy_install on ubuntu:
+sudo apt-get install python-setuptools
+sudo easy_install virtualenv
+sudo easy_install pip
+virtualenv ~/trade
+source ~/trade/bin/activate
+install numpy scipy pandas and ta-lib
+sudo pip install Cython&lt;/p&gt;
 
-&lt;p&gt;—-due to blas libs—- sudo apt-get install gfortran libopenblas-dev liblapack-dev g++ pip install numpy pip install scipy&lt;/p&gt;
+&lt;p&gt;&amp;mdash;-due to blas libs&amp;mdash;-
+sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+pip install numpy
+pip install scipy&lt;/p&gt;
 
-&lt;h1 id=&quot;install_talib&quot;&gt;install ta-lib&lt;/h1&gt;
+&lt;h1&gt;install ta-lib&lt;/h1&gt;
 
-&lt;p&gt;cd ~ wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz sudo apt-get install build-essential tar -zxvf ta-lib-0.4.0-src.tar.gz cd ta-lib-0.4.0 ./configure –prefix=/usr make sudo make install&lt;/p&gt;
+&lt;p&gt;cd ~
+wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+sudo apt-get  install  build-essential
+tar -zxvf ta-lib-0.4.0-src.tar.gz
+cd ta-lib-0.4.0
+./configure &amp;ndash;prefix=/usr
+make
+sudo make install&lt;/p&gt;
 
-&lt;h1 id=&quot;install_gevent&quot;&gt;install gevent&lt;/h1&gt;
+&lt;h1&gt;install gevent&lt;/h1&gt;
 
-&lt;p&gt;wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz tar -zxvf ./configure make sudo make install&lt;/p&gt;
+&lt;p&gt;wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+tar -zxvf
+./configure
+make
+sudo make install&lt;/p&gt;
 
-&lt;p&gt;cd ~/www git clone https://github.com/pydata/pandas.git git clone https://github.com/mrjbq7/ta-lib.git&lt;/p&gt;
+&lt;p&gt;cd ~/www
+git clone https://github.com/pydata/pandas.git
+git clone https://github.com/mrjbq7/ta-lib.git&lt;/p&gt;
 
-&lt;p&gt;update the nginx: sudo apt-get install python-software-properties sudo apt-get install sotware-properties-common sudo add-apt-repository ppa:nginx/stable sudo apt-get update sudo apt-get install nginx&lt;/p&gt;
+&lt;p&gt;update the nginx:
+sudo apt-get install python-software-properties
+sudo apt-get install sotware-properties-common
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get update
+sudo apt-get install nginx&lt;/p&gt;
 
-&lt;h1 id=&quot;mysql_init&quot;&gt;mysql init&lt;/h1&gt;
+&lt;h1&gt;mysql init&lt;/h1&gt;
 
-&lt;p&gt;sudo apt-get install mysql-server libmysqld-dev pip install MySQL-python insert into mysql.user(Host,User,Password) values(“localhost”,”david”,password(“david”)); 用户授权： 给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。 mysql&amp;gt;grant all privileges on &lt;em&gt;.&lt;/em&gt; to david@localhost identified by ‘david’;&lt;/p&gt;
+&lt;p&gt;sudo apt-get install mysql-server libmysqld-dev
+pip install MySQL-python
+insert into mysql.user(Host,User,Password) values(&amp;ldquo;localhost&amp;rdquo;,&amp;ldquo;david&amp;rdquo;,password(&amp;ldquo;david&amp;rdquo;));
+用户授权：
+给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。
+mysql&gt;grant all privileges on &lt;em&gt;.&lt;/em&gt; to david@localhost identified by &amp;lsquo;david&amp;rsquo;;&lt;/p&gt;
 
-&lt;h1 id=&quot;install_redis&quot;&gt;install redis&lt;/h1&gt;
+&lt;h1&gt;install redis&lt;/h1&gt;
 
 &lt;p&gt;http://rubyer.me/blog/638/ redis.io&lt;/p&gt;
 
-&lt;h1 id=&quot;uwsgi_or_gunicorn&quot;&gt;uwsgi or gunicorn&lt;/h1&gt;</content>
+&lt;h1&gt;uwsgi or gunicorn&lt;/h1&gt;
+</content>
  </entry>
  
  <entry>
@@ -213,7 +310,8 @@ for data in iterable:
    <id>http://username.github.io/2013/10/26/how-to-write-a-crawler</id>
    <content type="html">&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
 
-&lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;</content>
+&lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -223,9 +321,25 @@ for data in iterable:
    <id>http://username.github.io/2013/10/22/qt-fourteen-steps</id>
    <content type="html">&lt;p&gt;1.Hello ,World!&lt;/p&gt;
 
-&lt;p&gt;2.调用退出 3.家庭价值 4.使用窗口部件 5.组装积木 6.组装丰富的积木！ 7.一个事物领导另一个 8.准备战斗 9.你可以使用加农炮了 10.像丝一样滑 11.给它一个炮弹 12.悬在空中的砖 13.游戏结束 14.面对墙壁&lt;/p&gt;
+&lt;p&gt;2.调用退出
+3.家庭价值
+4.使用窗口部件
+5.组装积木
+6.组装丰富的积木！
+7.一个事物领导另一个
+8.准备战斗
+9.你可以使用加农炮了
+10.像丝一样滑
+11.给它一个炮弹
+12.悬在空中的砖
+13.游戏结束
+14.面对墙壁&lt;/p&gt;
 
-&lt;p&gt;同普通的 C++ 成员函数一样，槽函数也分为三种类型，即 public slots、private slots 和 protected slots。 public slots：在这个区内声明的槽意味着任何对象都可将信号与之相连接。这对于组件编程非常有用，你可以创建彼此互不了解的对象，将它们的信号与槽进行连接以便信息能够正确的传递。 protected slots：在这个区内声明的槽意味着当前类及其子类可以将信号与之相连接。这适用于那些槽，它们是类实现的一部分，但是其界面接口却面向外部。 private slots：在这个区内声明的槽意味着只有类自己可以将信号与之相连接。这适用于联系非常紧密的类。&lt;/p&gt;</content>
+&lt;p&gt;同普通的 C++ 成员函数一样，槽函数也分为三种类型，即 public slots、private slots 和 protected slots。
+public slots：在这个区内声明的槽意味着任何对象都可将信号与之相连接。这对于组件编程非常有用，你可以创建彼此互不了解的对象，将它们的信号与槽进行连接以便信息能够正确的传递。
+protected slots：在这个区内声明的槽意味着当前类及其子类可以将信号与之相连接。这适用于那些槽，它们是类实现的一部分，但是其界面接口却面向外部。
+private slots：在这个区内声明的槽意味着只有类自己可以将信号与之相连接。这适用于联系非常紧密的类。&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -236,9 +350,11 @@ for data in iterable:
    <content type="html">&lt;pre&gt;&lt;code&gt;sudo pip install numpy
 sudo apt-get install libatlas-base-dev gfortran
 sudo pip install scipy
-sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
+sudo pip install matplotlib   # recommended
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;</content>
+&lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -246,7 +362,9 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/10/17/python-machine-learning"/>
    <updated>2013-10-17T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/17/python-machine-learning</id>
-   <content type="html">&lt;p&gt;python machine learning(http://www.xavierdupre.fr/blog/2013-09-15_nojs.html) http://www.yuanyong.org/blog/python/k-means-using-python&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;python machine learning(http://www.xavierdupre.fr/blog/2013-09-15_nojs.html)
+http://www.yuanyong.org/blog/python/k-means-using-python&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -254,7 +372,9 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/09/29/git"/>
    <updated>2013-09-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/29/git</id>
-   <content type="html">&lt;p&gt;https://gist.github.com/jbenet/ee6c9ac48068889b0912 http://gitref.cyj.me/zh/remotes/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;https://gist.github.com/jbenet/ee6c9ac48068889b0912
+http://gitref.cyj.me/zh/remotes/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -262,13 +382,19 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/09/25/note-9_25"/>
    <updated>2013-09-25T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/25/note-9_25</id>
-   <content type="html">&lt;p&gt;程序Trade的改进： matplotlib的融合web summary的更正&lt;/p&gt;
+   <content type="html">&lt;p&gt;程序Trade的改进：
+matplotlib的融合web
+summary的更正&lt;/p&gt;
 
-&lt;p&gt;图像增强： 二值化 直方图均衡 膨胀，奇异点处理&lt;/p&gt;
+&lt;p&gt;图像增强：
+二值化
+直方图均衡
+膨胀，奇异点处理&lt;/p&gt;
 
 &lt;p&gt;手写笔迹识别&lt;/p&gt;
 
-&lt;p&gt;libsvm等多分类：&lt;/p&gt;</content>
+&lt;p&gt;libsvm等多分类：&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -276,21 +402,31 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/09/18/nginx-permission-root"/>
    <updated>2013-09-18T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/18/nginx-permission-root</id>
-   <content type="html">&lt;p&gt;nginx 13:permission denied solved: http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&lt;/p&gt;
+   <content type="html">&lt;p&gt;nginx 13:permission denied solved:
+http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&lt;/p&gt;
 
 &lt;p&gt;The root directive is the problem here. Quote from the doc:&lt;/p&gt;
 
-&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
+&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for &amp;ldquo;/i/top.gif&amp;rdquo; will not look in &amp;ldquo;/spool/w3/top.gif&amp;rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
 
-&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:&lt;/p&gt;
+&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it&amp;rsquo;s going to end on a subfolder, use alias:&lt;/p&gt;
 
-&lt;p&gt;location /map/ { alias /home/user/public_html/map/; } Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
+&lt;p&gt;location  /map/ {
+  alias  /home/user/public_html/map/;
+}
+Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
 
-&lt;p&gt;share|improve this answer edited Jan 26 ‘12 at 15:30&lt;/p&gt;
+&lt;p&gt;share|improve this answer
+edited Jan 26 &amp;lsquo;12 at 15:30&lt;/p&gt;
 
-&lt;p&gt;answered Mar 12 ‘11 at 15:39&lt;/p&gt;
+&lt;p&gt;answered Mar 12 &amp;lsquo;11 at 15:39&lt;/p&gt;
 
-&lt;p&gt;coredump 8,35011131 It shows up properly in access.log now, as /map/, but I still get a 403 forbidden error, public_html/ and every directory under it is 777, and I’ve tried chowning it to nginx and root, but I still get the 403 error. Any ideas? – Phase Mar 12 ‘11 at 17:25 @phase well I never had a similar problem, but check this link and this other one. Looks like lack of permission to read on each directory of the whole path you are serving (in your case, home, user, public_html and map). – coredump Mar 12 ‘11 at 20:00 You need to be careful with /s when using alias. The location and alias you posted will strip the / from the request, but the alias doesn’t add it back, so a request for /map/foo.html will actually look for /home/user/public_htmlfoo.html. When the location prefix matches the alias suffix, it’s easier to use use root /home/user/public_html. You could also fix it by just adding a / onto the end of the alias /home/user/public_html/map/;&lt;/p&gt;</content>
+&lt;p&gt;coredump
+8,35011131
+It shows up properly in access.log now, as /map/, but I still get a 403 forbidden error, public_html/ and every directory under it is 777, and I&amp;rsquo;ve tried chowning it to nginx and root, but I still get the 403 error. Any ideas? – Phase Mar 12 &amp;lsquo;11 at 17:25
+@phase well I never had a similar problem, but check this link and this other one. Looks like lack of permission to read on each directory of the whole path you are serving (in your case, home, user, public_html and map). – coredump Mar 12 &#39;11 at 20:00
+You need to be careful with /s when using alias. The location and alias you posted will strip the / from the request, but the alias doesn&amp;rsquo;t add it back, so a request for /map/foo.html will actually look for /home/user/public_htmlfoo.html. When the location prefix matches the alias suffix, it&amp;rsquo;s easier to use use root /home/user/public_html. You could also fix it by just adding a / onto the end of the alias /home/user/public_html/map/;&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -298,7 +434,14 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network"/>
    <updated>2013-09-12T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</id>
-   <content type="html">&lt;p&gt;Linux下的五种I/O模型 阻塞I/O（blocking I/O） 非阻塞I/O（nonblocking I/O）&lt;br /&gt;I/O服用（select和poll）（I/O multiplexing） 信号驱动I/O（signal driven I/O（SIGIO）） 异步I/O（asynchronous I/O（the POSIX aio_functions)) 前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;Linux下的五种I/O模型
+阻塞I/O（blocking I/O）
+非阻塞I/O（nonblocking I/O）&lt;br/&gt;
+I/O服用（select和poll）（I/O multiplexing）
+信号驱动I/O（signal driven I/O（SIGIO））
+异步I/O（asynchronous I/O（the POSIX aio_functions))
+前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -306,7 +449,8 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/09/11/tt"/>
    <updated>2013-09-11T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/11/tt</id>
-   <content type="html">&lt;p&gt;2789987&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;2789987&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -314,7 +458,9 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/08/08/machine-learning-in-action"/>
    <updated>2013-08-08T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/08/08/machine-learning-in-action</id>
-   <content type="html">&lt;p&gt;https://github.com/pbharrin/machinelearninginaction zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;https://github.com/pbharrin/machinelearninginaction
+zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -324,43 +470,97 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <id>http://username.github.io/2013/08/06/webpy</id>
    <content type="html">&lt;p&gt;webpy 中文文档学习目录&lt;/p&gt;
 
-&lt;p&gt;web py 安装 webpy webpy3.0 新手指南 webpy CookBook&lt;/p&gt;
+&lt;p&gt;web py
+安装 webpy
+webpy3.0 新手指南
+webpy CookBook&lt;/p&gt;
 
-&lt;h2 id=&quot;webpy&quot;&gt;webpy基本应用:&lt;/h2&gt;
+&lt;h2&gt;webpy基本应用:&lt;/h2&gt;
 
-&lt;p&gt;Hello World 提供静态文件访问 理解URL控制 跳转与重定向 使用子应用 提供XML访问 从post读取原始数据&lt;/p&gt;
+&lt;p&gt;Hello World
+提供静态文件访问
+理解URL控制
+跳转与重定向
+使用子应用
+提供XML访问
+从post读取原始数据&lt;/p&gt;
 
-&lt;h2 id=&quot;&quot;&gt;高级应用:&lt;/h2&gt;
+&lt;h2&gt;高级应用:&lt;/h2&gt;
 
-&lt;p&gt;用web.ctx获得客户端信息 应用处理器，添加钩子和卸载钩子 如何使用web.background 自定义NotFound信息 如何流传输大文件 对自带的webserver日志进行操作 用cherrypy提供SSL支持 实时语言切换&lt;/p&gt;
+&lt;p&gt;用web.ctx获得客户端信息
+应用处理器，添加钩子和卸载钩子
+如何使用web.background
+自定义NotFound信息
+如何流传输大文件
+对自带的webserver日志进行操作
+用cherrypy提供SSL支持
+实时语言切换&lt;/p&gt;
 
-&lt;h2 id=&quot;sessions_and_user_state_&quot;&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
+&lt;h2&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
 
-&lt;p&gt;如何使用Session 如何在调试模式下使用Session 在template中使用session 如何操作Cookie 用户认证 一个在postgreSQL数据库环境下的用户认证的例子 如何在子应用中操作Session&lt;/p&gt;
+&lt;p&gt;如何使用Session
+如何在调试模式下使用Session
+在template中使用session
+如何操作Cookie
+用户认证
+一个在postgreSQL数据库环境下的用户认证的例子
+如何在子应用中操作Session&lt;/p&gt;
 
-&lt;h2 id=&quot;utils_&quot;&gt;Utils 实用工具&lt;/h2&gt;
+&lt;h2&gt;Utils 实用工具&lt;/h2&gt;
 
-&lt;p&gt;如何发送邮件 如何利用Gmail发送邮件 使用soaplib实现webservice&lt;/p&gt;
+&lt;p&gt;如何发送邮件
+如何利用Gmail发送邮件
+使用soaplib实现webservice&lt;/p&gt;
 
-&lt;h2 id=&quot;templates_&quot;&gt;Templates 模板&lt;/h2&gt;
+&lt;h2&gt;Templates 模板&lt;/h2&gt;
 
-&lt;p&gt;Templetor: web.py 模板系统 使用站点布局模板 交替式风格 (未译) 导入函数到模板中 (未译) 模板文件中的i18n支持 在web.py中使用Mako模板引擎 在web.py中使用Cheetah模板引擎 在web.py中使用Jinja2模板引擎 如何在谷歌应用程序引擎使用模板&lt;/p&gt;
+&lt;p&gt;Templetor: web.py 模板系统
+使用站点布局模板
+交替式风格 (未译)
+导入函数到模板中 (未译)
+模板文件中的i18n支持
+在web.py中使用Mako模板引擎
+在web.py中使用Cheetah模板引擎
+在web.py中使用Jinja2模板引擎
+如何在谷歌应用程序引擎使用模板&lt;/p&gt;
 
-&lt;h2 id=&quot;testing_&quot;&gt;Testing 测试:&lt;/h2&gt;
+&lt;h2&gt;Testing 测试:&lt;/h2&gt;
 
-&lt;p&gt;Testing with Paste and Nose (未译) RESTful doctesting using an application’s request method (未译)&lt;/p&gt;
+&lt;p&gt;Testing with Paste and Nose (未译)
+RESTful doctesting using an application&amp;rsquo;s request method (未译)&lt;/p&gt;
 
-&lt;h2 id=&quot;user_input_&quot;&gt;User input 用户输入:&lt;/h2&gt;
+&lt;h2&gt;User input 用户输入:&lt;/h2&gt;
 
-&lt;p&gt;文件上传 保存上传的文件 上传文件大小限定 通过 web.input 接受用户输入 怎样使用表单 显示个别表单字段&lt;/p&gt;
+&lt;p&gt;文件上传
+保存上传的文件
+上传文件大小限定
+通过 web.input 接受用户输入
+怎样使用表单
+显示个别表单字段&lt;/p&gt;
 
-&lt;h2 id=&quot;database_&quot;&gt;Database 数据库&lt;/h2&gt;
+&lt;h2&gt;Database 数据库&lt;/h2&gt;
 
-&lt;p&gt;使用多数据库 Select: 查询数据 Update: 更新数据 Delete: 删除数据 Insert: 新增数据 Query: 高级数据库查询 怎样使用数据库事务 使用 sqlalchemy 整合 SQLite UDF (用户定义函数) 到 webpy 数据库层 使用字典动态构造where子句&lt;/p&gt;
+&lt;p&gt;使用多数据库
+Select: 查询数据
+Update: 更新数据
+Delete: 删除数据
+Insert: 新增数据
+Query: 高级数据库查询
+怎样使用数据库事务
+使用 sqlalchemy
+整合 SQLite UDF (用户定义函数) 到 webpy 数据库层
+使用字典动态构造where子句&lt;/p&gt;
 
-&lt;h2 id=&quot;deployment_&quot;&gt;Deployment 部署:&lt;/h2&gt;
+&lt;h2&gt;Deployment 部署:&lt;/h2&gt;
 
-&lt;p&gt;通过Fastcgi和lighttpd部署 通过Webpy和Nginx with FastCGI搭建Web.py CGI deployment through Apache (未译) mod-pythondeployment through Apache (requested) 通过Apache和mod-wsgi部署 mod-wsgi deployment through Nginx (未译) Fastcgi deployment through Nginx (未译)&lt;/p&gt;</content>
+&lt;p&gt;通过Fastcgi和lighttpd部署
+通过Webpy和Nginx with FastCGI搭建Web.py
+CGI deployment through Apache (未译)
+mod-pythondeployment through Apache (requested)
+通过Apache和mod-wsgi部署
+mod-wsgi deployment through Nginx (未译)
+Fastcgi deployment through Nginx (未译)&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -368,7 +568,8 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/07/29/trade-memo-1"/>
    <updated>2013-07-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/29/trade-memo-1</id>
-   <content type="html">&lt;p&gt;pyctp: https://code.google.com/p/pyctp/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;pyctp: https://code.google.com/p/pyctp/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -376,23 +577,23 @@ sudo pip install matplotlib   # recommended&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
    <updated>2013-07-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
-   <content type="html">&lt;p&gt;add one element in the parent var $li_1=$(”&lt;/p&gt;
-&lt;li&gt;新增节点：数据结构&lt;/li&gt;
-&lt;p&gt;”); var $li_2=$(”&lt;/p&gt;
-&lt;li&gt;新增节点：设计模式&lt;/li&gt;
-&lt;p&gt;”);&lt;/p&gt;
+   <content type="html">&lt;p&gt;add one element in the parent
+    var $li_1=$(&amp;ldquo;&lt;li&gt;新增节点：数据结构&lt;/li&gt;&amp;rdquo;);
+    var $li_2=$(&amp;ldquo;&lt;li&gt;新增节点：设计模式&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
+&lt;pre&gt;&lt;code&gt;var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 $parent.append($li_2);
-$parent.append($li_1).append($li_2);&lt;/code&gt;&lt;/pre&gt;
+$parent.append($li_1).append($li_2);
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;add attribute in the added element: var $li_1=$(”&lt;/p&gt;
-&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;
-&lt;p&gt;”);&lt;/p&gt;
+&lt;p&gt;add attribute in the added element:
+    var $li_1=$(&amp;ldquo;&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $parent=$(&amp;quot;.nm_ul&amp;quot;);
-$parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;pre&gt;&lt;code&gt;var $parent=$(&quot;.nm_ul&quot;);
+$parent.append($li_1);
+&lt;/code&gt;&lt;/pre&gt;
+</content>
  </entry>
  
  <entry>
@@ -400,11 +601,15 @@ $parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
    <link href="http://username.github.io/2013/07/28/webpy-note"/>
    <updated>2013-07-28T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/28/webpy-note</id>
-   <content type="html">&lt;p&gt;web.ctx web.loadhook(handler)函数在web请求前执行handler函数 web.unloadhook(handler)函数在web请求后执行的handler函数&lt;/p&gt;
+   <content type="html">&lt;p&gt;web.ctx
+web.loadhook(handler)函数在web请求前执行handler函数
+web.unloadhook(handler)函数在web请求后执行的handler函数&lt;/p&gt;
 
-&lt;p&gt;seeother:303临时重定向 redirect：301永久重定向&lt;/p&gt;
+&lt;p&gt;seeother:303临时重定向
+redirect：301永久重定向&lt;/p&gt;
 
-&lt;p&gt;seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;</content>
+&lt;p&gt;seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -415,26 +620,28 @@ $parent.append($li_1);&lt;/code&gt;&lt;/pre&gt;</content>
    <content type="html">&lt;pre&gt;&lt;code&gt;from sqlalchemy import *
 from sqlalchemy.orm import *
 
-metadata=MetaData(create_engine(&amp;quot;sqlite://&amp;quot;,echo=True)
-t1=Table(&amp;quot;t1&amp;quot;,metadata,Column(&amp;#39;id&amp;#39;,Integer,primary_key=True))
-t2=Table(&amp;quot;t2&amp;quot;,metadata,Column(&amp;quot;id&amp;quot;,Integer,primary_key=True))
+metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
+t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
 def map_class_to_some_table(cls,table,entity_name,**kw):
     newcls=type(entity_name,(cls,),{})
     mapper(newcls,table,**kw)
     return newcls
-   
+
 class Foo(object):
     pass
 
-T1Foo=map_class_to_some_table(Foo,t1,&amp;quot;T1Foo&amp;quot;)
-T2Foo=map_class_to_some_table(Foo,t2,&amp;quot;T2Foo&amp;quot;)
+T1Foo=map_class_to_some_table(Foo,t1,&quot;T1Foo&quot;)
+T2Foo=map_class_to_some_table(Foo,t2,&quot;T2Foo&quot;)
 
 sess=sessionmaker()()
 sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
 print sess.query(T1Foo).all()
-print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
+print sess.query(T2Foo).all()
+&lt;/code&gt;&lt;/pre&gt;
+</content>
  </entry>
  
  <entry>
@@ -442,7 +649,8 @@ print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
    <link href="http://username.github.io/2013/07/26/premature-optimization"/>
    <updated>2013-07-26T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/26/premature-optimization</id>
-   <content type="html">&lt;p&gt;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -454,7 +662,8 @@ print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
 
 &lt;p&gt;www.lowindata.com&lt;/p&gt;
 
-&lt;p&gt;backbonejs:www.icoding.co/2012/04/backbonejs-html-2&lt;/p&gt;</content>
+&lt;p&gt;backbonejs:www.icoding.co/2012/04/backbonejs-html-2&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -462,7 +671,8 @@ print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
    <link href="http://username.github.io/2013/07/21/backbonejs"/>
    <updated>2013-07-21T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/21/backbonejs</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -471,7 +681,8 @@ print sess.query(T2Foo).all()&lt;/code&gt;&lt;/pre&gt;</content>
    <updated>2013-07-15T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/15/python-asynchrous-network</id>
    <content type="html">&lt;hr /&gt;
-&lt;h2 id=&quot;selectpollepoll_test_in_python&quot;&gt;select,poll,epoll test in python&lt;/h2&gt;
+
+&lt;h2&gt;select,poll,epoll test in python&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;select test&lt;/em&gt;&lt;/strong&gt; selecttest.py&lt;/p&gt;
 
@@ -485,7 +696,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=(&amp;#39;localhost&amp;#39;,10001)
+server_address=(&#39;localhost&#39;,10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -503,33 +714,33 @@ message_queues={}
 timeout=20
 
 while inputs:
-    print &amp;quot;waiting for next event&amp;quot;
+    print &quot;waiting for next event&quot;
     #first parameter--read list,second parameter--write list,third parameter--error list
     readable,writable,exceptional=select.select(inputs,outputs,inputs,timeout)
 
     #when timeout reached,select return three empty list
     if not (readable or writable or exceptional):
-        print &amp;quot;Time out!&amp;quot;
+        print &quot;Time out!&quot;
         break;
     for s in readable:
         if s is server:
-            #A &amp;quot;readable&amp;quot; socket is ready to accept a connection
+            #A &quot;readable&quot; socket is ready to accept a connection
             connection,client_address=s.accept()
-            print &amp;quot;  connection from&amp;quot;,client_address
+            print &quot;  connection from&quot;,client_address
             connection.setblocking(0)
             inputs.append(connection)
             message_queues[connection]=Queue.Queue()
         else:
             data=s.recv(1024)
             if data:
-                print &amp;quot;received &amp;quot;,data, &amp;quot;from &amp;quot;,s.getpeername()
+                print &quot;received &quot;,data, &quot;from &quot;,s.getpeername()
                 message_queues[s].put(data)
                 #Add output  channel for response
                 if s not in outputs:
                     outputs.append(s)
             else:
                 #Interpret empty result as closed connection
-                print &amp;quot; closing&amp;quot;, client_address
+                print &quot; closing&quot;, client_address
                 if s in outputs:
                     outputs.remove(s)
                 inputs.remove(s)
@@ -540,19 +751,20 @@ while inputs:
         try:
             next_msg=message_queues[s].get_nowait()
         except Queue.Empty:
-            print &amp;quot; &amp;quot;,s.getpeername,&amp;quot; queue empty&amp;quot;
+            print &quot; &quot;,s.getpeername,&quot; queue empty&quot;
             outputs.remove(s)
         else:
-            print &amp;quot;sending &amp;quot;,next_msg,&amp;quot; to&amp;quot;,s.getpeername()
+            print &quot;sending &quot;,next_msg,&quot; to&quot;,s.getpeername()
             s.send(next_msg)
     for s in exceptional:
-        print &amp;quot; exception condition on &amp;quot;,s.getpeername()
+        print &quot; exception condition on &quot;,s.getpeername()
         #stop listening for input on the connection
         inputs.remove(s)
         if s in outputs:
             outputs.remove(s)
         s.close()
-        #Remove message queue&lt;/code&gt;&lt;/pre&gt;
+        #Remove message queue
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;polltest&lt;/em&gt;&lt;/strong&gt; polltest.py&lt;/p&gt;
 
@@ -563,9 +775,9 @@ import Queue
 server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.setblocking(False)
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
-server_address=(&amp;quot;localhost&amp;quot;,10001)
+server_address=(&quot;localhost&quot;,10001)
 
-print &amp;quot;Starting up on %s port %s&amp;quot; % server_address
+print &quot;Starting up on %s port %s&quot; % server_address
 server.bind(server_address)
 server.listen(5)
 message_queues={}
@@ -581,19 +793,19 @@ poller.register(server,READ_ONLY)
 #map file descriptors to socket objects
 fd_to_socket={server.fileno():server,}
 while True:
-    print &amp;quot;Waiting for the next event&amp;quot;
+    print &quot;Waiting for the next event&quot;
     events=poller.poll(timeout)
-    print &amp;quot;*&amp;quot;*20
+    print &quot;*&quot;*20
     print len(events)
     print events
-    print &amp;quot;*&amp;quot;*20
+    print &quot;*&quot;*20
     for fd,flag in events:
         s=fd_to_socket[fd]
         if flag &amp;amp; (select.POLLIN|select.POLLPRI):
             if s is server:
                 #A readable socket is ready to accept a connection
                 connection,client_address=s.accept()
-                print &amp;quot;Connection &amp;quot;,client_address
+                print &quot;Connection &quot;,client_address
                 connection.setblocking(False)
 
                 fd_to_socket[connection.fileno()]=connection
@@ -605,19 +817,19 @@ while True:
                 data=s.recv(1024)
                 if data:
                     # A readable client socket has data
-                    print &amp;quot; received %s from %s &amp;quot; % (data,s.getpeername())
+                    print &quot; received %s from %s &quot; % (data,s.getpeername())
                     message_queues[s].put(data)
                     poller.modify(s,READ_WRITE)
                 else:
                     #Close the connection
-                    print &amp;quot; closing &amp;quot;,s.getpeername()
+                    print &quot; closing &quot;,s.getpeername()
                     #Stop listening for input on the connection
                     poller.unregister(s)
                     s.close()
                     del message_queues[s]
         elif flag &amp;amp; select.POLLHUP:
-            #A client that &amp;quot;Hang up&amp;quot;,to be closed.
-            print &amp;quot;closing &amp;quot;,s.getpeername,&amp;quot;(HUP)&amp;quot;
+            #A client that &quot;Hang up&quot;,to be closed.
+            print &quot;closing &quot;,s.getpeername,&quot;(HUP)&quot;
             poller.unregister(s)
             s.close()
         elif flag &amp;amp; select.POLLOUT:
@@ -626,57 +838,58 @@ while True:
                 next_msg=message_queues[s].get_nowait()
             except Queue.Empty:
                 #No messages waiting so stop checking
-                print s.getpeername,&amp;quot; queue empty&amp;quot;
+                print s.getpeername,&quot; queue empty&quot;
                 poller.modify(s,READ_ONLY)
             else:
-                print &amp;quot; sending %s to %s&amp;quot; %(next_msg,s.getpeername())
+                print &quot; sending %s to %s&quot; %(next_msg,s.getpeername())
                 s.send(next_msg)
         elif flag &amp;amp; select.POLLERR:
             #Any events with POLLER cause the server to close the sockets
-            print &amp;quot; exception on&amp;quot;,s.getpeername()
+            print &quot; exception on&quot;,s.getpeername()
             poller.unregister(s)
             s.close()
-            del message_queues[s]&lt;/code&gt;&lt;/pre&gt;
+            del message_queues[s]
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;epoll test&lt;/em&gt;&lt;/strong&gt; epolltest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import socket,logging
 import select,errno
 
-logger=logging.getLogger(&amp;quot;network-server&amp;quot;)
+logger=logging.getLogger(&quot;network-server&quot;)
 
 def InitLog():
     logger.setLevel(logging.DEBUG)
 
-    fh=logging.FileHandler(&amp;quot;network-server.log&amp;quot;)
+    fh=logging.FileHandler(&quot;network-server.log&quot;)
     fh.setLevel(logging.DEBUG)
     ch=logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
 
-    formatter=logging.Formatter(&amp;quot;%(asctime)s - %(name)s - %(levelname)s -%(message)s&amp;quot;)
+    formatter=logging.Formatter(&quot;%(asctime)s - %(name)s - %(levelname)s -%(message)s&quot;)
     ch.setFormatter(formatter)
     fh.setFormatter(formatter)
 
     logger.addHandler(fh)
     logger.addHandler(ch)
 
-if __name__==&amp;quot;__main__&amp;quot;:
+if __name__==&quot;__main__&quot;:
     InitLog()
 
     try:
         listen_fd=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     except socket.error,msg:
-        logger.error(&amp;quot;create a socket failed&amp;quot;)
+        logger.error(&quot;create a socket failed&quot;)
 
     try:
         listen_fd.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
     except socket.error,msg:
-        logger.error(&amp;quot;setsocketopt error&amp;quot;)
+        logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind((&amp;#39;&amp;#39;,10001))
+        listen_fd.bind((&#39;&#39;,10001))
     except socket.error,msg:
-        logger.error(&amp;quot;listen file id bind ip error&amp;quot;)
+        logger.error(&quot;listen file id bind ip error&quot;)
 
     try:
         listen_fd.listen(10)
@@ -687,7 +900,7 @@ if __name__==&amp;quot;__main__&amp;quot;:
         epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
     except select.error,msg:
         logger.error(msg)
-    
+
     connections={}
     addresses={}
     datalist={}
@@ -696,27 +909,27 @@ if __name__==&amp;quot;__main__&amp;quot;:
         for fd,events in epoll_list:
             if fd==listen_fd.fileno():
                 conn,addr=listen_fd.accept()
-                logger.debug(&amp;quot;accept connction from  %s,%d,fd = %d&amp;quot; %(addr[0],addr[1],conn.fileno()))
+                logger.debug(&quot;accept connction from  %s,%d,fd = %d&quot; %(addr[0],addr[1],conn.fileno()))
                 conn.setblocking(0)
                 epoll_fd.register(conn.fileno(),select.EPOLLIN|select.EPOLLET)
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=&amp;#39;&amp;#39;
+                datas=&#39;&#39;
                 while True:
                     try:
                         data=connections[fd].recv(10)
                         if not data and not datas:
                             epoll_fd.unregister(fd)
                             connections[fd].close()
-                            logger.debug(&amp;quot;%s,%d closed&amp;quot; % (addresses[fd][0],addresses[fd][1]))
-                            
+                            logger.debug(&quot;%s,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
+
                             break
                         else:
                             datas+=data 
                     except socket.error,msg:
                         if msg.errno==errno.EAGAIN:
-                            logger.debug(&amp;quot;%s receive %s&amp;quot; % (fd,datas))
+                            logger.debug(&quot;%s receive %s&quot; % (fd,datas))
                             datalist[fd]=datas
                             epoll_fd.modify(fd,select.EPOLLET|select.EPOLLOUT)
                             break
@@ -728,7 +941,7 @@ if __name__==&amp;quot;__main__&amp;quot;:
             elif select.EPOLLHUP &amp;amp; events:
                 epoll_fd.unregister(fd)
                 connections[fd].close()
-                logger.debug(&amp;quot;%s ,%d closed&amp;quot; % (addresses[fd][0],addresses[fd][1]))
+                logger.debug(&quot;%s ,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
             elif select.EPOLLOUT &amp;amp; events:
                 sendLen=0
                 while True:
@@ -737,18 +950,19 @@ if __name__==&amp;quot;__main__&amp;quot;:
                          break
                 epoll_fd.modify(fd,select.EPOLLIN|select.EPOLLET)
             else:
-                continue&lt;/code&gt;&lt;/pre&gt;
+                continue
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;common client&lt;/em&gt;&lt;/strong&gt; commontest.py&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;common client&lt;/em&gt;&lt;/strong&gt;  commontest.py&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;import socket
-messages = [&amp;quot;This is the message&amp;quot;,
-         &amp;quot;It will be send&amp;quot;,
-         &amp;quot;in parts&amp;quot;]
+messages = [&quot;This is the message&quot;,
+         &quot;It will be send&quot;,
+         &quot;in parts&quot;]
 
-print &amp;quot;Connect to the server&amp;quot;
+print &quot;Connect to the server&quot;
 
-server_address=(&amp;quot;localhost&amp;quot;,10001)
+server_address=(&quot;localhost&quot;,10001)
 
 #Create a TCP/IP sock
 socks=[]
@@ -762,20 +976,23 @@ counter=0
 for message in messages:
     for s in socks:
         counter+=1
-        print &amp;quot; %s sending %s &amp;quot;%(s.getpeername(),message+&amp;quot; version &amp;quot;+str(counter))
-        s.send(message+&amp;quot; version &amp;quot;+str(counter))
+        print &quot; %s sending %s &quot;%(s.getpeername(),message+&quot; version &quot;+str(counter))
+        s.send(message+&quot; version &quot;+str(counter))
     for s in socks:
         data=s.recv(1024)
-        print &amp;quot; %s received %s &amp;quot; % (s.getpeername(),data)
+        print &quot; %s received %s &quot; % (s.getpeername(),data)
         if not data:
-            print &amp;quot;closing socket&amp;quot;,s.getpeername()
-            s.close()&lt;/code&gt;&lt;/pre&gt;
+            print &quot;closing socket&quot;,s.getpeername()
+            s.close()
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html&lt;/p&gt;
+&lt;p&gt; 针对epoll的使用有一篇很好的博客：scotdoyle.com/python-epoll-howto.html&lt;/p&gt;
 
-&lt;p&gt;针对asyncore的介绍和使用有很好的两篇博客： blog.csdn.net/livefun/article/details/8721772&lt;/p&gt;
+&lt;p&gt; 针对asyncore的介绍和使用有很好的两篇博客：
+ blog.csdn.net/livefun/article/details/8721772&lt;/p&gt;
 
-&lt;p&gt;http://www.nightmare.com/medusa/async_sockets.html&lt;/p&gt;</content>
+&lt;p&gt; http://www.nightmare.com/medusa/async_sockets.html&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -783,7 +1000,8 @@ for message in messages:
    <link href="http://username.github.io/2013/07/05/mysql-export-and-import"/>
    <updated>2013-07-05T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/05/mysql-export-and-import</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -796,24 +1014,29 @@ for message in messages:
 &lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;
+sudo apt-get install python3.3
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;建立软链接：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;
+sudo apt-get install python2.4 python2.5 python2.6
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;virtualenv -p /usr/bin/python3.3 python3.3env
-virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
+virtualenv -p /usr/bin/python2.7.5 python2.7.5env
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Ok!&lt;/p&gt;</content>
+&lt;p&gt;Ok!&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -821,7 +1044,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/07/01/text-mining"/>
    <updated>2013-07-01T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/01/text-mining</id>
-   <content type="html">&lt;p&gt;why,why i have no idea in my mind?&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;why,why i have no idea in my mind?&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -829,7 +1053,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/07/01/lucene"/>
    <updated>2013-07-01T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/01/lucene</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -837,7 +1062,11 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/29/no-plan"/>
    <updated>2013-06-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/29/no-plan</id>
-   <content type="html">&lt;p&gt;计划如下： TextMining计划 Startups课程 Trade Analysis项目跟进&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;计划如下：
+TextMining计划
+Startups课程
+Trade Analysis项目跟进&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -845,7 +1074,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/23/markdown-test"/>
    <updated>2013-06-23T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/23/markdown-test</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -857,76 +1087,84 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;「一個以上相連接的行句組成」這句話其實暗示了 Markdown 允許段落內的強迫斷行，這個特性和其他大部分的 text-to-HTML 格式不一樣（包括 MovableType 的「Convert Line Breaks」選項），其它的格式會把每個斷行都轉成 &lt;br /&gt; 標籤。&lt;/p&gt;
 
-&lt;h1 id=&quot;this_is_an_h1&quot;&gt;This is an H1&lt;/h1&gt;
+&lt;h1&gt;This is an H1&lt;/h1&gt;
 
-&lt;h2 id=&quot;this_is_an_h2&quot;&gt;This is an H2&lt;/h2&gt;
+&lt;h2&gt;This is  an H2&lt;/h2&gt;
 
-&lt;p&gt;Blockquotes&lt;br /&gt;markdown 使用email形式的区块引言，如果你很熟悉如何再email信件中引言，你就知道怎么再markdown文件中建立一个区块引言，那会看起来像是你强迫段行然后在每行的最前面加上&amp;gt;:&lt;/p&gt;
+&lt;p&gt;Blockquotes&lt;br/&gt;
+markdown 使用email形式的区块引言，如果你很熟悉如何再email信件中引言，你就知道怎么再markdown文件中建立一个区块引言，那会看起来像是你强迫段行然后在每行的最前面加上&gt;:&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;This is a blockquote with two paragraphs.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;This is a blockquote with two paragraphs.Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit.&lt;/p&gt;
 
-&lt;p&gt;Donec sit amet nisl. blabla&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Donec sit amet nisl.
+blabla&lt;/p&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;markdown也允许你只在整个段落的第一行最前面加上&amp;gt;:&lt;/p&gt;
+&lt;p&gt;markdown也允许你只在整个段落的第一行最前面加上&gt;:&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;This is a block&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;p&gt;This is a block
+ksjfkfkfj&lt;/p&gt;
 
-&lt;p&gt;ksjfkfkfj&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Donecfkkf&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;blabla&lt;/p&gt;
+&lt;p&gt;Donecfkkf
+blabla&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;区块引言可以有阶层&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;this is the first level of quoting&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;this is the first level of quoting&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;this is the nested blockquote&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;p&gt;this is the nested blockquote&lt;/p&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;Back to the first level&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Back to the first level&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;引言的区块内可以使用其他的markdown语法，包括标题、清单、程序代码块等：&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;h2 id=&quot;this_is_a_header&quot;&gt;This is a header&lt;/h2&gt;
+&lt;blockquote&gt;&lt;h2&gt;This is a header&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;This is the first item&lt;/li&gt;
-
-&lt;li&gt;This is the second list item&lt;/li&gt;
+&lt;li&gt;  This is the first item&lt;/li&gt;
+&lt;li&gt;  This is the second list item&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Here’s some example code:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#39;justpic.org&#39;&gt;justpic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s some example code:&lt;/p&gt;
 
-&lt;p&gt;return shell_exec(“echo $input|$markdown_script”);&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;justpic.org&quot;&gt;justpic&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;程序代码块： 与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来 要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入 This is a normal paragraph:&lt;/p&gt;
+&lt;p&gt;   return shell_exec(&amp;ldquo;echo $input|$markdown_script&amp;rdquo;);&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;程序代码块：
+与程序相关的写作是标签语言原始代码通常会有已经排版好的程序代码快，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是按照原来的样子演示，markdown会用标签来把程序区块包含起来
+要在markdown中建立程序代码快很简单，只要简单地缩排四个空格或一个tab就可以，例如，下面的输入
+This is a normal paragraph:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;This is a code block
-import sys&lt;/code&gt;&lt;/pre&gt;
+import sys
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;分割线： 你可以在一行中用三个或以上的星号、减号、底线来建立一个分割线行内不能有其他东西，你也可以再星号中插入空白&lt;/p&gt;
-&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;&lt;hr /&gt;
-&lt;p&gt;区段元素 markdown支持两种形式的连接语法：行内和参考两种形式 不管哪种，链接的文字要用【放括号】百标记&lt;br /&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;an example&lt;/a&gt; inline link&lt;br /&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+&lt;p&gt;分割线：
+你可以在一行中用三个或以上的星号、减号、底线来建立一个分割线行内不能有其他东西，你也可以再星号中插入空白&lt;/p&gt;
 
-&lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径： See my&lt;a href=&quot;/about/&quot;&gt;about&lt;/a&gt;page for details.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;区段元素
+markdown支持两种形式的连接语法：行内和参考两种形式
+不管哪种，链接的文字要用【放括号】百标记&lt;br/&gt;
+This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;an example&lt;/a&gt; inline link&lt;br/&gt;
+&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+
+&lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径：
+See my&lt;a href=&quot;/about/&quot;&gt;about&lt;/a&gt;page for details.&lt;/p&gt;
 
 &lt;p&gt;来个程序用多个反引号来包含&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;import sys&lt;/code&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;import sys&lt;/code&gt;&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -934,9 +1172,10 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/22/new-post"/>
    <updated>2013-06-22T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/22/new-post</id>
-   <content type="html">&lt;h1 id=&quot;622&quot;&gt;6月22日小结&lt;/h1&gt;
+   <content type="html">&lt;h1&gt;6月22日小结&lt;/h1&gt;
 
-&lt;p&gt;写个总结，python学习情况停滞不前，最大的困难还是不能专心做一件事情，注意力容易分散，接下来的时间里，要以论文为主，学会总结，翻译英文文章，机器学习的学习还没有完，要每天一总结，学到了什么，还有什么不懂的，英语的学习还是以shanbay为主，注重效果，不要太看重计划。&lt;/p&gt;</content>
+&lt;p&gt;写个总结，python学习情况停滞不前，最大的困难还是不能专心做一件事情，注意力容易分散，接下来的时间里，要以论文为主，学会总结，翻译英文文章，机器学习的学习还没有完，要每天一总结，学到了什么，还有什么不懂的，英语的学习还是以shanbay为主，注重效果，不要太看重计划。&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -944,7 +1183,8 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/14/com-learning"/>
    <updated>2013-06-14T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/14/com-learning</id>
-   <content type="html">&lt;p&gt;&lt;a href=&#39;http://www.vckbase.com/index.php/wv/1315&#39;&gt;COM Learning&lt;/a&gt;&lt;/p&gt;</content>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot; &gt;COM Learning&lt;/a&gt;&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -952,7 +1192,8 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/11/protobuffer"/>
    <updated>2013-06-11T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/11/protobuffer</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -960,7 +1201,8 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/11/plan-in-june-11"/>
    <updated>2013-06-11T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/11/plan-in-june-11</id>
-   <content type="html"></content>
+   <content type="html">
+</content>
  </entry>
  
  <entry>
@@ -968,7 +1210,8 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/network,plsa/2013/06/11/network-text-analysis"/>
    <updated>2013-06-11T00:00:00+08:00</updated>
    <id>http://username.github.io/network,plsa/2013/06/11/network-text-analysis</id>
-   <content type="html">&lt;h1 id=&quot;_&quot;&gt;网络 文本语义分析&lt;/h1&gt;</content>
+   <content type="html">&lt;h1&gt;网络 文本语义分析&lt;/h1&gt;
+</content>
  </entry>
  
  <entry>
@@ -978,19 +1221,26 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <id>http://username.github.io/python/2013/06/08/scipy</id>
    <content type="html">&lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;apt-get libblas3gf libblas-doc libblas-dev liblapack3gf liblapack-doc liblapack-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;apt-get libblas3gf libblas-doc libblas-dev liblapack3gf liblapack-doc liblapack-dev
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;安装matplib出现ft2build.h等头文件无法找出时，解决方法： 具体解决方案如下： （1）安装freetype2开发包：&lt;/p&gt;
+&lt;p&gt;安装matplib出现ft2build.h等头文件无法找出时，解决方法：
+具体解决方案如下：
+（1）安装freetype2开发包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get install libfreetype6-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libfreetype6-dev
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;（2）安装png开发包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get install libpng-dev&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libpng-dev
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;（3）安装matplotlib:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo python setup.py install&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;pre&gt;&lt;code&gt;sudo python setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+</content>
  </entry>
  
  <entry>
@@ -998,13 +1248,15 @@ import sys&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/linux/2013/06/06/wine"/>
    <updated>2013-06-06T00:00:00+08:00</updated>
    <id>http://username.github.io/linux/2013/06/06/wine</id>
-   <content type="html">&lt;h1 id=&quot;wine_error&quot;&gt;Wine error&lt;/h1&gt;
+   <content type="html">&lt;h1&gt;Wine error&lt;/h1&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo setcap CAP_NET_RAW=ep /usr/bin/wine
 sudo setcap CAP_NET_RAW=ep /usr/bin/wineserver
-sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</content>
+sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
+&lt;/code&gt;&lt;/pre&gt;
+</content>
  </entry>
  
  <entry>
@@ -1012,7 +1264,7 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</c
    <link href="http://username.github.io/python/yt-project/2013/06/05/installhdf5"/>
    <updated>2013-06-05T11:11:11Z</updated>
    <id>http://username.github.io/python/yt-project/2013/06/05/installhdf5</id>
-   <content type="html">&lt;h1 id=&quot;install_hdf5_on_ubuntu_1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+   <content type="html">&lt;h1&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
 
 &lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
 
@@ -1024,13 +1276,22 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;</c
 pull-debian-source hdf5 experimental    
 cd hdf5-*
 sudo mk-build-deps -ir
-debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
+debuild -us -uc
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;上述方法现在已经不适用 由于本机为64bit linux： 采用下面方法进行设置： wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz&lt;/p&gt;
+&lt;p&gt;上述方法现在已经不适用
+由于本机为64bit linux：
+采用下面方法进行设置：
+    wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz&lt;/p&gt;
 
-&lt;p&gt;解压之，并在.bashrc中设置： export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared&lt;/p&gt;
+&lt;p&gt;解压之，并在.bashrc中设置：
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
+    export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared&lt;/p&gt;
 
-&lt;p&gt;安装 blosc 安装 lzo2-2 lzo2-dev sudo apt-get install lzo2-2 lzo2-dev&lt;/p&gt;</content>
+&lt;p&gt;安装 blosc
+安装 lzo2-2 lzo2-dev
+    sudo apt-get install lzo2-2 lzo2-dev&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -1038,29 +1299,32 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/05/resume"/>
    <updated>2013-06-05T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/05/resume</id>
-   <content type="html">&lt;h1 id=&quot;hai_cao&quot;&gt;Hai Cao&lt;/h1&gt;
+   <content type="html">&lt;h1&gt;Hai Cao&lt;/h1&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;mailto:&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#109;&amp;#097;&amp;#116;&amp;#114;&amp;#105;&amp;#120;&amp;#046;&amp;#111;&amp;#114;&amp;#122;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; &lt;em&gt;&lt;a href=&quot;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#x74;&amp;#111;&amp;#58;&amp;#109;&amp;#97;&amp;#116;&amp;#x72;&amp;#x69;&amp;#120;&amp;#x2e;&amp;#111;&amp;#114;&amp;#x7a;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#108;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#109;&quot;&gt;&amp;#109;&amp;#x61;&amp;#116;&amp;#114;&amp;#x69;&amp;#x78;&amp;#x2e;&amp;#111;&amp;#114;&amp;#x7a;&amp;#64;&amp;#103;&amp;#x6d;&amp;#97;&amp;#x69;&amp;#108;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;http://justpic.org&quot;&gt;http://justpic.org&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; &lt;em&gt;&lt;a href=&quot;http://justpic.org&quot;&gt;http://justpic.org&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;h2&gt;Background&lt;/h2&gt;
 
-&lt;p&gt;I am a software developer with an interest in communication and design.I enjoy experimenting with new&lt;/p&gt;
+&lt;p&gt; I am a software developer with an interest in communication and design.I enjoy experimenting with new&lt;/p&gt;
 
-&lt;h2 id=&quot;education&quot;&gt;Education&lt;/h2&gt;
+&lt;h2&gt;Education&lt;/h2&gt;
 
-&lt;p&gt;Computer Science and Technoly,M.S. Fall 2012-Spring 2015 Chongqing University,Chongqing&lt;/p&gt;
+&lt;p&gt;Computer Science and Technoly,M.S.
+Fall 2012-Spring 2015
+Chongqing University,Chongqing&lt;/p&gt;
 
-&lt;h2 id=&quot;proficiency&quot;&gt;Proficiency&lt;/h2&gt;
+&lt;h2&gt;Proficiency&lt;/h2&gt;
 
 &lt;p&gt;python ,C++&lt;/p&gt;
 
-&lt;h2 id=&quot;expricence&quot;&gt;Expricence&lt;/h2&gt;
+&lt;h2&gt;Expricence&lt;/h2&gt;
 
-&lt;h3 id=&quot;msra&quot;&gt;MSRA&lt;/h3&gt;
+&lt;h3&gt;MSRA&lt;/h3&gt;
 
-&lt;h4 id=&quot;software_developer&quot;&gt;Software Developer-&lt;/h4&gt;</content>
+&lt;h4&gt;Software Developer-&lt;/h4&gt;
+</content>
  </entry>
  
  <entry>
@@ -1068,12 +1332,18 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/justpic/2013/06/03/welcome-to-justpic"/>
    <updated>2013-06-03T23:40:26Z</updated>
    <id>http://username.github.io/justpic/2013/06/03/welcome-to-justpic</id>
-   <content type="html">&lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;ruby&#39;&gt;&lt;span class=&#39;k&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;print_hi&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;nb&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt;
-  &lt;span class=&#39;nb&#39;&gt;puts&lt;/span&gt; &lt;span class=&#39;s2&#39;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&#39;si&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;nb&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;si&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;s2&#39;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&#39;k&#39;&gt;end&lt;/span&gt;
-&lt;span class=&#39;n&#39;&gt;print_hi&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;s1&#39;&gt;&amp;#39;Leos&amp;#39;&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt;
-&lt;span class=&#39;c1&#39;&gt;#=&amp;gt; prints &amp;#39;Hi, justpic&amp;#39; to STDOUT.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+   <content type="html">
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Leos&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, justpic&amp;#39; to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
  </entry>
  
  <entry>
@@ -1081,17 +1351,17 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/2013/06/03/loginpython"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/03/loginpython</id>
-   <content type="html">&lt;h1 id=&quot;python_logging&quot;&gt;python logging&lt;/h1&gt;
+   <content type="html">&lt;h1&gt;python logging&lt;/h1&gt;
 
 &lt;p&gt;pythonbrew一个新的管理包?&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1.每个module，class都用自己的logger，当你写的code，是一个被人使用的module，请不要去做多余的设定&lt;/li&gt;
-
 &lt;li&gt;2.logger的名字为了要能方便的找出问题，所以不要乱取，通常都是以module或是class的名称来命名&lt;/li&gt;
-
 &lt;li&gt;3.logging的设定，由整个应用程序的main函数来决定，比如说决定该把log写道档案还是将log传送到syslogd。我们目前是为了简单好用才以logging.basicConfig当作例子&lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+
+</content>
  </entry>
  
  <entry>
@@ -1099,16 +1369,50 @@ debuild -us -uc&lt;/code&gt;&lt;/pre&gt;
    <link href="http://username.github.io/machine/learning/2013/06/03/deeplearn"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
    <id>http://username.github.io/machine/learning/2013/06/03/deeplearn</id>
-   <content type="html">&lt;h2&gt; deeplearning &lt;/h2&gt;&lt;p&gt;推荐：&lt;a href=&#39;deepleaning.net/tutorial/deeplearning.pdf&#39;&gt;deeplearning学习&lt;/a&gt;
+   <content type="html">&lt;h2&gt; deeplearning &lt;/h2&gt;
+
+
+&lt;p&gt;推荐：&lt;a href=&quot;deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deeplearning学习&lt;/a&gt;
 &lt;/p&gt;
+
+
 &lt;p&gt;10.DEEP BELIEF NETWORKS:(DBN)&lt;/p&gt;
 
 &lt;p&gt;机器学习的两次浪潮：&lt;/p&gt;
 
-&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等 这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
+&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
+这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
 
-&lt;p&gt;深度学习： 很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化”(layer-wisepre-training)来有效克服。&lt;/p&gt;
-&lt;p&gt;03 Jun 2013&lt;/p&gt;</content>
+&lt;p&gt;深度学习：
+很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化&quot;(layer-wisepre-training)来有效克服。&lt;/p&gt;
+
+&lt;p&gt;03 Jun 2013&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Left</title>
+   <link href="http://username.github.io/posts/2012/12/12/left"/>
+   <updated>2012-12-12T00:00:00+08:00</updated>
+   <id>http://username.github.io/posts/2012/12/12/left</id>
+   <content type="html">&lt;p&gt;Left is a clean, whitespace-happy layout for &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is designed to be an easy layout to modify for your own blog. It was
+extracted from &lt;a href=&quot;http://zachholman.com&quot;&gt;zachholman.com&lt;/a&gt;, which means it was battle-hardened from
+years of posting serious blog posts about emoji and swear words.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re actually reading an example post right now. See how cool it is? Oh, be
+quiet, you&amp;rsquo;re making me blush.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
+install and set up Left for your own purposes.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
+&lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
+</content>
  </entry>
  
  

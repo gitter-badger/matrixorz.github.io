@@ -1,34 +1,10 @@
 ---
 layout: nil
-<<<<<<< HEAD
-=======
 title : Atom Feed
->>>>>>> 952ce67087ab971784b0f6d20d18be4ae908a127
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
-<<<<<<< HEAD
- <title>{{ site.name }}</title>
- <link href="{{ site.url }}/atom.xml" rel="self"/>
- <link href="{{ site.url }}/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}</id>
- <author>
-   <name>{{ site.name }}</name>
- </author>
- 
- {% for post in site.posts %}
-   {% unless post.draft %}
-   <entry>
-     <title>{{ post.title }}</title>
-     <link href="{{ site.url }}{{ post.url }}"/>
-     <updated>{{ post.date | date_to_xmlschema }}</updated>
-     <id>{{ site.url }}{{ post.id }}</id>
-     <content type="html">{{ post.content | xml_escape }}</content>
-   </entry>
-   {% endunless %}
-=======
  <title>{{ site.title }}</title>
  <link href="{{ site.production_url }}/{{ site.atom_path }}" rel="self"/>
  <link href="{{ site.production_url }}"/>
@@ -47,7 +23,6 @@ title : Atom Feed
    <id>{{ site.production_url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
->>>>>>> 952ce67087ab971784b0f6d20d18be4ae908a127
  {% endfor %}
  
 </feed>

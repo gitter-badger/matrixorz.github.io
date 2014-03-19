@@ -1,14 +1,18 @@
 
+http://username.github.io/index.html
 http://username.github.io/categories.html
 http://username.github.io/archive.html
 http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
-http://username.github.io/index.html
+http://username.github.io/index~.html
+http://username.github.io/sitemap.xml
+http://username.github.io/about.html
 http://username.github.io/about.html
 http://username.github.io/pages.html
 http://username.github.io/atom.xml
 http://username.github.io/tags.html
 
+http://username.github.io/posts/2014/02/25/draft
 http://username.github.io/2014/02/07/text-analysis
 http://username.github.io/2014/01/14/computational-science
 http://username.github.io/2014/01/01/best-award-paper
@@ -60,3 +64,4 @@ http://username.github.io/2013/06/05/resume
 http://username.github.io/justpic/2013/06/03/welcome-to-justpic
 http://username.github.io/2013/06/03/loginpython
 http://username.github.io/machine/learning/2013/06/03/deeplearn
+http://username.github.io/posts/2012/12/12/left

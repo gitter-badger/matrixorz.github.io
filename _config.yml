@@ -1,17 +1,15 @@
-<<<<<<< HEAD
 markdown: rdiscount
 pygments: true
 permalink: /posts/:title
 rdiscount:
   extensions: [smart]
 
-name: Zach Holman
-url: http://zachholman.com
+name: Cao Hai
+url: http://i.justpic.org
 description: A fantastic blog that is fantastic.
-twitter: holman
-github: holman
-gravatar_url: http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c
-=======
+twitter: matrixorz
+github: matrixorz
+gravatar_url: http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 
@@ -21,7 +19,6 @@ auto: true
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -145,4 +142,3 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
->>>>>>> 952ce67087ab971784b0f6d20d18be4ae908a127
