@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>install project on preferati</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Just Pic</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+    <h1>install project on preferati<small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p>sudo apt-get install nginx sudo apt-get install git sudo apt-get install mysql-server sudo apt-get install python-dev</p>
+
+<p>install easy_install on ubuntu: sudo apt-get install python-setuptools sudo easy_install virtualenv sudo easy_install pip virtualenv ~/trade source ~/trade/bin/activate install numpy scipy pandas and ta-lib sudo pip install Cython</p>
+
+<p>—-due to blas libs—- sudo apt-get install gfortran libopenblas-dev liblapack-dev g++ pip install numpy pip install scipy</p>
+
+<h1 id="install_talib">install ta-lib</h1>
+
+<p>cd ~ wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz sudo apt-get install build-essential tar -zxvf ta-lib-0.4.0-src.tar.gz cd ta-lib-0.4.0 ./configure –prefix=/usr make sudo make install</p>
+
+<h1 id="install_gevent">install gevent</h1>
+
+<p>wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz tar -zxvf ./configure make sudo make install</p>
+
+<p>cd ~/www git clone https://github.com/pydata/pandas.git git clone https://github.com/mrjbq7/ta-lib.git</p>
+
+<p>update the nginx: sudo apt-get install python-software-properties sudo apt-get install sotware-properties-common sudo add-apt-repository ppa:nginx/stable sudo apt-get update sudo apt-get install nginx</p>
+
+<h1 id="mysql_init">mysql init</h1>
+
+<p>sudo apt-get install mysql-server libmysqld-dev pip install MySQL-python insert into mysql.user(Host,User,Password) values(“localhost”,”david”,password(“david”)); 用户授权： 给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。 mysql&gt;grant all privileges on <em>.</em> to david@localhost identified by ‘david’;</p>
+
+<h1 id="install_redis">install redis</h1>
+
+<p>http://rubyer.me/blog/638/ redis.io</p>
+
+<h1 id="uwsgi_or_gunicorn">uwsgi or gunicorn</h1>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2013/10/26/how-to-write-a-crawler" title="how to write a crawler">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2013/11/04/deploy-python-on-nginx" title="deploy python on nginx">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'justpic'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>27 October 2013</span></div>
+
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy;  2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
