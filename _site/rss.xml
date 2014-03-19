@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-03-19T17:17:04+08:00</lastBuildDate>
-        <pubDate>2014-03-19T17:17:04+08:00</pubDate>
+        <lastBuildDate>2014-03-19T17:37:56+08:00</lastBuildDate>
+        <pubDate>2014-03-19T17:37:56+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -282,7 +282,7 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by 'david';
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;&lt;/p&gt;
@@ -619,7 +619,7 @@ $parent.append($li_1).append($li_2);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;add attribute in the added element:
-    var $li_1=$(&amp;ldquo;&lt;li title='新增节点：数据结构'&gt;数据节点&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
+    var $li_1=$(&amp;ldquo;&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;&amp;rdquo;);&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
@@ -658,7 +658,7 @@ redirect：301永久重定向&lt;/p&gt;
 from sqlalchemy.orm import *
 
 metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
-t1=Table(&quot;t1&quot;,metadata,Column('id',Integer,primary_key=True))
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
 t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
@@ -726,7 +726,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=('localhost',10001)
+server_address=(&#39;localhost&#39;,10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -917,7 +917,7 @@ if __name__==&quot;__main__&quot;:
         logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind(('',10001))
+        listen_fd.bind((&#39;&#39;,10001))
     except socket.error,msg:
         logger.error(&quot;listen file id bind ip error&quot;)
 
@@ -945,7 +945,7 @@ if __name__==&quot;__main__&quot;:
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=''
+                datas=&#39;&#39;
                 while True:
                     try:
                         data=connections[fd].recv(10)
@@ -1171,7 +1171,7 @@ $source .bashrc
 </description>
                 <link>http://username.github.io/python/yt-project/2013/06/05/installhdf5</link>
                 <guid>http://username.github.io/python/yt-project/2013/06/05/installhdf5</guid>
-                <pubDate>2013-06-05T19:11:11+08:00</pubDate>
+                <pubDate>2013-06-05T11:11:11Z</pubDate>
         </item>
 
         <item>
