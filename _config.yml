@@ -2,6 +2,12 @@
 #
 url: http://i.justpic.org/about
 root: /about/
+
+url: http://i.justpic.org/startup
+root: /startup/
+
+url: http://i.justpic.org/philo
+root: /philo/
 markdown: rdiscount
 pygments: true
 permalink: /posts/:title
