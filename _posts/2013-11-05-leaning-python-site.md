@@ -24,10 +24,10 @@ Learning Python Sites
 
 [python practice book](http://anandology.com/python-practice-book)
 
-[python作统计分析](www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
+[python作统计分析](http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
 
-[tuiku](www.tuiku.com maybe) 
+[tuiku](http://www.tuiku.com) 
 
 online game:
-[Game](www.checkio.org)
+[Game](http://www.checkio.org)
 
