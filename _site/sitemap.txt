@@ -6,6 +6,7 @@ http://username.github.io/archive.html
 http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/sitemap.xml
+http://username.github.io/resources.html
 http://username.github.io/atom.xml
 http://username.github.io/philo/index.html
 http://username.github.io/about/index.html
