@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-03-20T11:14:24+08:00</updated>
+ <updated>2014-03-31T20:47:29+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -13,21 +13,258 @@
 
  
  <entry>
+   <title>package dependency problem on ubuntu</title>
+   <link href="http://username.github.io/2014/03/30/package-dependency-problem-on-ubuntu"/>
+   <updated>2014-03-30T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/30/package-dependency-problem-on-ubuntu</id>
+   <content type="html">
+&lt;p&gt;I uncompressed the earliest dpkg.status.x.gz file under /var/backups 
+then copied and renamed it as “status” to /var/lib/dpkg - problem 
+solved. I also ran apt-get -f install. &lt;/p&gt;
+
+&lt;p&gt;libc.so.6误删的解决方法：
+livecd–&amp;gt;sudo ln -s lib.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>new post</title>
+   <link href="http://username.github.io/2014/03/30/new-post"/>
+   <updated>2014-03-30T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/30/new-post</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>from python2 to python3</title>
+   <link href="http://username.github.io/2014/03/26/from-python2-to-python3"/>
+   <updated>2014-03-26T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/26/from-python2-to-python3</id>
+   <content type="html">
+&lt;p&gt;性能&lt;/p&gt;
+
+&lt;p&gt;py3.0 运行pystone benchmark 的速度比Py2.5慢30%。Guido认为Py3.0有极大的优化控件，在字符串和整形操作上可以取得很好的优化结果。
+Py3.1 性能比Py2.5慢 15%，还有很大的提升空间。&lt;/p&gt;
+
+&lt;p&gt;Py3.x源码文件默认使用utf-8编码，&lt;/p&gt;
+
+&lt;p&gt;语法：
+去除了&amp;lt;&amp;gt;,全部改用!=
+去除``,全部改用repr()
+关键词加入as和with，还有True,False,None
+整形除法返回浮点数，要得到整型结果，请使用//
+加入nonlocal语句。使用nonlocal x可以直接指派外围（非全局）变量
+去除print语句，加入print()函数实现相同的功能。同样的还有exec语句，已经改为exec()函数
+改变了顺序操作符的行为，例如x&amp;lt;y,当x和y类型不匹配时抛出TypeError而不是返回随机的bool值
+输入函数改变了,删除了raw_input，用input代替
+去除元组参数解包。不能def(a, (b, c)):pass这样定义函数了
+新式的8进制字变量，相应地修改了oct()函数。 
+增加了 2进制字面量和bin()函数
+扩展的可迭代解包。在Py3.X 里，a, b, *rest = seq 和 *rest, a = seq都是合法的，只要求两点：rest是list 对象和seq是可迭代的。 
+新的super()，可以不再给super()传参数， 
+新的metaclass语法：
+支持class decorator。用法与函数decorator一样： PEP 3129 &lt;/p&gt;
+
+&lt;p&gt;字符串和字节串 
+现在字符串只有str一种类型，但它跟2.x版本的unicode几乎一样。&lt;/p&gt;
+
+&lt;p&gt;关于字节串，请参阅“数据类型”的第2条目&lt;/p&gt;
+
+&lt;p&gt;5.数据类型 
+1）Py3.X去除了long类型，现在只有一种整型——int，但它的行为就像2.X版本的long 
+2）新增了bytes类型，对应于2.X版本的八位串，定义一个bytes字面量的方法如下： 
+    »&amp;gt; b = b’china’ 
+    »&amp;gt; type(b) 
+    &amp;lt;type ‘bytes’&amp;gt; 
+str对象和bytes对象可以使用.encode() (str -&amp;gt; bytes) or .decode() (bytes -&amp;gt; str)方法相互转化。 
+    »&amp;gt; s = b.decode() 
+    »&amp;gt; s 
+    ‘china’ 
+    »&amp;gt; b1 = s.encode() 
+    »&amp;gt; b1 
+    b’china’ 
+3）dict的.keys()、.items 和.values()方法返回迭代器，而之前的iterkeys()等函数都被废弃。同时去掉的还有 
+dict.has_key()，用 in替代它吧 
+6.面向对象 
+1）引入抽象基类（Abstraact Base Classes，ABCs）。 
+2）容器类和迭代器类被ABCs化，所以cellections模块里的类型比Py2.5多了很多。 
+    »&amp;gt; import collections 
+    »&amp;gt; print(‘\n’.join(dir(collections))) 
+    Callable 
+    Container 
+    Hashable 
+    ItemsView 
+    Iterable 
+    Iterator 
+    KeysView 
+    Mapping 
+    MappingView 
+    MutableMapping 
+    MutableSequence 
+    MutableSet 
+    NamedTuple 
+    Sequence 
+    Set 
+    Sized 
+    ValuesView 
+    &lt;strong&gt;all&lt;/strong&gt; 
+    &lt;strong&gt;builtins&lt;/strong&gt; 
+    &lt;strong&gt;doc&lt;/strong&gt; 
+    &lt;strong&gt;file&lt;/strong&gt; 
+    &lt;strong&gt;name&lt;/strong&gt; 
+    _abcoll 
+    _itemgetter 
+    _sys 
+    defaultdict 
+    deque 
+另外，数值类型也被ABCs化。关于这两点，请参阅 PEP 3119和PEP 3141。 
+3）迭代器的next()方法改名为__next&lt;strong&gt;()，并增加内置函数next()，用以调用迭代器的__next&lt;/strong&gt;()方法 
+4）增加了@abstractmethod和 @abstractproperty两个 decorator，编写抽象方法（属性）更加方便。 
+7.异常 
+1）所以异常都从 BaseException继承，并删除了StardardError 
+2）去除了异常类的序列行为和.message属性 
+3）用 raise Exception(args)代替 raise Exception, args语法 
+4）捕获异常的语法改变，引入了as关键字来标识异常实例，在Py2.5中： 
+    »&amp;gt; try: 
+    …    raise NotImplementedError(‘Error’) 
+    … except NotImplementedError, error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;...    print error.message 
+... 
+Error  在Py3.0中： 
+&amp;gt;&amp;gt;&amp;gt; try: 
+      raise NotImplementedError(&#39;Error&#39;) 
+    except NotImplementedError as error: #注意这个 as 
+      print(str(error)) 
+Error  5）异常链，因为__context__在3.0a1版本中没有实现  8.模块变动  1）移除了cPickle模块，可以使用pickle模块代替。最终我们将会有一个透明高效的模块。  2）移除了imageop模块  3）移除了 audiodev, Bastion, bsddb185, exceptions, linuxaudiodev, md5, MimeWriter, mimify, popen2,   rexec, sets, sha, stringold, strop, sunaudiodev, timing和xmllib模块  4）移除了bsddb模块(单独发布，可以从http://www.jcea.es/programacion/pybsddb.htm获取)  5）移除了new模块  6）os.tmpnam()和os.tmpfile()函数被移动到tmpfile模块下  7）tokenize模块现在使用bytes工作。主要的入口点不再是generate_tokens，而是 tokenize.tokenize()  9.其它  1）xrange() 改名为range()，要想使用range()获得一个list，必须显式调用： 
+&amp;gt;&amp;gt;&amp;gt; list(range(10)) 
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  2）bytes对象不能hash，也不支持 b.lower()、b.strip()和b.split()方法，但对于后两者可以使用 b.strip(b’   \n\t\r \f’)和b.split(b’ ‘)来达到相同目的  3）zip()、map()和filter()都返回迭代器。而apply()、 callable()、coerce()、 execfile()、reduce()和reload  ()函数都被去除了
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;现在可以使用hasattr()来替换 callable(). hasattr()的语法如：hasattr(string, ‘&lt;strong&gt;name&lt;/strong&gt;’)&lt;/p&gt;
+
+&lt;p&gt;4）string.letters和相关的.lowercase和.uppercase被去除，请改用string.ascii_letters 等 
+5）如果x &amp;lt; y的不能比较，抛出TypeError异常。2.x版本是返回伪随机布尔值的 
+6）&lt;strong&gt;getslice__系列成员被废弃。a[i:j]根据上下文转换为a.__getitem&lt;/strong&gt;(slice(I, j))或 __setitem__和 
+__delitem__调用 
+7）file类被废弃，在Py2.5中： 
+    »&amp;gt; file 
+    &amp;lt;type ‘file’&amp;gt; 
+在Py3.X中： 
+    »&amp;gt; file 
+    Traceback (most recent call last): 
+    File “&amp;lt;pyshell#120&amp;gt;”, line 1, in &lt;module&gt; 
+       file 
+    NameError: name &#39;file&#39; is not defined&lt;/module&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>install llvm in ubuntu 12.04</title>
+   <link href="http://username.github.io/2014/03/25/install-llvm-in-ubuntu-1204"/>
+   <updated>2014-03-25T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/25/install-llvm-in-ubuntu-1204</id>
+   <content type="html">
+&lt;p&gt;&lt;strong&gt;upgrade gcc/g++ to version 4.7&lt;/strong&gt;
+Configure alternatives to allow you switch to/from 4.6/4.8&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:ubuntu-toolchain-r/test  if add-apt-repostory is not found,get it via:
+
+sudo apt-get install python-software-properties
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+
+sudo update-alternatives --config gcc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;follow these steps &lt;a href=&quot;http://clang.llvm.org/get_started.html&quot;&gt;llvm official documentation&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>cython 与 python的区别</title>
+   <link href="http://username.github.io/2014/03/21/cython--python"/>
+   <updated>2014-03-21T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/03/21/cython--python</id>
+   <content type="html">
+&lt;h2 id=&quot;pythoncc&quot;&gt;python与C/C++的交互&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Cython与GIL&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Cython基于Pyrex，专门用来写在Python里面import用的扩展库。实际上Cython的语法基本上跟Python一致。
+void _c_loop(void)
+{
+while(1){
+    printf(“Print form C loop\n”);
+    sleep(1);
+}
+}&lt;/p&gt;
+
+&lt;p&gt;def _py_loop():
+    while True:
+        print “Print from Python loop”
+        time.sleep(1)&lt;/p&gt;
+
+&lt;p&gt;void _c_loop_1(void)
+{
+   Py_BEGIN_ALLOW_THREADS
+   while(1){
+       printf(“Print from C loop\n”);
+       sleep(1);
+    }
+   Py_END_ALLOW_THREADS
+}&lt;/p&gt;
+
+&lt;p&gt;void _c_loop_2(void)
+{
+    while(1) {
+      Py_BEGIN_ALLOW_THREADS
+      printf(“Print from C loop\n”);
+      sleep(1);
+      Py_END_ALLOW_THREADS
+}
+}&lt;/p&gt;
+
+&lt;p&gt;def cy_loop():
+    with nogil:
+        while True:
+            printf(“Print from Cython loop\n”)
+            sleep(1)&lt;/p&gt;
+
+&lt;p&gt;cdef exterm from &lt;em&gt;:
+    unsigned int sleep(unsigned int seconds) nogil
+    int printf(char&lt;/em&gt; format,…) nogil&lt;/p&gt;
+
+&lt;p&gt;cdef void callback_func(void) with gil:
+   …&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/matrixorz/9614840.js?file=app.py&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;E=mc^2&lt;/script&gt;)，&lt;script type=&quot;math/tex&quot;&gt;x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}.&lt;/script&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Sample draft post</title>
    <link href="http://username.github.io/posts/2014/02/25/draft"/>
    <updated>2014-02-25T00:00:00+08:00</updated>
    <id>http://username.github.io/posts/2014/02/25/draft</id>
-   <content type="html">&lt;p&gt;This is a draft post that isn&amp;rsquo;t ready for the wild. See how it doesn&amp;rsquo;t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This is a draft post that isn’t ready for the wild. See how it doesn’t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
 
-&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you&amp;rsquo;re off to the races.&lt;/p&gt;
+&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you’re off to the races.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
+&lt;p&gt;You’ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
 install and set up Left for your own purposes.&lt;/p&gt;
 
-&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
+&lt;p&gt;If you have any questions, follow and ping me on Twitter- I’m
 &lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -36,9 +273,11 @@ install and set up Left for your own purposes.&lt;/p&gt;
    <link href="http://username.github.io/2014/02/07/text-analysis"/>
    <updated>2014-02-07T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/02/07/text-analysis</id>
-   <content type="html">&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
 
 &lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -47,7 +286,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
    <link href="http://username.github.io/2014/01/14/computational-science"/>
    <updated>2014-01-14T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/01/14/computational-science</id>
-   <content type="html">&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
 </content>
  </entry>
  
@@ -56,7 +296,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
    <link href="http://username.github.io/2014/01/01/best-award-paper"/>
    <updated>2014-01-01T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/01/01/best-award-paper</id>
-   <content type="html">&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
 </content>
  </entry>
  
@@ -65,7 +306,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
    <link href="http://username.github.io/2013/12/04/install-redmine-in-ubuntu"/>
    <updated>2013-12-04T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</id>
-   <content type="html">&lt;h1&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;redmine&quot;&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04&quot;&gt;install redmine on ubuntu12.04&lt;/a&gt;&lt;/p&gt;
 
@@ -79,12 +321,10 @@ install and set up Left for your own purposes.&lt;/p&gt;
    <link href="http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server"/>
    <updated>2013-11-19T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</id>
-   <content type="html">&lt;h1&gt;在ubuntu上安装BOINC&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client
+   <content type="html">
+&lt;h1 id=&quot;ubuntuboinc&quot;&gt;在ubuntu上安装BOINC&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client (you can also download it from wcg and install)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(you can also download it from wcg and install)&lt;/p&gt;
 
 &lt;p&gt;find your account key:&lt;/p&gt;
 
@@ -92,7 +332,7 @@ install and set up Left for your own purposes.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You should get a response something like this
-dfb74c9b9&amp;hellip;&lt;/p&gt;
+dfb74c9b9…&lt;/p&gt;
 
 &lt;p&gt;attach to your project&lt;/p&gt;
 
@@ -125,7 +365,8 @@ dfb74c9b9&amp;hellip;&lt;/p&gt;
    <link href="http://username.github.io/2013/11/10/a-little-surprised"/>
    <updated>2013-11-10T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/10/a-little-surprised</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://cos.name/2013/02/rise-of-the-machine/&quot;&gt;cos&lt;/a&gt;&lt;/p&gt;
 
@@ -138,7 +379,8 @@ dfb74c9b9&amp;hellip;&lt;/p&gt;
    <link href="http://username.github.io/2013/11/09/data-analysis"/>
    <updated>2013-11-09T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/09/data-analysis</id>
-   <content type="html">&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
 </content>
  </entry>
  
@@ -147,7 +389,8 @@ dfb74c9b9&amp;hellip;&lt;/p&gt;
    <link href="http://username.github.io/2013/11/06/python-web"/>
    <updated>2013-11-06T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/06/python-web</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
 &lt;a href=&quot;http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&quot;&gt;WSGI&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;web server side:&lt;/p&gt;
@@ -161,13 +404,14 @@ for data in iterable:
     #send data to client
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
+&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）       &lt;/p&gt;
 
 &lt;p&gt;后续：&lt;/p&gt;
 
 &lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -176,8 +420,8 @@ for data in iterable:
    <link href="http://username.github.io/2013/11/05/leaning-python-site"/>
    <updated>2013-11-05T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/05/leaning-python-site</id>
-   <content type="html">&lt;h1&gt;Learning Python Sites&lt;/h1&gt;
-
+   <content type="html">
+&lt;h1 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
@@ -196,10 +440,11 @@ for data in iterable:
 
 &lt;p&gt;&lt;a href=&quot;http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf&quot;&gt;python作统计分析&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt; &lt;/p&gt;
 
 &lt;p&gt;online game:
 &lt;a href=&quot;http://www.checkio.org&quot;&gt;Game&lt;/a&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -208,7 +453,8 @@ for data in iterable:
    <link href="http://username.github.io/2013/11/04/deploy-python-on-nginx"/>
    <updated>2013-11-04T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/11/04/deploy-python-on-nginx</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&quot;&gt;gunicorn with nginx&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -219,7 +465,8 @@ for data in iterable:
    <link href="http://username.github.io/2013/10/27/install-project-on-preferati"/>
    <updated>2013-10-27T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/27/install-project-on-preferati</id>
-   <content type="html">&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
 sudo apt-get install git
@@ -240,29 +487,25 @@ sudo pip install Cython
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
 pip install numpy
-pip install scipy
-&lt;/code&gt;&lt;/pre&gt;
+pip install scipy **install ta-lib**
 
-&lt;p&gt;&lt;strong&gt;install ta-lib&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~
+cd ~
 wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 sudo apt-get  install  build-essential
 tar -zxvf ta-lib-0.4.0-src.tar.gz
 cd ta-lib-0.4.0
 ./configure --prefix=/usr
 make
+sudo make install **install gevent**
+wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+tar -zxvf 
+./configure
+make 
 sudo make install
-&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;install gevent&lt;/strong&gt;
-    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-    tar -zxvf
-    ./configure
-    make
-    sudo make install&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd ~/www
+
+cd ~/www
 git clone https://github.com/pydata/pandas.git
 git clone https://github.com/mrjbq7/ta-lib.git
 &lt;/code&gt;&lt;/pre&gt;
@@ -280,22 +523,18 @@ sudo apt-get install nginx
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server libmysqld-dev
 pip install MySQL-python
-insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;david&quot;,password(&quot;david&quot;));
+insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;david&quot;,password(&quot;david&quot;)); **用户授权**
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;用户授权&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
 
-&lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;http://rubyer.me/blog/638/ redis.io
+http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;uwsgi or gunicorn(optional)&lt;/strong&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -304,7 +543,8 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
    <link href="http://username.github.io/2013/10/26/how-to-write-a-crawler"/>
    <updated>2013-10-26T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/26/how-to-write-a-crawler</id>
-   <content type="html">&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
 
 &lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;
 </content>
@@ -315,7 +555,8 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
    <link href="http://username.github.io/2013/10/22/qt-fourteen-steps"/>
    <updated>2013-10-22T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/22/qt-fourteen-steps</id>
-   <content type="html">&lt;p&gt;1.Hello ,World!&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;1.Hello ,World!&lt;/p&gt;
 
 &lt;p&gt;2.调用退出
 3.家庭价值
@@ -343,15 +584,14 @@ private slots：在这个区内声明的槽意味着只有类自己可以将信�
    <link href="http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu"/>
    <updated>2013-10-18T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu</id>
-   <content type="html">&lt;h1&gt;linux上安装numpy scipy&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;linuxnumpy-scipy&quot;&gt;linux上安装numpy scipy&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo pip install numpy
 sudo apt-get install libatlas-base-dev gfortran
 sudo pip install scipy
-sudo pip install matplotlib   # recommended
+sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;
 </content>
  </entry>
  
@@ -360,7 +600,8 @@ sudo pip install matplotlib   # recommended
    <link href="http://username.github.io/2013/10/17/python-machine-learning"/>
    <updated>2013-10-17T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/10/17/python-machine-learning</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.yuanyong.org/blog/python/k-means-using-python&quot;&gt;k-means&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -371,7 +612,8 @@ sudo pip install matplotlib   # recommended
    <link href="http://username.github.io/2013/09/29/git"/>
    <updated>2013-09-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/29/git</id>
-   <content type="html">&lt;h1&gt;git学习资料&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;git&quot;&gt;git学习资料&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com/jbenet/ee6c9ac48068889b0912&quot;&gt;a gist for git&lt;/a&gt;&lt;/p&gt;
 
@@ -384,23 +626,24 @@ sudo pip install matplotlib   # recommended
    <link href="http://username.github.io/2013/09/18/nginx-permission-root"/>
    <updated>2013-09-18T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/18/nginx-permission-root</id>
-   <content type="html">&lt;h1&gt;nginx 权限问题的解决方法&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;nginx-&quot;&gt;nginx 权限问题的解决方法&lt;/h1&gt;
 
 &lt;p&gt;按照下面方法配置nginx时出现用户权限问题
-    server{
-    listen 4002;
-    server_name localhost;
-    access_log logs/access.log;&lt;/p&gt;
+	server{
+	listen 4002;
+	server_name localhost;
+	access_log logs/access.log;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;location / {
    proxy_set_header X-Real-IP $remote_addr;
    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    proxy_set_header Host $http_host;
    proxy_set_header X-NginxX-Proxy true;
-
+   
    proxy_pass http://backend;
    proxy_redirect off;
-
+   
    proxy_http_version 1.1;
    proxy_set_header Upgrade $http_upgrade;
    proxy_set_header Connection &quot;upgrade&quot;;
@@ -408,23 +651,19 @@ sudo pip install matplotlib   # recommended
    }
  upstream backend {
  server 127.0.0.1:3201;
- }
+ } 参照[nginx 13:permission denied solved](http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;参照&lt;a href=&quot;http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&quot;&gt;nginx 13:permission denied solved&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The root directive is the problem here. Quote from the doc:&lt;/p&gt;
 
-&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for &amp;ldquo;/i/top.gif&amp;rdquo; will not look in &amp;ldquo;/spool/w3/top.gif&amp;rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
+&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
 
-&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it&amp;rsquo;s going to end on a subfolder, use alias:&lt;/p&gt;
+&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;location  /map/ {
   alias  /home/user/public_html/map/;
-}
+} Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
 </content>
  </entry>
  
@@ -433,13 +672,15 @@ sudo pip install matplotlib   # recommended
    <link href="http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network"/>
    <updated>2013-09-12T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</id>
-   <content type="html">&lt;p&gt;Linux下的五种I/O模型
+   <content type="html">
+&lt;p&gt;Linux下的五种I/O模型
 阻塞I/O（blocking I/O）
-非阻塞I/O（nonblocking I/O）&lt;br/&gt;
+非阻塞I/O（nonblocking I/O）&lt;br /&gt;
 I/O服用（select和poll）（I/O multiplexing）
 信号驱动I/O（signal driven I/O（SIGIO））
 异步I/O（asynchronous I/O（the POSIX aio_functions))
 前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -448,7 +689,8 @@ I/O服用（select和poll）（I/O multiplexing）
    <link href="http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action"/>
    <updated>2013-08-08T00:00:00+08:00</updated>
    <id>http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action</id>
-   <content type="html">&lt;p&gt;https://github.com/pbharrin/machinelearninginaction
+   <content type="html">
+&lt;p&gt;https://github.com/pbharrin/machinelearninginaction
 zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 </content>
  </entry>
@@ -458,19 +700,17 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
    <link href="http://username.github.io/2013/08/06/webpy"/>
    <updated>2013-08-06T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/08/06/webpy</id>
-   <content type="html">&lt;h1&gt;webpy 中文文档学习目录&lt;/h1&gt;
-
+   <content type="html">
+&lt;h1 id=&quot;webpy-&quot;&gt;webpy 中文文档学习目录&lt;/h1&gt;
 &lt;p&gt;web py&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;安装 webpy&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;webpy3.0 新手指南&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;webpy基本应用:&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;
+## webpy基本应用:
+&lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;提供静态文件访问&lt;/a&gt;&lt;/p&gt;
 
@@ -482,11 +722,9 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;提供XML访问&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;高级应用:&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;
+## 高级应用:
+&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;应用处理器，添加钩子和卸载钩子&lt;/a&gt;&lt;/p&gt;
 
@@ -500,11 +738,9 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;用cherrypy提供SSL支持&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;
+## Sessions and user state 会话和用户状态:
+&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在调试模式下使用Session&lt;/a&gt;&lt;/p&gt;
 
@@ -514,21 +750,17 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;用户认证&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;(&quot;&gt;一个在postgreSQL数据库环境下的用户认证的例子&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[一个在postgreSQL数据库环境下的用户认证的例子](()&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Utils 实用工具&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;
+## Utils 实用工具
+&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;如何利用Gmail发送邮件&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Templates 模板&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;
+## Templates 模板
+&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;使用站点布局模板&lt;/a&gt;&lt;/p&gt;
 
@@ -546,14 +778,12 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在谷歌应用程序引擎使用模板&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;Testing 测试:&lt;/h2&gt;
-
+&lt;h2 id=&quot;testing-&quot;&gt;Testing 测试:&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;Testing with Paste and Nose (未译)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application&amp;rsquo;s request method (未译)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application’s request method (未译)&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;User input 用户输入:&lt;/h2&gt;
-
+&lt;h2 id=&quot;user-input-&quot;&gt;User input 用户输入:&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;文件上传&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;保存上传的文件&lt;/a&gt;&lt;/p&gt;
@@ -566,8 +796,7 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;显示个别表单字段&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;Database 数据库&lt;/h2&gt;
-
+&lt;h2 id=&quot;database-&quot;&gt;Database 数据库&lt;/h2&gt;
 &lt;p&gt;使用多数据库&lt;/p&gt;
 
 &lt;p&gt;Select: 查询数据&lt;/p&gt;
@@ -588,8 +817,7 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;使用字典动态构造where子句&lt;/p&gt;
 
-&lt;h2&gt;Deployment 部署:&lt;/h2&gt;
-
+&lt;h2 id=&quot;deployment-&quot;&gt;Deployment 部署:&lt;/h2&gt;
 &lt;p&gt;通过Fastcgi和lighttpd部署&lt;/p&gt;
 
 &lt;p&gt;通过Webpy和Nginx with FastCGI搭建Web.py&lt;/p&gt;
@@ -611,7 +839,8 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
    <link href="http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
    <updated>2013-07-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
-   <content type="html">&lt;h1&gt;使用jquery增加元素节点&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;jquery&quot;&gt;使用jquery增加元素节点&lt;/h1&gt;
 
 &lt;p&gt;add one element in the parent&lt;/p&gt;
 
@@ -638,7 +867,8 @@ $parent.append($li_1);
    <link href="http://username.github.io/2013/07/28/webpy-note"/>
    <updated>2013-07-28T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/28/webpy-note</id>
-   <content type="html">&lt;h1&gt;webpy学习笔记&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;webpy&quot;&gt;webpy学习笔记&lt;/h1&gt;
 
 &lt;p&gt;web.ctx
 web.loadhook(handler)函数在web请求前执行handler函数
@@ -656,8 +886,8 @@ redirect：301永久重定向&lt;/p&gt;
    <link href="http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping"/>
    <updated>2013-07-26T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping</id>
-   <content type="html">&lt;h1&gt;sqlalchemy动态映射&lt;/h1&gt;
-
+   <content type="html">
+&lt;h1 id=&quot;sqlalchemy&quot;&gt;sqlalchemy动态映射&lt;/h1&gt;
 &lt;p&gt;代码如下:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;from sqlalchemy import *
@@ -672,7 +902,7 @@ def map_class_to_some_table(cls,table,entity_name,**kw):
     newcls=type(entity_name,(cls,),{})
     mapper(newcls,table,**kw)
     return newcls
-
+   
 class Foo(object):
     pass
 
@@ -684,6 +914,7 @@ sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
 print sess.query(T1Foo).all()
 print sess.query(T2Foo).all()
 &lt;/code&gt;&lt;/pre&gt;
+
 </content>
  </entry>
  
@@ -692,7 +923,8 @@ print sess.query(T2Foo).all()
    <link href="http://username.github.io/2013/07/26/premature-optimization"/>
    <updated>2013-07-26T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/26/premature-optimization</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -701,13 +933,15 @@ print sess.query(T2Foo).all()
    <link href="http://username.github.io/2013/07/22/memo-on-the-trade"/>
    <updated>2013-07-22T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/22/memo-on-the-trade</id>
-   <content type="html">&lt;p&gt;RTA github&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;RTA github&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;www.lowindata.com&quot;&gt;backbonejs note&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;www.icoding.co/2012/04/backbonejs-html-2&quot;&gt;backbonejs&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://code.google.com/p/pyctp/&quot;&gt;pyctp&lt;/a&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -716,9 +950,10 @@ print sess.query(T2Foo).all()
    <link href="http://username.github.io/python%20network/2013/07/15/python-asynchrous-network"/>
    <updated>2013-07-15T00:00:00+08:00</updated>
    <id>http://username.github.io/python%20network/2013/07/15/python-asynchrous-network</id>
-   <content type="html">&lt;hr /&gt;
-
-&lt;h2&gt;select,poll,epoll test in python&lt;/h2&gt;
+   <content type="html">
+&lt;hr /&gt;
+&lt;p&gt;select,poll,epoll test in python
+——————————–&lt;/p&gt;
 
 &lt;p&gt;selecttest.py&lt;/p&gt;
 
@@ -936,7 +1171,7 @@ if __name__==&quot;__main__&quot;:
         epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
     except select.error,msg:
         logger.error(msg)
-
+    
     connections={}
     addresses={}
     datalist={}
@@ -959,7 +1194,7 @@ if __name__==&quot;__main__&quot;:
                             epoll_fd.unregister(fd)
                             connections[fd].close()
                             logger.debug(&quot;%s,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
-
+                            
                             break
                         else:
                             datas+=data 
@@ -1024,10 +1259,11 @@ for message in messages:
 
 &lt;p&gt;&lt;strong&gt;benchmark&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt; 针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt; 针对asyncore的介绍和使用有很好的两篇博客：&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;
+&lt;p&gt;针对asyncore的介绍和使用有很好的两篇博客：&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;
   &lt;a href=&quot;http://www.nightmare.com/medusa/async_sockets.html&quot;&gt;blog2&lt;/a&gt;&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -1036,22 +1272,20 @@ for message in messages:
    <link href="http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv"/>
    <updated>2013-07-02T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</id>
-   <content type="html">&lt;h1&gt;ubuntu上安装多个版本的python&lt;/h1&gt;
+   <content type="html">
+&lt;h1 id=&quot;ubuntupython&quot;&gt;ubuntu上安装多个版本的python&lt;/h1&gt;
 
 &lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python3.3
+sudo apt-get install python3.3 建立软链接：
+
+ln -s /usr/bin/python3.3 /usr/bin/python3.3m
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;建立软链接：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
+&lt;p&gt;安转python2.7.5再ubuntu上:    &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
@@ -1073,7 +1307,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
    <link href="http://username.github.io/2013/06/14/com-learning"/>
    <updated>2013-06-14T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/14/com-learning</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1082,7 +1317,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
    <link href="http://username.github.io/2013/06/11/protobuffer"/>
    <updated>2013-06-11T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/06/11/protobuffer</id>
-   <content type="html">&lt;p&gt;google protobuffer待记&lt;/p&gt;
+   <content type="html">
+&lt;p&gt;google protobuffer待记&lt;/p&gt;
 </content>
  </entry>
  
@@ -1091,7 +1327,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
    <link href="http://username.github.io/python/2013/06/08/scipy-error"/>
    <updated>2013-06-08T00:00:00+08:00</updated>
    <id>http://username.github.io/python/2013/06/08/scipy-error</id>
-   <content type="html">&lt;h1&gt;ubuntu上安装scipy出错解决方法&lt;/h1&gt;
+   <content type="html">&lt;h1 id=&quot;ubuntuscipy&quot;&gt;ubuntu上安装scipy出错解决方法&lt;/h1&gt;
 
 &lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
 
@@ -1122,7 +1358,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
    <link href="http://username.github.io/linux/2013/06/06/wine-error"/>
    <updated>2013-06-06T00:00:00+08:00</updated>
    <id>http://username.github.io/linux/2013/06/06/wine-error</id>
-   <content type="html">&lt;h1&gt;Wine error&lt;/h1&gt;
+   <content type="html">&lt;h1 id=&quot;wine-error&quot;&gt;Wine error&lt;/h1&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
 
@@ -1138,7 +1374,7 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
    <link href="http://username.github.io/python/yt-project/2013/06/05/installhdf5"/>
    <updated>2013-06-05T11:11:11Z</updated>
    <id>http://username.github.io/python/yt-project/2013/06/05/installhdf5</id>
-   <content type="html">&lt;h1&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+   <content type="html">&lt;h1 id=&quot;install-hdf5-on-ubuntu-1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
 
 &lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
 
@@ -1163,10 +1399,8 @@ $debuild -us -uc
 
 &lt;pre&gt;&lt;code&gt;$export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
 $export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
-$source .bashrc
+$source .bashrc 安装 blosc (可选)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装 blosc (可选)&lt;/p&gt;
 
 &lt;p&gt;安装 lzo2-2 lzo2-dev&lt;/p&gt;
 
@@ -1174,6 +1408,7 @@ $source .bashrc
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;至此HDF5可用&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -1182,18 +1417,17 @@ $source .bashrc
    <link href="http://username.github.io/machine/learning/2013/06/03/deep-learning"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
    <id>http://username.github.io/machine/learning/2013/06/03/deep-learning</id>
-   <content type="html">&lt;h2&gt;机器学习的两次浪潮：&lt;/h2&gt;
-
-&lt;p&gt;  浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
+   <content type="html">
+&lt;h2 id=&quot;section&quot;&gt;机器学习的两次浪潮：&lt;/h2&gt;
+&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
   这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
 
-&lt;h2&gt;深度学习：&lt;/h2&gt;
-
-&lt;p&gt;  很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化&quot;(layer-wisepre-training)来有效克服。&lt;/p&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;深度学习：&lt;/h2&gt;
+&lt;p&gt;很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化”(layer-wisepre-training)来有效克服。&lt;/p&gt;
 
 &lt;p&gt;以下资料可供学习入门:&lt;/p&gt;
 
-&lt;p&gt;  &lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;&lt;br/&gt;
+&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
   &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>

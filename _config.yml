@@ -8,7 +8,8 @@ root: /startup/
 
 url: http://i.justpic.org/philo
 root: /philo/
-markdown: rdiscount
+#markdown: rdiscount
+markdown: kramdown
 pygments: true
 permalink: /posts/:title
 rdiscount:

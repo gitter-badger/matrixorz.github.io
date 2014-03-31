@@ -15,6 +15,11 @@ http://username.github.io/papers.html
 http://username.github.io/tags.html
 http://username.github.io/startup/index.html
 
+http://username.github.io/2014/03/30/package-dependency-problem-on-ubuntu
+http://username.github.io/2014/03/30/new-post
+http://username.github.io/2014/03/26/from-python2-to-python3
+http://username.github.io/2014/03/25/install-llvm-in-ubuntu-1204
+http://username.github.io/2014/03/21/cython--python
 http://username.github.io/posts/2014/02/25/draft
 http://username.github.io/2014/02/07/text-analysis
 http://username.github.io/2014/01/14/computational-science
