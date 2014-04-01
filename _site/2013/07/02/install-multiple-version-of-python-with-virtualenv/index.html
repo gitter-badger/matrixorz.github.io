@@ -69,22 +69,20 @@
     July  2, 2013
   </section>
 
-  <h1>ubuntu上安装多个版本的python</h1>
+  
+<h1 id="ubuntupython">ubuntu上安装多个版本的python</h1>
 
 <p>安装python3.3在ubuntu上</p>
 
 <pre><code>sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python3.3
+sudo apt-get install python3.3 建立软链接：
+
+ln -s /usr/bin/python3.3 /usr/bin/python3.3m
 </code></pre>
 
-<p>建立软链接：</p>
-
-<pre><code>ln -s /usr/bin/python3.3 /usr/bin/python3.3m
-</code></pre>
-
-<p>安转python2.7.5再ubuntu上:</p>
+<p>安转python2.7.5再ubuntu上:    </p>
 
 <pre><code>sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update

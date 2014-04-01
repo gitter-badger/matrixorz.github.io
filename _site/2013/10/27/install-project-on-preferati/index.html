@@ -69,7 +69,8 @@
     October 27, 2013
   </section>
 
-  <p>Install OpenQuant Project</p>
+  
+<p>Install OpenQuant Project</p>
 
 <pre><code>sudo apt-get install nginx
 sudo apt-get install git
@@ -90,29 +91,25 @@ sudo pip install Cython
 
 <pre><code>sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
 pip install numpy
-pip install scipy
-</code></pre>
+pip install scipy **install ta-lib**
 
-<p><strong>install ta-lib</strong></p>
-
-<pre><code>cd ~
+cd ~
 wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 sudo apt-get  install  build-essential
 tar -zxvf ta-lib-0.4.0-src.tar.gz
 cd ta-lib-0.4.0
 ./configure --prefix=/usr
 make
+sudo make install **install gevent**
+wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+tar -zxvf 
+./configure
+make 
 sudo make install
-</code></pre>
 
-<p><strong>install gevent</strong>
-    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-    tar -zxvf
-    ./configure
-    make
-    sudo make install</p>
 
-<pre><code>cd ~/www
+
+cd ~/www
 git clone https://github.com/pydata/pandas.git
 git clone https://github.com/mrjbq7/ta-lib.git
 </code></pre>
@@ -130,22 +127,18 @@ sudo apt-get install nginx
 
 <pre><code>sudo apt-get install mysql-server libmysqld-dev
 pip install MySQL-python
-insert into mysql.user(Host,User,Password) values("localhost","david",password("david"));
+insert into mysql.user(Host,User,Password) values("localhost","david",password("david")); **用户授权**
 </code></pre>
-
-<p><strong>用户授权</strong></p>
 
 <p>给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
 
-<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david';
-</code></pre>
+<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
 
-<p><strong>install redis</strong></p>
-
-<pre><code>http://rubyer.me/blog/638/ redis.io
+http://rubyer.me/blog/638/ redis.io
 </code></pre>
 
 <p><strong>uwsgi or gunicorn(optional)</strong></p>
+
 
 
   <!-- TODO: bio here -->

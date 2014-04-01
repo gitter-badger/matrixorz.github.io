@@ -69,7 +69,7 @@
     June  5, 2013
   </section>
 
-  <h1>install hdf5 on ubuntu 12.04</h1>
+  <h1 id="install-hdf5-on-ubuntu-1204">install hdf5 on ubuntu 12.04</h1>
 
 <p>you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.</p>
 
@@ -94,10 +94,8 @@ $debuild -us -uc
 
 <pre><code>$export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
 $export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
-$source .bashrc
+$source .bashrc 安装 blosc (可选)
 </code></pre>
-
-<p>安装 blosc (可选)</p>
 
 <p>安装 lzo2-2 lzo2-dev</p>
 
@@ -105,6 +103,7 @@ $source .bashrc
 </code></pre>
 
 <p>至此HDF5可用</p>
+
 
 
   <!-- TODO: bio here -->
