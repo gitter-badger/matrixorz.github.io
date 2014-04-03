@@ -13,3 +13,5 @@ draft: true
 [k-means](http://www.yuanyong.org/blog/python/k-means-using-python)
 
 [JMLR](http://jmlr.org/mloss/)
+
+[machine learning open source](http://mloss.org/software/)
