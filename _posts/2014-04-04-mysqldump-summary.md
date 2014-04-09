@@ -51,6 +51,7 @@ Mysql用户管理
     
     mysql> insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
     mysql>grant all privileges on *.* to jee@localhost identified by ‘123′；
+
 修改用户密码
    
     mysql> UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;

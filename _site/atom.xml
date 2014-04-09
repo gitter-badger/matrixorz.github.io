@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-04-09T15:51:49+08:00</updated>
+ <updated>2014-04-09T15:54:11+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -66,9 +66,12 @@ mysql&amp;gt;source tb1tb2.sql;
 &lt;p&gt;创建用户&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mysql&amp;gt; insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;phplamp&quot;,password(&quot;1234&quot;));
-mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′； 修改用户密码
-   
-mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
+mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′；
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改用户密码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
 mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
 
