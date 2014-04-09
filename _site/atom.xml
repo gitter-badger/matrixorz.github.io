@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-04-09T15:44:44+08:00</updated>
+ <updated>2014-04-09T15:51:49+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -18,37 +18,55 @@
    <updated>2014-04-04T00:00:00+08:00</updated>
    <id>http://username.github.io/2014/04/04/mysqldump-summary</id>
    <content type="html">
-&lt;p&gt;导出所有库&lt;br /&gt;
-    mysqldump -uusername -ppassword –all-databases&amp;gt;all.sql&lt;/p&gt;
+&lt;h2 id=&quot;mysql&quot;&gt;Mysql导入导出&lt;/h2&gt;
+&lt;p&gt;导出所有库&lt;/p&gt;
 
-&lt;p&gt;导入所有库&lt;br /&gt;
-    mysql&amp;gt;source all.sql;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysqldump -uusername -ppassword --all-databases&amp;gt;all.sql
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;导出某些库&lt;br /&gt;
-    mysqldump -uusername -ppassword –databases db1 db2 &amp;gt;db1db2.sql&lt;/p&gt;
+&lt;p&gt;导入所有库&lt;/p&gt;
 
-&lt;p&gt;导入某些库&lt;br /&gt;
-    mysql&amp;gt;source db1db2.sql&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;source all.sql;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;导入某个库&lt;br /&gt;
-    mysql -uusername -ppassword db1&amp;lt;db1.sql;
-    mysql&amp;gt;source db1.sql;&lt;/p&gt;
+&lt;p&gt;导出某些库&lt;/p&gt;
 
-&lt;p&gt;导出某个库&lt;br /&gt;
-    mysqldump -uusername -ppassword db1 table1 table2&amp;gt;tb1tb2.sql&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysqldump -uusername -ppassword --databases db1 db2 &amp;gt;db1db2.sql
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;导入某些数据表&lt;br /&gt;
-    mysql -uusername -ppassword db1&lt;tb1tb2.sql mysql=&quot;&quot;&gt;user db1;
-    mysql&amp;gt;source tb1tb2.sql;&lt;/tb1tb2.sql&gt;&lt;/p&gt;
+&lt;p&gt;导入某些库&lt;/p&gt;
 
-&lt;p&gt;mysqldump字符集设置&lt;br /&gt;
-    $mysqldump -uusername -ppassword –default-character-set=utf-8 db1 table1&amp;gt;tb1.sql&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;source db1db2.sql
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;不写表的任何行信息。如果指向转储表的结构信息    –no-data,-d&lt;/p&gt;
+&lt;p&gt;导入某个库&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;mysql -uusername -ppassword db1&amp;lt;db1.sql;
+mysql&amp;gt;source db1.sql;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;导出某个库&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysqldump -uusername -ppassword db1 table1 table2&amp;gt;tb1tb2.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;导入某些数据表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql -uusername -ppassword db1&amp;lt;tb1tb2.sql
+mysql&amp;gt;user db1;
+mysql&amp;gt;source tb1tb2.sql;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mysqldump字符集设置&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$mysqldump -uusername -ppassword --default-character-set=utf-8 db1 table1&amp;gt;tb1.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;mysql-1&quot;&gt;Mysql用户管理&lt;/h2&gt;
 &lt;p&gt;创建用户&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt; insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;phplamp&quot;,password(&quot;1234&quot;)); 　　mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′； 修改用户密码
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;phplamp&quot;,password(&quot;1234&quot;));
+mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′； 修改用户密码
    
 mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
 mysql&amp;gt; FLUSH PRIVILEGES;
