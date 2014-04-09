@@ -19,7 +19,17 @@ draft: true
      sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
      sudo update-alternatives --config gcc
 
+ 安装完gcc-4.8后即可安装llvm-3.4 参考 [llvm/apt]()
 
+ 下载[osxcross]()
 
+ 编译出现错误： fatal error:limits can't find?
+     
+     $echo '#include <limits.h>' | clang -v -xc -o /dev/null -
+
+使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
+
+一个查找文件的有用命令:
+    $grep notification `find ./*`
 
 

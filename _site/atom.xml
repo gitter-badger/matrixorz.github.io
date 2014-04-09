@@ -4,11 +4,7 @@
  <title>Just Pic</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
-<<<<<<< HEAD
- <updated>2014-03-29T16:14:32+08:00</updated>
-=======
- <updated>2014-03-31T20:47:29+08:00</updated>
->>>>>>> 2b48e5941e40e8bd443fd3a8ba87dadc1bcef547
+ <updated>2014-04-09T15:44:44+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name></name>
@@ -17,238 +13,94 @@
 
  
  <entry>
-   <title>package dependency problem on ubuntu</title>
-   <link href="http://username.github.io/2014/03/30/package-dependency-problem-on-ubuntu"/>
-   <updated>2014-03-30T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/03/30/package-dependency-problem-on-ubuntu</id>
+   <title>mysql使用总结</title>
+   <link href="http://username.github.io/2014/04/04/mysqldump-summary"/>
+   <updated>2014-04-04T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/04/04/mysqldump-summary</id>
    <content type="html">
-&lt;p&gt;I uncompressed the earliest dpkg.status.x.gz file under /var/backups 
-then copied and renamed it as “status” to /var/lib/dpkg - problem 
-solved. I also ran apt-get -f install. &lt;/p&gt;
+&lt;p&gt;导出所有库&lt;br /&gt;
+    mysqldump -uusername -ppassword –all-databases&amp;gt;all.sql&lt;/p&gt;
 
-&lt;p&gt;libc.so.6误删的解决方法：
-livecd–&amp;gt;sudo ln -s lib.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>new post</title>
-   <link href="http://username.github.io/2014/03/30/new-post"/>
-   <updated>2014-03-30T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/03/30/new-post</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>from python2 to python3</title>
-   <link href="http://username.github.io/2014/03/26/from-python2-to-python3"/>
-   <updated>2014-03-26T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/03/26/from-python2-to-python3</id>
-   <content type="html">
-&lt;p&gt;性能&lt;/p&gt;
+&lt;p&gt;导入所有库&lt;br /&gt;
+    mysql&amp;gt;source all.sql;&lt;/p&gt;
 
-&lt;p&gt;py3.0 运行pystone benchmark 的速度比Py2.5慢30%。Guido认为Py3.0有极大的优化控件，在字符串和整形操作上可以取得很好的优化结果。
-Py3.1 性能比Py2.5慢 15%，还有很大的提升空间。&lt;/p&gt;
+&lt;p&gt;导出某些库&lt;br /&gt;
+    mysqldump -uusername -ppassword –databases db1 db2 &amp;gt;db1db2.sql&lt;/p&gt;
 
-&lt;p&gt;Py3.x源码文件默认使用utf-8编码，&lt;/p&gt;
+&lt;p&gt;导入某些库&lt;br /&gt;
+    mysql&amp;gt;source db1db2.sql&lt;/p&gt;
 
-&lt;p&gt;语法：
-去除了&amp;lt;&amp;gt;,全部改用!=
-去除``,全部改用repr()
-关键词加入as和with，还有True,False,None
-整形除法返回浮点数，要得到整型结果，请使用//
-加入nonlocal语句。使用nonlocal x可以直接指派外围（非全局）变量
-去除print语句，加入print()函数实现相同的功能。同样的还有exec语句，已经改为exec()函数
-改变了顺序操作符的行为，例如x&amp;lt;y,当x和y类型不匹配时抛出TypeError而不是返回随机的bool值
-输入函数改变了,删除了raw_input，用input代替
-去除元组参数解包。不能def(a, (b, c)):pass这样定义函数了
-新式的8进制字变量，相应地修改了oct()函数。 
-增加了 2进制字面量和bin()函数
-扩展的可迭代解包。在Py3.X 里，a, b, *rest = seq 和 *rest, a = seq都是合法的，只要求两点：rest是list 对象和seq是可迭代的。 
-新的super()，可以不再给super()传参数， 
-新的metaclass语法：
-支持class decorator。用法与函数decorator一样： PEP 3129 &lt;/p&gt;
+&lt;p&gt;导入某个库&lt;br /&gt;
+    mysql -uusername -ppassword db1&amp;lt;db1.sql;
+    mysql&amp;gt;source db1.sql;&lt;/p&gt;
 
-&lt;p&gt;字符串和字节串 
-现在字符串只有str一种类型，但它跟2.x版本的unicode几乎一样。&lt;/p&gt;
+&lt;p&gt;导出某个库&lt;br /&gt;
+    mysqldump -uusername -ppassword db1 table1 table2&amp;gt;tb1tb2.sql&lt;/p&gt;
 
-&lt;p&gt;关于字节串，请参阅“数据类型”的第2条目&lt;/p&gt;
+&lt;p&gt;导入某些数据表&lt;br /&gt;
+    mysql -uusername -ppassword db1&lt;tb1tb2.sql mysql=&quot;&quot;&gt;user db1;
+    mysql&amp;gt;source tb1tb2.sql;&lt;/tb1tb2.sql&gt;&lt;/p&gt;
 
-&lt;p&gt;5.数据类型 
-1）Py3.X去除了long类型，现在只有一种整型——int，但它的行为就像2.X版本的long 
-2）新增了bytes类型，对应于2.X版本的八位串，定义一个bytes字面量的方法如下： 
-    »&amp;gt; b = b’china’ 
-    »&amp;gt; type(b) 
-    &amp;lt;type ‘bytes’&amp;gt; 
-str对象和bytes对象可以使用.encode() (str -&amp;gt; bytes) or .decode() (bytes -&amp;gt; str)方法相互转化。 
-    »&amp;gt; s = b.decode() 
-    »&amp;gt; s 
-    ‘china’ 
-    »&amp;gt; b1 = s.encode() 
-    »&amp;gt; b1 
-    b’china’ 
-3）dict的.keys()、.items 和.values()方法返回迭代器，而之前的iterkeys()等函数都被废弃。同时去掉的还有 
-dict.has_key()，用 in替代它吧 
-6.面向对象 
-1）引入抽象基类（Abstraact Base Classes，ABCs）。 
-2）容器类和迭代器类被ABCs化，所以cellections模块里的类型比Py2.5多了很多。 
-    »&amp;gt; import collections 
-    »&amp;gt; print(‘\n’.join(dir(collections))) 
-    Callable 
-    Container 
-    Hashable 
-    ItemsView 
-    Iterable 
-    Iterator 
-    KeysView 
-    Mapping 
-    MappingView 
-    MutableMapping 
-    MutableSequence 
-    MutableSet 
-    NamedTuple 
-    Sequence 
-    Set 
-    Sized 
-    ValuesView 
-    &lt;strong&gt;all&lt;/strong&gt; 
-    &lt;strong&gt;builtins&lt;/strong&gt; 
-    &lt;strong&gt;doc&lt;/strong&gt; 
-    &lt;strong&gt;file&lt;/strong&gt; 
-    &lt;strong&gt;name&lt;/strong&gt; 
-    _abcoll 
-    _itemgetter 
-    _sys 
-    defaultdict 
-    deque 
-另外，数值类型也被ABCs化。关于这两点，请参阅 PEP 3119和PEP 3141。 
-3）迭代器的next()方法改名为__next&lt;strong&gt;()，并增加内置函数next()，用以调用迭代器的__next&lt;/strong&gt;()方法 
-4）增加了@abstractmethod和 @abstractproperty两个 decorator，编写抽象方法（属性）更加方便。 
-7.异常 
-1）所以异常都从 BaseException继承，并删除了StardardError 
-2）去除了异常类的序列行为和.message属性 
-3）用 raise Exception(args)代替 raise Exception, args语法 
-4）捕获异常的语法改变，引入了as关键字来标识异常实例，在Py2.5中： 
-    »&amp;gt; try: 
-    …    raise NotImplementedError(‘Error’) 
-    … except NotImplementedError, error:&lt;/p&gt;
+&lt;p&gt;mysqldump字符集设置&lt;br /&gt;
+    $mysqldump -uusername -ppassword –default-character-set=utf-8 db1 table1&amp;gt;tb1.sql&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;...    print error.message 
-... 
-Error  在Py3.0中： 
-&amp;gt;&amp;gt;&amp;gt; try: 
-      raise NotImplementedError(&#39;Error&#39;) 
-    except NotImplementedError as error: #注意这个 as 
-      print(str(error)) 
-Error  5）异常链，因为__context__在3.0a1版本中没有实现  8.模块变动  1）移除了cPickle模块，可以使用pickle模块代替。最终我们将会有一个透明高效的模块。  2）移除了imageop模块  3）移除了 audiodev, Bastion, bsddb185, exceptions, linuxaudiodev, md5, MimeWriter, mimify, popen2,   rexec, sets, sha, stringold, strop, sunaudiodev, timing和xmllib模块  4）移除了bsddb模块(单独发布，可以从http://www.jcea.es/programacion/pybsddb.htm获取)  5）移除了new模块  6）os.tmpnam()和os.tmpfile()函数被移动到tmpfile模块下  7）tokenize模块现在使用bytes工作。主要的入口点不再是generate_tokens，而是 tokenize.tokenize()  9.其它  1）xrange() 改名为range()，要想使用range()获得一个list，必须显式调用： 
-&amp;gt;&amp;gt;&amp;gt; list(range(10)) 
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  2）bytes对象不能hash，也不支持 b.lower()、b.strip()和b.split()方法，但对于后两者可以使用 b.strip(b’   \n\t\r \f’)和b.split(b’ ‘)来达到相同目的  3）zip()、map()和filter()都返回迭代器。而apply()、 callable()、coerce()、 execfile()、reduce()和reload  ()函数都被去除了
+&lt;p&gt;不写表的任何行信息。如果指向转储表的结构信息    –no-data,-d&lt;/p&gt;
+
+&lt;p&gt;创建用户&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;phplamp&quot;,password(&quot;1234&quot;)); 　　mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′； 修改用户密码
+   
+mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
+mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;现在可以使用hasattr()来替换 callable(). hasattr()的语法如：hasattr(string, ‘&lt;strong&gt;name&lt;/strong&gt;’)&lt;/p&gt;
-
-&lt;p&gt;4）string.letters和相关的.lowercase和.uppercase被去除，请改用string.ascii_letters 等 
-5）如果x &amp;lt; y的不能比较，抛出TypeError异常。2.x版本是返回伪随机布尔值的 
-6）&lt;strong&gt;getslice__系列成员被废弃。a[i:j]根据上下文转换为a.__getitem&lt;/strong&gt;(slice(I, j))或 __setitem__和 
-__delitem__调用 
-7）file类被废弃，在Py2.5中： 
-    »&amp;gt; file 
-    &amp;lt;type ‘file’&amp;gt; 
-在Py3.X中： 
-    »&amp;gt; file 
-    Traceback (most recent call last): 
-    File “&amp;lt;pyshell#120&amp;gt;”, line 1, in &lt;module&gt; 
-       file 
-    NameError: name &#39;file&#39; is not defined&lt;/module&gt;&lt;/p&gt;
-
 </content>
  </entry>
  
  <entry>
-   <title>install llvm in ubuntu 12.04</title>
-   <link href="http://username.github.io/2014/03/25/install-llvm-in-ubuntu-1204"/>
-   <updated>2014-03-25T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/03/25/install-llvm-in-ubuntu-1204</id>
+   <title>gcc 4.8 on ubuntu</title>
+   <link href="http://username.github.io/2014/04/02/gcc-48-on-ubuntu"/>
+   <updated>2014-04-02T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/04/02/gcc-48-on-ubuntu</id>
    <content type="html">
-&lt;p&gt;&lt;strong&gt;upgrade gcc/g++ to version 4.7&lt;/strong&gt;
-Configure alternatives to allow you switch to/from 4.6/4.8&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:ubuntu-toolchain-r/test  if add-apt-repostory is not found,get it via:
-
-sudo apt-get install python-software-properties
-
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-
-sudo update-alternatives --config gcc
+&lt;pre&gt;&lt;code&gt; sudo apt-get install python-software-properties
+ sudo add-apt-repository ppa:boost-latest/ppa
+ sudo apt-get update
+ sudo apt-get install libboost1.55-all-dev
+ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+ sudo apt-get update
+ sudo apt-get install gcc-4.8 g++-4.8
+ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6 
+ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+ sudo update-alternatives --config gcc
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;follow these steps &lt;a href=&quot;http://clang.llvm.org/get_started.html&quot;&gt;llvm official documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载&lt;a href=&quot;&quot;&gt;osxcross&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;编译出现错误： fatal error:limits can’t find?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $echo &#39;#include &amp;lt;limits.h&amp;gt;&#39; | clang -v -xc -o /dev/null -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题&lt;/p&gt;
+
+&lt;p&gt;一个查找文件的有用命令:
+    $grep notification &lt;code&gt;find ./*&lt;/code&gt;&lt;/p&gt;
 
 </content>
  </entry>
  
  <entry>
-   <title>cython 与 python的区别</title>
-   <link href="http://username.github.io/2014/03/21/cython--python"/>
-   <updated>2014-03-21T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/03/21/cython--python</id>
+   <title>install windows/linux with usb</title>
+   <link href="http://username.github.io/2014/04/01/install-windowslinux-with-usb"/>
+   <updated>2014-04-01T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/04/01/install-windowslinux-with-usb</id>
    <content type="html">
-&lt;h2 id=&quot;pythoncc&quot;&gt;python与C/C++的交互&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.owasp.org/images/d/dc/AppsecEU09-Damele-A-G-Advanced-SQL-injection-slides.pdf&quot;&gt;sql injection&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Cython与GIL&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Cython基于Pyrex，专门用来写在Python里面import用的扩展库。实际上Cython的语法基本上跟Python一致。
-void _c_loop(void)
-{
-while(1){
-    printf(“Print form C loop\n”);
-    sleep(1);
-}
-}&lt;/p&gt;
-
-&lt;p&gt;def _py_loop():
-    while True:
-        print “Print from Python loop”
-        time.sleep(1)&lt;/p&gt;
-
-&lt;p&gt;void _c_loop_1(void)
-{
-   Py_BEGIN_ALLOW_THREADS
-   while(1){
-       printf(“Print from C loop\n”);
-       sleep(1);
-    }
-   Py_END_ALLOW_THREADS
-}&lt;/p&gt;
-
-&lt;p&gt;void _c_loop_2(void)
-{
-    while(1) {
-      Py_BEGIN_ALLOW_THREADS
-      printf(“Print from C loop\n”);
-      sleep(1);
-      Py_END_ALLOW_THREADS
-}
-}&lt;/p&gt;
-
-&lt;p&gt;def cy_loop():
-    with nogil:
-        while True:
-            printf(“Print from Cython loop\n”)
-            sleep(1)&lt;/p&gt;
-
-&lt;p&gt;cdef exterm from &lt;em&gt;:
-    unsigned int sleep(unsigned int seconds) nogil
-    int printf(char&lt;/em&gt; format,…) nogil&lt;/p&gt;
-
-&lt;p&gt;cdef void callback_func(void) with gil:
-   …&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/matrixorz/9614840.js?file=app.py&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;(&lt;script type=&quot;math/tex&quot;&gt;E=mc^2&lt;/script&gt;)，&lt;script type=&quot;math/tex&quot;&gt;x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}.&lt;/script&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -532,14 +384,7 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-<<<<<<< HEAD
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by 'david';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;&lt;/p&gt;
-=======
 &lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
->>>>>>> 2b48e5941e40e8bd443fd3a8ba87dadc1bcef547
 
 http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
@@ -615,6 +460,10 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 &lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.yuanyong.org/blog/python/k-means-using-python&quot;&gt;k-means&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jmlr.org/mloss/&quot;&gt;JMLR&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mloss.org/software/&quot;&gt;machine learning open source&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -866,7 +715,7 @@ $parent.append($li_1).append($li_2);
 
 &lt;p&gt;add attribute in the added element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title='新增节点：数据结构'&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title=&#39;新增节点：数据结构&#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
 var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 &lt;/code&gt;&lt;/pre&gt;
@@ -905,7 +754,7 @@ redirect：301永久重定向&lt;/p&gt;
 from sqlalchemy.orm import *
 
 metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
-t1=Table(&quot;t1&quot;,metadata,Column('id',Integer,primary_key=True))
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
 t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
@@ -978,7 +827,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=('localhost',10001)
+server_address=(&#39;localhost&#39;,10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -1169,7 +1018,7 @@ if __name__==&quot;__main__&quot;:
         logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind(('',10001))
+        listen_fd.bind((&#39;&#39;,10001))
     except socket.error,msg:
         logger.error(&quot;listen file id bind ip error&quot;)
 
@@ -1197,7 +1046,7 @@ if __name__==&quot;__main__&quot;:
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=''
+                datas=&#39;&#39;
                 while True:
                     try:
                         data=connections[fd].recv(10)
