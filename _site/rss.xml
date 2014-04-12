@@ -5,10 +5,95 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-04-09T15:54:11+08:00</lastBuildDate>
-        <pubDate>2014-04-09T15:54:11+08:00</pubDate>
+        <lastBuildDate>2014-04-12T15:47:58+08:00</lastBuildDate>
+        <pubDate>2014-04-12T15:47:58+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>open toolchain on ubuntu 12.04</title>
+                <description>
+&lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链&lt;/p&gt;
+
+&lt;p&gt;安装gcc-4.8如前文所述&lt;a href=&quot;/2014/04/02/gcc-48-on-ubuntu/&quot;&gt;install gcc4.8 on ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;llvmclang&quot;&gt;安装llvm,clang&lt;/h2&gt;
+&lt;p&gt;/etc/apt/sources.list中添加如下两行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
+deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main 检索签名：
+
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装与llvm-3.4,clang-3.4相关的所有包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install clang-3.4 clang-3.4-doc libclang-common-3.4-dev libclang-3.4-dev libclang1-3.4 libclang1-3.4-dbg libllvm-3.4-ocaml-dev libllvm3.4 libllvm3.4-dbg lldb-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-doc llvm-3.4-examples llvm-3.4-runtime clang-modernize-3.4 clang-format-3.4 python-clang-3.4 lldb-3.4-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装libcxx：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx 查看g++使用的头文件：
+
+echo | g++ -Wp,-v -x c++ - -fsyntax-only 将会输出类似如下结果：
+
+ignoring nonexistent directory &quot;/usr/local/include/x86_64-linux-gnu&quot;
+ignoring nonexistent directory &quot;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../../../x86_64-linux-gnu/include&quot;
+### #include &quot;...&quot; search starts here:
+### include &amp;lt;...&amp;gt; search starts here:
+/usr/include/c++/4.8
+/usr/include/c++/4.8/x86_64-linux-gnu
+/usr/include/c++/4.8/backward
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include
+/usr/local/include
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+/usr/include/x86_64-linux-gnu
+/usr/include
+End of search list. 编译安装libcxx：
+
+CC=clang CXX=clang++ cmake -G &quot;Unix Makefiles&quot; -DLIBCXX_CXX_ABI=libsupc++ - DLIBCXX_LIBSUPCXX_INCLUDE_PATHS=&quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&quot; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr &amp;lt;libc++-source-dir&amp;gt;
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装libcxxabi&lt;/p&gt;
+
+&lt;p&gt;首先安装相关依赖：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev 下载源码并编译：
+
+svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
+cd libcxxabi/lib
+./buildit
+sudo cp libc++abi.so.1.0 /usr/lib
+sudo ln -s /usr/lib/libc++abi.so.1.0 /usr/lib/libc++abi.so.1
+sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so 使用libc++abi来安装libc++
+
+svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+cd libcxx
+mkdir build
+cd build
+CC=clang CXX=clang++ cmake -G &quot;Unix Makefiles&quot; -DLIBCXX_CXX_ABI=libcxxabi -  DLIBCXX_LIBCXXABI_INCLUDE_PATHS=&quot;&amp;lt;libc++abi-source-dir&amp;gt;/include&quot; -  DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ../
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至此ubuntu 12.04上的LLVM环境就算搭建好了。&lt;/p&gt;
+
+</description>
+                <link>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</link>
+                <guid>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
+                <pubDate>2014-04-12T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>new post</title>
+                <description>
+</description>
+                <link>http://username.github.io/2014/04/12/new-post</link>
+                <guid>http://username.github.io/2014/04/12/new-post</guid>
+                <pubDate>2014-04-12T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>mysql使用总结</title>
