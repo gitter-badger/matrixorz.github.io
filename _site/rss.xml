@@ -5,10 +5,19 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-04-12T15:47:58+08:00</lastBuildDate>
-        <pubDate>2014-04-12T15:47:58+08:00</pubDate>
+        <lastBuildDate>2014-04-16T20:45:02+08:00</lastBuildDate>
+        <pubDate>2014-04-16T20:45:02+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>阿里数据挖掘2014比赛解题</title>
+                <description>
+</description>
+                <link>http://username.github.io/2014/04/16/2014</link>
+                <guid>http://username.github.io/2014/04/16/2014</guid>
+                <pubDate>2014-04-16T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>open toolchain on ubuntu 12.04</title>
@@ -83,15 +92,6 @@ sudo make install
 </description>
                 <link>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</link>
                 <guid>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
-                <pubDate>2014-04-12T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>new post</title>
-                <description>
-</description>
-                <link>http://username.github.io/2014/04/12/new-post</link>
-                <guid>http://username.github.io/2014/04/12/new-post</guid>
                 <pubDate>2014-04-12T00:00:00+08:00</pubDate>
         </item>
 

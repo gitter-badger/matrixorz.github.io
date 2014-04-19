@@ -28,7 +28,12 @@ draft: true
      $echo '#include <limits.h>' | clang -v -xc -o /dev/null -
 
 使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
+其实这是一个llvm的bug
+临时解决方案[参考](https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300):
 
+    $cd /usr/lib/clang/<clang-version/
+    $sudo ln -sf ../../llvm-3.4/lib/clang/<clang-version>/include include
+再次编译可以通过。
 一个查找文件的有用命令:
     $grep notification `find ./*`
 
