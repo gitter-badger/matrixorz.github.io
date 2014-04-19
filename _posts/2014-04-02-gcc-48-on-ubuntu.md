@@ -33,6 +33,7 @@ draft: true
 
     $cd /usr/lib/clang/<clang-version/
     $sudo ln -sf ../../llvm-3.4/lib/clang/<clang-version>/include include
+
 再次编译可以通过。
 一个查找文件的有用命令:
     $grep notification `find ./*`
