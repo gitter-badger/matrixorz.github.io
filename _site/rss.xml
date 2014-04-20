@@ -5,13 +5,28 @@
         <description>Just Pic - </description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-04-16T20:45:02+08:00</lastBuildDate>
-        <pubDate>2014-04-16T20:45:02+08:00</pubDate>
+        <lastBuildDate>2014-04-20T09:04:27+08:00</lastBuildDate>
+        <pubDate>2014-04-20T09:04:27+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>阿里数据挖掘2014比赛解题</title>
+                <title>install multi version JDK on ubuntu</title>
+                <description>
+&lt;p&gt;三条命令搞定：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install oracle-java8-installer
+$sudo apt-get install oracle-java7-installer
+$sudo update-alternatives --config java
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+                <link>http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu</link>
+                <guid>http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu</guid>
+                <pubDate>2014-04-19T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>阿里数据挖掘2014比赛解题报告</title>
                 <description>
 </description>
                 <link>http://username.github.io/2014/04/16/2014</link>
@@ -182,12 +197,19 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 
 &lt;p&gt;编译出现错误： fatal error:limits can’t find?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $echo &#39;#include &amp;lt;limits.h&amp;gt;&#39; | clang -v -xc -o /dev/null -
+&lt;pre&gt;&lt;code&gt; $echo '#include &amp;lt;limits.h&amp;gt;' | clang -v -xc -o /dev/null -
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题&lt;/p&gt;
+&lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
+其实这是一个llvm的bug
+临时解决方案&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300&quot;&gt;参考&lt;/a&gt;:&lt;/p&gt;
 
-&lt;p&gt;一个查找文件的有用命令:
+&lt;pre&gt;&lt;code&gt;$cd /usr/lib/clang/&amp;lt;clang-version/
+$sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include include
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;再次编译可以通过。
+一个查找文件的有用命令:
     $grep notification &lt;code&gt;find ./*&lt;/code&gt;&lt;/p&gt;
 
 </description>
@@ -485,7 +507,7 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
 
 http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
@@ -816,7 +838,7 @@ $parent.append($li_1).append($li_2);
 
 &lt;p&gt;add attribute in the added element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title=&#39;新增节点：数据结构&#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title='新增节点：数据结构'&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
 var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 &lt;/code&gt;&lt;/pre&gt;
@@ -855,7 +877,7 @@ redirect：301永久重定向&lt;/p&gt;
 from sqlalchemy.orm import *
 
 metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
-t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
+t1=Table(&quot;t1&quot;,metadata,Column('id',Integer,primary_key=True))
 t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
@@ -928,7 +950,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=(&#39;localhost&#39;,10001)
+server_address=('localhost',10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -1119,7 +1141,7 @@ if __name__==&quot;__main__&quot;:
         logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind((&#39;&#39;,10001))
+        listen_fd.bind(('',10001))
     except socket.error,msg:
         logger.error(&quot;listen file id bind ip error&quot;)
 
@@ -1147,7 +1169,7 @@ if __name__==&quot;__main__&quot;:
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=&#39;&#39;
+                datas=''
                 while True:
                     try:
                         data=connections[fd].recv(10)
