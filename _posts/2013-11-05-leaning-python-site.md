@@ -18,9 +18,11 @@ Learning Python Sites
 
 **medium(中级)**
 
-通过改错学习python [TDD 模式学习python](https://github.com/gregmalcolm/python_koans)
+[通过改错学习python](https://github.com/gregmalcolm/python_koans)
 
 **advanced(高级)**
+
+[python与llvm结合](http://www.infoq.com/cn/news/2014/04/pyston)   [pyston](http://github.com/dropbox/pyston)
 
 [python practice book](http://anandology.com/python-practice-book)
 
