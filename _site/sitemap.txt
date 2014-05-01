@@ -15,6 +15,8 @@ http://i.justpic.org/index.html
 http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
 
+http://i.justpic.org/2014/04/28/1
+http://i.justpic.org/2014/04/28/
 http://i.justpic.org/2014/04/27/tornado-with-i18n
 http://i.justpic.org/2014/04/24/algorithm-learning
 http://i.justpic.org/2014/04/22/shearlet

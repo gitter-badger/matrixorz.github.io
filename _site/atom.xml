@@ -4,13 +4,33 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-04-27T18:33:28+08:00</updated>
+ <updated>2014-05-01T12:43:20+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>小波学习1</title>
+   <link href="http://i.justpic.org/2014/04/28/1"/>
+   <updated>2014-04-28T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/28/1</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>计量经济学概要</title>
+   <link href="http://i.justpic.org/2014/04/28/"/>
+   <updated>2014-04-28T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/</id>
+   <content type="html">
+&lt;p&gt;简单线性回归模型I的假设
+对于各个x值，&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>tornado with i18n</title>
@@ -86,8 +106,7 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;参考文章:
-&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;
-[]()&lt;/p&gt;
+&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
 
 </content>
  </entry>
