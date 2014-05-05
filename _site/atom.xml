@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Just Pic</title>
- <link href="http://username.github.io/" rel="self"/>
- <link href="http://username.github.io"/>
- <updated>2014-04-20T09:04:27+08:00</updated>
- <id>http://username.github.io</id>
+ <link href="http://i.justpic.org/" rel="self"/>
+ <link href="http://i.justpic.org"/>
+ <updated>2014-05-01T12:43:20+08:00</updated>
+ <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
@@ -13,10 +13,141 @@
 
  
  <entry>
+   <title>小波学习1</title>
+   <link href="http://i.justpic.org/2014/04/28/1"/>
+   <updated>2014-04-28T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/28/1</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>计量经济学概要</title>
+   <link href="http://i.justpic.org/2014/04/28/"/>
+   <updated>2014-04-28T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/</id>
+   <content type="html">
+&lt;p&gt;简单线性回归模型I的假设
+对于各个x值，&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>tornado with i18n</title>
+   <link href="http://i.justpic.org/2014/04/27/tornado-with-i18n"/>
+   <updated>2014-04-27T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/27/tornado-with-i18n</id>
+   <content type="html">
+&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
+tornado中使用i18n需要下面两个工具
+两个工具:pygettext,msgfmt，两个相关文件:po文件和mo文件&lt;/p&gt;
+
+&lt;p&gt;pygetext和msgfmt的使用方法：&lt;/p&gt;
+
+&lt;p&gt;编写python代码文件 test.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from gettext import gettext as _
+print _(&quot;well down&quot;)
+print _(&quot;good&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pygetext test.py&lt;/p&gt;
+
+&lt;p&gt;生成messages.pot文件,更改文件后缀
+mv messages.pot messages.po
+配置msgstr值&lt;/p&gt;
+
+&lt;p&gt;生成一个名为messages.mo文件：
+msgfmt messages.po&lt;/p&gt;
+
+&lt;p&gt;建立目录locale/cn/LC_MESSAGES/&lt;/p&gt;
+
+&lt;p&gt;mv messages.po locale/cn/LC_MESSAGES&lt;/p&gt;
+
+&lt;p&gt;cn目录是所对应的语言，LC_MESSAGES是gettext.py文件里要求的
+mo文件必须和所定义的域同名
+gettext.py中有
+modfile=os.path.join(localedir,lang,’LC_MESSAGES’,’%s.mo’ %domain)&lt;/p&gt;
+
+&lt;p&gt;测试：
+    $python
+    »&amp;gt;gettext.install(‘messages’,’./locale’,unicode=True)
+三个参数：
+作用域名，用于限定翻译文件的主名
+路径，存放翻译文件的路径
+unicode，是否使用unicode（如果应用程序是unicode的，此处应设为True)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;gettext.translation(&#39;messages&#39;,&#39;./locale&#39;,languages=[&#39;cn&#39;]).install(True)
+&amp;gt;&amp;gt;&amp;gt;print _(&quot;good&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在tornado中使用时:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html) 查找所有需要翻译的相关项生成 po 文件
+
+$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完成相关文件的生成后，需要在代码中加载:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tornado.locale.load_gettext_translations(options.I18N_PATH,&quot;openquant&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;handler中自定义get_user_locale函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def get_user_locale(self):
+    #zh_CN or en_US
+    user_locale = self.get_cookie(&quot;user_locale&quot;)
+
+    if user_locale:
+        return tornado.locale.get(user_locale)
+
+    return None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考文章:
+&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>algorithm learning</title>
+   <link href="http://i.justpic.org/2014/04/24/algorithm-learning"/>
+   <updated>2014-04-24T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/24/algorithm-learning</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://courses.csail.mit.edu/6.581/spring12/lectures/&quot;&gt;advanced data structure&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Shearlet</title>
+   <link href="http://i.justpic.org/2014/04/22/shearlet"/>
+   <updated>2014-04-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/22/shearlet</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>deep learning these days</title>
+   <link href="http://i.justpic.org/2014/04/22/deep-learning-these-days"/>
+   <updated>2014-04-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/04/22/deep-learning-these-days</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
+&lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
+&lt;a href=&quot;http://www.infoq.com/cn/articles/ask-yoshua-bengio&quot;&gt;对话机器学习大神Yoshua Bengio&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>install multi version JDK on ubuntu</title>
-   <link href="http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu"/>
+   <link href="http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu"/>
    <updated>2014-04-19T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu</id>
+   <id>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</id>
    <content type="html">
 &lt;p&gt;三条命令搞定：&lt;/p&gt;
 
@@ -29,18 +160,18 @@ $sudo update-alternatives --config java
  
  <entry>
    <title>阿里数据挖掘2014比赛解题报告</title>
-   <link href="http://username.github.io/2014/04/16/2014"/>
+   <link href="http://i.justpic.org/2014/04/16/2014"/>
    <updated>2014-04-16T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/16/2014</id>
+   <id>http://i.justpic.org/2014/04/16/2014</id>
    <content type="html">
 </content>
  </entry>
  
  <entry>
    <title>open toolchain on ubuntu 12.04</title>
-   <link href="http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204"/>
+   <link href="http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204"/>
    <updated>2014-04-12T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</id>
+   <id>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</id>
    <content type="html">
 &lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链&lt;/p&gt;
 
@@ -114,9 +245,9 @@ sudo make install
  
  <entry>
    <title>mysql使用总结</title>
-   <link href="http://username.github.io/2014/04/04/mysqldump-summary"/>
+   <link href="http://i.justpic.org/2014/04/04/mysqldump-summary"/>
    <updated>2014-04-04T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/04/mysqldump-summary</id>
+   <id>http://i.justpic.org/2014/04/04/mysqldump-summary</id>
    <content type="html">
 &lt;h2 id=&quot;mysql&quot;&gt;Mysql导入导出&lt;/h2&gt;
 &lt;p&gt;导出所有库&lt;/p&gt;
@@ -180,9 +311,9 @@ mysql&amp;gt; FLUSH PRIVILEGES;
  
  <entry>
    <title>gcc 4.8 on ubuntu</title>
-   <link href="http://username.github.io/2014/04/02/gcc-48-on-ubuntu"/>
+   <link href="http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu"/>
    <updated>2014-04-02T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/02/gcc-48-on-ubuntu</id>
+   <id>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</id>
    <content type="html">
 &lt;pre&gt;&lt;code&gt; sudo apt-get install python-software-properties
  sudo add-apt-repository ppa:boost-latest/ppa
@@ -202,7 +333,7 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 
 &lt;p&gt;编译出现错误： fatal error:limits can’t find?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $echo '#include &amp;lt;limits.h&amp;gt;' | clang -v -xc -o /dev/null -
+&lt;pre&gt;&lt;code&gt; $echo &#39;#include &amp;lt;limits.h&amp;gt;&#39; | clang -v -xc -o /dev/null -
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
@@ -222,9 +353,9 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
  
  <entry>
    <title>install windows/linux with usb</title>
-   <link href="http://username.github.io/2014/04/01/install-windowslinux-with-usb"/>
+   <link href="http://i.justpic.org/2014/04/01/install-windowslinux-with-usb"/>
    <updated>2014-04-01T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/04/01/install-windowslinux-with-usb</id>
+   <id>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://www.owasp.org/images/d/dc/AppsecEU09-Damele-A-G-Advanced-SQL-injection-slides.pdf&quot;&gt;sql injection&lt;/a&gt;&lt;/p&gt;
@@ -234,9 +365,9 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
  
  <entry>
    <title>Sample draft post</title>
-   <link href="http://username.github.io/posts/2014/02/25/draft"/>
+   <link href="http://i.justpic.org/posts/2014/02/25/draft"/>
    <updated>2014-02-25T00:00:00+08:00</updated>
-   <id>http://username.github.io/posts/2014/02/25/draft</id>
+   <id>http://i.justpic.org/posts/2014/02/25/draft</id>
    <content type="html">&lt;p&gt;This is a draft post that isn’t ready for the wild. See how it doesn’t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
 
 &lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you’re off to the races.&lt;/p&gt;
@@ -254,9 +385,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
  
  <entry>
    <title>text analysis</title>
-   <link href="http://username.github.io/2014/02/07/text-analysis"/>
+   <link href="http://i.justpic.org/2014/02/07/text-analysis"/>
    <updated>2014-02-07T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/02/07/text-analysis</id>
+   <id>http://i.justpic.org/2014/02/07/text-analysis</id>
    <content type="html">
 &lt;p&gt;http://www.etcml.com/&lt;/p&gt;
 
@@ -267,9 +398,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
  
  <entry>
    <title>computational science</title>
-   <link href="http://username.github.io/2014/01/14/computational-science"/>
+   <link href="http://i.justpic.org/2014/01/14/computational-science"/>
    <updated>2014-01-14T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/01/14/computational-science</id>
+   <id>http://i.justpic.org/2014/01/14/computational-science</id>
    <content type="html">
 &lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
 </content>
@@ -277,9 +408,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
  
  <entry>
    <title>best award paper</title>
-   <link href="http://username.github.io/2014/01/01/best-award-paper"/>
+   <link href="http://i.justpic.org/2014/01/01/best-award-paper"/>
    <updated>2014-01-01T00:00:00+08:00</updated>
-   <id>http://username.github.io/2014/01/01/best-award-paper</id>
+   <id>http://i.justpic.org/2014/01/01/best-award-paper</id>
    <content type="html">
 &lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
 </content>
@@ -287,9 +418,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
  
  <entry>
    <title>install redmine in ubuntu</title>
-   <link href="http://username.github.io/2013/12/04/install-redmine-in-ubuntu"/>
+   <link href="http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu"/>
    <updated>2013-12-04T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</id>
+   <id>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</id>
    <content type="html">
 &lt;h1 id=&quot;redmine&quot;&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
 
@@ -302,9 +433,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
  
  <entry>
    <title>install World Community Grid on a headless Ubuntu Server</title>
-   <link href="http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server"/>
+   <link href="http://i.justpic.org/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server"/>
    <updated>2013-11-19T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</id>
+   <id>http://i.justpic.org/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</id>
    <content type="html">
 &lt;h1 id=&quot;ubuntuboinc&quot;&gt;在ubuntu上安装BOINC&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client (you can also download it from wcg and install)
@@ -346,9 +477,9 @@ dfb74c9b9…&lt;/p&gt;
  
  <entry>
    <title>a little surprised</title>
-   <link href="http://username.github.io/2013/11/10/a-little-surprised"/>
+   <link href="http://i.justpic.org/2013/11/10/a-little-surprised"/>
    <updated>2013-11-10T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/10/a-little-surprised</id>
+   <id>http://i.justpic.org/2013/11/10/a-little-surprised</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
 
@@ -360,9 +491,9 @@ dfb74c9b9…&lt;/p&gt;
  
  <entry>
    <title>data analysis</title>
-   <link href="http://username.github.io/2013/11/09/data-analysis"/>
+   <link href="http://i.justpic.org/2013/11/09/data-analysis"/>
    <updated>2013-11-09T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/09/data-analysis</id>
+   <id>http://i.justpic.org/2013/11/09/data-analysis</id>
    <content type="html">
 &lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
 </content>
@@ -370,9 +501,9 @@ dfb74c9b9…&lt;/p&gt;
  
  <entry>
    <title>understand WSGI</title>
-   <link href="http://username.github.io/2013/11/06/python-web"/>
+   <link href="http://i.justpic.org/2013/11/06/python-web"/>
    <updated>2013-11-06T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/06/python-web</id>
+   <id>http://i.justpic.org/2013/11/06/python-web</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
 &lt;a href=&quot;http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&quot;&gt;WSGI&lt;/a&gt;&lt;/p&gt;
@@ -401,9 +532,9 @@ for data in iterable:
  
  <entry>
    <title>leaning python site</title>
-   <link href="http://username.github.io/2013/11/05/leaning-python-site"/>
+   <link href="http://i.justpic.org/2013/11/05/leaning-python-site"/>
    <updated>2013-11-05T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/05/leaning-python-site</id>
+   <id>http://i.justpic.org/2013/11/05/leaning-python-site</id>
    <content type="html">
 &lt;h1 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;/p&gt;
@@ -416,9 +547,11 @@ for data in iterable:
 
 &lt;p&gt;&lt;strong&gt;medium(中级)&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;通过改错学习python &lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;TDD 模式学习python&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;通过改错学习python&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;advanced(高级)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/cn/news/2014/04/pyston&quot;&gt;python与llvm结合&lt;/a&gt;   &lt;a href=&quot;http://github.com/dropbox/pyston&quot;&gt;pyston&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://anandology.com/python-practice-book&quot;&gt;python practice book&lt;/a&gt;&lt;/p&gt;
 
@@ -434,9 +567,9 @@ for data in iterable:
  
  <entry>
    <title>deploy python on nginx</title>
-   <link href="http://username.github.io/2013/11/04/deploy-python-on-nginx"/>
+   <link href="http://i.justpic.org/2013/11/04/deploy-python-on-nginx"/>
    <updated>2013-11-04T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/11/04/deploy-python-on-nginx</id>
+   <id>http://i.justpic.org/2013/11/04/deploy-python-on-nginx</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;/p&gt;
 
@@ -446,9 +579,9 @@ for data in iterable:
  
  <entry>
    <title>install project on preferati</title>
-   <link href="http://username.github.io/2013/10/27/install-project-on-preferati"/>
+   <link href="http://i.justpic.org/2013/10/27/install-project-on-preferati"/>
    <updated>2013-10-27T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/10/27/install-project-on-preferati</id>
+   <id>http://i.justpic.org/2013/10/27/install-project-on-preferati</id>
    <content type="html">
 &lt;p&gt;Install OpenQuant Project&lt;/p&gt;
 
@@ -512,7 +645,7 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
 
 http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
@@ -524,9 +657,9 @@ http://rubyer.me/blog/638/ redis.io
  
  <entry>
    <title>how to write a crawler</title>
-   <link href="http://username.github.io/2013/10/26/how-to-write-a-crawler"/>
+   <link href="http://i.justpic.org/2013/10/26/how-to-write-a-crawler"/>
    <updated>2013-10-26T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/10/26/how-to-write-a-crawler</id>
+   <id>http://i.justpic.org/2013/10/26/how-to-write-a-crawler</id>
    <content type="html">
 &lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
 
@@ -536,9 +669,9 @@ http://rubyer.me/blog/638/ redis.io
  
  <entry>
    <title>qt fourteen steps</title>
-   <link href="http://username.github.io/2013/10/22/qt-fourteen-steps"/>
+   <link href="http://i.justpic.org/2013/10/22/qt-fourteen-steps"/>
    <updated>2013-10-22T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/10/22/qt-fourteen-steps</id>
+   <id>http://i.justpic.org/2013/10/22/qt-fourteen-steps</id>
    <content type="html">
 &lt;p&gt;1.Hello ,World!&lt;/p&gt;
 
@@ -565,9 +698,9 @@ private slots：在这个区内声明的槽意味着只有类自己可以将信�
  
  <entry>
    <title>install numpy scipy on ubuntu</title>
-   <link href="http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu"/>
+   <link href="http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu"/>
    <updated>2013-10-18T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu</id>
+   <id>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</id>
    <content type="html">
 &lt;h1 id=&quot;linuxnumpy-scipy&quot;&gt;linux上安装numpy scipy&lt;/h1&gt;
 
@@ -581,9 +714,9 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
  
  <entry>
    <title>python machine learning</title>
-   <link href="http://username.github.io/2013/10/17/python-machine-learning"/>
+   <link href="http://i.justpic.org/2013/10/17/python-machine-learning"/>
    <updated>2013-10-17T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/10/17/python-machine-learning</id>
+   <id>http://i.justpic.org/2013/10/17/python-machine-learning</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
 
@@ -597,9 +730,9 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
  
  <entry>
    <title>git</title>
-   <link href="http://username.github.io/2013/09/29/git"/>
+   <link href="http://i.justpic.org/2013/09/29/git"/>
    <updated>2013-09-29T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/09/29/git</id>
+   <id>http://i.justpic.org/2013/09/29/git</id>
    <content type="html">
 &lt;h1 id=&quot;git&quot;&gt;git学习资料&lt;/h1&gt;
 
@@ -611,9 +744,9 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
  
  <entry>
    <title>nginx permission root</title>
-   <link href="http://username.github.io/2013/09/18/nginx-permission-root"/>
+   <link href="http://i.justpic.org/2013/09/18/nginx-permission-root"/>
    <updated>2013-09-18T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/09/18/nginx-permission-root</id>
+   <id>http://i.justpic.org/2013/09/18/nginx-permission-root</id>
    <content type="html">
 &lt;h1 id=&quot;nginx-&quot;&gt;nginx 权限问题的解决方法&lt;/h1&gt;
 
@@ -657,9 +790,9 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
  
  <entry>
    <title>asynchrous,synchrous,blocking,unblocking network</title>
-   <link href="http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network"/>
+   <link href="http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network"/>
    <updated>2013-09-12T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</id>
+   <id>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</id>
    <content type="html">
 &lt;p&gt;Linux下的五种I/O模型
 阻塞I/O（blocking I/O）
@@ -674,9 +807,9 @@ I/O服用（select和poll）（I/O multiplexing）
  
  <entry>
    <title>machine learning in action</title>
-   <link href="http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action"/>
+   <link href="http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action"/>
    <updated>2013-08-08T00:00:00+08:00</updated>
-   <id>http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action</id>
+   <id>http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action</id>
    <content type="html">
 &lt;p&gt;https://github.com/pbharrin/machinelearninginaction
 zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
@@ -685,9 +818,9 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
  
  <entry>
    <title>webpy</title>
-   <link href="http://username.github.io/2013/08/06/webpy"/>
+   <link href="http://i.justpic.org/2013/08/06/webpy"/>
    <updated>2013-08-06T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/08/06/webpy</id>
+   <id>http://i.justpic.org/2013/08/06/webpy</id>
    <content type="html">
 &lt;h1 id=&quot;webpy-&quot;&gt;webpy 中文文档学习目录&lt;/h1&gt;
 &lt;p&gt;web py&lt;/p&gt;
@@ -824,9 +957,9 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
  
  <entry>
    <title>jquery add element in the html dom</title>
-   <link href="http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom"/>
+   <link href="http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom"/>
    <updated>2013-07-29T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</id>
+   <id>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</id>
    <content type="html">
 &lt;h1 id=&quot;jquery&quot;&gt;使用jquery增加元素节点&lt;/h1&gt;
 
@@ -843,7 +976,7 @@ $parent.append($li_1).append($li_2);
 
 &lt;p&gt;add attribute in the added element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title='新增节点：数据结构'&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title=&#39;新增节点：数据结构&#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
 var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 &lt;/code&gt;&lt;/pre&gt;
@@ -852,9 +985,9 @@ $parent.append($li_1);
  
  <entry>
    <title>web.py note</title>
-   <link href="http://username.github.io/2013/07/28/webpy-note"/>
+   <link href="http://i.justpic.org/2013/07/28/webpy-note"/>
    <updated>2013-07-28T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/28/webpy-note</id>
+   <id>http://i.justpic.org/2013/07/28/webpy-note</id>
    <content type="html">
 &lt;h1 id=&quot;webpy&quot;&gt;webpy学习笔记&lt;/h1&gt;
 
@@ -871,9 +1004,9 @@ redirect：301永久重定向&lt;/p&gt;
  
  <entry>
    <title>sqlalchemy dynamic mapping</title>
-   <link href="http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping"/>
+   <link href="http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping"/>
    <updated>2013-07-26T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping</id>
+   <id>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</id>
    <content type="html">
 &lt;h1 id=&quot;sqlalchemy&quot;&gt;sqlalchemy动态映射&lt;/h1&gt;
 &lt;p&gt;代码如下:&lt;/p&gt;
@@ -882,7 +1015,7 @@ redirect：301永久重定向&lt;/p&gt;
 from sqlalchemy.orm import *
 
 metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
-t1=Table(&quot;t1&quot;,metadata,Column('id',Integer,primary_key=True))
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
 t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
@@ -908,9 +1041,9 @@ print sess.query(T2Foo).all()
  
  <entry>
    <title>premature optimization</title>
-   <link href="http://username.github.io/2013/07/26/premature-optimization"/>
+   <link href="http://i.justpic.org/2013/07/26/premature-optimization"/>
    <updated>2013-07-26T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/26/premature-optimization</id>
+   <id>http://i.justpic.org/2013/07/26/premature-optimization</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -918,9 +1051,9 @@ print sess.query(T2Foo).all()
  
  <entry>
    <title>memo on the trade</title>
-   <link href="http://username.github.io/2013/07/22/memo-on-the-trade"/>
+   <link href="http://i.justpic.org/2013/07/22/memo-on-the-trade"/>
    <updated>2013-07-22T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/22/memo-on-the-trade</id>
+   <id>http://i.justpic.org/2013/07/22/memo-on-the-trade</id>
    <content type="html">
 &lt;p&gt;RTA github&lt;/p&gt;
 
@@ -935,9 +1068,9 @@ print sess.query(T2Foo).all()
  
  <entry>
    <title>python asynchrous network</title>
-   <link href="http://username.github.io/python%20network/2013/07/15/python-asynchrous-network"/>
+   <link href="http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network"/>
    <updated>2013-07-15T00:00:00+08:00</updated>
-   <id>http://username.github.io/python%20network/2013/07/15/python-asynchrous-network</id>
+   <id>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</id>
    <content type="html">
 &lt;hr /&gt;
 &lt;p&gt;select,poll,epoll test in python
@@ -955,7 +1088,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=('localhost',10001)
+server_address=(&#39;localhost&#39;,10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -1146,7 +1279,7 @@ if __name__==&quot;__main__&quot;:
         logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind(('',10001))
+        listen_fd.bind((&#39;&#39;,10001))
     except socket.error,msg:
         logger.error(&quot;listen file id bind ip error&quot;)
 
@@ -1174,7 +1307,7 @@ if __name__==&quot;__main__&quot;:
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=''
+                datas=&#39;&#39;
                 while True:
                     try:
                         data=connections[fd].recv(10)
@@ -1257,9 +1390,9 @@ for message in messages:
  
  <entry>
    <title>Run Multiple-python on your ubuntu</title>
-   <link href="http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv"/>
+   <link href="http://i.justpic.org/2013/07/02/install-multiple-version-of-python-with-virtualenv"/>
    <updated>2013-07-02T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</id>
+   <id>http://i.justpic.org/2013/07/02/install-multiple-version-of-python-with-virtualenv</id>
    <content type="html">
 &lt;h1 id=&quot;ubuntupython&quot;&gt;ubuntu上安装多个版本的python&lt;/h1&gt;
 
@@ -1292,9 +1425,9 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
  
  <entry>
    <title>com learning</title>
-   <link href="http://username.github.io/2013/06/14/com-learning"/>
+   <link href="http://i.justpic.org/2013/06/14/com-learning"/>
    <updated>2013-06-14T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/06/14/com-learning</id>
+   <id>http://i.justpic.org/2013/06/14/com-learning</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -1302,9 +1435,9 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
  
  <entry>
    <title>protobuffer</title>
-   <link href="http://username.github.io/2013/06/11/protobuffer"/>
+   <link href="http://i.justpic.org/2013/06/11/protobuffer"/>
    <updated>2013-06-11T00:00:00+08:00</updated>
-   <id>http://username.github.io/2013/06/11/protobuffer</id>
+   <id>http://i.justpic.org/2013/06/11/protobuffer</id>
    <content type="html">
 &lt;p&gt;google protobuffer待记&lt;/p&gt;
 </content>
@@ -1312,9 +1445,9 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
  
  <entry>
    <title>resolution to scipy installation error</title>
-   <link href="http://username.github.io/python/2013/06/08/scipy-error"/>
+   <link href="http://i.justpic.org/python/2013/06/08/scipy-error"/>
    <updated>2013-06-08T00:00:00+08:00</updated>
-   <id>http://username.github.io/python/2013/06/08/scipy-error</id>
+   <id>http://i.justpic.org/python/2013/06/08/scipy-error</id>
    <content type="html">&lt;h1 id=&quot;ubuntuscipy&quot;&gt;ubuntu上安装scipy出错解决方法&lt;/h1&gt;
 
 &lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
@@ -1343,9 +1476,9 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
  
  <entry>
    <title>install wine on ubuntu 12.04</title>
-   <link href="http://username.github.io/linux/2013/06/06/wine-error"/>
+   <link href="http://i.justpic.org/linux/2013/06/06/wine-error"/>
    <updated>2013-06-06T00:00:00+08:00</updated>
-   <id>http://username.github.io/linux/2013/06/06/wine-error</id>
+   <id>http://i.justpic.org/linux/2013/06/06/wine-error</id>
    <content type="html">&lt;h1 id=&quot;wine-error&quot;&gt;Wine error&lt;/h1&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
@@ -1359,9 +1492,9 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
  
  <entry>
    <title>install hdf5 on ubuntu</title>
-   <link href="http://username.github.io/python/yt-project/2013/06/05/installhdf5"/>
+   <link href="http://i.justpic.org/python/yt-project/2013/06/05/installhdf5"/>
    <updated>2013-06-05T19:11:11+08:00</updated>
-   <id>http://username.github.io/python/yt-project/2013/06/05/installhdf5</id>
+   <id>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</id>
    <content type="html">&lt;h1 id=&quot;install-hdf5-on-ubuntu-1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
 
 &lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
@@ -1402,9 +1535,9 @@ $source .bashrc 安装 blosc (可选)
  
  <entry>
    <title>deep learning</title>
-   <link href="http://username.github.io/machine/learning/2013/06/03/deep-learning"/>
+   <link href="http://i.justpic.org/machine/learning/2013/06/03/deep-learning"/>
    <updated>2013-06-03T00:00:00+08:00</updated>
-   <id>http://username.github.io/machine/learning/2013/06/03/deep-learning</id>
+   <id>http://i.justpic.org/machine/learning/2013/06/03/deep-learning</id>
    <content type="html">
 &lt;h2 id=&quot;section&quot;&gt;机器学习的两次浪潮：&lt;/h2&gt;
 &lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等

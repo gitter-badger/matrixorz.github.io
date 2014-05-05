@@ -3,12 +3,143 @@
 <channel>
         <title>Just Pic</title>
         <description>Just Pic - </description>
-        <link>http://username.github.io</link>
-        <link>http://username.github.io</link>
-        <lastBuildDate>2014-04-20T09:04:27+08:00</lastBuildDate>
-        <pubDate>2014-04-20T09:04:27+08:00</pubDate>
+        <link>http://i.justpic.org</link>
+        <link>http://i.justpic.org</link>
+        <lastBuildDate>2014-05-01T12:43:20+08:00</lastBuildDate>
+        <pubDate>2014-05-01T12:43:20+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>小波学习1</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/04/28/1</link>
+                <guid>http://i.justpic.org/2014/04/28/1</guid>
+                <pubDate>2014-04-28T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>计量经济学概要</title>
+                <description>
+&lt;p&gt;简单线性回归模型I的假设
+对于各个x值，&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/04/28/</link>
+                <guid>http://i.justpic.org/2014/04/</guid>
+                <pubDate>2014-04-28T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>tornado with i18n</title>
+                <description>
+&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
+tornado中使用i18n需要下面两个工具
+两个工具:pygettext,msgfmt，两个相关文件:po文件和mo文件&lt;/p&gt;
+
+&lt;p&gt;pygetext和msgfmt的使用方法：&lt;/p&gt;
+
+&lt;p&gt;编写python代码文件 test.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from gettext import gettext as _
+print _(&quot;well down&quot;)
+print _(&quot;good&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pygetext test.py&lt;/p&gt;
+
+&lt;p&gt;生成messages.pot文件,更改文件后缀
+mv messages.pot messages.po
+配置msgstr值&lt;/p&gt;
+
+&lt;p&gt;生成一个名为messages.mo文件：
+msgfmt messages.po&lt;/p&gt;
+
+&lt;p&gt;建立目录locale/cn/LC_MESSAGES/&lt;/p&gt;
+
+&lt;p&gt;mv messages.po locale/cn/LC_MESSAGES&lt;/p&gt;
+
+&lt;p&gt;cn目录是所对应的语言，LC_MESSAGES是gettext.py文件里要求的
+mo文件必须和所定义的域同名
+gettext.py中有
+modfile=os.path.join(localedir,lang,’LC_MESSAGES’,’%s.mo’ %domain)&lt;/p&gt;
+
+&lt;p&gt;测试：
+    $python
+    »&amp;gt;gettext.install(‘messages’,’./locale’,unicode=True)
+三个参数：
+作用域名，用于限定翻译文件的主名
+路径，存放翻译文件的路径
+unicode，是否使用unicode（如果应用程序是unicode的，此处应设为True)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;gettext.translation(&#39;messages&#39;,&#39;./locale&#39;,languages=[&#39;cn&#39;]).install(True)
+&amp;gt;&amp;gt;&amp;gt;print _(&quot;good&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在tornado中使用时:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html) 查找所有需要翻译的相关项生成 po 文件
+
+$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完成相关文件的生成后，需要在代码中加载:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tornado.locale.load_gettext_translations(options.I18N_PATH,&quot;openquant&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;handler中自定义get_user_locale函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def get_user_locale(self):
+    #zh_CN or en_US
+    user_locale = self.get_cookie(&quot;user_locale&quot;)
+
+    if user_locale:
+        return tornado.locale.get(user_locale)
+
+    return None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参考文章:
+&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/04/27/tornado-with-i18n</link>
+                <guid>http://i.justpic.org/2014/04/27/tornado-with-i18n</guid>
+                <pubDate>2014-04-27T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>algorithm learning</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://courses.csail.mit.edu/6.581/spring12/lectures/&quot;&gt;advanced data structure&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/04/24/algorithm-learning</link>
+                <guid>http://i.justpic.org/2014/04/24/algorithm-learning</guid>
+                <pubDate>2014-04-24T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Shearlet</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/04/22/shearlet</link>
+                <guid>http://i.justpic.org/2014/04/22/shearlet</guid>
+                <pubDate>2014-04-22T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>deep learning these days</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
+&lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
+&lt;a href=&quot;http://www.infoq.com/cn/articles/ask-yoshua-bengio&quot;&gt;对话机器学习大神Yoshua Bengio&lt;/a&gt;&lt;/p&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/04/22/deep-learning-these-days</link>
+                <guid>http://i.justpic.org/2014/04/22/deep-learning-these-days</guid>
+                <pubDate>2014-04-22T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>install multi version JDK on ubuntu</title>
@@ -20,8 +151,8 @@ $sudo apt-get install oracle-java7-installer
 $sudo update-alternatives --config java
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu</link>
-                <guid>http://username.github.io/2014/04/19/install-multi-version-jdk-on-ubuntu</guid>
+                <link>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</link>
+                <guid>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</guid>
                 <pubDate>2014-04-19T00:00:00+08:00</pubDate>
         </item>
 
@@ -29,8 +160,8 @@ $sudo update-alternatives --config java
                 <title>阿里数据挖掘2014比赛解题报告</title>
                 <description>
 </description>
-                <link>http://username.github.io/2014/04/16/2014</link>
-                <guid>http://username.github.io/2014/04/16/2014</guid>
+                <link>http://i.justpic.org/2014/04/16/2014</link>
+                <guid>http://i.justpic.org/2014/04/16/2014</guid>
                 <pubDate>2014-04-16T00:00:00+08:00</pubDate>
         </item>
 
@@ -105,8 +236,8 @@ sudo make install
 &lt;p&gt;至此ubuntu 12.04上的LLVM环境就算搭建好了。&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</link>
-                <guid>http://username.github.io/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
+                <link>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</link>
+                <guid>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
                 <pubDate>2014-04-12T00:00:00+08:00</pubDate>
         </item>
 
@@ -171,8 +302,8 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
 
 </description>
-                <link>http://username.github.io/2014/04/04/mysqldump-summary</link>
-                <guid>http://username.github.io/2014/04/04/mysqldump-summary</guid>
+                <link>http://i.justpic.org/2014/04/04/mysqldump-summary</link>
+                <guid>http://i.justpic.org/2014/04/04/mysqldump-summary</guid>
                 <pubDate>2014-04-04T00:00:00+08:00</pubDate>
         </item>
 
@@ -197,7 +328,7 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 
 &lt;p&gt;编译出现错误： fatal error:limits can’t find?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; $echo '#include &amp;lt;limits.h&amp;gt;' | clang -v -xc -o /dev/null -
+&lt;pre&gt;&lt;code&gt; $echo &#39;#include &amp;lt;limits.h&amp;gt;&#39; | clang -v -xc -o /dev/null -
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
@@ -213,8 +344,8 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
     $grep notification &lt;code&gt;find ./*&lt;/code&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2014/04/02/gcc-48-on-ubuntu</link>
-                <guid>http://username.github.io/2014/04/02/gcc-48-on-ubuntu</guid>
+                <link>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</link>
+                <guid>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</guid>
                 <pubDate>2014-04-02T00:00:00+08:00</pubDate>
         </item>
 
@@ -225,8 +356,8 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
 &lt;a href=&quot;https://www.owasp.org/images/d/dc/AppsecEU09-Damele-A-G-Advanced-SQL-injection-slides.pdf&quot;&gt;sql injection&lt;/a&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2014/04/01/install-windowslinux-with-usb</link>
-                <guid>http://username.github.io/2014/04/01/install-windowslinux-with-usb</guid>
+                <link>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</link>
+                <guid>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</guid>
                 <pubDate>2014-04-01T00:00:00+08:00</pubDate>
         </item>
 
@@ -245,8 +376,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
 &lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/posts/2014/02/25/draft</link>
-                <guid>http://username.github.io/posts/2014/02/25/draft</guid>
+                <link>http://i.justpic.org/posts/2014/02/25/draft</link>
+                <guid>http://i.justpic.org/posts/2014/02/25/draft</guid>
                 <pubDate>2014-02-25T00:00:00+08:00</pubDate>
         </item>
 
@@ -258,8 +389,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
 &lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2014/02/07/text-analysis</link>
-                <guid>http://username.github.io/2014/02/07/text-analysis</guid>
+                <link>http://i.justpic.org/2014/02/07/text-analysis</link>
+                <guid>http://i.justpic.org/2014/02/07/text-analysis</guid>
                 <pubDate>2014-02-07T00:00:00+08:00</pubDate>
         </item>
 
@@ -268,8 +399,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
                 <description>
 &lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2014/01/14/computational-science</link>
-                <guid>http://username.github.io/2014/01/14/computational-science</guid>
+                <link>http://i.justpic.org/2014/01/14/computational-science</link>
+                <guid>http://i.justpic.org/2014/01/14/computational-science</guid>
                 <pubDate>2014-01-14T00:00:00+08:00</pubDate>
         </item>
 
@@ -278,8 +409,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
                 <description>
 &lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2014/01/01/best-award-paper</link>
-                <guid>http://username.github.io/2014/01/01/best-award-paper</guid>
+                <link>http://i.justpic.org/2014/01/01/best-award-paper</link>
+                <guid>http://i.justpic.org/2014/01/01/best-award-paper</guid>
                 <pubDate>2014-01-01T00:00:00+08:00</pubDate>
         </item>
 
@@ -293,8 +424,8 @@ install and set up Left for your own purposes.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;chmod 777 #命令 来解决权限问题 
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</link>
-                <guid>http://username.github.io/2013/12/04/install-redmine-in-ubuntu</guid>
+                <link>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</link>
+                <guid>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</guid>
                 <pubDate>2013-12-04T00:00:00+08:00</pubDate>
         </item>
 
@@ -337,8 +468,8 @@ dfb74c9b9…&lt;/p&gt;
 
 &lt;p&gt;misctechmusings.com/linux/boinc-cli-for-world-community-grid/&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</link>
-                <guid>http://username.github.io/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</guid>
+                <link>http://i.justpic.org/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</link>
+                <guid>http://i.justpic.org/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server</guid>
                 <pubDate>2013-11-19T00:00:00+08:00</pubDate>
         </item>
 
@@ -351,8 +482,8 @@ dfb74c9b9…&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.niemanlab.org/2013/11/matt-waite-how-i-faced-my-fears-and-learned-to-be-good-at-math/&quot;&gt;conquer math&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/11/10/a-little-surprised</link>
-                <guid>http://username.github.io/2013/11/10/a-little-surprised</guid>
+                <link>http://i.justpic.org/2013/11/10/a-little-surprised</link>
+                <guid>http://i.justpic.org/2013/11/10/a-little-surprised</guid>
                 <pubDate>2013-11-10T00:00:00+08:00</pubDate>
         </item>
 
@@ -361,8 +492,8 @@ dfb74c9b9…&lt;/p&gt;
                 <description>
 &lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/11/09/data-analysis</link>
-                <guid>http://username.github.io/2013/11/09/data-analysis</guid>
+                <link>http://i.justpic.org/2013/11/09/data-analysis</link>
+                <guid>http://i.justpic.org/2013/11/09/data-analysis</guid>
                 <pubDate>2013-11-09T00:00:00+08:00</pubDate>
         </item>
 
@@ -392,8 +523,8 @@ for data in iterable:
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2013/11/06/python-web</link>
-                <guid>http://username.github.io/2013/11/06/python-web</guid>
+                <link>http://i.justpic.org/2013/11/06/python-web</link>
+                <guid>http://i.justpic.org/2013/11/06/python-web</guid>
                 <pubDate>2013-11-06T00:00:00+08:00</pubDate>
         </item>
 
@@ -411,9 +542,11 @@ for data in iterable:
 
 &lt;p&gt;&lt;strong&gt;medium(中级)&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;通过改错学习python &lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;TDD 模式学习python&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;通过改错学习python&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;advanced(高级)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.infoq.com/cn/news/2014/04/pyston&quot;&gt;python与llvm结合&lt;/a&gt;   &lt;a href=&quot;http://github.com/dropbox/pyston&quot;&gt;pyston&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://anandology.com/python-practice-book&quot;&gt;python practice book&lt;/a&gt;&lt;/p&gt;
 
@@ -425,8 +558,8 @@ for data in iterable:
 &lt;a href=&quot;http://www.checkio.org&quot;&gt;Game&lt;/a&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2013/11/05/leaning-python-site</link>
-                <guid>http://username.github.io/2013/11/05/leaning-python-site</guid>
+                <link>http://i.justpic.org/2013/11/05/leaning-python-site</link>
+                <guid>http://i.justpic.org/2013/11/05/leaning-python-site</guid>
                 <pubDate>2013-11-05T00:00:00+08:00</pubDate>
         </item>
 
@@ -437,8 +570,8 @@ for data in iterable:
 
 &lt;p&gt;&lt;a href=&quot;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&quot;&gt;gunicorn with nginx&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/11/04/deploy-python-on-nginx</link>
-                <guid>http://username.github.io/2013/11/04/deploy-python-on-nginx</guid>
+                <link>http://i.justpic.org/2013/11/04/deploy-python-on-nginx</link>
+                <guid>http://i.justpic.org/2013/11/04/deploy-python-on-nginx</guid>
                 <pubDate>2013-11-04T00:00:00+08:00</pubDate>
         </item>
 
@@ -507,7 +640,7 @@ insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;da
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
 
 http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
@@ -515,8 +648,8 @@ http://rubyer.me/blog/638/ redis.io
 &lt;p&gt;&lt;strong&gt;uwsgi or gunicorn(optional)&lt;/strong&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2013/10/27/install-project-on-preferati</link>
-                <guid>http://username.github.io/2013/10/27/install-project-on-preferati</guid>
+                <link>http://i.justpic.org/2013/10/27/install-project-on-preferati</link>
+                <guid>http://i.justpic.org/2013/10/27/install-project-on-preferati</guid>
                 <pubDate>2013-10-27T00:00:00+08:00</pubDate>
         </item>
 
@@ -527,8 +660,8 @@ http://rubyer.me/blog/638/ redis.io
 
 &lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/10/26/how-to-write-a-crawler</link>
-                <guid>http://username.github.io/2013/10/26/how-to-write-a-crawler</guid>
+                <link>http://i.justpic.org/2013/10/26/how-to-write-a-crawler</link>
+                <guid>http://i.justpic.org/2013/10/26/how-to-write-a-crawler</guid>
                 <pubDate>2013-10-26T00:00:00+08:00</pubDate>
         </item>
 
@@ -556,8 +689,8 @@ public slots：在这个区内声明的槽意味着任何对象都可将信号�
 protected slots：在这个区内声明的槽意味着当前类及其子类可以将信号与之相连接。这适用于那些槽，它们是类实现的一部分，但是其界面接口却面向外部。
 private slots：在这个区内声明的槽意味着只有类自己可以将信号与之相连接。这适用于联系非常紧密的类。&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/10/22/qt-fourteen-steps</link>
-                <guid>http://username.github.io/2013/10/22/qt-fourteen-steps</guid>
+                <link>http://i.justpic.org/2013/10/22/qt-fourteen-steps</link>
+                <guid>http://i.justpic.org/2013/10/22/qt-fourteen-steps</guid>
                 <pubDate>2013-10-22T00:00:00+08:00</pubDate>
         </item>
 
@@ -572,8 +705,8 @@ sudo pip install scipy
 sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu</link>
-                <guid>http://username.github.io/2013/10/18/install-numpy-scipy-on-ubuntu</guid>
+                <link>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</link>
+                <guid>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</guid>
                 <pubDate>2013-10-18T00:00:00+08:00</pubDate>
         </item>
 
@@ -588,8 +721,8 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
 &lt;p&gt;&lt;a href=&quot;http://mloss.org/software/&quot;&gt;machine learning open source&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/10/17/python-machine-learning</link>
-                <guid>http://username.github.io/2013/10/17/python-machine-learning</guid>
+                <link>http://i.justpic.org/2013/10/17/python-machine-learning</link>
+                <guid>http://i.justpic.org/2013/10/17/python-machine-learning</guid>
                 <pubDate>2013-10-17T00:00:00+08:00</pubDate>
         </item>
 
@@ -602,8 +735,8 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
 &lt;p&gt;&lt;a href=&quot;http://gitref.cyj.me/zh/remotes/&quot;&gt;git&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/09/29/git</link>
-                <guid>http://username.github.io/2013/09/29/git</guid>
+                <link>http://i.justpic.org/2013/09/29/git</link>
+                <guid>http://i.justpic.org/2013/09/29/git</guid>
                 <pubDate>2013-09-29T00:00:00+08:00</pubDate>
         </item>
 
@@ -648,8 +781,8 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 } Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/2013/09/18/nginx-permission-root</link>
-                <guid>http://username.github.io/2013/09/18/nginx-permission-root</guid>
+                <link>http://i.justpic.org/2013/09/18/nginx-permission-root</link>
+                <guid>http://i.justpic.org/2013/09/18/nginx-permission-root</guid>
                 <pubDate>2013-09-18T00:00:00+08:00</pubDate>
         </item>
 
@@ -665,8 +798,8 @@ I/O服用（select和poll）（I/O multiplexing）
 前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</link>
-                <guid>http://username.github.io/2013/09/12/asynchroussynchrousblockingunblocking-network</guid>
+                <link>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</link>
+                <guid>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</guid>
                 <pubDate>2013-09-12T00:00:00+08:00</pubDate>
         </item>
 
@@ -676,8 +809,8 @@ I/O服用（select和poll）（I/O multiplexing）
 &lt;p&gt;https://github.com/pbharrin/machinelearninginaction
 zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 </description>
-                <link>http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action</link>
-                <guid>http://username.github.io/machine%20learning/2013/08/08/machine-learning-in-action</guid>
+                <link>http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action</link>
+                <guid>http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action</guid>
                 <pubDate>2013-08-08T00:00:00+08:00</pubDate>
         </item>
 
@@ -815,8 +948,8 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;Fastcgi deployment through Nginx (未译)&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/08/06/webpy</link>
-                <guid>http://username.github.io/2013/08/06/webpy</guid>
+                <link>http://i.justpic.org/2013/08/06/webpy</link>
+                <guid>http://i.justpic.org/2013/08/06/webpy</guid>
                 <pubDate>2013-08-06T00:00:00+08:00</pubDate>
         </item>
 
@@ -838,13 +971,13 @@ $parent.append($li_1).append($li_2);
 
 &lt;p&gt;add attribute in the added element:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title='新增节点：数据结构'&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
+&lt;pre&gt;&lt;code&gt;var $li_1=$(&quot;&amp;lt;li title=&#39;新增节点：数据结构&#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&quot;);
 var $parent=$(&quot;.nm_ul&quot;);
 $parent.append($li_1);
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</link>
-                <guid>http://username.github.io/2013/07/29/jquery-add-element-in-the-html-dom</guid>
+                <link>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</link>
+                <guid>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</guid>
                 <pubDate>2013-07-29T00:00:00+08:00</pubDate>
         </item>
 
@@ -862,8 +995,8 @@ redirect：301永久重定向&lt;/p&gt;
 
 &lt;p&gt;seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/07/28/webpy-note</link>
-                <guid>http://username.github.io/2013/07/28/webpy-note</guid>
+                <link>http://i.justpic.org/2013/07/28/webpy-note</link>
+                <guid>http://i.justpic.org/2013/07/28/webpy-note</guid>
                 <pubDate>2013-07-28T00:00:00+08:00</pubDate>
         </item>
 
@@ -877,7 +1010,7 @@ redirect：301永久重定向&lt;/p&gt;
 from sqlalchemy.orm import *
 
 metadata=MetaData(create_engine(&quot;sqlite://&quot;,echo=True)
-t1=Table(&quot;t1&quot;,metadata,Column('id',Integer,primary_key=True))
+t1=Table(&quot;t1&quot;,metadata,Column(&#39;id&#39;,Integer,primary_key=True))
 t2=Table(&quot;t2&quot;,metadata,Column(&quot;id&quot;,Integer,primary_key=True))
 metadata.create_all()
 
@@ -899,8 +1032,8 @@ print sess.query(T2Foo).all()
 &lt;/code&gt;&lt;/pre&gt;
 
 </description>
-                <link>http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping</link>
-                <guid>http://username.github.io/2013/07/26/sqlalchemy-dynamic-mapping</guid>
+                <link>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</link>
+                <guid>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</guid>
                 <pubDate>2013-07-26T00:00:00+08:00</pubDate>
         </item>
 
@@ -909,8 +1042,8 @@ print sess.query(T2Foo).all()
                 <description>
 &lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/07/26/premature-optimization</link>
-                <guid>http://username.github.io/2013/07/26/premature-optimization</guid>
+                <link>http://i.justpic.org/2013/07/26/premature-optimization</link>
+                <guid>http://i.justpic.org/2013/07/26/premature-optimization</guid>
                 <pubDate>2013-07-26T00:00:00+08:00</pubDate>
         </item>
 
@@ -926,8 +1059,8 @@ print sess.query(T2Foo).all()
 &lt;p&gt;&lt;a href=&quot;https://code.google.com/p/pyctp/&quot;&gt;pyctp&lt;/a&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/2013/07/22/memo-on-the-trade</link>
-                <guid>http://username.github.io/2013/07/22/memo-on-the-trade</guid>
+                <link>http://i.justpic.org/2013/07/22/memo-on-the-trade</link>
+                <guid>http://i.justpic.org/2013/07/22/memo-on-the-trade</guid>
                 <pubDate>2013-07-22T00:00:00+08:00</pubDate>
         </item>
 
@@ -950,7 +1083,7 @@ server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
 
-server_address=('localhost',10001)
+server_address=(&#39;localhost&#39;,10001)
 server.bind(server_address)
 
 server.listen(10)
@@ -1141,7 +1274,7 @@ if __name__==&quot;__main__&quot;:
         logger.error(&quot;setsocketopt error&quot;)
 
     try:
-        listen_fd.bind(('',10001))
+        listen_fd.bind((&#39;&#39;,10001))
     except socket.error,msg:
         logger.error(&quot;listen file id bind ip error&quot;)
 
@@ -1169,7 +1302,7 @@ if __name__==&quot;__main__&quot;:
                 connections[conn.fileno()]=conn 
                 addresses[conn.fileno()]=addr
             elif select.EPOLLIN  &amp;amp; events:
-                datas=''
+                datas=&#39;&#39;
                 while True:
                     try:
                         data=connections[fd].recv(10)
@@ -1248,8 +1381,8 @@ for message in messages:
   &lt;a href=&quot;http://www.nightmare.com/medusa/async_sockets.html&quot;&gt;blog2&lt;/a&gt;&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/python%20network/2013/07/15/python-asynchrous-network</link>
-                <guid>http://username.github.io/python%20network/2013/07/15/python-asynchrous-network</guid>
+                <link>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</link>
+                <guid>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</guid>
                 <pubDate>2013-07-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -1283,8 +1416,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 
 &lt;p&gt;Ok!&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</link>
-                <guid>http://username.github.io/2013/07/02/install-multiple-version-of-python-with-virtualenv</guid>
+                <link>http://i.justpic.org/2013/07/02/install-multiple-version-of-python-with-virtualenv</link>
+                <guid>http://i.justpic.org/2013/07/02/install-multiple-version-of-python-with-virtualenv</guid>
                 <pubDate>2013-07-02T00:00:00+08:00</pubDate>
         </item>
 
@@ -1293,8 +1426,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
                 <description>
 &lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/06/14/com-learning</link>
-                <guid>http://username.github.io/2013/06/14/com-learning</guid>
+                <link>http://i.justpic.org/2013/06/14/com-learning</link>
+                <guid>http://i.justpic.org/2013/06/14/com-learning</guid>
                 <pubDate>2013-06-14T00:00:00+08:00</pubDate>
         </item>
 
@@ -1303,8 +1436,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
                 <description>
 &lt;p&gt;google protobuffer待记&lt;/p&gt;
 </description>
-                <link>http://username.github.io/2013/06/11/protobuffer</link>
-                <guid>http://username.github.io/2013/06/11/protobuffer</guid>
+                <link>http://i.justpic.org/2013/06/11/protobuffer</link>
+                <guid>http://i.justpic.org/2013/06/11/protobuffer</guid>
                 <pubDate>2013-06-11T00:00:00+08:00</pubDate>
         </item>
 
@@ -1334,8 +1467,8 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 &lt;pre&gt;&lt;code&gt;sudo python setup.py install
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/python/2013/06/08/scipy-error</link>
-                <guid>http://username.github.io/python/2013/06/08/scipy-error</guid>
+                <link>http://i.justpic.org/python/2013/06/08/scipy-error</link>
+                <guid>http://i.justpic.org/python/2013/06/08/scipy-error</guid>
                 <pubDate>2013-06-08T00:00:00+08:00</pubDate>
         </item>
 
@@ -1350,8 +1483,8 @@ sudo setcap CAP_NET_RAW=ep /usr/bin/wineserver
 sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-                <link>http://username.github.io/linux/2013/06/06/wine-error</link>
-                <guid>http://username.github.io/linux/2013/06/06/wine-error</guid>
+                <link>http://i.justpic.org/linux/2013/06/06/wine-error</link>
+                <guid>http://i.justpic.org/linux/2013/06/06/wine-error</guid>
                 <pubDate>2013-06-06T00:00:00+08:00</pubDate>
         </item>
 
@@ -1393,8 +1526,8 @@ $source .bashrc 安装 blosc (可选)
 &lt;p&gt;至此HDF5可用&lt;/p&gt;
 
 </description>
-                <link>http://username.github.io/python/yt-project/2013/06/05/installhdf5</link>
-                <guid>http://username.github.io/python/yt-project/2013/06/05/installhdf5</guid>
+                <link>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</link>
+                <guid>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</guid>
                 <pubDate>2013-06-05T19:11:11+08:00</pubDate>
         </item>
 
@@ -1413,8 +1546,8 @@ $source .bashrc 安装 blosc (可选)
 &lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
   &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;&lt;/p&gt;
 </description>
-                <link>http://username.github.io/machine/learning/2013/06/03/deep-learning</link>
-                <guid>http://username.github.io/machine/learning/2013/06/03/deep-learning</guid>
+                <link>http://i.justpic.org/machine/learning/2013/06/03/deep-learning</link>
+                <guid>http://i.justpic.org/machine/learning/2013/06/03/deep-learning</guid>
                 <pubDate>2013-06-03T00:00:00+08:00</pubDate>
         </item>
 
