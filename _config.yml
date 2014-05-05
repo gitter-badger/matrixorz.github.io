@@ -18,6 +18,7 @@ rdiscount:
 name: Cao Hai
 url: http://i.justpic.org
 description: A fantastic blog that is fantastic.
+<<<<<<< HEAD
 twitter: matrixorz
 github: matrixorz
 weibo: 1803769420
@@ -154,3 +155,6 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+=======
+twitter: holman
+>>>>>>> fd6a6d957584fdad9968600942b3a0afc454f1f1

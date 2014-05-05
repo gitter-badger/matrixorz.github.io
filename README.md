@@ -7,6 +7,8 @@ extracted from [zachholman.com](http://zachholman.com/), which means it was
 battle-hardened from years of posting serious blog posts about emoji and swear
 words.
 
+You can see it live right here: <http://zachholman.com/left/>
+
 ![Left](http://cl.ly/image/3S2r1p2C0E2B/content)
 
 ## Installation
@@ -39,8 +41,10 @@ There's a few other places that you'll want to change, too:
 
 ## Deployment
 
-You should deploy with [GitHub Pages](http://pages.github.com)- it's just
-easier.
+Left is designed to be deployed to [GitHub Pages](http://pages.github.com). It
+uses [repository metadata](https://help.github.com/articles/repository-metadata-on-github-pages)
+to generate some of your content, like your GitHub URL and avatar information (so you
+might not actually see it locally until you push it up to Pages).
 
 All you should have to do is rename your repository on GitHub to be
 `username.github.com`. Since everything is on the `gh-pages` branch, you
