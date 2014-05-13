@@ -1,0 +1,2138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>分类预测 &mdash; ODPS 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ODPS 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="ODPS XLab/XLib" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_regression.html" title="回归分析"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_dataconvert.html" title="格式转换"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="odps-xlib-classification">
+<span id="id1"></span><h1>分类预测<a class="headerlink" href="#odps-xlib-classification" title="Permalink to this headline">¶</a></h1>
+<p>分类预测是一种利用已知类别的样本训练分类模型，为未知类别的样本预测类别的有监督机器学习方法。XLab支持的分类预测模型包括： <a class="reference internal" href="#odps-xlib-classification-rand-forests"><em>随机森林</em></a> 、 <a class="reference internal" href="#odps-xlib-logic-reg"><em>逻辑回归</em></a> (二分类回归、多分类回归和逐步回归)、 <a class="reference internal" href="#odps-xlib-classification-lin-svn"><em>线性支持向量机(Linear SVM)</em></a> 、<a class="reference internal" href="#odps-xlib-classification-naive-bayes"><em>朴素贝叶斯(Naive Bayes)</em></a> 、 <a class="reference internal" href="#odps-xlib-classification-bayes"><em>贝叶斯判别(Bayes)</em></a> 、 <a class="reference internal" href="#odps-xlib-classification-fisher"><em>费希尔判别(Fisher)</em></a> 、 <a class="reference internal" href="#odps-xlib-classification-mdinstance"><em>马氏距离判别(MDistance)</em></a> 。同时，XLab也提供分类评估功能，包括计算准确率、召回率、F值，对于二分类还支持画ROC。分类预测的执行方式有：函数和界面，详细使用说明见下文。</p>
+<div class="section" id="odps-xlib-classification-rand-forests">
+<span id="id2"></span><h2>随机森林<a class="headerlink" href="#odps-xlib-classification-rand-forests" title="Permalink to this headline">¶</a></h2>
+<p>随机森林是一个包含多个决策树的分类器，并且其输出的类别是由个别树输出的类别的众数而定。Leo Breiman和Adele Cutler发展出推论出随机森林的算法。而&#8221;Random Forests&#8221;是他们的商标。这个术语是1995年由贝尔实验室的Tin Kam Ho所提出的随机决策森林(random decision forests)而来的。这个方法则是结合Breimans的 &#8220;Bootstrap aggregating&#8221; 想法和 Ho 的&#8221;random subspace method&#8221; 以建造决策树的集合。</p>
+<ul class="simple">
+<li>随机森林算法介绍： <a class="reference external" href="http://en.wikipedia.org/wiki/Random_forest">Random forest</a> 。</li>
+<li>随机森林算法参考：Leo Breiman (2001). Random Forests. Machine Learning. 45(1):5-32.</li>
+</ul>
+<div class="section" id="id3">
+<h3>函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>随机森林模型包括以下几个函数：train, predict, isRandomForestModel, loadModel和exportModel。</p>
+<p>这几个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">isRandomForestModel</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">exportModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h4>训练<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">isFeatureContinuous</span><span class="p">,</span>
+             <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">treeNum</span><span class="p">,</span>
+             <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">weightColName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">templateTableName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">validateTableName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">validatePartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">algorithmTypes</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">randomColNum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumObj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumPer</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
+             <span class="n">maxTreeDeep</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxRecordSize</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 训练输入表的表名。</li>
+<li>featureColNames：输入表中选择的用于训练的特征列名。</li>
+<li>isFeatureContinuous: 特征对应的类型，表示对应特征是否为连续值。True为连续，False为离散。[True, False, False]表示三列特征中第一列为连续，第二和第三列为离散。</li>
+<li>labelColName: 输入表中标签列的列名。</li>
+<li>modelTableName: 输出的模型名。</li>
+<li>treeNum: 森林中树的个数, 范围(0, 1000]</li>
+<li>inputPartitions: (可选)。输入表对应的输入分区，选中全表则为None。</li>
+<li>weightColName:(可选)。输入表中权重列的列名，无权重列则为None。</li>
+<li>templateTableName:(可选)。模版表的表名，无模版表则为None。</li>
+<li>validateTableName:(可选)。验证表的表名，无验证表则为None。</li>
+<li>validatePartitions:(可选)。验证表对应的输入分区，无分区则为None。</li>
+<li>algorithmTypes:(可选)。单颗树的算法在森林中的位置。如果有则长度为2, 例如：在一个拥有5棵树的森林中，[2, 4]表示0，1为id3算法，2, 3为cart算法，4为c4.5算法。如果输入为None，则算法在森林中均分。</li>
+<li>randomColNum:(可选)。单颗树在生成时，每次选择最优特征，随机的特征个数。-1表示log2(特征的总个数)。</li>
+<li>minNumObj:(可选)。叶节点数据的最小个数。-1表示最小个数为2。</li>
+<li>minNumPer:(可选)。叶节点数据个数占父节点的最小比例。-1.表示无这一限制。范围[0.0,1.0]</li>
+<li>maxTreeDeep:(可选)。单颗树的最大深度。-1表示完全生长。范围[1, ∞)</li>
+<li>maxRecordSize:(可选)。森林中单颗树输入的随机数据的个数。范围为(0, 1000000)。-1表示100000。</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>RandomForestModel类型，表示随机森林的模型。</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;table_name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">,</span> <span class="s">&#39;col2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
+             <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&quot;model_table_name&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;p=1&#39;</span><span class="p">],</span>
+             <span class="n">weightColName</span> <span class="o">=</span> <span class="s">&#39;weight&#39;</span><span class="p">,</span> <span class="n">templateTableName</span> <span class="o">=</span> <span class="s">&#39;template_table_name&#39;</span><span class="p">,</span> <span class="n">validateTableName</span> <span class="o">=</span> <span class="s">&#39;vali_table_name&#39;</span><span class="p">,</span>
+             <span class="n">validatePartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;p=1&#39;</span><span class="p">],</span> <span class="n">algorithmTypes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">randomColNum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumObj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumPer</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
+             <span class="n">maxTreeDeep</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">maxRecordSize</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项：</dt>
+<dd><ul class="first last simple">
+<li>随机森林通过对bagging方法的改进，在大数据集上构建一个单颗树不相关的森林。在很多问题上，随机森林跟boosting方法类似，有类似的训练过程。</li>
+<li>本方法对于单颗树的增长，可选的有id3，cart或c4.5。通过参数treeNum来指定森林中树的个数，树个数的范围为[1, 1000]。通过编辑好的模版，可以控制单棵树的结构。可以通过其他参数控制单颗树叶结点上数据的最小个数，叶结点上数据占父节点的最小比例数，树的最大深度等。</li>
+<li>当出现input table is empty!错误时，可能是以下情况：抽样比率设置太小，也就是maxRecordSize太小；输入数据为空表。</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h4>预测<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+             <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+             <span class="n">isBin</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">labelValueToPredict</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 预测输入表名。</li>
+<li>model: RandomForestModel类型。随机森林模型</li>
+<li>outputTableName: 预测输出表。</li>
+<li>inputPartitions:(可选)。输入表对应的输入分区，选中全表则为None。</li>
+<li>appendColNames:(可选)。输出表中需要增加的预测输入表的列。</li>
+<li>outputPartition:(可选)。指定输出到输出表的分区。</li>
+<li>isBin:(可选)。模型对应的分类是否为二分。True为二分，False为多分。</li>
+<li>labelValueToPredict:(可选)。输出的概率对应的分类值。</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rfModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;table_name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">,</span> <span class="s">&#39;col2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span>
+             <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&quot;model_table_name&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;p=1&#39;</span><span class="p">],</span>
+             <span class="n">weightColName</span> <span class="o">=</span> <span class="s">&#39;weight&#39;</span><span class="p">,</span> <span class="n">templateTableName</span> <span class="o">=</span> <span class="s">&#39;template_table_name&#39;</span><span class="p">,</span> <span class="n">validateTableName</span> <span class="o">=</span> <span class="s">&#39;vali_table_name&#39;</span><span class="p">,</span>
+             <span class="n">validatePartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;p=1&#39;</span><span class="p">],</span> <span class="n">algorithmTypes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">randomColNum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumObj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">minNumPer</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>
+             <span class="n">maxTreeDeep</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">maxRecordSize</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;table_name&quot;</span><span class="p">,</span> <span class="n">rfModel</span><span class="p">,</span> <span class="s">&quot;out_table_name&quot;</span><span class="p">,</span>
+             <span class="n">inputPartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;p=1&#39;</span><span class="p">],</span> <span class="n">appendColNames</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">],</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="s">&quot;p=1&quot;</span><span class="p">,</span>
+             <span class="n">isBin</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">labelValueToPredict</span> <span class="o">=</span> <span class="s">&#39;good&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项：</dt>
+<dd><ul class="first last simple">
+<li>随机森林预测根据输入表和模型, 输出预测结果。</li>
+<li>本方法在二分类情况下，森林中投票的过程完全按照概率进行计算，可以有概率输出。
+在多分类情况下，则是按照森林中每颗树给出的结论的个数来投票，无概率输出。
+在二分有概率输出的情况下，输出两列，第一列为预测的结论，第二列为labelValueToPredict
+所指定的分类对应的概率。</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h4>是否为随机森林模型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>def isRandomForestModel(modelTableName):</div></blockquote>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：输入模型表名，</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>True|False：输出是否随机森林模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">isRFModel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">isRandomForestModel</span><span class="p">(</span><span class="s">&quot;adult_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>加载模型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName： 输入模型表名</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>RandomForestModel：输出随机森林模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rfModel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;adult_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>导出模型<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">exportModel</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">trueValue</span><span class="p">,</span> <span class="n">sqlFilePath</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">javaFilePath</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">defaultProp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>model: 输入随机森林模型， 模型中单棵树的规模小于10000</li>
+<li>trueValue: 真值， 即输出该真值的概率</li>
+<li>sqlFilePath:(可选)输出sql语法的文件路径</li>
+<li>javaFilePath:(可选)输出java语法的文件路径</li>
+<li>defaultProp: (可选)默认概率值， 即不符合任何边的条件时，默认输出的概率值</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">adultModel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;adult_100_cart_model&quot;</span><span class="p">);</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">exportModel</span><span class="p">(</span><span class="n">adultModel</span><span class="p">,</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;D:</span><span class="se">\\</span><span class="s">adult_model.sql&quot;</span><span class="p">,</span><span class="s">&quot;D:</span><span class="se">\\</span><span class="s">adult_model.txt&quot;</span><span class="p">,</span> <span class="n">defaultProp</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">RandomForest</span><span class="o">.</span><span class="n">exportModel</span><span class="p">(</span><span class="n">adultModel</span><span class="p">,</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="n">javaFilePath</span><span class="o">=</span><span class="s">&quot;D:</span><span class="se">\\</span><span class="s">adult_model.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>界面<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>使用训练集：tree_census_demo，验证集：tree_census_demo_test</p>
+<p>双击打开数据表，模型菜单中选择随机森林，如：</p>
+<a class="reference internal image-reference" href="../../_images/rf_main.png"><img alt="../../_images/rf_main.png" src="../../_images/rf_main.png" /></a>
+<ul class="simple">
+<li>&#8220;编辑查看&#8221;， 如果当前表是随机森林模型，那以树的方式，打开模型。如果当前表示普通表，则以编辑模板的方式，打开当前表的一个空模型。</li>
+<li>&#8220;训练&#8221;，打开随机森林的训练界面</li>
+<li>&#8220;预测&#8221;，打开随机森林的预测界面</li>
+<li>&#8220;导出模型&#8221;，打开导出模型界面</li>
+</ul>
+<div class="section" id="id10">
+<h4>训练<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>由菜单-&gt;随机森林&gt;训练，进入训练界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_main.png"><img alt="../../_images/rf_train_main.png" src="../../_images/rf_train_main.png" /></a>
+<p>训练界面一共有三个tab页，分别为：属性选择，参数配置，模型评估配置。</p>
+<ul class="simple">
+<li>属性选择tab页如上图，一共分为四个部分，</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>第一部分为属性选择(默认为除去最后一列的所有其他列)，显示属性的表一共三类，第一列表示当前属性是否选择，第二列是属性名称，第三列表示属性是否连续的，默认double和long会当成连续的。</li>
+<li>第二部分为目标列选择(默认为最后一列)以及权重设置。可以选择一个数值列做为权重列，权重列每个cell表示这一行记录的权重。</li>
+<li>第三部分为模型输出表，用于存储模型数据，</li>
+<li>第四部分为进度信息。</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>参数配置tab页如下图：</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>算法类型：四种，混合，ID3，C45，Cart</li>
+<li>树的数目：训练树的数目</li>
+<li>随机属性类型: 算法每步分裂的属性数目M， M&lt;=N，N为属性总数目(不包含目标列)，这里提供选项分别N(全集)，log(N)，√N，N/3，1.</li>
+<li>树最大深度：默认为0，深度无限制</li>
+<li>叶子节点最少记录数：M，当节点记录少于M，停止分裂</li>
+<li>叶子节点最小百分比：N，范围[0,1)，当节点记录数少于父节点*N，停止分裂</li>
+<li>每棵树最大记录数：每棵树处理的最大记录数，范围[1000, 1000000]</li>
+<li>使用模板：是否使用模板，输入为普通表，如何定义下面会具体介绍</li>
+<li>使用验证：是否使用验证集，输入为普通表。可以提前使用数据拆分模块，拆分出训练集，验证集。(由于验证表是单节点计算的，数据量建议不要超过512M)</li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/rf_train_para.png"><img alt="../../_images/rf_train_para.png" src="../../_images/rf_train_para.png" /></a>
+<ul class="simple">
+<li>模型评估配置tab页如下：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/rf_train_para_1.png"><img alt="../../_images/rf_train_para_1.png" src="../../_images/rf_train_para_1.png" /></a>
+<p>模型评估配置分为四部分，第一部分评估输入表，第二部分预测，第三部分为计算混淆矩阵， 第四部分为计算画图数据。</p>
+<blockquote>
+<div><ul class="simple">
+<li>评估输入表：两个选项，可以用训练表使用模型进行评估；或者准备验证表(tab页面，必须输入验证表)，验证表使用模型评估</li>
+<li>参数配置：如果选中&#8221;评价模型&#8221;或&#8221;计算画图数据&#8221;，预测输出表不可为空</li>
+<li>指标：如果选中&#8221;评价模型&#8221;，填写混淆矩阵输出表。</li>
+<li>ROC，lift and Recall-FP: 只有数据目标列是二分的，才可以画ROC，lift图， 如果选中二分类，需要指定目标列主分类的值，以及画图数据存储的输出表</li>
+</ul>
+</div></blockquote>
+<p>参数配置完成以后，回到属性选择tab页，单击&#8221;开始训练&#8221;，界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_process.png"><img alt="../../_images/rf_train_process.png" src="../../_images/rf_train_process.png" /></a>
+<p>训练结束后会自动显示训练的模型，后面会详细介绍模型：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_result.png"><img alt="../../_images/rf_train_result.png" src="../../_images/rf_train_result.png" /></a>
+<p>如果选中了&#8221;指标评价&#8221;，训练结束会，先运行预测，界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_predict.png"><img alt="../../_images/rf_train_predict.png" src="../../_images/rf_train_predict.png" /></a>
+<p>然后运行计算混淆矩阵，提示信息如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_cf.png"><img alt="../../_images/rf_train_cf.png" src="../../_images/rf_train_cf.png" /></a>
+<p>计算完成后，通过 模型界面的菜单&#8221;模型评估&#8221;&gt;&#8221;混淆矩阵&#8221;，查看混淆矩阵如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_cm_result.png"><img alt="../../_images/rf_train_cm_result.png" src="../../_images/rf_train_cm_result.png" /></a>
+<p>如果选中了&#8221;画图&#8221;，训练结束，先运行预测，然后运行画图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_roc_process.png"><img alt="../../_images/rf_train_roc_process.png" src="../../_images/rf_train_roc_process.png" /></a>
+<p>计算完成后，通过 模型界面的菜单&#8221;模型评估&#8221;&gt;&#8221;ROC/Lift/Precious-Recall&#8221;，查看如下：</p>
+<p>ROC图:</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_roc.png"><img alt="../../_images/rf_train_roc.png" src="../../_images/rf_train_roc.png" /></a>
+<p>Lift图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_lift.png"><img alt="../../_images/rf_train_lift.png" src="../../_images/rf_train_lift.png" /></a>
+<p>Precious-Recall：</p>
+<a class="reference internal image-reference" href="../../_images/rf_train_pr.png"><img alt="../../_images/rf_train_pr.png" src="../../_images/rf_train_pr.png" /></a>
+</div>
+<div class="section" id="id11">
+<h4>预测<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>由菜单-&gt;随机森林&gt;预测，进入预测界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_predict_main.png"><img alt="../../_images/rf_predict_main.png" src="../../_images/rf_predict_main.png" /></a>
+<p>其中：</p>
+<blockquote>
+<div><ul class="simple">
+<li>预测输入表：要预测的表</li>
+<li>结果附加列：可以选择预测输入表中需要输出到预测结果表的列，默认为无。</li>
+<li>模型名：随机森林模型名</li>
+<li>概率：如果目标列是二分的，且输入主分类，预测结果输出的是结论和输入分类的概率</li>
+<li>输出表：预测输出表</li>
+</ul>
+</div></blockquote>
+<p>单击&#8221;预测&#8221;，预测完成后，即可打开预测输出表查看预测结果：</p>
+<a class="reference internal image-reference" href="../../_images/rf_predict_process.png"><img alt="../../_images/rf_predict_process.png" src="../../_images/rf_predict_process.png" /></a>
+<p>预测成功，可以单击表tree_census_demo_test_predict查看预测结果：</p>
+<a class="reference internal image-reference" href="../../_images/rf_predict_result.png"><img alt="../../_images/rf_predict_result.png" src="../../_images/rf_predict_result.png" /></a>
+<p>其中concolusion为预测的结果，probability为分类1的概率。</p>
+</div>
+<div class="section" id="id12">
+<h4>模型显示<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>双击模型表，在菜单-&gt;随机森林&gt;编辑查看，进入查看界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_model_show.png"><img alt="../../_images/rf_model_show.png" src="../../_images/rf_model_show.png" /></a>
+<p>模型界面页脚工具栏提供以下功能：</p>
+<p>缩放：缩放50%如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_zoom.png"><img alt="../../_images/rf_zoom.png" src="../../_images/rf_zoom.png" /></a>
+<p>选择查看第几棵树:</p>
+<a class="reference internal image-reference" href="../../_images/rf_tree_select.png"><img alt="../../_images/rf_tree_select.png" src="../../_images/rf_tree_select.png" /></a>
+<p>视图，分为三种：</p>
+<p>第一种为tree view, 如图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_tree_view.png"><img alt="../../_images/rf_tree_view.png" src="../../_images/rf_tree_view.png" /></a>
+<p>对于tree view显示视图, 默认树节点显示当前节点目标列group分布，右击树节点，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_node.png"><img alt="../../_images/rf_node.png" src="../../_images/rf_node.png" /></a>
+<p>树节点支持三种事件，查看详细信息，查看属性增益，查看子节点记录分布:</p>
+<ul class="simple">
+<li>详细信息：显示节点训练数据目标列group分布， 验证数据集目标列group分布，训练数据目标列group错误率， 验证数据集目标列group错误率 如下：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/rf_node_detail.png"><img alt="../../_images/rf_node_detail.png" src="../../_images/rf_node_detail.png" /></a>
+<ul class="simple">
+<li>属性增益：显示属性名称，以及增益值(如果是ID3算法，则为信息增益，如果为C45，则为信息增益率， 如果为Cart，则为gini增益):</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/rf_node_info.png"><img alt="../../_images/rf_node_info.png" src="../../_images/rf_node_info.png" /></a>
+<ul class="simple">
+<li>子节点记录分布：显示节点ID，以及节点记录数比例:</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/rf_node_distribute.png"><img alt="../../_images/rf_node_distribute.png" src="../../_images/rf_node_distribute.png" /></a>
+<p>第二种为print view，如图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_model_print.png"><img alt="../../_images/rf_model_print.png" src="../../_images/rf_model_print.png" /></a>
+<p>第三种为：folder view，如图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_folder.png"><img alt="../../_images/rf_folder.png" src="../../_images/rf_folder.png" /></a>
+</div>
+<div class="section" id="id13">
+<h4>导出模型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>&#8220;导出模型&#8221;模块用于导出随机森林模型到特定格式的文本，模型需要满足一下几个条件：</p>
+<p>模型是二分类；模型中单棵树的条数小于10000(由于ODPS <a class="reference internal" href="../odps_common.html#odps-common-project"><em>项目空间(Project)</em></a> 的限制)；模型导出支持两种格式：分别为if..then.. prop 和 case..when(ODPS SQL)两种格式。</p>
+<p>选择模型数据表，右击表名选择-&gt;随机森林-&gt;导出模型，如：</p>
+<a class="reference internal image-reference" href="../../_images/rf_export.png"><img alt="../../_images/rf_export.png" src="../../_images/rf_export.png" /></a>
+<ul class="simple">
+<li>目标取值：目标变量的取值，主要用户计算导出文本中的概率</li>
+<li>概率默认值： 设置输出模型中概率的默认值</li>
+<li>保存路径 (if..then): 保存的文本格式如 if a then prop=0.8, 单击文本框后面的文件夹可以选择文件的保存路径，如下</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/rf_export_path.png"><img alt="../../_images/rf_export_path.png" src="../../_images/rf_export_path.png" /></a>
+<p>保存路径(caes..when):保存文本格式如 case when a then prop=0.8。</p>
+<p>单击&#8221;开始&#8221;，则开始导出模型，并显示导出的进度，如：</p>
+<a class="reference internal image-reference" href="../../_images/rf_export_process.png"><img alt="../../_images/rf_export_process.png" src="../../_images/rf_export_process.png" /></a>
+</div>
+<div class="section" id="id14">
+<h4>定义模板<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>双击打开非随机森林模型表，由菜单-&gt;随机森林&gt;编辑查看，进入编辑界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_template.png"><img alt="../../_images/rf_template.png" src="../../_images/rf_template.png" /></a>
+<p>只有一个根节点，右击根节点，两个事件，&#8221;编辑&#8221;，&#8221;新增子节点&#8221;。其中编辑界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_edit_template.png"><img alt="../../_images/rf_edit_template.png" src="../../_images/rf_edit_template.png" /></a>
+<p>新增子节点界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/rf_template_new_node.png"><img alt="../../_images/rf_template_new_node.png" src="../../_images/rf_template_new_node.png" /></a>
+<p>除根节点外，其他节点多一个事件，删除节点，如图：</p>
+<a class="reference internal image-reference" href="../../_images/rf_template_del_node.png"><img alt="../../_images/rf_template_del_node.png" src="../../_images/rf_template_del_node.png" /></a>
+<p>编辑完成后，单击保存，即可完成定义模板。</p>
+<a class="reference internal image-reference" href="../../_images/rf_template_save_node.png"><img alt="../../_images/rf_template_save_node.png" src="../../_images/rf_template_save_node.png" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="odps-xlib-logic-reg">
+<span id="id15"></span><h2>逻辑回归<a class="headerlink" href="#odps-xlib-logic-reg" title="Permalink to this headline">¶</a></h2>
+<p>经典逻辑回归是一个二分类算法，Xlab中的逻辑回归可以支持多分类。XLab中的逻辑回归模型分为三种：二分类逻辑回归， 二分类逐步逻辑回归和 多分类逻辑回归。逻辑回归算法介绍：<a class="reference external" href="http://en.wikipedia.org/wiki/Logistic_regression">Logistic regression</a> 。</p>
+<ul class="simple">
+<li>二分类逻辑回归和多分类逻辑回归支持普通表和矩阵两种数据格式；而逐步逻辑回归只支持普通表。</li>
+<li>对于普通表，要求特征列和label列(或者叫做目标列)都在同一张表里；而对于矩阵，要求整个矩阵都是特征，而label则在另外一张普通表中。</li>
+<li>对于目标列，xlab支持富类型，包括boolean类型、bigint类型、string类型，double类型虽然也支持，但不鼓励使用。</li>
+<li>逻辑回归使用数据表: adult进行使用说明。</li>
+</ul>
+<div class="section" id="id16">
+<h3>函数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p><strong>显示帮助信息</strong></p>
+<ul class="simple">
+<li>二分类逻辑回归的训练和预测，以及模型load：</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>二分类逐步逻辑回归的训练和预测，以及模型load：</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span> <span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>多分类逻辑回归的训练和预测，以及模型load：</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id17">
+<h4>二分类训练<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的二分类逻辑回归训练</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span>
+          <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">goodValue</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0e-06</span><span class="p">,</span>
+          <span class="n">regularizedType</span> <span class="o">=</span> <span class="s">&#39;l1&#39;</span><span class="p">,</span> <span class="n">regularizedLevel</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 训练数据的表名</li>
+<li>featureColNames: 特征列的列名数组，列名必须是 inputTableName 里的列</li>
+<li>labelColName: label列(又叫目标列)的列名，列名必须是 inputTableName 里的列</li>
+<li>modelTableName: 输出的模型的表名</li>
+<li>inputPartitions: (可选)训练数据所在的partition列表，必须是 inputTableName 中的partition，默认是None，表示整表</li>
+<li>goodValue: (可选)指定训练系数针对的label值; 默认是随机选择一个, 模型里面会显示最终选择的是哪个</li>
+<li>maxIter: (可选)指定L-BFGS的最大迭代次数，默认是100</li>
+<li>epsilon: (可选)指定终止条件，就是两次迭代之间log-likelihood的差，默认为1.0e-06</li>
+<li>regularizedType: (可选)正则化类型，可以选择&#8217;l1&#8217;和&#8217;l2&#8217;，或者None，默认为&#8217;l1&#8217;</li>
+<li>regularizedLevel: (可选)正则项的系数; 当regularizedType为None时，该项也可以写None；注意需要写成1.0这种形式；默认为1.0</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>二分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">,</span> <span class="n">regularizedType</span><span class="o">=</span><span class="s">&#39;l2&#39;</span><span class="p">,</span> <span class="n">regularizedLevel</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>矩阵的二分类逻辑回归训练</strong></p>
+<div class="code python highlight-python"><pre>def trainSparse(featureMatrixName, labelTableName, labelColName, modelTableName,
+          labelPartitions = None, goodValue = None, maxIter = 100, epsilon = 1.0e-06,
+          regularizedType = 'l1', regularizedLevel = 1.0)</pre>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>featureMatrixName: 训练数据的特征所在矩阵的表名</li>
+<li>labelTableName: label(或者叫做目标)所在的表名</li>
+<li>labelColName: label列(又叫目标列)的列名，列名必须是 labelTableName 里的列</li>
+<li>modelTableName: 输出的模型的表名</li>
+<li>labelPartitions: label(或者叫做目标)所在的分区</li>
+<li>goodValue: (可选)指定训练系数针对的label值; 默认是随机选择一个, 模型里面会显示最终选择的是哪个</li>
+<li>maxIter: (可选)指定L-BFGS的最大迭代次数，默认是100</li>
+<li>epsilon: (可选)指定终止条件，就是两次迭代之间log-likelihood的差，默认为1.0e-06</li>
+<li>regularizedType: (可选)正则化类型，可以选择&#8217;l1&#8217;和&#8217;l2&#8217;，或者None，默认为&#8217;l1&#8217;</li>
+<li>regularizedLevel: (可选)正则项的系数; 当regularizedType为None时，该项也可以写None；注意需要写成1.0这种形式；默认为1.0</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>二分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">,</span> <span class="n">regularizedType</span><span class="o">=</span><span class="s">&#39;l2&#39;</span><span class="p">,</span> <span class="n">regularizedLevel</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h4>二分类预测<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的二分类逻辑回归预测</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+            <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 预测数据的表名</li>
+<li>model: 预测所用的二分类逻辑回归模型</li>
+<li>outputTableName: 预测输出表的表名</li>
+<li>inputPartitions:(可选)预测输入数据的分区列表; None表示用全表</li>
+<li>outputPartition:(可选)预测输出数据的分区; None表示不输出到分区</li>
+<li>labelValueToPredict:(可选)预测所需要输出概率的label的值；None则不输出概率</li>
+<li>appendColNames:(可选)inputTableName中所需要附加到输出表的列名列表; None表示不附加任何列</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>矩阵的二分类逻辑回归预测</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predictSparse</span><span class="p">(</span><span class="n">featureMatrixName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+            <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>featureMatrixName: 预测特征所在矩阵的表名</li>
+<li>model: 预测所用的二分类逻辑回归模型</li>
+<li>outputTableName: 预测输出表的表名</li>
+<li>outputPartition: (可选)预测输出数据的分区; None表示不输出到分区</li>
+<li>labelValueToPredict: (可选)预测所需要输出概率的label的值；None则不输出概率</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">,</span> <span class="n">regularizedType</span><span class="o">=</span><span class="s">&#39;l2&#39;</span><span class="p">,</span> <span class="n">regularizedLevel</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h4>二分类加载模型<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p><strong>从表加载一个二分类逻辑回归的模型</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName: 二分类逻辑回归模型数据所在的表名</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>二分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&#39;bank_full_model&#39;</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistReg</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>二分类逐步回归训练<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的二分类逐步逻辑回归</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">selectionInfoTableName</span><span class="p">,</span>
+          <span class="n">selectionMethod</span> <span class="o">=</span> <span class="s">&#39;stepwise&#39;</span><span class="p">,</span>
+          <span class="n">maxIter</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0e-06</span><span class="p">,</span>
+          <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">goodValue</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+          <span class="n">slentry</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">slstay</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">include</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 训练数据的表名</li>
+<li>featureColNames: 特征列的列名数组，列名必须是 inputTableName 里的列</li>
+<li>labelColName: label列(又叫目标列)的列名，列名必须是 inputTableName 里的列</li>
+<li>modelTableName: 输出的模型的表名</li>
+<li>selectionInfoTableName: 存取选择过程信息的输出表名</li>
+<li>selectionMethod: (可选)可以是&#8217;stepwise&#8217;和&#8217;forward&#8217;；默认为&#8217;stepwise&#8217;;</li>
+<li>maxIter: (可选)指定Newton迭代的最大迭代次数，默认是100</li>
+<li>epsilon: (可选)指定终止条件，就是两次迭代之间log-likelihood的差，默认为1.0e-06</li>
+<li>inputPartitions: (可选)训练数据所在的partition列表，必须是 inputTableName 中的partition，默认是None，表示整表</li>
+<li>goodValue: (可选)指定训练系数针对的label值; 默认是随机选择一个, 模型里面会显示最终选择的是哪个</li>
+<li>slentry: (可选)控制特征进入模型的score test值的显著性水平；默认为0.05</li>
+<li>slstay: (可选)控制特征继续留在模型中的wald test值的显著性水平；默认为0.05</li>
+<li>include: (可选)强制featureColNames列表中的前多少个特征必须进入模型；默认为0</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>二分类逐步逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_sel_info&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">,</span> <span class="n">slentry</span> <span class="o">=</span> <span class="mf">0.002</span><span class="p">,</span> <span class="n">slstay</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h4>二分类逐步回归预测<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的二分类逐步逻辑回归预测</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+            <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 预测数据的表名</li>
+<li>model: 预测所用的二分类逐步逻辑回归模型</li>
+<li>outputTableName: 预测输出表的表名</li>
+<li>inputPartitions: (可选)预测输入数据的分区列表; None表示用全表</li>
+<li>outputPartition: (可选)预测输出数据的分区; None表示不输出到分区</li>
+<li>labelValueToPredict: (可选)预测所需要输出概率的label的值；None则不输出概率</li>
+<li>appendColNames: (可选)inputTableName中所需要附加到输出表的列名列表; None表示不附加任何列</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">goodValue</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">,</span> <span class="n">slentry</span> <span class="o">=</span> <span class="mf">0.002</span><span class="p">,</span> <span class="n">slstay</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h4>二分类逐步回归加载模型<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p><strong>从表加载一个二分类逻辑回归的模型</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName: 二分类逻辑回归模型数据所在的表名</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>二分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&#39;bank_full_model&#39;</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">LogistRegStepWise</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">labelValueToPredict</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h4>多分类训练<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的多分类逻辑回归，通过one vs else的方式实现</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span>
+          <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0e-06</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 训练数据的表名</li>
+<li>featureColNames: 特征列的列名数组，列名必须是 inputTableName 里的列</li>
+<li>labelColName: label列(又叫目标列)的列名，列名必须是 inputTableName 里的列</li>
+<li>modelTableName: 输出的模型的表名</li>
+<li>inputPartitions: (可选)训练数据所在的partition列表，必须是 inputTableName 中的partition，默认是None，表示整表</li>
+<li>maxIter: (可选)指定L-BFGS的最大迭代次数，默认是100</li>
+<li>epsilon: (可选)指定终止条件，就是两次迭代之间log-likelihood的差，默认为1.0e-06</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>多分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>矩阵的多分类逻辑回归，通过one vs else的方式实现</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">trainSparse</span><span class="p">(</span><span class="n">featureMatrixName</span><span class="p">,</span> <span class="n">labelTableName</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span>
+          <span class="n">labelPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0e-06</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>featureMatrixName: 训练数据的特征所在矩阵的表名</li>
+<li>labelTableName: label(或者叫做目标)所在的表名</li>
+<li>labelColName: label列(又叫目标列)的列名，列名必须是 labelTableName 里的列</li>
+<li>modelTableName: 输出的模型的表名</li>
+<li>labelPartitions: (可选)label(或者叫做目标)所在的分区</li>
+<li>maxIter: (可选)指定L-BFGS的最大迭代次数，默认是100</li>
+<li>epsilon: (可选)指定终止条件，就是两次迭代之间log-likelihood的差，默认为1.0e-06</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>多分类逻辑回归模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id24">
+<h4>多分类预测<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<p><strong>普通表的多分类逻辑回归预测</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+            <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputProbability</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputTableName: 预测数据的表名</li>
+<li>model: 预测所用的二分类逻辑回归模型</li>
+<li>outputTableName: 预测输出表的表名</li>
+<li>inputPartitions: (可选)预测输入数据的分区列表; None表示用全表</li>
+<li>outputPartition: (可选)预测输出数据的分区; None表示不输出到分区</li>
+<li>outputProbability: (可选)是否输出各label值的预测概率；默认为False，不输出</li>
+<li>appendColNames: (可选)inputTableName中所需要附加到输出表的列名列表; None表示不附加任何列</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;f0&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;f3&#39;</span><span class="p">,</span><span class="s">&#39;f4&#39;</span><span class="p">,</span><span class="s">&#39;f5&#39;</span><span class="p">,</span><span class="s">&#39;f6&#39;</span><span class="p">,</span><span class="s">&#39;f7&#39;</span><span class="p">,</span><span class="s">&#39;f8&#39;</span><span class="p">,</span><span class="s">&#39;f9&#39;</span><span class="p">,</span><span class="s">&#39;f10&#39;</span><span class="p">,</span><span class="s">&#39;f11&#39;</span><span class="p">,</span><span class="s">&#39;f12&#39;</span><span class="p">,</span><span class="s">&#39;f13&#39;</span><span class="p">,</span><span class="s">&#39;f14&#39;</span><span class="p">,</span><span class="s">&#39;f15&#39;</span><span class="p">],</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">outputProbability</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>矩阵的多分类逻辑回归预测</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predictSparse</span><span class="p">(</span><span class="n">featureMatrixName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+            <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputProbability</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>featureMatrixName: 预测特征所在矩阵的表名</li>
+<li>model: 预测所用的多分类逻辑回归模型</li>
+<li>outputTableName: 预测输出表的表名</li>
+<li>outputPartition: (可选)预测输出数据的分区; None表示不输出到分区</li>
+<li>outputProbability: (可选)是否输出各label值的预测概率的开关；默认是False，表示不输出</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="s">&#39;label&#39;</span><span class="p">,</span> <span class="s">&#39;bank_full_model&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0e-05</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">(</span><span class="s">&#39;bank_full_sparse&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">outputProbability</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id25">
+<h4>多分类加载模型<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<p><strong>从表名生成一个多分类逻辑回归的模型</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName: 多分类逻辑回归模型数据所在的表名</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bankFullModel</span> <span class="o">=</span> <span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&#39;bank_full_model&#39;</span><span class="p">)</span>
+<span class="n">Classification</span><span class="o">.</span><span class="n">MultiLogistReg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&#39;bank_full&#39;</span><span class="p">,</span> <span class="n">bankFullModel</span><span class="p">,</span> <span class="s">&#39;predict_bank_full_result&#39;</span><span class="p">,</span> <span class="n">outputProbability</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>正则项</strong></p>
+<p>通过调整正则项的参数regularizeType和regularizeLevel，可以将拟合的模型泛化，使得比较多的不太突出的特征，拟合系数为0；</p>
+<p>通过正则项参数regularizedType 和 regularizeLevel 可以指定 正则项 的系数(以下公式中的 C)。</p>
+<img alt="../../_images/lr-0.JPG" src="../../_images/lr-0.JPG" />
+</div>
+</div>
+<div class="section" id="id26">
+<h3>界面<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h4>训练<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<p>选择数据表,点击数据分析→逻辑回归→训练</p>
+<img alt="../../_images/lr-1.JPG" src="../../_images/lr-1.JPG" />
+<p>其中：</p>
+<ul class="simple">
+<li>Partition筛选：选择参与逻辑回归模型训练的partition。</li>
+<li>目标变量：数据表中目标分类列，支持Long，Integer，String，Boolean类型。</li>
+<li>二分类：标记目标变量是否为二分类，当二分类选项被勾选时，逐步回归会被激活，需填写GoodValue。</li>
+<li>GoodValue：当目标变量为二分类时，需要指定GoodValue的值，即逻辑回归运算中映射为1的值。</li>
+<li>输入表选中列：参与逻辑回归计算的列，只支持数值型。</li>
+<li>最大迭代次数：使用优化方法求最优解时的最大迭代次数，当迭代次数等于此值时，不论是否收敛，都将停止运算。</li>
+<li>收敛误差：当两次迭代的结果小于此值时，认为算法已经收敛，停止运算。</li>
+<li>模型输出表：存储逻辑回归模型的数据表。</li>
+<li>逐步回归：逻辑回归算法可选择逐步回归以筛选变量，支持stepwise和forward两种模式，当逐步回归被勾选时，算法会进行多次逻辑回归运算：保留那些对目标变量影响较大的变量，剔除那些对目标变量影响较小的变量。</li>
+<li>逐步回归信息输出表：逐步回归的过程信息会输出至此表，可从此表中获得每一步添加或删除一个变量的信息。</li>
+<li>逐步回归方式：forward模式会逐步增加变量至模型中，stepwise模式会在每次增加变量后再尝试剔除变量。</li>
+<li>引入变量阈值：进行逐步回归欲引入变量score值的检验值,只有当变量score值大于此值时才会把此变量引入。</li>
+<li>剔除变量阈值：进行逐步回归欲剔除变量wald值的检验值,只有当变量wald值小于此值时才会把此变量剔除。</li>
+<li>必选变量数：进行逐步回归时模型中至少保留的变量数。</li>
+</ul>
+<p><strong>训练结果</strong></p>
+<p>会将所得模型表展示出来，如下图所示：</p>
+<img alt="../../_images/lr-2.JPG" src="../../_images/lr-2.JPG" />
+</div>
+<div class="section" id="id28">
+<h4>预测<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<img alt="../../_images/lr-3.JPG" src="../../_images/lr-3.JPG" />
+<p>其中：</p>
+<ul class="simple">
+<li>Partition筛选：选择参与逻辑回归预测的partition。</li>
+<li>使用模型：选择进行逻辑回归预测的模型。</li>
+<li>预测输出表：选择预测结果的输出表。</li>
+<li>保留列选择：选择会保留出现在预测结果表中的列。</li>
+</ul>
+<p><strong>预测结果</strong></p>
+<img alt="../../_images/lr-4.JPG" src="../../_images/lr-4.JPG" />
+</div>
+</div>
+</div>
+<div class="section" id="linear-svm">
+<span id="odps-xlib-classification-lin-svn"></span><h2>线性支持向量机(Linear SVM)<a class="headerlink" href="#linear-svm" title="Permalink to this headline">¶</a></h2>
+<p>支持向量机(SVM)是建立在VC维理论和结构风险最小原理基础上的一种模式识别方法。目前的版本仅支持线性二分类问题，更多功能将在后续版本中逐步推出。SVM算法介绍：<a class="reference external" href="http://en.wikipedia.org/wiki/Support_vector_machine">Support vector machine</a> 。</p>
+<p>下文使用数据表: adult，进行介绍函数和界面的操作方法。</p>
+<div class="section" id="id29">
+<h3>函数<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>线性SVM包括以下几个函数：train , trainSparse, predict, predictSparse和loadModel。</p>
+<p>这几个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id30">
+<h4>训练<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>featureColNames：特征列名，字符数组</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>cost：(可选)惩罚因子,默认值为1</li>
+<li>epsilon：(可选)收敛系数，默认值为0.001</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>LinearSVMModel 线性svm模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span><span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;svm_model&quot;</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">trainSparse</span><span class="p">(</span><span class="n">featureMatrixName</span><span class="p">,</span> <span class="n">labelTableName</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">labelPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>featureMatrixName：输入 <a class="reference internal" href="odps_xlib_basic_item.html#xlib-basic-sparse-tbl"><em>Xlib稀疏矩阵表</em></a> 名</li>
+<li>labelTableName：label列所在表名</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>labelPartitions：(可选)label列所在表分区</li>
+<li>cost：(可选)惩罚因子,默认值为1</li>
+<li>epsilon：(可选)收敛系数，默认值为0.001</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>LinearSVMModel 线性svm模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&quot;train_input_sparse&quot;</span><span class="p">,</span> <span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;svm_model_sparse&quot;</span><span class="p">,</span> <span class="n">labelPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id31">
+<h4>预测<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>model：模型，类型为LinearSVMModel</li>
+<li>outputTableName: 输出表名，普通表</li>
+<li>inputPartitions: (可选)输入表分区</li>
+<li>appendColNames：(可选)输入表中插入到输出表中的列名</li>
+<li>outputPartition: (可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">svmmodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;svm_model&quot;</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.0001</span><span class="p">)</span>
+
+    <span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;predict_input&quot;</span><span class="p">,</span> <span class="n">svmmodel</span><span class="p">,</span> <span class="s">&quot;svm_model_predict_table_out&quot;</span><span class="p">,</span><span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predictSparse</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名， <a class="reference internal" href="odps_xlib_basic_item.html#xlib-basic-sparse-tbl"><em>Xlib稀疏矩阵表</em></a></li>
+<li>model：模型，类型为LinearSVMModel</li>
+<li>outputTableName: 输出表名，普通表</li>
+<li>outputPartition: (可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">svmmodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&quot;train_input_sparse&quot;</span><span class="p">,</span> <span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span>
+    <span class="s">&quot;svm_model_sparse&quot;</span><span class="p">,</span> <span class="n">labelPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span><span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">(</span><span class="s">&quot;predict_sparse_input&quot;</span><span class="p">,</span> <span class="n">svmmodel</span><span class="p">,</span> <span class="s">&quot;svm_model_predict_sparse_out&quot;</span><span class="p">,</span>
+    <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id32">
+<h4>加载模型<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：模型表表名，普通表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>LinearSVMModel 线性svm模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">LinearSVM</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;svm_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id33">
+<h3>界面<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>界面包括：训练和预测。</p>
+<div class="section" id="id34">
+<h4>训练<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<p>通过UI界面(只支持输入训练集格式为普通表)选择数据表，点击模型→线性支持向量机→训练</p>
+<a class="reference internal image-reference" href="../../_images/linearsvm_train_1.jpg"><img alt="alternate text" src="../../_images/linearsvm_train_1.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>其中：</p>
+<ul class="simple">
+<li>Partition筛选：选择参与线性支持向量机模型训练的partition。</li>
+<li>目标变量：数据表中目标分类列，支持Long，Integer，String，Boolean类型，目前只支持两类。</li>
+<li>输入表选中列：参与线性支持向量机计算的列，只支持数值型。</li>
+<li>模型输出表：线性支持向量机模型输出表。</li>
+<li>惩罚因子：C，软间隔SVM中的用来衡量对噪声点的重视程度。</li>
+<li>收敛系数：目标函数梯度的相对变化低于该值，认为算法收敛。</li>
+</ul>
+<p>选择完毕单击&#8221;确定&#8221;开始训练。训练结果：模型表，其中最后一行表示截距，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/linearsvm_train_2.jpg"><img alt="alternate text" src="../../_images/linearsvm_train_2.jpg" style="width: 400.0px; height: 300.0px;" /></a>
+</div>
+<div class="section" id="id35">
+<h4>预测<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+<p>通过UI界面(只支持输入预测数据集为普通表，且输入模型表由普通表训练得到)选择数据表，点击模型→线性支持向量机→预测</p>
+<a class="reference internal image-reference" href="../../_images/linearsvm_predict_1.jpg"><img alt="alternate text" src="../../_images/linearsvm_predict_1.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>其中：</p>
+<ul class="simple">
+<li>Partition筛选：选择参与线性SVM预测的partition。</li>
+<li>使用模型：选择进行线性SVM预测的模型表。</li>
+<li>预测输出表：选择预测结果的输出表。</li>
+<li>保留列选择：选择会保留出现在预测结果表中的列。</li>
+</ul>
+<p>选择完毕单击&#8221;确定&#8221;开始预测。预测结果：</p>
+<a class="reference internal image-reference" href="../../_images/linearsvm_predict_2.jpg"><img alt="alternate text" src="../../_images/linearsvm_predict_2.jpg" style="width: 400.0px; height: 300.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="naive-bayes">
+<span id="odps-xlib-classification-naive-bayes"></span><h2>朴素贝叶斯(Naive Bayes)<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h2>
+<p>朴素贝叶斯分类是一种应用基于独立假设的贝叶斯定理的简单概率分类算法.更精确的描述这种潜在的概率模型为独立特征模型。
+算法详见： <a class="reference external" href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes classifier</a></p>
+<p>为便于说明，先约定如下：</p>
+<ul class="simple">
+<li>训练输入表：train_input</li>
+<li>模型表：naive_bayes_model</li>
+<li>预测输入表：predict_input</li>
+<li>预测输出表：naive_bayes_predict_output</li>
+<li>特征列名：[&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]</li>
+<li>Label列名：&#8221;sex&#8221;</li>
+</ul>
+<p>朴素贝叶斯模型的执行途径有两种：函数和界面。其主要涉及两个过程：训练和预测，详见下文。</p>
+<div class="section" id="id36">
+<h3>函数<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<p>朴素贝叶斯包括以下几个函数：train , predict和loadModel。三个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id37">
+<h4>训练<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>featureColNames：特征列名，字符数组</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>NaiveBayesModel 朴素贝叶斯模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span>
+    <span class="s">&quot;naive_bayes_model&quot;</span><span class="p">,</span><span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id38">
+<h4>预测<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>model：模型，类型为朴素贝叶斯NaiveBayesModel</li>
+<li>outputTableName：输出表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>appendColNames：(可选)输入表中插入到输出表中的列名</li>
+<li>outputPartition：(可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nvmodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;naive_bayes_model&quot;</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;predict_input&quot;</span><span class="p">,</span> <span class="n">nvmodel</span><span class="p">,</span> <span class="s">&quot;naive_bayes_model_predict_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id39">
+<h4>加载模型<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：模型表表名，普通表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>NaiveBayesModel 朴素贝叶斯模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">NaiveBayes</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;naive_bayes_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项:</dt>
+<dd><ul class="first last simple">
+<li>该分类算法，对于训练和预测的输入输出，仅支持普通表(table)；</li>
+<li>特征值(feature)仅支持数值类型：Double,Bigint，label值支持Double, Bigint, Boolean, String；</li>
+<li>对于预测输出结果，可以选择将预测输入的若干列附加到预测输出表中。</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id40">
+<h3>界面<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<p>界面包括：训练和预测。</p>
+<div class="section" id="id41">
+<h4>训练<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：普通表，包含label列和数值类型feature列的表，如train_input 。</li>
+<li>输出：模型表，包括预测用到的一些参数，共五列，如naive_bayes_model 。</li>
+</ul>
+<p>训练步骤如下：</p>
+<p>首先，打开训练输入表train_input，然后点击&#8221;模型&#8221;—&#8221;朴素贝叶斯(Naïve Bayes)&#8221;-&#8220;训练&#8221;，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/naivebayes_train_1.jpg"><img alt="alternate text" src="../../_images/naivebayes_train_1.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>然后，在训练窗口，在对应提示区域填写相应参数，&#8221;Partition筛选&#8221;，&#8221;选择feature列&#8221;，&#8221;Label列&#8221;，&#8221;输出表表名&#8221;；
+点击界面右下角按钮&#8221;训练&#8221;开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/naivebayes_train_2.jpg"><img alt="alternate text" src="../../_images/naivebayes_train_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+<li>对于&#8221;选择feature列&#8221;，点击&#8221;修改&#8221;后，候选列表均为数值类型，用户可根据需要选择feature，如：train_input的特征列为[&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]。</li>
+<li>对于&#8221;Label列&#8221;选择，不能跟feature列有交集，如：train_input的目标列(即label列)为sex。</li>
+<li>对于&#8221;输出表表名&#8221;，如：naive_bayes_model。</li>
+</ul>
+<p>最后，模型训练成功，自动打开model表naive_bayes_model，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/naivebayes_train_3.jpg"><img alt="alternate text" src="../../_images/naivebayes_train_3.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>朴素贝叶斯模型表包括两种信息：conf和data信息</p>
+<blockquote>
+<div><ul class="simple">
+<li>conf信息包括：version，featureSize和 featureList</li>
+<li>data信息包括以下数据：</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>valLabel：lable的值</li>
+<li>pLabel：label的概率</li>
+<li>nameFeature：特征名</li>
+<li>mean：feature相对于label的均值</li>
+<li>variance：feature相对于label的方差</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id42">
+<h4>预测<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：包括输入表和模型表，输入表，如predict_input，模型表，如naive_bayes_model。</li>
+<li>输出：预测结果输出表，如naive_bayes_predict_output。输出表一般只有一列conclusion，也可以append输入表中的若干列列在输出表中。</li>
+</ul>
+<p>预测步骤如下：</p>
+<p>首先，可打开&#8221;输入表&#8221;或者&#8221;模型表&#8221;</p>
+<ul class="simple">
+<li>如果打开的是&#8221;输入表&#8221;predict_input，点击&#8221;模型&#8221;—&#8221;朴素贝叶斯(Naïve Bayes)&#8221;—&#8221;预测&#8221;，预测表表名会被自动加载，用户可在&#8221;Parition筛选&#8221;区域选择修改Partition，在&#8221;Model表名&#8221;处填写模型表名，如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/naivebayes_predict_1.jpg"><img alt="alternate text" src="../../_images/naivebayes_predict_1.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>如果打开的是&#8221;模型表&#8221;naive_bayes_model，点击&#8221;模型&#8221;—&#8221;朴素贝叶斯(Naïve Bayes)&#8221;—&#8221;预测&#8221;，Model表名会被自动加载，用户需在&#8221;预测表&#8221;区域，填写表名，点击&#8221;加载Partition&#8221;后，可进行&#8221;Partition筛选&#8221;如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/naivebayes_predict_2.jpg"><img alt="alternate text" src="../../_images/naivebayes_predict_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+</ul>
+<p>然后，在&#8221;输出表名&#8221;处，填写预测输出表如naive_bayes_predict_output，点击&#8221;训练&#8221;按钮开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/naivebayes_predict_3.jpg"><img alt="alternate text" src="../../_images/naivebayes_predict_3.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>最后，预测成功，会自动打开输出表，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/naivebayes_predict_4.jpg"><img alt="alternate text" src="../../_images/naivebayes_predict_4.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="bayes">
+<span id="odps-xlib-classification-bayes"></span><h2>贝叶斯判别(Bayes)<a class="headerlink" href="#bayes" title="Permalink to this headline">¶</a></h2>
+<p>Bayes的统计思想总是假定对所研究的对象已有一定的认识,常用先验概率分布来描述这种认识。然后我们抽取一个样本，用样本来修正已有的认识(先验概率分布)，得到后验概率分布。各种统计推断都通过后验概率分布来进行，将贝叶斯思想用于判别分析就得到贝叶斯判别法。</p>
+<p>在正态总体的假设下，按Bayes判别的思想，在错判造成的损失认为相等情况下得到的判别函数其实就是马氏距离判别在考虑先验概率及协差阵不等情况下的推广。</p>
+<p>所谓判别方法,就是给出空间Rm的一种划分:D={D1,D2,…,Dk}。一种划分对应一种判别方法,不同的划分就是不同的判别方法。Bayes判别法也是给出空间Rm的一种划分。</p>
+<p>为便于说明，先约定如下：
+* 训练输入表： train_input
+* 模型表：     bayes_model
+* 预测输入表： predict_input
+* 预测输出表： bayes_predict_output
+* 特征列名：   [&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]
+* Label列名：  &#8220;sex&#8221;</p>
+<p>贝叶斯模型的执行途径有两种：函数和界面。其主要涉及两个过程：训练和预测，详见下文。</p>
+<div class="section" id="id43">
+<h3>函数<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<p>贝叶斯判别包括以下几个函数：train , predict和loadModel。</p>
+<p>三个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id44">
+<h4>训练<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>featureColNames：特征列名，字符数组</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>BayesModel 贝叶斯模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;bayes_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id45">
+<h4>预测<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>model：模型，类型为贝叶斯BayesModel</li>
+<li>outputTableName：输出表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>appendColNames：(可选)输入表中插入到输出表中的列名</li>
+<li>outputPartition：(可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bayesmodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;bayes_model&quot;</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;predict_input&quot;</span><span class="p">,</span> <span class="n">bayesmodel</span><span class="p">,</span> <span class="s">&quot;bayes_model_predict_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id46">
+<h4>加载模型<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：模型表表名，普通表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>BayesModel 贝叶斯模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">BayesDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;bayes_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项:</dt>
+<dd><ul class="first last simple">
+<li>该分类算法，对于训练和预测的输入输出，仅支持普通表(table)；</li>
+<li>特征值(feature)仅支持数值类型：Double,Bigint，label值支持Double, Bigint, Boolean, String；</li>
+<li>对于预测输出结果，可以选择将预测输入的若干列附加到预测输出表中。</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id47">
+<h3>界面<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+<p>界面包括：训练和预测。</p>
+<div class="section" id="id48">
+<h4>训练<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：普通表，包含label列和数值类型feature列的表，如train_input 。</li>
+<li>输出：模型表，包括预测用到的一些参数，如bayes_model 。</li>
+</ul>
+<p>训练步骤如下：</p>
+<p>首先，打开训练输入表train_input，然后点击&#8221;模型&#8221;—&#8221;贝叶斯(Bayes)&#8221;-&#8220;训练&#8221;，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/bayes_train_1.jpg"><img alt="alternate text" src="../../_images/bayes_train_1.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>然后，在训练窗口，在对应提示区域填写相应参数，&#8221;Partition筛选&#8221;，&#8221;选择feature列&#8221;，&#8221;Label列&#8221;，&#8221;输出表表名&#8221;，点击界面右下角按钮&#8221;训练&#8221;开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/bayes_train_2.jpg"><img alt="alternate text" src="../../_images/bayes_train_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>其中：</p>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的&#8221;修改&#8221;按钮，没有分区则不用修改。</li>
+<li>对于&#8221;选择feature列&#8221;，点击&#8221;修改&#8221;后，候选列表均为数值类型，用户可根据需要选择feature，如：train_input的特征列为[&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]。</li>
+<li>对于&#8221;Label列&#8221;选择，不能跟feature列有交集，如：train_input的目标列(即label列)为sex。</li>
+<li>对于&#8221;输出表表名&#8221;，如：bayes_model。</li>
+</ul>
+<p>最后，模型训练成功，自动打开model表bayes_model，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/bayes_train_3.jpg"><img alt="alternate text" src="../../_images/bayes_train_3.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>贝叶斯模型表包括两种信息：conf和data信息</p>
+<ul class="simple">
+<li>conf信息包括：version，featureSize和 featureList</li>
+<li>data信息包括以下数据：<ul>
+<li>valLabel：     lable的值</li>
+<li>restLabel：    label的差值：2 * Math.log(p) - Math.log(det(COV))</li>
+<li>nameFeature：  特征名</li>
+<li>mean：        feature相对于label的均值</li>
+<li>inv：         feature的协方差的逆</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id49">
+<h4>预测<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：包括输入表和模型表，输入表，如predict_input，模型表，如bayes_model。</li>
+<li>输出：预测结果输出表，如bayes_predict_output。输出表一般只有一列conclusion，也可以append输入表中的若干列列在输出表中</li>
+</ul>
+<p>预测步骤如下：</p>
+<p>首先，可打开&#8221;输入表&#8221;或者&#8221;模型表&#8221;</p>
+<ul class="simple">
+<li>如果打开的是&#8221;输入表&#8221;predict_input，点击&#8221;模型&#8221;—&#8221;贝叶斯(Bayes)&#8221;—&#8221;预测&#8221;，预测表表名会被自动加载，用户可在&#8221;Parition筛选&#8221;区域选择修改Partition，在&#8221;Model表名&#8221;处填写模型表名，如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/bayes_predict_1.jpg"><img alt="alternate text" src="../../_images/bayes_predict_1.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>如果打开的是&#8221;模型表&#8221;bayes_model，点击&#8221;模型&#8221;—&#8221;贝叶斯(Bayes)&#8221;—&#8221;预测&#8221;，Model表名会被自动加载，用户需在&#8221;预测表&#8221;区域，填写表名，点击&#8221;加载Partition&#8221;后，可进行&#8221;Partition筛选&#8221;如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/bayes_predict_2.jpg"><img alt="alternate text" src="../../_images/bayes_predict_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+</ul>
+<p>然后，在&#8221;输出表名&#8221;处，填写预测输出表如bayes_predict_output，点击&#8221;训练&#8221;按钮开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/bayes_predict_3.jpg"><img alt="alternate text" src="../../_images/bayes_predict_3.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>最后，预测成功，会自动打开输出表，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/bayes_predict_4.jpg"><img alt="alternate text" src="../../_images/bayes_predict_4.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="fisher">
+<span id="odps-xlib-classification-fisher"></span><h2>费希尔判别(Fisher)<a class="headerlink" href="#fisher" title="Permalink to this headline">¶</a></h2>
+<p>费希尔判别的基本思想是投影(或降维)。</p>
+<p>Fisher方法是要找到一个(或一组)投影轴w使得样本投影到该空间后能在保证方差最小的情况下，将不同类的样本很好的分开。并将度量类别均值之间差别的量称为类间方差(或类间散布矩阵);而度量这些均值周围方差的量称为类内方差(或类内散布矩阵)。</p>
+<p>Fisher判决的目标就是:寻找一个或一组投影轴，能够在最小化类内散布的同时最大化类间布。</p>
+<p>为便于说明，先约定如下：</p>
+<ul class="simple">
+<li>训练输入表： train_input</li>
+<li>模型表：     fisher_model</li>
+<li>预测输入表： predict_input</li>
+<li>预测输出表： fisher_predict_output</li>
+<li>特征列名：   [&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]</li>
+<li>Label列名：  &#8220;sex&#8221;</li>
+</ul>
+<p>费希尔判别模型的执行途径有两种：函数和界面。其主要涉及两个过程：训练和预测，详见下文。</p>
+<div class="section" id="id50">
+<h3>函数<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<p>费希尔判别包括以下几个函数：train , predict和loadModel。</p>
+<p>三个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id51">
+<h4>训练<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>featureColNames：特征列名，字符数组</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>FisherDiscriminantModel 费希尔判别模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;fisher_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id52">
+<h4>预测<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>model：模型，类型为费希尔判别模型FisherDiscriminantModel</li>
+<li>outputTableName：输出表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>appendColNames：(可选)输入表中插入到输出表中的列名</li>
+<li>outputPartition：(可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fishermodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span>
+    <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;fisher_model&quot;</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;predict_input&quot;</span><span class="p">,</span> <span class="n">fishermodel</span><span class="p">,</span> <span class="s">&quot;fisher_model_predict_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id53">
+<h4>加载模型<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：模型表表名，普通表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>FisherDiscriminantModel 费希尔判别模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">FisherDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;fisher_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项:</dt>
+<dd><ul class="first last simple">
+<li>该分类算法，对于训练和预测的输入输出，仅支持普通表(table)；</li>
+<li>特征值(feature)仅支持数值类型：Double,Bigint，label值支持Double, Bigint, Boolean, String；</li>
+<li>对于预测输出结果，可以选择将预测输入的若干列附加到预测输出表中。</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id54">
+<h3>界面<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<p>界面包括：训练和预测。</p>
+<div class="section" id="id55">
+<h4>训练<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：普通表，包含label列和数值类型feature列的表，如train_input 。</li>
+<li>输出：模型表，包括预测用到的一些参数，如fisher_model 。</li>
+</ul>
+<p>训练步骤如下：
+首先，打开训练输入表train_input，然后点击&#8221;模型&#8221;—&#8221;费希尔判别(Fisher)&#8221;-&#8220;训练&#8221;，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/fisher_train_1.jpg"><img alt="alternate text" src="../../_images/fisher_train_1.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>然后，在训练窗口，在对应提示区域填写相应参数，&#8221;Partition筛选&#8221;，&#8221;选择feature列&#8221;，&#8221;Label列&#8221;，&#8221;输出表表名&#8221;，最后点击界面右下角按钮&#8221;训练&#8221;开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/fisher_train_2.jpg"><img alt="alternate text" src="../../_images/fisher_train_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>其中：</p>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+<li>对于&#8221;选择feature列&#8221;，点击&#8221;修改&#8221;后，候选列表均为数值类型，用户可根据需要选择feature，如：train_input的特征列为[&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]。</li>
+<li>对于&#8221;Label列&#8221;选择，不能跟feature列有交集，如：train_input的目标列(即label列)为sex。</li>
+<li>对于&#8221;输出表表名&#8221;，如：fisher_model。</li>
+</ul>
+<p>最后，模型训练成功，自动打开model表fisher_model，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/fisher_train_3.jpg"><img alt="alternate text" src="../../_images/fisher_train_3.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>费希尔判别模型表包括两种信息，conf和data信息：</p>
+<ul class="simple">
+<li>conf信息包括：version，featureSize和 featureList</li>
+<li>data信息包括以下数据：</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>valLabel：      lable的值</li>
+<li>nameFeature： 特征名</li>
+<li>c：           系数和均值</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id56">
+<h4>预测<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：包括输入表和模型表，输入表，如predict_input，模型表，如fisher_model。</li>
+<li>输出：预测结果输出表，如fisher_predict_output。输出表一般只有一列conclusion，也可以append输入表中的若干列列在输出表中</li>
+</ul>
+<p>预测步骤如下：
+首先，可打开&#8221;输入表&#8221;或者&#8221;模型表&#8221;</p>
+<ul class="simple">
+<li>如果打开的是&#8221;输入表&#8221;predict_input，点击&#8221;模型&#8221;—&#8221;费希尔判别(Fisher)&#8221;—&#8221;预测&#8221;，预测表表名会被自动加载，用户可在&#8221;Parition筛选&#8221;区域选择修改Partition，在&#8221;Model表名&#8221;处填写模型表名，如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/fisher_predict_3.jpg"><img alt="alternate text" src="../../_images/fisher_predict_3.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>如果打开的是&#8221;模型表&#8221;fisher_model，点击&#8221;模型&#8221;—&#8221;费希尔判别(Fisher)&#8221;—&#8221;预测&#8221;，Model表名会被自动加载，用户需在&#8221;预测表&#8221;区域，填写表名，点击&#8221;加载Partition&#8221;后，可进行&#8221;Partition筛选&#8221;如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/fisher_predict_2.jpg"><img alt="alternate text" src="../../_images/fisher_predict_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/fisher_predict_3.jpg"><img alt="alternate text" src="../../_images/fisher_predict_3.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>最后，预测成功，会自动打开输出表，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/fisher_predict_4.jpg"><img alt="alternate text" src="../../_images/fisher_predict_4.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="mdistance">
+<span id="odps-xlib-classification-mdinstance"></span><h2>马氏距离判别(MDistance)<a class="headerlink" href="#mdistance" title="Permalink to this headline">¶</a></h2>
+<p>因为同一总体的样品应具有相似性或者说距离较小，不同总体的样品距离较大或者说相似性较小，由此可以看出，我们可以用距离统计量作为定量识别或者说归类的依据。该模型是用马氏距离Mahalanobis)进行类别判断。</p>
+<p>为便于说明，先约定如下：</p>
+<ul class="simple">
+<li>训练输入表： train_input</li>
+<li>模型表：     mdist_model</li>
+<li>预测输入表： predict_input</li>
+<li>预测输出表： mdist_predict_output</li>
+<li>特征列名：   [&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]</li>
+<li>Label列名：  &#8220;sex&#8221;</li>
+</ul>
+<p>马氏距离判别模型的执行途径有两种：函数和界面。其主要涉及两个过程：训练和预测，详见下文。</p>
+<div class="section" id="id57">
+<h3>函数<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+<p>马氏距离判别包括以下几个函数：train , predict和loadModel。</p>
+<p>三个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id58">
+<h4>训练<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">featureColNames</span><span class="p">,</span> <span class="n">labelColName</span><span class="p">,</span> <span class="n">modelTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>featureColNames：特征列名，字符数组</li>
+<li>labelColName：label列名</li>
+<li>modelTableName：模型表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>cost：(可选)惩罚因子,默认值为1</li>
+<li>epsilon：(可选)收敛系数，默认值为0.001</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>MDistanceDiscriminantModel 马氏距离模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;mdist_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id59">
+<h4>预测<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">inputPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">appendColNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">outputPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>inputTableName：输入表名，普通表</li>
+<li>model：模型，类型为马氏距离模型MDistanceDiscriminantModel</li>
+<li>outputTableName：输出表名，普通表</li>
+<li>inputPartitions：(可选)输入表分区</li>
+<li>appendColNames：(可选)输入表中插入到输出表中的列名</li>
+<li>outputPartition：(可选)输出表分区</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>void 无</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mdistmodel</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="s">&quot;train_input&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;height&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">,</span><span class="s">&quot;footsize&quot;</span><span class="p">],</span> <span class="s">&quot;sex&quot;</span><span class="p">,</span> <span class="s">&quot;mdist_model&quot;</span><span class="p">)</span>
+
+<span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;predict_input&quot;</span><span class="p">,</span> <span class="n">mdistmodel</span><span class="p">,</span> <span class="s">&quot;mdist_model_predict_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id60">
+<h4>加载模型<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>modelTableName：模型表表名，普通表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>MDistanceDiscriminantModel 马氏距离模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Classification</span><span class="o">.</span><span class="n">MDistanceDiscriminant</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;mdist_model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项:</dt>
+<dd><ul class="first last simple">
+<li>该分类算法，对于训练和预测的输入输出，仅支持普通表(table)；</li>
+<li>特征值(feature)仅支持数值类型：Double,Bigint，label值支持Double, Bigint, Boolean, String；</li>
+<li>对于预测输出结果，可以选择将预测输入的若干列附加到预测输出表中。</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id61">
+<h3>界面<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<p>界面包括：训练和预测。</p>
+<div class="section" id="id62">
+<h4>训练<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：普通表，包含label列和数值类型feature列的表，如train_input。</li>
+<li>输出：模型表，包括预测用到的一些参数，如mdist_model。</li>
+</ul>
+<p>训练步骤如下：
+首先，打开训练输入表train_input，然后点击&#8221;模型&#8221;—&#8221;马氏距离判别(MDistance)&#8221;-&#8220;训练&#8221;，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/mdist_train_1.jpg"><img alt="alternate text" src="../../_images/mdist_train_1.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>然后，在训练窗口，在对应提示区域填写相应参数，&#8221;Partition筛选&#8221;，&#8221;选择feature列&#8221;，&#8221;Label列&#8221;，&#8221;输出表表名&#8221;，最后点击界面右下角按钮&#8221;训练&#8221;开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/mdist_train_2.jpg"><img alt="alternate text" src="../../_images/mdist_train_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>其中：</p>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+<li>对于&#8221;选择feature列&#8221;，点击&#8221;修改&#8221;后，候选列表均为数值类型，用户可根据需要选择feature，如：train_input的特征列为[&#8220;height&#8221;, &#8220;weight&#8221;,&#8221;footsize&#8221;]。</li>
+<li>对于&#8221;Label列&#8221;选择，不能跟feature列有交集，如：train_input的目标列(即label列)为sex。</li>
+<li>对于&#8221;输出表表名&#8221;，如：mdist_model。</li>
+</ul>
+<p>最后，模型训练成功，自动打开model表mdist_model，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/mdist_train_3.jpg"><img alt="alternate text" src="../../_images/mdist_train_3.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+<p>马氏距离判别模型表包括两种信息：conf和data信息</p>
+<ul class="simple">
+<li>conf信息包括：version，featureSize和 featureList</li>
+<li>data信息包括以下数据：</li>
+</ul>
+<ul class="simple">
+<li>valLabel：      lable的值</li>
+<li>pLabel：       label的概率</li>
+<li>nameFeature：  特征名</li>
+<li>mean：        feature相对于label的均值</li>
+<li>inv：          feature之间的协方差的逆</li>
+</ul>
+</div>
+<div class="section" id="id63">
+<h4>预测<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>输入：包括输入表和模型表，输入表，如predict_input，模型表，如mdist_model。</li>
+<li>输出：预测结果输出表，如mdist_predict_output。输出表一般只有一列conclusion，也可以append输入表中的若干列列在输出表中。</li>
+</ul>
+<p>预测步骤如下：</p>
+<p>首先，可打开&#8221;输入表&#8221;或者&#8221;模型表&#8221;</p>
+<ul class="simple">
+<li>如果打开的是&#8221;输入表&#8221;predict_input，点击&#8221;模型&#8221;—&#8221;马氏距离判别(MDistance)&#8221;—&#8221;预测&#8221;，预测表表名会被自动加载，用户可在&#8221;Parition筛选&#8221;区域选择修改Partition，在&#8221;Model表名&#8221;处填写模型表名，如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mdist_predict_1.jpg"><img alt="alternate text" src="../../_images/mdist_predict_1.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>如果打开的是&#8221;模型表&#8221;mdist_model，点击&#8221;模型&#8221;—&#8221;马氏距离判别(MDistance)&#8221;—&#8221;预测&#8221;，Model表名会被自动加载，用户需在&#8221;预测表&#8221;区域，填写表名，点击&#8221;加载Partition&#8221;后，可进行&#8221;Partition筛选&#8221;如下图：</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mdist_predict_2.jpg"><img alt="alternate text" src="../../_images/mdist_predict_2.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<ul class="simple">
+<li>对于&#8221;Partition筛选&#8221;，默认为全选，如果需要对某个分区操作，可以选择&#8221;Partition筛选&#8221;对应的修改按钮，没有分区则不用修改。</li>
+</ul>
+<p>然后，在&#8221;输出表名&#8221;处，填写预测输出表如mdist_predict_output，点击&#8221;训练&#8221;按钮开始训练，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/mdist_predict_3.jpg"><img alt="alternate text" src="../../_images/mdist_predict_3.jpg" style="width: 320.0px; height: 300.0px;" /></a>
+<p>最后，预测成功，会自动打开输出表，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/mdist_predict_4.jpg"><img alt="alternate text" src="../../_images/mdist_predict_4.jpg" style="width: 500.0px; height: 400.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="id64">
+<h2>评估<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h2>
+<p>用于对分类算法进行评估，可以计算正确率，混淆矩阵，ROC，Lift， Precision/Recall。</p>
+<div class="section" id="id65">
+<h3>界面<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>选择数据表(任意表均可)，双击打开，菜单模型-&gt;评估如下图：</li>
+</ul>
+<img alt="../../_images/eva-1.jpg" src="../../_images/eva-1.jpg" />
+<ul class="simple">
+<li>评估界面如下图：</li>
+</ul>
+<img alt="../../_images/eva-2.jpg" src="../../_images/eva-2.jpg" />
+<p>评估模块是用来计算混淆矩阵和画图的。
+页面一共有四部分，分别为：</p>
+<ul class="simple">
+<li>预测原始表，即预测的输入表，单击&#8221;加载列信息&#8221;之后，可以选择目标列和权重为列，如下图：</li>
+</ul>
+<img alt="../../_images/eva-3.jpg" src="../../_images/eva-3.jpg" />
+<ul class="simple">
+<li>预测结果表，即预测的输出表，单击&#8221;加载列信息&#8221;之后，可以选择目标列和概率列，以及填写概率列对应的目标分类值，即是谁的概率，如下图：</li>
+</ul>
+<img alt="../../_images/eva-4.jpg" src="../../_images/eva-4.jpg" />
+<ul class="simple">
+<li>混淆矩阵输出表。</li>
+<li>概率评估输出表， 如果目标是二分且选择概率列，则可以计算概率评估，包括有阈值混淆矩阵，ROC，lift and Recall-FP。</li>
+</ul>
+<p>单击&#8221;开始评估&#8221;，如下图：</p>
+<img alt="../../_images/eva-5.jpg" src="../../_images/eva-5.jpg" />
+<ul class="simple">
+<li>评估结束后会自动弹出结果，如下图：</li>
+</ul>
+<img alt="../../_images/eva-6.jpg" src="../../_images/eva-6.jpg" />
+<ul class="simple">
+<li>概率评估的结果如下图：</li>
+</ul>
+<p>阈值混淆矩阵：</p>
+<img alt="../../_images/eva-7.jpg" src="../../_images/eva-7.jpg" />
+<p>ROC &amp; Lift &amp; Precision-Recall：</p>
+<img alt="../../_images/eva-8.jpg" src="../../_images/eva-8.jpg" />
+</div>
+<div class="section" id="id66">
+<h3>打开混淆矩阵或概率评估表<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>&#8220;打开为…&#8221;模块，提供以何种方式打开数据，现在提供两种方式：混淆矩阵和ROC，如下图：</li>
+</ul>
+<img alt="../../_images/eva-9.jpg" src="../../_images/eva-9.jpg" />
+<ul class="simple">
+<li>以&#8221;混淆矩阵&#8221;方式打开，如果一个数据表是混淆矩阵表，打开的界面如下图：</li>
+</ul>
+<img alt="../../_images/eva-10.jpg" src="../../_images/eva-10.jpg" />
+<p>否则：提示数据不合法。</p>
+<ul class="simple">
+<li>以&#8221;画图ROC&#8221;方式打开，如果一个数据表是画图表格，打开的界面如下图：</li>
+</ul>
+<img alt="../../_images/eva-11.jpg" src="../../_images/eva-11.jpg" />
+<p>否则：提示数据不合法。</p>
+</div>
+<div class="section" id="id67">
+<h3>计算正确率<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">calcPrecision</span><span class="p">(</span><span class="n">referenceTableName</span><span class="p">,</span> <span class="n">referenceLabelColName</span><span class="p">,</span> <span class="n">targetTableName</span><span class="p">,</span> <span class="n">targetLabelColName</span><span class="p">,</span>
+    <span class="n">referenceWeightColName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">referencePartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">targetPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>referenceTableName：评估参考表</li>
+<li>referenceLabelColName：评估参考表的结论列名</li>
+<li>targetTableName：目标表</li>
+<li>targetLabelColName：目标表的结论列名</li>
+<li>referenceWeightColName：(可选)评估参考表的权重列名</li>
+<li>referencePartitions: (可选)评估表输入partitions列表，默认选择整表</li>
+<li>targetPartitions：(可选)目标表输出partitions列表，默认选择整表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>正确率P,Double类型, p∈[0,1]</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">p</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcPrecision</span><span class="p">(</span><span class="s">&quot;adult&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span> <span class="s">&quot;adult_model_test_pre&quot;</span><span class="p">,</span> <span class="s">&quot;conclusion&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcPrecision</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre&quot;</span><span class="p">,</span> <span class="s">&quot;conclusion&quot;</span><span class="p">,</span> <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcPrecision</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight_split&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre_split&quot;</span><span class="p">,</span> <span class="s">&quot;conclusion&quot;</span><span class="p">,</span> <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">,</span>
+    <span class="n">referencePartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140403&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140404&quot;</span><span class="p">],</span>
+    <span class="n">targetPartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140405&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140406&quot;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id68">
+<h3>计算混淆矩阵<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">calcConfusionMatrix</span><span class="p">(</span><span class="n">referenceTableName</span><span class="p">,</span> <span class="n">referenceLabelColName</span><span class="p">,</span> <span class="n">targetTableName</span><span class="p">,</span>
+    <span class="n">targetLabelColName</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">referenceWeightColName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">referencePartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="n">targetPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>referenceTableName：评估参考表</li>
+<li>referenceLabelColName：评估参考表的结论列名</li>
+<li>targetTableName：目标表</li>
+<li>targetLabelColName：目标表的的结论列名</li>
+<li>outputTableName： 评估输出表名</li>
+<li>referenceWeightColName：(可选)评估参考表的权重列名</li>
+<li>referencePartitions: (可选)评估表输入partitions列表，默认选择整表</li>
+<li>targetPartitions：(可选)目标表输出partitions列表，默认选择整表</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>ConfusionMatrix, 混淆矩阵数据结构</dt>
+<dd><ul class="first last simple">
+<li>classNames(), 目标列分类值的数组</li>
+<li>matrix(),  混淆矩阵的二维数组，[actual][predict]， 其中分类值得Index即为classNames()的数组索引</li>
+<li>numInstances(),总的记录数</li>
+<li>threshold()， 当前混淆矩阵的阈值</li>
+<li>correct(), 正确分类的记录数组</li>
+<li>pctCorrect()， 正确分类的概率， 范围[0, 100]</li>
+<li>incorrect(), 错误分类的记录数</li>
+<li>pctIncorrect()， 错误分类的记录概率， 范围[0, 100]</li>
+<li>kappa()， kappa系数</li>
+<li>truePositiveRate()</li>
+<li>trueNegativeRate()</li>
+<li>falsePositiveRate()</li>
+<li>falseNegativeRate()</li>
+<li>recall(), recall</li>
+<li>precision()</li>
+<li>fMeasure()</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cm</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcConfusionMatrix</span><span class="p">(</span><span class="s">&quot;adult&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span> <span class="s">&quot;adult_model_test_pre&quot;</span><span class="p">,</span>
+    <span class="s">&quot;conclusion&quot;</span><span class="p">,</span><span class="s">&quot;adult_evaluation_out&quot;</span><span class="p">)</span>
+<span class="n">cm</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcConfusionMatrix</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre&quot;</span><span class="p">,</span> <span class="s">&quot;conclusion&quot;</span><span class="p">,</span> <span class="s">&quot;adult_evaluation_weight_out&quot;</span><span class="p">,</span>
+    <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">)</span>
+<span class="n">cm</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcConfusionMatrix</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight_split&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre_split&quot;</span><span class="p">,</span> <span class="s">&quot;conclusion&quot;</span><span class="p">,</span><span class="s">&quot;adult_evaluation_weight_out&quot;</span><span class="p">,</span>
+    <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="n">referencePartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140403&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140404&quot;</span><span class="p">],</span>
+    <span class="n">targetPartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140405&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140406&quot;</span><span class="p">])</span>
+
+<span class="k">print</span> <span class="n">cm</span>
+<span class="n">show</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id69">
+<h3>概率评估<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<p>计算有阈值混淆矩阵，ROC图，Lift图，Precision/Recall图。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">calcProbEvaluation</span><span class="p">(</span><span class="n">referenceTableName</span><span class="p">,</span> <span class="n">referenceLabelColName</span><span class="p">,</span> <span class="n">targetTableName</span><span class="p">,</span> <span class="n">probilityColName</span><span class="p">,</span>
+    <span class="n">goodValue</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">referenceWeightColName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">referencePartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">targetPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>referenceTableName：评估参考表</li>
+<li>referenceLabelColName：评估参考表的结论列名</li>
+<li>targetTableName：目标表</li>
+<li>probilityColName：目标表的概率列</li>
+<li>goodValue: 目标表概率列对应的目标分类值， 即预测为goodValue的概率是probilityColName</li>
+<li>outputTableName：评估输出表名</li>
+<li>referenceWeightColName：(可选)评估参考表的权重列</li>
+<li>referencePartitions: (可选)评估表输入partitions列表，默认选择整表</li>
+<li>targetPartitions：(可选)目标表输出partitions列表，默认选择整表</li>
+</ul>
+</dd>
+</dl>
+<p>返回:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>ProbEvaluation，概率评估数据结构</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>计算AUC</dt>
+<dd><p class="first last">auc=ProbEvaluation.getRocCurve().calcAUC(), auc∈[0,1]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>获取某个阈值混淆矩阵：</dt>
+<dd><p class="first last">ConfusionMatrix=ProbEvaluation.getProbConfusionMatrix().calcConfusionMatrix(threshold), threhold建议阈值 threshold∈[0,1]
+print ConfusionMatrix.threshold() 打印实际阈值
+ConfusionMatrix的数据结构可见帮助 help(Classification.Evaluation.calcConfusionMatrix)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">probe</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcProbEvaluation</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre&quot;</span><span class="p">,</span> <span class="s">&quot;probability&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="s">&quot;adult_evaluation_weight_out&quot;</span><span class="p">,</span>
+    <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">)</span>
+<span class="n">probe</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">calcProbEvaluation</span><span class="p">(</span><span class="s">&quot;tree_adult_with_weight_split&quot;</span><span class="p">,</span> <span class="s">&quot;class&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tree_adult_with_weight_model_test_pre_split&quot;</span><span class="p">,</span> <span class="s">&quot;probability&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="s">&quot;adult_evaluation_weight_out2&quot;</span><span class="p">,</span>
+    <span class="n">referenceWeightColName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="n">referencePartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140403&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140404&quot;</span><span class="p">],</span>
+    <span class="n">targetPartitions</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;pdate=20140405&quot;</span><span class="p">,</span><span class="s">&quot;pdate=20140406&quot;</span><span class="p">])</span>
+<span class="n">auc</span><span class="o">=</span><span class="n">probe</span><span class="o">.</span><span class="n">getRocCurve</span><span class="p">()</span><span class="o">.</span><span class="n">calcAUC</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">auc</span>
+<span class="n">cm</span><span class="o">=</span><span class="n">probe</span><span class="o">.</span><span class="n">getProbConfusionMatrix</span><span class="p">()</span><span class="o">.</span><span class="n">calcConfusionMatrix</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">cm</span><span class="o">.</span><span class="n">threshold</span><span class="p">()</span>
+<span class="n">show</span><span class="p">(</span><span class="n">probe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id70">
+<h3>加载混淆矩阵<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadConfusionMatrix</span><span class="p">(</span><span class="n">tableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>tableName：输入表名字</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>ConfusionMatrix 混淆矩阵</li>
+<li>ConfusionMatrix的数据结构可见帮助 help(Classification.Evaluation.calcConfusionMatrix)</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cm</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">loadConfusionMatrix</span><span class="p">(</span><span class="s">&quot;adult_model_test_cm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id71">
+<h3>加载概率评估数据<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadProbEvaluation</span><span class="p">(</span><span class="n">tableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>tableName：输入表名字</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>ProbEvaluation 混淆矩阵</li>
+<li>ProbEvaluation的数据结构可见帮助 help(Classification.Evaluation.calcProbEvaluation)</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">pe</span><span class="o">=</span><span class="n">Classification</span><span class="o">.</span><span class="n">Evaluation</span><span class="o">.</span><span class="n">loadProbEvaluation</span><span class="p">(</span><span class="s">&quot;adult_evaluation_weight_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">分类预测</a><ul>
+<li><a class="reference internal" href="#odps-xlib-classification-rand-forests">随机森林</a><ul>
+<li><a class="reference internal" href="#id3">函数</a><ul>
+<li><a class="reference internal" href="#id4">训练</a></li>
+<li><a class="reference internal" href="#id5">预测</a></li>
+<li><a class="reference internal" href="#id6">是否为随机森林模型</a></li>
+<li><a class="reference internal" href="#id7">加载模型</a></li>
+<li><a class="reference internal" href="#id8">导出模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">界面</a><ul>
+<li><a class="reference internal" href="#id10">训练</a></li>
+<li><a class="reference internal" href="#id11">预测</a></li>
+<li><a class="reference internal" href="#id12">模型显示</a></li>
+<li><a class="reference internal" href="#id13">导出模型</a></li>
+<li><a class="reference internal" href="#id14">定义模板</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odps-xlib-logic-reg">逻辑回归</a><ul>
+<li><a class="reference internal" href="#id16">函数</a><ul>
+<li><a class="reference internal" href="#id17">二分类训练</a></li>
+<li><a class="reference internal" href="#id18">二分类预测</a></li>
+<li><a class="reference internal" href="#id19">二分类加载模型</a></li>
+<li><a class="reference internal" href="#id20">二分类逐步回归训练</a></li>
+<li><a class="reference internal" href="#id21">二分类逐步回归预测</a></li>
+<li><a class="reference internal" href="#id22">二分类逐步回归加载模型</a></li>
+<li><a class="reference internal" href="#id23">多分类训练</a></li>
+<li><a class="reference internal" href="#id24">多分类预测</a></li>
+<li><a class="reference internal" href="#id25">多分类加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id26">界面</a><ul>
+<li><a class="reference internal" href="#id27">训练</a></li>
+<li><a class="reference internal" href="#id28">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linear-svm">线性支持向量机(Linear SVM)</a><ul>
+<li><a class="reference internal" href="#id29">函数</a><ul>
+<li><a class="reference internal" href="#id30">训练</a></li>
+<li><a class="reference internal" href="#id31">预测</a></li>
+<li><a class="reference internal" href="#id32">加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id33">界面</a><ul>
+<li><a class="reference internal" href="#id34">训练</a></li>
+<li><a class="reference internal" href="#id35">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#naive-bayes">朴素贝叶斯(Naive Bayes)</a><ul>
+<li><a class="reference internal" href="#id36">函数</a><ul>
+<li><a class="reference internal" href="#id37">训练</a></li>
+<li><a class="reference internal" href="#id38">预测</a></li>
+<li><a class="reference internal" href="#id39">加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id40">界面</a><ul>
+<li><a class="reference internal" href="#id41">训练</a></li>
+<li><a class="reference internal" href="#id42">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bayes">贝叶斯判别(Bayes)</a><ul>
+<li><a class="reference internal" href="#id43">函数</a><ul>
+<li><a class="reference internal" href="#id44">训练</a></li>
+<li><a class="reference internal" href="#id45">预测</a></li>
+<li><a class="reference internal" href="#id46">加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id47">界面</a><ul>
+<li><a class="reference internal" href="#id48">训练</a></li>
+<li><a class="reference internal" href="#id49">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fisher">费希尔判别(Fisher)</a><ul>
+<li><a class="reference internal" href="#id50">函数</a><ul>
+<li><a class="reference internal" href="#id51">训练</a></li>
+<li><a class="reference internal" href="#id52">预测</a></li>
+<li><a class="reference internal" href="#id53">加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id54">界面</a><ul>
+<li><a class="reference internal" href="#id55">训练</a></li>
+<li><a class="reference internal" href="#id56">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mdistance">马氏距离判别(MDistance)</a><ul>
+<li><a class="reference internal" href="#id57">函数</a><ul>
+<li><a class="reference internal" href="#id58">训练</a></li>
+<li><a class="reference internal" href="#id59">预测</a></li>
+<li><a class="reference internal" href="#id60">加载模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id61">界面</a><ul>
+<li><a class="reference internal" href="#id62">训练</a></li>
+<li><a class="reference internal" href="#id63">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id64">评估</a><ul>
+<li><a class="reference internal" href="#id65">界面</a></li>
+<li><a class="reference internal" href="#id66">打开混淆矩阵或概率评估表</a></li>
+<li><a class="reference internal" href="#id67">计算正确率</a></li>
+<li><a class="reference internal" href="#id68">计算混淆矩阵</a></li>
+<li><a class="reference internal" href="#id69">概率评估</a></li>
+<li><a class="reference internal" href="#id70">加载混淆矩阵</a></li>
+<li><a class="reference internal" href="#id71">加载概率评估数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_regression.html" title="回归分析"
+             >next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_dataconvert.html" title="格式转换"
+             >previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Alibaba 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  <!-- 请把脚本放到 body 元素内 -->
+  </body>
+</html>

@@ -1,0 +1,444 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>回归分析 &mdash; ODPS 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ODPS 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="ODPS XLab/XLib" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_cluster.html" title="聚类分析"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_classification.html" title="分类预测"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="odps-xlib-regression">
+<span id="id1"></span><h1>回归分析<a class="headerlink" href="#odps-xlib-regression" title="Permalink to this headline">¶</a></h1>
+<p>回归分析(Regression Analysis)是一种统计学上分析数据的方法，目的在于了解两个或多个变量间是否相关、相关方向与强度，并建立数学模型以便观察特定变量来预测研究者感兴趣的变量。回归分析是建立因变量Y(或称依变量，反应变量)与自变量X(或称独变量，解释变量)之间关系的模型。简单线性回归使用一个自变量X，复回归使用超过一个自变量(X_1, X_2 ... X_i)。详细介绍见： <a class="reference external" href="http://en.wikipedia.org/wiki/Regression_analysis">Regression analysis</a> 。在Xlab中，回归分析主要支持两种： <a class="reference internal" href="#odps-xlib-regression-linear-reg"><em>线性回归</em></a> 和 <a class="reference internal" href="#odps-xlib-regression-gradient-boosting"><em>梯度渐近回归树</em></a> 。</p>
+<div class="section" id="odps-xlib-regression-linear-reg">
+<span id="id2"></span><h2>线性回归<a class="headerlink" href="#odps-xlib-regression-linear-reg" title="Permalink to this headline">¶</a></h2>
+<p>线性回归(Linear Regression)是利用称为线性回归方程的最小二乘函数对一个或多个自变量和因变量之间关系进行建模的一种回归分析。这种函数是一个或多个称为回归系数的模型参数的线性组合。只有一个自变量的情况称为简单回归，大于一个自变量情况的叫做多元回归。</p>
+<p>线性回归是回归分析中第一种经过严格研究并在实际应用中广泛使用的类型。这是因为线性依赖于其未知参数的模型比非线性依赖于其位置参数的模型更容易拟合，而且产生的估计的统计特性也更容易确定。详细介绍见： <a class="reference external" href="http://en.wikipedia.org/wiki/Linear_regression">Linear regression</a> 。</p>
+<p>在XLab中，对于线性回归模型，提供两种执行方式：函数和界面，主要包括两个过程：训练和预测。</p>
+<div class="section" id="id3">
+<h3>函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>线性回归包括以下几个函数：train，predict，loadModel和isModel。这几个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">train</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">isModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h4>训练<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">independentColNames</span><span class="p">,</span> <span class="n">dependentColName</span><span class="p">,</span> <span class="n">inputTableName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">srt</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">outModelTableName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>independentColNames: 自变量列名列表(x).</li>
+<li>dependentColName: 因变量列名(y).</li>
+<li>inputTableName: (可选)输入表名.</li>
+<li>inputPartitions：(可选)输入表的分区.</li>
+<li>srt: (可选)inputTableName和inputPartitions下的SummaryResultTable.</li>
+<li>outModelTableName: (可选)输出模型表的名字.</li>
+</ul>
+</div></blockquote>
+<p>返回：</p>
+<blockquote>
+<div><ul class="simple">
+<li>LinearRegressionModel</li>
+</ul>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">train</span><span class="p">([</span><span class="s">&quot;balance&quot;</span><span class="p">],</span> <span class="s">&quot;age&quot;</span><span class="p">,</span> <span class="s">&quot;bank_marketing&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>预测<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span>
+    <span class="n">appendColNames</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>inputTableName: 输入预测表.</li>
+<li>model: 线性回归模型.</li>
+<li>outputTableName: 输出表.</li>
+<li>appendColNames：(可选)追加列列表</li>
+<li>inputPartitions: (可选)输入表的分区列表.</li>
+</ul>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s">&quot;bank_marketing&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="s">&quot;outTableName&quot;</span><span class="p">,</span>
+    <span class="n">appendColNames</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="s">&quot;balance&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>加载模型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>modelTableName: 模型表</li>
+</ul>
+</div></blockquote>
+<p>返回：</p>
+<blockquote>
+<div><ul class="simple">
+<li>LinearRegressionModel</li>
+</ul>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;modelTableName&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>判断模型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">isModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>modelTableName: 模型表</li>
+</ul>
+</div></blockquote>
+<p>返回：</p>
+<blockquote>
+<div><ul class="simple">
+<li>布尔值，true：是线性回归模型，false：不是线性回归模型</li>
+</ul>
+</div></blockquote>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">linearRegressionModel</span> <span class="o">=</span> <span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">isModel</span><span class="p">(</span><span class="s">&quot;modelTableName&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>界面<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>界面操作包括两个过程：训练和预测，详见下文。</p>
+<div class="section" id="id9">
+<h4>训练<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>打开数据表-&gt;模型-&gt;线性回归-&gt;训练，如下图：</p>
+<img alt="../../_images/lr1.bmp" src="../../_images/lr1.bmp" />
+<p>选择因变量和协变量，进行训练,如下图：</p>
+<img alt="../../_images/lr2.bmp" src="../../_images/lr2.bmp" />
+<p>运行结束后弹出指标,如下图：</p>
+<img alt="../../_images/lr3.bmp" src="../../_images/lr3.bmp" />
+</div>
+<div class="section" id="id10">
+<h4>预测<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>打开预测表或者线性回归模型表-&gt;模型-&gt;线性回归-&gt;预测，如下图：</p>
+<img alt="../../_images/lr4.bmp" src="../../_images/lr4.bmp" />
+</div>
+</div>
+</div>
+<div class="section" id="odps-xlib-regression-gradient-boosting">
+<span id="id11"></span><h2>梯度渐近回归树<a class="headerlink" href="#odps-xlib-regression-gradient-boosting" title="Permalink to this headline">¶</a></h2>
+<p>梯度渐近回归树算法介绍：<a class="reference external" href="http://en.wikipedia.org/wiki/Gradient_boosting">Gradient boosting算法介绍</a> 。XLab使用了 <a class="reference external" href="http://machinelearning.wustl.edu/pmwiki.php/Main/Pgbrt">pGBRT: Parallel Gradient Boosted Regression Trees</a> 算法。本算法目前支持Gradient boosting regression tree. 也就是只支持回归。使用的损失函数只支持最小二乘。</p>
+<p>在XLab中，对于梯度渐近回归树模型，提供两种执行方式：函数和界面，主要包括两个过程：训练和预测。</p>
+<div class="section" id="id12">
+<h3>函数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>GBRT包括以下几个函数：trainSparse，predictSparse，loadModel和isModel。</p>
+<p>这几个函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">loadModel</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Regression</span><span class="o">.</span><span class="n">LinearReg</span><span class="o">.</span><span class="n">isModel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="gbrt-train-func">
+<span id="id13"></span><h4>训练<a class="headerlink" href="#gbrt-train-func" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">trainSparse</span><span class="p">(</span><span class="n">independentMatrixName</span><span class="p">,</span> <span class="n">dependentTableName</span><span class="p">,</span> <span class="n">dependentColName</span><span class="p">,</span>
+                <span class="n">modelTableName</span><span class="p">,</span> <span class="n">dependentPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">treeDepth</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="n">treesNum</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">learningRate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="p">:</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>independentMatrixName: 输入的自变量(x)矩阵。</li>
+<li>dependentTableName: 输入的因变量(y)表名。</li>
+<li>dependentColName: 因变量的列名。</li>
+<li>modelTableName: 输出的模型名。</li>
+<li>dependentPartitions: (可选)因变量表对应的输入矩阵。选择全表则为None。默认为选择全表。</li>
+<li>treeDepth: (可选)单颗树的最大深度。默认为5.</li>
+<li>treesNum: (可选)树的棵数。默认为100.</li>
+<li>learningRate: (可选)学习速率。默认为0.1.</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>返回GradBoostRegTreeModel类型，表示梯度渐近回归树模型。</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&quot;gbrt_train_sparse&quot;</span><span class="p">,</span> <span class="s">&quot;gbrt_train_dependent_table&quot;</span><span class="p">,</span>
+    <span class="s">&quot;dependent&quot;</span><span class="p">,</span> <span class="s">&quot;gbrt_model&quot;</span><span class="p">,</span> <span class="n">dependentPartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;p=1&quot;</span><span class="p">],</span> <span class="n">treeDepth</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">treesNum</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">learningRate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项：</dt>
+<dd><ul class="first last simple">
+<li>本方法实现了梯度渐近回归树的训练过程。</li>
+<li>对于因变量y，只支持double和bigint类型</li>
+<li>自变量只支持 <a class="reference internal" href="odps_xlib_basic_item.html#xlib-basic-sparse-tbl"><em>Xlib稀疏矩阵表</em></a> 输入</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="gbrt-predict-func">
+<span id="id14"></span><h4>预测<a class="headerlink" href="#gbrt-predict-func" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">predictSparse</span><span class="p">(</span><span class="n">inputMatrixName</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">outputTableName</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="p">:</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>inputMatrixName: 预测输入矩阵名。</li>
+<li>model: GradBoostRegTreeModel类型。梯度渐近回归树模型。</li>
+<li>outputTableName: 预测输出表。</li>
+<li>outputPartition:(可选)指定输出到输出表的分区。None表示无分区。默认为无分区。</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gbrtModel</span> <span class="o">=</span> <span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">trainSparse</span><span class="p">(</span><span class="s">&quot;gbrt_train_sparse&quot;</span><span class="p">,</span>
+    <span class="s">&quot;gbrt_train_dependent_table&quot;</span><span class="p">,</span> <span class="s">&quot;dependent&quot;</span><span class="p">,</span> <span class="s">&quot;gbrt_model&quot;</span><span class="p">,</span>
+    <span class="n">dependentPartitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;p=1&quot;</span><span class="p">],</span> <span class="n">treeDepth</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">treesNum</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">learningRate</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">predictSparse</span><span class="p">(</span><span class="s">&quot;gbrt_train_sparse&quot;</span><span class="p">,</span> <span class="n">gbrtModel</span><span class="p">,</span>
+    <span class="s">&quot;gbrt_prediction&quot;</span><span class="p">,</span> <span class="n">outputPartition</span> <span class="o">=</span> <span class="s">&quot;p=1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>注意事项：</dt>
+<dd><ul class="first last simple">
+<li>本方法实现了梯度渐近回归树的预测过程。</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id15">
+<h4>加载模型<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">loadModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName: 模型表名。</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>GradBoostRegTreeModel: 梯度渐近回归树模型</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gbrtModel</span> <span class="o">=</span> <span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">loadModel</span><span class="p">(</span><span class="s">&quot;table_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>判断模型<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">isModel</span><span class="p">(</span><span class="n">modelTableName</span><span class="p">)</span> <span class="p">:</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数：</dt>
+<dd><ul class="first last simple">
+<li>modelTableName: 检查的模型表名。</li>
+</ul>
+</dd>
+<dt>返回：</dt>
+<dd><ul class="first last simple">
+<li>Boolean: 是否为梯度渐近回归树模型。</li>
+</ul>
+</dd>
+</dl>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">Regression</span><span class="o">.</span><span class="n">GradBoostRegTree</span><span class="o">.</span><span class="n">isModel</span><span class="p">(</span><span class="s">&quot;table_name&quot;</span><span class="p">)</span> <span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;gbrt model.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>界面<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>在本例子中使用pgbrt_train_label表的label列作为因变量，使用稀疏矩阵pgbrt_train_sparse作为自变量，pgbrt_train_model_d5作为模型输出。使用步骤如下：</p>
+<p>打开pgbrt_train_label表，在菜单-&gt;模型-&gt;梯度渐近回归树，打开模型相关功能：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_train_open.png"><img alt="gbrt_train_open" src="../../_images/gbrt_train_open.png" style="width: 335.4px; height: 214.8px;" /></a>
+<div class="section" id="id18">
+<h4>训练<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>在训练界面中的参数输入是和函数中的参数相对应的，参见<a class="reference internal" href="#gbrt-train-func"><em>训练</em></a>.</p>
+<p>打开训练界面为：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_train_main.png"><img alt="gbrt_train_main" src="../../_images/gbrt_train_main.png" style="width: 300.6px; height: 359.4px;" /></a>
+<p>在本界面中：</p>
+<blockquote>
+<div><ul class="simple">
+<li>第一个红色方框中代表因变量所在的表，其中选中的行代表因变量在表中所在的列。</li>
+<li>第二个红色方框中代表<strong>自变量</strong>的 <a class="reference internal" href="odps_xlib_basic_item.html#xlib-basic-sparse-tbl"><em>Xlib稀疏矩阵表</em></a> 名。</li>
+<li>第三个红色方框中代表输出模型表名。</li>
+</ul>
+</div></blockquote>
+<p>点击开始训练按钮，即开始训练。在本界面中有两个tab页，输入表配置页由上所述，参数配置页可以选择算法的参数，如下：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_train_para.png"><img alt="gbrt_train_para" src="../../_images/gbrt_train_para.png" style="width: 298.8px; height: 358.2px;" /></a>
+<p>开始训练界面如下：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_train_process.png"><img alt="../../_images/gbrt_train_process.png" src="../../_images/gbrt_train_process.png" /></a>
+<p>训练结束会弹出模型显示窗口，参见<a class="reference internal" href="#gbrt-show-model"><em>模型显示</em></a>。</p>
+</div>
+<div class="section" id="id19">
+<h4>预测<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>在预测界面中的参数输入是和函数中的参数相对应的，参见<a class="reference internal" href="#gbrt-predict-func"><em>预测</em></a> 。</p>
+<p>打开预测界面为：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_predict_main.png"><img alt="../../_images/gbrt_predict_main.png" src="../../_images/gbrt_predict_main.png" /></a>
+<p>输入表为要预测的表，model为训练时的输出表，输出表为预测的结果。点击预测按钮，开始预测。在预测中，主界面上选择GBRT模型时，预测会自动识别这个表是否为GBRT模型。预测结束，选择预测结果表，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_predict_select_table.png"><img alt="../../_images/gbrt_predict_select_table.png" src="../../_images/gbrt_predict_select_table.png" /></a>
+<p>双击打开，查看预测结果，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_predict_resut.png"><img alt="../../_images/gbrt_predict_resut.png" src="../../_images/gbrt_predict_resut.png" /></a>
+<p>根据预测结果，可以调用<a class="reference internal" href="odps_xlib_matrix_calc.html"><em>矩阵计算</em></a>计算rmse值等。rmse的计算过程如下作为参考， 在脚本中执行：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">before</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;pgbrt_train_label&quot;</span><span class="p">,</span> <span class="n">colNames</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;label&#39;</span><span class="p">])</span>
+<span class="n">after</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;pgbrt_train_predict&quot;</span><span class="p">,</span> <span class="n">colNames</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;y_var&#39;</span><span class="p">])</span>
+<span class="n">minus</span> <span class="o">=</span> <span class="n">after</span> <span class="o">-</span> <span class="n">before</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">minus</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">before</span><span class="o">.</span><span class="n">rowSize</span><span class="p">()</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>
+
+<span class="k">print</span> <span class="n">rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gbrt-show-model">
+<span id="id20"></span><h4>模型显示<a class="headerlink" href="#gbrt-show-model" title="Permalink to this headline">¶</a></h4>
+<p>对于训练出来的模型，可以通过XLab提供的树的图形表示来展示，如下图：</p>
+<a class="reference internal image-reference" href="../../_images/gbrt_show_model.png"><img alt="../../_images/gbrt_show_model.png" src="../../_images/gbrt_show_model.png" /></a>
+<p>模型显示提供了以下功能：</p>
+<ul class="simple">
+<li>放大缩小；</li>
+<li>tree, folder, print三种视图；</li>
+<li>选择树的编号。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">回归分析</a><ul>
+<li><a class="reference internal" href="#odps-xlib-regression-linear-reg">线性回归</a><ul>
+<li><a class="reference internal" href="#id3">函数</a><ul>
+<li><a class="reference internal" href="#id4">训练</a></li>
+<li><a class="reference internal" href="#id5">预测</a></li>
+<li><a class="reference internal" href="#id6">加载模型</a></li>
+<li><a class="reference internal" href="#id7">判断模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">界面</a><ul>
+<li><a class="reference internal" href="#id9">训练</a></li>
+<li><a class="reference internal" href="#id10">预测</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odps-xlib-regression-gradient-boosting">梯度渐近回归树</a><ul>
+<li><a class="reference internal" href="#id12">函数</a><ul>
+<li><a class="reference internal" href="#gbrt-train-func">训练</a></li>
+<li><a class="reference internal" href="#gbrt-predict-func">预测</a></li>
+<li><a class="reference internal" href="#id15">加载模型</a></li>
+<li><a class="reference internal" href="#id16">判断模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">界面</a><ul>
+<li><a class="reference internal" href="#id18">训练</a></li>
+<li><a class="reference internal" href="#id19">预测</a></li>
+<li><a class="reference internal" href="#gbrt-show-model">模型显示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_cluster.html" title="聚类分析"
+             >next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_classification.html" title="分类预测"
+             >previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Alibaba 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  <!-- 请把脚本放到 body 元素内 -->
+  </body>
+</html>

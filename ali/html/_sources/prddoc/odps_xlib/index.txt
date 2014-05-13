@@ -1,0 +1,28 @@
+.. odps documentation master file, created by
+   sphinx-quickstart on Sun Dec 2 23:08:37 2012.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. _odps_xlib:
+
+ODPS XLab/XLib 
+================================
+
+
+.. toctree::
+   :maxdepth: 1
+
+   odps_xlib_pre
+   odps_xlib_basic_item
+   odps_xlib_basic_stat
+   odps_xlib_stat_analysis
+   odps_xlib_dataproc
+   odps_xlib_dataconvert
+   odps_xlib_classification
+   odps_xlib_regression
+   odps_xlib_cluster
+   odps_xlib_association
+   odps_xlib_matrix_calc
+   odps_xlib_faq
+   odps_xlib_appendix
+

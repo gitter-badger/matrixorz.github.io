@@ -1,0 +1,374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>统计分析 &mdash; ODPS 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ODPS 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="ODPS XLab/XLib" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_dataproc.html" title="数据处理"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_basic_stat.html" title="基本统计"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="odps-xlib-stat-analysis">
+<span id="id1"></span><h1>统计分析<a class="headerlink" href="#odps-xlib-stat-analysis" title="Permalink to this headline">¶</a></h1>
+<p>在XLab中，统计分析主要是指对应分析(Correspondence analysis)、多维对应分析(Correspondence analysis)、多重共线性和主成分分析(PCA)，详细介绍见下文。</p>
+<div class="section" id="odps-xlib-stat-analysis-corr-ana">
+<span id="id2"></span><h2>对应分析<a class="headerlink" href="#odps-xlib-stat-analysis-corr-ana" title="Permalink to this headline">¶</a></h2>
+<p>对应分析(Correspondence analysis), 是一种变量统计分析技术，可以揭示同一变量的各个类别之间的差异，以及两个变量各个类别之间的对应关系。它是一种视觉化的数据分析方法，它能够将两组看不出任何联系的数据，通过定位图展现出来。</p>
+<p>进行对应分析的方式主要有两种：函数和界面。</p>
+<div class="section" id="id3">
+<h3>界面<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>选择菜单-&gt;分析-&gt;对应分析，如下图：</p>
+<img alt="../../_images/corresp_frame.png" src="../../_images/corresp_frame.png" style="width: 430px; height: 500px;" />
+<p>用户通过填写&#8221;行选项&#8221;与&#8221;列选项&#8221; 进行对应分析。</p>
+</div>
+<div class="section" id="id4">
+<h3>函数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>对应分析支持的函数为：corresp。该函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">StatAnalysis</span><span class="o">.</span><span class="n">corresp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">corresp</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">rowLegend</span><span class="p">,</span> <span class="n">rowTags</span><span class="p">,</span> <span class="n">rowExprs</span><span class="p">,</span> <span class="n">colLegend</span><span class="p">,</span>
+    <span class="n">colTags</span><span class="p">,</span> <span class="n">colExprs</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">srt</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>tableName: 输入表名</li>
+<li>rowLegend: 行说明</li>
+<li>rowTags: 行标签</li>
+<li>rowExprs: 行表达式(可以写列名，代表这一列所有不同的取值)</li>
+<li>colLegend: 列说明</li>
+<li>colTags: 列标签</li>
+<li>colExprs: 列表达式(可以写列名，代表这一列所有不同的取值)</li>
+<li>inputPartitions：(可选)输入表的分区</li>
+<li>srt: (可选)table和selectedDataPartitions下的SummaryResultTable.</li>
+</ul>
+</div></blockquote>
+<p>返回：</p>
+<blockquote>
+<div><ul class="simple">
+<li>CorrespondenceAnalysis</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tableName</span> <span class="o">=</span> <span class="s">&quot;bank_marketing&quot;</span><span class="p">;</span>
+<span class="n">rowExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;age&lt;20&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=20 and age&lt;30&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=30 and age&lt;40&quot;</span><span class="p">]</span>
+<span class="n">colExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;marital&quot;</span><span class="p">]</span>
+<span class="n">tableSrt</span> <span class="o">=</span> <span class="n">Statistics</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span>
+<span class="n">ca</span> <span class="o">=</span> <span class="n">StatAnalysis</span><span class="o">.</span><span class="n">corresp</span><span class="p">(</span><span class="n">tableName</span><span class="p">,</span> <span class="s">&quot;row&quot;</span><span class="p">,</span> <span class="n">rowExpr</span><span class="p">,</span> <span class="n">rowExpr</span><span class="p">,</span>
+    <span class="s">&quot;col&quot;</span><span class="p">,</span> <span class="n">colExpr</span><span class="p">,</span> <span class="n">colExpr</span><span class="p">,</span> <span class="n">srt</span><span class="o">=</span><span class="n">tableSrt</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">ca</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>以UCI上Bank Marketing数据集为例，我们考虑观察用户年龄和婚姻状况的关系。其中age字段代表用户的年龄，marital字段代表用户的婚姻状况。由于年龄是连续的，将年龄分成2个区间 age&gt;=20 and age&lt;30, age&gt;=30 and age&lt;40。婚姻状况只有三个状态，只需要输入列名，程序会自动分成三组。示例结果，如下图:</p>
+<img alt="../../_images/corresp1.bmp" src="../../_images/corresp1.bmp" />
+<p>由上图可以看出离婚和结婚和30~40关系比较紧密，单身和20~30关系比较紧密。</p>
+</div>
+</div>
+<div class="section" id="odps-xlib-stat-analysis-d-corr-ana">
+<span id="id5"></span><h2>多维对应分析<a class="headerlink" href="#odps-xlib-stat-analysis-d-corr-ana" title="Permalink to this headline">¶</a></h2>
+<p>多维对应分析(Correspondence analysis), 是一种变量统计分析技术，可以揭示多个变量各个类别之间的对应关系。它是一种视觉化的数据分析方法，它能够将多组看不出任何联系的数据，通过定位图展现出来。</p>
+<p>进行多维对应分析的方式主要有两种：函数和界面。</p>
+<div class="section" id="id6">
+<h3>界面<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>选择菜单-&gt;分析-&gt;多维对应分析，如下图：</p>
+<img alt="../../_images/multico.bmp" src="../../_images/multico.bmp" />
+<p>用户通过增加维度，填写每个维度的条件，进行多维对应分析。</p>
+</div>
+<div class="section" id="id7">
+<h3>函数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>多维对应分析支持的函数为：multicorresp。该函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">StatAnalysis</span><span class="o">.</span><span class="n">multicorresp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">multicorresp</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">legends</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">tagExprs</span><span class="p">,</span> <span class="n">inputPartitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">srt</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数:</p>
+<blockquote>
+<div><ul class="simple">
+<li>tableName: 输入表名</li>
+<li>legends: 每个特征说明</li>
+<li>tags: 标签</li>
+<li>tagExprs: 表达式(可以写列名，代表这一列所有不同的取值)</li>
+<li>inputPartitions：(可选)输入表的分区</li>
+<li>srt: (可选)table和inputPartitions下的SummaryResultTable.</li>
+</ul>
+</div></blockquote>
+<p>返回：</p>
+<blockquote>
+<div>MultiCorrespondenceAnalysis.</div></blockquote>
+<p>可以看出多维对应分析，如果维数是二，那么就是对应分析。</p>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tableName</span> <span class="o">=</span> <span class="s">&quot;bank_data&quot;</span>
+<span class="n">ageExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;age&lt;20&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=20 and age&lt;40&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=40 and age&lt;50&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=50 and age&lt;60&quot;</span><span class="p">,</span> <span class="s">&quot;age&gt;=60&quot;</span><span class="p">]</span>
+<span class="n">jobExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;job&quot;</span><span class="p">]</span>
+<span class="n">maritalExpr</span><span class="o">=</span> <span class="p">[</span><span class="s">&quot;marital&quot;</span><span class="p">]</span>
+<span class="n">educationExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;education&quot;</span><span class="p">]</span>
+<span class="n">balanceExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;balance&lt;0&quot;</span><span class="p">,</span> <span class="s">&quot;balance&gt;=0 and balance&lt;1000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;balance&gt;=1000 and balance&lt;2000&quot;</span><span class="p">,</span> <span class="s">&quot;balance&gt;=2000 and balance&lt;6000&quot;</span><span class="p">,</span> <span class="s">&quot;balance&gt;=6000&quot;</span><span class="p">]</span>
+<span class="n">housingExpr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;housing&quot;</span><span class="p">]</span>
+<span class="n">tagExprs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ageExpr</span><span class="p">,</span> <span class="n">jobExpr</span><span class="p">,</span> <span class="n">maritalExpr</span><span class="p">,</span> <span class="n">educationExpr</span><span class="p">,</span> <span class="n">balanceExpr</span><span class="p">,</span> <span class="n">housingExpr</span><span class="p">]</span>
+<span class="n">legends</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">,</span> <span class="s">&quot;job&quot;</span><span class="p">,</span> <span class="s">&quot;marital&quot;</span><span class="p">,</span> <span class="s">&quot;education&quot;</span><span class="p">,</span> <span class="s">&quot;balance&quot;</span><span class="p">,</span> <span class="s">&quot;housing&quot;</span><span class="p">]</span>
+<span class="n">mca</span> <span class="o">=</span> <span class="n">multicorresp</span><span class="p">(</span><span class="n">tableName</span><span class="p">,</span> <span class="n">legends</span><span class="p">,</span> <span class="n">tagExprs</span><span class="p">,</span> <span class="n">tagExprs</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">mca</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>以UCI上Bank Marketing数据集为例，我们考虑观察用户年龄，婚姻状况，教育程度，工作状况，净收入，是否有房贷之间的关系。其中age字段代表用户的年龄，marital字段代表用户的婚姻状况。由于年龄和净收入是连续的，将年龄分成6个区间, 将净收入分成5个区间。婚姻状况，工作状况，教育程度，是否有房贷等变量只有几个状态，只需要输入列名，程序会自动分组。结果，如下图：</p>
+<img alt="../../_images/corresp2.bmp" src="../../_images/corresp2.bmp" />
+<p>从上图可以看出，小于20岁的人群和学生比较相关，大于60的人群和退休比较相关，受过高等教育的和管理者比较相关。放大中间区域，如下图：</p>
+<img alt="../../_images/multicorresp_larger.png" src="../../_images/multicorresp_larger.png" />
+<p>从上图可以看出，技术人员和20到40之间关系比较近，40到50的人群和有房贷人群关系较近。</p>
+</div>
+</div>
+<div class="section" id="odps-xlib-stat-analysis-mult-collinearity">
+<span id="id8"></span><h2>多重共线性<a class="headerlink" href="#odps-xlib-stat-analysis-mult-collinearity" title="Permalink to this headline">¶</a></h2>
+<p>所谓多重共线性(Multicollinearity)是指线性回归模型中的解释变量之间由于存在精确相关关系或高度相关关系而使模型估计失真或难以估计准确。一般来说，由于经济数据的限制使得模型设计不当，导致设计矩阵中解释变量间存在普遍的相关关系。
+完全共线性的情况并不多见，一般出现的是在一定程度上的共线性，即近似共线性。</p>
+<div class="section" id="id9">
+<h3>函数<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>多维对应分析支持的函数为：collinear，共三种用法：</p>
+<ul class="simple">
+<li>用法一：StatAnalysis.collinear(tableName)，tableName为数据表名，对该表的全部列进行共线性判断</li>
+<li>用法二：StatAnalysis.collinear(tableName, colNames)，tableName为数据表名，colNames为选择需要判断共线性的列名数组。</li>
+<li>用法三：StatAnalysis.collinear(srt, colNames)，srt为数据表的统计量，colNames为选择需要判断共线性的列名数组。</li>
+</ul>
+<p>函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">StatAnalysis</span><span class="o">.</span><span class="n">collinear</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">collinear</span><span class="p">(</span><span class="n">tableName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">colNames</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">srt</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">partitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>tableName: (可选)输入表名</li>
+<li>colNames: (可选)列名列表</li>
+<li>partitions：(可选)输入表的分区</li>
+<li>srt: (可选)table和inputPartitions下的SummaryResultTable.</li>
+</ul>
+</div></blockquote>
+<p>返回:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Multicollinearity</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">我们需要关注如下共线性的指标：
+第一，矩阵X^T X的条件数κ，为矩阵X^T X的最大特征值与最小特征值的比值。
+用κ判断多重共线性的准则：
+1. 0≤κ&lt;100时，认为多重共线性的程度很小
+2. 100≤κ≤1000时，认为存在中等程度或较强程度的多重共线性
+3. κ&gt;1000时，认为存在严重的多重共线性
+第二，条件指数与方差比例
+在实际使用中，若条件指数值在10与30间为弱相关,在30与100间为中等相关,大于100为强相关;在大的条件指数中由方差比例超过0.5的自变量构成的变量子集就认为是相关变量集。
+第三，方差膨胀因子与容忍度
+方差膨胀因子(Variance Inflation Factor，缩写为VIF)。对于全部自变量X_1,X_2,...,X_m，自变量X_i的方差膨胀因子记为 VIF_i，计算表示如下：
+VIF_i=1/(1-R_i^2 )
+其中，R_i^2是以X_i为因变量时对其它自变量建立多元线性回归模型的多重判定系数。因为多重判定系数R_i^2的取值区间为[0,1]，所以VIF_i的取值区间为[1,+∞)。VIF_i越接近1，多重共线性越弱；值越远大于1，多重共线性越强。一般地，当VIF_i&lt;10时，不存在多重共线性；当10≤VIF_i&lt;100时，存在较强的多重共线性；当VIF_i&gt;100时，存在严重多重共线性
+容忍度(Tolerance)为方差膨胀因子(VIF)的倒数。取值范围为[0,1]，容忍度越接近0，表示多重共线性越强；越接近于1，多重共线性越弱。</p>
+</div>
+<p>示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">corr</span> <span class="o">=</span> <span class="n">StatAnalysis</span><span class="o">.</span><span class="n">collinear</span><span class="p">(</span><span class="s">&quot;iris&quot;</span><span class="p">,</span> <span class="n">colNames</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s">&quot;sepal_width&quot;</span><span class="p">,</span> \
+<span class="s">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s">&quot;petal_width&quot;</span><span class="p">])</span>
+<span class="k">print</span> <span class="n">mcorr</span>
+</pre></div>
+</div>
+<p>运行结果：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Coefficient</span> <span class="n">of</span> <span class="n">Correlation</span><span class="p">:</span>
+<span class="n">Variable</span>       <span class="n">sepal_length</span>              <span class="n">sepal_width</span>                <span class="n">petal_length</span>              <span class="n">petal_width</span>
+<span class="n">sepal_length</span>     <span class="mf">1.0</span>   <span class="o">-</span><span class="mf">0.10936924995067454</span>    <span class="mf">0.8717541573048854</span>      <span class="mf">0.8179536333691777</span>
+<span class="n">sepal_width</span>     <span class="o">-</span><span class="mf">0.10936924995067454</span>   <span class="mf">1.0</span>     <span class="o">-</span><span class="mf">0.4205160964011882</span>     <span class="o">-</span><span class="mf">0.35654408961382245</span>
+<span class="n">petal_length</span>    <span class="mf">0.8717541573048854</span>     <span class="o">-</span><span class="mf">0.4205160964011882</span>     <span class="mf">1.0</span>     <span class="mf">0.9627570970509656</span>
+<span class="n">petal_width</span>  <span class="mf">0.8179536333691777</span>        <span class="o">-</span><span class="mf">0.35654408961382245</span>    <span class="mf">0.9627570970509656</span>      <span class="mf">1.0</span>
+<span class="n">kappa</span> <span class="o">=</span> <span class="mf">141.249002155887</span>
+<span class="nb">max</span> <span class="k">lambda</span> <span class="o">=</span> <span class="mf">2.9108180837520914</span>
+<span class="nb">min</span> <span class="k">lambda</span> <span class="o">=</span> <span class="mf">0.020607707235620804</span>
+<span class="n">Min</span> <span class="n">EigenVector</span><span class="p">:</span>
+<span class="mf">0.2619955869000212</span> <span class="o">*</span> <span class="n">sepal_length</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.12413481006270811</span> <span class="o">*</span> <span class="n">sepal_width</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.8011542690799339</span> <span class="o">*</span> <span class="n">petal_length</span> <span class="o">+</span> <span class="mf">0.5235462716041492</span> <span class="o">*</span> <span class="n">petal_width</span>
+<span class="n">Number</span>          <span class="n">Eigenvalue</span>        <span class="n">Condition</span> <span class="n">Index</span>
+<span class="mi">1</span>      <span class="mf">2.9108180837520914</span>      <span class="mf">1.0</span>
+<span class="mi">2</span>      <span class="mf">0.9212209307072055</span>      <span class="mf">1.777565586411462</span>
+<span class="mi">3</span>      <span class="mf">0.14735327830508105</span>     <span class="mf">4.444548308278417</span>
+<span class="mi">4</span>      <span class="mf">0.020607707235620804</span>    <span class="mf">11.88482234431323</span>
+<span class="n">Variance</span> <span class="n">Proportions</span>
+<span class="n">Number</span>      <span class="n">sepal_length</span>          <span class="n">sepal_width</span>            <span class="n">petal_length</span>                 <span class="n">petal_width</span>
+<span class="mi">1</span>      <span class="mf">0.013197611312765672</span>    <span class="mf">0.01135134601935918</span>     <span class="mf">0.003696789023319418</span>    <span class="mf">0.006808870825877148</span>
+<span class="mi">2</span>      <span class="mf">0.021184409657575256</span>    <span class="mf">0.4430182707196299</span>      <span class="mf">1.538487198030385E-5</span>    <span class="mf">2.877766119470164E-4</span>
+<span class="mi">3</span>      <span class="mf">0.4966863511841683</span>      <span class="mf">0.18939499339389723</span>     <span class="mf">0.004290641925703285</span>    <span class="mf">0.1688888502881787</span>
+<span class="mi">4</span>      <span class="mf">0.4689316278454907</span>      <span class="mf">0.35623538986711384</span>     <span class="mf">0.991997184178997</span>       <span class="mf">0.8240145022739972</span>
+<span class="n">VIF</span> <span class="ow">and</span> <span class="n">TOL</span><span class="p">:</span>
+<span class="n">sepal_length</span>   <span class="n">VIF</span><span class="p">:</span><span class="mf">7.103113442835096</span>   <span class="n">TOL</span><span class="p">:</span><span class="mf">0.14078333508930496</span>
+<span class="n">sepal_width</span>    <span class="n">VIF</span><span class="p">:</span><span class="mf">2.0990386257425726</span>  <span class="n">TOL</span><span class="p">:</span><span class="mf">0.476408574733222</span>
+<span class="n">petal_length</span>   <span class="n">VIF</span><span class="p">:</span><span class="mf">31.39729165072643</span>   <span class="n">TOL</span><span class="p">:</span><span class="mf">0.03184988091088625</span>
+<span class="n">petal_width</span>    <span class="n">VIF</span><span class="p">:</span><span class="mf">16.141563956998493</span>  <span class="n">TOL</span><span class="p">:</span><span class="mf">0.06195186554809829</span>
+</pre></div>
+</div>
+<p>由上述结果指标，kappa=141.249002155887，说明存在相关性，第4个条件指数为11.88482234431323，也证明为相关，根据第4行的方差比例知，第3列和第4列相关；第3个和第4个VIF值都超过了10，也证明存在共线性。</p>
+</div>
+</div>
+<div class="section" id="odps-xlib-stat-analysis-pca">
+<span id="id10"></span><h2>主成分分析<a class="headerlink" href="#odps-xlib-stat-analysis-pca" title="Permalink to this headline">¶</a></h2>
+<p>主成分分析(Principal Component Analysis，PCA)， 是指将多个变量通过线性变换以选出较少个数重要变量的一种多元统计分析方法。又称主分量分析。</p>
+<p>在用统计分析方法研究多变量的课题时，变量个数太多就会增加课题的复杂性。人们自然希望变量个数较少而得到的信息较多。在很多情形，变量之间是有一定的相关关系的，当两个变量之间有一定相关关系时，可以解释为这两个变量反映此课题的信息有一定的重叠。主成分分析是对于原先提出的所有变量，建立尽可能少的新变量，使得这些新变量是两两不相关的，而且这些新变量在反映课题的信息方面尽可能保持原有的信息。
+主成分分析，详细介绍见：<a class="reference external" href="http://en.wikipedia.org/wiki/Principal_component_analysis">Principal component analysis</a> 。</p>
+<p>进行主成分分析的方式主要有两种：函数和界面。</p>
+<div class="section" id="id11">
+<h3>函数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>主成分分析支持的函数为：calc。该函数具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">StatAnalysis</span><span class="o">.</span><span class="n">PrinCompAnalysis</span><span class="o">.</span><span class="n">calc</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">inputTableName</span><span class="p">,</span> <span class="n">columnNames</span><span class="p">,</span> <span class="n">eigOutputTableName</span><span class="p">,</span>
+         <span class="n">contriRate</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">calcuType</span><span class="o">=</span><span class="s">&quot;CORR&quot;</span><span class="p">,</span> <span class="n">needTransform</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+         <span class="n">princompOutputTableName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">transType</span><span class="o">=</span><span class="s">&quot;Simple&quot;</span><span class="p">,</span>
+         <span class="n">remainColumns</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">srt</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数：</p>
+<blockquote>
+<div><ul class="simple">
+<li>inputTableName: 进行主成分分析的输入表</li>
+<li>columnNames: 参与主成分分析运算的数值列</li>
+<li>eigOutputTableName: 特征向量与特征值的输出表</li>
+<li>contriRate:(可选) 解释百分比,又称累计贡献率, 决定最终选择主成分的数目，默认值0.9</li>
+<li>calcuType: (可选)对原表进行特征分解的方式,可以选择&#8221;CORR&#8221;,&#8221;COVAR_SAMP&#8221;或&#8221;COVAR_POP&#8221;中的一种，默认值&#8221;CORR&#8221;</li>
+<li>needTransform: (可选)是否进行主成分转换，默认值False</li>
+<li>princompOutputTableName: (可选)进行主成分转换后的最终结果输出表</li>
+<li>transType: (可选)原表转换为主成分表的方式,包括&#8221;Simple&#8221;,&#8221;Sub-Mean&#8221;,&#8221;Normalization&#8221;,即输入表直接乘以转移矩阵,输入表每列减去本列均值再乘以转移矩阵,输入表每列减去本列均值后乘以转移矩阵再除以主成分列的标准差,默认值&#8221;Simple&#8221;</li>
+<li>remainColumns: (可选)只在进行主成分转换时生效,这些列都会出现在最终主成分结果表中</li>
+<li>srt: (可选)输入表的SummaryResult</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">StatAnalysis</span><span class="o">.</span><span class="n">PrinCompAnalysis</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="s">&quot;adult&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">,</span> <span class="s">&quot;hours_per_week&quot;</span><span class="p">],</span> <span class="s">&quot;pcaeigouttable1&quot;</span><span class="p">);</span>
+<span class="n">srt</span><span class="o">=</span><span class="n">Statistics</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="s">&quot;adult&quot;</span><span class="p">)</span>
+<span class="n">StatAnalysis</span><span class="o">.</span><span class="n">PrinCompAnalysis</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="s">&quot;adult&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="s">&quot;hours_per_week&quot;</span><span class="p">],</span>
+    <span class="s">&quot;pcaeigouttable2&quot;</span><span class="p">,</span> <span class="n">contriRate</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">calcuType</span> <span class="o">=</span> <span class="s">&quot;CORR&quot;</span><span class="p">,</span> <span class="n">needTransform</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="n">princompOutputTableName</span> <span class="o">=</span> <span class="s">&quot;pcatransresul1t&quot;</span><span class="p">,</span> <span class="n">transType</span> <span class="o">=</span> <span class="s">&quot;Simple&quot;</span><span class="p">,</span>
+    <span class="n">remainColumns</span> <span class="o">=</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">],</span> <span class="n">srt</span> <span class="o">=</span> <span class="n">srt</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>界面<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>选择数据表,点击数据统计→主成分分析，如下图：</p>
+<img alt="../../_images/pca_inputpara.jpg" src="../../_images/pca_inputpara.jpg" />
+<p>界面说明：</p>
+<ul class="simple">
+<li>计算列：代表参与主成分分析计算的列，必须为数值型。</li>
+<li>保留列：只在进行转换时生效，当&#8221;原表转换为主成分表&#8221;被选中时，保留列选择会被激活，所选的保留列都会出现在最终主成分结果表中。</li>
+<li>分析模式：进行主成分分析时选取原表进行特征分解的方式，可以选择CORR，COVAR_SAMP和COVAR_POP，分别代表选择相关系数阵，样本协方差阵和总体协方差阵。</li>
+<li>解释百分比：决定最终选择主成分的数目，在对特征值进行排序后，当前n个特征值的累计贡献率大于解释百分比时，就选取前n个特征向量作为主成分转移矩阵。</li>
+<li>特征向量输出表：前n个特征向量即转移矩阵的输出表。</li>
+<li>原表转换为主成分表：是否进行主成分转换，当此选项被勾选时，会根据转移矩阵进行原表到主成分表的转换。</li>
+<li>转换模式：原表转换为主成分表的方式，包括Simple，Sub-Mean，Normalization，即输入表直接乘以转移矩阵，输入表每列减去本列均值再乘以转移矩阵，输入表每列减去本列均值后乘以转移矩阵再除以主成分列的标准差。</li>
+<li>转换结果输出表：进行主成分转换后的最终结果输出表。</li>
+</ul>
+<p>运行结果：主成分分析的运行结果包括两部分：转移矩阵和转换出的主成分表，只有&#8221;原表转换为主成分表&#8221;被勾选时，才会进行原表到主成分表的转换。结果如下图：</p>
+<img alt="../../_images/pca_out1.jpg" src="../../_images/pca_out1.jpg" />
+<img alt="../../_images/pca_out2.jpg" src="../../_images/pca_out2.jpg" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">统计分析</a><ul>
+<li><a class="reference internal" href="#odps-xlib-stat-analysis-corr-ana">对应分析</a><ul>
+<li><a class="reference internal" href="#id3">界面</a></li>
+<li><a class="reference internal" href="#id4">函数</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odps-xlib-stat-analysis-d-corr-ana">多维对应分析</a><ul>
+<li><a class="reference internal" href="#id6">界面</a></li>
+<li><a class="reference internal" href="#id7">函数</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odps-xlib-stat-analysis-mult-collinearity">多重共线性</a><ul>
+<li><a class="reference internal" href="#id9">函数</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odps-xlib-stat-analysis-pca">主成分分析</a><ul>
+<li><a class="reference internal" href="#id11">函数</a></li>
+<li><a class="reference internal" href="#id12">界面</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_dataproc.html" title="数据处理"
+             >next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_basic_stat.html" title="基本统计"
+             >previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Alibaba 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  <!-- 请把脚本放到 body 元素内 -->
+  </body>
+</html>

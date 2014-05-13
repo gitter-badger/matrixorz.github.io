@@ -1,0 +1,491 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>矩阵计算 &mdash; ODPS 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ODPS 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="ODPS XLab/XLib" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_faq.html" title="常见问题"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_association.html" title="关联分析"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="xlib-matrix-cal">
+<span id="id1"></span><h1>矩阵计算<a class="headerlink" href="#xlib-matrix-cal" title="Permalink to this headline">¶</a></h1>
+<p>在XLab中，矩阵计算主要支持这些运算：矩阵构造，获取矩阵信息(类型、行数、列数和非零元数目) 打印矩阵信息(矩阵类型、行数、列数和非零元数目)， 加减乘除运算，向量点积，矩阵和向量范数，矩阵的迹，矩阵转置，矩阵的svd分解。有关矩阵定义，请参考 <a class="reference external" href="http://zh.wikipedia.org/wiki/%E7%9F%A9%E9%98%B5">矩阵</a> 。</p>
+<ul class="simple">
+<li>矩阵构造</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;table_a&quot;</span><span class="p">,</span> <span class="n">partitions</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;ds=20140320&quot;</span><span class="p">,</span><span class="s">&quot;ds=20140321&quot;</span><span class="p">,</span><span class="s">&quot;ds=20140322&quot;</span><span class="p">],</span> <span class="n">colNames</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span> <span class="s">&quot;col3&quot;</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>获取矩阵信息(类型、行数、列数、非零元数目)</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">.</span><span class="n">matrixType</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">rowSize</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">colSize</span><span class="p">()</span>
+<span class="n">a</span><span class="o">.</span><span class="n">nonZero</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>打印矩阵信息(矩阵类型、行数、列数、非零元数目)</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">a</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>将矩阵存取到表</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">.</span><span class="n">saveTo</span><span class="p">(</span><span class="s">&quot;matrix_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>加、减、乘、除运算</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">num</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="n">num</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>向量点积</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>矩阵和向量范数</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&quot;Inf&quot;</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&quot;fro&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>向量范数</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="n">p</span> <span class="o">=</span> <span class="s">&#39;3&#39;</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">,</span><span class="o">...</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&quot;-Inf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>矩阵的迹</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">num</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>矩阵转置</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>矩阵的svd分解</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">()</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.0e-04</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h2>函数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>矩阵运算支持以下函数，具体使用方法，可用help命令查看，示例：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">rowSize</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">colSize</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">matrixType</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">dot</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">svd</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">trace</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="n">help</span><span class="p">(</span><span class="n">Matrix</span><span class="o">.</span><span class="n">saveTo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>获取矩阵行数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">rowSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>返回:</p>
+<blockquote>
+<div><ul class="simple">
+<li>矩阵的行数</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="c">## 打印结果为：10</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">rowSize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>获取矩阵列数<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">colSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>返回:</p>
+<blockquote>
+<div><ul class="simple">
+<li>矩阵的列数</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="c">## 打印结果为：5</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">colSize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>获取矩阵类型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">matrixType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>矩阵的类型；稠密矩阵为&#8221;dense&#8221;，稀疏矩阵为&#8221;sparse&#8221;</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="c">## 打印结果为： &quot;sparse&quot;</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">matrixType</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">b</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c">## 打印结果为：&quot;dense&quot;</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">matrixType</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>获取矩阵非零元素数目<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">nonZero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>矩阵的非零元素数目；稠密矩阵的非零元素数目等于行数乘列数；</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c">## 打印结果：50</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">nonZero</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="c">## 打印结果：10</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">nonZero</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>矩阵转置<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>矩阵的转置阵</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="c">## 打印结果为：5</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">rowSize</span><span class="p">()</span>
+<span class="c">## 打印结果为：10</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">colSize</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="c">## a 和 c 相等</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>产生随机矩阵<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">ratio</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>m: 矩阵行数</li>
+<li>n: 矩阵列数</li>
+<li>ratio: (可选) 矩阵的稀疏度，也就是非零元素的比例；默认情况下，将产生稠密矩阵</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>随机产生的矩阵</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## 产生一个10行5列的稠密矩阵</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## 产生一个10行5列，稀疏度为0.2的稀疏矩阵，也就是只有20%的元素是非零的</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>向量点积<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>a: 矩阵a，列数必须是1</li>
+<li>b: 矩阵b，列数必须是1</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>向量的点积值；向量就是列数为1的矩阵；</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## 随机产生一个10行的向量v1</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c">## 随机产生另一个10行的向量v2</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c">## 打印v1和v2的点积</span>
+<span class="k">print</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="svd">
+<h3>矩阵的svd分解<a class="headerlink" href="#svd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">svd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>k: (可选) 部分奇异值分解中，期望求解的top奇异组数目；默认求解全部奇异组；</li>
+<li>tol: (可选) 部分奇异值分解中，期望的误差精度；默认为1.0e-06</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>奇异组组成的矩阵数组</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+<span class="c">## 求矩阵a的全部奇异组</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">u</span><span class="o">*</span><span class="n">s</span><span class="o">*</span><span class="n">v</span><span class="o">.</span><span class="n">tanspose</span><span class="p">()</span><span class="o">-</span><span class="n">a</span>
+<span class="c">## num 应该接近0，因为 u*s*v&#39; = a</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&#39;fro&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## 从表名 mat_a 中获取的矩阵</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+<span class="c">## 求矩阵a的top 10 奇异组</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>示例3:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## 求取 表mat_a中矩阵的 top 10 奇异组，且期望精度为1.0e-04</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1.0e-04</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>求矩阵的迹<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>矩阵的迹，也就是矩阵对角线元素之和；要求矩阵必须是方阵，也就是行数需要等于列数；</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+<span class="c">## 打印矩阵a的迹</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>向量或者矩阵的范数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">normType</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>normType: 范数类型字符串；对于矩阵和向量，支持的范数类型有：&#8221;1&#8221;,&#8221;2&#8221;,&#8221;Inf&#8221;,&#8221;fro&#8221;；此外，对于向量，支持的范数类型还有：&#8221;-Inf&#8221;,&#8221;p&#8221;(p=3,4,5,...)</li>
+</ul>
+</dd>
+<dt>返回:</dt>
+<dd><ul class="first last simple">
+<li>矩阵或者向量(列数为1的矩阵)的指定类型的范数</li>
+</ul>
+</dd>
+</dl>
+<p>示例1:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">## 打印结果近似为0，因为矩阵的2范数就是矩阵的最大奇异值</span>
+<span class="k">print</span> <span class="n">s</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span><span class="o">-</span><span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>示例2:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c"># 打印结果近似为0，因为向量的Frobineous范数和2范数是相等的；</span>
+<span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&#39;fro&#39;</span><span class="p">)</span><span class="o">-</span><span class="n">a</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>存取矩阵到表<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">saveTo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>tableName: 矩阵存储的目标表</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">Matrix</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="c">## 将随机生成的一个1000x1000的矩阵，存取到表 &quot;mat_a&quot;</span>
+<span class="n">a</span><span class="o">.</span><span class="n">saveTo</span><span class="p">(</span><span class="s">&quot;mat_a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">矩阵计算</a><ul>
+<li><a class="reference internal" href="#id3">函数</a><ul>
+<li><a class="reference internal" href="#id4">获取矩阵行数</a></li>
+<li><a class="reference internal" href="#id5">获取矩阵列数</a></li>
+<li><a class="reference internal" href="#id6">获取矩阵类型</a></li>
+<li><a class="reference internal" href="#id7">获取矩阵非零元素数目</a></li>
+<li><a class="reference internal" href="#id8">矩阵转置</a></li>
+<li><a class="reference internal" href="#id9">产生随机矩阵</a></li>
+<li><a class="reference internal" href="#id10">向量点积</a></li>
+<li><a class="reference internal" href="#svd">矩阵的svd分解</a></li>
+<li><a class="reference internal" href="#id11">求矩阵的迹</a></li>
+<li><a class="reference internal" href="#id12">向量或者矩阵的范数</a></li>
+<li><a class="reference internal" href="#id13">存取矩阵到表</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_faq.html" title="常见问题"
+             >next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_association.html" title="关联分析"
+             >previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Alibaba 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  <!-- 请把脚本放到 body 元素内 -->
+  </body>
+</html>

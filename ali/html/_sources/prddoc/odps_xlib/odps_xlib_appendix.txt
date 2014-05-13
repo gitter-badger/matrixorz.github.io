@@ -1,0 +1,76 @@
+附录
+=================
+
+
+
+附录 A   表达式支持的操作符、函数以及相应的优先级
+-------------------------------------------------
+
+* 所有的计算里面，如果出现类型不一致，不会抛出异常，而是结果返回NULL；
+* xlib表达式部分，计算层对boolean，bigint，double的表示都是统一用double表示；
+* 和odps-sql不一样的地方：xlib 的表达式部分，不会对字符串类型和数值类型(Boolean, long, double)进行相互的隐式类型转换；
+* 所有计算过程中，odps-sql抛异常的地方，xlib这边是结果返回NULL。
+
+
+
+表达式运算优先级
+~~~~~~~~~~~~~~~~~~~~
+
+
+.. code-block:: python
+
+ 1: (), lengthb, length, lower, upper, trim, reverse, instr, left, right, repeat, substr, replace, insert, 
+    concat, conv, cosh, sinh, tanh, exp, rand, trunc, ln, char_matchcount, chr, is_encoding, keyvalue, md5, 
+    regexp_extract, regexp_instr, regexp_replace, regexp_substr, regexp_count, split_part, to_char, tolower, 
+    toupper, cast, dateadd, datediff, datepart, datetrunc, from_unixtime, getdate, to_date, unix_timestamp, 
+    weekday, weekofyear, lastday, decode, get_idcard_age, get_idcard_birthday, get_idcard_sex, unique_id, 
+    uuid, abs, log, log10, sqrt, sin, cos, tan, cot, asin, acos, atan, acot, ceil, floor, round, isdate, 
+    pow, case when
+
+ 2: ^(表示指数)
+
+ 3: +(正), -(负)
+
+ 4: *, /, %
+
+ 5: +, -, (加、减)
+
+ 6: <<, >> (左移位，右移位)
+
+ 7: <, <=, >, >=
+
+ 8: ==(=), !=(<>), is null 和 is not null, in 或者 @ 
+
+ 9: & (按位and)
+
+ 10: | (按位or)
+
+ 11: !(not)
+
+ 12: &&(and)
+
+ 13: ||(or)
+
+
+
+表达式字符串的注意事项
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+* 字符串都以单引号或者双引号来引用；
+* 当用单引号表示的字符串中需要出现单引号时，需要用 "\\" 进行转义，如：length('\\'hello\\'') = 7；
+* 当用双引号表示的字符串中需要出现双引号时，需要用 "\\" 进行转义，如：length("\\"hello\\"") = 7；
+* 双引号出现在单引号表示的字符串中，是不需要转义的，如：length(‘"hello"’) = 7；
+* 单引号出现在双引号表示的字符串中，是不需要转义的，如：length("’hello’") = 7；
+* 反斜杠自身也需要转义，如：length("\\\\\\"hello\\\\\\"") = 9。
+
+
+表达式支持的字符串操作和函数
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* 字符串比较'>', '>=', '<', '<=', '=', '=='；
+* '@'(in)(支持中文)。
+
+
+正则表达式和sql正则表达式区别
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* xlib 的 rlike与odps 的sql中的rlike相同。

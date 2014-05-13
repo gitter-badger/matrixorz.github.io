@@ -1,0 +1,604 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>格式转换 &mdash; ODPS 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ODPS 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="ODPS XLab/XLib" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_classification.html" title="分类预测"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_dataproc.html" title="数据处理"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="odps-xlib-dataconvert">
+<span id="id1"></span><h1>格式转换<a class="headerlink" href="#odps-xlib-dataconvert" title="Permalink to this headline">¶</a></h1>
+<p>在XLab中，格式转换特指对这些对象：表(Table)、XLib稀疏矩阵表、XLib稠密矩阵表、三元组(Triple)表、索引三元组表、KV表、索引KV表的格式进行相互转换。</p>
+<p>格式转换涉及：普通表与XLib稀疏矩阵表、XLib稠密矩阵表间的相互转换； 三元组(Triple)、索引三元组与XLib稀疏矩阵表、XLib稠密矩阵表间的相互转换；KV表、索引KV表与XLib稀疏矩阵表、XLib稠密矩阵表间的相互转换；KV表转三元组；XLib稀疏矩阵表与XLib稠密矩阵表间的相互转换。这些对象间的关系见转换图。</p>
+<div class="section" id="id2">
+<h2>转换图<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/convert-0.jpg" src="../../_images/convert-0.jpg" />
+</div>
+<div class="section" id="xlib">
+<h2>普通表转XLib稠密矩阵表<a class="headerlink" href="#xlib" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">tableToDenseMatrix</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>input: 输入普通表</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列, 默认选所有列</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">tableToDenseMatrix</span><span class="p">(</span><span class="s">&quot;appendinputleft&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_dense&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>普通表转XLib稀疏矩阵表<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">tableToSparseMatrix</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数:</p>
+<blockquote>
+<div><ul class="simple">
+<li>input: 输入普通表</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列,  默认选所有列</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">tableToSparseMatrix</span><span class="p">(</span><span class="s">&quot;appendinputleft&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_out&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>XLib稠密矩阵表转普通表<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">denseMatrixToTable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>input: XLib稠密矩阵表</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列, 默认选所有列</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">denseMatrixToTable</span><span class="p">(</span><span class="s">&quot;appendinputleft_dense&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_dense_out&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>XLib稀疏矩阵表转普通表<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sparseMatrixToTable</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>input: 输入XLib稀疏矩阵</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列, 默认选所有列</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">sparseMatrixToTable</span><span class="p">(</span><span class="s">&quot;appendinputleft_sparse&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_sparse_out&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xlibxlib">
+<h2>XLib稀疏矩阵表转XLib稠密矩阵表<a class="headerlink" href="#xlibxlib" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sparseMatrixToDenseMatrix</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>input: 输入XLib稀疏矩阵</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列, 默认选所有列</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">sparseMatrixToDenseMatrix</span><span class="p">(</span><span class="s">&quot;appendinputleft_sparse&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_sparse_out&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>XLib稠密矩阵表转XLib稀疏矩阵表<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">denseMatrixToSparseMatrix</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">selectedColIndex</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>input: 输入XLib稠密矩阵表</li>
+<li>output: 输出表, 表需不存在</li>
+<li>selectedColIndex: (可选)输入表选列, 默认选所有列</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">denseMatrixToSparseMatrix</span><span class="p">(</span><span class="s">&quot;appendinputleft_dense&quot;</span><span class="p">,</span>
+    <span class="s">&quot;appendinputleft_dense_out&quot;</span><span class="p">,</span> <span class="n">selectedColIndex</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>索引三元组表转稀疏矩阵表<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">indexedTripleToSparseMatrix</span><span class="p">(</span><span class="n">indexedTriple</span><span class="p">,</span> <span class="n">sparseMatrixName</span><span class="p">,</span>
+    <span class="n">rName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">cName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">vName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitions</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>indexedTriple: 输入索引三元组</li>
+<li>sparseMatrixName: 输出矩阵表名</li>
+<li>rName: (可选)表示输入indexedTriple 行的列名</li>
+<li>cName: (可选)表示输入indexedTriple 列的列名</li>
+<li>vName: (可选)表示输入indexedTriple 值的列名, 如果为二元组则vName为None</li>
+<li>partitions: (可选)表示索引三元组的输入partition, 默认表示全选</li>
+<li>nrow: (可选)输出稀疏矩阵行数, 默认表示由indexTriple数据自动生成行数, 否则nrow必须&gt;=由indexTriple数据自动生成行数</li>
+<li>ncol: (可选)输出稀疏矩阵列数, 默认表示由indexTriple数据自动生成列数, 否则ncol必须&gt;=由indexTriple数据自动生成列数</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedTripleToSparseMatrix</span><span class="p">(</span><span class="s">&quot;indexedTriple_1&quot;</span><span class="p">,</span> <span class="s">&quot;sparse_1&quot;</span><span class="p">);</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedTripleToSparseMatrix</span><span class="p">(</span><span class="s">&quot;indexedTriple_1&quot;</span><span class="p">,</span> <span class="s">&quot;sparse_1&quot;</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>XLib稀疏矩阵表转索引三元组表<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">sparseMatrixToIndexedTriple</span><span class="p">(</span><span class="n">sparseMatrixName</span><span class="p">,</span> <span class="n">indexedTriple</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>sparseMatrixName: 输入稀疏矩阵</li>
+<li>indexedTriple: 输出三元组, 类型【long,  long, double】</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">sparseMatrixToIndexedTriple</span><span class="p">(</span><span class="s">&quot;sparse_table&quot;</span><span class="p">,</span> <span class="s">&quot;sparse_table_out&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapmap">
+<h2>索引三元组表+行map或列map表转三元组表<a class="headerlink" href="#mapmap" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">indexedTripleToTriple</span><span class="p">(</span><span class="n">indexedTriple</span><span class="p">,</span> <span class="n">rName</span><span class="p">,</span> <span class="n">cName</span><span class="p">,</span> <span class="n">vName</span><span class="p">,</span> <span class="n">triple</span><span class="p">,</span>
+  <span class="n">rowMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rIndex</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cIndex</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>indexedTriple 输入索引三元组</li>
+<li>rName: 表示输入indexedTriple 行的列名</li>
+<li>cName: 表示输入indexedTriple 列的列名</li>
+<li>vName: 表示输入indexedTriple 值的列名, 如果为二元组则vName为None</li>
+<li>triple: 输出三元组</li>
+<li>rowMap: (可选)输入行map表 ,  可选,  默认为None, 表示三元组行列为索引值, 无须转换</li>
+<li>rKey: (可选)rowMap表中与triple对于的行名</li>
+<li>rIndex: (可选)rowMap表中行索引列</li>
+<li>colMap: (可选)输入列map表, 可选, 默认为None, 表示三元组列列为索引值, 无须转换</li>
+<li>cKey: (可选)colMap表中与triple对于的列名</li>
+<li>cIndex: (可选)colMap表中列索引</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedTripleToTriple</span><span class="p">(</span><span class="s">&quot;index_triple_1&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;triple_out1&quot;</span><span class="p">,</span> <span class="s">&quot;rowMap&quot;</span><span class="p">,</span> <span class="s">&quot;rName&quot;</span><span class="p">,</span> <span class="s">&quot;rIndex&quot;</span><span class="p">,</span> <span class="s">&quot;colMap&quot;</span><span class="p">,</span> <span class="s">&quot;cName&quot;</span><span class="p">,</span> <span class="s">&quot;cIndex&quot;</span><span class="p">);</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedTripleToTriple</span><span class="p">(</span><span class="s">&quot;index_triple_2&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;triple_out2&quot;</span><span class="p">,</span> <span class="s">&quot;rowMap&quot;</span><span class="p">,</span> <span class="s">&quot;rName&quot;</span><span class="p">,</span> <span class="s">&quot;rIndex&quot;</span><span class="p">);</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedTripleToTriple</span><span class="p">(</span><span class="s">&quot;index_triple_3&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;triple_out3&quot;</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="s">&quot;colMap&quot;</span><span class="p">,</span> <span class="n">cKey</span><span class="o">=</span><span class="s">&quot;cName&quot;</span><span class="p">,</span> <span class="n">cIndex</span><span class="o">=</span><span class="s">&quot;cIndex&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>获取三元组表的行map表或列map表<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getTripleMaps</span><span class="p">(</span><span class="n">triple</span><span class="p">,</span> <span class="n">rName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rowMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>triple: 三元组</li>
+<li>rName: (可选)行名</li>
+<li>rowMap: (可选)输出行map表</li>
+<li>cName: (可选)列名</li>
+<li>colMap: (可选)输出列map表</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">getTripleMaps</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="n">rName</span><span class="o">=</span><span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="n">rowMap</span><span class="o">=</span><span class="s">&quot;rowmap_out&quot;</span><span class="p">,</span>
+  <span class="n">cName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">,</span><span class="n">colMap</span><span class="o">=</span><span class="s">&quot;colmap_out&quot;</span><span class="p">)</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">getTripleMaps</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="n">rName</span><span class="o">=</span><span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="n">rowMap</span><span class="o">=</span><span class="s">&quot;rowmap_out&quot;</span><span class="p">)</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">getTripleMaps</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="n">cName</span><span class="o">=</span><span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="s">&quot;colmap_out&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>三元组表转索引三元组表+行map或列map表<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">tripleToIndexedTriple</span><span class="p">(</span><span class="n">triple</span><span class="p">,</span> <span class="n">indexedTriple</span><span class="p">,</span> <span class="n">rowMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">colMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">cName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">vName</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>triple: 三元组(类型为XXD 或 XXL 或 XX,  X表示任意类型,  D表示Double, L表示bigint)</li>
+<li>indexedTriple: 输出索引三元组</li>
+<li>rowMap: (可选)输出行map表,默认为None, 表示三元组行列为索引值, 无须转换, 即triple类型为LXD | LXL | LX</li>
+<li>colMap: (可选)输出列map表, 默认为None, 表示三元组列列为索引值, 无须转换, 即triple类型为XLD | XLL | XL</li>
+<li>rName: (可选)表示三元组行的列名</li>
+<li>cName: (可选)表示三元组列的列名</li>
+<li>vName: (可选)表示三元组值的列名</li>
+<li>rName, cName, vName默认为None, 表示第0列为rName, 第一列cName, 如果存在第二列则为vName</li>
+<li>如果triple为二元组,  则vName为None</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span><span class="s">&quot;index_triple_out&quot;</span><span class="p">,</span>
+    <span class="s">&quot;rowmap_out&quot;</span><span class="p">,</span><span class="s">&quot;colmap_out&quot;</span><span class="p">)</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_2&quot;</span><span class="p">,</span><span class="s">&quot;index_triple_out&quot;</span><span class="p">,</span>
+    <span class="n">colMap</span><span class="o">=</span><span class="s">&quot;colmap_out&quot;</span><span class="p">)</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_3&quot;</span><span class="p">,</span><span class="s">&quot;index_triple_out&quot;</span><span class="p">,</span> <span class="s">&quot;rowmap_out&quot;</span><span class="p">)</span>
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_4&quot;</span><span class="p">,</span><span class="s">&quot;index_triple_out&quot;</span><span class="p">,</span>
+    <span class="s">&quot;rowmap_out&quot;</span><span class="p">,</span><span class="s">&quot;colmap_out&quot;</span><span class="p">,</span><span class="s">&quot;col0&quot;</span><span class="p">,</span><span class="s">&quot;col1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>三元组表+行map或列map表转索引三元组表<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">tripleWithMapToIndexedTriple</span><span class="p">(</span><span class="n">triple</span><span class="p">,</span> <span class="n">rName</span><span class="p">,</span> <span class="n">cName</span><span class="p">,</span> <span class="n">vName</span><span class="p">,</span> <span class="n">indexedTriple</span><span class="p">,</span>
+    <span class="n">rowMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rIndex</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">cIndex</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>参数:</p>
+<blockquote>
+<div><ul class="simple">
+<li>triple: 三元组(类型为XXD+rowMap+colMap 或 XLD + rowMap 或者 LXD+colMap,  X表示任意类型,  D表示Double, L表示bigint)</li>
+<li>rName: 表示三元组triple行的列名</li>
+<li>cName: 表示三元组triple列的列名</li>
+<li>vName: 表示三元组triple值的列名</li>
+<li>indexedTriple: 输出索引三元组</li>
+<li>rowMap: (可选)输入行map表,默认为None, 表示三元组行列为索引值, 无须转换, 即triple类型为LXD | LXL | LX</li>
+<li>rKey: (可选)rowMap表中与triple对于的行名</li>
+<li>rIndex: (可选)rowMap表中行索引列</li>
+<li>colMap: (可选)输入列map表,默认为None, 表示三元组列列为索引值, 无须转换, 即triple类型为XLD | XLL | XL</li>
+<li>cKey: (可选)colMap表中与triple对于的列名</li>
+<li>cIndex: (可选)colMap表中列索引</li>
+<li>rName, cName, vName默认为None, 表示第0列为rName, 第一列cName, 如果存在第二列则为vName</li>
+<li>如果triple为二元组,  则vName为None</li>
+</ul>
+</div></blockquote>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleWithMapToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;indexedTriple_out&quot;</span><span class="p">,</span> <span class="s">&quot;rowMap&quot;</span><span class="p">,</span> <span class="s">&quot;rName&quot;</span><span class="p">,</span> <span class="s">&quot;rIndex&quot;</span><span class="p">,</span> <span class="s">&quot;colMap&quot;</span><span class="p">,</span> <span class="s">&quot;cName&quot;</span><span class="p">,</span> <span class="s">&quot;cIndex&quot;</span><span class="p">);</span>
+
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleWithMapToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;indexedTriple_out&quot;</span><span class="p">,</span> <span class="s">&quot;rowMap&quot;</span><span class="p">,</span> <span class="s">&quot;rName&quot;</span><span class="p">,</span> <span class="s">&quot;rIndex&quot;</span><span class="p">);</span>
+
+<span class="n">DataConvert</span><span class="o">.</span><span class="n">tripleWithMapToIndexedTriple</span><span class="p">(</span><span class="s">&quot;triple_1&quot;</span><span class="p">,</span> <span class="s">&quot;col0&quot;</span><span class="p">,</span> <span class="s">&quot;col1&quot;</span><span class="p">,</span> <span class="s">&quot;col2&quot;</span><span class="p">,</span>
+    <span class="s">&quot;indexedTriple_out&quot;</span><span class="p">,</span> <span class="n">colMap</span><span class="o">=</span><span class="s">&quot;colMap&quot;</span><span class="p">,</span> <span class="n">cKey</span><span class="o">=</span><span class="s">&quot;cName&quot;</span><span class="p">,</span> <span class="n">cIndex</span><span class="o">=</span><span class="s">&quot;cIndex&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kv">
+<h2>KV表转稠密矩阵表<a class="headerlink" href="#kv" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">KVToDenseMatrix</span><span class="p">(</span><span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">mapTableName</span><span class="p">,</span> <span class="n">matTableName</span><span class="p">,</span>
+   <span class="n">kvMatColsName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvMatTableName: 输入的kv表。</li>
+<li>mapTableName: map表。</li>
+<li>matTableName: 输出的稠密矩阵。</li>
+<li>kvMatColsName: (可选)kv表中被选中的列名。默认选中所有列。</li>
+<li>colDelimiter: (可选)列分割符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">KVToDenseMatrix</span><span class="p">(</span><span class="s">&quot;kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;map_table_name&quot;</span><span class="p">,</span>
+    <span class="n">kvMatColsName</span> <span class="o">=</span> <span class="s">&quot;out_matrix_name&quot;</span><span class="p">,</span> <span class="n">kvMatColsName</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">],</span>
+    <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>KV表转稀疏矩阵表<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">KVToSparseMatrix</span><span class="p">(</span><span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">mapTableName</span><span class="p">,</span> <span class="n">matTableName</span><span class="p">,</span>
+    <span class="n">kvMatColsName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvMatTableName: 输入的kv表。</li>
+<li>mapTableName: map表。</li>
+<li>matTableName: 输出的稀疏矩阵。</li>
+<li>kvMatColsName: (可选)kv表中被选中的列名。默认选中所有列。</li>
+<li>colDelimiter: (可选)列分割符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">KVToSparseMatrix</span><span class="p">(</span><span class="s">&quot;kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;map_table_name&quot;</span><span class="p">,</span>
+    <span class="s">&quot;out_matrix_name&quot;</span><span class="p">,</span> <span class="n">kvMatColsName</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">],</span> <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span>
+    <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kv-map">
+<h2>KV表转稀疏矩阵表(不需要map表)<a class="headerlink" href="#kv-map" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">KVWithoutMapToSparseMatrix</span><span class="p">(</span><span class="n">kvMatName</span><span class="p">,</span> <span class="n">colMapTableName</span><span class="p">,</span> <span class="n">sparseMatrixName</span><span class="p">,</span>
+    <span class="n">selectCols</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvMatName: 输入表名</li>
+<li>colMapTableName: 输出k值map表</li>
+<li>sparseMatrixName: 输出sparse matrix表</li>
+<li>selectCols: 输入kvMatName选择列</li>
+<li>colDelimiter: kv对分隔符</li>
+<li>valDelimiter: k,v间分隔符</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">KVWithoutMapToSparseMatrix</span><span class="p">(</span><span class="s">&quot;input_kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;col_map_table_name&quot;</span><span class="p">,</span>
+    <span class="s">&quot;matrix_name&quot;</span><span class="p">,</span> <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>索引KV表转稠密矩阵表<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">indexedKVToDenseMatrix</span><span class="p">(</span><span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">matTableName</span><span class="p">,</span> <span class="n">kvMatColsName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+   <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvMatTableName: indexed key-value表。</li>
+<li>matTableName: 输出的稠密矩阵。</li>
+<li>kvMatColsName: (可选)indexed key-value表被选中的列名。默认选中所有列。</li>
+<li>colDelimiter: (可选)列分隔符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedKVToDenseMatrix</span><span class="p">(</span><span class="s">&quot;kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;out_matrix_name&quot;</span><span class="p">,</span>
+    <span class="n">kvMatColsName</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">],</span> <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>索引KV表转稀疏矩阵表<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">indexedKVToSparseMatrix</span><span class="p">(</span><span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">matTableName</span><span class="p">,</span> <span class="n">kvMatColsName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvMatTableName: indexed key-value表。</li>
+<li>matTableName: 输出的稀疏矩阵。</li>
+<li>kvMatColsName: (可选)indexed key-value表被选中的列名。默认选中所有列。</li>
+<li>colDelimiter: (可选)列分隔符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">indexedKVToSparseMatrix</span><span class="p">(</span><span class="s">&quot;kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;out_matrix_name&quot;</span><span class="p">,</span>
+    <span class="n">kvMatColsName</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">],</span> <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>矩阵表转索引KV表<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">matrixToIndexedKV</span><span class="p">(</span><span class="n">matTableName</span><span class="p">,</span> <span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">kvTableColNum</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>matTableName: 矩阵表。</li>
+<li>kvMatTableName: indexed key-value表。</li>
+<li>colDelimiter: (可选)列分割符。列分割符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+<li>kvTableColNum: (可选)输出表的列数。如果不指定这个参数，那么本方法计算能完整存储kv所需要的列数。如果指定，则按照指定的列来存储kv。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">matrixToIndexedKV</span><span class="p">(</span><span class="s">&quot;input_matrix_name&quot;</span><span class="p">,</span> <span class="s">&quot;out_kv_table_name&quot;</span><span class="p">,</span>
+    <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">kvTableColNum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>矩阵表转KV表<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">matrixToKV</span><span class="p">(</span><span class="n">matTableName</span><span class="p">,</span> <span class="n">kvMatTableName</span><span class="p">,</span> <span class="n">mapTableName</span><span class="p">,</span>
+    <span class="n">mapSelectedCols</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">colDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valDelimiter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">isAscii</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">kvTableColNum</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>matTableName: 矩阵表。</li>
+<li>kvMatTableName: key-value表。</li>
+<li>mapTableName: 列号列名对应map表。</li>
+<li>mapSelectedCols: (可选)mapTableName中这些列来表示map关系。默认选中所有列。</li>
+<li>colDelimiter: (可选)列分割符。默认为&#8221;,&#8221;。</li>
+<li>valDelimiter: (可选)key-value分隔符。默认为&#8221;:&#8221;。</li>
+<li>isAscii: (可选)分隔符是否为ascii码。默认为False。如果为True，则colDelimiter和valDelimiter为ascii码的字符串，如colDelimiter=&#8221;44&#8221;。</li>
+<li>kvTableColNum: (可选)输出表的列数。如果不指定这个参数，那么本方法计算能完整存储kv所需要的列数。如果指定，则按照指定的列来存储kv。</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">matrixToKV</span><span class="p">(</span><span class="s">&quot;input_matrix_name&quot;</span><span class="p">,</span> <span class="s">&quot;out_kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;map_table_name&quot;</span><span class="p">,</span>
+    <span class="n">mapSelectedCols</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;col1&#39;</span><span class="p">,</span> <span class="s">&#39;col2&#39;</span><span class="p">],</span> <span class="n">colDelimiter</span> <span class="o">=</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="n">valDelimiter</span> <span class="o">=</span> <span class="s">&quot;:&quot;</span><span class="p">,</span>
+    <span class="n">isAscii</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">kvTableColNum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>KV表转三元组表<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">KVToTriple</span><span class="p">(</span><span class="n">kvTableName</span><span class="p">,</span> <span class="n">colSeparator</span><span class="p">,</span> <span class="n">vSeparator</span><span class="p">,</span> <span class="n">outputTriple</span><span class="p">,</span> <span class="n">selectedColsIndex</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trim</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>参数:</dt>
+<dd><ul class="first last simple">
+<li>kvTableName: 输入kv表</li>
+<li>selectedColsIndex: 输入变选列, 必须列为String类型</li>
+<li>colSeparator: kv对之间分隔符, 必须输入</li>
+<li>vSeparator: k, v之间分隔符, 如果为空则表示输出无value列</li>
+<li>trim: 是否忽略分隔符前后空格</li>
+<li>outputTriple: 输出三元组或者二元组表名, 必须输入</li>
+</ul>
+</dd>
+</dl>
+<p>示例:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DataConvert</span><span class="o">.</span><span class="n">KVToTriple</span><span class="p">(</span><span class="s">&quot;input_kv_table_name&quot;</span><span class="p">,</span> <span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="s">&quot;output_triple_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">格式转换</a><ul>
+<li><a class="reference internal" href="#id2">转换图</a></li>
+<li><a class="reference internal" href="#xlib">普通表转XLib稠密矩阵表</a></li>
+<li><a class="reference internal" href="#id3">普通表转XLib稀疏矩阵表</a></li>
+<li><a class="reference internal" href="#id4">XLib稠密矩阵表转普通表</a></li>
+<li><a class="reference internal" href="#id5">XLib稀疏矩阵表转普通表</a></li>
+<li><a class="reference internal" href="#xlibxlib">XLib稀疏矩阵表转XLib稠密矩阵表</a></li>
+<li><a class="reference internal" href="#id6">XLib稠密矩阵表转XLib稀疏矩阵表</a></li>
+<li><a class="reference internal" href="#id7">索引三元组表转稀疏矩阵表</a></li>
+<li><a class="reference internal" href="#id8">XLib稀疏矩阵表转索引三元组表</a></li>
+<li><a class="reference internal" href="#mapmap">索引三元组表+行map或列map表转三元组表</a></li>
+<li><a class="reference internal" href="#id9">获取三元组表的行map表或列map表</a></li>
+<li><a class="reference internal" href="#id10">三元组表转索引三元组表+行map或列map表</a></li>
+<li><a class="reference internal" href="#id11">三元组表+行map或列map表转索引三元组表</a></li>
+<li><a class="reference internal" href="#kv">KV表转稠密矩阵表</a></li>
+<li><a class="reference internal" href="#id12">KV表转稀疏矩阵表</a></li>
+<li><a class="reference internal" href="#kv-map">KV表转稀疏矩阵表(不需要map表)</a></li>
+<li><a class="reference internal" href="#id13">索引KV表转稠密矩阵表</a></li>
+<li><a class="reference internal" href="#id14">索引KV表转稀疏矩阵表</a></li>
+<li><a class="reference internal" href="#id15">矩阵表转索引KV表</a></li>
+<li><a class="reference internal" href="#id16">矩阵表转KV表</a></li>
+<li><a class="reference internal" href="#id17">KV表转三元组表</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="odps_xlib_classification.html" title="分类预测"
+             >next</a></li>
+        <li class="right" >
+          <a href="odps_xlib_dataproc.html" title="数据处理"
+             >previous</a> |</li>
+        <li><a href="../../index.html">ODPS 1.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >ODPS XLab/XLib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright Alibaba 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  <!-- 请把脚本放到 body 元素内 -->
+  </body>
+</html>
