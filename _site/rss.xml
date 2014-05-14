@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-05-06T14:46:16+08:00</lastBuildDate>
-        <pubDate>2014-05-06T14:46:16+08:00</pubDate>
+        <lastBuildDate>2014-05-13T18:28:47+08:00</lastBuildDate>
+        <pubDate>2014-05-13T18:28:47+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -118,9 +118,7 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
         <item>
                 <title>计算机视觉论文源代码集锦</title>
                 <description>
-&lt;hr /&gt;
-&lt;p&gt;计算机视觉、机器学习相关领域论文和源代码大集合–持续更新
-————&lt;/p&gt;
+&lt;h2 id=&quot;section&quot;&gt;计算机视觉、机器学习相关领域论文和源代码大集合–持续更新&lt;/h2&gt;
 &lt;p&gt;一、特征提取Feature Extraction：&lt;/p&gt;
 &lt;p&gt;· SIFT [1] [&lt;a href=&quot;http://www.cs.ubc.ca/~lowe/keypoints/siftDemoV4.zip&quot; target=&quot;_blank&quot;&gt;Demo program&lt;/a&gt;][&lt;a href=&quot;http://blogs.oregonstate.edu/hess/code/sift/&quot; target=&quot;_blank&quot;&gt;SIFT Library&lt;/a&gt;] [&lt;a href=&quot;http://www.vlfeat.org/&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;· PCA-SIFT [2] [&lt;a href=&quot;http://www.cs.cmu.edu/~yke/pcasift/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
@@ -827,9 +825,9 @@ for data in iterable:
                 <title>leaning python site</title>
                 <description>
 &lt;h1 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;
+&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker’s Guide to Python&lt;/a&gt;
+&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.codecademy.com/zh/tracks/python&quot;&gt;codecademy课程&lt;/a&gt;&lt;/p&gt;
 
