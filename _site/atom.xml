@@ -4,13 +4,31 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-05-13T18:28:47+08:00</updated>
+ <updated>2014-05-29T10:13:26+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>deploy sites on nginx</title>
+   <link href="http://i.justpic.org/2014/05/22/deploy-sites-on-nginx"/>
+   <updated>2014-05-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</id>
+   <content type="html">
+&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
+
+&lt;p&gt;You can kill it using:&lt;/p&gt;
+
+&lt;p&gt;sudo fuser -k 80/tcp&lt;/p&gt;
+
+&lt;p&gt;And then try restarting nginx again:&lt;/p&gt;
+
+&lt;p&gt;service nginx start&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Matlab C混合编程</title>

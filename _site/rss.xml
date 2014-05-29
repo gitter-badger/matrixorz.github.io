@@ -5,10 +5,28 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-05-13T18:28:47+08:00</lastBuildDate>
-        <pubDate>2014-05-13T18:28:47+08:00</pubDate>
+        <lastBuildDate>2014-05-29T10:13:26+08:00</lastBuildDate>
+        <pubDate>2014-05-29T10:13:26+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>deploy sites on nginx</title>
+                <description>
+&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
+
+&lt;p&gt;You can kill it using:&lt;/p&gt;
+
+&lt;p&gt;sudo fuser -k 80/tcp&lt;/p&gt;
+
+&lt;p&gt;And then try restarting nginx again:&lt;/p&gt;
+
+&lt;p&gt;service nginx start&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</link>
+                <guid>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</guid>
+                <pubDate>2014-05-22T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>Matlab C混合编程</title>
