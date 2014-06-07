@@ -28,11 +28,12 @@ ssh reverse
     ssh -R 8080:localhost:<port> <user_name>@<server>
 
 
-<port> your local application used
+port is your local application used 
 
-go to <url> to see 
+url is the url you will to visit public 
 
-[ripples.so](http://ripples.so) is a localtunnel site that can expose your local website.
+[ripples.so](http://ripples.so/) 
+is a localtunnel site that can expose your local website.
 
 
 

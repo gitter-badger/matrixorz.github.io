@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-06-06T15:46:14+08:00</lastBuildDate>
-        <pubDate>2014-06-06T15:46:14+08:00</pubDate>
+        <lastBuildDate>2014-06-08T00:40:26+08:00</lastBuildDate>
+        <pubDate>2014-06-08T00:40:26+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -15,30 +15,52 @@
                 <description>
 &lt;p&gt;添加用户：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;useradd options &amp;lt;username&amp;gt; 添加用户组：
-
-groupadd options &amp;lt;groupname&amp;gt; 配置权限：
-
-echo &#39;&amp;lt;username&amp;gt; all=(all:all) all&#39; /etc/sudoers ssh登陆禁用密码：
+&lt;pre&gt;&lt;code&gt;useradd options &amp;lt;username&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加用户组：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;groupadd options &amp;lt;groupname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置权限：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &#39;&amp;lt;username&amp;gt; all=(all:all) all&#39; /etc/sudoers
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ssh登陆禁用密码：&lt;/p&gt;
 
 &lt;p&gt;本机：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ssh-keygen  #生成公钥、密钥对
 
-ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_keys中（server端authorized_keys指定公钥，客户端 -i参数指定私钥） 服务器：
+ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_keys中（server端authorized_keys指定公钥，客户端 -i参数指定私钥）
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;服务器：&lt;/p&gt;
 
 &lt;p&gt;登陆服务器后，修改/etc/ssh/sshd_config保存&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;PasswordAuthentication no    （经用密码登陆） 重启ssh 
+&lt;pre&gt;&lt;code&gt;PasswordAuthentication no    （经用密码登陆）
+&lt;/code&gt;&lt;/pre&gt;
 
-sudo service ssh restart
+&lt;p&gt;重启ssh &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ssh restart
 &lt;/code&gt;&lt;/pre&gt;
 
 </description>
                 <link>http://i.justpic.org/2014/06/06/vps-initialization</link>
                 <guid>http://i.justpic.org/2014/06/06/vps-initialization</guid>
+                <pubDate>2014-06-06T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Python For Finance note</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/06/06/python-for-finance-note</link>
+                <guid>http://i.justpic.org/2014/06/06/python-for-finance-note</guid>
                 <pubDate>2014-06-06T00:00:00+08:00</pubDate>
         </item>
 
@@ -85,15 +107,13 @@ server {
 &lt;pre&gt;&lt;code&gt;ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;port&gt; your local application used
+&lt;p&gt;port is your local application used &lt;/p&gt;
 
-go to &lt;url&gt; to see 
+&lt;p&gt;url is the url you will to visit public &lt;/p&gt;
 
-enjoy!
+&lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt; 
+is a localtunnel site that can expose your local website.&lt;/p&gt;
 
-
-
-&lt;/url&gt;&lt;/port&gt;
 </description>
                 <link>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</link>
                 <guid>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</guid>
