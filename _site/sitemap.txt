@@ -15,6 +15,11 @@ http://i.justpic.org/index.html
 http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
 
+http://i.justpic.org/2014/06/06/vps-initialization
+http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note
+http://i.justpic.org/2014/06/06/
+http://i.justpic.org/2014/06/05/http-reversed-on-ssh
+http://i.justpic.org/2014/06/02/java-call-matlab
 http://i.justpic.org/2014/05/22/deploy-sites-on-nginx
 http://i.justpic.org/2014/05/06/matlab-c
 http://i.justpic.org/2014/05/06/

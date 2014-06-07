@@ -5,10 +5,109 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-05-29T10:16:42+08:00</lastBuildDate>
-        <pubDate>2014-05-29T10:16:42+08:00</pubDate>
+        <lastBuildDate>2014-06-06T15:46:14+08:00</lastBuildDate>
+        <pubDate>2014-06-06T15:46:14+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>vps initialization</title>
+                <description>
+&lt;p&gt;添加用户：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;useradd options &amp;lt;username&amp;gt; 添加用户组：
+
+groupadd options &amp;lt;groupname&amp;gt; 配置权限：
+
+echo &#39;&amp;lt;username&amp;gt; all=(all:all) all&#39; /etc/sudoers ssh登陆禁用密码：
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;本机：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-keygen  #生成公钥、密钥对
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_keys中（server端authorized_keys指定公钥，客户端 -i参数指定私钥） 服务器：
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;登陆服务器后，修改/etc/ssh/sshd_config保存&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PasswordAuthentication no    （经用密码登陆） 重启ssh 
+
+sudo service ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/06/06/vps-initialization</link>
+                <guid>http://i.justpic.org/2014/06/06/vps-initialization</guid>
+                <pubDate>2014-06-06T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Finacial Modeling in python note</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note</link>
+                <guid>http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note</guid>
+                <pubDate>2014-06-06T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>打开量化投资的黑箱笔记</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/06/06/</link>
+                <guid>http://i.justpic.org/2014/06/</guid>
+                <pubDate>2014-06-06T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>http reversed on ssh</title>
+                <description>
+&lt;p&gt;nginx config details&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;upstream tunnel{
+   server 127.0.0.1:8080;
+}
+
+server {
+   listen 80;
+   server_name &amp;lt;url&amp;gt;;
+   
+   location /{
+   proxy_set_header Host $http_host;
+   proxy_pass tunnel;
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ssh reverse &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;port&gt; your local application used
+
+go to &lt;url&gt; to see 
+
+enjoy!
+
+
+
+&lt;/url&gt;&lt;/port&gt;
+</description>
+                <link>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</link>
+                <guid>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</guid>
+                <pubDate>2014-06-05T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>Java call matlab</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/06/02/java-call-matlab</link>
+                <guid>http://i.justpic.org/2014/06/02/java-call-matlab</guid>
+                <pubDate>2014-06-02T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>deploy sites on nginx</title>

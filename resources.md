@@ -15,4 +15,5 @@ Resources
 [Shearlet](http://www.shearlab.org)<br/>
 [fourier transform](http://see.stanford.edu/see/courseInfo.aspx?coll=84d174c2-d74f-493d-92ae-c3f45c0ee091)<br/>
 [Machine Learning Mastery](http://machinelearningmastery.com/bootstrapping-machine-learning-book-review)<br/>
-[Basics of Machine Learning](http://homepages.inf.ed.ac.uk/vlavrenk/iaml.html)
+[Basics of Machine Learning](http://homepages.inf.ed.ac.uk/vlavrenk/iaml.html)<br/>
+[Shayne Fletcher's blog](http://shayne-fletcher.blogspot.com/)<br/>
