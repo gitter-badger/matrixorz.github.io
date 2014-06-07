@@ -32,7 +32,7 @@ ssh reverse
 
 go to <url> to see 
 
-enjoy!
+[ripples.so](http://ripples.so) is a localtunnel site that can expose your local website.
 
 
 
