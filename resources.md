@@ -17,3 +17,10 @@ Resources
 [Machine Learning Mastery](http://machinelearningmastery.com/bootstrapping-machine-learning-book-review)<br/>
 [Basics of Machine Learning](http://homepages.inf.ed.ac.uk/vlavrenk/iaml.html)<br/>
 [Shayne Fletcher's blog](http://shayne-fletcher.blogspot.com/)<br/>
+[QuantLib](http://quantlib.org/docs.shtml#qlws13)<br/>
+[Note ntnu](http://www.csie.ntnu.edu.tw/~u91029/index.html)<br/>
+[Econometrics Journal](http://www.feweb.vu.nl/econometriclinks/software.html)
+
+[Scatter pdf](http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf)
+
+[QuantAtRisk](http://www.quantatrisk.com/)

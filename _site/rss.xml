@@ -5,10 +5,242 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-06-11T11:07:52+08:00</lastBuildDate>
-        <pubDate>2014-06-11T11:07:52+08:00</pubDate>
+        <lastBuildDate>2014-08-11T12:25:02+08:00</lastBuildDate>
+        <pubDate>2014-08-11T12:25:02+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>线性代数中的矩阵</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/08/10/</link>
+                <guid>http://i.justpic.org/2014/08/</guid>
+                <pubDate>2014-08-10T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>ScatNet</title>
+                <description>
+&lt;p&gt;散射卷积网络通过卷积的方式对小波做级联运算，运用深度学习的思想，生成树状结构的散射系数结构，使用散射系数作为特征进行学习。&lt;/p&gt;
+
+&lt;p&gt;参考文章与资料：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;High Dimensional Classification with Invariant Deep Networks &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;ppt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</link>
+                <guid>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</guid>
+                <pubDate>2014-08-09T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>python web development</title>
+                <description>
+&lt;p&gt;两篇很好的文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用python web框架开发项目&lt;/p&gt;
+
+&lt;p&gt;技术选型&lt;/p&gt;
+
+&lt;p&gt;tornado  –epool，pre_fork,异步io的集合体&lt;/p&gt;
+
+&lt;p&gt;mongodb  –nosql技术，读快写慢&lt;/p&gt;
+
+&lt;p&gt;rq/mrq   –redis队列，传递消息，方便快捷&lt;/p&gt;
+
+&lt;p&gt;pandas   –处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
+
+&lt;p&gt;参考项目&lt;/p&gt;
+
+&lt;p&gt;nbviewer –tornado中如何做并行化 futures&lt;/p&gt;
+
+&lt;p&gt;pyspider –flask 后台队列的实现和控制，架构方面&lt;/p&gt;
+
+&lt;p&gt;云存储&lt;/p&gt;
+
+&lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
+
+&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择&lt;/p&gt;
+
+&lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/08/07/python-web-development</link>
+                <guid>http://i.justpic.org/2014/08/07/python-web-development</guid>
+                <pubDate>2014-08-07T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>sort algorithm</title>
+                <description>
+&lt;p&gt;对于堆排序，自底向上构建堆，自上而下堆排序。&lt;/p&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/07/30/sort-algorithm</link>
+                <guid>http://i.justpic.org/2014/07/30/sort-algorithm</guid>
+                <pubDate>2014-07-30T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>python optimization</title>
+                <description>
+&lt;p&gt;首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;/p&gt;
+
+&lt;p&gt;判断程序为io-bound任务还是cpu-bound任务。&lt;/p&gt;
+
+&lt;p&gt;io-bound任务程序使用gevent来优化&lt;/p&gt;
+
+&lt;p&gt;cpu-bound任务程序使用multiprocess来优化&lt;/p&gt;
+
+&lt;p&gt;使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/python%20development/2014/07/28/python-optimization</link>
+                <guid>http://i.justpic.org/python%20development/2014/07/28/python-optimization</guid>
+                <pubDate>2014-07-28T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>data visualization</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://danielfrg.com/blog/2013/02/05/d3-backbone-tornado-histogram-csv/&quot;&gt;使用tornado D3.js 进行数据可视化&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/07/19/data-visualization</link>
+                <guid>http://i.justpic.org/2014/07/19/data-visualization</guid>
+                <pubDate>2014-07-19T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>erlang learning</title>
+                <description>
+&lt;p&gt;erlang学习教程
+&lt;a href=&quot;http://www.howistart.org/posts/erlang/1&quot;&gt;start erlang&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/07/01/erlang-learning</link>
+                <guid>http://i.justpic.org/2014/07/01/erlang-learning</guid>
+                <pubDate>2014-07-01T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>develop tools about python</title>
+                <description>
+&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+
+&lt;p&gt;vagrant介绍
+vagrant是一款用来构建虚拟开发环境的工具，非常适合php/python/ruby/java这类语言开发Web语言，如果说virtualenv是一个python包环境的封装，那么可以说vagrant是在一个操作系统层面上的封装，而且是跨平台的，当然也有docker，关于docker与vagrant的区别可见&lt;a href=&quot;https://www.dockboard.org/docker-vs-vagrant-why-this-two-technologies-aren&#39;t-competing/&quot;&gt;这篇文章&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;安装virtualbox
+vagrant依赖虚拟机，可以使用virtualbox和VMware.&lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安装vagrant
+&lt;a href=&quot;http://downloads.vagrantup.com&quot;&gt;下载地址&lt;/a&gt;
+下载基础镜像：
+&lt;a href=&quot;http://files.vagrantup.com/precise32.box&quot;&gt;ubuntu precise 32&lt;/a&gt;
+&lt;a href=&quot;http://files.vagrantup.com/precise64.box&quot;&gt;ubuntu precise 64&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;添加镜像到vagrant&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$vagrant box add boxname pathtobox/precise64.box
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;初始化开发环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$cd  devpath
+$vagrant init boxname
+$vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;登陆虚拟机&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$vagrant ssh
+$cd /vagrant  #虚拟机下的/vagrant是宿主机上的 devpath
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其他设置
+    vagrant出事化后，会在初始化目录里生成一个Vagrantfile的配置文件。
+    Vagrant默认是使用端口映射方式将虚拟机的端口映射本机从而实现类似http://localhost:80这种访问方式，host-only模式显得更方便，打开Vagrantfile，将下面这行的注释去掉
+config.vm.network :private_network,ip:”192.168.33.10”
+重启虚拟机，这样就能用192.168.33.10访问这台机器。&lt;/p&gt;
+
+&lt;p&gt;打包分发
+  $vagrant package
+  会生成一个package.box文件，可共分发。&lt;/p&gt;
+
+&lt;p&gt;常用命令&lt;/p&gt;
+
+&lt;p&gt;$vagrant init
+   $vagrant up
+   $vagrant halt
+   $vagrant reload
+   $vagrant ssh
+   $vagrant status
+   $vagrant destroy&lt;/p&gt;
+
+&lt;p&gt;开发环境中Apache/nginx取消静态文件缓存&lt;/p&gt;
+
+&lt;p&gt;Apache
+EnableSendfile off&lt;/p&gt;
+
+&lt;p&gt;Nginx
+sendfile off&lt;/p&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/07/01/develop-tools-about-python</link>
+                <guid>http://i.justpic.org/2014/07/01/develop-tools-about-python</guid>
+                <pubDate>2014-07-01T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>taobaoke</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;https://doc.openerp.com/install/linux/server/&quot;&gt;install openerp 6.1&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/06/25/taobaoke</link>
+                <guid>http://i.justpic.org/2014/06/25/taobaoke</guid>
+                <pubDate>2014-06-25T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>install pypy from source</title>
+                <description>
+&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
+cd pypy/pypy/goal
+python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
+
+[config opt](http://pypy.readthedocs.org/en/latest/config/opt.html)
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/06/23/install-pypy-from-source</link>
+                <guid>http://i.justpic.org/2014/06/23/install-pypy-from-source</guid>
+                <pubDate>2014-06-23T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>android emulator note</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
+&lt;a href=&quot;http://blag.felixhummel.de/junk/android_emulator.html&quot;&gt;Android Emulator on Ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/06/14/android-emulator-note</link>
+                <guid>http://i.justpic.org/2014/06/14/android-emulator-note</guid>
+                <pubDate>2014-06-14T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>vps initialization</title>
@@ -730,6 +962,13 @@ mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123�
 &lt;pre&gt;&lt;code&gt;mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
 mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显示当前用户&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;select USER();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mysql 主从复制&lt;/p&gt;
 
 </description>
                 <link>http://i.justpic.org/2014/04/04/mysqldump-summary</link>
@@ -1974,7 +2213,9 @@ $source .bashrc 安装 blosc (可选)
 &lt;p&gt;以下资料可供学习入门:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
-  &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
+  &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;
+  &lt;a href=&quot;http://www.cs.toronto.edu/~kriz/lsvrc-2012-pres.pdf&quot;&gt;ImageNet Classification with Deep Convolutional Neural Networks&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/machine/learning/2013/06/03/deep-learning</link>
                 <guid>http://i.justpic.org/machine/learning/2013/06/03/deep-learning</guid>

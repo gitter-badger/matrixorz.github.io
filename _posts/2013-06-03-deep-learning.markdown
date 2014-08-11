@@ -19,3 +19,5 @@ categories: machine learning
 
   [deep learning 入门](http://deepleaning.net/tutorial/deeplearning.pdf)	
   [使用深度学习识别笔迹](http://markus.com/deep-learning-101/)
+  [High Dimensional Classification with Invariant Deep Networks](http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf)
+  [ImageNet Classification with Deep Convolutional Neural Networks](http://www.cs.toronto.edu/~kriz/lsvrc-2012-pres.pdf)

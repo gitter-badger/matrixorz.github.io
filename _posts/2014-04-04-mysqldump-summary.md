@@ -57,3 +57,9 @@ Mysql用户管理
     mysql> UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
     mysql> FLUSH PRIVILEGES;
 
+显示当前用户
+    
+    mysql>select USER();
+
+Mysql 主从复制
+

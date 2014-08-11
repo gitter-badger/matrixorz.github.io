@@ -15,6 +15,17 @@ http://i.justpic.org/index.html
 http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
 
+http://i.justpic.org/2014/08/10/
+http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet
+http://i.justpic.org/2014/08/07/python-web-development
+http://i.justpic.org/2014/07/30/sort-algorithm
+http://i.justpic.org/python%20development/2014/07/28/python-optimization
+http://i.justpic.org/2014/07/19/data-visualization
+http://i.justpic.org/2014/07/01/erlang-learning
+http://i.justpic.org/2014/07/01/develop-tools-about-python
+http://i.justpic.org/2014/06/25/taobaoke
+http://i.justpic.org/2014/06/23/install-pypy-from-source
+http://i.justpic.org/2014/06/14/android-emulator-note
 http://i.justpic.org/2014/06/06/vps-initialization
 http://i.justpic.org/2014/06/06/python-for-finance-note
 http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note
