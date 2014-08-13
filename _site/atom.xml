@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-08-11T12:25:02+08:00</updated>
+ <updated>2014-08-14T02:02:44+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -18,7 +18,8 @@
    <updated>2014-08-10T00:00:00+08:00</updated>
    <id>http://i.justpic.org/2014/08/</id>
    <content type="html">
-&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;
+&lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -28,7 +29,7 @@
    <updated>2014-08-09T00:00:00+08:00</updated>
    <id>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</id>
    <content type="html">
-&lt;p&gt;散射卷积网络通过卷积的方式对小波做级联运算，运用深度学习的思想，生成树状结构的散射系数结构，使用散射系数作为特征进行学习。&lt;/p&gt;
+&lt;p&gt;散射卷积网络通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。&lt;/p&gt;
 
 &lt;p&gt;参考文章与资料：&lt;/p&gt;
 
@@ -360,6 +361,12 @@ is a localtunnel site that can expose your local website.&lt;/p&gt;
    <updated>2014-06-02T00:00:00+08:00</updated>
    <id>http://i.justpic.org/2014/06/02/java-call-matlab</id>
    <content type="html">
+&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
+
+&lt;p&gt;使用deploytool命令打开matlab打包工具
+打包完成后在eclipse除导入该包外，还要导入目录 toolbox/javabuilder/jar/javabuilder.jar包
+在相关代码中完成导入语句和定义完成java调用matlab代码的调用。
+具体相关代码和事例可见&lt;a href=&quot;https://github.com/matrixorz/writer_identification/blob/master/Writer/writerui/writer.java&quot;&gt;example&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -767,8 +774,11 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
     return None
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;参考文章:
-&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考文章:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://justbm.blogspot.com/2014/01/django.html&quot;&gt;django多国语言&lt;/a&gt;&lt;/p&gt;
 
 </content>
  </entry>
