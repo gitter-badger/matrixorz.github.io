@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-08-17T15:52:26+08:00</updated>
+ <updated>2014-08-17T16:07:00+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -101,7 +101,7 @@ level up&lt;/p&gt;
    <id>http://i.justpic.org/2014/08/</id>
    <content type="html">
 &lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;
-&lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
