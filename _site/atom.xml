@@ -4,13 +4,95 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-08-14T02:02:44+08:00</updated>
+ <updated>2014-08-17T15:52:26+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>排序总结</title>
+   <link href="http://i.justpic.org/2014/08/17/"/>
+   <updated>2014-08-17T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>python finance</title>
+   <link href="http://i.justpic.org/2014/08/16/python-finance"/>
+   <updated>2014-08-16T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/16/python-finance</id>
+   <content type="html">
+&lt;p&gt;====books=====&lt;/p&gt;
+
+&lt;p&gt;Financial Modeling in python&lt;/p&gt;
+
+&lt;p&gt;python for finance&lt;/p&gt;
+
+&lt;p&gt;Building Machine Learning System with Python&lt;/p&gt;
+
+&lt;p&gt;====Softwares====&lt;/p&gt;
+
+&lt;p&gt;pandas&lt;/p&gt;
+
+&lt;p&gt;scikit-learn&lt;/p&gt;
+
+&lt;p&gt;quantlib&lt;/p&gt;
+
+&lt;p&gt;ta-lib&lt;/p&gt;
+
+&lt;p&gt;zipline&lt;/p&gt;
+
+&lt;p&gt;====Online Resource====&lt;/p&gt;
+
+&lt;p&gt;Quantopian&lt;/p&gt;
+
+&lt;p&gt;pythonquants&lt;/p&gt;
+
+&lt;p&gt;ultratrade&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>data science</title>
+   <link href="http://i.justpic.org/2014/08/15/data-science"/>
+   <updated>2014-08-15T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/15/data-science</id>
+   <content type="html">
+&lt;p&gt;Data Science 
+level up&lt;/p&gt;
+
+&lt;p&gt;1.标准报表建立 Excel&lt;/p&gt;
+
+&lt;p&gt;2.sql 查询&lt;/p&gt;
+
+&lt;p&gt;3.多维分析，OLAP、BI&lt;/p&gt;
+
+&lt;p&gt;4.警报，&lt;/p&gt;
+
+&lt;p&gt;5.统计分析，频率分析，&lt;/p&gt;
+
+&lt;p&gt;6.预测，时序分析&lt;/p&gt;
+
+&lt;p&gt;7.预测建模&lt;/p&gt;
+
+&lt;p&gt;8.优化，投资回报比(ROI)&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>copula</title>
+   <link href="http://i.justpic.org/2014/08/15/copula"/>
+   <updated>2014-08-15T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/15/copula</id>
+   <content type="html">
+</content>
+ </entry>
  
  <entry>
    <title>线性代数中的矩阵</title>
@@ -81,7 +163,8 @@
 
 &lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;
+mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  

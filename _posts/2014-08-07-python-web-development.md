@@ -39,4 +39,5 @@ pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选
 
 hdf5的使用可参考[datafeed](https://github.com/yinhm/datafeed)
 
+[large data flow in pandas](http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas)
 mongodb的使用可参考[openquant]()
