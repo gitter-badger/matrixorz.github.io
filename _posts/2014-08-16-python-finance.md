@@ -3,7 +3,7 @@ layout: post
 title: "python finance"
 description: ""
 category: 
-tags: []
+tags: [finance,python]
 draft: true
 ---
 {% include JB/setup %}

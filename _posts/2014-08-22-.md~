@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "copula"
+title: "模式识别"
 description: ""
 category: 
-tags: [finance,statistic]
+tags: []
 draft: true
 ---
 {% include JB/setup %}

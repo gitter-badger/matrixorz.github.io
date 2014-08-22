@@ -19,8 +19,8 @@ Resources
 [Shayne Fletcher's blog](http://shayne-fletcher.blogspot.com/)<br/>
 [QuantLib](http://quantlib.org/docs.shtml#qlws13)<br/>
 [Note ntnu](http://www.csie.ntnu.edu.tw/~u91029/index.html)<br/>
-[Econometrics Journal](http://www.feweb.vu.nl/econometriclinks/software.html)
+[Econometrics Journal](http://www.feweb.vu.nl/econometriclinks/software.html)<br/>
+[Scatter pdf](http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf)<br/>
+[QuantAtRisk](http://www.quantatrisk.com/)<br/>
 
-[Scatter pdf](http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf)
 
-[QuantAtRisk](http://www.quantatrisk.com/)

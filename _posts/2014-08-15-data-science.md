@@ -3,7 +3,7 @@ layout: post
 title: "data science"
 description: ""
 category: 
-tags: []
+tags: [data science]
 draft: true
 ---
 {% include JB/setup %}
