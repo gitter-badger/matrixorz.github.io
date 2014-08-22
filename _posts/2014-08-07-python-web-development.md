@@ -35,7 +35,7 @@ pyspider --flask 后台队列的实现和控制，架构方面
 
 baidupcs-sdk --免费，但有token限制，可以使用refresh token使其永久有效
 
-pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择
+pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择
 
 hdf5的使用可参考[datafeed](https://github.com/yinhm/datafeed)
 
