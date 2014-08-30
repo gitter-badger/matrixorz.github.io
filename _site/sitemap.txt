@@ -27,7 +27,7 @@ http://i.justpic.org/2014/08/22/
 http://i.justpic.org/2014/08/17/
 http://i.justpic.org/2014/08/16/python-finance
 http://i.justpic.org/2014/08/15/data-science
-http://i.justpic.org/2014/08/15/copula
+http://i.justpic.org/financial%20modeling/2014/08/15/copula
 http://i.justpic.org/2014/08/10/
 http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet
 http://i.justpic.org/2014/08/07/python-web-development
