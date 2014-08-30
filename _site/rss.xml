@@ -5,10 +5,40 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-08-22T16:25:37+08:00</lastBuildDate>
-        <pubDate>2014-08-22T16:25:37+08:00</pubDate>
+        <lastBuildDate>2014-08-30T22:50:07+08:00</lastBuildDate>
+        <pubDate>2014-08-30T22:50:07+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>solv matlab installation in ubuntu</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/151826/how-to-fix-java-problem-installing-matlab-2012a-64-bit-in-ubuntu-12-04-64-bit&quot;&gt;How to fix Java problem installing Matlab 2012a (64-bit) in Ubuntu 12.04 (64 bit)?&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</link>
+                <guid>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</guid>
+                <pubDate>2014-08-27T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>thread sanitizer exercise</title>
+                <description>
+&lt;p&gt;thread-sanitizer是由chrominum团队开发出来检测多线程错误的工具，可以检测到c/c++和go语言的数据竞争、同步、死锁、线程不正确等多线程问题。&lt;a href=&quot;https://code.google.com/p/thread-sanitizer/&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
+
+</description>
+                <link>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</link>
+                <guid>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</guid>
+                <pubDate>2014-08-23T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>boost 安装</title>
+                <description>
+</description>
+                <link>http://i.justpic.org/2014/08/23/boost-</link>
+                <guid>http://i.justpic.org/2014/08/23/boost-</guid>
+                <pubDate>2014-08-23T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>模式识别</title>
@@ -238,7 +268,7 @@ level up&lt;/p&gt;
 
 &lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
 
-&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择&lt;/p&gt;
+&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;/p&gt;
 
 &lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
 
