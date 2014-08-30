@@ -5,12 +5,18 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
+<<<<<<< HEAD
         <lastBuildDate>2014-08-30T21:55:15+08:00</lastBuildDate>
         <pubDate>2014-08-30T21:55:15+08:00</pubDate>
+=======
+        <lastBuildDate>2014-08-22T16:25:37+08:00</lastBuildDate>
+        <pubDate>2014-08-22T16:25:37+08:00</pubDate>
+>>>>>>> master
         <ttl>1800</ttl>
 
 
         <item>
+<<<<<<< HEAD
                 <title>solv matlab installation in ubuntu</title>
                 <description>
 &lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/151826/how-to-fix-java-problem-installing-matlab-2012a-64-bit-in-ubuntu-12-04-64-bit&quot;&gt;How to fix Java problem installing Matlab 2012a (64-bit) in Ubuntu 12.04 (64 bit)?&lt;/a&gt;&lt;/p&gt;
@@ -41,6 +47,8 @@
         </item>
 
         <item>
+=======
+>>>>>>> master
                 <title>模式识别</title>
                 <description>
 &lt;p&gt;关于模式识别和计算机应用方向, 我认为可以选择的主题(仅是己见)
@@ -200,6 +208,7 @@ level up&lt;/p&gt;
         <item>
                 <title>copula</title>
                 <description>
+<<<<<<< HEAD
 &lt;p&gt;copula 统计分析&lt;/p&gt;
 
 &lt;p&gt;分布估计算法为解决遗传算法中存在的因交叉、变异操作而导致的建筑块破坏问题而提出的。
@@ -242,6 +251,11 @@ copula函数的分类：
 </description>
                 <link>http://i.justpic.org/financial%20modeling/2014/08/15/copula</link>
                 <guid>http://i.justpic.org/financial%20modeling/2014/08/15/copula</guid>
+=======
+</description>
+                <link>http://i.justpic.org/2014/08/15/copula</link>
+                <guid>http://i.justpic.org/2014/08/15/copula</guid>
+>>>>>>> master
                 <pubDate>2014-08-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -307,7 +321,11 @@ copula函数的分类：
 
 &lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
 
+<<<<<<< HEAD
 &lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;/p&gt;
+=======
+&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择&lt;/p&gt;
+>>>>>>> master
 
 &lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
 
