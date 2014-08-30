@@ -4,11 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
-<<<<<<< HEAD
- <updated>2014-08-30T21:55:15+08:00</updated>
-=======
- <updated>2014-08-22T16:25:37+08:00</updated>
->>>>>>> master
+ <updated>2014-08-30T22:48:57+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -17,39 +13,6 @@
 
  
  <entry>
-<<<<<<< HEAD
-   <title>solv matlab installation in ubuntu</title>
-   <link href="http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu"/>
-   <updated>2014-08-27T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</id>
-   <content type="html">
-&lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/151826/how-to-fix-java-problem-installing-matlab-2012a-64-bit-in-ubuntu-12-04-64-bit&quot;&gt;How to fix Java problem installing Matlab 2012a (64-bit) in Ubuntu 12.04 (64 bit)?&lt;/a&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>thread sanitizer exercise</title>
-   <link href="http://i.justpic.org/2014/08/23/thread-sanitizer-exercise"/>
-   <updated>2014-08-23T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</id>
-   <content type="html">
-&lt;p&gt;thread-sanitizer是由chrominum团队开发出来检测多线程错误的工具，可以检测到c/c++和go语言的数据竞争、同步、死锁、线程不正确等多线程问题。&lt;a href=&quot;https://code.google.com/p/thread-sanitizer/&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>boost 安装</title>
-   <link href="http://i.justpic.org/2014/08/23/boost-"/>
-   <updated>2014-08-23T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/08/23/boost-</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-=======
->>>>>>> master
    <title>模式识别</title>
    <link href="http://i.justpic.org/2014/08/22/"/>
    <updated>2014-08-22T00:00:00+08:00</updated>
@@ -208,7 +171,6 @@ level up&lt;/p&gt;
  
  <entry>
    <title>copula</title>
-<<<<<<< HEAD
    <link href="http://i.justpic.org/financial%20modeling/2014/08/15/copula"/>
    <updated>2014-08-15T00:00:00+08:00</updated>
    <id>http://i.justpic.org/financial%20modeling/2014/08/15/copula</id>
@@ -252,12 +214,8 @@ copula函数的分类：
 
 &lt;p&gt;但Copula的应用不局限与金融的风险评估，在图像处理和信号分析中也有很多应用。&lt;/p&gt;
 
-=======
-   <link href="http://i.justpic.org/2014/08/15/copula"/>
-   <updated>2014-08-15T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/08/15/copula</id>
-   <content type="html">
->>>>>>> master
+&lt;p&gt;=======
+»»»&amp;gt; master&lt;/p&gt;
 </content>
  </entry>
  
@@ -326,11 +284,7 @@ copula函数的分类：
 
 &lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
 
-<<<<<<< HEAD
 &lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;/p&gt;
-=======
-&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择&lt;/p&gt;
->>>>>>> master
 
 &lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
 
