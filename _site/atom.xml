@@ -4,13 +4,47 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
+<<<<<<< HEAD
  <updated>2014-08-30T22:58:41+08:00</updated>
+=======
+ <updated>2014-08-30T22:57:22+08:00</updated>
+>>>>>>> master
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>solv matlab installation in ubuntu</title>
+   <link href="http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu"/>
+   <updated>2014-08-27T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/151826/how-to-fix-java-problem-installing-matlab-2012a-64-bit-in-ubuntu-12-04-64-bit&quot;&gt;How to fix Java problem installing Matlab 2012a (64-bit) in Ubuntu 12.04 (64 bit)?&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>thread sanitizer exercise</title>
+   <link href="http://i.justpic.org/2014/08/23/thread-sanitizer-exercise"/>
+   <updated>2014-08-23T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</id>
+   <content type="html">
+&lt;p&gt;thread-sanitizer是由chrominum团队开发出来检测多线程错误的工具，可以检测到c/c++和go语言的数据竞争、同步、死锁、线程不正确等多线程问题。&lt;a href=&quot;https://code.google.com/p/thread-sanitizer/&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>boost 安装</title>
+   <link href="http://i.justpic.org/2014/08/23/boost-"/>
+   <updated>2014-08-23T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/23/boost-</id>
+   <content type="html">
+</content>
+ </entry>
  
  <entry>
    <title>模式识别</title>
