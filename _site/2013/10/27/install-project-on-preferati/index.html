@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      install project on preferati &ndash;
+    
+    Hai
+  </title>
+
+  <meta name="author" content="Hai" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Hai</span>
+        <span id="lname">Hai</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://twitter.com/matrixorz" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="http://weibo.com/u/1803769420" target="_blank"><i class="fa fa-weibo"></i></a>
+      <a href="/atom.xml"><i class="fa fa-rss"></i></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/projects.html">Projects</a></li>
+        <li><a href="/startup">Startup</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/presentation.html">Presentation</a></li>
+        <li><a href="/philo">Philo</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/2013/10/27/install-project-on-preferati">install project on preferati</a>
+  </h1>
+
+  <section class="byline">
+    October 27, 2013
+  </section>
+
+  
+<p>Install OpenQuant Project</p>
+
+<pre><code>sudo apt-get install nginx
+sudo apt-get install git
+sudo apt-get install mysql-server
+sudo apt-get install python-dev
+
+install easy_install on ubuntu:
+sudo apt-get install python-setuptools
+sudo easy_install virtualenv
+sudo easy_install pip
+virtualenv ~/trade
+source ~/trade/bin/activate
+install numpy scipy pandas and ta-lib
+sudo pip install Cython
+</code></pre>
+
+<p><strong>due to blas libs</strong></p>
+
+<pre><code>sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+pip install numpy
+pip install scipy **install ta-lib**
+
+cd ~
+wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+sudo apt-get  install  build-essential
+tar -zxvf ta-lib-0.4.0-src.tar.gz
+cd ta-lib-0.4.0
+./configure --prefix=/usr
+make
+sudo make install **install gevent**
+wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+tar -zxvf 
+./configure
+make 
+sudo make install
+
+
+
+cd ~/www
+git clone https://github.com/pydata/pandas.git
+git clone https://github.com/mrjbq7/ta-lib.git
+</code></pre>
+
+<p><strong>update the nginx</strong></p>
+
+<pre><code>sudo apt-get install python-software-properties
+sudo apt-get install sotware-properties-common
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get update
+sudo apt-get install nginx
+</code></pre>
+
+<p><strong>mysql init</strong></p>
+
+<pre><code>sudo apt-get install mysql-server libmysqld-dev
+pip install MySQL-python
+insert into mysql.user(Host,User,Password) values("localhost","david",password("david")); **用户授权**
+</code></pre>
+
+<p>给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
+
+<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
+
+http://rubyer.me/blog/638/ redis.io
+</code></pre>
+
+<p><strong>uwsgi or gunicorn(optional)</strong></p>
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/matrixorz" target="_blank">
+        <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=142" height="50" width="50" />
+      </a>
+
+    </section>
+  </section>
+  
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'justpic'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+</section>
+
+  
+  
+</body>
+
+</html>
