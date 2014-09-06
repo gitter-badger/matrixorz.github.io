@@ -20,6 +20,10 @@ http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 http://i.justpic.org/page4/index.html
 
+http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell
+http://i.justpic.org/2014/09/05/pca
+http://i.justpic.org/2014/08/31/pagerank
+http://i.justpic.org/2014/08/31/
 http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu
 http://i.justpic.org/2014/08/23/thread-sanitizer-exercise
 http://i.justpic.org/2014/08/23/boost-
