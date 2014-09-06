@@ -4,13 +4,142 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
+<<<<<<< HEAD
  <updated>2014-09-06T14:55:19+08:00</updated>
+=======
+ <updated>2014-09-06T14:52:48+08:00</updated>
+>>>>>>> gh-pages
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>ubuntu 14.04 install haskell</title>
+   <link href="http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell"/>
+   <updated>2014-09-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</id>
+   <content type="html">
+&lt;h1 id=&quot;ubuntu-1404haskell&quot;&gt;在ubuntu 14.04上搭建haskell环境&lt;/h1&gt;
+
+&lt;p&gt;haskell是一种函数编程式语言，
+ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础。
+下面是安装ghc的步骤：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo aptitude build-dep ghc
+sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
+wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
+tar jxvf ghc-7.8.3-src.tar.bz2
+cd ghc-7.8.3-src
+./configure --prefix=/usr/local/ghc
+make -j8
+sudo paco -D make install
+sudo aptitude purge ghc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;编辑.bashrc文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PATH=&quot;/usr/local/ghc/bin:$PATH&quot;
+source ~/.bashrc
+
+ghci   #验证是否安装成功
+
+sudo aptitude purge ghc 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cabal是Haskell的一个package，提供Haskell包安装框架，类似python的easy_install、debian的apt-get等。
+cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，该程序在安装新包时会自动解决包依赖关系。
+安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
+下面是安装cabal的步骤&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
+tar zxvf cabal-install-1.20.0.3.tar.gz
+cd cabal-install-2.10.0.3
+./bootstrap.sh
+
+vim ~/.bahsrc
+PATH=$HOME/.cabal/bin:$PATH
+source ~/.bashrc
+cabal update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装包haskell-platform中包含这些包，但是由于使用apt-get安装时不能获得最新的版本或者会出现一些问题，比如network-2.6.0.2通过cabal总是安装不上，报编译错误
+这种使用源码安装的方式很好的解决了这些问题。非常高效！&lt;/p&gt;
+
+&lt;p&gt;在安装相关haskell包的时候可能会出现broken package错误，可以通过以下命令在haskell中移除broken package&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ghc-pkg check --simple-output | xargs -n 1 ghc-pkg unregister --force
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>pca</title>
+   <link href="http://i.justpic.org/2014/09/05/pca"/>
+   <updated>2014-09-05T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/09/05/pca</id>
+   <content type="html">
+&lt;p&gt;PCA是principal component analysis的缩写，即主成分分析，此方法目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性袋鼠角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元。
+混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;/p&gt;
+
+&lt;p&gt;PCA的主要思想：
+1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；
+2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现过层就是对协方差矩阵进行对角化。&lt;/p&gt;
+
+&lt;p&gt;PCA的模型中存在很多的假设条件：
+1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；
+2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。
+3.数据本身具有较高的信躁比。
+4.假设主元向量之间是正交的。&lt;/p&gt;
+
+&lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解。
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;
+&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;
+使用svd解决PCA问题,可以得到两个方向上的PCA。
+svd与LSI&lt;/p&gt;
+
+&lt;p&gt;PCA与LDA是特征抽取的两种主要经典方法
+LDA(线性评判分析)
+信号表示：特征抽取后的特征要能够精确地表示样本信息，使得信息丢失很小，对应的方法是PCA
+信号分类：特征抽取后的特征，要使得分类后的准确率很高，不能比原来特征进行分类的准确率低。对于线性来说，对应的方法是LDA&lt;/p&gt;
+
+&lt;p&gt;LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>pagerank算法与马尔科夫链</title>
+   <link href="http://i.justpic.org/2014/08/31/pagerank"/>
+   <updated>2014-08-31T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/31/pagerank</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>理解回归</title>
+   <link href="http://i.justpic.org/2014/08/31/"/>
+   <updated>2014-08-31T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/</id>
+   <content type="html">
+&lt;p&gt;为啥用最小二乘表示cost function，由最大似然估计（拉格朗日）可以推出来&lt;/p&gt;
+
+&lt;p&gt;最大似然估计到EM算法&lt;/p&gt;
+
+&lt;p&gt;求解最小二乘使用梯度下降方法或者牛顿迭代法求出。&lt;/p&gt;
+
+&lt;p&gt;逻辑回归的cost function为最小二乘法吗&lt;/p&gt;
+
+&lt;p&gt;由于逻辑回归中的最小二乘cost function不是凸的，不能方便求最优化解。
+针对逻辑回归，可以选择对数似然损失函数作为loss function
+经过多步推导后，发现最后的梯度下降形式相同，除了最初的hypothesis不同外，世界又变美好了。&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>solv matlab installation in ubuntu</title>
@@ -224,7 +353,31 @@ copula函数的分类：
 
 &lt;p&gt;Mente Carlo(随机模拟的别名）：
 用通过概率实验所求的概率来估计我们感兴趣的变量，这样的方法称为蒙特卡洛方法。（蒲丰投针）
-蒙特卡罗方法求解实际问题的基本步骤：
+蒙特卡罗方法利用随机抽样的方法来解物理问题
+数值解法从一个物理系统的数学模型出发，通过求解一系列的微分方程来导出系统的未知状态。&lt;/p&gt;
+
+&lt;p&gt;蒙特卡洛方法并非只能用来解决包含随机的过程的问题
+许多利用蒙特卡洛方法进行求解的问题中并不包含随机过程
+例如用蒙特卡洛方法计算定积分
+对这样的问题可将其转换成相关的随机过程，然后用Monte Carlo方法进行求解。&lt;/p&gt;
+
+&lt;p&gt;蒙特卡罗算法的主要组成部分
+概率密度函数–必须给出描述一个物理系统的一组概率密度函数
+随机数生成器–能够产生在[0,1]上的均匀分布的随机数
+抽样规则–如何从区间[0,1]上均匀分布的随机数出发，随机抽取服从给定的pdf的随机变量
+模拟结果记录–记录一些刚兴趣的量的模拟结果
+误差估计–必须穹顶统计误差（或方差）随模拟次数以及其他一些量的变化
+减少方差的技术–利用该技术可减少模拟过程中计算的次数
+并行和矢量化–可以在先进的并行计算机上运行的有效算法。&lt;/p&gt;
+
+&lt;p&gt;蒙特卡罗方法能很好地用来对付维数的灾难，因为该方法的计算复杂性不再依赖于维数。
+方差缩减的技巧&lt;/p&gt;
+
+&lt;p&gt;拟蒙特卡洛方法（华-王方法）用确定性的超均匀分布序列代替Monte Carlo方法中的随机数序列）&lt;/p&gt;
+
+&lt;p&gt;蒙特卡罗方法和拉斯维加斯方法：&lt;/p&gt;
+
+&lt;p&gt;蒙特卡罗方法求解实际问题的基本步骤：
 1.建立模型
 2.改进模型
 3.进行模拟实验
