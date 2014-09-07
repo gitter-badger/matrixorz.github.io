@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-09-07T18:22:29+08:00</lastBuildDate>
-        <pubDate>2014-09-07T18:22:29+08:00</pubDate>
+        <lastBuildDate>2014-09-07T18:32:06+08:00</lastBuildDate>
+        <pubDate>2014-09-07T18:32:06+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -43,7 +43,8 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
 下面是安装cabal的步骤&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    
+    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
     tar zxvf cabal-install-1.20.0.3.tar.gz
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;cabal-install-2.10.0.3
     ./bootstrap.sh

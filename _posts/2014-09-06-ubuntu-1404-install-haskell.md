@@ -30,6 +30,7 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
 下面是安装cabal的步骤
     {% highlight bash %}
+    
     wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
     tar zxvf cabal-install-1.20.0.3.tar.gz
     cd cabal-install-2.10.0.3
