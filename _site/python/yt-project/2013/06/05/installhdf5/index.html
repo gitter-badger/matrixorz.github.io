@@ -71,47 +71,50 @@
 
   <h1>install hdf5 on ubuntu 12.04</h1>
 
-<p>you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.</p>
+<p>you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.<br/>
+Code:</p>
 
-<p>possibly you will have to build it from source to get everything right.</p>
+<div class="highlight"><pre><code class="bash">    <span class="nv">$apt</span>-get install devscripts equivs ubuntu-dev-tools 
+    <span class="nv">$pull</span>-debian-source hdf5 experimental    
+    <span class="nv">$cd</span> hdf5-*
+    <span class="nv">$sudo</span> mk-build-deps -ir
+    <span class="nv">$debuild</span> -us -uc
+    
+</code></pre></div>
 
-<p>Code:</p>
 
-<pre><code>$apt-get install devscripts equivs ubuntu-dev-tools 
-$pull-debian-source hdf5 experimental    
-$cd hdf5-*
-$sudo mk-build-deps -ir
-$debuild -us -uc
-</code></pre>
+<p>上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,由于本机为64bit linux,下载64位下的二进制包：</p>
 
-<p>上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,
-由于本机为64bit linux,下载64位下的二进制包：</p>
+<div class="highlight"><pre><code class="bash">    <span class="nv">$wget</span> http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
+    
+</code></pre></div>
 
-<pre><code>$wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
-</code></pre>
 
 <p>解压后，并在.bashrc中设置：</p>
 
-<pre><code>$export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
-$export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
-$source .bashrc
-</code></pre>
+<div class="highlight"><pre><code class="bash">    <span class="nv">$export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/usr/local/lib:<span class="nv">$HOME</span>/hdf5-1.8.9-linux-x86_64-shared/lib
+    <span class="nv">$export</span> <span class="nv">HDF5_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/hdf5-1.8.9-linux-x86_64-shared
+    <span class="nv">$source</span> .bashrc
+    
+</code></pre></div>
 
-<p>安装 blosc (可选)</p>
 
-<p>安装 lzo2-2 lzo2-dev</p>
+<p>安装 blosc (可选)
+安装 lzo2-2 lzo2-dev</p>
 
-<pre><code>sudo apt-get install lzo2-2 lzo2-dev
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo apt-get install lzo2-2 lzo2-dev
+    
+</code></pre></div>
+
 
 <p>至此HDF5可用</p>
 
 <section align="right">
 <br/>
 <span>
-	<a   class="pageNavInvalid"  >上一篇</a>
+	<a   class="pageNavInvalid"  >New</a>
 	&nbsp;&nbsp;&nbsp;
-	<a  href="/linux/2013/06/06/wine-error" class="pageNav"  >下一篇</a>
+	<a  href="/linux/2013/06/06/wine-error" class="pageNav"  >Older</a>
 </span>
 </section>
 
