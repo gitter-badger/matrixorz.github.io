@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-09-07T18:19:59+08:00</updated>
+ <updated>2014-09-07T18:22:29+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -19,7 +19,7 @@
    <id>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</id>
    <content type="html">&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;      
     sudo aptitude build-dep ghc
     sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
     wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
@@ -37,9 +37,7 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/ghc/bin:$PATH&amp;quot;&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
-
     ghci   &lt;span class=&quot;c&quot;&gt;#验证是否安装成功&lt;/span&gt;
-
     sudo aptitude purge ghc 
     
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -50,12 +48,10 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
 下面是安装cabal的步骤&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;   
-    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
     tar zxvf cabal-install-1.20.0.3.tar.gz
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;cabal-install-2.10.0.3
     ./bootstrap.sh
-
     vim ~/.bahsrc
     &lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.cabal/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
