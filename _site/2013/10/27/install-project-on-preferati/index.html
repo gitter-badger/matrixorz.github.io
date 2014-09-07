@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/10/27/install-project-on-preferati">install project on preferati</a>
   </h1>
@@ -71,79 +76,82 @@
 
   <p>Install OpenQuant Project</p>
 
-<pre><code>sudo apt-get install nginx
-sudo apt-get install git
-sudo apt-get install mysql-server
-sudo apt-get install python-dev
+<div class="highlight"><pre><code class="bash">    sudo apt-get install nginx
+    sudo apt-get install git
+    sudo apt-get install mysql-server
+    sudo apt-get install python-dev
+    install easy_install on ubuntu:
+    sudo apt-get install python-setuptools
+    sudo easy_install virtualenv
+    sudo easy_install pip
+    virtualenv ~/trade
+    <span class="nb">source</span> ~/trade/bin/activate
+    install numpy scipy pandas and ta-lib
+    sudo pip install Cython
+</code></pre></div>
 
-install easy_install on ubuntu:
-sudo apt-get install python-setuptools
-sudo easy_install virtualenv
-sudo easy_install pip
-virtualenv ~/trade
-source ~/trade/bin/activate
-install numpy scipy pandas and ta-lib
-sudo pip install Cython
-</code></pre>
 
 <p><strong>due to blas libs</strong></p>
 
-<pre><code>sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
-pip install numpy
-pip install scipy
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+    pip install numpy
+    pip install scipy
+</code></pre></div>
+
 
 <p><strong>install ta-lib</strong></p>
 
-<pre><code>cd ~
-wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
-sudo apt-get  install  build-essential
-tar -zxvf ta-lib-0.4.0-src.tar.gz
-cd ta-lib-0.4.0
-./configure --prefix=/usr
-make
-sudo make install
-</code></pre>
-
-<p><strong>install gevent</strong>
-    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-    tar -zxvf
-    ./configure
+<div class="highlight"><pre><code class="bash">    <span class="nb">cd</span> ~
+    wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+    sudo apt-get  install  build-essential
+    tar -zxvf ta-lib-0.4.0-src.tar.gz
+    <span class="nb">cd </span>ta-lib-0.4.0
+    ./configure --prefix<span class="o">=</span>/usr
     make
-    sudo make install</p>
+    sudo make install
+</code></pre></div>
 
-<pre><code>cd ~/www
-git clone https://github.com/pydata/pandas.git
-git clone https://github.com/mrjbq7/ta-lib.git
-</code></pre>
+
+<p><strong>install gevent</strong></p>
+
+<div class="highlight"><pre><code class="bash">    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+    tar -zxvf 
+    ./configure
+    make 
+    sudo make install
+    <span class="nb">cd</span> ~/www
+    git clone https://github.com/pydata/pandas.git
+    git clone https://github.com/mrjbq7/ta-lib.git
+</code></pre></div>
+
 
 <p><strong>update the nginx</strong></p>
 
-<pre><code>sudo apt-get install python-software-properties
-sudo apt-get install sotware-properties-common
-sudo add-apt-repository ppa:nginx/stable
-sudo apt-get update
-sudo apt-get install nginx
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo apt-get install python-software-properties
+    sudo apt-get install sotware-properties-common
+    sudo add-apt-repository ppa:nginx/stable
+    sudo apt-get update
+    sudo apt-get install nginx
+</code></pre></div>
+
 
 <p><strong>mysql init</strong></p>
 
-<pre><code>sudo apt-get install mysql-server libmysqld-dev
-pip install MySQL-python
-insert into mysql.user(Host,User,Password) values("localhost","david",password("david"));
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo apt-get install mysql-server libmysqld-dev
+    pip install MySQL-python
+    insert into mysql.user<span class="o">(</span>Host,User,Password<span class="o">)</span> values<span class="o">(</span><span class="s2">&quot;localhost&quot;</span>,<span class="s2">&quot;username&quot;</span>,password<span class="o">(</span><span class="s2">&quot;password&quot;</span><span class="o">))</span><span class="p">;</span>
+</code></pre></div>
 
-<p><strong>用户授权</strong></p>
 
-<p>给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
+<p><strong>用户授权</strong><br/>
+给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
 
-<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david';
-</code></pre>
+<div class="highlight"><pre><code class="bash">    mysql&gt;grant all privileges on *.* to username@localhost identified by <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+</code></pre></div>
 
-<p><strong>install redis</strong></p>
 
-<pre><code>http://rubyer.me/blog/638/ redis.io
-</code></pre>
+<p><strong>install redis</strong>
+具体参考<a href="http://rubyer.me/blog/638/%20redis.io">install redis</a></p>
 
 <p><strong>uwsgi or gunicorn(optional)</strong></p>
 

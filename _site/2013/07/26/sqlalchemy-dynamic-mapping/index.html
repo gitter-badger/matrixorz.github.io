@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/07/26/sqlalchemy-dynamic-mapping">sqlalchemy dynamic mapping</a>
   </h1>
@@ -73,30 +78,31 @@
 
 <p>代码如下:</p>
 
-<pre><code>from sqlalchemy import *
-from sqlalchemy.orm import *
+<div class="highlight"><pre><code class="python">    <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="o">*</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="n">MetaData</span><span class="p">(</span><span class="n">create_engine</span><span class="p">(</span><span class="s">&quot;sqlite://&quot;</span><span class="p">,</span><span class="n">echo</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">=</span><span class="n">Table</span><span class="p">(</span><span class="s">&quot;t1&quot;</span><span class="p">,</span><span class="n">metadata</span><span class="p">,</span><span class="n">Column</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span><span class="n">Integer</span><span class="p">,</span><span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="n">t2</span><span class="o">=</span><span class="n">Table</span><span class="p">(</span><span class="s">&quot;t2&quot;</span><span class="p">,</span><span class="n">metadata</span><span class="p">,</span><span class="n">Column</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="n">Integer</span><span class="p">,</span><span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+    <span class="n">metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">map_class_to_some_table</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span><span class="n">table</span><span class="p">,</span><span class="n">entity_name</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">newcls</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">entity_name</span><span class="p">,(</span><span class="n">cls</span><span class="p">,),{})</span>
+        <span class="n">mapper</span><span class="p">(</span><span class="n">newcls</span><span class="p">,</span><span class="n">table</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">newcls</span>
+       
+    <span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="n">T1Foo</span><span class="o">=</span><span class="n">map_class_to_some_table</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="s">&quot;T1Foo&quot;</span><span class="p">)</span>
+    <span class="n">T2Foo</span><span class="o">=</span><span class="n">map_class_to_some_table</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="s">&quot;T2Foo&quot;</span><span class="p">)</span>
+    
+    <span class="n">sess</span><span class="o">=</span><span class="n">sessionmaker</span><span class="p">()()</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">add_all</span><span class="p">([</span><span class="n">T1Foo</span><span class="p">(),</span><span class="n">T1Foo</span><span class="p">(),</span><span class="n">T2Foo</span><span class="p">(),</span><span class="n">T1Foo</span><span class="p">()])</span>
+    <span class="k">print</span> <span class="n">sess</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">T1Foo</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">print</span> <span class="n">sess</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">T2Foo</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></div>
 
-metadata=MetaData(create_engine("sqlite://",echo=True)
-t1=Table("t1",metadata,Column('id',Integer,primary_key=True))
-t2=Table("t2",metadata,Column("id",Integer,primary_key=True))
-metadata.create_all()
 
-def map_class_to_some_table(cls,table,entity_name,**kw):
-    newcls=type(entity_name,(cls,),{})
-    mapper(newcls,table,**kw)
-    return newcls
 
-class Foo(object):
-    pass
-
-T1Foo=map_class_to_some_table(Foo,t1,"T1Foo")
-T2Foo=map_class_to_some_table(Foo,t2,"T2Foo")
-
-sess=sessionmaker()()
-sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
-print sess.query(T1Foo).all()
-print sess.query(T2Foo).all()
-</code></pre>
 
 <section align="right">
 <br/>

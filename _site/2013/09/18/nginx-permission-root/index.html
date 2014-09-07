@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/09/18/nginx-permission-root">nginx permission root</a>
   </h1>
@@ -69,44 +74,40 @@
     September 18, 2013
   </section>
 
-  <h1>nginx 权限问题的解决方法</h1>
+  <h4>nginx 权限问题的解决方法</h4>
 
-<p>按照下面方法配置nginx时出现用户权限问题
-    server{
-    listen 4002;
-    server_name localhost;
-    access_log logs/access.log;</p>
+<p>按照下面方法配置nginx时出现用户权限问题</p>
 
-<pre><code>location / {
-   proxy_set_header X-Real-IP $remote_addr;
-   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-   proxy_set_header Host $http_host;
-   proxy_set_header X-NginxX-Proxy true;
+<div class="highlight"><pre><code class="bash"> server<span class="o">{</span>
+    listen 4002<span class="p">;</span>
+    server_name localhost<span class="p">;</span>
+    access_log logs/access.log<span class="p">;</span>
+    location / <span class="o">{</span>
+       proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+       proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+       proxy_set_header Host <span class="nv">$http_host</span><span class="p">;</span>
+       proxy_set_header X-NginxX-Proxy <span class="nb">true</span><span class="p">;</span>
+       proxy_pass http://backend<span class="p">;</span>
+       proxy_redirect off<span class="p">;</span>      
+       proxy_http_version 1.1<span class="p">;</span>
+       proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+       proxy_set_header Connection <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
+       <span class="o">}</span>
+       <span class="o">}</span>
+     upstream backend <span class="o">{</span>
+     server 127.0.0.1:3201<span class="p">;</span>
+     <span class="o">}</span>
+</code></pre></div>
 
-   proxy_pass http://backend;
-   proxy_redirect off;
 
-   proxy_http_version 1.1;
-   proxy_set_header Upgrade $http_upgrade;
-   proxy_set_header Connection "upgrade";
-   }
-   }
- upstream backend {
- server 127.0.0.1:3201;
- }
-</code></pre>
-
-<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a></p>
-
-<p>The root directive is the problem here. Quote from the doc:</p>
-
-<p>note: Keep in mind that the root will still append the directory to the request so that a request for &ldquo;/i/top.gif&rdquo; will not look in &ldquo;/spool/w3/top.gif&rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.</p>
-
-<p>Basically, only use root for real roots: if the content is to be at / use root. If it&rsquo;s going to end on a subfolder, use alias:</p>
+<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a><br/>
+The root directive is the problem here. Quote from the doc:<br/>
+note: Keep in mind that the root will still append the directory to the request so that a request for &ldquo;/i/top.gif&rdquo; will not look in &ldquo;/spool/w3/top.gif&rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.<br/>
+Basically, only use root for real roots: if the content is to be at / use root. If it&rsquo;s going to end on a subfolder, use alias:</p>
 
 <pre><code>location  /map/ {
   alias  /home/user/public_html/map/;
-}
+}  
 </code></pre>
 
 <p>Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map</p>

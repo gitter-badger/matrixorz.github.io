@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/07/29/jquery-add-element-in-the-html-dom">jquery add element in the html dom</a>
   </h1>
@@ -69,25 +74,23 @@
     July 29, 2013
   </section>
 
-  <h1>使用jquery增加元素节点</h1>
+  <h4>使用jquery增加元素节点</h4>
 
-<p>add one element in the parent</p>
+<div class="highlight"><pre><code class="javascript">    <span class="c1">//add one element in the parent  </span>
+    <span class="kd">var</span> <span class="nx">$li_1</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;li&gt;新增节点：数据结构&lt;/li&gt;&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">$li_2</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;li&gt;新增节点：设计模式&lt;/li&gt;&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">$parent</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.nm_ul&quot;</span><span class="p">);</span>
+    <span class="nx">$parent</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$li_1</span><span class="p">);</span>
+    <span class="nx">$parent</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$li_2</span><span class="p">);</span>
+    <span class="nx">$parent</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$li_1</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$li_2</span><span class="p">);</span>
+    <span class="c1">//add attribute in the added element: </span>
+    <span class="kd">var</span> <span class="nx">$li_1</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;li title=&#39;新增节点：数据结构&#39;&gt;数据节点&lt;/li&gt;&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">$parent</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.nm_ul&quot;</span><span class="p">);</span>
+    <span class="nx">$parent</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">$li_1</span><span class="p">);</span>
+</code></pre></div>
 
-<pre><code>var $li_1=$("&lt;li&gt;新增节点：数据结构&lt;/li&gt;");
-var $li_2=$("&lt;li&gt;新增节点：设计模式&lt;/li&gt;");
 
-var $parent=$(".nm_ul");
-$parent.append($li_1);
-$parent.append($li_2);
-$parent.append($li_1).append($li_2);
-</code></pre>
 
-<p>add attribute in the added element:</p>
-
-<pre><code>var $li_1=$("&lt;li title='新增节点：数据结构'&gt;数据节点&lt;/li&gt;");
-var $parent=$(".nm_ul");
-$parent.append($li_1);
-</code></pre>
 
 <section align="right">
 <br/>

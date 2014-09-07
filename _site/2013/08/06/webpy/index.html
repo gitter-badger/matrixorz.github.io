@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/08/06/webpy">webpy</a>
   </h1>
@@ -77,7 +82,7 @@
  <a href="">webpy3.0 新手指南</a><br/>
  <a href="">webpy CookBook</a></p>
 
-<h2>webpy基本应用:</h2>
+<h3>webpy基本应用:</h3>
 
 <p> <a href="">Hello World</a><br/>
  <a href="">提供静态文件访问</a><br/>
@@ -87,7 +92,7 @@
  <a href="">提供XML访问</a><br/>
  <a href="">从post读取原始数据</a></p>
 
-<h2>高级应用:</h2>
+<h3>高级应用:</h3>
 
 <p><a href="">用web.ctx获得客户端信息</a><br/>
 <a href="">应用处理器，添加钩子和卸载钩子</a><br/>
@@ -98,7 +103,7 @@
 <a href="">用cherrypy提供SSL支持</a><br/>
 <a href="">实时语言切换</a></p>
 
-<h2>Sessions and user state 会话和用户状态:</h2>
+<h3>Sessions and user state 会话和用户状态:</h3>
 
 <p><a href="">如何使用Session</a><br/>
 <a href="">如何在调试模式下使用Session</a><br/>
@@ -108,13 +113,13 @@
 <a href="">一个在postgreSQL数据库环境下的用户认证的例子</a><br/>
 <a href="">如何在子应用中操作Session</a></p>
 
-<h2>Utils 实用工具</h2>
+<h3>Utils 实用工具</h3>
 
 <p><a href="">如何发送邮件</a><br/>
 <a href="">如何利用Gmail发送邮件</a><br/>
 <a href="">使用soaplib实现webservice</a></p>
 
-<h2>Templates 模板</h2>
+<h3>Templates 模板</h3>
 
 <p><a href="">Templetor: web.py 模板系统</a><br/>
 <a href="">使用站点布局模板</a><br/>
@@ -126,62 +131,42 @@
 <a href="">在web.py中使用Jinja2模板引擎</a><br/>
 <a href="">如何在谷歌应用程序引擎使用模板</a></p>
 
-<h2>Testing 测试:</h2>
+<h3>Testing 测试:</h3>
 
 <p><a href="">Testing with Paste and Nose (未译)</a><br/>
 <a href="">RESTful doctesting using an application&rsquo;s request method (未译)</a></p>
 
-<h2>User input 用户输入:</h2>
+<h3>User input 用户输入:</h3>
 
-<p><a href="">文件上传</a></p>
+<p><a href="">文件上传</a><br/>
+<a href="">保存上传的文件</a><br/>
+<a href="">上传文件大小限定</a><br/>
+<a href="">通过 web.input 接受用户输入</a><br/>
+<a href="">怎样使用表单</a><br/>
+<a href="">显示个别表单字段</a></p>
 
-<p><a href="">保存上传的文件</a></p>
+<h3>Database 数据库</h3>
 
-<p><a href="">上传文件大小限定</a></p>
+<p>使用多数据库 <br/>
+Select: 查询数据<br/>
+Update: 更新数据<br/>
+Delete: 删除数据<br/>
+Insert: 新增数据<br/>
+Query: 高级数据库查询<br/>
+怎样使用数据库事务<br/>
+使用 sqlalchemy<br/>
+整合 SQLite UDF (用户定义函数) 到 webpy 数据库层<br/>
+使用字典动态构造where子句</p>
 
-<p><a href="">通过 web.input 接受用户输入</a></p>
+<h3>Deployment 部署:</h3>
 
-<p><a href="">怎样使用表单</a></p>
-
-<p><a href="">显示个别表单字段</a></p>
-
-<h2>Database 数据库</h2>
-
-<p>使用多数据库</p>
-
-<p>Select: 查询数据</p>
-
-<p>Update: 更新数据</p>
-
-<p>Delete: 删除数据</p>
-
-<p>Insert: 新增数据</p>
-
-<p>Query: 高级数据库查询</p>
-
-<p>怎样使用数据库事务</p>
-
-<p>使用 sqlalchemy</p>
-
-<p>整合 SQLite UDF (用户定义函数) 到 webpy 数据库层</p>
-
-<p>使用字典动态构造where子句</p>
-
-<h2>Deployment 部署:</h2>
-
-<p>通过Fastcgi和lighttpd部署</p>
-
-<p>通过Webpy和Nginx with FastCGI搭建Web.py</p>
-
-<p>CGI deployment through Apache (未译)</p>
-
-<p>mod-pythondeployment through Apache (requested)</p>
-
-<p>通过Apache和mod-wsgi部署</p>
-
-<p>mod-wsgi deployment through Nginx (未译)</p>
-
-<p>Fastcgi deployment through Nginx (未译)</p>
+<p>通过Fastcgi和lighttpd部署  <br/>
+通过Webpy和Nginx with FastCGI搭建Web.py<br/>
+CGI deployment through Apache (未译)<br/>
+mod-pythondeployment through Apache (requested)<br/>
+通过Apache和mod-wsgi部署<br/>
+mod-wsgi deployment through Nginx (未译)<br/>
+Fastcgi deployment through Nginx (未译)</p>
 
 <section align="right">
 <br/>

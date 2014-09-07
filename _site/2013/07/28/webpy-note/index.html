@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/07/28/webpy-note">web.py note</a>
   </h1>
@@ -71,14 +76,14 @@
 
   <h1>webpy学习笔记</h1>
 
-<p>web.ctx
-web.loadhook(handler)函数在web请求前执行handler函数
-web.unloadhook(handler)函数在web请求后执行的handler函数</p>
+<h5>web.ctx</h5>
 
-<p>seeother:303临时重定向
-redirect：301永久重定向</p>
-
-<p>seeother(../)seeother（/）前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。</p>
+<p>web.loadhook(handler)函数在web请求前执行handler函数<br/>
+web.unloadhook(handler)函数在web请求后执行的handler函数<br/>
+seeother:303临时重定向<br/>
+redirect：301永久重定向 <br/>
+seeother(../)seeother（/）<br/>
+前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。</p>
 
 <section align="right">
 <br/>

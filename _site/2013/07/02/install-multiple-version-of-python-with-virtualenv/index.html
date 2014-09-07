@@ -60,7 +60,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
   <h1>
     <a href="/2013/07/02/install-multiple-version-of-python-with-virtualenv">Run Multiple-python on your ubuntu</a>
   </h1>
@@ -69,33 +74,37 @@
     July  2, 2013
   </section>
 
-  <h1>ubuntu上安装多个版本的python</h1>
+  <h5>ubuntu上安装多个版本的python</h5>
 
 <p>安装python3.3在ubuntu上</p>
 
-<pre><code>sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:fkrull/deadsnakes
-sudo apt-get update
-sudo apt-get install python3.3
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo apt-get install python-software-properties
+    sudo add-apt-repository ppa:fkrull/deadsnakes
+    sudo apt-get update
+    sudo apt-get install python3.3
+</code></pre></div>
+
 
 <p>建立软链接：</p>
 
-<pre><code>ln -s /usr/bin/python3.3 /usr/bin/python3.3m
-</code></pre>
+<div class="highlight"><pre><code class="bash">    ln -s /usr/bin/python3.3 /usr/bin/python3.3m
+</code></pre></div>
+
 
 <p>安转python2.7.5再ubuntu上:</p>
 
-<pre><code>sudo add-apt-repository ppa:fkrull/deadsnakes
-sudo apt-get update
-sudo apt-get install python2.4 python2.5 python2.6
-</code></pre>
+<div class="highlight"><pre><code class="bash">    sudo add-apt-repository ppa:fkrull/deadsnakes
+    sudo apt-get update
+    sudo apt-get install python2.4 python2.5 python2.6
+</code></pre></div>
+
 
 <p>使用virtualenv来定制自己的环境</p>
 
-<pre><code>virtualenv -p /usr/bin/python3.3 python3.3env
-virtualenv -p /usr/bin/python2.7.5 python2.7.5env
-</code></pre>
+<div class="highlight"><pre><code class="bash">    virtualenv -p /usr/bin/python3.3 python3.3env
+    virtualenv -p /usr/bin/python2.7.5 python2.7.5env
+</code></pre></div>
+
 
 <p>Ok!</p>
 
