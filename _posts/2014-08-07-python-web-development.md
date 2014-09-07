@@ -9,8 +9,7 @@ tags: []
 
 两篇很好的文章：
 
-[深入浅出网络模型](http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/)
-
+[深入浅出网络模型](http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/)  
 [Concurrent Programming for Scalable Web Architectures](http://berb.github.io/diploma-thesis/original/index.html)
 
 ###使用python web框架开发项目

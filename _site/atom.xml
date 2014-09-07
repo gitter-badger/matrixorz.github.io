@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-09-07T22:25:21+08:00</updated>
+ <updated>2014-09-07T22:26:06+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -221,9 +221,8 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
    <id>http://i.justpic.org/2014/08/07/python-web-development</id>
    <content type="html">&lt;p&gt;两篇很好的文章：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3&gt;使用python web框架开发项目&lt;/h3&gt;
 
