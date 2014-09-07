@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-09-07T18:32:06+08:00</lastBuildDate>
-        <pubDate>2014-09-07T18:32:06+08:00</pubDate>
+        <lastBuildDate>2014-09-07T19:28:14+08:00</lastBuildDate>
+        <pubDate>2014-09-07T19:28:14+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -24,7 +24,6 @@
     make -j8
     sudo paco -D make install
     sudo aptitude purge ghc
-    
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -34,7 +33,6 @@
     &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
     ghci   &lt;span class=&quot;c&quot;&gt;#验证是否安装成功&lt;/span&gt;
     sudo aptitude purge ghc 
-    
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -43,8 +41,7 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
 下面是安装cabal的步骤&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    
-    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
     tar zxvf cabal-install-1.20.0.3.tar.gz
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;cabal-install-2.10.0.3
     ./bootstrap.sh
@@ -52,7 +49,6 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
     &lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.cabal/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
     cabal update
-    
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -62,7 +58,6 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 &lt;p&gt;在安装相关haskell包的时候可能会出现broken package错误，可以通过以下命令在haskell中移除broken package&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    ghc-pkg check --simple-output &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -n 1 ghc-pkg unregister --force
-    
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -71,15 +66,6 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
                 <link>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</link>
                 <guid>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</guid>
                 <pubDate>2014-09-06T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>boost 安装</title>
-                <description>
-</description>
-                <link>http://i.justpic.org/2014/08/23/boost-</link>
-                <guid>http://i.justpic.org/2014/08/23/boost-</guid>
-                <pubDate>2014-08-23T00:00:00+08:00</pubDate>
         </item>
 
         <item>
@@ -1051,29 +1037,8 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
         </item>
 
         <item>
-                <title>Sample draft post</title>
-                <description>&lt;p&gt;This is a draft post that isn&amp;rsquo;t ready for the wild. See how it doesn&amp;rsquo;t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
-
-&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you&amp;rsquo;re off to the races.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
-install and set up Left for your own purposes.&lt;/p&gt;
-
-&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
-&lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
-</description>
-                <link>http://i.justpic.org/posts/2014/02/25/draft</link>
-                <guid>http://i.justpic.org/posts/2014/02/25/draft</guid>
-                <pubDate>2014-02-25T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
                 <title>text analysis</title>
-                <description>&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
-
-&lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.etcml.com/&quot;&gt;etcml&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/02/07/text-analysis</link>
                 <guid>http://i.justpic.org/2014/02/07/text-analysis</guid>
@@ -1081,31 +1046,15 @@ install and set up Left for your own purposes.&lt;/p&gt;
         </item>
 
         <item>
-                <title>computational science</title>
-                <description>&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
-</description>
-                <link>http://i.justpic.org/2014/01/14/computational-science</link>
-                <guid>http://i.justpic.org/2014/01/14/computational-science</guid>
-                <pubDate>2014-01-14T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>best award paper</title>
-                <description>&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
-</description>
-                <link>http://i.justpic.org/2014/01/01/best-award-paper</link>
-                <guid>http://i.justpic.org/2014/01/01/best-award-paper</guid>
-                <pubDate>2014-01-01T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
                 <title>install redmine in ubuntu</title>
-                <description>&lt;h1&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
+                <description>&lt;p&gt;安装redmine出现权限问题的解决方法 &lt;br/&gt;
+&lt;a href=&quot;http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04&quot;&gt;install redmine on ubuntu12.04&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04&quot;&gt;install redmine on ubuntu12.04&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    chmod 777 &lt;span class=&quot;c&quot;&gt;#命令 来解决权限问题 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;pre&gt;&lt;code&gt;chmod 777 #命令 来解决权限问题 
-&lt;/code&gt;&lt;/pre&gt;
+
+
 </description>
                 <link>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</link>
                 <guid>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</guid>

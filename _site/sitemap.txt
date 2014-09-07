@@ -21,7 +21,6 @@ http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 
 http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell
-http://i.justpic.org/2014/08/23/boost-
 http://i.justpic.org/2014/08/22/
 http://i.justpic.org/2014/08/17/
 http://i.justpic.org/2014/08/16/python-finance
@@ -53,10 +52,7 @@ http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204
 http://i.justpic.org/2014/04/04/mysqldump-summary
 http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu
 http://i.justpic.org/2014/04/01/install-windowslinux-with-usb
-http://i.justpic.org/posts/2014/02/25/draft
 http://i.justpic.org/2014/02/07/text-analysis
-http://i.justpic.org/2014/01/14/computational-science
-http://i.justpic.org/2014/01/01/best-award-paper
 http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu
 http://i.justpic.org/2013/11/19/install-world-community-grid-on-a-headless-ubuntu-server
 http://i.justpic.org/2013/11/10/a-little-surprised
