@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-09-07T19:28:14+08:00</lastBuildDate>
-        <pubDate>2014-09-07T19:28:14+08:00</pubDate>
+        <lastBuildDate>2014-09-07T19:30:43+08:00</lastBuildDate>
+        <pubDate>2014-09-07T19:30:43+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -14,7 +14,7 @@
                 <title>ubuntu 14.04 install haskell</title>
                 <description>&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;      
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; 
     sudo aptitude build-dep ghc
     sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
     wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2

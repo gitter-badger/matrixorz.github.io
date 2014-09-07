@@ -7,7 +7,7 @@ tags: [FP]
 draft: false
 ---
 haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：
-{% highlight bash %}      
+{% highlight bash %} 
     sudo aptitude build-dep ghc
     sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
     wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
