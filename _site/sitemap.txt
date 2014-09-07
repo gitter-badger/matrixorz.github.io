@@ -9,8 +9,9 @@ http://i.justpic.org/sitemap.txt
 http://i.justpic.org/sitemap.xml
 http://i.justpic.org/rss.xml
 http://i.justpic.org/presentation.html
-http://i.justpic.org/about/index.html
 http://i.justpic.org/about/projects.html
+http://i.justpic.org/about/index.html
+http://i.justpic.org/about/projects.htmlbak
 http://i.justpic.org/philo/index.html
 http://i.justpic.org/philo/index.html
 http://i.justpic.org/index.html
@@ -18,19 +19,12 @@ http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
-http://i.justpic.org/page4/index.html
 
 http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell
-http://i.justpic.org/2014/09/05/pca
-http://i.justpic.org/2014/08/31/pagerank
-http://i.justpic.org/2014/08/31/
-http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu
-http://i.justpic.org/2014/08/23/thread-sanitizer-exercise
 http://i.justpic.org/2014/08/23/boost-
 http://i.justpic.org/2014/08/22/
 http://i.justpic.org/2014/08/17/
 http://i.justpic.org/2014/08/16/python-finance
-http://i.justpic.org/2014/08/15/data-science
 http://i.justpic.org/financial%20modeling/2014/08/15/copula
 http://i.justpic.org/2014/08/10/
 http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet
@@ -40,7 +34,6 @@ http://i.justpic.org/python%20development/2014/07/28/python-optimization
 http://i.justpic.org/2014/07/19/data-visualization
 http://i.justpic.org/2014/07/01/erlang-learning
 http://i.justpic.org/2014/07/01/develop-tools-about-python
-http://i.justpic.org/2014/06/25/taobaoke
 http://i.justpic.org/2014/06/23/install-pypy-from-source
 http://i.justpic.org/2014/06/14/android-emulator-note
 http://i.justpic.org/2014/06/06/vps-initialization
@@ -51,12 +44,10 @@ http://i.justpic.org/2014/06/05/http-reversed-on-ssh
 http://i.justpic.org/2014/06/02/java-call-matlab
 http://i.justpic.org/2014/05/22/deploy-sites-on-nginx
 http://i.justpic.org/2014/05/06/matlab-c
-http://i.justpic.org/2014/05/06/
 http://i.justpic.org/2014/04/28/1
 http://i.justpic.org/2014/04/28/
 http://i.justpic.org/2014/04/27/tornado-with-i18n
 http://i.justpic.org/2014/04/24/algorithm-learning
-http://i.justpic.org/2014/04/22/shearlet
 http://i.justpic.org/2014/04/22/deep-learning-these-days
 http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu
 http://i.justpic.org/2014/04/16/2014

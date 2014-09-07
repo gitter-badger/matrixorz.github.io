@@ -69,8 +69,7 @@
     October 27, 2013
   </section>
 
-  
-<p>Install OpenQuant Project</p>
+  <p>Install OpenQuant Project</p>
 
 <pre><code>sudo apt-get install nginx
 sudo apt-get install git
@@ -91,25 +90,29 @@ sudo pip install Cython
 
 <pre><code>sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
 pip install numpy
-pip install scipy **install ta-lib**
+pip install scipy
+</code></pre>
 
-cd ~
+<p><strong>install ta-lib</strong></p>
+
+<pre><code>cd ~
 wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 sudo apt-get  install  build-essential
 tar -zxvf ta-lib-0.4.0-src.tar.gz
 cd ta-lib-0.4.0
 ./configure --prefix=/usr
 make
-sudo make install **install gevent**
-wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-tar -zxvf 
-./configure
-make 
 sudo make install
+</code></pre>
 
+<p><strong>install gevent</strong>
+    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+    tar -zxvf
+    ./configure
+    make
+    sudo make install</p>
 
-
-cd ~/www
+<pre><code>cd ~/www
 git clone https://github.com/pydata/pandas.git
 git clone https://github.com/mrjbq7/ta-lib.git
 </code></pre>
@@ -127,21 +130,55 @@ sudo apt-get install nginx
 
 <pre><code>sudo apt-get install mysql-server libmysqld-dev
 pip install MySQL-python
-insert into mysql.user(Host,User,Password) values("localhost","david",password("david")); **用户授权**
+insert into mysql.user(Host,User,Password) values("localhost","david",password("david"));
 </code></pre>
+
+<p><strong>用户授权</strong></p>
 
 <p>给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
 
-<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david'; **install redis**
+<pre><code>mysql&gt;grant all privileges on *.* to david@localhost identified by 'david';
+</code></pre>
 
-http://rubyer.me/blog/638/ redis.io
+<p><strong>install redis</strong></p>
+
+<pre><code>http://rubyer.me/blog/638/ redis.io
 </code></pre>
 
 <p><strong>uwsgi or gunicorn(optional)</strong></p>
 
+<section align="right">
+<br/>
+<span>
+	<a  href="/2013/10/26/how-to-write-a-crawler" class="pageNav"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/11/04/deploy-python-on-nginx" class="pageNav"  >下一篇</a>
+</span>
+</section>
 
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://i.justpic.org/2013/10/26/how-to-write-a-crawler';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://i.justpic.org/2013/11/04/deploy-python-on-nginx';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
   <!-- TODO: bio here -->
+
   <section class="meta">
     <h3>Discussion, links, and tweets</h3>
     <section class="copy">

@@ -69,8 +69,7 @@
     July 29, 2013
   </section>
 
-  
-<h1 id="jquery">使用jquery增加元素节点</h1>
+  <h1>使用jquery增加元素节点</h1>
 
 <p>add one element in the parent</p>
 
@@ -90,8 +89,38 @@ var $parent=$(".nm_ul");
 $parent.append($li_1);
 </code></pre>
 
+<section align="right">
+<br/>
+<span>
+	<a  href="/2013/07/28/webpy-note" class="pageNav"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/08/06/webpy" class="pageNav"  >下一篇</a>
+</span>
+</section>
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://i.justpic.org/2013/07/28/webpy-note';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://i.justpic.org/2013/08/06/webpy';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
   <!-- TODO: bio here -->
+
   <section class="meta">
     <h3>Discussion, links, and tweets</h3>
     <section class="copy">

@@ -5,35 +5,27 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-<<<<<<< HEAD
-        <lastBuildDate>2014-09-06T14:55:19+08:00</lastBuildDate>
-        <pubDate>2014-09-06T14:55:19+08:00</pubDate>
-=======
-        <lastBuildDate>2014-09-06T14:52:48+08:00</lastBuildDate>
-        <pubDate>2014-09-06T14:52:48+08:00</pubDate>
->>>>>>> gh-pages
+        <lastBuildDate>2014-09-07T17:59:29+08:00</lastBuildDate>
+        <pubDate>2014-09-07T17:59:29+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>ubuntu 14.04 install haskell</title>
-                <description>
-&lt;h1 id=&quot;ubuntu-1404haskell&quot;&gt;在ubuntu 14.04上搭建haskell环境&lt;/h1&gt;
+                <description>&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
 
-&lt;p&gt;haskell是一种函数编程式语言，
-ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础。
-下面是安装ghc的步骤：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo aptitude build-dep ghc
+    sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
+    wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
+    tar jxvf ghc-7.8.3-src.tar.bz2
+    &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ghc-7.8.3-src
+    ./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/ghc
+    make -j8
+    sudo paco -D make install
+    sudo aptitude purge ghc
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo aptitude build-dep ghc
-sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
-wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
-tar jxvf ghc-7.8.3-src.tar.bz2
-cd ghc-7.8.3-src
-./configure --prefix=/usr/local/ghc
-make -j8
-sudo paco -D make install
-sudo aptitude purge ghc
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;编辑.bashrc文件&lt;/p&gt;
 
@@ -68,97 +60,10 @@ cabal update
 
 &lt;pre&gt;&lt;code&gt;ghc-pkg check --simple-output | xargs -n 1 ghc-pkg unregister --force
 &lt;/code&gt;&lt;/pre&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</link>
                 <guid>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</guid>
                 <pubDate>2014-09-06T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>pca</title>
-                <description>
-&lt;p&gt;PCA是principal component analysis的缩写，即主成分分析，此方法目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性袋鼠角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元。
-混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;/p&gt;
-
-&lt;p&gt;PCA的主要思想：
-1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；
-2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现过层就是对协方差矩阵进行对角化。&lt;/p&gt;
-
-&lt;p&gt;PCA的模型中存在很多的假设条件：
-1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；
-2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。
-3.数据本身具有较高的信躁比。
-4.假设主元向量之间是正交的。&lt;/p&gt;
-
-&lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解。
-&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;
-&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;
-使用svd解决PCA问题,可以得到两个方向上的PCA。
-svd与LSI&lt;/p&gt;
-
-&lt;p&gt;PCA与LDA是特征抽取的两种主要经典方法
-LDA(线性评判分析)
-信号表示：特征抽取后的特征要能够精确地表示样本信息，使得信息丢失很小，对应的方法是PCA
-信号分类：特征抽取后的特征，要使得分类后的准确率很高，不能比原来特征进行分类的准确率低。对于线性来说，对应的方法是LDA&lt;/p&gt;
-
-&lt;p&gt;LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。&lt;/p&gt;
-
-</description>
-                <link>http://i.justpic.org/2014/09/05/pca</link>
-                <guid>http://i.justpic.org/2014/09/05/pca</guid>
-                <pubDate>2014-09-05T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>pagerank算法与马尔科夫链</title>
-                <description>
-</description>
-                <link>http://i.justpic.org/2014/08/31/pagerank</link>
-                <guid>http://i.justpic.org/2014/08/31/pagerank</guid>
-                <pubDate>2014-08-31T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>理解回归</title>
-                <description>
-&lt;p&gt;为啥用最小二乘表示cost function，由最大似然估计（拉格朗日）可以推出来&lt;/p&gt;
-
-&lt;p&gt;最大似然估计到EM算法&lt;/p&gt;
-
-&lt;p&gt;求解最小二乘使用梯度下降方法或者牛顿迭代法求出。&lt;/p&gt;
-
-&lt;p&gt;逻辑回归的cost function为最小二乘法吗&lt;/p&gt;
-
-&lt;p&gt;由于逻辑回归中的最小二乘cost function不是凸的，不能方便求最优化解。
-针对逻辑回归，可以选择对数似然损失函数作为loss function
-经过多步推导后，发现最后的梯度下降形式相同，除了最初的hypothesis不同外，世界又变美好了。&lt;/p&gt;
-
-</description>
-                <link>http://i.justpic.org/2014/08/31/</link>
-                <guid>http://i.justpic.org/2014/08/</guid>
-                <pubDate>2014-08-31T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>solv matlab installation in ubuntu</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://askubuntu.com/questions/151826/how-to-fix-java-problem-installing-matlab-2012a-64-bit-in-ubuntu-12-04-64-bit&quot;&gt;How to fix Java problem installing Matlab 2012a (64-bit) in Ubuntu 12.04 (64 bit)?&lt;/a&gt;&lt;/p&gt;
-</description>
-                <link>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</link>
-                <guid>http://i.justpic.org/2014/08/27/solv-matlab-installation-in-ubuntu</guid>
-                <pubDate>2014-08-27T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>thread sanitizer exercise</title>
-                <description>
-&lt;p&gt;thread-sanitizer是由chrominum团队开发出来检测多线程错误的工具，可以检测到c/c++和go语言的数据竞争、同步、死锁、线程不正确等多线程问题。&lt;a href=&quot;https://code.google.com/p/thread-sanitizer/&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
-
-</description>
-                <link>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</link>
-                <guid>http://i.justpic.org/2014/08/23/thread-sanitizer-exercise</guid>
-                <pubDate>2014-08-23T00:00:00+08:00</pubDate>
         </item>
 
         <item>
@@ -172,27 +77,26 @@ LDA(线性评判分析)
 
         <item>
                 <title>模式识别</title>
-                <description>
-&lt;p&gt;关于模式识别和计算机应用方向, 我认为可以选择的主题(仅是己见)
-1.	数学方面
-1)	矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. 
-2)	广义逆与子空间
-3)	最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义
-4)	凸分析与凸优化的基本知识及其几何意义
-5)	常用的几种优化方法. 
+                <description>&lt;p&gt; 关于模式识别和计算机应用方向, 我认为可以选择的主题(仅是己见)
+1.  数学方面
+1)  矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar.
+2)  广义逆与子空间
+3)  最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义
+4)  凸分析与凸优化的基本知识及其几何意义
+5)  常用的几种优化方法.
 其实以上在某种意义下是相通的.
-6)	微分几何、黎曼几何的基本概念和知识
-7)	李群与李代数的基本知识 
-8)	图和谱图的基本知识
+6)  微分几何、黎曼几何的基本概念和知识
+7)  李群与李代数的基本知识
+8)  图和谱图的基本知识
 以上知识，我认为，是作为一个做算法的研究者都应该了解或是掌握的数学知识
-9)	模糊数学（就个人而言，我十分不情愿把这个方法列在这里，因为我认为模糊数学不是&lt;/p&gt;
+9)  模糊数学（就个人而言，我十分不情愿把这个方法列在这里，因为我认为模糊数学不是&lt;/p&gt;
 
 &lt;p&gt;好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
-10)	时间序列分析的主要方法和最近新方法.
-11)	分形和混沌
-12)	常用微分方程的基本类型和解法
+10) 时间序列分析的主要方法和最近新方法.
+11) 分形和混沌
+12) 常用微分方程的基本类型和解法
 2．专业方向
-   1）PCA, FA, MDS 
+   1）PCA, FA, MDS
       这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计&lt;/p&gt;
 
 &lt;p&gt;算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non&lt;/p&gt;
@@ -210,7 +114,7 @@ LDA(线性评判分析)
 &lt;p&gt;一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非&lt;/p&gt;
 
 &lt;p&gt;常难以发掘。
-   4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps) 
+   4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps)
       局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa&lt;/p&gt;
 
 &lt;p&gt;tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋&lt;/p&gt;
@@ -222,7 +126,7 @@ LDA(线性评判分析)
 出，它正是图像分割领域研究的热点。
    这两种方法我自发的报告会中 仔细介绍过。
    5）HMM (Hidden Markov Model)
-   6)  Wavelet 
+   6)  Wavelet
    7)  RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma&lt;/p&gt;
 
 &lt;p&gt;p)
@@ -265,8 +169,7 @@ LDA(线性评判分析)
 
         <item>
                 <title>python finance</title>
-                <description>
-&lt;p&gt;====books=====&lt;/p&gt;
+                <description>&lt;p&gt;====books=====&lt;/p&gt;
 
 &lt;p&gt;Financial Modeling in python&lt;/p&gt;
 
@@ -300,37 +203,8 @@ LDA(线性评判分析)
         </item>
 
         <item>
-                <title>data science</title>
-                <description>
-&lt;p&gt;Data Science 
-level up&lt;/p&gt;
-
-&lt;p&gt;1.标准报表建立 Excel&lt;/p&gt;
-
-&lt;p&gt;2.sql 查询&lt;/p&gt;
-
-&lt;p&gt;3.多维分析，OLAP、BI&lt;/p&gt;
-
-&lt;p&gt;4.警报，&lt;/p&gt;
-
-&lt;p&gt;5.统计分析，频率分析，&lt;/p&gt;
-
-&lt;p&gt;6.预测，时序分析&lt;/p&gt;
-
-&lt;p&gt;7.预测建模&lt;/p&gt;
-
-&lt;p&gt;8.优化，投资回报比(ROI)&lt;/p&gt;
-
-</description>
-                <link>http://i.justpic.org/2014/08/15/data-science</link>
-                <guid>http://i.justpic.org/2014/08/15/data-science</guid>
-                <pubDate>2014-08-15T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
                 <title>copula</title>
-                <description>
-&lt;p&gt;copula 统计分析&lt;/p&gt;
+                <description>&lt;p&gt;copula 统计分析&lt;/p&gt;
 
 &lt;p&gt;分布估计算法为解决遗传算法中存在的因交叉、变异操作而导致的建筑块破坏问题而提出的。
 分布估计算法的思想主要是分析优势群体的分布模型并用来影响新一代群体的分布。&lt;/p&gt;
@@ -358,13 +232,13 @@ copula函数的分类：
 对这样的问题可将其转换成相关的随机过程，然后用Monte Carlo方法进行求解。&lt;/p&gt;
 
 &lt;p&gt;蒙特卡罗算法的主要组成部分
-概率密度函数–必须给出描述一个物理系统的一组概率密度函数
-随机数生成器–能够产生在[0,1]上的均匀分布的随机数
-抽样规则–如何从区间[0,1]上均匀分布的随机数出发，随机抽取服从给定的pdf的随机变量
-模拟结果记录–记录一些刚兴趣的量的模拟结果
-误差估计–必须穹顶统计误差（或方差）随模拟次数以及其他一些量的变化
-减少方差的技术–利用该技术可减少模拟过程中计算的次数
-并行和矢量化–可以在先进的并行计算机上运行的有效算法。&lt;/p&gt;
+概率密度函数&amp;ndash;必须给出描述一个物理系统的一组概率密度函数
+随机数生成器&amp;ndash;能够产生在[0,1]上的均匀分布的随机数
+抽样规则&amp;ndash;如何从区间[0,1]上均匀分布的随机数出发，随机抽取服从给定的pdf的随机变量
+模拟结果记录&amp;ndash;记录一些刚兴趣的量的模拟结果
+误差估计&amp;ndash;必须穹顶统计误差（或方差）随模拟次数以及其他一些量的变化
+减少方差的技术&amp;ndash;利用该技术可减少模拟过程中计算的次数
+并行和矢量化&amp;ndash;可以在先进的并行计算机上运行的有效算法。&lt;/p&gt;
 
 &lt;p&gt;蒙特卡罗方法能很好地用来对付维数的灾难，因为该方法的计算复杂性不再依赖于维数。
 方差缩减的技巧&lt;/p&gt;
@@ -392,9 +266,6 @@ copula函数的分类：
 通过计算求得第二个随机数为&lt;/p&gt;
 
 &lt;p&gt;但Copula的应用不局限与金融的风险评估，在图像处理和信号分析中也有很多应用。&lt;/p&gt;
-
-&lt;p&gt;=======
-»»»&amp;gt; master&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/financial%20modeling/2014/08/15/copula</link>
                 <guid>http://i.justpic.org/financial%20modeling/2014/08/15/copula</guid>
@@ -403,9 +274,9 @@ copula函数的分类：
 
         <item>
                 <title>线性代数中的矩阵</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;
-  &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;  &lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt; &lt;br/&gt;
+  &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
+  &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/10/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>
@@ -414,8 +285,7 @@ copula函数的分类：
 
         <item>
                 <title>ScatNet</title>
-                <description>
-&lt;p&gt;散射卷积网络通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。&lt;/p&gt;
+                <description>&lt;p&gt;散射卷积网络通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。&lt;/p&gt;
 
 &lt;p&gt;参考文章与资料：&lt;/p&gt;
 
@@ -434,8 +304,7 @@ copula函数的分类：
 
         <item>
                 <title>python web development</title>
-                <description>
-&lt;p&gt;两篇很好的文章：&lt;/p&gt;
+                <description>&lt;p&gt;两篇很好的文章：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;/p&gt;
 
@@ -445,23 +314,23 @@ copula函数的分类：
 
 &lt;p&gt;技术选型&lt;/p&gt;
 
-&lt;p&gt;tornado  –epool，pre_fork,异步io的集合体&lt;/p&gt;
+&lt;p&gt;tornado  &amp;ndash;epool，pre_fork,异步io的集合体&lt;/p&gt;
 
-&lt;p&gt;mongodb  –nosql技术，读快写慢&lt;/p&gt;
+&lt;p&gt;mongodb  &amp;ndash;nosql技术，读快写慢&lt;/p&gt;
 
-&lt;p&gt;rq/mrq   –redis队列，传递消息，方便快捷&lt;/p&gt;
+&lt;p&gt;rq/mrq   &amp;ndash;redis队列，传递消息，方便快捷&lt;/p&gt;
 
-&lt;p&gt;pandas   –处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
+&lt;p&gt;pandas   &amp;ndash;处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
 
 &lt;p&gt;参考项目&lt;/p&gt;
 
-&lt;p&gt;nbviewer –tornado中如何做并行化 futures&lt;/p&gt;
+&lt;p&gt;nbviewer &amp;ndash;tornado中如何做并行化 futures&lt;/p&gt;
 
-&lt;p&gt;pyspider –flask 后台队列的实现和控制，架构方面&lt;/p&gt;
+&lt;p&gt;pyspider &amp;ndash;flask 后台队列的实现和控制，架构方面&lt;/p&gt;
 
 &lt;p&gt;云存储&lt;/p&gt;
 
-&lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
+&lt;p&gt;baidupcs-sdk &amp;ndash;免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
 
 &lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;/p&gt;
 
@@ -477,9 +346,7 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>sort algorithm</title>
-                <description>
-&lt;p&gt;对于堆排序，自底向上构建堆，自上而下堆排序。&lt;/p&gt;
-
+                <description>&lt;p&gt;对于堆排序，自底向上构建堆，自上而下堆排序。&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/07/30/sort-algorithm</link>
                 <guid>http://i.justpic.org/2014/07/30/sort-algorithm</guid>
@@ -488,16 +355,15 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>python optimization</title>
-                <description>
-&lt;p&gt;首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;/p&gt;
+                <description>&lt;p&gt; 首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;/p&gt;
 
-&lt;p&gt;判断程序为io-bound任务还是cpu-bound任务。&lt;/p&gt;
+&lt;p&gt; 判断程序为io-bound任务还是cpu-bound任务。&lt;/p&gt;
 
-&lt;p&gt;io-bound任务程序使用gevent来优化&lt;/p&gt;
+&lt;p&gt; io-bound任务程序使用gevent来优化&lt;/p&gt;
 
-&lt;p&gt;cpu-bound任务程序使用multiprocess来优化&lt;/p&gt;
+&lt;p&gt; cpu-bound任务程序使用multiprocess来优化&lt;/p&gt;
 
-&lt;p&gt;使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
+&lt;p&gt; 使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/python%20development/2014/07/28/python-optimization</link>
                 <guid>http://i.justpic.org/python%20development/2014/07/28/python-optimization</guid>
@@ -506,8 +372,7 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>data visualization</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;/p&gt;
 
@@ -520,8 +385,7 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>erlang learning</title>
-                <description>
-&lt;p&gt;erlang学习教程
+                <description>&lt;p&gt;erlang学习教程
 &lt;a href=&quot;http://www.howistart.org/posts/erlang/1&quot;&gt;start erlang&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/07/01/erlang-learning</link>
@@ -531,8 +395,7 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>develop tools about python</title>
-                <description>
-&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+                <description>&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
 
 &lt;p&gt;vagrant介绍
 vagrant是一款用来构建虚拟开发环境的工具，非常适合php/python/ruby/java这类语言开发Web语言，如果说virtualenv是一个python包环境的封装，那么可以说vagrant是在一个操作系统层面上的封装，而且是跨平台的，当然也有docker，关于docker与vagrant的区别可见&lt;a href=&quot;https://www.dockboard.org/docker-vs-vagrant-why-this-two-technologies-aren&#39;t-competing/&quot;&gt;这篇文章&lt;/a&gt;.&lt;/p&gt;
@@ -567,7 +430,7 @@ $cd /vagrant  #虚拟机下的/vagrant是宿主机上的 devpath
 &lt;p&gt;其他设置
     vagrant出事化后，会在初始化目录里生成一个Vagrantfile的配置文件。
     Vagrant默认是使用端口映射方式将虚拟机的端口映射本机从而实现类似http://localhost:80这种访问方式，host-only模式显得更方便，打开Vagrantfile，将下面这行的注释去掉
-config.vm.network :private_network,ip:”192.168.33.10”
+config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
 重启虚拟机，这样就能用192.168.33.10访问这台机器。&lt;/p&gt;
 
 &lt;p&gt;打包分发
@@ -576,7 +439,7 @@ config.vm.network :private_network,ip:”192.168.33.10”
 
 &lt;p&gt;常用命令&lt;/p&gt;
 
-&lt;p&gt;$vagrant init
+&lt;p&gt;   $vagrant init
    $vagrant up
    $vagrant halt
    $vagrant reload
@@ -591,7 +454,6 @@ EnableSendfile off&lt;/p&gt;
 
 &lt;p&gt;Nginx
 sendfile off&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/07/01/develop-tools-about-python</link>
                 <guid>http://i.justpic.org/2014/07/01/develop-tools-about-python</guid>
@@ -599,25 +461,13 @@ sendfile off&lt;/p&gt;
         </item>
 
         <item>
-                <title>taobaoke</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;https://doc.openerp.com/install/linux/server/&quot;&gt;install openerp 6.1&lt;/a&gt;&lt;/p&gt;
-</description>
-                <link>http://i.justpic.org/2014/06/25/taobaoke</link>
-                <guid>http://i.justpic.org/2014/06/25/taobaoke</guid>
-                <pubDate>2014-06-25T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
                 <title>install pypy from source</title>
-                <description>
-&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
+                <description>&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
 cd pypy/pypy/goal
 python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
 [config opt](http://pypy.readthedocs.org/en/latest/config/opt.html)
 &lt;/code&gt;&lt;/pre&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/06/23/install-pypy-from-source</link>
                 <guid>http://i.justpic.org/2014/06/23/install-pypy-from-source</guid>
@@ -626,8 +476,7 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>android emulator note</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
 &lt;a href=&quot;http://blag.felixhummel.de/junk/android_emulator.html&quot;&gt;Android Emulator on Ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/06/14/android-emulator-note</link>
@@ -637,8 +486,7 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>vps initialization</title>
-                <description>
-&lt;p&gt;添加用户：&lt;/p&gt;
+                <description>&lt;p&gt;添加用户：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;useradd options &amp;lt;username&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -669,11 +517,10 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远�
 &lt;pre&gt;&lt;code&gt;PasswordAuthentication no    （经用密码登陆）
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;重启ssh &lt;/p&gt;
+&lt;p&gt;重启ssh&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo service ssh restart
 &lt;/code&gt;&lt;/pre&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/06/06/vps-initialization</link>
                 <guid>http://i.justpic.org/2014/06/06/vps-initialization</guid>
@@ -709,8 +556,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远�
 
         <item>
                 <title>http reversed on ssh</title>
-                <description>
-&lt;p&gt;nginx config details&lt;/p&gt;
+                <description>&lt;p&gt;nginx config details&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;upstream tunnel{
    server 127.0.0.1:8080;
@@ -719,7 +565,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远�
 server {
    listen 80;
    server_name &amp;lt;url&amp;gt;;
-   
+
    location /{
    proxy_set_header Host $http_host;
    proxy_pass tunnel;
@@ -727,18 +573,17 @@ server {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;ssh reverse &lt;/p&gt;
+&lt;p&gt;ssh reverse&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;port is your local application used &lt;/p&gt;
+&lt;p&gt;port is your local application used&lt;/p&gt;
 
-&lt;p&gt;url is the url you will to visit public &lt;/p&gt;
+&lt;p&gt;url is the url you will to visit public&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt; 
+&lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt;
 is a localtunnel site that can expose your local website.&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</link>
                 <guid>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</guid>
@@ -747,8 +592,7 @@ is a localtunnel site that can expose your local website.&lt;/p&gt;
 
         <item>
                 <title>Java call matlab</title>
-                <description>
-&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
+                <description>&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
 
 &lt;p&gt;使用deploytool命令打开matlab打包工具
 打包完成后在eclipse除导入该包外，还要导入目录 toolbox/javabuilder/jar/javabuilder.jar包
@@ -762,8 +606,7 @@ is a localtunnel site that can expose your local website.&lt;/p&gt;
 
         <item>
                 <title>deploy sites on nginx</title>
-                <description>
-&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
+                <description>&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
 
 &lt;p&gt;You can kill it using:&lt;/p&gt;
 
@@ -781,293 +624,140 @@ is a localtunnel site that can expose your local website.&lt;/p&gt;
         <item>
                 <title>Matlab C混合编程</title>
                 <description>
-&lt;p&gt;用C++（或者C）语言操作MATLAB，有三种途径：&lt;br /&gt;
-·MEX文件&lt;br /&gt;
-在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：&lt;br /&gt;
-对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。&lt;br /&gt;
-对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。&lt;br /&gt;
-·MAT文件应用程序&lt;br /&gt;
-MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。&lt;br /&gt;
-为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。&lt;br /&gt;
-·引擎应用程序&lt;br /&gt;
+
+&lt;p&gt;用C++（或者C）语言操作MATLAB，有三种途径：&lt;br&gt;
+·MEX文件&lt;br&gt;
+在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：&lt;br&gt;
+对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。&lt;br&gt;
+对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。&lt;br&gt;
+·MAT文件应用程序&lt;br&gt;
+MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。&lt;br&gt;
+为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。&lt;br&gt;
+·引擎应用程序&lt;br&gt;
 MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而把MATLAB用作一个计算引擎。MATLAB引擎程序指的是那些通过管道（在UNIX系统中）或者ActiveX（在Windows系统中）与独立MATLAB进程进行通信的C/C++或者Fortran程序。&lt;/p&gt;
+
+
 &lt;p&gt;MEX文件&lt;/p&gt;
+
+
 &lt;p&gt;#include “mex.h”&lt;/p&gt;
-&lt;p&gt;/*&lt;br /&gt;
-*timestwo.c-example found in API guide&lt;br /&gt;
-*&lt;br /&gt;
-*Computational function that takes a scalar and doubles it&lt;br /&gt;
-*&lt;br /&gt;
-*This is a MEX-File for MATLAB.&lt;br /&gt;
-*Copyright(c)&lt;br /&gt;
-*/&lt;br /&gt;
-void timestwo(double y[],double x[]);&lt;br /&gt;
-void timestwo(double y[],double x[])&lt;br /&gt;
-{&lt;br /&gt;
-y[0]=2.0*x[0];&lt;br /&gt;
-}&lt;br /&gt;
-void mexFunction(int nlhs,mxArray* plhs[],&lt;br /&gt;
-int nrhs,const mxArray *prhs[])&lt;br /&gt;
-/*nlhs是MATLAB命令行方式下输出参数的个数&lt;br /&gt;
-*plhs是MATLAB命令行方式下的输出参数;&lt;br /&gt;
-*nrhs是MATLAB命令行方式下输入参数的个数；&lt;br /&gt;
-*prhs[]是MATLAB命令行方式下的输入参数；&lt;br /&gt;
-*/&lt;br /&gt;
-{&lt;br /&gt;
-double *x,*y;&lt;br /&gt;
-int mrows,ncols;&lt;br /&gt;
-/*Check for proper number of arguments.*/&lt;br /&gt;
-if (nrhs!=1){&lt;br /&gt;
-mexErrMsgTxt(“One input required”);&lt;br /&gt;
-}&lt;br /&gt;
-else if(nlhs&amp;gt;1)&lt;br /&gt;
-{&lt;br /&gt;
-mexErrMsgTxt(“Too many output arguments”);&lt;br /&gt;
-}&lt;br /&gt;
-/*在MATLAB命令行方式下，本MEX文件的调用格式是y=timestwo(x)&lt;br /&gt;
-输入参数（x）个数=1，输出参数（y）个数=1，所以在程序一开始就检查&lt;br /&gt;
-nrhs时候==1以及nlhs是否&amp;gt;1（因为MATLAB有一个缺省的输出参数ans，所以nlhs可以==0*/&lt;br /&gt;
-/*The input must be a non comlex scalar double.*/&lt;br /&gt;
-mrows=mxGetM(prhs[0]);//矩阵行数&lt;br /&gt;
-ncols=mxGetN(prhs[0]);//矩阵列数&lt;br /&gt;
-if (!mxIsDouble(prhs[0])|| mxIsComplex(prhs[0])||!(mrows==1&amp;amp;ncols==1))&lt;br /&gt;
-{&lt;br /&gt;
-mexErrMsgTxt(“Input must be a noncomplex scalar double”);&lt;br /&gt;
-}&lt;br /&gt;
-//判断输入举证是否是double类，以及它是否只包含单个元素无嵌套&lt;br /&gt;
-//为输出创建一个矩阵，显然这个矩阵也应该是1*1的&lt;br /&gt;
-plhs[0]=mxCreateDoubleMatrix(mrows,ncols,mxREAL);&lt;br /&gt;
-x=mxGetPr(prhs[0]);&lt;br /&gt;
-y=mxGetPr(plhs[0]);&lt;br /&gt;
-timestwo(y,x);&lt;br /&gt;
+
+
+&lt;p&gt;/*&lt;br&gt;
+*timestwo.c-example found in API guide&lt;br&gt;
+*&lt;br&gt;
+*Computational function that takes a scalar and doubles it&lt;br&gt;
+*&lt;br&gt;
+*This is a MEX-File for MATLAB.&lt;br&gt;
+*Copyright(c)&lt;br&gt;
+*/&lt;br&gt;
+void timestwo(double y[],double x[]);&lt;br&gt;
+void timestwo(double y[],double x[])&lt;br&gt;
+{&lt;br&gt;
+y[0]=2.0*x[0];&lt;br&gt;
+}&lt;br&gt;
+void mexFunction(int nlhs,mxArray* plhs[],&lt;br&gt;
+int nrhs,const mxArray *prhs[])&lt;br&gt;
+/*nlhs是MATLAB命令行方式下输出参数的个数&lt;br&gt;
+*plhs是MATLAB命令行方式下的输出参数;&lt;br&gt;
+*nrhs是MATLAB命令行方式下输入参数的个数；&lt;br&gt;
+*prhs[]是MATLAB命令行方式下的输入参数；&lt;br&gt;
+*/&lt;br&gt;
+{&lt;br&gt;
+double *x,*y;&lt;br&gt;
+int mrows,ncols;&lt;br&gt;
+/*Check for proper number of arguments.*/&lt;br&gt;
+if (nrhs!=1){&lt;br&gt;
+mexErrMsgTxt(“One input required”);&lt;br&gt;
+}&lt;br&gt;
+else if(nlhs&amp;gt;1)&lt;br&gt;
+{&lt;br&gt;
+mexErrMsgTxt(“Too many output arguments”);&lt;br&gt;
+}&lt;br&gt;
+/*在MATLAB命令行方式下，本MEX文件的调用格式是y=timestwo(x)&lt;br&gt;
+输入参数（x）个数=1，输出参数（y）个数=1，所以在程序一开始就检查&lt;br&gt;
+nrhs时候==1以及nlhs是否&amp;gt;1（因为MATLAB有一个缺省的输出参数ans，所以nlhs可以==0*/&lt;br&gt;
+/*The input must be a non comlex scalar double.*/&lt;br&gt;
+mrows=mxGetM(prhs[0]);//矩阵行数&lt;br&gt;
+ncols=mxGetN(prhs[0]);//矩阵列数&lt;br&gt;
+if (!mxIsDouble(prhs[0])|| mxIsComplex(prhs[0])||!(mrows==1&amp;amp;ncols==1))&lt;br&gt;
+{&lt;br&gt;
+mexErrMsgTxt(“Input must be a noncomplex scalar double”);&lt;br&gt;
+}&lt;br&gt;
+//判断输入举证是否是double类，以及它是否只包含单个元素无嵌套&lt;br&gt;
+//为输出创建一个矩阵，显然这个矩阵也应该是1*1的&lt;br&gt;
+plhs[0]=mxCreateDoubleMatrix(mrows,ncols,mxREAL);&lt;br&gt;
+x=mxGetPr(prhs[0]);&lt;br&gt;
+y=mxGetPr(plhs[0]);&lt;br&gt;
+timestwo(y,x);&lt;br&gt;
 }&lt;/p&gt;
+
+
 &lt;p&gt;matlab&amp;gt;mex testmex.cpp&lt;/p&gt;
+
+
 &lt;p&gt;matlab&amp;gt;x=2&lt;/p&gt;
+
+
 &lt;p&gt;matlab&amp;gt;y=testmex(x)&lt;/p&gt;
+
+
 &lt;p&gt;2.MAT文件：&lt;/p&gt;
+
+
 &lt;p&gt;libmat.dll:用于操作mat文件&lt;/p&gt;
+
+
 &lt;p&gt;libmx.dll:用于操作mat文件中的矩阵&lt;/p&gt;
+
+
 &lt;p&gt;MATLAB中常用的矩阵类型：&lt;/p&gt;
+
+
 &lt;p&gt;（复）双精度矩阵：&lt;/p&gt;
+
+
 &lt;p&gt;MATLAB中最常用的数据类型便是（复）双精度、非稀疏矩阵，这些矩阵的元素都是双精度（double）的，矩阵的尺寸为m×n，其中m是总行数，m是总列数。矩阵数据实际存放在两个双精度向量中——一个向量存放的是数据的实部，另一个向量存放的是数据的虚部。指向这两个向量的指针一般被写做“pr” （pointer to real data，指向实数据的指针）和“pi” （pointer to imaginary data，指向虚数据的指针）”。如果一个矩阵的pi为空的话，说明它是实双精度矩阵。&lt;/p&gt;
-&lt;p&gt;稀疏矩阵（Sparse Matrices）&lt;br /&gt;
-MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。&lt;br /&gt;
-nzmax是个整型数，其值为向量ir及pr、pi（如果存在的话）可能的最大长度。它是稀疏矩阵中不为零的元素的个数。&lt;br /&gt;
-ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。&lt;br /&gt;
+
+
+&lt;p&gt;稀疏矩阵（Sparse Matrices）&lt;br&gt;
+MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。&lt;br&gt;
+nzmax是个整型数，其值为向量ir及pr、pi（如果存在的话）可能的最大长度。它是稀疏矩阵中不为零的元素的个数。&lt;br&gt;
+ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。&lt;br&gt;
 jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中包含的是列号信息。对于任意的j，如果0≤j≥N-1，jc[j]是第j列中第一个非零项在ir、pr（以及pi）中的序号，jc[j+1]-1是第j列最后一个非零项的序号。因此jc[N]总等于nnz——矩阵中非零项的总个数。如果nnz小于nzmax，可以继续向矩阵中添加非零项而无需分配额外的存储空间&lt;/p&gt;
-&lt;p&gt;4、主要函数举例：&lt;br /&gt;
-·MATFile *matOpen(const char *filename, const char * mode)——打开/创建&lt;br /&gt;
-·MATFile *matOpen(const char *filename, const char * mode)——打开/创建一个MAT文件；&lt;br /&gt;
-·int matClose(MATFile *pMF)——关闭一个MAT文件；&lt;br /&gt;
-·mxArray *mxCreateDoubleMatrix(int m, int n, mxComplexity flag)&lt;br /&gt;
-——创建一个（复）双精度矩阵；&lt;br /&gt;
-·mxArray *mxCreateSparse(int m, int n, int nzmax, mxComplexity flag)&lt;br /&gt;
-——创建一个稀疏矩阵；&lt;br /&gt;
-·mxArray *matGetNextArray(MATFile *pMF)——获得MAT文件里面下一个矩阵；&lt;br /&gt;
-·const char *mxGetName(const mxArray *pa)——获得矩阵pa的名称；&lt;br /&gt;
-·void mxSetName(mxArray *pa,const char *s)——为矩阵pa设置一个名称；&lt;br /&gt;
-·int mxGetM(const mxArray *pa)——获得矩阵pa的总行数；&lt;br /&gt;
-·int mxGetN(const mxArray *pa)——获得矩阵pa的总列数；&lt;br /&gt;
-·double *mxGetPr(const mxArray *pa)——获得矩阵pa的pr指针；&lt;br /&gt;
-·int *mxGetIr(const mxArray *pa)——获得稀疏矩阵pa的ir指针；&lt;br /&gt;
-·int *mxGetJc(const mxArray *pa)——获得稀疏矩阵pa的jc指针；&lt;br /&gt;
-·int matPutArray(MATFile * pMF, const mxArray * pA)&lt;br /&gt;
-——把矩阵pA存储入MAT文件pMAF；&lt;br /&gt;
+
+
+&lt;p&gt;4、主要函数举例：&lt;br&gt;
+·MATFile *matOpen(const char *filename, const char * mode)——打开/创建&lt;br&gt;
+·MATFile *matOpen(const char *filename, const char * mode)——打开/创建一个MAT文件；&lt;br&gt;
+·int matClose(MATFile *pMF)——关闭一个MAT文件；&lt;br&gt;
+·mxArray *mxCreateDoubleMatrix(int m, int n, mxComplexity flag)&lt;br&gt;
+——创建一个（复）双精度矩阵；&lt;br&gt;
+·mxArray *mxCreateSparse(int m, int n, int nzmax, mxComplexity flag)&lt;br&gt;
+——创建一个稀疏矩阵；&lt;br&gt;
+·mxArray *matGetNextArray(MATFile *pMF)——获得MAT文件里面下一个矩阵；&lt;br&gt;
+·const char *mxGetName(const mxArray *pa)——获得矩阵pa的名称；&lt;br&gt;
+·void mxSetName(mxArray *pa,const char *s)——为矩阵pa设置一个名称；&lt;br&gt;
+·int mxGetM(const mxArray *pa)——获得矩阵pa的总行数；&lt;br&gt;
+·int mxGetN(const mxArray *pa)——获得矩阵pa的总列数；&lt;br&gt;
+·double *mxGetPr(const mxArray *pa)——获得矩阵pa的pr指针；&lt;br&gt;
+·int *mxGetIr(const mxArray *pa)——获得稀疏矩阵pa的ir指针；&lt;br&gt;
+·int *mxGetJc(const mxArray *pa)——获得稀疏矩阵pa的jc指针；&lt;br&gt;
+·int matPutArray(MATFile * pMF, const mxArray * pA)&lt;br&gt;
+——把矩阵pA存储入MAT文件pMAF；&lt;br&gt;
 ·void mxDestroyArray(mxArray *pa)——释放矩阵pa（把它从内存中撤销）；&lt;/p&gt;
+
+
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+
 
 </description>
                 <link>http://i.justpic.org/2014/05/06/matlab-c</link>
                 <guid>http://i.justpic.org/2014/05/06/matlab-c</guid>
-                <pubDate>2014-05-06T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>计算机视觉论文源代码集锦</title>
-                <description>
-&lt;h2 id=&quot;section&quot;&gt;计算机视觉、机器学习相关领域论文和源代码大集合–持续更新&lt;/h2&gt;
-&lt;p&gt;一、特征提取Feature Extraction：&lt;/p&gt;
-&lt;p&gt;· SIFT [1] [&lt;a href=&quot;http://www.cs.ubc.ca/~lowe/keypoints/siftDemoV4.zip&quot; target=&quot;_blank&quot;&gt;Demo program&lt;/a&gt;][&lt;a href=&quot;http://blogs.oregonstate.edu/hess/code/sift/&quot; target=&quot;_blank&quot;&gt;SIFT Library&lt;/a&gt;] [&lt;a href=&quot;http://www.vlfeat.org/&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· PCA-SIFT [2] [&lt;a href=&quot;http://www.cs.cmu.edu/~yke/pcasift/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Affine-SIFT [3] [&lt;a href=&quot;http://www.ipol.im/pub/algo/my_affine_sift/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· SURF [4] [&lt;a href=&quot;http://www.chrisevansdev.com/computer-vision-opensurf.html&quot; target=&quot;_blank&quot;&gt;OpenSURF&lt;/a&gt;] [&lt;a href=&quot;http://www.maths.lth.se/matematiklth/personal/petter/surfmex.php&quot; target=&quot;_blank&quot;&gt;Matlab Wrapper&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Affine Covariant Features [5] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/affine/&quot; target=&quot;_blank&quot;&gt;Oxford project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· MSER [6] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/affine/&quot; target=&quot;_blank&quot;&gt;Oxford project&lt;/a&gt;] [&lt;a href=&quot;http://www.vlfeat.org/&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Geometric Blur [7] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Local Self-Similarity Descriptor [8] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/SelfSimilarity/&quot; target=&quot;_blank&quot;&gt;Oxford implementation&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Global and Efficient Self-Similarity [9] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~calvin/gss/selfsim_release1.0.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Histogram of Oriented Graidents [10] [&lt;a href=&quot;http://www.navneetdalal.com/software&quot; target=&quot;_blank&quot;&gt;INRIA Object Localization Toolkit&lt;/a&gt;] [&lt;a href=&quot;http://www.computing.edu.au/~12482661/hog.html&quot; target=&quot;_blank&quot;&gt;OLT toolkit for Windows&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· GIST [11] []&lt;/p&gt;
-&lt;p&gt;· Shape Context [12] [&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/sc_digits.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Color Descriptor [13] [&lt;a href=&quot;http://koen.me/research/colordescriptors/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Pyramids of Histograms of Oriented Gradients [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/caltech/phog/phog.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Space-Time Interest Points (STIP) [14][&lt;a href=&quot;http://www.nada.kth.se/cvap/abstracts/cvap284.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.irisa.fr/vista/Equipe/People/Laptev/download/stip-1.1-winlinux.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Boundary Preserving Dense Local Regions [15][&lt;a href=&quot;http://vision.cs.utexas.edu/projects/bplr/bplr.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Weighted Histogram[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/whistc.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Histogram-based Interest Points Detectors[&lt;a href=&quot;http://www.cs.nthu.edu.tw/~htchen/hipd_cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://740-2.cs.nthu.edu.tw/~htchen/hipd/hist_corner.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· An OpenCV – C++ implementation of Local Self Similarity Descriptors [&lt;a href=&quot;http://intuitionlogic.com/post/2011/04/11/A-OpenCV-C++-implementation-of-Local-Self-Similarity-Descriptors.aspx&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Fast Sparse Representation with Prototypes[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/cvpr10_fsr.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Corner Detection [&lt;a href=&quot;http://kiwi.cs.dal.ca/~dparks/CornerDetection/index.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· AGAST Corner Detector: faster than FAST and even FAST-ER[&lt;a href=&quot;http://www6.in.tum.de/Main/ResearchAgast&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;二、图像分割Image Segmentation：&lt;/p&gt;
-&lt;p&gt;· Normalized Cut [1] [&lt;a href=&quot;http://www.cis.upenn.edu/~jshi/software/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Gerg Mori’ Superpixel code [2] [&lt;a href=&quot;http://www.cs.sfu.ca/~mori/research/superpixels/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Efficient Graph-based Image Segmentation [3] [&lt;a href=&quot;http://people.cs.uchicago.edu/~pff/segment/&quot; target=&quot;_blank&quot;&gt;C++ code&lt;/a&gt;] [&lt;a href=&quot;http://www.mathworks.com/matlabcentral/fileexchange/25866-efficient-graph-based-image-segmentation&quot; target=&quot;_blank&quot;&gt;Matlab wrapper&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Mean-Shift Image Segmentation [4] [&lt;a href=&quot;http://coewww.rutgers.edu/riul/research/code/EDISON/index.html&quot; target=&quot;_blank&quot;&gt;EDISON C++ code&lt;/a&gt;] [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/edison_matlab_interface.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab wrapper&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· OWT-UCM Hierarchical Segmentation [5] [&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html&quot; target=&quot;_blank&quot;&gt;Resources&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Turbepixels [6] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/turbopixels_code.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab code 32bit&lt;/a&gt;] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/TurboPixels64.rar&quot; target=&quot;_blank&quot;&gt;Matlab code 64bit&lt;/a&gt;] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/superpixels_update.tgz&quot; target=&quot;_blank&quot;&gt;Updated code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Quick-Shift [7] [&lt;a href=&quot;http://www.vlfeat.org/overview/quickshift.html&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· SLIC Superpixels [8] [&lt;a href=&quot;http://ivrgwww.epfl.ch/supplementary_material/RK_SLICSuperpixels/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Segmentation by Minimum Code Length [9] [&lt;a href=&quot;http://perception.csl.uiuc.edu/coding/image_segmentation/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Biased Normalized Cut [10] [&lt;a href=&quot;http://www.cs.berkeley.edu/~smaji/projects/biasedNcuts/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Segmentation Tree [11-12] [&lt;a href=&quot;http://vision.ai.uiuc.edu/segmentation&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Entropy Rate Superpixel Segmentation [13] [&lt;a href=&quot;http://www.umiacs.umd.edu/~mingyliu/src/ers_matlab_wrapper_v0.1.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Fast Approximate Energy Minimization via Graph Cuts[&lt;a href=&quot;http://www.csd.uwo.ca/faculty/olga/Papers/pami01_final.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.csd.uwo.ca/code/gco-v3.0.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Efﬁcient Planar Graph Cuts with Applications in Computer Vision[&lt;a href=&quot;http://www.csd.uwo.ca/~schmidtf/pdf/schmidt_et_al_cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.csd.uwo.ca/code/PlanarCut-v1.0.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Isoperimetric Graph Partitioning for Image Segmentation[&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006isoperimetric.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006isoperimetric_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Random Walks for Image Segmentation[&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006random.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/random_walker_matlab_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Blossom V: A new implementation of a minimum cost perfect matching algorithm[&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/blossom5-v2.03.src.tar.gz%20%20http:/pub.ist.ac.at/~vnk/software/blossom5-v2.03.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization in Computer Vision[&lt;a href=&quot;http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/maxflow-v3.01.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Geodesic Star Convexity for Interactive Image Segmentation[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/iseg/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Contour Detection and Image Segmentation Resources[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_source.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Biased Normalized Cuts[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/biasedNcuts/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Max-flow/min-cut[&lt;a href=&quot;http://vision.csd.uwo.ca/code/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Chan-Vese Segmentation using Level Set[&lt;a href=&quot;http://www.ipol.im/pub/art/2012/g-cv/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· A Toolbox of Level Set Methods[&lt;a href=&quot;http://www.cs.ubc.ca/~mitchell/ToolboxLS/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Re-initialization Free Level Set Evolution via Reaction Diffusion[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cslzhang/RD/RD.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Improved C-V active contour model[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICV.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICV.rar&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· A Variational Multiphase Level Set Approach to Simultaneous Segmentation and Bias Correction[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICIP10_SVMLS.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/SVMLS_v0.rar&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Level Set Method Research by Chunming Li[&lt;a href=&quot;http://www.engr.uconn.edu/~cmli/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;三、目标检测Object Detection：&lt;/p&gt;
-&lt;p&gt;· A simple object detector with boosting [&lt;a href=&quot;http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· INRIA Object Detection and Localization Toolkit [1] [&lt;a href=&quot;http://pascal.inrialpes.fr/soft/olt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Discriminatively Trained Deformable Part Models [2] [&lt;a href=&quot;http://people.cs.uchicago.edu/~pff/latent/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Cascade Object Detection with Deformable Part Models [3] [&lt;a href=&quot;http://people.cs.uchicago.edu/~rbg/star-cascade/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Poselet [4] [&lt;a href=&quot;http://www.eecs.berkeley.edu/~lbourdev/poselets/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Implicit Shape Model [5] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~bleibe/code/ism.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Viola and Jones’s Face Detection [6] [&lt;a href=&quot;http://pr.willowgarage.com/wiki/Face_detection&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Bayesian Modelling of Dyanmic Scenes for Object Detection[&lt;a href=&quot;http://vision.eecs.ucf.edu/papers/01512057.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/Code/Background.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Hand detection using multiple proposals[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/hands/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Color Constancy, Intrinsic Images, and Shape Estimation[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/reconstruction/BarronMalikECCV2012.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cs.berkeley.edu/~barron/BarronMalikECCV2012_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Discriminatively trained deformable part models[&lt;a href=&quot;http://people.cs.uchicago.edu/~rbg/latent/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Gradient Response Maps for Real-Time Detection of Texture-Less Objects: LineMOD [&lt;a href=&quot;http://campar.cs.tum.edu/Main/StefanHinterstoisser&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Image Processing On Line[&lt;a href=&quot;http://www.ipol.im/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Robust Optical Flow Estimation[&lt;a href=&quot;http://www.ipol.im/pub/pre/21/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Where’s Waldo: Matching People in Images of Crowds[&lt;a href=&quot;http://homes.cs.washington.edu/~rahul/data/WheresWaldo.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;四、显著性检测Saliency Detection：&lt;/p&gt;
-&lt;p&gt;· Itti, Koch, and Niebur’ saliency detection [1] [&lt;a href=&quot;http://www.saliencytoolbox.net/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Frequency-tuned salient region detection [2] [&lt;a href=&quot;http://ivrgwww.epfl.ch/supplementary_material/RK_CVPR09/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Saliency detection using maximum symmetric surround [3] [&lt;a href=&quot;http://ivrg.epfl.ch/supplementary_material/RK_ICIP2010/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Attention via Information Maximization [4] [&lt;a href=&quot;http://www.cse.yorku.ca/~neil/AIM.zip&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Context-aware saliency detection [5] [&lt;a href=&quot;http://webee.technion.ac.il/labs/cgm/Computer-Graphics-Multimedia/Software/Saliency/Saliency.html&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Graph-based visual saliency [6] [&lt;a href=&quot;http://www.klab.caltech.edu/~harel/share/gbvs.php&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Saliency detection: A spectral residual approach. [7] [&lt;a href=&quot;http://www.klab.caltech.edu/~xhou/projects/spectralResidual/spectralresidual.html&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Segmenting salient objects from images and videos. [8] [&lt;a href=&quot;http://www.cse.oulu.fi/MVG/Downloads/saliency&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Saliency Using Natural statistics. [9] [&lt;a href=&quot;http://cseweb.ucsd.edu/~l6zhang/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Discriminant Saliency for Visual Recognition from Cluttered Scenes. [10] [&lt;a href=&quot;http://www.svcl.ucsd.edu/projects/saliency/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Learning to Predict Where Humans Look [11] [&lt;a href=&quot;http://people.csail.mit.edu/tjudd/WherePeopleLook/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Global Contrast based Salient Region Detection [12] [&lt;a href=&quot;http://cg.cs.tsinghua.edu.cn/people/~cmm/saliency/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Bayesian Saliency via Low and Mid Level Cues[&lt;a href=&quot;http://ice.dlut.edu.cn/lu/Project/TIP_scm/TIP_scm.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Top-Down Visual Saliency via Joint CRF and Dictionary Learning[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/cvpr12a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/top-down-saliency.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;五、图像分类、聚类Image Classification, Clustering&lt;/p&gt;
-&lt;p&gt;· Pyramid Match [1] [&lt;a href=&quot;http://people.csail.mit.edu/jjl/libpmk/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Spatial Pyramid Matching [2] [&lt;a href=&quot;http://www.cs.unc.edu/~lazebnik/research/SpatialPyramid.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Locality-constrained Linear Coding [3] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/LLC.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/codes/CVPR10-LLC.rar&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Sparse Coding [4] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/ScSPM.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/codes/CVPR09-ScSPM.rar&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Texture Classification [5] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/texclass/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Multiple Kernels for Image Classification [6] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Feature Combination [7] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~pgehler/projects/iccv09/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· SuperParsing [&lt;a href=&quot;http://www.cs.unc.edu/~jtighe/Papers/ECCV10/eccv10-jtighe-code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Large Scale Correlation Clustering Optimization[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/LargeScaleCC1.0.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Detecting and Sketching the Common[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~vision/SketchTheCommon&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Self-Tuning Spectral Clustering[&lt;a href=&quot;http://www.vision.caltech.edu/lihi/Demos/SelfTuningClustering.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://www.vision.caltech.edu/lihi/Demos/SelfTuning/ZPclustering.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· User Assisted Separation of Reflections from a Single Image Using a Sparsity Prior[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~levina/papers/assisted-eccv04.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~levina/papers/reflections.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Filters for Texture Classification[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/texclass/filters.html#download&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Multiple Kernel Learning for Image Classification[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· SLIC Superpixels[&lt;a href=&quot;http://ivrg.epfl.ch/supplementary_material/RK_SLICSuperpixels/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;六、抠图Image Matting&lt;/p&gt;
-&lt;p&gt;· A Closed Form Solution to Natural Image Matting [&lt;a href=&quot;http://people.csail.mit.edu/alevin/matting.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Spectral Matting [&lt;a href=&quot;http://www.vision.huji.ac.il/SpectralMatting/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Learning-based Matting [&lt;a href=&quot;http://www.mathworks.com/matlabcentral/fileexchange/31412&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;七、目标跟踪Object Tracking：&lt;/p&gt;
-&lt;p&gt;· A Forest of Sensors – Tracking Adaptive Background Mixture Models [&lt;a href=&quot;http://www.ai.mit.edu/projects/vsam/Tracking/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Object Tracking via Partial Least Squares Analysis[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/tip12_pls_tracking.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/PLS_tracker_tip.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Robust Object Tracking with Online Multiple Instance Learning[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/pami11b.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Online Visual Tracking with Histograms and Articulating Blocks[&lt;a href=&quot;http://www.cise.ufl.edu/~smshahed/tracking.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Incremental Learning for Robust Visual Tracking[&lt;a href=&quot;http://www.cs.toronto.edu/~dross/ivt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Real-time Compressive Tracking[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cslzhang/CT/CT.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Robust Object Tracking via Sparsity-based Collaborative Model[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/project/cvpr12_scm.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Visual Tracking via Adaptive Structural Local Sparse Appearance Model[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/project/cvpr12_jia_project.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Online Discriminative Object Tracking with Local Sparse Representation[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/wacv12a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/wacv12a_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Superpixel Tracking[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/iccv11a.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Learning Hierarchical Image Representation with Sparsity, Saliency and Locality[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/bmvc11a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/BMVC11-HSSL-package.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Online Multiple Support Instance Tracking [&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/fg11a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/fg11_omsit.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Visual Tracking with Online Multiple Instance Learning[&lt;a href=&quot;http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Object detection and recognition[&lt;a href=&quot;http://c2inet.sce.ntu.edu.sg/Jianxin/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Compressive Sensing Resources[&lt;a href=&quot;http://dsp.rice.edu/cs&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Robust Real-Time Visual Tracking using Pixel-Wise Posteriors[&lt;a href=&quot;http://www.robots.ox.ac.uk/~cbibby/index.shtml&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Tracking-Learning-Detection[&lt;a href=&quot;http://info.ee.surrey.ac.uk/Personal/Z.Kalal/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;https://github.com/arthurv/OpenTLD&quot; target=&quot;_blank&quot;&gt;OpenTLD/C++ Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· the HandVu：vision-based hand gesture interface[&lt;a href=&quot;http://ilab.cs.ucsb.edu/index.php/component/content/article/12/29&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;八、Kinect：&lt;/p&gt;
-&lt;p&gt;· Kinect toolbox[&lt;a href=&quot;http://kinecttoolbox.codeplex.com/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· OpenNI[&lt;a href=&quot;http://www.openni.org/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· zouxy09 CSDN Blog[&lt;a href=&quot;http://blog.csdn.net/zouxy09/article/details/8145688&quot; target=&quot;_blank&quot;&gt;Resource&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;九、3D相关：&lt;/p&gt;
-&lt;p&gt;· 3D Reconstruction of a Moving Object[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~ronen/papers/Simakov%20Frolova%20Basri%20-%20Dense%20Shape%20Reconstruction%20Under%20Arbitrary%20Unknown%20Lighting.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/SFB_matlab1.0.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Shape From Shading Using Linear Approximation[&lt;a href=&quot;http://vision.eecs.ucf.edu/shadsrc.html&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Combining Shape from Shading and Stereo Depth Maps[&lt;a href=&quot;http://vision.eecs.ucf.edu/combsrc.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/projects/ShapeFromShading/combine.tar.Z&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Shape from Shading: A Survey[&lt;a href=&quot;http://vision.eecs.ucf.edu/papers/shah/99/ZTCS99.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/projects/ShapeFromShading/SFS_Survey_1_00.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· A Spatio-Temporal Descriptor based on 3D Gradients (HOG3D)[&lt;a href=&quot;http://lear.inrialpes.fr/people/klaeser/research_hog3d&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://lear.inrialpes.fr/people/klaeser/software_3d_video_descriptor&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Multi-camera Scene Reconstruction via Graph Cuts[&lt;a href=&quot;http://www.cs.cornell.edu/~rdz/papers/kz-eccv02-recon.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/match-v3.4.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· A Fast Marching Formulation of Perspective Shape from Shading under Frontal Illumination[&lt;a href=&quot;http://www.cs.ucf.edu/~vision&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.ee.cityu.edu.hk/~syyuen/Public/SfS/PRL_Perspective_FMM.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Reconstruction:3D Shape, Illumination, Shading, Reflectance, Texture[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/reconstruction/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Monocular Tracking of 3D Human Motion with a Coordinated Mixture of Factor Analyzers[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/PackagedTrackingCode.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Learning 3-D Scene Structure from a Single Still Image[&lt;a href=&quot;http://ai.stanford.edu/~asaxena/reconstruction3d/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;十、机器学习算法：&lt;/p&gt;
-&lt;p&gt;· Matlab class for computing Approximate Nearest Nieghbor (ANN) [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/ann_wrapper_Mar2012.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab class&lt;/a&gt;&amp;nbsp;providing interface to&lt;a href=&quot;http://www.cs.umd.edu/~mount/ANN/&quot; target=&quot;_blank&quot;&gt;ANN library&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Random Sampling[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/weight_sample.tar.gz&quot; target=&quot;_blank&quot;&gt;code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Probabilistic Latent Semantic Analysis (pLSA)[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/pLSA/pLSA_demo.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· FASTANN and FASTCLUSTER for approximate k-means (AKM)[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/fastann/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Fast Intersection / Additive Kernel SVMs[&lt;a href=&quot;http://www.cs.berkeley.edu/~smaji/projects/fiksvm/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· SVM[&lt;a href=&quot;http://osmot.cs.cornell.edu/svm_light/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Ensemble learning[&lt;a href=&quot;http://c2inet.sce.ntu.edu.sg/Jianxin/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Deep Learning[&lt;a href=&quot;http://deeplearning.net/&quot; target=&quot;_blank&quot;&gt;Net&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Deep Learning Methods for Vision[&lt;a href=&quot;http://cs.nyu.edu/~fergus/tutorials/deep_learning_cvpr12/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Neural Network for Recognition of Handwritten Digits[&lt;a href=&quot;http://www.codeproject.com/KB/library/NeuralNetRecognition.aspx&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Training a deep autoencoder or a classifier on MNIST digits[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/MatlabForSciencePaper.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· THE MNIST DATABASE of handwritten digits[&lt;a href=&quot;http://yann.lecun.com/exdb/mnist/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Ersatz：deep neural networks in the cloud[&lt;a href=&quot;http://www.ersatz1.com/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Deep Learning [&lt;a href=&quot;http://www.cs.nyu.edu/~yann/research/deep/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· sparseLM : Sparse Levenberg-Marquardt nonlinear least squares in C/C++[&lt;a href=&quot;http://www.ics.forth.gr/~lourakis/sparseLM/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Weka 3: Data Mining Software in Java[&lt;a href=&quot;http://www.cs.waikato.ac.nz/ml/weka/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Invited talk “A Tutorial on Deep Learning” by Dr. Kai Yu (余凯)[&lt;a href=&quot;http://vipl.ict.ac.cn/News/academic-report-tutorial-deep-learning-dr-kai-yu&quot; target=&quot;_blank&quot;&gt;Video&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· CNN – Convolutional neural network class[&lt;a href=&quot;http://www.mathworks.cn/matlabcentral/fileexchange/24291&quot; target=&quot;_blank&quot;&gt;Matlab Tool&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Yann LeCun’s Publications[&lt;a href=&quot;http://yann.lecun.com/exdb/publis/index.html#lecun-98&quot; target=&quot;_blank&quot;&gt;Wedsite&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· LeNet-5, convolutional neural networks[&lt;a href=&quot;http://yann.lecun.com/exdb/lenet/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Training a deep autoencoder or a classifier on MNIST digits[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/MatlabForSciencePaper.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Deep Learning 大牛Geoffrey E. Hinton’s HomePage[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/&quot; target=&quot;_blank&quot;&gt;Website&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;十一、目标、行为识别Object, Action Recognition：&lt;/p&gt;
-&lt;p&gt;· Action Recognition by Dense Trajectories[&lt;a href=&quot;http://lear.inrialpes.fr/people/wang/dense_trajectories&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://lear.inrialpes.fr/people/wang/download/dense_trajectory_release.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Action Recognition Using a Distributed Representation of Pose and Appearance[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/action/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Recognition Using Regions[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/glam-cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/glam_cvpr09_v2.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· 2D Articulated Human Pose Estimation[&lt;a href=&quot;http://www.vision.ee.ethz.ch/~calvin/articulated_human_pose_estimation_code/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Fast Human Pose Estimation Using Appearance and Motion via Multi-Dimensional Boosting Regression[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/cvpr07a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cise.ufl.edu/~smshahed/cvpr07_fast_human_pose.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Estimating Human Pose from Occluded Images[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/accv09a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/accv09_pose.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Quasi-dense wide baseline matching[&lt;a href=&quot;http://www.ee.oulu.fi/~jkannala/quasidense/quasidense.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· ChaLearn Gesture Challenge: Principal motion: PCA-based reconstruction of motion histograms[&lt;a href=&quot;http://gesture.chalearn.org/data/sample-code&quot; target=&quot;_blank&quot;&gt;Prpject&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;十二、图像处理：&lt;/p&gt;
-&lt;p&gt;· Distance Transforms of Sampled Functions[&lt;a href=&quot;http://cs.brown.edu/~pff/dt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· The Computer Vision Homepage[&lt;a href=&quot;http://www.cs.cmu.edu/~cil/vision.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;十三、一些实用工具：&lt;/p&gt;
-&lt;p&gt;· EGT: a Toolbox for Multiple View Geometry and Visual Servoing[&lt;a href=&quot;http://egt.dii.unisi.it/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://egt.dii.unisi.it/download/EGT_v1p3.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· a development kit of matlab mex functions for OpenCV library[&lt;a href=&quot;http://www.cs.stonybrook.edu/~kyamagu/mexopencv/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;· Fast Artificial Neural Network Library[&lt;a href=&quot;http://leenissen.dk/fann/wp/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;www.cvchina.info/2011/09/05/uiuc-cod/&lt;/p&gt;
-
-</description>
-                <link>http://i.justpic.org/2014/05/06/</link>
-                <guid>http://i.justpic.org/2014/05/</guid>
                 <pubDate>2014-05-06T00:00:00+08:00</pubDate>
         </item>
 
@@ -1082,8 +772,7 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
 
         <item>
                 <title>计量经济学概要</title>
-                <description>
-&lt;p&gt;简单线性回归模型I的假设
+                <description>&lt;p&gt;简单线性回归模型I的假设
 对于各个x值，&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/04/28/</link>
@@ -1093,8 +782,7 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
 
         <item>
                 <title>tornado with i18n</title>
-                <description>
-&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
+                <description>&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
 tornado中使用i18n需要下面两个工具
 两个工具:pygettext,msgfmt，两个相关文件:po文件和mo文件&lt;/p&gt;
 
@@ -1123,11 +811,11 @@ msgfmt messages.po&lt;/p&gt;
 &lt;p&gt;cn目录是所对应的语言，LC_MESSAGES是gettext.py文件里要求的
 mo文件必须和所定义的域同名
 gettext.py中有
-modfile=os.path.join(localedir,lang,’LC_MESSAGES’,’%s.mo’ %domain)&lt;/p&gt;
+modfile=os.path.join(localedir,lang,&amp;lsquo;LC_MESSAGES&amp;rsquo;,&amp;lsquo;%s.mo&amp;rsquo; %domain)&lt;/p&gt;
 
 &lt;p&gt;测试：
     $python
-    »&amp;gt;gettext.install(‘messages’,’./locale’,unicode=True)
+    &gt;&gt;&gt;gettext.install(&amp;lsquo;messages&amp;rsquo;,&amp;lsquo;./locale&amp;rsquo;,unicode=True)
 三个参数：
 作用域名，用于限定翻译文件的主名
 路径，存放翻译文件的路径
@@ -1139,10 +827,15 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
 
 &lt;p&gt;在tornado中使用时:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html) 查找所有需要翻译的相关项生成 po 文件
-
-$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
+&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查找所有需要翻译的相关项生成 po 文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;生成mo文件&lt;/p&gt;
 
 &lt;p&gt;完成相关文件的生成后，需要在代码中加载:&lt;/p&gt;
 
@@ -1166,7 +859,6 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
 &lt;p&gt;&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://justbm.blogspot.com/2014/01/django.html&quot;&gt;django多国语言&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/27/tornado-with-i18n</link>
                 <guid>http://i.justpic.org/2014/04/27/tornado-with-i18n</guid>
@@ -1175,8 +867,7 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
 
         <item>
                 <title>algorithm learning</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://courses.csail.mit.edu/6.581/spring12/lectures/&quot;&gt;advanced data structure&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://courses.csail.mit.edu/6.581/spring12/lectures/&quot;&gt;advanced data structure&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/04/24/algorithm-learning</link>
                 <guid>http://i.justpic.org/2014/04/24/algorithm-learning</guid>
@@ -1184,21 +875,10 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
         </item>
 
         <item>
-                <title>Shearlet</title>
-                <description>
-</description>
-                <link>http://i.justpic.org/2014/04/22/shearlet</link>
-                <guid>http://i.justpic.org/2014/04/22/shearlet</guid>
-                <pubDate>2014-04-22T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
                 <title>deep learning these days</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
+                <description>&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;  &lt;br/&gt;
 &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
 &lt;a href=&quot;http://www.infoq.com/cn/articles/ask-yoshua-bengio&quot;&gt;对话机器学习大神Yoshua Bengio&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/22/deep-learning-these-days</link>
                 <guid>http://i.justpic.org/2014/04/22/deep-learning-these-days</guid>
@@ -1207,8 +887,7 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
 
         <item>
                 <title>install multi version JDK on ubuntu</title>
-                <description>
-&lt;p&gt;三条命令搞定：&lt;/p&gt;
+                <description>&lt;p&gt;三条命令搞定：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$sudo apt-get install oracle-java8-installer
 $sudo apt-get install oracle-java7-installer
@@ -1231,18 +910,21 @@ $sudo update-alternatives --config java
 
         <item>
                 <title>open toolchain on ubuntu 12.04</title>
-                <description>
-&lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链&lt;/p&gt;
+                <description>&lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链&lt;/p&gt;
 
 &lt;p&gt;安装gcc-4.8如前文所述&lt;a href=&quot;/2014/04/02/gcc-48-on-ubuntu/&quot;&gt;install gcc4.8 on ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;llvmclang&quot;&gt;安装llvm,clang&lt;/h2&gt;
+&lt;h2&gt;安装llvm,clang&lt;/h2&gt;
+
 &lt;p&gt;/etc/apt/sources.list中添加如下两行：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
-deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main 检索签名：
+deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
+&lt;/code&gt;&lt;/pre&gt;
 
-wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+&lt;p&gt;检索签名：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;安装与llvm-3.4,clang-3.4相关的所有包：&lt;/p&gt;
@@ -1252,11 +934,17 @@ wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
 
 &lt;p&gt;安装libcxx：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx 查看g++使用的头文件：
+&lt;pre&gt;&lt;code&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+&lt;/code&gt;&lt;/pre&gt;
 
-echo | g++ -Wp,-v -x c++ - -fsyntax-only 将会输出类似如下结果：
+&lt;p&gt;查看g++使用的头文件：&lt;/p&gt;
 
-ignoring nonexistent directory &quot;/usr/local/include/x86_64-linux-gnu&quot;
+&lt;pre&gt;&lt;code&gt;echo | g++ -Wp,-v -x c++ - -fsyntax-only
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将会输出类似如下结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ignoring nonexistent directory &quot;/usr/local/include/x86_64-linux-gnu&quot;
 ignoring nonexistent directory &quot;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../../../x86_64-linux-gnu/include&quot;
 ### #include &quot;...&quot; search starts here:
 ### include &amp;lt;...&amp;gt; search starts here:
@@ -1268,9 +956,12 @@ ignoring nonexistent directory &quot;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../..
 /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
 /usr/include/x86_64-linux-gnu
 /usr/include
-End of search list. 编译安装libcxx：
+End of search list.
+&lt;/code&gt;&lt;/pre&gt;
 
-CC=clang CXX=clang++ cmake -G &quot;Unix Makefiles&quot; -DLIBCXX_CXX_ABI=libsupc++ - DLIBCXX_LIBSUPCXX_INCLUDE_PATHS=&quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&quot; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr &amp;lt;libc++-source-dir&amp;gt;
+&lt;p&gt;编译安装libcxx：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CC=clang CXX=clang++ cmake -G &quot;Unix Makefiles&quot; -DLIBCXX_CXX_ABI=libsupc++ - DLIBCXX_LIBSUPCXX_INCLUDE_PATHS=&quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&quot; -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr &amp;lt;libc++-source-dir&amp;gt;
 make
 sudo make install
 &lt;/code&gt;&lt;/pre&gt;
@@ -1279,16 +970,22 @@ sudo make install
 
 &lt;p&gt;首先安装相关依赖：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev 下载源码并编译：
+&lt;pre&gt;&lt;code&gt;sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev
+&lt;/code&gt;&lt;/pre&gt;
 
-svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
+&lt;p&gt;下载源码并编译：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
 cd libcxxabi/lib
 ./buildit
 sudo cp libc++abi.so.1.0 /usr/lib
 sudo ln -s /usr/lib/libc++abi.so.1.0 /usr/lib/libc++abi.so.1
-sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so 使用libc++abi来安装libc++
+sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so
+&lt;/code&gt;&lt;/pre&gt;
 
-svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+&lt;p&gt;使用libc++abi来安装libc++&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
 cd libcxx
 mkdir build
 cd build
@@ -1298,7 +995,6 @@ sudo make install
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;至此ubuntu 12.04上的LLVM环境就算搭建好了。&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</link>
                 <guid>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
@@ -1307,8 +1003,8 @@ sudo make install
 
         <item>
                 <title>mysql使用总结</title>
-                <description>
-&lt;h2 id=&quot;mysql&quot;&gt;Mysql导入导出&lt;/h2&gt;
+                <description>&lt;h2&gt;Mysql导入导出&lt;/h2&gt;
+
 &lt;p&gt;导出所有库&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mysqldump -uusername -ppassword --all-databases&amp;gt;all.sql
@@ -1352,7 +1048,8 @@ mysql&amp;gt;source tb1tb2.sql;
 &lt;pre&gt;&lt;code&gt;$mysqldump -uusername -ppassword --default-character-set=utf-8 db1 table1&amp;gt;tb1.sql
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;mysql-1&quot;&gt;Mysql用户管理&lt;/h2&gt;
+&lt;h2&gt;Mysql用户管理&lt;/h2&gt;
+
 &lt;p&gt;创建用户&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mysql&amp;gt; insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;phplamp&quot;,password(&quot;1234&quot;));
@@ -1371,7 +1068,6 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Mysql 主从复制&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/04/mysqldump-summary</link>
                 <guid>http://i.justpic.org/2014/04/04/mysqldump-summary</guid>
@@ -1380,8 +1076,7 @@ mysql&amp;gt; FLUSH PRIVILEGES;
 
         <item>
                 <title>gcc 4.8 on ubuntu</title>
-                <description>
-&lt;pre&gt;&lt;code&gt; sudo apt-get install python-software-properties
+                <description>&lt;pre&gt;&lt;code&gt; sudo apt-get install python-software-properties
  sudo add-apt-repository ppa:boost-latest/ppa
  sudo apt-get update
  sudo apt-get install libboost1.55-all-dev
@@ -1393,11 +1088,11 @@ mysql&amp;gt; FLUSH PRIVILEGES;
  sudo update-alternatives --config gcc
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;下载&lt;a href=&quot;&quot;&gt;osxcross&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 下载&lt;a href=&quot;&quot;&gt;osxcross&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;编译出现错误： fatal error:limits can’t find?&lt;/p&gt;
+&lt;p&gt; 编译出现错误： fatal error:limits can&amp;rsquo;t find?&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt; $echo &#39;#include &amp;lt;limits.h&amp;gt;&#39; | clang -v -xc -o /dev/null -
 &lt;/code&gt;&lt;/pre&gt;
@@ -1413,7 +1108,6 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
 &lt;p&gt;再次编译可以通过。
 一个查找文件的有用命令:
     $grep notification &lt;code&gt;find ./*&lt;/code&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</link>
                 <guid>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</guid>
@@ -1422,10 +1116,8 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
 
         <item>
                 <title>install windows/linux with usb</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br /&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;https://www.owasp.org/images/d/dc/AppsecEU09-Damele-A-G-Advanced-SQL-injection-slides.pdf&quot;&gt;sql injection&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</link>
                 <guid>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</guid>
@@ -1434,18 +1126,17 @@ $sudo ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include incl
 
         <item>
                 <title>Sample draft post</title>
-                <description>&lt;p&gt;This is a draft post that isn’t ready for the wild. See how it doesn’t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
+                <description>&lt;p&gt;This is a draft post that isn&amp;rsquo;t ready for the wild. See how it doesn&amp;rsquo;t show up in your list of posts, nor in your RSS feed? You can, however, &lt;a href=&quot;/posts/draft/&quot;&gt;link&lt;/a&gt; directly to it.&lt;/p&gt;
 
-&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you’re off to the races.&lt;/p&gt;
+&lt;p&gt;To make it go live, all you have to do is remove the &lt;code&gt;draft:true&lt;/code&gt; line, and you&amp;rsquo;re off to the races.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;You’ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
+&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
 install and set up Left for your own purposes.&lt;/p&gt;
 
-&lt;p&gt;If you have any questions, follow and ping me on Twitter- I’m
+&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
 &lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/posts/2014/02/25/draft</link>
                 <guid>http://i.justpic.org/posts/2014/02/25/draft</guid>
@@ -1454,11 +1145,9 @@ install and set up Left for your own purposes.&lt;/p&gt;
 
         <item>
                 <title>text analysis</title>
-                <description>
-&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
+                <description>&lt;p&gt;http://www.etcml.com/&lt;/p&gt;
 
 &lt;p&gt;http://wiki.blender.org/index.php/Dev:ZH/Ref/GoogleSummerOfCode/2012/Ideas&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/02/07/text-analysis</link>
                 <guid>http://i.justpic.org/2014/02/07/text-analysis</guid>
@@ -1467,8 +1156,7 @@ install and set up Left for your own purposes.&lt;/p&gt;
 
         <item>
                 <title>computational science</title>
-                <description>
-&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
+                <description>&lt;p&gt;www.csee.wvu.edu/~xinl/source.html&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/01/14/computational-science</link>
                 <guid>http://i.justpic.org/2014/01/14/computational-science</guid>
@@ -1477,8 +1165,7 @@ install and set up Left for your own purposes.&lt;/p&gt;
 
         <item>
                 <title>best award paper</title>
-                <description>
-&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
+                <description>&lt;p&gt;http://jeffhuang.com/best_paper_awards.html##&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/01/01/best-award-paper</link>
                 <guid>http://i.justpic.org/2014/01/01/best-award-paper</guid>
@@ -1487,8 +1174,7 @@ install and set up Left for your own purposes.&lt;/p&gt;
 
         <item>
                 <title>install redmine in ubuntu</title>
-                <description>
-&lt;h1 id=&quot;redmine&quot;&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
+                <description>&lt;h1&gt;安装redmine出现权限问题的解决方法&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04&quot;&gt;install redmine on ubuntu12.04&lt;/a&gt;&lt;/p&gt;
 
@@ -1502,10 +1188,12 @@ install and set up Left for your own purposes.&lt;/p&gt;
 
         <item>
                 <title>install World Community Grid on a headless Ubuntu Server</title>
-                <description>
-&lt;h1 id=&quot;ubuntuboinc&quot;&gt;在ubuntu上安装BOINC&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client (you can also download it from wcg and install)
+                <description>&lt;h1&gt;在ubuntu上安装BOINC&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get aptitude install boinc-client
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(you can also download it from wcg and install)&lt;/p&gt;
 
 &lt;p&gt;find your account key:&lt;/p&gt;
 
@@ -1513,7 +1201,7 @@ install and set up Left for your own purposes.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You should get a response something like this
-dfb74c9b9…&lt;/p&gt;
+dfb74c9b9&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;attach to your project&lt;/p&gt;
 
@@ -1546,8 +1234,7 @@ dfb74c9b9…&lt;/p&gt;
 
         <item>
                 <title>a little surprised</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://cos.name/2013/02/rise-of-the-machine/&quot;&gt;cos&lt;/a&gt;&lt;/p&gt;
 
@@ -1560,8 +1247,7 @@ dfb74c9b9…&lt;/p&gt;
 
         <item>
                 <title>data analysis</title>
-                <description>
-&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
+                <description>&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/11/09/data-analysis</link>
                 <guid>http://i.justpic.org/2013/11/09/data-analysis</guid>
@@ -1570,8 +1256,7 @@ dfb74c9b9…&lt;/p&gt;
 
         <item>
                 <title>understand WSGI</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
 &lt;a href=&quot;http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&quot;&gt;WSGI&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;web server side:&lt;/p&gt;
@@ -1585,14 +1270,13 @@ for data in iterable:
     #send data to client
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）       &lt;/p&gt;
+&lt;p&gt;WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
 
 &lt;p&gt;后续：&lt;/p&gt;
 
 &lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/11/06/python-web</link>
                 <guid>http://i.justpic.org/2013/11/06/python-web</guid>
@@ -1601,10 +1285,10 @@ for data in iterable:
 
         <item>
                 <title>leaning python site</title>
-                <description>
-&lt;h1 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h1&gt;
+                <description>&lt;h1&gt;Learning Python Sites&lt;/h1&gt;
+
 &lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;
-&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker’s Guide to Python&lt;/a&gt;
+&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker&amp;rsquo;s Guide to Python&lt;/a&gt;
 &lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.codecademy.com/zh/tracks/python&quot;&gt;codecademy课程&lt;/a&gt;&lt;/p&gt;
@@ -1623,11 +1307,10 @@ for data in iterable:
 
 &lt;p&gt;&lt;a href=&quot;http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf&quot;&gt;python作统计分析&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;online game:
 &lt;a href=&quot;http://www.checkio.org&quot;&gt;Game&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/11/05/leaning-python-site</link>
                 <guid>http://i.justpic.org/2013/11/05/leaning-python-site</guid>
@@ -1636,8 +1319,7 @@ for data in iterable:
 
         <item>
                 <title>deploy python on nginx</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&quot;&gt;gunicorn with nginx&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1648,8 +1330,7 @@ for data in iterable:
 
         <item>
                 <title>install project on preferati</title>
-                <description>
-&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
+                <description>&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
 sudo apt-get install git
@@ -1670,25 +1351,29 @@ sudo pip install Cython
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
 pip install numpy
-pip install scipy **install ta-lib**
+pip install scipy
+&lt;/code&gt;&lt;/pre&gt;
 
-cd ~
+&lt;p&gt;&lt;strong&gt;install ta-lib&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~
 wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 sudo apt-get  install  build-essential
 tar -zxvf ta-lib-0.4.0-src.tar.gz
 cd ta-lib-0.4.0
 ./configure --prefix=/usr
 make
-sudo make install **install gevent**
-wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
-tar -zxvf 
-./configure
-make 
 sudo make install
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;strong&gt;install gevent&lt;/strong&gt;
+    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+    tar -zxvf
+    ./configure
+    make
+    sudo make install&lt;/p&gt;
 
-
-cd ~/www
+&lt;pre&gt;&lt;code&gt;cd ~/www
 git clone https://github.com/pydata/pandas.git
 git clone https://github.com/mrjbq7/ta-lib.git
 &lt;/code&gt;&lt;/pre&gt;
@@ -1706,18 +1391,22 @@ sudo apt-get install nginx
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server libmysqld-dev
 pip install MySQL-python
-insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;david&quot;,password(&quot;david&quot;)); **用户授权**
+insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;david&quot;,password(&quot;david&quot;));
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;用户授权&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;; **install redis**
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;grant all privileges on *.* to david@localhost identified by &#39;david&#39;;
+&lt;/code&gt;&lt;/pre&gt;
 
-http://rubyer.me/blog/638/ redis.io
+&lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://rubyer.me/blog/638/ redis.io
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;uwsgi or gunicorn(optional)&lt;/strong&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/10/27/install-project-on-preferati</link>
                 <guid>http://i.justpic.org/2013/10/27/install-project-on-preferati</guid>
@@ -1726,8 +1415,7 @@ http://rubyer.me/blog/638/ redis.io
 
         <item>
                 <title>how to write a crawler</title>
-                <description>
-&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
+                <description>&lt;p&gt;http://www.emanueleminotto.it/how-to-write-a-crawler&lt;/p&gt;
 
 &lt;p&gt;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&lt;/p&gt;
 </description>
@@ -1738,8 +1426,7 @@ http://rubyer.me/blog/638/ redis.io
 
         <item>
                 <title>qt fourteen steps</title>
-                <description>
-&lt;p&gt;1.Hello ,World!&lt;/p&gt;
+                <description>&lt;p&gt;1.Hello ,World!&lt;/p&gt;
 
 &lt;p&gt;2.调用退出
 3.家庭价值
@@ -1767,14 +1454,15 @@ private slots：在这个区内声明的槽意味着只有类自己可以将信�
 
         <item>
                 <title>install numpy scipy on ubuntu</title>
-                <description>
-&lt;h1 id=&quot;linuxnumpy-scipy&quot;&gt;linux上安装numpy scipy&lt;/h1&gt;
+                <description>&lt;h1&gt;linux上安装numpy scipy&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo pip install numpy
 sudo apt-get install libatlas-base-dev gfortran
 sudo pip install scipy
-sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.
+sudo pip install matplotlib   # recommended
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</link>
                 <guid>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</guid>
@@ -1783,8 +1471,7 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
         <item>
                 <title>python machine learning</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.yuanyong.org/blog/python/k-means-using-python&quot;&gt;k-means&lt;/a&gt;&lt;/p&gt;
 
@@ -1805,8 +1492,7 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
         <item>
                 <title>git</title>
-                <description>
-&lt;h1 id=&quot;git&quot;&gt;git学习资料&lt;/h1&gt;
+                <description>&lt;h1&gt;git学习资料&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://gist.github.com/jbenet/ee6c9ac48068889b0912&quot;&gt;a gist for git&lt;/a&gt;&lt;/p&gt;
 
@@ -1819,24 +1505,23 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
         <item>
                 <title>nginx permission root</title>
-                <description>
-&lt;h1 id=&quot;nginx-&quot;&gt;nginx 权限问题的解决方法&lt;/h1&gt;
+                <description>&lt;h1&gt;nginx 权限问题的解决方法&lt;/h1&gt;
 
 &lt;p&gt;按照下面方法配置nginx时出现用户权限问题
-	server{
-	listen 4002;
-	server_name localhost;
-	access_log logs/access.log;&lt;/p&gt;
+    server{
+    listen 4002;
+    server_name localhost;
+    access_log logs/access.log;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;location / {
    proxy_set_header X-Real-IP $remote_addr;
    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
    proxy_set_header Host $http_host;
    proxy_set_header X-NginxX-Proxy true;
-   
+
    proxy_pass http://backend;
    proxy_redirect off;
-   
+
    proxy_http_version 1.1;
    proxy_set_header Upgrade $http_upgrade;
    proxy_set_header Connection &quot;upgrade&quot;;
@@ -1844,19 +1529,23 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
    }
  upstream backend {
  server 127.0.0.1:3201;
- } 参照[nginx 13:permission denied solved](http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain)
+ }
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;参照&lt;a href=&quot;http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&quot;&gt;nginx 13:permission denied solved&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The root directive is the problem here. Quote from the doc:&lt;/p&gt;
 
-&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
+&lt;p&gt;note: Keep in mind that the root will still append the directory to the request so that a request for &amp;ldquo;/i/top.gif&amp;rdquo; will not look in &amp;ldquo;/spool/w3/top.gif&amp;rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;/p&gt;
 
-&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:&lt;/p&gt;
+&lt;p&gt;Basically, only use root for real roots: if the content is to be at / use root. If it&amp;rsquo;s going to end on a subfolder, use alias:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;location  /map/ {
   alias  /home/user/public_html/map/;
-} Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
+}
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/09/18/nginx-permission-root</link>
                 <guid>http://i.justpic.org/2013/09/18/nginx-permission-root</guid>
@@ -1865,15 +1554,13 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 
         <item>
                 <title>asynchrous,synchrous,blocking,unblocking network</title>
-                <description>
-&lt;p&gt;Linux下的五种I/O模型
+                <description>&lt;p&gt;Linux下的五种I/O模型
 阻塞I/O（blocking I/O）
-非阻塞I/O（nonblocking I/O）&lt;br /&gt;
+非阻塞I/O（nonblocking I/O）&lt;br/&gt;
 I/O服用（select和poll）（I/O multiplexing）
 信号驱动I/O（signal driven I/O（SIGIO））
 异步I/O（asynchronous I/O（the POSIX aio_functions))
 前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</link>
                 <guid>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</guid>
@@ -1882,8 +1569,7 @@ I/O服用（select和poll）（I/O multiplexing）
 
         <item>
                 <title>machine learning in action</title>
-                <description>
-&lt;p&gt;https://github.com/pbharrin/machinelearninginaction
+                <description>&lt;p&gt;https://github.com/pbharrin/machinelearninginaction
 zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action</link>
@@ -1893,90 +1579,70 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
         <item>
                 <title>webpy</title>
-                <description>
-&lt;h1 id=&quot;webpy-&quot;&gt;webpy 中文文档学习目录&lt;/h1&gt;
-&lt;p&gt;web py&lt;/p&gt;
+                <description>&lt;h1&gt;webpy 中文文档学习目录&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;安装 webpy&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;web py&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;webpy3.0 新手指南&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;&quot;&gt;安装 webpy&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;webpy3.0 新手指南&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;
-## webpy基本应用:
-&lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;webpy基本应用:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;提供静态文件访问&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;提供静态文件访问&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;理解URL控制&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;跳转与重定向&lt;/a&gt;
+ &lt;a href=&quot;&quot;&gt;使用子应用&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;提供XML访问&lt;/a&gt;&lt;br/&gt;
+ &lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;理解URL控制&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;高级应用:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;跳转与重定向&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;应用处理器，添加钩子和卸载钩子&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何使用web.background&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;自定义NotFound信息&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何流传输大文件&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;对自带的webserver日志进行操作&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;用cherrypy提供SSL支持&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;使用子应用&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Sessions and user state 会话和用户状态:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;提供XML访问&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何在调试模式下使用Session&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;在template中使用session&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何操作Cookie&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;用户认证&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;一个在postgreSQL数据库环境下的用户认证的例子&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;
-## 高级应用:
-&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Utils 实用工具&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;应用处理器，添加钩子和卸载钩子&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何利用Gmail发送邮件&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何使用web.background&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Templates 模板&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;自定义NotFound信息&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;使用站点布局模板&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;交替式风格 (未译)&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;导入函数到模板中 (未译)&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;模板文件中的i18n支持&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Mako模板引擎&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Cheetah模板引擎&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Jinja2模板引擎&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;如何在谷歌应用程序引擎使用模板&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何流传输大文件&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Testing 测试:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;对自带的webserver日志进行操作&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;Testing with Paste and Nose (未译)&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application&amp;rsquo;s request method (未译)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;用cherrypy提供SSL支持&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;User input 用户输入:&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;
-## Sessions and user state 会话和用户状态:
-&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在调试模式下使用Session&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;在template中使用session&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何操作Cookie&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;用户认证&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[一个在postgreSQL数据库环境下的用户认证的例子](()&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;
-## Utils 实用工具
-&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何利用Gmail发送邮件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;
-## Templates 模板
-&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;使用站点布局模板&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;交替式风格 (未译)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;导入函数到模板中 (未译)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;模板文件中的i18n支持&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;在web.py中使用Mako模板引擎&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;在web.py中使用Cheetah模板引擎&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;在web.py中使用Jinja2模板引擎&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何在谷歌应用程序引擎使用模板&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;testing-&quot;&gt;Testing 测试:&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Testing with Paste and Nose (未译)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application’s request method (未译)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;user-input-&quot;&gt;User input 用户输入:&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;文件上传&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;保存上传的文件&lt;/a&gt;&lt;/p&gt;
@@ -1989,7 +1655,8 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;&quot;&gt;显示个别表单字段&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;database-&quot;&gt;Database 数据库&lt;/h2&gt;
+&lt;h2&gt;Database 数据库&lt;/h2&gt;
+
 &lt;p&gt;使用多数据库&lt;/p&gt;
 
 &lt;p&gt;Select: 查询数据&lt;/p&gt;
@@ -2010,7 +1677,8 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
 &lt;p&gt;使用字典动态构造where子句&lt;/p&gt;
 
-&lt;h2 id=&quot;deployment-&quot;&gt;Deployment 部署:&lt;/h2&gt;
+&lt;h2&gt;Deployment 部署:&lt;/h2&gt;
+
 &lt;p&gt;通过Fastcgi和lighttpd部署&lt;/p&gt;
 
 &lt;p&gt;通过Webpy和Nginx with FastCGI搭建Web.py&lt;/p&gt;
@@ -2032,8 +1700,7 @@ zhan.renren.com/quantitativefinance?checked=true&lt;/p&gt;
 
         <item>
                 <title>jquery add element in the html dom</title>
-                <description>
-&lt;h1 id=&quot;jquery&quot;&gt;使用jquery增加元素节点&lt;/h1&gt;
+                <description>&lt;h1&gt;使用jquery增加元素节点&lt;/h1&gt;
 
 &lt;p&gt;add one element in the parent&lt;/p&gt;
 
@@ -2060,8 +1727,7 @@ $parent.append($li_1);
 
         <item>
                 <title>web.py note</title>
-                <description>
-&lt;h1 id=&quot;webpy&quot;&gt;webpy学习笔记&lt;/h1&gt;
+                <description>&lt;h1&gt;webpy学习笔记&lt;/h1&gt;
 
 &lt;p&gt;web.ctx
 web.loadhook(handler)函数在web请求前执行handler函数
@@ -2079,8 +1745,8 @@ redirect：301永久重定向&lt;/p&gt;
 
         <item>
                 <title>sqlalchemy dynamic mapping</title>
-                <description>
-&lt;h1 id=&quot;sqlalchemy&quot;&gt;sqlalchemy动态映射&lt;/h1&gt;
+                <description>&lt;h1&gt;sqlalchemy动态映射&lt;/h1&gt;
+
 &lt;p&gt;代码如下:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;from sqlalchemy import *
@@ -2095,7 +1761,7 @@ def map_class_to_some_table(cls,table,entity_name,**kw):
     newcls=type(entity_name,(cls,),{})
     mapper(newcls,table,**kw)
     return newcls
-   
+
 class Foo(object):
     pass
 
@@ -2107,7 +1773,6 @@ sess.add_all([T1Foo(),T1Foo(),T2Foo(),T1Foo()])
 print sess.query(T1Foo).all()
 print sess.query(T2Foo).all()
 &lt;/code&gt;&lt;/pre&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</link>
                 <guid>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</guid>
@@ -2116,8 +1781,7 @@ print sess.query(T2Foo).all()
 
         <item>
                 <title>premature optimization</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/07/26/premature-optimization</link>
                 <guid>http://i.justpic.org/2013/07/26/premature-optimization</guid>
@@ -2126,15 +1790,13 @@ print sess.query(T2Foo).all()
 
         <item>
                 <title>memo on the trade</title>
-                <description>
-&lt;p&gt;RTA github&lt;/p&gt;
+                <description>&lt;p&gt;RTA github&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;www.lowindata.com&quot;&gt;backbonejs note&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;www.icoding.co/2012/04/backbonejs-html-2&quot;&gt;backbonejs&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://code.google.com/p/pyctp/&quot;&gt;pyctp&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/2013/07/22/memo-on-the-trade</link>
                 <guid>http://i.justpic.org/2013/07/22/memo-on-the-trade</guid>
@@ -2143,10 +1805,9 @@ print sess.query(T2Foo).all()
 
         <item>
                 <title>python asynchrous network</title>
-                <description>
-&lt;hr /&gt;
-&lt;p&gt;select,poll,epoll test in python
-——————————–&lt;/p&gt;
+                <description>&lt;hr /&gt;
+
+&lt;h2&gt;select,poll,epoll test in python&lt;/h2&gt;
 
 &lt;p&gt;selecttest.py&lt;/p&gt;
 
@@ -2364,7 +2025,7 @@ if __name__==&quot;__main__&quot;:
         epoll_fd.register(listen_fd.fileno(),select.EPOLLIN)
     except select.error,msg:
         logger.error(msg)
-    
+
     connections={}
     addresses={}
     datalist={}
@@ -2387,7 +2048,7 @@ if __name__==&quot;__main__&quot;:
                             epoll_fd.unregister(fd)
                             connections[fd].close()
                             logger.debug(&quot;%s,%d closed&quot; % (addresses[fd][0],addresses[fd][1]))
-                            
+
                             break
                         else:
                             datas+=data 
@@ -2452,11 +2113,10 @@ for message in messages:
 
 &lt;p&gt;&lt;strong&gt;benchmark&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;针对asyncore的介绍和使用有很好的两篇博客：&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;
+&lt;p&gt; 针对asyncore的介绍和使用有很好的两篇博客：&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;
   &lt;a href=&quot;http://www.nightmare.com/medusa/async_sockets.html&quot;&gt;blog2&lt;/a&gt;&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</link>
                 <guid>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</guid>
@@ -2465,20 +2125,22 @@ for message in messages:
 
         <item>
                 <title>Run Multiple-python on your ubuntu</title>
-                <description>
-&lt;h1 id=&quot;ubuntupython&quot;&gt;ubuntu上安装多个版本的python&lt;/h1&gt;
+                <description>&lt;h1&gt;ubuntu上安装多个版本的python&lt;/h1&gt;
 
 &lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
-sudo apt-get install python3.3 建立软链接：
-
-ln -s /usr/bin/python3.3 /usr/bin/python3.3m
+sudo apt-get install python3.3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;安转python2.7.5再ubuntu上:    &lt;/p&gt;
+&lt;p&gt;建立软链接：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
 sudo apt-get update
@@ -2500,8 +2162,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 
         <item>
                 <title>com learning</title>
-                <description>
-&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/06/14/com-learning</link>
                 <guid>http://i.justpic.org/2013/06/14/com-learning</guid>
@@ -2510,8 +2171,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 
         <item>
                 <title>protobuffer</title>
-                <description>
-&lt;p&gt;google protobuffer待记&lt;/p&gt;
+                <description>&lt;p&gt;google protobuffer待记&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/06/11/protobuffer</link>
                 <guid>http://i.justpic.org/2013/06/11/protobuffer</guid>
@@ -2520,7 +2180,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 
         <item>
                 <title>resolution to scipy installation error</title>
-                <description>&lt;h1 id=&quot;ubuntuscipy&quot;&gt;ubuntu上安装scipy出错解决方法&lt;/h1&gt;
+                <description>&lt;h1&gt;ubuntu上安装scipy出错解决方法&lt;/h1&gt;
 
 &lt;p&gt;安装scipy时出现Blas错误时，需安装以下几个包：&lt;/p&gt;
 
@@ -2551,7 +2211,7 @@ virtualenv -p /usr/bin/python2.7.5 python2.7.5env
 
         <item>
                 <title>install wine on ubuntu 12.04</title>
-                <description>&lt;h1 id=&quot;wine-error&quot;&gt;Wine error&lt;/h1&gt;
+                <description>&lt;h1&gt;Wine error&lt;/h1&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
 
@@ -2567,7 +2227,7 @@ sudo setcap CAP_NET_RAW=ep /путь_до_л2/l2.exe
 
         <item>
                 <title>install hdf5 on ubuntu</title>
-                <description>&lt;h1 id=&quot;install-hdf5-on-ubuntu-1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+                <description>&lt;h1&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
 
 &lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might.&lt;/p&gt;
 
@@ -2592,8 +2252,10 @@ $debuild -us -uc
 
 &lt;pre&gt;&lt;code&gt;$export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:$HOME/hdf5-1.8.9-linux-x86_64-shared/lib
 $export HDF5_DIR=$HOME/hdf5-1.8.9-linux-x86_64-shared
-$source .bashrc 安装 blosc (可选)
+$source .bashrc
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装 blosc (可选)&lt;/p&gt;
 
 &lt;p&gt;安装 lzo2-2 lzo2-dev&lt;/p&gt;
 
@@ -2601,7 +2263,6 @@ $source .bashrc 安装 blosc (可选)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;至此HDF5可用&lt;/p&gt;
-
 </description>
                 <link>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</link>
                 <guid>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</guid>
@@ -2610,17 +2271,18 @@ $source .bashrc 安装 blosc (可选)
 
         <item>
                 <title>deep learning</title>
-                <description>
-&lt;h2 id=&quot;section&quot;&gt;机器学习的两次浪潮：&lt;/h2&gt;
-&lt;p&gt;浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
+                <description>&lt;h2&gt;机器学习的两次浪潮：&lt;/h2&gt;
+
+&lt;p&gt;  浅层机器学习模型：SVM、Boosting、最大熵方法（如LR，Logistic Regression)等
   这些模型的结构基本上可以看成带有一层隐层节点(如SVM、Boosting），或没有隐层节点（如LR）。这些模型无论实在理论分析还是应用中都获得了巨大的成功。相比之下，由于理论分析的难度大，这个时期浅层人工神经网络反而相对沉寂。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;深度学习：&lt;/h2&gt;
-&lt;p&gt;很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化”(layer-wisepre-training)来有效克服。&lt;/p&gt;
+&lt;h2&gt;深度学习：&lt;/h2&gt;
+
+&lt;p&gt;  很多隐层的人工神经网络具有优异的特征学习能力，学习得到的特征对数据有更本质的刻画，从而有利于可视化或分类。深度神经在训练上的难度，可以通过“逐层初始化&quot;(layer-wisepre-training)来有效克服。&lt;/p&gt;
 
 &lt;p&gt;以下资料可供学习入门:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
+&lt;p&gt;  &lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;&lt;br/&gt;
   &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
   &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;
   &lt;a href=&quot;http://www.cs.toronto.edu/~kriz/lsvrc-2012-pres.pdf&quot;&gt;ImageNet Classification with Deep Convolutional Neural Networks&lt;/a&gt;&lt;/p&gt;

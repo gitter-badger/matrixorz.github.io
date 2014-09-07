@@ -69,8 +69,8 @@
     July 26, 2013
   </section>
 
-  
-<h1 id="sqlalchemy">sqlalchemy动态映射</h1>
+  <h1>sqlalchemy动态映射</h1>
+
 <p>代码如下:</p>
 
 <pre><code>from sqlalchemy import *
@@ -85,7 +85,7 @@ def map_class_to_some_table(cls,table,entity_name,**kw):
     newcls=type(entity_name,(cls,),{})
     mapper(newcls,table,**kw)
     return newcls
-   
+
 class Foo(object):
     pass
 
@@ -98,9 +98,38 @@ print sess.query(T1Foo).all()
 print sess.query(T2Foo).all()
 </code></pre>
 
+<section align="right">
+<br/>
+<span>
+	<a  href="/2013/07/26/premature-optimization" class="pageNav"  >上一篇</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/07/28/webpy-note" class="pageNav"  >下一篇</a>
+</span>
+</section>
 
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://i.justpic.org/2013/07/26/premature-optimization';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://i.justpic.org/2013/07/28/webpy-note';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
   <!-- TODO: bio here -->
+
   <section class="meta">
     <h3>Discussion, links, and tweets</h3>
     <section class="copy">
