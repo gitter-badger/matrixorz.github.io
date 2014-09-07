@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-09-07T22:15:56+08:00</updated>
+ <updated>2014-09-07T22:25:21+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -225,33 +225,27 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 
 &lt;p&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;使用python web框架开发项目&lt;/p&gt;
+&lt;h3&gt;使用python web框架开发项目&lt;/h3&gt;
 
-&lt;p&gt;技术选型&lt;/p&gt;
+&lt;h4&gt;技术选型&lt;/h4&gt;
 
-&lt;p&gt;tornado  &amp;ndash;epool，pre_fork,异步io的集合体&lt;/p&gt;
+&lt;p&gt;tornado  &amp;ndash;epool，pre_fork,异步io的集合体&lt;br/&gt;
+mongodb  &amp;ndash;nosql技术，读快写慢&lt;br/&gt;
+rq/mrq   &amp;ndash;redis队列，传递消息，方便快捷&lt;br/&gt;
+pandas   &amp;ndash;处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
 
-&lt;p&gt;mongodb  &amp;ndash;nosql技术，读快写慢&lt;/p&gt;
+&lt;h4&gt;参考项目&lt;/h4&gt;
 
-&lt;p&gt;rq/mrq   &amp;ndash;redis队列，传递消息，方便快捷&lt;/p&gt;
+&lt;p&gt;nbviewer &amp;ndash;tornado中如何做并行化 futures  &lt;br/&gt;
+pyspider &amp;ndash;flask 后台队列的实现和控制，架构方面&lt;/p&gt;
 
-&lt;p&gt;pandas   &amp;ndash;处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
+&lt;h4&gt;云存储&lt;/h4&gt;
 
-&lt;p&gt;参考项目&lt;/p&gt;
-
-&lt;p&gt;nbviewer &amp;ndash;tornado中如何做并行化 futures&lt;/p&gt;
-
-&lt;p&gt;pyspider &amp;ndash;flask 后台队列的实现和控制，架构方面&lt;/p&gt;
-
-&lt;p&gt;云存储&lt;/p&gt;
-
-&lt;p&gt;baidupcs-sdk &amp;ndash;免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
-
-&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;/p&gt;
-
-&lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;
+&lt;p&gt;baidupcs-sdk &amp;ndash;免费，但有token限制，可以使用refresh token使其永久有效&lt;br/&gt;
+pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;br/&gt;
+hdf5的使用可参考&lt;br/&gt;
+&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;&lt;br/&gt;
 mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
