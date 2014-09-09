@@ -57,7 +57,7 @@ $(function(){
   <section class="meta">
     <h3>Discussion, links, and tweets</h3>
     <section class="copy">
-      <a href="https://twitter.com/{{ site.twitter }}" target="_blank">
+      <a href="https://weibo.com/u/{{ site.weibo }}" target="_blank">
         <img src="{{ site.gravatar_url }}?s=142" height="50" width="50" />
       </a>
 
@@ -74,5 +74,7 @@ $(function(){
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
   </script>
-    <!--{% include JB/comments %}-->
+  {% include custom/duoshuo %}
+  {% include custom/analytics %}
+  <!--{% include JB/comments %}-->
 </section>
