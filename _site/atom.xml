@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-09-07T22:26:06+08:00</updated>
+ <updated>2014-09-09T10:33:16+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -71,89 +71,6 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
  </entry>
  
  <entry>
-   <title>模式识别</title>
-   <link href="http://i.justpic.org/2014/08/22/"/>
-   <updated>2014-08-22T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/08/</id>
-   <content type="html">&lt;p&gt; 关于模式识别和计算机应用方向, 我认为可以选择的主题(仅是己见)
-1.  数学方面
-1)  矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar.
-2)  广义逆与子空间
-3)  最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义
-4)  凸分析与凸优化的基本知识及其几何意义
-5)  常用的几种优化方法.
-其实以上在某种意义下是相通的.
-6)  微分几何、黎曼几何的基本概念和知识
-7)  李群与李代数的基本知识
-8)  图和谱图的基本知识
-以上知识，我认为，是作为一个做算法的研究者都应该了解或是掌握的数学知识
-9)  模糊数学（就个人而言，我十分不情愿把这个方法列在这里，因为我认为模糊数学不是&lt;/p&gt;
-
-&lt;p&gt;好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
-10) 时间序列分析的主要方法和最近新方法.
-11) 分形和混沌
-12) 常用微分方程的基本类型和解法
-2．专业方向
-   1）PCA, FA, MDS
-      这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计&lt;/p&gt;
-
-&lt;p&gt;算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non&lt;/p&gt;
-
-&lt;p&gt;negative PCA.
-   2) ICA ( Independent Component Analysis )
-     独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等&lt;/p&gt;
-
-&lt;p&gt;分类领域中广泛应用。最近又有Nonnegative ICA 出现。特别地李群与李代数（Toral子代&lt;/p&gt;
-
-&lt;p&gt;数）的引入为这个经典的方法有注入了新鲜的活力。
-   3）NMF ( Nonnegative Matrix Factorization)
-      非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又&lt;/p&gt;
-
-&lt;p&gt;一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非&lt;/p&gt;
-
-&lt;p&gt;常难以发掘。
-   4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps)
-      局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa&lt;/p&gt;
-
-&lt;p&gt;tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋&lt;/p&gt;
-
-&lt;p&gt;。特别LE的线性形式LPP (Locality Preserving Projections) 在人脸识别领域已大显身&lt;/p&gt;
-
-&lt;p&gt;手，继Fisherfaces又一著名方法Laplacianfaces就是基于LPP. 另外基于谱聚类的方法也
-可以很容易的从LE中导
-出，它正是图像分割领域研究的热点。
-   这两种方法我自发的报告会中 仔细介绍过。
-   5）HMM (Hidden Markov Model)
-   6)  Wavelet
-   7)  RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma&lt;/p&gt;
-
-&lt;p&gt;p)
-      径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法&lt;/p&gt;
-
-&lt;p&gt;引入神经网络，这些方法又焕发出新的生机和用途。
-   8）SVM （Support Vector Machine）
-      支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法&lt;/p&gt;
-
-&lt;p&gt;和Clifford 代数的引入，SVM必将更加充满生机。
-   9）EM (Expectation Maximum)
-      EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode&lt;/p&gt;
-
-&lt;p&gt;l or GMM中
-   10）Guassian Mixture Model
-      GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识&lt;/p&gt;
-
-&lt;p&gt;别、人脸识别、目标监测、图像分割
-    11）Bayesian Model or Bayesian Network
-      贝叶斯模型或是贝叶斯网络的广泛应用就不用多言语了吧。
-    其中 9）、10）、11）经常是成三成双的出现
-    12）Kernel Methods
-       基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;/p&gt;
-
-&lt;p&gt;比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>排序总结</title>
    <link href="http://i.justpic.org/2014/08/17/"/>
    <updated>2014-08-17T00:00:00+08:00</updated>
@@ -191,7 +108,8 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
    <id>http://i.justpic.org/2014/08/</id>
    <content type="html">&lt;p&gt;  &lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt; &lt;br/&gt;
   &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
-  &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;
+  &lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -263,28 +181,22 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
    <link href="http://i.justpic.org/python%20development/2014/07/28/python-optimization"/>
    <updated>2014-07-28T00:00:00+08:00</updated>
    <id>http://i.justpic.org/python%20development/2014/07/28/python-optimization</id>
-   <content type="html">&lt;p&gt; 首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;/p&gt;
-
-&lt;p&gt; 判断程序为io-bound任务还是cpu-bound任务。&lt;/p&gt;
-
-&lt;p&gt; io-bound任务程序使用gevent来优化&lt;/p&gt;
-
-&lt;p&gt; cpu-bound任务程序使用multiprocess来优化&lt;/p&gt;
-
-&lt;p&gt; 使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
+   <content type="html">&lt;p&gt; 首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;br/&gt;
+ 判断程序为io-bound任务还是cpu-bound任务。&lt;br/&gt;
+ io-bound任务程序使用gevent来优化&lt;br/&gt;
+ cpu-bound任务程序使用multiprocess来优化&lt;br/&gt;
+ 使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>data visualization</title>
-   <link href="http://i.justpic.org/2014/07/19/data-visualization"/>
+   <link href="http://i.justpic.org/data%20science/2014/07/19/data-visualization"/>
    <updated>2014-07-19T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/07/19/data-visualization</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://danielfrg.com/blog/2013/02/05/d3-backbone-tornado-histogram-csv/&quot;&gt;使用tornado D3.js 进行数据可视化&lt;/a&gt;&lt;/p&gt;
+   <id>http://i.justpic.org/data%20science/2014/07/19/data-visualization</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://danielfrg.com/blog/2013/02/05/d3-backbone-tornado-histogram-csv/&quot;&gt;使用tornado D3.js 进行数据可视化&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  

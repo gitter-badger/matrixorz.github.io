@@ -107,17 +107,19 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : duoshuo
+    duoshuo : 
+      short_name: justpic
     disqus :
       short_name : justpic 
     livefyre :
-      site_id : 
+      site_id : 123
     intensedebate :
-      account : 
+      account : 123abc
     facebook :
-      appid : 
-      num_posts: 
-      width: 580
+      appid :  123
+      num_posts: 5
+      width: 580 
       colorscheme: light
    
   # Settings for analytics helper

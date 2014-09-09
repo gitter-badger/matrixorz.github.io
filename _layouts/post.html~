@@ -1,6 +1,11 @@
 ---
 layout: layout
 ---
+{% include JB/setup %}
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 <section class="content">
   <h1>
     <a href="{{ page.url }}">{{ page.title }}</a>
@@ -14,9 +19,9 @@ layout: layout
 <section align="right">
 <br/>
 <span>
-	<a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >上一篇</a>
+	<a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >Older</a>
 	&nbsp;&nbsp;&nbsp;
-	<a {% if page.next %} href="{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >下一篇</a>
+	<a {% if page.next %} href="{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >New</a>
 </span>
 </section>
 
@@ -40,7 +45,13 @@ $(function(){
   });
 })
 </script>
-
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+            "HTML-CSS": {linebreaks: {automatic: true}},
+            SVG: {linebreaks: {automatic: true}}
+            });
+</script>
   <!-- TODO: bio here -->
 
   <section class="meta">
@@ -52,5 +63,16 @@ $(function(){
 
     </section>
   </section>
-  {% include JB/comments %}
+   <script type="text/javascript">
+  var duoshuoQuery = {short_name:"justpic"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+  </script>
+    <!--{% include JB/comments %}-->
 </section>
