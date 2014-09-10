@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 
 #WSGI
-[ppt](http://archimedeanco.com/wsgi-tutorial/)  
+[ppt](http://archimedeanco.com/wsgi-tutorial/)
 #webpy学习笔记
 
 #####web.ctx  

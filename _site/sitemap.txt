@@ -18,8 +18,11 @@ http://i.justpic.org/index.html
 http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
+http://i.justpic.org/page3/index.html
 
 http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell
+http://i.justpic.org/2014/09/05/pca
+http://i.justpic.org/2014/08/22/
 http://i.justpic.org/2014/08/17/
 http://i.justpic.org/2014/08/16/python-finance
 http://i.justpic.org/2014/08/10/

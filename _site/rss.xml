@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-09-09T11:03:01+08:00</lastBuildDate>
-        <pubDate>2014-09-09T11:03:01+08:00</pubDate>
+        <lastBuildDate>2014-09-10T09:57:37+08:00</lastBuildDate>
+        <pubDate>2014-09-10T09:57:37+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -69,6 +69,140 @@ cabal update
         </item>
 
         <item>
+                <title>pca</title>
+                <description>&lt;h3&gt;PCA简介&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;PCA是Principal Component Analysis(主成分分析)的缩写，此方法的目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性代数角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元,将原数据投影到该数据空间上，就可以达到降维的目的。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;/p&gt;
+
+&lt;h4&gt;PCA的主要思想：&lt;/h4&gt;
+
+&lt;p&gt;1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；&lt;br/&gt;
+2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现方法就是对协方差矩阵进行对角化。&lt;/p&gt;
+
+&lt;h4&gt;PCA的模型中存在假设条件：&lt;/h4&gt;
+
+&lt;p&gt;1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；&lt;br/&gt;
+2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。&lt;br/&gt;
+3.数据本身具有较高的信躁比。&lt;br/&gt;
+4.假设主元向量之间是正交的。&lt;/p&gt;
+
+&lt;h4&gt;PCA的可视化理解&lt;/h4&gt;
+
+&lt;h4&gt;PCA的求解方法：&lt;/h4&gt;
+
+&lt;p&gt;SVD(奇异值分解)方法&lt;br/&gt;
+求协方差矩阵的特征向量矩阵&lt;/p&gt;
+
+&lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。&lt;br/&gt;
+假设协方差特征矩阵为\(P_1\)(正交化后的特征矩阵为\(P\)),PCA降维后的样本矩阵为\(S_1\),
+根据PCA的目的，\(S_1\)中的各个维度间的协方差基本为零，也就是说，\(S_1\)的协方差矩阵
+为\(\mit\Lambda_1\),满足如下等式：
+$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1$$
+又因为
+$$P^{T}CP=\mit\Lambda \Rightarrow P_1^{T}CP_1=\mit\Lambda_1$$
+带入可得：
+$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}$$&lt;/p&gt;
+
+&lt;p&gt;由于样本矩阵\(S_N\times &lt;em&gt;d\)的每一行是一个样本，特征向量矩阵\(P_1&lt;/em&gt;{d\times p}\)的每一列是一个特征向量。右乘\(P_1\)相当于每个样本乘以\(P_1)的特征向量为基进行线性变换，得到的新样本矩阵\S_1 \in R^{N\times p}\)中的每个样本的维数变为了p，完成了降维操作。
+实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为&quot;主成分&quot;,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。
+矩阵的左乘运算是行运算，右乘是列运算&lt;/p&gt;
+
+&lt;p&gt;但使用svd解决PCA问题,可以得到两个方向上的PCA。&lt;/p&gt;
+
+&lt;p&gt;观察PCA后的样本协方差矩阵和原始矩阵的协方差矩阵可以发现各个维度上的方差有所变化，但对角线之和没有变，能量重新得到了分配，这就是降噪的功劳。
+将原矩阵与投影矩阵相称可得到降维后的矩阵。&lt;/p&gt;
+
+&lt;h4&gt;svd与LSI&lt;/h4&gt;
+
+&lt;p&gt;PCA与LDA是特征抽取的两种主要经典方法
+LDA(线性评判分析)
+信号表示：特征抽取后的特征要能够精确地表示样本信息，使得信息丢失很小，对应的方法是PCA
+信号分类：特征抽取后的特征，要使得分类后的准确率很高，不能比原来特征进行分类的准确率低。对于线性来说，对应的方法是LDA
+PCA不具有鉴别特性
+LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。&lt;br/&gt;
+PCA做分类时一般使用主向量作为特征进行分类，而不是降维后的矩阵来做分类。&lt;/p&gt;
+
+&lt;p&gt;参考文章：&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/09/05/pca</link>
+                <guid>http://i.justpic.org/2014/09/05/pca</guid>
+                <pubDate>2014-09-05T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>模式识别</title>
+                <description>&lt;h4&gt;关于模式识别和计算机应用方向, 可以选择的主题&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;数学方面&lt;br/&gt;
+1)  矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. &lt;br/&gt;
+2)  广义逆与子空间&lt;br/&gt;
+3)  最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义&lt;br/&gt;
+4)  凸分析与凸优化的基本知识及其几何意义&lt;br/&gt;
+5)  常用的几种优化方法. &lt;br/&gt;
+其实以上在某种意义下是相通的.&lt;br/&gt;
+6)  微分几何、黎曼几何的基本概念和知识&lt;br/&gt;
+7)  李群与李代数的基本知识 &lt;br/&gt;
+8)  图和谱图的基本知识&lt;br/&gt;
+以上知识，作为一个做算法的研究者都应该了解或是掌握的数学知识&lt;br/&gt;
+9)  模糊数学（模糊数学不是好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
+10) 时间序列分析的主要方法和最近新方法.&lt;br/&gt;
+11) 分形和混沌&lt;br/&gt;
+12) 常用微分方程的基本类型和解法&lt;br/&gt;
+2．专业方向&lt;br/&gt;
+1）PCA, FA, MDS &lt;br/&gt;
+  这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计
+算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non
+negative PCA.&lt;br/&gt;
+2) ICA ( Independent Component Analysis )&lt;br/&gt;
+ 独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等
+分类领域中广泛应用。最近又有Nonnegative ICA 出现。特别地李群与李代数（Toral子代
+数）的引入为这个经典的方法有注入了新鲜的活力。&lt;br/&gt;
+3）NMF ( Nonnegative Matrix Factorization)&lt;br/&gt;
+  非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又
+一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非
+常难以发掘。&lt;br/&gt;
+4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps)
+  局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa
+tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋
+。特别LE的线性形式LPP (Locality Preserving Projections) 在人脸识别领域已大显身
+手，继Fisherfaces又一著名方法Laplacianfaces就是基于LPP. 另外基于谱聚类的方法也
+可以很容易的从LE中导出，它正是图像分割领域研究的热点。&lt;br/&gt;
+5）HMM (Hidden Markov Model) &lt;br/&gt;
+6) Wavelet &lt;br/&gt;
+7) RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma
+p)&lt;br/&gt;
+径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法
+引入神经网络，这些方法又焕发出新的生机和用途。&lt;br/&gt;
+8）SVM （Support Vector Machine）
+  支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法
+和Clifford 代数的引入，SVM必将更加充满生机。&lt;br/&gt;
+9）EM (Expectation Maximum)&lt;br/&gt;
+  EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode
+l or GMM中&lt;br/&gt;
+10）Guassian Mixture Model&lt;br/&gt;
+  GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识
+别、人脸识别、目标监测、图像分割&lt;br/&gt;
+11）Bayesian Model or Bayesian Network&lt;br/&gt;
+其中 9）、10）、11）经常是成三成双的出现&lt;br/&gt;
+12）Kernel Methods
+   基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，
+比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;
+</description>
+                <link>http://i.justpic.org/2014/08/22/</link>
+                <guid>http://i.justpic.org/2014/08/</guid>
+                <pubDate>2014-08-22T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
                 <title>排序总结</title>
                 <description>
 </description>
@@ -101,10 +235,10 @@ cabal update
 
         <item>
                 <title>线性代数中的矩阵</title>
-                <description>&lt;p&gt;  &lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt; &lt;br/&gt;
-  &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
-  &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;
-  &lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;&lt;/p&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br/&gt;
+&lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;  &lt;br/&gt;
+&lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/10/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>
@@ -1290,7 +1424,11 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
 
         <item>
                 <title>web.py note</title>
-                <description>&lt;h1&gt;webpy学习笔记&lt;/h1&gt;
+                <description>&lt;h1&gt;WSGI&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://archimedeanco.com/wsgi-tutorial/&quot;&gt;ppt&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;webpy学习笔记&lt;/h1&gt;
 
 &lt;h5&gt;web.ctx&lt;/h5&gt;
 
