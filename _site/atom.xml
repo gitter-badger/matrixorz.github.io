@@ -4,13 +4,120 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-09-10T09:57:37+08:00</updated>
+ <updated>2014-09-12T16:50:38+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>ROC曲线分析</title>
+   <link href="http://i.justpic.org/2014/09/10/roc"/>
+   <updated>2014-09-10T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/09/10/roc</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://download.bioon.com.cn/upload/201302/09164003_6172.pdf&quot;&gt;ROC分析的基本原理&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>latex math symbol</title>
+   <link href="http://i.justpic.org/2014/09/10/latex-math-symbol"/>
+   <updated>2014-09-10T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/09/10/latex-math-symbol</id>
+   <content type="html">&lt;h4&gt;latex数学符号&lt;/h4&gt;
+
+&lt;p&gt;数学模式重音符&lt;br/&gt;
+\(\hat{a}\)  \hat{a}   \(\check{a}\)  \check{a}  \(\tilde{a}\) \tilde{a}  \(\acute{a}\) \acute{a}&lt;br/&gt;
+\(\grave{a}\)  \grave{a}  \(\dot{a}\)  \dot{a}  \(\ddot{a}\) \ddot{a}  \(\breve{a}\)  \breve{a}&lt;br/&gt;
+\(\bar{a}\)   \bar{a}   \(\vec{a}\)   \vec{a}  \(\widehat{A}\) \widehat{A} \(\widetilde{A}\) \widetilde{A}&lt;/p&gt;
+
+&lt;p&gt;小写希腊字母表&lt;br/&gt;
+\(\alpha\) \alpha  \(\theta\) \theta \(o\) o  \(\upsilon\) \upsilon&lt;br/&gt;
+\(\beta\) \beta \(\vartheta\) \vartheta  \(\pi\) \pi \(\phi\) \phi
+\(\gamma\) \gamma \(\iota\) \iota \(\varpi\) \varpi \(\varphi\) \varphi&lt;br/&gt;
+\(\delta\) \delta \(\kappa\) \kappa \(\rho\) \rho \(\chi\) \chi
+\(\epsilon\) \epsilon \(\lambda\) \lambda \(\varrho\) \varrho \(\psi\) \psi&lt;br/&gt;
+\(\varepsilon\) \varepsilon \(\mu\) \mu \(\sigma\) \sigma \(\omega\) \omega&lt;br/&gt;
+\(\zeta\) \zeta \(\nu\) \nu \(\varsigma\) \varsigma \(\eta\) \eta
+\(\xi\) \xi \(\tau\) \tau&lt;/p&gt;
+
+&lt;p&gt;大写希腊字母&lt;br/&gt;
+\(\Gamma\) \Gamma \(\Lambda\) \Lambda \(\Sigma\) \Sigma \(\Psi\) \Psi
+\(\Delta\) \Delta \(\Xi\) \Xi \(\Upsilon\) \Upsilon  \(\Omega\) \Omega&lt;br/&gt;
+\(\Theta\) \Theta \(\Pi\) \Pi \(\Phi\) \Phi&lt;/p&gt;
+
+&lt;p&gt;二元关系符&lt;br/&gt;
+\(&amp;lt;\) &amp;lt; \(&gt;\) &gt; \(=\)  =&lt;br/&gt;
+\(\leq or \le\) \leq or \le &lt;br/&gt;
+\(\geq or \ge\) \geq or \g
+\(\equiv\)  \equiv
+\(\ll\) \ll&lt;br/&gt;
+\(\gg\) \gg&lt;br/&gt;
+\(\doteq\) \doteq&lt;br/&gt;
+\(\prec\) \prec&lt;br/&gt;
+\(\succ\) \succ&lt;br/&gt;
+\(\sim\)  \sim
+\(\preceq\) \preceq&lt;br/&gt;
+\(\succeq\) \succeq&lt;br/&gt;
+\(\simeq\) \simeq&lt;br/&gt;
+\(\subset\) \subset&lt;br/&gt;
+\(\supset\) \supset&lt;br/&gt;
+\(\approx\) \approx&lt;br/&gt;
+\(\subseteq\) \subseteq&lt;br/&gt;
+\(\supseteq\) \supseteq&lt;br/&gt;
+\(\cong\) \cong&lt;br/&gt;
+\(\sqsubset\) \sqsubset
+\(\sqsupset\) \sqsupset&lt;br/&gt;
+\(\Join\) \Join&lt;br/&gt;
+\(\in\) \in&lt;br/&gt;
+\(\ni\) \ni,\owns&lt;br/&gt;
+\(\propto\) \propto&lt;br/&gt;
+\(\vdash\) \vdash&lt;br/&gt;
+\(\dashv\) \dashv&lt;br/&gt;
+\(\models\) \models
+\(\mid\) \mid&lt;br/&gt;
+\(\parallel\) \parallel&lt;br/&gt;
+\(\perp\) \perp&lt;br/&gt;
+\(\smile\) \smile&lt;br/&gt;
+\(\frown\) \frown&lt;br/&gt;
+\(\asymp\) \asymp&lt;br/&gt;
+\(:\)  :&lt;br/&gt;
+\(\notin\) \notin&lt;br/&gt;
+\(\neq\) \neq or \ne&lt;br/&gt;
+二元运算符号&lt;br/&gt;
+\(+\) +    \(-\) - \(\triangleleft\) \triangleleft&lt;br/&gt;
+\(\pm\) \pm \(\mp\) \mp \(\triangleright\) \triangleright&lt;br/&gt;
+\(\cdot\) \cdot \(\div\) \div  &lt;br/&gt;
+\(\times\) \times   \(\setminus\) \setminus \(\star\) \star &lt;br/&gt;
+\(\cup\) \cup \(\cap\) \cap \(\ast\) \ast&lt;br/&gt;
+\(\sqcup\) \sqcup \(\circ\) \circ&lt;br/&gt;
+\(\vee\) \vee,\lor \(\wedge\) \wedge,\land  \(\bullet\) \bullet&lt;br/&gt;
+\(\oplus\) \oplus \(\ominus\)  \ominus \(\diamond\)  \diamond&lt;br/&gt;
+\(\odot\) \odot \(\oslash\) \oslash \(\uplus\) \uplus&lt;br/&gt;
+\(\otimes\) \otimes \(\bigcirc\) \bigcirc \(\amalg\)&lt;br/&gt;
+\(\bigtriangleup\) \(\bigtriangledown\) \(\dagger\)  \dagger&lt;br/&gt;
+\(\lhd\) \lhd \(\rhd\) \rhd \(\ddagger\) \ddagger&lt;br/&gt;
+\(\unlhd\) \unlhd \(\unrhd\) \unrhd \(\wr\) \wr&lt;/p&gt;
+
+&lt;p&gt;大尺寸运算符&lt;br/&gt;
+\(\sum\) \sum \(\bigcup\) \bigcup \(\bigvee\) \bigvee   \(\bigoplus\) \bigoplus&lt;br/&gt;
+\(\prod\) \prod \(\bigcap\) \bigcap \(\bigwedge\) \bigwedge  \(\bigotimes\) \bigotimes
+\(\coprod\) \coprod \(\bigsqcup\) \bigsqcup \(\bigodot\) \bigodot \(\int\) \int
+\(\oint\) \oint \(\biguplus\) \biguplus&lt;/p&gt;
+
+&lt;p&gt;箭头&lt;br/&gt;
+\(\leftarrow\) \leftarrow or \gets \(\longleftarrow\)  \longleftarrow&lt;br/&gt;
+\(\uparrow\) \uparrow  \(\rightarrow\) \rightarrow or \to &lt;br/&gt;
+\(\longrightarrow\) \longrightarrow   \(\downarrow\) \downarrow&lt;br/&gt;
+\(\leftrightarrow\) \leftrightarrow \(\longleftrightarrow\) \longleftrightarrow&lt;/p&gt;
+
+&lt;p&gt;参考&lt;br/&gt;
+&lt;a href=&quot;http://math.ecnu.edu.cn/~latex/docs/others/mathsymb.pdf&quot;&gt;mathsymb.pdf&lt;/a&gt;
+&lt;a href=&quot;http://mohu.org/info/symbols/symbols.htm&quot;&gt;常用数学符号的LaTex表示方法&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>ubuntu 14.04 install haskell</title>
@@ -79,6 +186,18 @@ cabal update
 
 &lt;blockquote&gt;&lt;p&gt;PCA是Principal Component Analysis(主成分分析)的缩写，此方法的目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性代数角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元,将原数据投影到该数据空间上，就可以达到降维的目的。&lt;/p&gt;&lt;/blockquote&gt;
 
+&lt;h4&gt;K-L变换与PCA&lt;/h4&gt;
+
+&lt;p&gt;K-L变换是Karhunen-Loeve变换的简称，是一种特殊的正交变换。它是建立在统计特性基础上的一种变换，也称做霍特林(Hotelling)变换。
+K-L变换的优点是去相关性，是均方误差意义下的最佳变换。
+设随机向量 \(X \in R^{n} \)(n阶列向量),它的均值向量为 \(m_x \),则协方差矩阵可以表示为：&lt;br/&gt;
+$$Cov(x)= E{(X-m_x) \times (X-m_x)^{T}}$$
+\(Cov(x)\)是一个n*n阶的实对称矩阵。
+K-L变换定义了一个正交变换\(A \in R^{n \times n}\),将\(X \in R^{n}\)的向量映射到用\(Y \in R^{n}\)代表的向量，并且使Y向量中的各分量间不相关：&lt;br/&gt;
+$$Y=A \times (X-m_x) $$&lt;/p&gt;
+
+&lt;p&gt;PCA算法的理论依据是K-L变换，通过寻找线性变换W，实现对高维数据的降维。&lt;/p&gt;
+
 &lt;p&gt;混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;/p&gt;
 
 &lt;h4&gt;PCA的主要思想：&lt;/h4&gt;
@@ -97,8 +216,65 @@ cabal update
 
 &lt;h4&gt;PCA的求解方法：&lt;/h4&gt;
 
-&lt;p&gt;SVD(奇异值分解)方法&lt;br/&gt;
-求协方差矩阵的特征向量矩阵&lt;/p&gt;
+&lt;p&gt;SVD(奇异值分解)方法
+K-L变换适用于方阵，但现实中，得到的大部分矩阵不是方阵，奇异值分解方法可以获得一个变换描述矩阵的重要特征。奇异值分解的形式：
+$$A=U\Sigma V^{T}$$
+其中A是一个\(N\times M\)的矩阵，得到的\(U\)是一个\(N\times N\)的方阵(里面的向量是正交的，U里面的向量称为左奇异向量),\(\Sigma\)是一个\(N\times M\)的矩阵(除了对角线的元素都是0,对角线上的元素成为奇异值),\(V^{T}\)(V的转置)是一个\(M\times M\)的矩阵，里面的向量也是正交的，\(V^{T}\)里面的向量称为右奇异向量)。 &lt;br/&gt;
+奇异值是怎么和特征值对应起来的。&lt;br/&gt;
+$$(A^{T}A)v_i=\lambda v_i$$
+这里得到的v，就是上面的右奇异向量。此处我们还可以得到左奇异值\(\sigma_i\)和左奇异向量\(\mu_i\) &lt;br/&gt;
+$$\sigma_i=\sqrt{\lambda_i}$$
+$$\mu_i=\frac{1}{\sigma_i}Av_i$$&lt;br/&gt;
+这里的\(A^{T}A\)与后面的协方差矩阵的形式统一了以来，求解出来的\(V^{T}\)与后面的\(S^{T}S\)是同构的。&lt;br/&gt;
+$$(AA^{T})\mu_i=(AA^{T})\frac{1}{\sigma_i}Av_i=\frac{1}{\sigma_i}AA^{T}Av_i=\frac{1}{\sigma_i}A(\lambda_i v_i)=A(\frac{1}{\sigma_i}v_i)=Au_i$$&lt;br/&gt;
+得到左奇异向量或者右奇异向量后，按照特征值递减顺序组成特征向量矩阵。&lt;br/&gt;
+则左奇异向量矩阵为\(U&lt;em&gt;{n\times r}\),右奇异向量矩阵为\(V&lt;/em&gt;{r\times m}^{T}\) ,r的大小取决于\(A^{T}A\)所求得的特征矩阵\(\Sigma\).
+如何把\(A&lt;em&gt;{n*m}\)变成\(A&lt;/em&gt;{n&lt;em&gt;r}\)：&lt;br/&gt;
+$$A^{N\times M} V^{M\times r}=A^{N\times r}$$
+如何把\(A_{n&lt;/em&gt;m}\)变成\(A&lt;em&gt;{r*m}\)：&lt;br/&gt;
+$$U&lt;/em&gt;{r\times T}^{T} A^{N\times M}=A^{r\times M}$$&lt;/p&gt;
+
+&lt;p&gt;弄清楚了SVD与PCA的关系后，PCA是SVD的再次包装，就知道怎么求解PCA了。&lt;/p&gt;
+
+&lt;p&gt;另外一种等价的方法
+求协方差矩阵的特征向量矩阵&lt;br/&gt;
+协方差矩阵的计算可以通过下面的公式计算:
+$$Cov(S)=\frac{S^{T}S}{N-1}$$&lt;br/&gt;
+其中\(S \in R^{n\times d}\) 是中心化后的矩阵，
+协方差矩阵的计算方式(matlab代码实现)：&lt;br/&gt;
+随机产生一个10*3维的整数矩阵作为样本集，10为样本的个数，3为样本的维数。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;协方差是计算不同维度间的协方差，样本矩阵的每行是一个样本，每列为一个维度，所以我们要按列计算均值。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;计算dim1与dim2,dim1与dim3,dim2与dim3的协方差：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+协方差矩阵的对角线上就是各个维度上的方差
+&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;协方差矩阵也可以这样计算，先让样本矩阵中心化，即每一维度减去该维度的均值，使每一维度上的均值为0,然后直接用新得到的样本矩阵乘上它的转置，然后除以(N-1)。该方法可以由前面的公式推导出来。
+matlab代码实现如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repmat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;%  中心化样本矩阵，使各维度均值为0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。&lt;br/&gt;
 假设协方差特征矩阵为\(P_1\)(正交化后的特征矩阵为\(P\)),PCA降维后的样本矩阵为\(S_1\),
@@ -108,13 +284,10 @@ $$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1$$
 又因为
 $$P^{T}CP=\mit\Lambda \Rightarrow P_1^{T}CP_1=\mit\Lambda_1$$
 带入可得：
-$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}$$&lt;/p&gt;
-
-&lt;p&gt;由于样本矩阵\(S_N\times &lt;em&gt;d\)的每一行是一个样本，特征向量矩阵\(P_1&lt;/em&gt;{d\times p}\)的每一列是一个特征向量。右乘\(P_1\)相当于每个样本乘以\(P_1)的特征向量为基进行线性变换，得到的新样本矩阵\S_1 \in R^{N\times p}\)中的每个样本的维数变为了p，完成了降维操作。
-实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为&quot;主成分&quot;,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。
-矩阵的左乘运算是行运算，右乘是列运算&lt;/p&gt;
-
-&lt;p&gt;但使用svd解决PCA问题,可以得到两个方向上的PCA。&lt;/p&gt;
+$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}$$
+由于样本矩阵 \(S^{N \times d}\) 的每一行是一个样本，特征向量矩阵\(P_1^{d \times p}\)的每一列是一个特征向量。右乘\(P_1\)相当于每个样本乘以\(P_1\)的特征向量为基进行线性变换，得到的新样本矩阵\(S_1 \in R^{N\times p}\)中的每个样本的维数变为了p，完成了降维操作。
+实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为&quot;主成分&quot;,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。&lt;br/&gt;
+但使用svd解决PCA问题,可以同时得到两个方向上的PCA。实际上在SVD中，左奇异向量需要右乘元矩阵，可以对原矩阵做列变换，可以把原矩阵的每列作为一个特征，每一行代表一个样本，进行特征维度缩减，维度由m变为r，右奇异向量\(V^{T}\)需要左乘原矩阵A，相当于对A的行向量做变换，A的每一行可看成一个特征，进行维度缩减，维度又原来的n变为r。&lt;/p&gt;
 
 &lt;p&gt;观察PCA后的样本协方差矩阵和原始矩阵的协方差矩阵可以发现各个维度上的方差有所变化，但对角线之和没有变，能量重新得到了分配，这就是降噪的功劳。
 将原矩阵与投影矩阵相称可得到降维后的矩阵。&lt;/p&gt;
@@ -131,7 +304,8 @@ PCA做分类时一般使用主向量作为特征进行分类，而不是降维�
 
 &lt;p&gt;参考文章：&lt;br/&gt;
 &lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;PCA与SVD&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -240,7 +414,20 @@ l or GMM中&lt;br/&gt;
    <link href="http://i.justpic.org/2014/08/10/"/>
    <updated>2014-08-10T00:00:00+08:00</updated>
    <id>http://i.justpic.org/2014/08/</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br/&gt;
+   <content type="html">&lt;p&gt;关于列向量和行向量：&lt;br/&gt;
+列向量通常用单个字母来表示，行向量表示为列向量的转置。 &lt;br/&gt;
+假设\(a^{T}\)和\(b\)分别是一个行向量和一个列向量 &lt;br/&gt;
+內积定义：\(a^{T} \cdot b\);&lt;br/&gt;
+外积定义: \(a \times b\);&lt;br/&gt;
+线性变换中的行变换、列变换的理解：&lt;br/&gt;
+矩阵乘法对应了一个变换，是把一个向量变成另一个方向或长度的新向量。在这个变换过程中，原向量主要发生旋转、伸缩的变化。如果矩阵对某些向量只发生伸缩变换，不产生旋转效果，那么这些向量就称为这个矩阵的特征向量，伸缩的比列就是特征值。对角矩阵（对称矩阵）只对向量进行伸缩，不作旋转。&lt;br/&gt;
+左乘和右乘的区别：&lt;br/&gt;
+一个矩阵如果左乘一个坐标基，相当于对该矩阵作行变换，坐标基的每个列向量为基向量。&lt;br/&gt;
+一个矩阵如果右乘一个坐标基，相当于对该矩阵做列变换，坐标基的每个行向量为基向量。&lt;br/&gt;
+理解的时候可以看成一个不变，一个在变。&lt;/p&gt;
+
+&lt;p&gt;参考 &lt;br/&gt;
+&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br/&gt;
 &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;  &lt;br/&gt;
 &lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;&lt;/p&gt;
@@ -755,9 +942,9 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
    <id>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</id>
    <content type="html">&lt;p&gt;三条命令搞定：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install oracle-java8-installer
-    sudo apt-get install oracle-java7-installer
-    sudo update-alternatives --config java
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java7-installer
+sudo update-alternatives --config java
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
