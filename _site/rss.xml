@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-09-12T16:53:01+08:00</lastBuildDate>
-        <pubDate>2014-09-12T16:53:01+08:00</pubDate>
+        <lastBuildDate>2014-09-22T15:27:28+08:00</lastBuildDate>
+        <pubDate>2014-09-22T15:27:28+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -425,7 +425,8 @@ l or GMM中&lt;br/&gt;
 &lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br/&gt;
 &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;  &lt;br/&gt;
-&lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;  &lt;br/&gt;
+&lt;a href=&quot;sina2sohu.diandian.com/post/2012-08-17/40035658104&quot;&gt;matrix factorization&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/10/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>
@@ -434,13 +435,18 @@ l or GMM中&lt;br/&gt;
 
         <item>
                 <title>ScatNet</title>
-                <description>&lt;p&gt;散射卷积网络通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。&lt;/p&gt;
+                <description>&lt;p&gt;散射卷积网络(ScatNet)通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。
+理解和分析scatnet就暂且从下面这幅图入手
+&lt;img src=&quot;/images/st.jpg&quot; alt=&quot;scat transform&quot; /&gt;
+在这里，\(f\)为输入的图像矩阵数据、\(\phi\)代表一个小波函数、m代表变换的阶数、J代表尺度,\(\lambda\)代表路径对应于m定义的各个阶，左上箭头代表计算出的散射系数、U代表的是各个小波系数的模结果。散射算子对U变换将会计算出该层散射系数S和下一层的U。
+若小波变幻的方向数为C，总阶数为m，则第q阶散射变换沿频率递减的路径数为\(C^{q}(^J_q)\)，假设图像的橡树大小为N，采样值为\(\omega 2^{J}\),则每条散射路径有\(N\omega^{-2}2^{-2J}\)个系数，则所有的系数个数为 &lt;br/&gt;
+$$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$&lt;/p&gt;
 
 &lt;p&gt;参考文章与资料：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;High Dimensional Classification with Invariant Deep Networks &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;ppt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;/p&gt;
 
@@ -488,7 +494,7 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
 
         <item>
                 <title>sort algorithm</title>
-                <description>&lt;p&gt;对于堆排序，自底向上构建堆，自上而下堆排序。&lt;/p&gt;
+                <description>&lt;p&gt;对于堆排序，需要自底向上构建堆，排序时要自上而下作堆的调整。&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/07/30/sort-algorithm</link>
                 <guid>http://i.justpic.org/2014/07/30/sort-algorithm</guid>
