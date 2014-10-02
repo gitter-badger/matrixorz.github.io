@@ -20,6 +20,8 @@ http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 
+http://i.justpic.org/2014/09/28/python-play-with-hadoop
+http://i.justpic.org/2014/09/25/dynamic-programming
 http://i.justpic.org/2014/09/10/roc
 http://i.justpic.org/2014/09/10/latex-math-symbol
 http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell
