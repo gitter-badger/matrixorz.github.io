@@ -17,6 +17,7 @@
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/site.css" type="text/css"/>
   <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
   <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
   <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
@@ -45,7 +46,6 @@
       <a href="http://weibo.com/u/1803769420" target="_blank"><i class="fa fa-weibo"></i></a>
       <a href="/atom.xml"><i class="fa fa-rss"></i></a>
     </section>
-
     <section class="sections">
       <ul>
         <li><a href="/">Home</a></li>
@@ -60,6 +60,7 @@
   </section>
 
   <section class="content">
+<div id="main">
   <ul class="listing">
     
       
@@ -202,9 +203,708 @@
   
 </div>
 
-</section>
+</div>
+
+  <ul class="tag_tag" id="network-ref">    
+        <div class="category tagcloud">
+                <h3>network</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
 
   
+    
+      
+      	
+		<!--
+      	<li><a href="/python%20network/2013/07/15/python-asynchrous-network">python asynchrous network</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/python%20network/2013/07/15/python-asynchrous-network">python asynchrous network</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 15 Jul 2013</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/network/">network</a>
+					-->
+					
+					<!--
+					<a href="#network-ref" onclick="location.reload()">network</a>
+					-->
+					
+					<a href="#network-ref">network</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			select,poll,epoll test in python
+
+selecttest.py
+
+    import select
+    import socket
+    import Queue
+    #create a socket
+    server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    server.setblocking(False)
+    #set option reused
+    server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1...
+			
+			<ul>
+				<p style="text-align:right;"><a href="/python%20network/2013/07/15/python-asynchrous-network">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="web programming-ref">    
+        <div class="category tagcloud">
+                <h3>web programming</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/05/22/deploy-sites-on-nginx">deploy sites on nginx</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/05/22/deploy-sites-on-nginx">deploy sites on nginx</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 22 May 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/web programming/">web programming</a>
+					-->
+					
+					<!--
+					<a href="#web programming-ref" onclick="location.reload()">web programming</a>
+					-->
+					
+					<a href="#web programming-ref">web programming</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			使用nginx部署网站发现80端口一直被占用，使用一下方法杀死占用80端口进程
+Then it means nginx or some other process is already using port 80.
+
+You can kill it using:
+
+    sudo fuser -k 80/tcp
+
+
+
+And then try restarting nginx again:
+
+    service nginx start
+
+
+
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/05/22/deploy-sites-on-nginx">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="Linux-ref">    
+        <div class="category tagcloud">
+                <h3>Linux</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/06/06/vps-initialization">vps initialization</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/06/06/vps-initialization">vps initialization</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 06 Jun 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/Linux/">Linux</a>
+					-->
+					
+					<!--
+					<a href="#Linux-ref" onclick="location.reload()">Linux</a>
+					-->
+					
+					<a href="#Linux-ref">Linux</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			添加用户：
+
+    useradd options &lt;username&gt;
+
+
+
+添加用户组:
+
+    groupadd options &lt;groupname&gt;
+
+
+
+配置权限:
+
+    echo &#39;&lt;username&gt; all=(all:all) all&#39; /etc/sudoers
+
+
+
+ssh登陆禁用密码:
+
+  
+#本机：  
+    ssh-keygen  #生成公钥、密钥对
+    ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的a...
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/06/06/vps-initialization">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="data visualization-ref">    
+        <div class="category tagcloud">
+                <h3>data visualization</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/data%20science/2014/07/19/data-visualization">data visualization</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/data%20science/2014/07/19/data-visualization">data visualization</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 19 Jul 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/data visualization/">data visualization</a>
+					-->
+					
+					<!--
+					<a href="#data visualization-ref" onclick="location.reload()">data visualization</a>
+					-->
+					
+					<a href="#data visualization-ref">data visualization</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			一篇python数据可视化总结很好的文章
+D3 learning
+使用tornado D3.js 进行数据可视化
+
+			
+			<ul>
+				<p style="text-align:right;"><a href="/data%20science/2014/07/19/data-visualization">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="finance-ref">    
+        <div class="category tagcloud">
+                <h3>finance</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/08/16/python-finance">python finance</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/08/16/python-finance">python finance</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 16 Aug 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/finance/">finance</a>
+					-->
+					
+					<!--
+					<a href="#finance-ref" onclick="location.reload()">finance</a>
+					-->
+					
+					<a href="#finance-ref">finance</a>
+					
+					
+					<!--
+					<a href="/tags/python/">python</a>
+					-->
+					
+					<!--
+					<a href="#python-ref" onclick="location.reload()">python</a>
+					-->
+					
+					<a href="#python-ref">python</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			books
+Financial Modeling in python
+python for finance
+Building Machine Learning System with Python
+Softwares
+pandas
+scikit-learn
+quantlib
+ta-lib 
+zipline
+Online Resource
+Quantopian
+pythonquants
+ultratrade
+quant-econ
+
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/08/16/python-finance">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="python-ref">    
+        <div class="category tagcloud">
+                <h3>python</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/08/16/python-finance">python finance</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/08/16/python-finance">python finance</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 16 Aug 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/finance/">finance</a>
+					-->
+					
+					<!--
+					<a href="#finance-ref" onclick="location.reload()">finance</a>
+					-->
+					
+					<a href="#finance-ref">finance</a>
+					
+					
+					<!--
+					<a href="/tags/python/">python</a>
+					-->
+					
+					<!--
+					<a href="#python-ref" onclick="location.reload()">python</a>
+					-->
+					
+					<a href="#python-ref">python</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			books
+Financial Modeling in python
+python for finance
+Building Machine Learning System with Python
+Softwares
+pandas
+scikit-learn
+quantlib
+ta-lib 
+zipline
+Online Resource
+Quantopian
+pythonquants
+ultratrade
+quant-econ
+
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/08/16/python-finance">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="FP-ref">    
+        <div class="category tagcloud">
+                <h3>FP</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/09/06/ubuntu-1404-install-haskell">ubuntu 14.04 install haskell</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/09/06/ubuntu-1404-install-haskell">ubuntu 14.04 install haskell</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 06 Sep 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/FP/">FP</a>
+					-->
+					
+					<!--
+					<a href="#FP-ref" onclick="location.reload()">FP</a>
+					-->
+					
+					<a href="#FP-ref">FP</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：
+
+ 
+sudo aptitude build-dep ghc
+sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
+wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
+tar jxvf ghc-7.8.3-src.tar.b...
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/09/06/ubuntu-1404-install-haskell">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
+
+</div>
+
+<!--
+<style type="text/css">
+  .showing a { color: #000; font-weight: bold;}
+</style>
+-->
+
+<style type="text/css">
+  .showing a { font-weight: bold;}
+</style>
+
+<script type="text/javascript">
+  $(function() {
+
+    var $categories = $('ul.tag_tag');
+    var $posts = $('ul.tag_post');
+    var $tag = $('ul.tag_box');
+    var h = window.location.hash;
+    if (h == '') {
+      $categories.hide();
+      $posts.hide();
+      var $main=$('#main');
+      $main.show();
+      //$tag.children().first().addClass('showing');
+    }
+    else {
+      var $main=$("#main");
+      $main.hide();
+      h = h.substring(1);
+      for (var i = $categories.length - 1; i >= 0; --i) {
+        if ($categories.eq(i)[0].id == h) {
+          $categories.hide().eq(i).show();
+          $posts.hide().eq(i).show();
+          $tag.children().eq(i).addClass('showing')
+          break;
+        }
+      }
+    }
+    $('ul.tag_box').children().each(function(index) {
+      $(this).click(function() {
+        var $main=$('#main');
+        $main.hide();
+        $categories.hide().eq(index).show();
+        $posts.hide().eq(index).show();
+        $(this).addClass('showing').siblings().removeClass('showing');
+        // return false;
+      });
+    });
+  });
+</script>
+
+
+</section>
+<section class="widget">
+<aside id="secondary" class="span-6 last">
+        <div class="category search">
+	<div id="searchbox">
+	<form method="get" id="searchform" action="/results" onsubmit="return checkfrm_search();">
+		<fieldset>
+			<input type="search" required id="q" name="q" value="" placeholder="Site Search" />
+		</fieldset>
+	</form>
+</div>
+
+</div>
+
+<!--<div class="category">
+	<h3>Latest Posts</h3>
+	
+	<h4><a href="/2014/09/28/python-play-with-hadoop">python play with hadoop</a></h4>
+	<time datetime="2014-09-28 00:00:00 +0800" pubdate="pubdate" class="date">
+		28 Sep 2014
+    </time>
+	
+	<h4><a href="/2014/09/25/dynamic-programming">dynamic programming</a></h4>
+	<time datetime="2014-09-25 00:00:00 +0800" pubdate="pubdate" class="date">
+		25 Sep 2014
+    </time>
+	
+	<h4><a href="/2014/09/10/roc">ROC曲线分析</a></h4>
+	<time datetime="2014-09-10 00:00:00 +0800" pubdate="pubdate" class="date">
+		10 Sep 2014
+    </time>
+	
+	<h4><a href="/2014/09/10/latex-math-symbol">latex math symbol</a></h4>
+	<time datetime="2014-09-10 00:00:00 +0800" pubdate="pubdate" class="date">
+		10 Sep 2014
+    </time>
+	
+	<h4><a href="/2014/09/06/ubuntu-1404-install-haskell">ubuntu 14.04 install haskell</a></h4>
+	<time datetime="2014-09-06 00:00:00 +0800" pubdate="pubdate" class="date">
+		06 Sep 2014
+    </time>
+	
+</div>-->
+
+<div class="category">
+	<h3>Tags Cloud</h3>
+<ul class="tag_box inline">
+    
+  
+
+
+  
+  
+	
+  
+  
+	
+  
+  
+	
+  
+  
+	
+	
+	
+	
+	
+	
+	
+  
+     
+			
+			<span style="font-size: 150%">
+				<a href="#network-ref" title="X1">network </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#web programming-ref" title="X1">web programming </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#Linux-ref" title="X1">Linux </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#data visualization-ref" title="X1">data visualization </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#finance-ref" title="X1">finance </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#python-ref" title="X1">python </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#FP-ref" title="X1">FP </a>
+			</span>
+    
+  
+  
+  
+  
+
+
+
+</ul>
+
+
+
+
+</aside>
+</section>
+
+
+
+   
   
 </body>
 

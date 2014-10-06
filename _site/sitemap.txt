@@ -4,6 +4,7 @@ http://i.justpic.org/resources.html
 http://i.justpic.org/archive.html
 http://i.justpic.org/papers.html
 http://i.justpic.org/404.html
+http://i.justpic.org/results/index.html
 http://i.justpic.org/tags.html
 http://i.justpic.org/sitemap.txt
 http://i.justpic.org/sitemap.xml

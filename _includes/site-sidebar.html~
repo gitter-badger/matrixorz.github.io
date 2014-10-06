@@ -1,0 +1,35 @@
+<div class="category search">
+	{% include searchbox.html %}
+</div>
+
+<!--<div class="category">
+	<h3>Latest Posts</h3>
+	{% for post in site.posts limit:5%}
+	<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+	<time datetime="{{ post.date }}" pubdate="pubdate" class="date">
+		{{ post.date | date_to_string  }}
+    </time>
+	{% endfor %}
+</div>-->
+
+<div class="category">
+	<h3>Tags Cloud</h3>
+<ul class="tag_box inline">
+  {% assign tag_cloud = site.tags %}  
+  {% include Inan/tag_cloud %}
+</ul>
+
+{% for tag in site.tags %}
+  <ul class="tag_tag" id="{{ tag[0] }}-ref">    
+        <div class="category tagcloud">
+                <h3>{{ tag[0] }}</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+          {% assign page_list_ex = tag[1] %}  
+          {% include Inan/page_list_ex %}
+  </ul>
+{% endfor %}
+</div>
+{% include Inan/tag_select %}
+
