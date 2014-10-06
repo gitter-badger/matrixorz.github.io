@@ -792,11 +792,6 @@ img.left {
  width: 15em;
  }*/
 
-.post, div#comments {
-	float: left;
-	padding-left: 1.5em;
-	background: transparent url("/assets/skin/sep_vertical.png") 0 0 repeat-y;
-}
 
 /*--- header ------------*/
 
