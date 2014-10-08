@@ -14,7 +14,6 @@ http://i.justpic.org/about/projects.html
 http://i.justpic.org/about/index.html
 http://i.justpic.org/about/projects.htmlbak
 http://i.justpic.org/philo/index.html
-http://i.justpic.org/philo/index.html
 http://i.justpic.org/index.html
 http://i.justpic.org/startup/index.html
 http://i.justpic.org/atom.xml
