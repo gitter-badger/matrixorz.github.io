@@ -4,13 +4,849 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-05-01T12:43:20+08:00</updated>
+ <updated>2014-08-22T16:25:37+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>模式识别</title>
+   <link href="http://i.justpic.org/2014/08/22/"/>
+   <updated>2014-08-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/</id>
+   <content type="html">
+&lt;p&gt;关于模式识别和计算机应用方向, 我认为可以选择的主题(仅是己见)
+1.	数学方面
+1)	矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. 
+2)	广义逆与子空间
+3)	最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义
+4)	凸分析与凸优化的基本知识及其几何意义
+5)	常用的几种优化方法. 
+其实以上在某种意义下是相通的.
+6)	微分几何、黎曼几何的基本概念和知识
+7)	李群与李代数的基本知识 
+8)	图和谱图的基本知识
+以上知识，我认为，是作为一个做算法的研究者都应该了解或是掌握的数学知识
+9)	模糊数学（就个人而言，我十分不情愿把这个方法列在这里，因为我认为模糊数学不是&lt;/p&gt;
+
+&lt;p&gt;好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
+10)	时间序列分析的主要方法和最近新方法.
+11)	分形和混沌
+12)	常用微分方程的基本类型和解法
+2．专业方向
+   1）PCA, FA, MDS 
+      这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计&lt;/p&gt;
+
+&lt;p&gt;算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non&lt;/p&gt;
+
+&lt;p&gt;negative PCA.
+   2) ICA ( Independent Component Analysis )
+     独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等&lt;/p&gt;
+
+&lt;p&gt;分类领域中广泛应用。最近又有Nonnegative ICA 出现。特别地李群与李代数（Toral子代&lt;/p&gt;
+
+&lt;p&gt;数）的引入为这个经典的方法有注入了新鲜的活力。
+   3）NMF ( Nonnegative Matrix Factorization)
+      非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又&lt;/p&gt;
+
+&lt;p&gt;一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非&lt;/p&gt;
+
+&lt;p&gt;常难以发掘。
+   4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps) 
+      局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa&lt;/p&gt;
+
+&lt;p&gt;tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋&lt;/p&gt;
+
+&lt;p&gt;。特别LE的线性形式LPP (Locality Preserving Projections) 在人脸识别领域已大显身&lt;/p&gt;
+
+&lt;p&gt;手，继Fisherfaces又一著名方法Laplacianfaces就是基于LPP. 另外基于谱聚类的方法也
+可以很容易的从LE中导
+出，它正是图像分割领域研究的热点。
+   这两种方法我自发的报告会中 仔细介绍过。
+   5）HMM (Hidden Markov Model)
+   6)  Wavelet 
+   7)  RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma&lt;/p&gt;
+
+&lt;p&gt;p)
+      径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法&lt;/p&gt;
+
+&lt;p&gt;引入神经网络，这些方法又焕发出新的生机和用途。
+   8）SVM （Support Vector Machine）
+      支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法&lt;/p&gt;
+
+&lt;p&gt;和Clifford 代数的引入，SVM必将更加充满生机。
+   9）EM (Expectation Maximum)
+      EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode&lt;/p&gt;
+
+&lt;p&gt;l or GMM中
+   10）Guassian Mixture Model
+      GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识&lt;/p&gt;
+
+&lt;p&gt;别、人脸识别、目标监测、图像分割
+    11）Bayesian Model or Bayesian Network
+      贝叶斯模型或是贝叶斯网络的广泛应用就不用多言语了吧。
+    其中 9）、10）、11）经常是成三成双的出现
+    12）Kernel Methods
+       基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;/p&gt;
+
+&lt;p&gt;比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>排序总结</title>
+   <link href="http://i.justpic.org/2014/08/17/"/>
+   <updated>2014-08-17T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>python finance</title>
+   <link href="http://i.justpic.org/2014/08/16/python-finance"/>
+   <updated>2014-08-16T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/16/python-finance</id>
+   <content type="html">
+&lt;p&gt;====books=====&lt;/p&gt;
+
+&lt;p&gt;Financial Modeling in python&lt;/p&gt;
+
+&lt;p&gt;python for finance&lt;/p&gt;
+
+&lt;p&gt;Building Machine Learning System with Python&lt;/p&gt;
+
+&lt;p&gt;====Softwares====&lt;/p&gt;
+
+&lt;p&gt;pandas&lt;/p&gt;
+
+&lt;p&gt;scikit-learn&lt;/p&gt;
+
+&lt;p&gt;quantlib&lt;/p&gt;
+
+&lt;p&gt;ta-lib&lt;/p&gt;
+
+&lt;p&gt;zipline&lt;/p&gt;
+
+&lt;p&gt;====Online Resource====&lt;/p&gt;
+
+&lt;p&gt;Quantopian&lt;/p&gt;
+
+&lt;p&gt;pythonquants&lt;/p&gt;
+
+&lt;p&gt;ultratrade&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>data science</title>
+   <link href="http://i.justpic.org/2014/08/15/data-science"/>
+   <updated>2014-08-15T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/15/data-science</id>
+   <content type="html">
+&lt;p&gt;Data Science 
+level up&lt;/p&gt;
+
+&lt;p&gt;1.标准报表建立 Excel&lt;/p&gt;
+
+&lt;p&gt;2.sql 查询&lt;/p&gt;
+
+&lt;p&gt;3.多维分析，OLAP、BI&lt;/p&gt;
+
+&lt;p&gt;4.警报，&lt;/p&gt;
+
+&lt;p&gt;5.统计分析，频率分析，&lt;/p&gt;
+
+&lt;p&gt;6.预测，时序分析&lt;/p&gt;
+
+&lt;p&gt;7.预测建模&lt;/p&gt;
+
+&lt;p&gt;8.优化，投资回报比(ROI)&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>copula</title>
+   <link href="http://i.justpic.org/2014/08/15/copula"/>
+   <updated>2014-08-15T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/15/copula</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>线性代数中的矩阵</title>
+   <link href="http://i.justpic.org/2014/08/10/"/>
+   <updated>2014-08-10T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;
+  &lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ScatNet</title>
+   <link href="http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet"/>
+   <updated>2014-08-09T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</id>
+   <content type="html">
+&lt;p&gt;散射卷积网络通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。&lt;/p&gt;
+
+&lt;p&gt;参考文章与资料：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;High Dimensional Classification with Invariant Deep Networks &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;ppt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>python web development</title>
+   <link href="http://i.justpic.org/2014/08/07/python-web-development"/>
+   <updated>2014-08-07T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/08/07/python-web-development</id>
+   <content type="html">
+&lt;p&gt;两篇很好的文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用python web框架开发项目&lt;/p&gt;
+
+&lt;p&gt;技术选型&lt;/p&gt;
+
+&lt;p&gt;tornado  –epool，pre_fork,异步io的集合体&lt;/p&gt;
+
+&lt;p&gt;mongodb  –nosql技术，读快写慢&lt;/p&gt;
+
+&lt;p&gt;rq/mrq   –redis队列，传递消息，方便快捷&lt;/p&gt;
+
+&lt;p&gt;pandas   –处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
+
+&lt;p&gt;参考项目&lt;/p&gt;
+
+&lt;p&gt;nbviewer –tornado中如何做并行化 futures&lt;/p&gt;
+
+&lt;p&gt;pyspider –flask 后台队列的实现和控制，架构方面&lt;/p&gt;
+
+&lt;p&gt;云存储&lt;/p&gt;
+
+&lt;p&gt;baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;/p&gt;
+
+&lt;p&gt;pandas io方面一直没有什么好的工具，hdf5，mongodb都是很好的选择&lt;/p&gt;
+
+&lt;p&gt;hdf5的使用可参考&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;
+mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>sort algorithm</title>
+   <link href="http://i.justpic.org/2014/07/30/sort-algorithm"/>
+   <updated>2014-07-30T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/07/30/sort-algorithm</id>
+   <content type="html">
+&lt;p&gt;对于堆排序，自底向上构建堆，自上而下堆排序。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>python optimization</title>
+   <link href="http://i.justpic.org/python%20development/2014/07/28/python-optimization"/>
+   <updated>2014-07-28T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/python%20development/2014/07/28/python-optimization</id>
+   <content type="html">
+&lt;p&gt;首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;/p&gt;
+
+&lt;p&gt;判断程序为io-bound任务还是cpu-bound任务。&lt;/p&gt;
+
+&lt;p&gt;io-bound任务程序使用gevent来优化&lt;/p&gt;
+
+&lt;p&gt;cpu-bound任务程序使用multiprocess来优化&lt;/p&gt;
+
+&lt;p&gt;使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>data visualization</title>
+   <link href="http://i.justpic.org/2014/07/19/data-visualization"/>
+   <updated>2014-07-19T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/07/19/data-visualization</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://danielfrg.com/blog/2013/02/05/d3-backbone-tornado-histogram-csv/&quot;&gt;使用tornado D3.js 进行数据可视化&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>erlang learning</title>
+   <link href="http://i.justpic.org/2014/07/01/erlang-learning"/>
+   <updated>2014-07-01T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/07/01/erlang-learning</id>
+   <content type="html">
+&lt;p&gt;erlang学习教程
+&lt;a href=&quot;http://www.howistart.org/posts/erlang/1&quot;&gt;start erlang&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>develop tools about python</title>
+   <link href="http://i.justpic.org/2014/07/01/develop-tools-about-python"/>
+   <updated>2014-07-01T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/07/01/develop-tools-about-python</id>
+   <content type="html">
+&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+
+&lt;p&gt;vagrant介绍
+vagrant是一款用来构建虚拟开发环境的工具，非常适合php/python/ruby/java这类语言开发Web语言，如果说virtualenv是一个python包环境的封装，那么可以说vagrant是在一个操作系统层面上的封装，而且是跨平台的，当然也有docker，关于docker与vagrant的区别可见&lt;a href=&quot;https://www.dockboard.org/docker-vs-vagrant-why-this-two-technologies-aren&#39;t-competing/&quot;&gt;这篇文章&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;安装virtualbox
+vagrant依赖虚拟机，可以使用virtualbox和VMware.&lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安装vagrant
+&lt;a href=&quot;http://downloads.vagrantup.com&quot;&gt;下载地址&lt;/a&gt;
+下载基础镜像：
+&lt;a href=&quot;http://files.vagrantup.com/precise32.box&quot;&gt;ubuntu precise 32&lt;/a&gt;
+&lt;a href=&quot;http://files.vagrantup.com/precise64.box&quot;&gt;ubuntu precise 64&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;添加镜像到vagrant&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$vagrant box add boxname pathtobox/precise64.box
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;初始化开发环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$cd  devpath
+$vagrant init boxname
+$vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;登陆虚拟机&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$vagrant ssh
+$cd /vagrant  #虚拟机下的/vagrant是宿主机上的 devpath
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其他设置
+    vagrant出事化后，会在初始化目录里生成一个Vagrantfile的配置文件。
+    Vagrant默认是使用端口映射方式将虚拟机的端口映射本机从而实现类似http://localhost:80这种访问方式，host-only模式显得更方便，打开Vagrantfile，将下面这行的注释去掉
+config.vm.network :private_network,ip:”192.168.33.10”
+重启虚拟机，这样就能用192.168.33.10访问这台机器。&lt;/p&gt;
+
+&lt;p&gt;打包分发
+  $vagrant package
+  会生成一个package.box文件，可共分发。&lt;/p&gt;
+
+&lt;p&gt;常用命令&lt;/p&gt;
+
+&lt;p&gt;$vagrant init
+   $vagrant up
+   $vagrant halt
+   $vagrant reload
+   $vagrant ssh
+   $vagrant status
+   $vagrant destroy&lt;/p&gt;
+
+&lt;p&gt;开发环境中Apache/nginx取消静态文件缓存&lt;/p&gt;
+
+&lt;p&gt;Apache
+EnableSendfile off&lt;/p&gt;
+
+&lt;p&gt;Nginx
+sendfile off&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>taobaoke</title>
+   <link href="http://i.justpic.org/2014/06/25/taobaoke"/>
+   <updated>2014-06-25T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/25/taobaoke</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;https://doc.openerp.com/install/linux/server/&quot;&gt;install openerp 6.1&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>install pypy from source</title>
+   <link href="http://i.justpic.org/2014/06/23/install-pypy-from-source"/>
+   <updated>2014-06-23T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/23/install-pypy-from-source</id>
+   <content type="html">
+&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
+cd pypy/pypy/goal
+python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
+
+[config opt](http://pypy.readthedocs.org/en/latest/config/opt.html)
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>android emulator note</title>
+   <link href="http://i.justpic.org/2014/06/14/android-emulator-note"/>
+   <updated>2014-06-14T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/14/android-emulator-note</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
+&lt;a href=&quot;http://blag.felixhummel.de/junk/android_emulator.html&quot;&gt;Android Emulator on Ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>vps initialization</title>
+   <link href="http://i.justpic.org/2014/06/06/vps-initialization"/>
+   <updated>2014-06-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/06/vps-initialization</id>
+   <content type="html">
+&lt;p&gt;添加用户：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;useradd options &amp;lt;username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加用户组：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;groupadd options &amp;lt;groupname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置权限：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &#39;&amp;lt;username&amp;gt; all=(all:all) all&#39; /etc/sudoers
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ssh登陆禁用密码：&lt;/p&gt;
+
+&lt;p&gt;本机：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-keygen  #生成公钥、密钥对
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_keys中（server端authorized_keys指定公钥，客户端 -i参数指定私钥）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;服务器：&lt;/p&gt;
+
+&lt;p&gt;登陆服务器后，修改/etc/ssh/sshd_config保存&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PasswordAuthentication no    （经用密码登陆）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重启ssh &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Python For Finance note</title>
+   <link href="http://i.justpic.org/2014/06/06/python-for-finance-note"/>
+   <updated>2014-06-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/06/python-for-finance-note</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Finacial Modeling in python note</title>
+   <link href="http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note"/>
+   <updated>2014-06-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/06/finacial-modeling-in-python-note</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>打开量化投资的黑箱笔记</title>
+   <link href="http://i.justpic.org/2014/06/06/"/>
+   <updated>2014-06-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>http reversed on ssh</title>
+   <link href="http://i.justpic.org/2014/06/05/http-reversed-on-ssh"/>
+   <updated>2014-06-05T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</id>
+   <content type="html">
+&lt;p&gt;nginx config details&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;upstream tunnel{
+   server 127.0.0.1:8080;
+}
+
+server {
+   listen 80;
+   server_name &amp;lt;url&amp;gt;;
+   
+   location /{
+   proxy_set_header Host $http_host;
+   proxy_pass tunnel;
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ssh reverse &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;port is your local application used &lt;/p&gt;
+
+&lt;p&gt;url is the url you will to visit public &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt; 
+is a localtunnel site that can expose your local website.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Java call matlab</title>
+   <link href="http://i.justpic.org/2014/06/02/java-call-matlab"/>
+   <updated>2014-06-02T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/06/02/java-call-matlab</id>
+   <content type="html">
+&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
+
+&lt;p&gt;使用deploytool命令打开matlab打包工具
+打包完成后在eclipse除导入该包外，还要导入目录 toolbox/javabuilder/jar/javabuilder.jar包
+在相关代码中完成导入语句和定义完成java调用matlab代码的调用。
+具体相关代码和事例可见&lt;a href=&quot;https://github.com/matrixorz/writer_identification/blob/master/Writer/writerui/writer.java&quot;&gt;example&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>deploy sites on nginx</title>
+   <link href="http://i.justpic.org/2014/05/22/deploy-sites-on-nginx"/>
+   <updated>2014-05-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</id>
+   <content type="html">
+&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
+
+&lt;p&gt;You can kill it using:&lt;/p&gt;
+
+&lt;p&gt;sudo fuser -k 80/tcp&lt;/p&gt;
+
+&lt;p&gt;And then try restarting nginx again:&lt;/p&gt;
+
+&lt;p&gt;service nginx start&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Matlab C混合编程</title>
+   <link href="http://i.justpic.org/2014/05/06/matlab-c"/>
+   <updated>2014-05-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/05/06/matlab-c</id>
+   <content type="html">
+&lt;p&gt;用C++（或者C）语言操作MATLAB，有三种途径：&lt;br /&gt;
+·MEX文件&lt;br /&gt;
+在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：&lt;br /&gt;
+对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。&lt;br /&gt;
+对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。&lt;br /&gt;
+·MAT文件应用程序&lt;br /&gt;
+MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。&lt;br /&gt;
+为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。&lt;br /&gt;
+·引擎应用程序&lt;br /&gt;
+MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而把MATLAB用作一个计算引擎。MATLAB引擎程序指的是那些通过管道（在UNIX系统中）或者ActiveX（在Windows系统中）与独立MATLAB进程进行通信的C/C++或者Fortran程序。&lt;/p&gt;
+&lt;p&gt;MEX文件&lt;/p&gt;
+&lt;p&gt;#include “mex.h”&lt;/p&gt;
+&lt;p&gt;/*&lt;br /&gt;
+*timestwo.c-example found in API guide&lt;br /&gt;
+*&lt;br /&gt;
+*Computational function that takes a scalar and doubles it&lt;br /&gt;
+*&lt;br /&gt;
+*This is a MEX-File for MATLAB.&lt;br /&gt;
+*Copyright(c)&lt;br /&gt;
+*/&lt;br /&gt;
+void timestwo(double y[],double x[]);&lt;br /&gt;
+void timestwo(double y[],double x[])&lt;br /&gt;
+{&lt;br /&gt;
+y[0]=2.0*x[0];&lt;br /&gt;
+}&lt;br /&gt;
+void mexFunction(int nlhs,mxArray* plhs[],&lt;br /&gt;
+int nrhs,const mxArray *prhs[])&lt;br /&gt;
+/*nlhs是MATLAB命令行方式下输出参数的个数&lt;br /&gt;
+*plhs是MATLAB命令行方式下的输出参数;&lt;br /&gt;
+*nrhs是MATLAB命令行方式下输入参数的个数；&lt;br /&gt;
+*prhs[]是MATLAB命令行方式下的输入参数；&lt;br /&gt;
+*/&lt;br /&gt;
+{&lt;br /&gt;
+double *x,*y;&lt;br /&gt;
+int mrows,ncols;&lt;br /&gt;
+/*Check for proper number of arguments.*/&lt;br /&gt;
+if (nrhs!=1){&lt;br /&gt;
+mexErrMsgTxt(“One input required”);&lt;br /&gt;
+}&lt;br /&gt;
+else if(nlhs&amp;gt;1)&lt;br /&gt;
+{&lt;br /&gt;
+mexErrMsgTxt(“Too many output arguments”);&lt;br /&gt;
+}&lt;br /&gt;
+/*在MATLAB命令行方式下，本MEX文件的调用格式是y=timestwo(x)&lt;br /&gt;
+输入参数（x）个数=1，输出参数（y）个数=1，所以在程序一开始就检查&lt;br /&gt;
+nrhs时候==1以及nlhs是否&amp;gt;1（因为MATLAB有一个缺省的输出参数ans，所以nlhs可以==0*/&lt;br /&gt;
+/*The input must be a non comlex scalar double.*/&lt;br /&gt;
+mrows=mxGetM(prhs[0]);//矩阵行数&lt;br /&gt;
+ncols=mxGetN(prhs[0]);//矩阵列数&lt;br /&gt;
+if (!mxIsDouble(prhs[0])|| mxIsComplex(prhs[0])||!(mrows==1&amp;amp;ncols==1))&lt;br /&gt;
+{&lt;br /&gt;
+mexErrMsgTxt(“Input must be a noncomplex scalar double”);&lt;br /&gt;
+}&lt;br /&gt;
+//判断输入举证是否是double类，以及它是否只包含单个元素无嵌套&lt;br /&gt;
+//为输出创建一个矩阵，显然这个矩阵也应该是1*1的&lt;br /&gt;
+plhs[0]=mxCreateDoubleMatrix(mrows,ncols,mxREAL);&lt;br /&gt;
+x=mxGetPr(prhs[0]);&lt;br /&gt;
+y=mxGetPr(plhs[0]);&lt;br /&gt;
+timestwo(y,x);&lt;br /&gt;
+}&lt;/p&gt;
+&lt;p&gt;matlab&amp;gt;mex testmex.cpp&lt;/p&gt;
+&lt;p&gt;matlab&amp;gt;x=2&lt;/p&gt;
+&lt;p&gt;matlab&amp;gt;y=testmex(x)&lt;/p&gt;
+&lt;p&gt;2.MAT文件：&lt;/p&gt;
+&lt;p&gt;libmat.dll:用于操作mat文件&lt;/p&gt;
+&lt;p&gt;libmx.dll:用于操作mat文件中的矩阵&lt;/p&gt;
+&lt;p&gt;MATLAB中常用的矩阵类型：&lt;/p&gt;
+&lt;p&gt;（复）双精度矩阵：&lt;/p&gt;
+&lt;p&gt;MATLAB中最常用的数据类型便是（复）双精度、非稀疏矩阵，这些矩阵的元素都是双精度（double）的，矩阵的尺寸为m×n，其中m是总行数，m是总列数。矩阵数据实际存放在两个双精度向量中——一个向量存放的是数据的实部，另一个向量存放的是数据的虚部。指向这两个向量的指针一般被写做“pr” （pointer to real data，指向实数据的指针）和“pi” （pointer to imaginary data，指向虚数据的指针）”。如果一个矩阵的pi为空的话，说明它是实双精度矩阵。&lt;/p&gt;
+&lt;p&gt;稀疏矩阵（Sparse Matrices）&lt;br /&gt;
+MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。&lt;br /&gt;
+nzmax是个整型数，其值为向量ir及pr、pi（如果存在的话）可能的最大长度。它是稀疏矩阵中不为零的元素的个数。&lt;br /&gt;
+ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。&lt;br /&gt;
+jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中包含的是列号信息。对于任意的j，如果0≤j≥N-1，jc[j]是第j列中第一个非零项在ir、pr（以及pi）中的序号，jc[j+1]-1是第j列最后一个非零项的序号。因此jc[N]总等于nnz——矩阵中非零项的总个数。如果nnz小于nzmax，可以继续向矩阵中添加非零项而无需分配额外的存储空间&lt;/p&gt;
+&lt;p&gt;4、主要函数举例：&lt;br /&gt;
+·MATFile *matOpen(const char *filename, const char * mode)——打开/创建&lt;br /&gt;
+·MATFile *matOpen(const char *filename, const char * mode)——打开/创建一个MAT文件；&lt;br /&gt;
+·int matClose(MATFile *pMF)——关闭一个MAT文件；&lt;br /&gt;
+·mxArray *mxCreateDoubleMatrix(int m, int n, mxComplexity flag)&lt;br /&gt;
+——创建一个（复）双精度矩阵；&lt;br /&gt;
+·mxArray *mxCreateSparse(int m, int n, int nzmax, mxComplexity flag)&lt;br /&gt;
+——创建一个稀疏矩阵；&lt;br /&gt;
+·mxArray *matGetNextArray(MATFile *pMF)——获得MAT文件里面下一个矩阵；&lt;br /&gt;
+·const char *mxGetName(const mxArray *pa)——获得矩阵pa的名称；&lt;br /&gt;
+·void mxSetName(mxArray *pa,const char *s)——为矩阵pa设置一个名称；&lt;br /&gt;
+·int mxGetM(const mxArray *pa)——获得矩阵pa的总行数；&lt;br /&gt;
+·int mxGetN(const mxArray *pa)——获得矩阵pa的总列数；&lt;br /&gt;
+·double *mxGetPr(const mxArray *pa)——获得矩阵pa的pr指针；&lt;br /&gt;
+·int *mxGetIr(const mxArray *pa)——获得稀疏矩阵pa的ir指针；&lt;br /&gt;
+·int *mxGetJc(const mxArray *pa)——获得稀疏矩阵pa的jc指针；&lt;br /&gt;
+·int matPutArray(MATFile * pMF, const mxArray * pA)&lt;br /&gt;
+——把矩阵pA存储入MAT文件pMAF；&lt;br /&gt;
+·void mxDestroyArray(mxArray *pa)——释放矩阵pa（把它从内存中撤销）；&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>计算机视觉论文源代码集锦</title>
+   <link href="http://i.justpic.org/2014/05/06/"/>
+   <updated>2014-05-06T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/05/</id>
+   <content type="html">
+&lt;h2 id=&quot;section&quot;&gt;计算机视觉、机器学习相关领域论文和源代码大集合–持续更新&lt;/h2&gt;
+&lt;p&gt;一、特征提取Feature Extraction：&lt;/p&gt;
+&lt;p&gt;· SIFT [1] [&lt;a href=&quot;http://www.cs.ubc.ca/~lowe/keypoints/siftDemoV4.zip&quot; target=&quot;_blank&quot;&gt;Demo program&lt;/a&gt;][&lt;a href=&quot;http://blogs.oregonstate.edu/hess/code/sift/&quot; target=&quot;_blank&quot;&gt;SIFT Library&lt;/a&gt;] [&lt;a href=&quot;http://www.vlfeat.org/&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· PCA-SIFT [2] [&lt;a href=&quot;http://www.cs.cmu.edu/~yke/pcasift/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Affine-SIFT [3] [&lt;a href=&quot;http://www.ipol.im/pub/algo/my_affine_sift/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· SURF [4] [&lt;a href=&quot;http://www.chrisevansdev.com/computer-vision-opensurf.html&quot; target=&quot;_blank&quot;&gt;OpenSURF&lt;/a&gt;] [&lt;a href=&quot;http://www.maths.lth.se/matematiklth/personal/petter/surfmex.php&quot; target=&quot;_blank&quot;&gt;Matlab Wrapper&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Affine Covariant Features [5] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/affine/&quot; target=&quot;_blank&quot;&gt;Oxford project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· MSER [6] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/affine/&quot; target=&quot;_blank&quot;&gt;Oxford project&lt;/a&gt;] [&lt;a href=&quot;http://www.vlfeat.org/&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Geometric Blur [7] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Local Self-Similarity Descriptor [8] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/SelfSimilarity/&quot; target=&quot;_blank&quot;&gt;Oxford implementation&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Global and Efficient Self-Similarity [9] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~calvin/gss/selfsim_release1.0.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Histogram of Oriented Graidents [10] [&lt;a href=&quot;http://www.navneetdalal.com/software&quot; target=&quot;_blank&quot;&gt;INRIA Object Localization Toolkit&lt;/a&gt;] [&lt;a href=&quot;http://www.computing.edu.au/~12482661/hog.html&quot; target=&quot;_blank&quot;&gt;OLT toolkit for Windows&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· GIST [11] []&lt;/p&gt;
+&lt;p&gt;· Shape Context [12] [&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/sc_digits.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Color Descriptor [13] [&lt;a href=&quot;http://koen.me/research/colordescriptors/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Pyramids of Histograms of Oriented Gradients [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/caltech/phog/phog.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Space-Time Interest Points (STIP) [14][&lt;a href=&quot;http://www.nada.kth.se/cvap/abstracts/cvap284.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.irisa.fr/vista/Equipe/People/Laptev/download/stip-1.1-winlinux.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Boundary Preserving Dense Local Regions [15][&lt;a href=&quot;http://vision.cs.utexas.edu/projects/bplr/bplr.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Weighted Histogram[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/whistc.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Histogram-based Interest Points Detectors[&lt;a href=&quot;http://www.cs.nthu.edu.tw/~htchen/hipd_cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://740-2.cs.nthu.edu.tw/~htchen/hipd/hist_corner.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· An OpenCV – C++ implementation of Local Self Similarity Descriptors [&lt;a href=&quot;http://intuitionlogic.com/post/2011/04/11/A-OpenCV-C++-implementation-of-Local-Self-Similarity-Descriptors.aspx&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Fast Sparse Representation with Prototypes[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/cvpr10_fsr.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Corner Detection [&lt;a href=&quot;http://kiwi.cs.dal.ca/~dparks/CornerDetection/index.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· AGAST Corner Detector: faster than FAST and even FAST-ER[&lt;a href=&quot;http://www6.in.tum.de/Main/ResearchAgast&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;二、图像分割Image Segmentation：&lt;/p&gt;
+&lt;p&gt;· Normalized Cut [1] [&lt;a href=&quot;http://www.cis.upenn.edu/~jshi/software/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Gerg Mori’ Superpixel code [2] [&lt;a href=&quot;http://www.cs.sfu.ca/~mori/research/superpixels/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Efficient Graph-based Image Segmentation [3] [&lt;a href=&quot;http://people.cs.uchicago.edu/~pff/segment/&quot; target=&quot;_blank&quot;&gt;C++ code&lt;/a&gt;] [&lt;a href=&quot;http://www.mathworks.com/matlabcentral/fileexchange/25866-efficient-graph-based-image-segmentation&quot; target=&quot;_blank&quot;&gt;Matlab wrapper&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Mean-Shift Image Segmentation [4] [&lt;a href=&quot;http://coewww.rutgers.edu/riul/research/code/EDISON/index.html&quot; target=&quot;_blank&quot;&gt;EDISON C++ code&lt;/a&gt;] [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/edison_matlab_interface.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab wrapper&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· OWT-UCM Hierarchical Segmentation [5] [&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html&quot; target=&quot;_blank&quot;&gt;Resources&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Turbepixels [6] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/turbopixels_code.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab code 32bit&lt;/a&gt;] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/TurboPixels64.rar&quot; target=&quot;_blank&quot;&gt;Matlab code 64bit&lt;/a&gt;] [&lt;a href=&quot;http://www.cs.toronto.edu/~babalex/superpixels_update.tgz&quot; target=&quot;_blank&quot;&gt;Updated code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Quick-Shift [7] [&lt;a href=&quot;http://www.vlfeat.org/overview/quickshift.html&quot; target=&quot;_blank&quot;&gt;VLFeat&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· SLIC Superpixels [8] [&lt;a href=&quot;http://ivrgwww.epfl.ch/supplementary_material/RK_SLICSuperpixels/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Segmentation by Minimum Code Length [9] [&lt;a href=&quot;http://perception.csl.uiuc.edu/coding/image_segmentation/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Biased Normalized Cut [10] [&lt;a href=&quot;http://www.cs.berkeley.edu/~smaji/projects/biasedNcuts/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Segmentation Tree [11-12] [&lt;a href=&quot;http://vision.ai.uiuc.edu/segmentation&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Entropy Rate Superpixel Segmentation [13] [&lt;a href=&quot;http://www.umiacs.umd.edu/~mingyliu/src/ers_matlab_wrapper_v0.1.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Fast Approximate Energy Minimization via Graph Cuts[&lt;a href=&quot;http://www.csd.uwo.ca/faculty/olga/Papers/pami01_final.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.csd.uwo.ca/code/gco-v3.0.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Efﬁcient Planar Graph Cuts with Applications in Computer Vision[&lt;a href=&quot;http://www.csd.uwo.ca/~schmidtf/pdf/schmidt_et_al_cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.csd.uwo.ca/code/PlanarCut-v1.0.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Isoperimetric Graph Partitioning for Image Segmentation[&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006isoperimetric.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006isoperimetric_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Random Walks for Image Segmentation[&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/grady2006random.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cns.bu.edu/~lgrady/random_walker_matlab_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Blossom V: A new implementation of a minimum cost perfect matching algorithm[&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/blossom5-v2.03.src.tar.gz%20%20http:/pub.ist.ac.at/~vnk/software/blossom5-v2.03.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· An Experimental Comparison of Min-Cut/Max-Flow Algorithms for Energy Minimization in Computer Vision[&lt;a href=&quot;http://www.csd.uwo.ca/~yuri/Papers/pami04.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/maxflow-v3.01.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Geodesic Star Convexity for Interactive Image Segmentation[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/iseg/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Contour Detection and Image Segmentation Resources[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_source.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Biased Normalized Cuts[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/biasedNcuts/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Max-flow/min-cut[&lt;a href=&quot;http://vision.csd.uwo.ca/code/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Chan-Vese Segmentation using Level Set[&lt;a href=&quot;http://www.ipol.im/pub/art/2012/g-cv/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· A Toolbox of Level Set Methods[&lt;a href=&quot;http://www.cs.ubc.ca/~mitchell/ToolboxLS/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Re-initialization Free Level Set Evolution via Reaction Diffusion[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cslzhang/RD/RD.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Improved C-V active contour model[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICV.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICV.rar&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· A Variational Multiphase Level Set Approach to Simultaneous Segmentation and Bias Correction[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/ICIP10_SVMLS.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cskhzhang/J_papers/SVMLS_v0.rar&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Level Set Method Research by Chunming Li[&lt;a href=&quot;http://www.engr.uconn.edu/~cmli/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;三、目标检测Object Detection：&lt;/p&gt;
+&lt;p&gt;· A simple object detector with boosting [&lt;a href=&quot;http://people.csail.mit.edu/torralba/shortCourseRLOC/boosting/boosting.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· INRIA Object Detection and Localization Toolkit [1] [&lt;a href=&quot;http://pascal.inrialpes.fr/soft/olt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Discriminatively Trained Deformable Part Models [2] [&lt;a href=&quot;http://people.cs.uchicago.edu/~pff/latent/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Cascade Object Detection with Deformable Part Models [3] [&lt;a href=&quot;http://people.cs.uchicago.edu/~rbg/star-cascade/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Poselet [4] [&lt;a href=&quot;http://www.eecs.berkeley.edu/~lbourdev/poselets/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Implicit Shape Model [5] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~bleibe/code/ism.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Viola and Jones’s Face Detection [6] [&lt;a href=&quot;http://pr.willowgarage.com/wiki/Face_detection&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Bayesian Modelling of Dyanmic Scenes for Object Detection[&lt;a href=&quot;http://vision.eecs.ucf.edu/papers/01512057.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/Code/Background.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Hand detection using multiple proposals[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/hands/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Color Constancy, Intrinsic Images, and Shape Estimation[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/reconstruction/BarronMalikECCV2012.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cs.berkeley.edu/~barron/BarronMalikECCV2012_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Discriminatively trained deformable part models[&lt;a href=&quot;http://people.cs.uchicago.edu/~rbg/latent/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Gradient Response Maps for Real-Time Detection of Texture-Less Objects: LineMOD [&lt;a href=&quot;http://campar.cs.tum.edu/Main/StefanHinterstoisser&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Image Processing On Line[&lt;a href=&quot;http://www.ipol.im/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Robust Optical Flow Estimation[&lt;a href=&quot;http://www.ipol.im/pub/pre/21/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Where’s Waldo: Matching People in Images of Crowds[&lt;a href=&quot;http://homes.cs.washington.edu/~rahul/data/WheresWaldo.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;四、显著性检测Saliency Detection：&lt;/p&gt;
+&lt;p&gt;· Itti, Koch, and Niebur’ saliency detection [1] [&lt;a href=&quot;http://www.saliencytoolbox.net/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Frequency-tuned salient region detection [2] [&lt;a href=&quot;http://ivrgwww.epfl.ch/supplementary_material/RK_CVPR09/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Saliency detection using maximum symmetric surround [3] [&lt;a href=&quot;http://ivrg.epfl.ch/supplementary_material/RK_ICIP2010/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Attention via Information Maximization [4] [&lt;a href=&quot;http://www.cse.yorku.ca/~neil/AIM.zip&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Context-aware saliency detection [5] [&lt;a href=&quot;http://webee.technion.ac.il/labs/cgm/Computer-Graphics-Multimedia/Software/Saliency/Saliency.html&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Graph-based visual saliency [6] [&lt;a href=&quot;http://www.klab.caltech.edu/~harel/share/gbvs.php&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Saliency detection: A spectral residual approach. [7] [&lt;a href=&quot;http://www.klab.caltech.edu/~xhou/projects/spectralResidual/spectralresidual.html&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Segmenting salient objects from images and videos. [8] [&lt;a href=&quot;http://www.cse.oulu.fi/MVG/Downloads/saliency&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Saliency Using Natural statistics. [9] [&lt;a href=&quot;http://cseweb.ucsd.edu/~l6zhang/&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Discriminant Saliency for Visual Recognition from Cluttered Scenes. [10] [&lt;a href=&quot;http://www.svcl.ucsd.edu/projects/saliency/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Learning to Predict Where Humans Look [11] [&lt;a href=&quot;http://people.csail.mit.edu/tjudd/WherePeopleLook/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Global Contrast based Salient Region Detection [12] [&lt;a href=&quot;http://cg.cs.tsinghua.edu.cn/people/~cmm/saliency/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Bayesian Saliency via Low and Mid Level Cues[&lt;a href=&quot;http://ice.dlut.edu.cn/lu/Project/TIP_scm/TIP_scm.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Top-Down Visual Saliency via Joint CRF and Dictionary Learning[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/cvpr12a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/top-down-saliency.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;五、图像分类、聚类Image Classification, Clustering&lt;/p&gt;
+&lt;p&gt;· Pyramid Match [1] [&lt;a href=&quot;http://people.csail.mit.edu/jjl/libpmk/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Spatial Pyramid Matching [2] [&lt;a href=&quot;http://www.cs.unc.edu/~lazebnik/research/SpatialPyramid.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Locality-constrained Linear Coding [3] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/LLC.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/codes/CVPR10-LLC.rar&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Sparse Coding [4] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/ScSPM.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://www.ifp.illinois.edu/~jyang29/codes/CVPR09-ScSPM.rar&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Texture Classification [5] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/texclass/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Multiple Kernels for Image Classification [6] [&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Feature Combination [7] [&lt;a href=&quot;http://www.vision.ee.ethz.ch/~pgehler/projects/iccv09/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· SuperParsing [&lt;a href=&quot;http://www.cs.unc.edu/~jtighe/Papers/ECCV10/eccv10-jtighe-code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Large Scale Correlation Clustering Optimization[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/LargeScaleCC1.0.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Detecting and Sketching the Common[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~vision/SketchTheCommon&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Self-Tuning Spectral Clustering[&lt;a href=&quot;http://www.vision.caltech.edu/lihi/Demos/SelfTuningClustering.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://www.vision.caltech.edu/lihi/Demos/SelfTuning/ZPclustering.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· User Assisted Separation of Reflections from a Single Image Using a Sparsity Prior[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~levina/papers/assisted-eccv04.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~levina/papers/reflections.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Filters for Texture Classification[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/research/texclass/filters.html#download&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Multiple Kernel Learning for Image Classification[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/MKL/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· SLIC Superpixels[&lt;a href=&quot;http://ivrg.epfl.ch/supplementary_material/RK_SLICSuperpixels/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;六、抠图Image Matting&lt;/p&gt;
+&lt;p&gt;· A Closed Form Solution to Natural Image Matting [&lt;a href=&quot;http://people.csail.mit.edu/alevin/matting.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Spectral Matting [&lt;a href=&quot;http://www.vision.huji.ac.il/SpectralMatting/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Learning-based Matting [&lt;a href=&quot;http://www.mathworks.com/matlabcentral/fileexchange/31412&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;七、目标跟踪Object Tracking：&lt;/p&gt;
+&lt;p&gt;· A Forest of Sensors – Tracking Adaptive Background Mixture Models [&lt;a href=&quot;http://www.ai.mit.edu/projects/vsam/Tracking/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Object Tracking via Partial Least Squares Analysis[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/tip12_pls_tracking.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/PLS_tracker_tip.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Robust Object Tracking with Online Multiple Instance Learning[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/pami11b.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Online Visual Tracking with Histograms and Articulating Blocks[&lt;a href=&quot;http://www.cise.ufl.edu/~smshahed/tracking.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Incremental Learning for Robust Visual Tracking[&lt;a href=&quot;http://www.cs.toronto.edu/~dross/ivt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Real-time Compressive Tracking[&lt;a href=&quot;http://www4.comp.polyu.edu.hk/~cslzhang/CT/CT.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Robust Object Tracking via Sparsity-based Collaborative Model[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/project/cvpr12_scm.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Visual Tracking via Adaptive Structural Local Sparse Appearance Model[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/project/cvpr12_jia_project.htm&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Online Discriminative Object Tracking with Local Sparse Representation[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/wacv12a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/wacv12a_code.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Superpixel Tracking[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/iccv11a.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Learning Hierarchical Image Representation with Sparsity, Saliency and Locality[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/bmvc11a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/BMVC11-HSSL-package.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Online Multiple Support Instance Tracking [&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/fg11a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/fg11_omsit.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Visual Tracking with Online Multiple Instance Learning[&lt;a href=&quot;http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Object detection and recognition[&lt;a href=&quot;http://c2inet.sce.ntu.edu.sg/Jianxin/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Compressive Sensing Resources[&lt;a href=&quot;http://dsp.rice.edu/cs&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Robust Real-Time Visual Tracking using Pixel-Wise Posteriors[&lt;a href=&quot;http://www.robots.ox.ac.uk/~cbibby/index.shtml&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Tracking-Learning-Detection[&lt;a href=&quot;http://info.ee.surrey.ac.uk/Personal/Z.Kalal/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;https://github.com/arthurv/OpenTLD&quot; target=&quot;_blank&quot;&gt;OpenTLD/C++ Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· the HandVu：vision-based hand gesture interface[&lt;a href=&quot;http://ilab.cs.ucsb.edu/index.php/component/content/article/12/29&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;八、Kinect：&lt;/p&gt;
+&lt;p&gt;· Kinect toolbox[&lt;a href=&quot;http://kinecttoolbox.codeplex.com/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· OpenNI[&lt;a href=&quot;http://www.openni.org/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· zouxy09 CSDN Blog[&lt;a href=&quot;http://blog.csdn.net/zouxy09/article/details/8145688&quot; target=&quot;_blank&quot;&gt;Resource&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;九、3D相关：&lt;/p&gt;
+&lt;p&gt;· 3D Reconstruction of a Moving Object[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~ronen/papers/Simakov%20Frolova%20Basri%20-%20Dense%20Shape%20Reconstruction%20Under%20Arbitrary%20Unknown%20Lighting.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;] [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/SFB_matlab1.0.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Shape From Shading Using Linear Approximation[&lt;a href=&quot;http://vision.eecs.ucf.edu/shadsrc.html&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Combining Shape from Shading and Stereo Depth Maps[&lt;a href=&quot;http://vision.eecs.ucf.edu/combsrc.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/projects/ShapeFromShading/combine.tar.Z&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Shape from Shading: A Survey[&lt;a href=&quot;http://vision.eecs.ucf.edu/papers/shah/99/ZTCS99.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://vision.eecs.ucf.edu/projects/ShapeFromShading/SFS_Survey_1_00.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· A Spatio-Temporal Descriptor based on 3D Gradients (HOG3D)[&lt;a href=&quot;http://lear.inrialpes.fr/people/klaeser/research_hog3d&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://lear.inrialpes.fr/people/klaeser/software_3d_video_descriptor&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Multi-camera Scene Reconstruction via Graph Cuts[&lt;a href=&quot;http://www.cs.cornell.edu/~rdz/papers/kz-eccv02-recon.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://pub.ist.ac.at/~vnk/software/match-v3.4.src.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· A Fast Marching Formulation of Perspective Shape from Shading under Frontal Illumination[&lt;a href=&quot;http://www.cs.ucf.edu/~vision&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.ee.cityu.edu.hk/~syyuen/Public/SfS/PRL_Perspective_FMM.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Reconstruction:3D Shape, Illumination, Shading, Reflectance, Texture[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/reconstruction/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Monocular Tracking of 3D Human Motion with a Coordinated Mixture of Factor Analyzers[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/PackagedTrackingCode.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Learning 3-D Scene Structure from a Single Still Image[&lt;a href=&quot;http://ai.stanford.edu/~asaxena/reconstruction3d/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;十、机器学习算法：&lt;/p&gt;
+&lt;p&gt;· Matlab class for computing Approximate Nearest Nieghbor (ANN) [&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/ann_wrapper_Mar2012.tar.gz&quot; target=&quot;_blank&quot;&gt;Matlab class&lt;/a&gt;&amp;nbsp;providing interface to&lt;a href=&quot;http://www.cs.umd.edu/~mount/ANN/&quot; target=&quot;_blank&quot;&gt;ANN library&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Random Sampling[&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/~bagon/matlab_code/weight_sample.tar.gz&quot; target=&quot;_blank&quot;&gt;code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Probabilistic Latent Semantic Analysis (pLSA)[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/pLSA/pLSA_demo.tgz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· FASTANN and FASTCLUSTER for approximate k-means (AKM)[&lt;a href=&quot;http://www.robots.ox.ac.uk/~vgg/software/fastann/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Fast Intersection / Additive Kernel SVMs[&lt;a href=&quot;http://www.cs.berkeley.edu/~smaji/projects/fiksvm/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· SVM[&lt;a href=&quot;http://osmot.cs.cornell.edu/svm_light/&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Ensemble learning[&lt;a href=&quot;http://c2inet.sce.ntu.edu.sg/Jianxin/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Deep Learning[&lt;a href=&quot;http://deeplearning.net/&quot; target=&quot;_blank&quot;&gt;Net&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Deep Learning Methods for Vision[&lt;a href=&quot;http://cs.nyu.edu/~fergus/tutorials/deep_learning_cvpr12/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Neural Network for Recognition of Handwritten Digits[&lt;a href=&quot;http://www.codeproject.com/KB/library/NeuralNetRecognition.aspx&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Training a deep autoencoder or a classifier on MNIST digits[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/MatlabForSciencePaper.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· THE MNIST DATABASE of handwritten digits[&lt;a href=&quot;http://yann.lecun.com/exdb/mnist/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Ersatz：deep neural networks in the cloud[&lt;a href=&quot;http://www.ersatz1.com/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Deep Learning [&lt;a href=&quot;http://www.cs.nyu.edu/~yann/research/deep/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· sparseLM : Sparse Levenberg-Marquardt nonlinear least squares in C/C++[&lt;a href=&quot;http://www.ics.forth.gr/~lourakis/sparseLM/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Weka 3: Data Mining Software in Java[&lt;a href=&quot;http://www.cs.waikato.ac.nz/ml/weka/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Invited talk “A Tutorial on Deep Learning” by Dr. Kai Yu (余凯)[&lt;a href=&quot;http://vipl.ict.ac.cn/News/academic-report-tutorial-deep-learning-dr-kai-yu&quot; target=&quot;_blank&quot;&gt;Video&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· CNN – Convolutional neural network class[&lt;a href=&quot;http://www.mathworks.cn/matlabcentral/fileexchange/24291&quot; target=&quot;_blank&quot;&gt;Matlab Tool&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Yann LeCun’s Publications[&lt;a href=&quot;http://yann.lecun.com/exdb/publis/index.html#lecun-98&quot; target=&quot;_blank&quot;&gt;Wedsite&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· LeNet-5, convolutional neural networks[&lt;a href=&quot;http://yann.lecun.com/exdb/lenet/index.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Training a deep autoencoder or a classifier on MNIST digits[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/MatlabForSciencePaper.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Deep Learning 大牛Geoffrey E. Hinton’s HomePage[&lt;a href=&quot;http://www.cs.toronto.edu/~hinton/&quot; target=&quot;_blank&quot;&gt;Website&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;十一、目标、行为识别Object, Action Recognition：&lt;/p&gt;
+&lt;p&gt;· Action Recognition by Dense Trajectories[&lt;a href=&quot;http://lear.inrialpes.fr/people/wang/dense_trajectories&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;][&lt;a href=&quot;http://lear.inrialpes.fr/people/wang/download/dense_trajectory_release.tar.gz&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Action Recognition Using a Distributed Representation of Pose and Appearance[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/action/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Recognition Using Regions[&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/glam-cvpr09.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.eecs.berkeley.edu/Research/Projects/CS/vision/shape/glam_cvpr09_v2.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· 2D Articulated Human Pose Estimation[&lt;a href=&quot;http://www.vision.ee.ethz.ch/~calvin/articulated_human_pose_estimation_code/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Fast Human Pose Estimation Using Appearance and Motion via Multi-Dimensional Boosting Regression[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/cvpr07a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://www.cise.ufl.edu/~smshahed/cvpr07_fast_human_pose.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Estimating Human Pose from Occluded Images[&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/papers/accv09a.pdf&quot; target=&quot;_blank&quot;&gt;Paper&lt;/a&gt;][&lt;a href=&quot;http://faculty.ucmerced.edu/mhyang/code/accv09_pose.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Quasi-dense wide baseline matching[&lt;a href=&quot;http://www.ee.oulu.fi/~jkannala/quasidense/quasidense.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· ChaLearn Gesture Challenge: Principal motion: PCA-based reconstruction of motion histograms[&lt;a href=&quot;http://gesture.chalearn.org/data/sample-code&quot; target=&quot;_blank&quot;&gt;Prpject&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;十二、图像处理：&lt;/p&gt;
+&lt;p&gt;· Distance Transforms of Sampled Functions[&lt;a href=&quot;http://cs.brown.edu/~pff/dt/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· The Computer Vision Homepage[&lt;a href=&quot;http://www.cs.cmu.edu/~cil/vision.html&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;十三、一些实用工具：&lt;/p&gt;
+&lt;p&gt;· EGT: a Toolbox for Multiple View Geometry and Visual Servoing[&lt;a href=&quot;http://egt.dii.unisi.it/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;] [&lt;a href=&quot;http://egt.dii.unisi.it/download/EGT_v1p3.zip&quot; target=&quot;_blank&quot;&gt;Code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· a development kit of matlab mex functions for OpenCV library[&lt;a href=&quot;http://www.cs.stonybrook.edu/~kyamagu/mexopencv/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;· Fast Artificial Neural Network Library[&lt;a href=&quot;http://leenissen.dk/fann/wp/&quot; target=&quot;_blank&quot;&gt;Project&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;www.cvchina.info/2011/09/05/uiuc-cod/&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>小波学习1</title>
@@ -105,8 +941,11 @@ $msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
     return None
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;参考文章:
-&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考文章:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://justbm.blogspot.com/2014/01/django.html&quot;&gt;django多国语言&lt;/a&gt;&lt;/p&gt;
 
 </content>
  </entry>
@@ -305,6 +1144,13 @@ mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123�
 &lt;pre&gt;&lt;code&gt;mysql&amp;gt; UPDATE mysql.user SET password=PASSWORD(’新密码’) WHERE User=’root’;
 mysql&amp;gt; FLUSH PRIVILEGES;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;显示当前用户&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt;select USER();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mysql 主从复制&lt;/p&gt;
 
 </content>
  </entry>
@@ -537,9 +1383,9 @@ for data in iterable:
    <id>http://i.justpic.org/2013/11/05/leaning-python-site</id>
    <content type="html">
 &lt;h1 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;
+&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker’s Guide to Python&lt;/a&gt;
+&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.codecademy.com/zh/tracks/python&quot;&gt;codecademy课程&lt;/a&gt;&lt;/p&gt;
 
@@ -725,6 +1571,12 @@ sudo pip install matplotlib   # recommended Line 2 was necessary for SciPy, othe
 &lt;p&gt;&lt;a href=&quot;http://jmlr.org/mloss/&quot;&gt;JMLR&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://mloss.org/software/&quot;&gt;machine learning open source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;中文资料&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/zouxy09/article/details/8775524&quot;&gt;深度学习笔记&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B&quot;&gt;UFLDL教程&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1549,7 +2401,9 @@ $source .bashrc 安装 blosc (可选)
 &lt;p&gt;以下资料可供学习入门:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://deepleaning.net/tutorial/deeplearning.pdf&quot;&gt;deep learning 入门&lt;/a&gt;	
-  &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;http://markus.com/deep-learning-101/&quot;&gt;使用深度学习识别笔迹&lt;/a&gt;
+  &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;
+  &lt;a href=&quot;http://www.cs.toronto.edu/~kriz/lsvrc-2012-pres.pdf&quot;&gt;ImageNet Classification with Deep Convolutional Neural Networks&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  

@@ -72,7 +72,9 @@ handler中自定义get_user_locale函数：
 
 
 参考文章:
+
 [iMind](http://www.ylinux.org/imind/167)
 
+[django多国语言](http://justbm.blogspot.com/2014/01/django.html)
 
 

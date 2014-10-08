@@ -9,7 +9,7 @@ tags: []
 Learning Python Sites
 =====================
 **basic(初级)**
-
+[Hitchhiker's Guide to Python](docs.python-guide.org/en/latest)
 [A byte of Python(中文的)](http://woodpecker.org.cn/abyteofpython_cn/chinese/)
 
 [codecademy课程](http://www.codecademy.com/zh/tracks/python)
