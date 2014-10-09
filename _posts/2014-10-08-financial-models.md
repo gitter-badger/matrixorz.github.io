@@ -3,7 +3,7 @@ layout: post
 title: "financial models"
 description: ""
 category: 
-tags: []
+tags: [finance]
 draft: true
 published: false
 ---
