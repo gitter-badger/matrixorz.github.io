@@ -9,7 +9,6 @@ published: true
 ---
 {% include JB/setup %}
 
-路怎么这么难走，哎！
 
 
 参考  
