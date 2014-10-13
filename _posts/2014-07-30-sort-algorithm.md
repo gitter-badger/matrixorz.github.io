@@ -27,28 +27,28 @@ draft: true
 5 3(前) 3(中) 4 3(后) 8 9 10 11 --> 3(后) 3(前) 3(中) 4 5 8 9 10 11  
 希尔排序:  
 改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。  
-{% highlight c %}
-void insertion_sort(int data[],int n,int increment)
-{
-   int i,j;
-   for(i=increment;i<n;i+increment)
-   {
+
+    void insertion_sort(int data[],int n,int increment)
+    {
+      int i,j;
+      for(i=increment;i<n;i+increment)
+      {
       for(j=i;j>=increment&&data[j]<data[j-increment];j-=increment)
       {
           swap(&data[j],&data[j-increment]);
       }
-   }
-}
-
-void shellsort(int data[],int n)
-{
-   int i,j;
-   for(i=n/2;i>0;i/2)
-   {
+ 
+     
+         }
+    }
+    void shellsort(int data[],int n)
+    {
+       int i,j;
+    for(i=n/2;i>0;i/2)
+    {
       for(j=0;j<i;j++)
       {
         insertion_sort(data,n,i);
       }
+     }
    }
-}
-{% endhighlight}

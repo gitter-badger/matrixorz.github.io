@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-10-08T22:10:54+08:00</updated>
+ <updated>2014-10-14T00:16:57+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -13,11 +13,26 @@
 
  
  <entry>
-   <title>financial models</title>
-   <link href="http://i.justpic.org/2014/10/08/financial-models"/>
-   <updated>2014-10-08T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2014/10/08/financial-models</id>
-   <content type="html">
+   <title>J2EE复习</title>
+   <link href="http://i.justpic.org/2014/10/14/j2ee"/>
+   <updated>2014-10-14T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/10/14/j2ee</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/gongdongdong/j2ee_project&quot;&gt;J2EE&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;Image-r3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;系统一点的：&lt;br/&gt;
+&lt;a href=&quot;https://github.com/ysc/APDPlat&quot;&gt;APDPlat&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>implement Linklist with a static array</title>
+   <link href="http://i.justpic.org/2014/10/09/implement-linklist-with-a-static-array"/>
+   <updated>2014-10-09T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/10/09/implement-linklist-with-a-static-array</id>
+   <content type="html">&lt;p&gt;参考&lt;br/&gt;
+&lt;a href=&quot;http://blog.csdn.net/njzhiyuan/article/details/8232025&quot;&gt;数组实现链表&lt;/a&gt;
+&lt;a href=&quot;http://www2.gliet.edu.cn/jpkc/datastructure/course/course_content.asp?chapter_id=2&amp;amp;section_id=9&quot;&gt;链表的数组描述与实现&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -539,6 +554,52 @@ mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt
    <updated>2014-07-30T00:00:00+08:00</updated>
    <id>http://i.justpic.org/2014/07/30/sort-algorithm</id>
    <content type="html">&lt;p&gt;对于堆排序，需要自底向上构建堆，排序时要自上而下作堆的调整。&lt;/p&gt;
+
+&lt;p&gt;排序算法的特点讨论
+&lt;img src=&quot;http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30%3Bt%3Dgif/sign=b944a959d31373f0e13267cdc566209e/96dda144ad345982dab0d4b00ef431adcbef84dd.jpg&quot; alt=&quot;各类排序算法时间复杂度和空间复杂度对比表&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;稳定排序&lt;/h2&gt;
+
+&lt;p&gt;冒泡排序&lt;br/&gt;
+归并排序&lt;br/&gt;
+基数排序&lt;br/&gt;
+插入排序&lt;/p&gt;
+
+&lt;h2&gt;不稳定排序&lt;/h2&gt;
+
+&lt;p&gt;选择排序:  &lt;br/&gt;
+5(前) 8 5(后) 2 9   &amp;ndash;&gt; 2 8 5(后) 5(前) 9&lt;br/&gt;
+快速排序:&lt;br/&gt;
+5 3(前) 3(中) 4 3(后) 8 9 10 11 &amp;ndash;&gt; 3(后) 3(前) 3(中) 4 5 8 9 10 11&lt;br/&gt;
+希尔排序:&lt;br/&gt;
+改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void insertion_sort(int data[],int n,int increment)
+{
+  int i,j;
+  for(i=increment;i&amp;lt;n;i+increment)
+  {
+  for(j=i;j&amp;gt;=increment&amp;amp;&amp;amp;data[j]&amp;lt;data[j-increment];j-=increment)
+  {
+      swap(&amp;amp;data[j],&amp;amp;data[j-increment]);
+  }
+
+
+     }
+}
+void shellsort(int data[],int n)
+{
+   int i,j;
+for(i=n/2;i&amp;gt;0;i/2)
+{
+  for(j=0;j&amp;lt;i;j++)
+  {
+    insertion_sort(data,n,i);
+  }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;   }&lt;/p&gt;
 </content>
  </entry>
  

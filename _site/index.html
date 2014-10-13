@@ -68,6 +68,12 @@
       
     
       
+      <li>
+        <span>October  9, 2014</span> <a href="/2014/10/09/implement-linklist-with-a-static-array">implement Linklist with a static array</a>
+      </li>
+      
+    
+      
     
       
     
@@ -166,12 +172,6 @@
       
       <li>
         <span>May 22, 2014</span> <a href="/2014/05/22/deploy-sites-on-nginx">deploy sites on nginx</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>May  6, 2014</span> <a href="/2014/05/06/matlab-c">Matlab C混合编程</a>
       </li>
       
     
@@ -490,9 +490,9 @@ D3 learning
 
   </ul>
 
-  <ul class="tag_tag" id="finance-ref">    
+  <ul class="tag_tag" id="interview-ref">    
         <div class="category tagcloud">
-                <h3>finance</h3>
+                <h3>interview</h3>
         </div>
   </ul>
   <ul class="tag_post">
@@ -505,24 +505,24 @@ D3 learning
       
       	
 		<!--
-      	<li><a href="/2014/10/08/financial-models">financial models</a></li>
+      	<li><a href="/2014/07/30/sort-algorithm">sort algorithm</a></li>
 		-->
 		
 		<ul>
 			<ul>
-				<h2><a href="/2014/10/08/financial-models">financial models</a></h2>
-				<h3 class="datetext" style="float:left">Posted on 08 Oct 2014</h3>
+				<h2><a href="/2014/07/30/sort-algorithm">sort algorithm</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 30 Jul 2014</h3>
 				<span class="tag-list"> 
 					
 					<!--
-					<a href="/tags/finance/">finance</a>
+					<a href="/tags/interview/">interview</a>
 					-->
 					
 					<!--
-					<a href="#finance-ref" onclick="location.reload()">finance</a>
+					<a href="#interview-ref" onclick="location.reload()">interview</a>
 					-->
 					
-					<a href="#finance-ref">finance</a>
+					<a href="#interview-ref">interview</a>
 					
 					
 				</span>
@@ -532,11 +532,31 @@ D3 learning
 
 			<!-- <br></br> -->
 			
-			
+			对于堆排序，需要自底向上构建堆，排序时要自上而下作堆的调整。
 
+排序算法的特点讨论
+
+
+稳定排序
+
+冒泡排序
+归并排序
+基数排序
+插入排序
+
+不稳定排序
+
+选择排序:  
+5(前) 8 5(后) 2 9   &ndash;> 2 8 5(后) 5(前) 9
+快速排序:
+5 3(前) 3(中) 4 3(后) 8 9 10 11 &ndash;> 3(后) 3(前) 3(中) 4 5 8 9 10 11
+希尔排序:
+改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。
+
+void insertion_sort(int d...
 			
 			<ul>
-				<p style="text-align:right;"><a href="/2014/10/08/financial-models">更多内容...</a></p>
+				<p style="text-align:right;"><a href="/2014/07/30/sort-algorithm">更多内容...</a></p>
 			</ul>
 
 		</ul>
@@ -544,6 +564,22 @@ D3 learning
       	
       
     
+  
+
+
+
+  </ul>
+
+  <ul class="tag_tag" id="finance-ref">    
+        <div class="category tagcloud">
+                <h3>finance</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
   
     
       
@@ -769,6 +805,70 @@ tar jxvf ghc-7.8.3-src.tar.b...
 
   </ul>
 
+  <ul class="tag_tag" id="J2EE-ref">    
+        <div class="category tagcloud">
+                <h3>J2EE</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+            
+          
+
+
+  
+    
+      
+      	
+		<!--
+      	<li><a href="/2014/10/14/j2ee">J2EE复习</a></li>
+		-->
+		
+		<ul>
+			<ul>
+				<h2><a href="/2014/10/14/j2ee">J2EE复习</a></h2>
+				<h3 class="datetext" style="float:left">Posted on 14 Oct 2014</h3>
+				<span class="tag-list"> 
+					
+					<!--
+					<a href="/tags/J2EE/">J2EE</a>
+					-->
+					
+					<!--
+					<a href="#J2EE-ref" onclick="location.reload()">J2EE</a>
+					-->
+					
+					<a href="#J2EE-ref">J2EE</a>
+					
+					
+				</span>
+			</ul>
+			
+			<div class="c">&nbsp;</div>
+
+			<!-- <br></br> -->
+			
+			J2EE
+Image-r3
+
+系统一点的：
+APDPlat
+
+			
+			<ul>
+				<p style="text-align:right;"><a href="/2014/10/14/j2ee">更多内容...</a></p>
+			</ul>
+
+		</ul>
+
+      	
+      
+    
+  
+
+
+
+  </ul>
+
 
 </div>
 
@@ -840,9 +940,14 @@ tar jxvf ghc-7.8.3-src.tar.b...
 <!--<div class="category">
 	<h3>Latest Posts</h3>
 	
-	<h4><a href="/2014/10/08/financial-models">financial models</a></h4>
-	<time datetime="2014-10-08 00:00:00 +0800" pubdate="pubdate" class="date">
-		08 Oct 2014
+	<h4><a href="/2014/10/14/j2ee">J2EE复习</a></h4>
+	<time datetime="2014-10-14 00:00:00 +0800" pubdate="pubdate" class="date">
+		14 Oct 2014
+    </time>
+	
+	<h4><a href="/2014/10/09/implement-linklist-with-a-static-array">implement Linklist with a static array</a></h4>
+	<time datetime="2014-10-09 00:00:00 +0800" pubdate="pubdate" class="date">
+		09 Oct 2014
     </time>
 	
 	<h4><a href="/2014/09/28/python-play-with-hadoop">python play with hadoop</a></h4>
@@ -856,11 +961,6 @@ tar jxvf ghc-7.8.3-src.tar.b...
     </time>
 	
 	<h4><a href="/2014/09/10/roc">ROC曲线分析</a></h4>
-	<time datetime="2014-09-10 00:00:00 +0800" pubdate="pubdate" class="date">
-		10 Sep 2014
-    </time>
-	
-	<h4><a href="/2014/09/10/latex-math-symbol">latex math symbol</a></h4>
 	<time datetime="2014-09-10 00:00:00 +0800" pubdate="pubdate" class="date">
 		10 Sep 2014
     </time>
@@ -915,8 +1015,13 @@ tar jxvf ghc-7.8.3-src.tar.b...
 			</span>
      
 			
-			<span style="font-size: 200%">
-				<a href="#finance-ref" title="X2">finance </a>
+			<span style="font-size: 150%">
+				<a href="#interview-ref" title="X1">interview </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#finance-ref" title="X1">finance </a>
 			</span>
      
 			
@@ -927,6 +1032,11 @@ tar jxvf ghc-7.8.3-src.tar.b...
 			
 			<span style="font-size: 150%">
 				<a href="#FP-ref" title="X1">FP </a>
+			</span>
+     
+			
+			<span style="font-size: 150%">
+				<a href="#J2EE-ref" title="X1">J2EE </a>
 			</span>
     
   

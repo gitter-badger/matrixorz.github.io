@@ -20,7 +20,8 @@ http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 
-http://i.justpic.org/2014/10/08/financial-models
+http://i.justpic.org/2014/10/14/j2ee
+http://i.justpic.org/2014/10/09/implement-linklist-with-a-static-array
 http://i.justpic.org/2014/09/28/python-play-with-hadoop
 http://i.justpic.org/2014/09/25/dynamic-programming
 http://i.justpic.org/2014/09/10/roc
