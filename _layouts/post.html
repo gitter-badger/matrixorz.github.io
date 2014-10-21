@@ -5,7 +5,7 @@ layout: layout
 <script type="text/javascript"
          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-
+  <script type="text/javascript" src="/js/outliner.js"></script>
 <section class="content">
   <h1>
     <a href="{{ page.url }}">{{ page.title }}</a>
@@ -63,7 +63,11 @@ $(function(){
 
     </section>
   </section>
-   <script type="text/javascript">
+  <aside id="secondary" class="span-6 last">
+              {% include navbar.html %}
+  </aside>
+
+  <script type="text/javascript">
   var duoshuoQuery = {short_name:"justpic"};
 	(function() {
 		var ds = document.createElement('script');

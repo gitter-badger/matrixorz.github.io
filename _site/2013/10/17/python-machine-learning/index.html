@@ -18,6 +18,10 @@
   <link href="http://libs.useso.com/js/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
   <link rel="stylesheet" href="/css/site.css" type="text/css"/>
+  <link href="/css/animation.css" rel="stylesheet" type="text/css">
+  
+  <link href="/css/fontello.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css"/>
   <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
   <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
   <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
@@ -63,7 +67,7 @@
 <script type="text/javascript"
          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-
+  <script type="text/javascript" src="/js/outliner.js"></script>
 <section class="content">
   <h1>
     <a href="/2013/10/17/python-machine-learning">python machine learning</a>
@@ -128,7 +132,59 @@ $(function(){
 
     </section>
   </section>
-   <script type="text/javascript">
+  <aside id="secondary" class="span-6 last">
+              <div id="navbar">
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav" id="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+
+        </ul>
+    </nav>
+</div>
+
+
+
+            
+<script>
+
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+       $("#menu-close").click(function(e) {
+
+        //e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+       });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+  </aside>
+
+  <script type="text/javascript">
   var duoshuoQuery = {short_name:"justpic"};
 	(function() {
 		var ds = document.createElement('script');
@@ -145,9 +201,14 @@ $(function(){
 </div>
 <!-- Duoshuo Comment END -->
 
-  <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F935cbc366c51f51db03d4f731823788e' type='text/javascript'%3E%3C/script%3E"));
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?935cbc366c51f51db03d4f731823788e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
 
 

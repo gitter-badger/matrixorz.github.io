@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?74386462');
+  src: url('../font/fontello.eot?74386462#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?74386462') format('woff'),
+       url('../font/fontello.ttf?74386462') format('truetype'),
+       url('../font/fontello.svg?74386462#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?74386462#fontello') format('svg');
+  }
+}
+*/
+
+ 
+/* MICROVAGAS BEGIN */
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  text-decoration: inherit;
+  width: 1em;
+/*   margin-right: .2em; */
+  text-align: center;
+  /* opacity: .8; */
+  speak: none;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+/*   margin-left: .2em; */
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+[class^="icon-"].pull-left,
+[class*=" icon-"].pull-left {
+  margin-right: .3em;
+}
+[class^="icon-"].pull-right,
+[class*=" icon-"].pull-right {
+  margin-left: .3em;
+}
+/* MICROVAGAS END */
+
+ 
+.icon-ampersocial:before { content: '\e820'; } /* 'î  ' */
+.icon-googleplus-square:before { content: '\e821'; } /* 'î ¡' */
+.icon-myspace:before { content: '\e823'; } /* 'î £' */
+.icon-wikipedia:before { content: '\e828'; } /* 'î ¨' */
+.icon-reddit:before { content: '\e824'; } /* 'î ¤' */
+.icon-yammer:before { content: '\e80d'; } /* 'î ' */
+.icon-askfm:before { content: '\e82b'; } /* 'î «' */
+.icon-users:before { content: '\e811'; } /* 'î ‘' */
+.icon-thumbs-up:before { content: '\e817'; } /* 'î —' */
+.icon-thumbs-down:before { content: '\e818'; } /* 'î ˜' */
+.icon-vcard:before { content: '\e80e'; } /* 'î Ž' */
+.icon-book:before { content: '\e810'; } /* 'î ' */
+.icon-share:before { content: '\e800'; } /* 'î €' */
+.icon-shareable:before { content: '\e814'; } /* 'î ”' */
+.icon-hourglass:before { content: '\e819'; } /* 'î ™' */
+.icon-lamp:before { content: '\e82c'; } /* 'î ¬' */
+.icon-historico:before { content: '\e805'; } /* 'î …' */
+.icon-crowdmap:before { content: '\e813'; } /* 'î “' */
+.icon-globo:before { content: '\e80f'; } /* 'î ' */
+.icon-college:before { content: '\e816'; } /* 'î –' */
+.icon-startupbase:before { content: '\e82a'; } /* 'î ª' */
+.icon-numeric:before { content: '\e81a'; } /* 'î š' */
+.icon-whatsapp:before { content: '\e822'; } /* 'î ¢' */
+.icon-location:before { content: '\e81c'; } /* 'î œ' */
+.icon-social:before { content: '\e829'; } /* 'î ©' */
+.icon-mobile:before { content: '\e815'; } /* 'î •' */
+.icon-hash:before { content: '\e81b'; } /* 'î ›' */
+.icon-globe:before { content: '\e826'; } /* 'î ¦' */
+.icon-money:before { content: '\e801'; } /* 'î ' */
+.icon-down:before { content: '\e81e'; } /* 'î ž' */
+.icon-left:before { content: '\e81d'; } /* 'î ' */
+.icon-right:before { content: '\e809'; } /* 'î ‰' */
+.icon-up:before { content: '\e806'; } /* 'î †' */
+.icon-github:before { content: '\e81f'; } /* 'î Ÿ' */
+.icon-blogger:before { content: '\e803'; } /* 'î ƒ' */
+.icon-cc:before { content: '\e804'; } /* 'î „' */
+.icon-viadeo:before { content: '\e80a'; } /* 'î Š' */
+.icon-windows:before { content: '\e80c'; } /* 'î Œ' */
+.icon-yahoo:before { content: '\e812'; } /* 'î ’' */
+.icon-podcast:before { content: '\e80b'; } /* 'î ‹' */
+.icon-mail:before { content: '\e802'; } /* 'î ‚' */
+.icon-facebook-square:before { content: '\e825'; } /* 'î ¥' */
+.icon-blogger-square:before { content: '\e808'; } /* 'î ˆ' */
+.icon-slideshare:before { content: '\e807'; } /* 'î ‡' */
+.icon-link:before { content: '\e827'; } /* 'î §' */

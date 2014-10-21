@@ -4,13 +4,36 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-10-14T00:16:57+08:00</updated>
+ <updated>2014-10-22T07:49:23+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>html5新特性</title>
+   <link href="http://i.justpic.org/2014/10/20/html5"/>
+   <updated>2014-10-20T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/10/20/html5</id>
+   <content type="html">&lt;p&gt;1.新的文档类型&lt;br/&gt;
+2.脚本和链接无需type&lt;br/&gt;
+3.语义Header和Footer&lt;br/&gt;
+4.Hgroup&lt;br/&gt;
+5.标记元素&lt;br/&gt;
+6.图形元素&lt;br/&gt;
+7.重新定义&lt;small&gt;&lt;br/&gt;
+8.占位符&lt;br/&gt;
+9.必要属性&lt;br/&gt;
+10.Autofocus属性(Autofocus Attribute)&lt;br/&gt;
+11.Audio支持(Audio Support)&lt;br/&gt;
+12.Video支持(Video Support)&lt;br/&gt;
+13.视频预载&lt;br/&gt;
+14.显示控制条&lt;br/&gt;
+15.正则表达式&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>J2EE复习</title>
