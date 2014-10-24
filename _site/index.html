@@ -249,14 +249,15 @@
 
 selecttest.py
 
-    import select
-    import socket
-    import Queue
-    #create a socket
-    server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    server.setblocking(False)
-    #set option reused
-    server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1...
+import select
+import socket
+import Queue
+#create a socket
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(False)
+#set option reused
+server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+server_address=(&#39;localhost...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/python%20network/2013/07/15/python-asynchrous-network">更多内容...</a></p>
