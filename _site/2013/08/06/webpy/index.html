@@ -211,12 +211,12 @@ $(function(){
 
   <section class="meta">
     <h3>Discussion, links, and tweets</h3>
-    <section class="copy">
+    <!--  <section class="copy">
       <a href="http://weibo.com/u/1803769420" target="_blank">
         <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=142" height="50" width="50" />
       </a>
 
-    </section>
+    </section> -->
   </section>
   <aside id="secondary" class="span-6 last">
               <div id="navbar">
@@ -269,7 +269,7 @@ $(function(){
 
 
   </aside>
-
+  <!--
   <script type="text/javascript">
   var duoshuoQuery = {short_name:"justpic"};
 	(function() {
@@ -280,8 +280,20 @@ $(function(){
 		(document.getElementsByTagName('head')[0] 
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-  </script>
+  </script>-->
   <!-- Duoshuo Comment BEGIN -->
+<ul class="ds-recent-visitors"></ul>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"justpic"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 <div id="comments">
    <div class="ds-thread"  data-thread-key="/2013/08/06/webpy" data-title="webpy - Just Pic"</div>
 </div>

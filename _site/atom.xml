@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-10-22T22:04:58+08:00</updated>
+ <updated>2014-11-06T00:57:08+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -384,7 +384,8 @@ PCA做分类时一般使用主向量作为特征进行分类，而不是降维�
 &lt;p&gt;参考文章：&lt;br/&gt;
 &lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;PCA与SVD&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;PCA与SVD&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://blog.sina.com.cn/blog_6163bdeb0102eds7.html&quot;&gt;Kernel PCA的推导&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1192,7 +1193,7 @@ sudo update-alternatives --config java
    <link href="http://i.justpic.org/2014/04/04/mysqldump-summary"/>
    <updated>2014-04-04T00:00:00+08:00</updated>
    <id>http://i.justpic.org/2014/04/04/mysqldump-summary</id>
-   <content type="html">&lt;h4&gt;Mysql导入导出&lt;/h4&gt;
+   <content type="html">&lt;h3&gt;Mysql导入导出&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;导出所有库  
     mysqldump -uusername -ppassword --all-databases&amp;gt;all.sql
@@ -1216,7 +1217,7 @@ mysqldump字符集设置
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;Mysql用户管理&lt;/h4&gt;
+&lt;h3&gt;Mysql用户管理&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;创建用户
     mysql&amp;gt; insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;phplamp&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;1234&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1229,7 +1230,29 @@ mysqldump字符集设置
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;Mysql 主从复制&lt;/h4&gt;
+&lt;h3&gt;Mysql 主从复制&lt;/h3&gt;
+
+&lt;p&gt;待记录&amp;hellip;&lt;/p&gt;
+
+&lt;h3&gt;Mysql 创建视图&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; * from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+create view v as &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+create view v&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vid,vname,vage&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; as &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;on,where,having的区别&lt;br/&gt;
+on,where,having这三个都可以加条件的子句中,on是最先执行,where次之,having最后.有时候如果这先后顺序不影响中间结果的话,那最终结果是相同的.但因为on是先把不符合条件的记录过滤后才进行统计,它就可以减少中间运算要处理的数据,按理说应该速度是最快的.&lt;/p&gt;
+
+&lt;p&gt;根据上面的分析,可以知道where应该比having快一点,应为它过滤数据后才进行sum,所以having是最慢的.但也不是说having没用,因为有时在步骤三还没有出来都不知道那个记录才符合要求时,就要用having了.
+left join加上where 条件
+用where是先连接然后再筛选&lt;br/&gt;
+用and是先筛选再连接
+数据库范式:&lt;br/&gt;
+第一范式:强调的是列的原子性.&lt;br/&gt;
+第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.&lt;br/&gt;
+第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.&lt;/p&gt;
 </content>
  </entry>
  
