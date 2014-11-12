@@ -21,7 +21,7 @@ web server side:
     for data in iterable:
         #send data to client
         
- 
+WSGI PEP333   
 WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）       
 
 后续：

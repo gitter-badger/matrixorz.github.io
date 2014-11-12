@@ -42,7 +42,44 @@ mysqldump字符集设置
     mysql>select USER();
 {% endhighlight %}  
 ###Mysql 主从复制  
-待记录...
+mysql复制的用途:  
+读取扩展
+主备份服务器  
+故障转移服务器  
+地理空间冗余  
+数据仓库  
+基准测试  
+软件更新  
+复制配置(my.cnf):    
+主服务器配置(Alpha)  
+[mysqld]  
+log-bin=binary-log #log-bin参数启动二进制日志.二进制日志在MySQL环境中提供了多种用途.它为MySQL复制提供了DDL和DML语句流,能够重新应用于复制的从服务器.  
+server-id=1  
+重新启动MySQL后 ,使用SQL命令show master status;进行验证.(对于配置复制的从服务器是必要的)  
+从服务器配置(Beta)  
+[mysqld]  
+server-id=2  
+read_only=TRUE  
+
+show slave status;  
+change master to 
+MASTER_HOST='192.168.100.1',#主服务器上的用户名和密码  
+MASTER_USER='rep1',  
+MASTER_PASSWORD='rep12009';  
+
+change master to  
+MASTER_LOG_FILE='binary-log.00001',#主服务器上运行show
+ master status命令所检索到的日志文件名称和位置.      
+MASTER_LOG_POS=106;  
+
+slave start;#启动从服务器验证其操作  
+show slave status;#Slave_IO_Running和Slave_SQL_Running的值为Yes,就证明"主服务器-从服务器"式的MySQL拓扑已经正常运行.  
+测试MySQL复制  
+在alpha上测试下面的代码:  
+PROMPT alpha>;
+alpha>  
+确认从服务器上什么都不存在:  
+beta> show schemas;  
 ###Mysql 创建视图  
 {% highlight bash %}
 create view v as select * from table;
@@ -61,4 +98,5 @@ left join加上where 条件
 数据库范式:  
 第一范式:强调的是列的原子性.  
 第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.  
-第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.
+第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.  
+
