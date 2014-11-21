@@ -24,4 +24,6 @@ Resources
 [Scatter pdf](http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf)  
 [QuantAtRisk](http://www.quantatrisk.com/)  
 [好东西传送门](http://hao.memect.com/?s=)  
-[TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html)
+[TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html)  
+[Computational Modeling
+Group](http://cmg.soton.ac.uk/research/categories/programming-languages/python/)

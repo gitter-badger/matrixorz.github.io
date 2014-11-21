@@ -48,3 +48,5 @@ cabal update
 {% highlight bash %}
 ghc-pkg check --simple-output | xargs -n 1 ghc-pkg unregister --force
 {% endhighlight %}
+
+[how i start](http://howistart.org/posts/haskell/1)
