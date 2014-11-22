@@ -15,15 +15,14 @@
     var $posts = $('ul.tag_post');
     var $tag = $('ul.tag_box');
     var h = window.location.hash;
+    var $main=$('#main');    
     if (h == '') {
+      $main.show();
       $categories.hide();
       $posts.hide();
-      var $main=$('#main');
-      $main.show();
       //$tag.children().first().addClass('showing');
     }
     else {
-      var $main=$("#main");
       $main.hide();
       h = h.substring(1);
       for (var i = $categories.length - 1; i >= 0; --i) {

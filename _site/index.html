@@ -35,7 +35,7 @@
 <body>
   <section class="sidebar">
     <a href="/">
-      <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=150" height="75" width="75" class="avatar" />
+      <img src="http://justpic.b0.upaiyun.com/upload/km5hxoq.png?s=150" height="75" width="75" class="avatar" />
     </a>
 
     <section class="name">
@@ -1128,15 +1128,14 @@ APDPlat
     var $posts = $('ul.tag_post');
     var $tag = $('ul.tag_box');
     var h = window.location.hash;
+    var $main=$('#main');    
     if (h == '') {
+      $main.show();
       $categories.hide();
       $posts.hide();
-      var $main=$('#main');
-      $main.show();
       //$tag.children().first().addClass('showing');
     }
     else {
-      var $main=$("#main");
       $main.hide();
       h = h.substring(1);
       for (var i = $categories.length - 1; i >= 0; --i) {

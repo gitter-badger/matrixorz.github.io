@@ -4,7 +4,7 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-11-15T14:30:18+08:00</updated>
+ <updated>2014-11-22T21:36:04+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
@@ -252,7 +252,7 @@ cabal update
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-
+&lt;p&gt;&lt;a href=&quot;http://howistart.org/posts/haskell/1&quot;&gt;how i start&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -717,6 +717,10 @@ config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
    $vagrant ssh
    $vagrant status
    $vagrant destroy&lt;/p&gt;
+
+&lt;p&gt;参考:&lt;br/&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/24072916/multi-vm-in-one-vagrantfile-could-i-set-different-memory-size-for-each-of-them&quot;&gt;vagrant multi vm&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;&quot;&gt;vagrant install hadoop&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;开发环境中Apache/nginx取消静态文件缓存&lt;/p&gt;
 
@@ -1290,6 +1294,8 @@ left join加上where 条件
 第一范式:强调的是列的原子性.&lt;br/&gt;
 第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.&lt;br/&gt;
 第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04&quot;&gt;无法启动mongodb的解决方法&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
