@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-11-23T10:35:09+08:00</lastBuildDate>
-        <pubDate>2014-11-23T10:35:09+08:00</pubDate>
+        <lastBuildDate>2014-11-25T11:35:41+08:00</lastBuildDate>
+        <pubDate>2014-11-25T11:35:41+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -392,7 +392,7 @@ PCA做分类时一般使用主向量作为特征进行分类，而不是降维�
                 <description>&lt;h4&gt;关于模式识别和计算机应用方向, 可以选择的主题&lt;/h4&gt;
 
 &lt;ol&gt;
-&lt;li&gt;数学方面&lt;br/&gt;
+&lt;li&gt;&lt;p&gt;数学方面&lt;br/&gt;
 1)  矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. &lt;br/&gt;
 2)  广义逆与子空间&lt;br/&gt;
 3)  最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义&lt;br/&gt;
@@ -406,22 +406,22 @@ PCA做分类时一般使用主向量作为特征进行分类，而不是降维�
 9)  模糊数学（模糊数学不是好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
 10) 时间序列分析的主要方法和最近新方法.&lt;br/&gt;
 11) 分形和混沌&lt;br/&gt;
-12) 常用微分方程的基本类型和解法&lt;br/&gt;
-2．专业方向&lt;br/&gt;
+12) 常用微分方程的基本类型和解法&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;专业方向&lt;br/&gt;
 1）PCA, FA, MDS &lt;br/&gt;
-  这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计
+   这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计
 算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non
 negative PCA.&lt;br/&gt;
 2) ICA ( Independent Component Analysis )&lt;br/&gt;
- 独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等
+  独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等
 分类领域中广泛应用。最近又有Nonnegative ICA 出现。特别地李群与李代数（Toral子代
 数）的引入为这个经典的方法有注入了新鲜的活力。&lt;br/&gt;
 3）NMF ( Nonnegative Matrix Factorization)&lt;br/&gt;
-  非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又
+   非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又
 一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非
 常难以发掘。&lt;br/&gt;
 4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps)
-  局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa
+   局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa
 tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋
 。特别LE的线性形式LPP (Locality Preserving Projections) 在人脸识别领域已大显身
 手，继Fisherfaces又一著名方法Laplacianfaces就是基于LPP. 另外基于谱聚类的方法也
@@ -430,26 +430,26 @@ tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域
 6) Wavelet &lt;br/&gt;
 7) RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma
 p)&lt;br/&gt;
-径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法
+ 径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法
 引入神经网络，这些方法又焕发出新的生机和用途。&lt;br/&gt;
 8）SVM （Support Vector Machine）
-  支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法
+   支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法
 和Clifford 代数的引入，SVM必将更加充满生机。&lt;br/&gt;
 9）EM (Expectation Maximum)&lt;br/&gt;
-  EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode
+   EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode
 l or GMM中&lt;br/&gt;
 10）Guassian Mixture Model&lt;br/&gt;
-  GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识
+   GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识
 别、人脸识别、目标监测、图像分割&lt;br/&gt;
-11）Bayesian Model or Bayesian Network&lt;br/&gt;
-其中 9）、10）、11）经常是成三成双的出现&lt;br/&gt;
-12）Kernel Methods
-   基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，
-比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/li&gt;
+ 11）Bayesian Model or Bayesian Network&lt;br/&gt;
+ 其中 9）、10）、11）经常是成三成双的出现&lt;br/&gt;
+ 12）Kernel Methods
+    基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;br/&gt;
+比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;
+
+&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-
-&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/22/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>

@@ -21,6 +21,7 @@ published: false
 2.4.1单机伪分布式安装和配置](http://www.letiantian.me/2014-10-16-hadoop-2-4-1-stand-alone-install-and-config/)  
 [Hadoop 集群安装配置教程Hadoop 2.4.1/Ubuntu
 14.04](http://www.powerxing.com/install-hadoop-cluster-2-4-1/)  
-
+[Yarn
+introduction](http://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/)
 
 
