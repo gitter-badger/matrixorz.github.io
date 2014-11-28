@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu 14.04 install hadoop 2.4.1 note"
 description: ""
 category: 
-tags: [大数据,bigdata]
+tags: [Hadoop,bigdata]
 draft: false
 published: true
 ---
@@ -40,7 +40,7 @@ Master节点需要无密码登录ssh本机,Master节点上操作:
     ssh hadoop@Slave1  #or ssh Slave1
 配置完网络交互环境后,下面进行hadoop配置文件的设置:  
 Master节点上操作  
-1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.  
+1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.4.1.jar设置到HADOOP_STREAMING环境变量中,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.  
 2.进入到$HADOOP_HOME/etc/hadoop目录下,对slave,core-site.xml,hdfs-site.xml,mapred-site.xml(该文件若不存在,需要从模板中复制一份)  
 slave文件中记录Slave的名字Slave1(如果有多个Slave记录多个对应的名字).  
 core-site.xml:  
