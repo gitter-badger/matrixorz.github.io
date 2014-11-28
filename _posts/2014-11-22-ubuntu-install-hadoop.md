@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ubuntu 14.04 install hadoop 2.4.1 记录"
+title: "Ubuntu 14.04 install hadoop 2.4.1 note"
 description: ""
 category: 
 tags: [大数据,bigdata]

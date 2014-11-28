@@ -20,6 +20,8 @@ http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 
+http://i.justpic.org/2014/11/25/hadoop-241-spark-110
+http://i.justpic.org/2014/11/22/ubuntu-install-hadoop
 http://i.justpic.org/2014/10/20/html5
 http://i.justpic.org/2014/10/14/j2ee
 http://i.justpic.org/2014/10/09/implement-linklist-with-a-static-array

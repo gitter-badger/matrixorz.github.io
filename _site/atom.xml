@@ -4,13 +4,250 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-11-25T11:35:41+08:00</updated>
+ <updated>2014-11-28T09:55:20+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>hadoop 2.4.1 上安装spark 1.1.0</title>
+   <link href="http://i.justpic.org/2014/11/25/hadoop-241-spark-110"/>
+   <updated>2014-11-25T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/11/25/hadoop-241-spark-110</id>
+   <content type="html">&lt;h3&gt;Yarn模式安装Spark 1.1.0&lt;/h3&gt;
+
+&lt;p&gt;1.在github上下载Spark源码到本地:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/apache/spark.git
+cd spark
+git checkout v1.1.0 #取出1.1.0版本的saprk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.修改pom.xml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;protobuf.version&amp;gt;2.5.0&amp;lt;/protobuf.version&amp;gt;  
+#修改为hadoop所使用的对应hadoop版本
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.编译:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./make-distribution.sh --tgz --skip-java-test -Dyarn.version=2.4.1
+-Dhadoop.version=2.4.1 -Pyarn
+#生成spark-1.1.0-bin.tgz文件
+tar -zxvf spark-1.1.0-bin.tgz 
+mv spark-1.1.0-bin.tgz/* /usr/local/spark/
+sudo adduser spark
+chown -R spark.spark /usr/local/spark
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4.添加环境变量:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export SPARK_HOME=/usr/local/spark
+export
+SPARK_HOME=$SPARK_HOME/lib/spark-assembly-1.0.2-hadoop2.4.1.jar
+export PATH=$SPARK_HOME/bin:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.修改conf目录下的spark-env.sh,添加环境变量:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export HADOOP_CONF=$HADOOP_INSTALL/etc/hadoop
+export YARN_CONF_dIR=$HADOOP_INSTALL/etc/hadoop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;6.测试:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;spark-submit --class org.apache.spark.example.SparkPi --master \
+yarn-cluster --num-executors 1 --driver-memory 1g --executor-memory
+1g --executor-cores 1 lib/spark-examples*.jar 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;7.使用PySpark:&lt;br/&gt;
+交互终端&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pyspark --master yarn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ipython Notebook&lt;br/&gt;
+把下面代码加到~/.bashrc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function pyspark_yarn() {
+PORT=$1
+NOTEBOOK_DIR=$2
+source /home/spark/pyenvs/py2.7/bin/activate   
+export IPYTHON=1
+export IPYTHON_OPTS=&quot;notebook --ip=0.0.0.0 --port=$PORT
+--notebook-dir=$NOTEBOOK_DIR --matplotlib=inline --no-browser&quot;
+$SPARK_HOME/bin/pyspark --master yarn --deploy-mode client $*
+--driver-memory 1G --num-executors 2 --executor-cores 2
+}
+
+source ~/.bashrc
+pyspark port work_directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;进入到http://localhost:port访问Ipython Notebook&lt;/p&gt;
+
+&lt;p&gt;tips:
+mvn download the dependency libs to the dir lib
+mvn dependency:copy-dependencies -DoutputDirectory=lib
+-DincludeScope=compile&lt;/p&gt;
+
+&lt;p&gt;参考&lt;br/&gt;
+&lt;a href=&quot;http://blog.csdn.net/jiushuai/article/details/38757999&quot;&gt;spark 1.1.0 on hadoop
+2.4.1安装笔记&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.zhihu.com/question/23655827&quot;&gt;知乎上关于Spark入门学习的回答&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ubuntu 14.04 install hadoop 2.4.1 记录</title>
+   <link href="http://i.justpic.org/2014/11/22/ubuntu-install-hadoop"/>
+   <updated>2014-11-22T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2014/11/22/ubuntu-install-hadoop</id>
+   <content type="html">&lt;h3&gt;Ubuntu 14.04 install Hadoop 2.4.1笔记&lt;/h3&gt;
+
+&lt;h4&gt;说明:&lt;/h4&gt;
+
+&lt;p&gt;集群机器:
+Master: 10.211.55.1&lt;br/&gt;
+Slave1: 10.211.55.10&lt;br/&gt;
+Slave2&amp;hellip;&lt;br/&gt;
+这里还是以两台机器为例:Master和Slave1.&lt;/p&gt;
+
+&lt;p&gt;下载好hadoop-2.4.1的执行文件包和安装好java执行环境(这里选择的是oracle-java7-installer).  &lt;br/&gt;
+为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hadoop,以及用户目录/home/hadoop  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在Master和Slave1上分别编辑文件/etc/hosts:(添加以下两行)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;10.211.55.1  Master  
+10.211.55.10 Slave1   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;完成hosts修改后,保证Master和Slave1之间能够ping通.&lt;br/&gt;
+ssh无密码登录配置&lt;br/&gt;
+Master节点终端上操作:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/.ssh
+ssh-keygen -t rsa  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Master节点需要无密码登录ssh本机,Master节点上操作:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cat ~/.ssh/id_rsa.pub&amp;gt;&amp;gt;~/.ssh/authorized_keys  
+ssh Master #测试  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将Master的公钥传输到Slave1节点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop@Slave1  #ssh-copy-id 把Master的公钥追加到Slave1的.ssh/authorized_keys上
+ssh hadoop@Slave1  #or ssh Slave1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;配置完网络交互环境后,下面进行hadoop配置文件的设置:&lt;br/&gt;
+Master节点上操作&lt;br/&gt;
+1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.&lt;br/&gt;
+2.进入到$HADOOP_HOME/etc/hadoop目录下,对slave,core-site.xml,hdfs-site.xml,mapred-site.xml(该文件若不存在,需要从模板中复制一份)&lt;br/&gt;
+slave文件中记录Slave的名字Slave1(如果有多个Slave记录多个对应的名字).&lt;br/&gt;
+core-site.xml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;fs.defaultFS&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;hdfs://Master:9000&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;file:/usr/local/hadoop/tmp&amp;lt;/value&amp;gt;
+    &amp;lt;description&amp;gt;Abase for other temporary directories.&amp;lt;/description&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;hdfs-site.xml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;dfs.namenode.secondary.http-address&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;Master:50090&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;dfs.namenode.name.dir&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;file:/usr/local/hadoop/tmp/dfs/name&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;dfs.datanode.data.dir&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;file:/usr/local/hadoop/tmp/dfs/data&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;1&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mapred-site.xml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+&amp;lt;name&amp;gt;mapreduce.framework.name&amp;lt;/name&amp;gt;
+&amp;lt;value&amp;gt;yarn&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;yarn-site.xml:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;yarn.resourcemanager.hostname&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;Master&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property&amp;gt;
+    &amp;lt;name&amp;gt;yarn.nodemanager.aux-services&amp;lt;/name&amp;gt;
+    &amp;lt;value&amp;gt;mapreduce_shuffle&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.配置好hadoop相关配置文件后,将Master上的整个Hadoop安装目录复制到各个Slave节点上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scp -r $HADOOP_HOME Slave1:~/ 
+ssh Slave
+sudo chown -R hadoop.hadoop $HADOOP_HOME #$HADOOP_HOME为Slave节点上的Hadoop安装目录  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4.初始化namenode和启动hadoop集群&lt;br/&gt;
+Master上操作:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hdfs namenode -format
+start-dfs.sh
+start-yarn.sh
+
+jps  #检查是否启动了Nameode,SecondaryNameNode,ResourceManager,(Jps)进程
+ssh Slave1 #登录到Slave1 
+jps #检查是否启动了DataNode,NodeManager,(Jps)进程.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.检查DataNode运行情况:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hdfs dfsadmin -report #Master节点上操作
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hadoop安装完毕!&lt;br/&gt;
+参考资料:&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2012/09/18/2689902.html&quot;&gt;Hadoop2.0详细配置教程&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;https://www.evernote.com/shard/s185/sh/fd5ec181-a6b6-4a74-9261-38e0754b65da/f62975e507065959e1259690c5ab1c5a&quot;&gt;hadoop全分布式集群模式的搭建实验&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2013/05/18/3085248.html&quot;&gt;使用Ambari快速部署Hadoop大数据环境&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;Writing an hadoop mapreduce program in python&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/end/archive/2012/08/13/2636175.html&quot;&gt;如何使用python为Hadoop编写一个简单的MapReduce&lt;/a&gt;
+&lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;writing an hadoop mapreduce program in python&lt;/a&gt;
+&lt;a href=&quot;http://blog.csdn.net/wf1982/article/details/8798870&quot;&gt;使用Vagrant在虚拟机安装hadoop集群&lt;/a&gt;
+&lt;a href=&quot;http://www.letiantian.me/2014-10-16-hadoop-2-4-1-stand-alone-install-and-config/&quot;&gt;hadoop
+2.4.1单机伪分布式安装和配置&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.powerxing.com/install-hadoop-cluster-2-4-1/&quot;&gt;Hadoop 集群安装配置教程Hadoop 2.4.1/Ubuntu
+14.04&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/&quot;&gt;Yarn
+introduction&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>html5新特性</title>
@@ -450,11 +687,11 @@ l or GMM中&lt;br/&gt;
  其中 9）、10）、11）经常是成三成双的出现&lt;br/&gt;
  12）Kernel Methods
     基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;br/&gt;
-比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;
-
-&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;&lt;/li&gt;
+比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
+
+&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;
 </content>
  </entry>
  
