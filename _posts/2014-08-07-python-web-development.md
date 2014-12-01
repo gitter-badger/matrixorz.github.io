@@ -27,4 +27,6 @@ pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好
 hdf5的使用可参考  
 [datafeed](https://github.com/yinhm/datafeed)  
 [large data flow in pandas](http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas)  
-mongodb的使用可参考[openquant]()  
+mongodb的使用可参考[openquant]()   
+[Understand
+tornado](http://golubenco.org/understanding-the-code-inside-tornado-the-asynchronous-web-server-powering-friendfeed.html)  
