@@ -5,7 +5,7 @@ title: "About"
 
 About Me
 ======
-I'm HaiCao(Chinese:曹海),A python programmer,I am intrested in statistic and Financial Modeling.
+I'm Neros,A python programmer,I am intrested in statistic and Financial Modeling.
 I like travel and movies when i am free.
 In the virtual world,I often go to the sites follows:
 
