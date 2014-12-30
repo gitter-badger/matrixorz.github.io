@@ -26,4 +26,6 @@ Resources
 [好东西传送门](http://hao.memect.com/?s=)  
 [TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html)  
 [Computational Modeling
-Group](http://cmg.soton.ac.uk/research/categories/programming-languages/python/)
+Group](http://cmg.soton.ac.uk/research/categories/programming-languages/python/)  
+[online cv
+journals](http://www.cse.iitm.ac.in/~sdas/vplab/onlinecvjournals.html)

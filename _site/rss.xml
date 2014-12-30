@@ -5,10 +5,68 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2014-11-28T09:55:20+08:00</lastBuildDate>
-        <pubDate>2014-11-28T09:55:20+08:00</pubDate>
+        <lastBuildDate>2014-12-13T01:09:17+08:00</lastBuildDate>
+        <pubDate>2014-12-13T01:09:17+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>RHadoop环境搭建</title>
+                <description>&lt;h3&gt;Rhadoop环境搭建&lt;/h3&gt;
+
+&lt;p&gt;在集成R和hadoop之前需要将hadoop以及R运行环境安装好,hadoop的安装可参见&lt;a href=&quot;http://i.justpic.org/2014/11/22/ubuntu-install-hadoop/&quot;&gt;hadoop2.4.1安装笔记&lt;/a&gt;.&lt;br/&gt;
+1.下载相关安装包:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$wget https://raw.githubusercontent.com/RevolutionAnalytics/rhdfs/master/build/rhdfs_1.0.8.tar.gz
+$wget https://raw.githubusercontent.com/RevolutionAnalytics/rmr2/3.1.0/build/rmr2_3.1.0.tar.gz 
+$wget https://raw.githubusercontent.com/RevolutionAnalytics/rhbase/master/build/rhbase_1.2.0.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.安装R包:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$R
+&amp;gt;install.packages(c(&quot;rJava&quot;, &quot;Rcpp&quot;, &quot;RJSONIO&quot;, &quot;bitops&quot;, &quot;digest&quot;, &quot;functional&quot;, &quot;stringr&quot;, &quot;plyr&quot;, &quot;reshape2&quot;, &quot;caTools&quot;))
+&amp;gt;install.packages(pkgs=&quot;rhdfs_1.0.8.tar.gz&quot;)
+&amp;gt;install.packages(pkgs=&quot;rmr2_3.1.0.tar.gz&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.启动hadoop后测试安装是否成功&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;library(rhdfs)
+&amp;gt;hdfs.init()
+&amp;gt;hdfs.ls(&quot;/&quot;)
+&amp;gt;library(rmr2)
+&amp;gt;from.dfs(to.dfs(1:100))
+&amp;gt;from.dfs(mapreduce(to.dfs(1:100)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;eclipse上搭建R开发环境&lt;/h3&gt;
+
+&lt;p&gt;eclipse上通过StatET来开发R程序,可以通过安装StatET直接在eclipse上建立R项目并执行R语言程序.
+R与Java语言的交互是通过JRI来完成的,需要在eclipse中安装RJava Eclipse Plugin和加载jri包来完成.jri的包的位置在rjava包的安装目录下面&lt;/p&gt;
+
+&lt;h3&gt;eclipse上搭建hadoop开发环境&lt;/h3&gt;
+
+&lt;p&gt;安装hadoop eclipse插件来开发hadoop环境下的mapreduce程序:&lt;br/&gt;
+具体插件安装方式可以参见&lt;a href=&quot;https://github.com/winghc/hadoop2x-eclipse-plugin.git&quot;&gt;hadoop2x-eclipse-plugin&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;eclipse上WTP插件的安装&lt;/h3&gt;
+
+&lt;p&gt;WTP方便在eclipse上开发J2EE程序,可以通过添加源地址方便的安装:&lt;br/&gt;
+源地址的一般格式为http://download.eclipse.org/webtools/repository/kepler(eclipse version)  &lt;br/&gt;
+Spark结合R语言开发&amp;hellip;&lt;br/&gt;
+参考:&lt;br/&gt;
+&lt;a href=&quot;http://www.cnblogs.com/honglvlan/p/3732769.html&quot;&gt;Install RHadoop with Hadoopn 2.2&lt;/a&gt;
+&lt;a href=&quot;https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads&quot;&gt;RHadoop wiki&lt;/a&gt;
+&lt;a href=&quot;https://www.evernote.com/shard/s185/sh/744fa0fe-495d-4406-b546-99ed9a71458f/d32c1e6d1ef2796a2515ad408d28241f&quot;&gt;eclipse安装StatET&lt;/a&gt;
+&lt;a href=&quot;http://www.distream.org/?p=447&quot;&gt;JRI的问题&lt;/a&gt;
+&lt;a href=&quot;http://dirk.eddelbuettel.com/papers/useR2010hpcTutorialHandout.pdf&quot;&gt;R语言学习资料&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3MTI0NTUyMQ==&amp;amp;mid=200139451&amp;amp;idx=1&amp;amp;sn=8a1188528cf06cf5ec46736eb1a0f588&amp;amp;scene=2&amp;amp;from=timeline&amp;amp;isappinstalled=0#rd&quot;&gt;combine Hadoop with R&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://i.justpic.org/2014/11/28/rhadoop</link>
+                <guid>http://i.justpic.org/2014/11/28/rhadoop</guid>
+                <pubDate>2014-11-28T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>hadoop 2.4.1 上安装spark 1.1.0</title>
@@ -93,7 +151,9 @@ mvn dependency:copy-dependencies -DoutputDirectory=lib
 &lt;p&gt;参考&lt;br/&gt;
 &lt;a href=&quot;http://blog.csdn.net/jiushuai/article/details/38757999&quot;&gt;spark 1.1.0 on hadoop
 2.4.1安装笔记&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.zhihu.com/question/23655827&quot;&gt;知乎上关于Spark入门学习的回答&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://www.zhihu.com/question/23655827&quot;&gt;知乎上关于Spark入门学习的回答&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://nbviewer.ipython.org/gist/fperez/6384491/00-Setup-IPython-PySpark.ipynb&quot;&gt;setting up the Ipython Notebook  with PySpark and AMPCamp EC2
+cluster&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/11/25/hadoop-241-spark-110</link>
                 <guid>http://i.justpic.org/2014/11/25/hadoop-241-spark-110</guid>
@@ -101,7 +161,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=lib
         </item>
 
         <item>
-                <title>Ubuntu 14.04 install hadoop 2.4.1 记录</title>
+                <title>Ubuntu 14.04 install hadoop 2.4.1 note</title>
                 <description>&lt;h3&gt;Ubuntu 14.04 install Hadoop 2.4.1笔记&lt;/h3&gt;
 
 &lt;h4&gt;说明:&lt;/h4&gt;
@@ -146,7 +206,7 @@ ssh hadoop@Slave1  #or ssh Slave1
 
 &lt;p&gt;配置完网络交互环境后,下面进行hadoop配置文件的设置:&lt;br/&gt;
 Master节点上操作&lt;br/&gt;
-1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.&lt;br/&gt;
+1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.4.1.jar设置到HADOOP_STREAMING环境变量中,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.&lt;br/&gt;
 2.进入到$HADOOP_HOME/etc/hadoop目录下,对slave,core-site.xml,hdfs-site.xml,mapred-site.xml(该文件若不存在,需要从模板中复制一份)&lt;br/&gt;
 slave文件中记录Slave的名字Slave1(如果有多个Slave记录多个对应的名字).&lt;br/&gt;
 core-site.xml:&lt;/p&gt;
@@ -800,7 +860,9 @@ pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好
 hdf5的使用可参考&lt;br/&gt;
 &lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;&lt;br/&gt;
-mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt;&lt;/p&gt;
+mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt; &lt;br/&gt;
+&lt;a href=&quot;http://golubenco.org/understanding-the-code-inside-tornado-the-asynchronous-web-server-powering-friendfeed.html&quot;&gt;Understand
+tornado&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/07/python-web-development</link>
                 <guid>http://i.justpic.org/2014/08/07/python-web-development</guid>

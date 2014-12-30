@@ -20,6 +20,7 @@ http://i.justpic.org/atom.xml
 http://i.justpic.org/page2/index.html
 http://i.justpic.org/page3/index.html
 
+http://i.justpic.org/2014/11/28/rhadoop
 http://i.justpic.org/2014/11/25/hadoop-241-spark-110
 http://i.justpic.org/2014/11/22/ubuntu-install-hadoop
 http://i.justpic.org/2014/10/20/html5
