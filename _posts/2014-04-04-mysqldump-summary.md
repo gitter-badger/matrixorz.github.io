@@ -41,6 +41,18 @@ mysqldump字符集设置
 显示当前用户    
     mysql>select USER();
 {% endhighlight %}  
+
+###Mysql启用远程
+{% highlight bash %}
+    cd /etc/mysql
+    vi my.cnf  #注释bind-address
+    mysql -uusername -ppassword #进入到mysql
+    grant all privileges on *.* to username@'deniedhost' identified by 'password';
+    flush privileges;
+    quit;
+{% endhighlight %}
+Mysql启用远程的目的可能还是为了解决windows python mysql的问题：
+在Windows上只需要安装[MySQL-python](http://www.codegood.com/download/11/)后，后期只需要连接到远程mysql后就可以了
 ###Mysql 主从复制  
 mysql复制的用途:  
 读取扩展
