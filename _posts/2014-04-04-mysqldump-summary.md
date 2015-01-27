@@ -48,6 +48,7 @@ mysqldump字符集设置
     vi my.cnf  #注释bind-address
     mysql -uusername -ppassword #进入到mysql
     grant all privileges on *.* to username@'deniedhost' identified by 'password';
+    GRANT ALL PRIVILEGES ON *.* TO user_name@'%' IDENTIFIED BY ‘pass_word’;  #if dynamic ip
     flush privileges;
     quit;
 {% endhighlight %}
@@ -114,3 +115,4 @@ left join加上where 条件
 
 
 [无法启动mongodb的解决方法](http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04)
+[启用远程mysql](http://supportcenter.verio.com/KB/questions.php?questionid=494)
