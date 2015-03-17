@@ -4,13 +4,35 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2014-12-13T01:09:17+08:00</updated>
+ <updated>2015-03-14T11:57:53+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>use python in windows</title>
+   <link href="http://i.justpic.org/2015/03/14/use-python-in-windows"/>
+   <updated>2015-03-14T00:00:00+08:00</updated>
+   <id>http://i.justpic.org/2015/03/14/use-python-in-windows</id>
+   <content type="html">&lt;h3&gt;windows 64安装libxml2dom小记&lt;/h3&gt;
+
+&lt;h5&gt;用于解决no module named libxmlmods等错误&lt;/h5&gt;
+
+&lt;p&gt;此&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/&quot;&gt;网站&lt;/a&gt;上面有编译好了的各种python windows包.&lt;br/&gt;
+我们首先下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/libxml2_python-2.9.2-cp27-none-win_amd64.whl&quot;&gt;libxml2-python&lt;/a&gt;&lt;br/&gt;
+然后使用pip wheel安装：&lt;br/&gt;
+    pip wheeel libxml2_python-2.9.2-cp27-none-win_amd64.whl&lt;br/&gt;
+    pip install &amp;ndash;use-wheel &amp;ndash;no-index &amp;ndash;find-links=wheelhouse libxml2-python
+    easy_install libxml2dom&lt;/p&gt;
+
+&lt;p&gt;至此安装libxml2dom完毕&lt;/p&gt;
+
+&lt;h3&gt;windows 64安装pycurl小记&lt;/h3&gt;
+</content>
+ </entry>
  
  <entry>
    <title>RHadoop环境搭建</title>
@@ -502,8 +524,7 @@ introduction&lt;/a&gt;&lt;/p&gt;
    <id>http://i.justpic.org/2014/09/06/ubuntu-1404-install-haskell</id>
    <content type="html">&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; 
-sudo aptitude build-dep ghc
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo aptitude build-dep ghc
 sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
 wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
 tar jxvf ghc-7.8.3-src.tar.bz2
@@ -511,17 +532,15 @@ tar jxvf ghc-7.8.3-src.tar.bz2
 ./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/ghc
 make -j8
 sudo paco -D make install
-sudo aptitude purge ghc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+sudo aptitude purge ghc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;编辑.bashrc文件&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/ghc/bin:$PATH&amp;quot;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/ghc/bin:$PATH&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
 ghci   &lt;span class=&quot;c&quot;&gt;#验证是否安装成功&lt;/span&gt;
-sudo aptitude purge ghc 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+sudo aptitude purge ghc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Cabal是Haskell的一个package，提供Haskell包安装框架，类似python的easy_install、debian的apt-get等。
@@ -529,15 +548,14 @@ cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，�
 安装了cabal-install就可以了，因为cabal-install依赖与cabal，安装程序会自动下载cabal并安装。
 下面是安装cabal的步骤&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
 tar zxvf cabal-install-1.20.0.3.tar.gz
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;cabal-install-2.10.0.3
 ./bootstrap.sh
 vim ~/.bahsrc
 &lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.cabal/bin:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
-cabal update
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+cabal update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;安装包haskell-platform中包含这些包，但是由于使用apt-get安装时不能获得最新的版本或者会出现一些问题，比如network-2.6.0.2通过cabal总是安装不上，报编译错误
@@ -545,8 +563,7 @@ cabal update
 
 &lt;p&gt;在安装相关haskell包的时候可能会出现broken package错误，可以通过以下命令在haskell中移除broken package&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;ghc-pkg check --simple-output &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -n 1 ghc-pkg unregister --force
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ghc-pkg check --simple-output &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -n &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; ghc-pkg unregister --force&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href=&quot;http://howistart.org/posts/haskell/1&quot;&gt;how i start&lt;/a&gt;&lt;/p&gt;
@@ -620,36 +637,32 @@ $$Cov(S)=\frac{S^{T}S}{N-1}$$&lt;br/&gt;
 协方差矩阵的计算方式(matlab代码实现)：&lt;br/&gt;
 随机产生一个10*3维的整数矩阵作为样本集，10为样本的个数，3为样本的维数。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;协方差是计算不同维度间的协方差，样本矩阵的每行是一个样本，每列为一个维度，所以我们要按列计算均值。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;计算dim1与dim2,dim1与dim3,dim2与dim3的协方差：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 协方差矩阵的对角线上就是各个维度上的方差
 &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;协方差矩阵也可以这样计算，先让样本矩阵中心化，即每一维度减去该维度的均值，使每一维度上的均值为0,然后直接用新得到的样本矩阵乘上它的转置，然后除以(N-1)。该方法可以由前面的公式推导出来。
 matlab代码实现如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repmat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;%  中心化样本矩阵，使各维度均值为0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repmat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;%  中心化样本矩阵，使各维度均值为0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。&lt;br/&gt;
@@ -825,7 +838,8 @@ l or GMM中&lt;br/&gt;
 若散射变换的方向数为C，总阶数为m，则第q阶散射变换沿频率递减的路径数为\(C^{q}(^J_q)\)，假设图像的橡树大小为N，采样值为\(\omega 2^{J}\),则每条散射路径有\(N\omega^{-2}2^{-2J}\)个系数，则所有的系数个数为 &lt;br/&gt;
 $$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$&lt;/p&gt;
 
-&lt;p&gt;参考文章与资料：&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;散射卷积网络、小波变换、分形、自然常数之间的关系总是相互缠绕，数学搞不懂
+参考文章与资料：&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;&lt;br/&gt;
@@ -1062,34 +1076,29 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
    <id>http://i.justpic.org/2014/06/06/vps-initialization</id>
    <content type="html">&lt;p&gt;添加用户：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    useradd options &amp;lt;username&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;useradd options &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;添加用户组:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    groupadd options &amp;lt;groupname&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;groupadd options &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;配置权限:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;username&amp;gt; all=(all:all) all&amp;#39;&lt;/span&gt; /etc/sudoers
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;username&amp;gt; all=(all:all) all&amp;#39;&lt;/span&gt; /etc/sudoers&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;ssh登陆禁用密码:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;  
-&lt;span class=&quot;c&quot;&gt;#本机：  &lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#本机：  &lt;/span&gt;
     ssh-keygen  &lt;span class=&quot;c&quot;&gt;#生成公钥、密钥对&lt;/span&gt;
     ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    &lt;span class=&quot;c&quot;&gt;#将公钥复制到远程服务器的authorized_keys中（server端authorized_keys指定公钥，客户端 -i参数指定私钥）  &lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#服务器：&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#登陆服务器后，修改/etc/ssh/sshd_config保存  &lt;/span&gt;
     PasswordAuthentication no    &lt;span class=&quot;c&quot;&gt;#（经用密码登陆）&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#重启ssh  &lt;/span&gt;
-    sudo service ssh restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo service ssh restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -1105,7 +1114,7 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
 &lt;p&gt;nginx 配置情况&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    upstream tunnel&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;upstream tunnel&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
        server 127.0.0.1:8080&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -1119,8 +1128,7 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;#ssh reverse &lt;/span&gt;
     ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
-    &lt;span class=&quot;c&quot;&gt;#port is your local application used ,and url is the url you will to visit public &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;c&quot;&gt;#port is your local application used ,and url is the url you will to visit public&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt; is a localtunnel site that can expose your local website.&lt;/p&gt;
@@ -1151,14 +1159,12 @@ Then it means nginx or some other process is already using port 80.&lt;/p&gt;
 
 &lt;p&gt;You can kill it using:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo fuser -k 80/tcp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo fuser -k 80/tcp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;And then try restarting nginx again:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    service nginx start
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;service nginx start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </content>
  </entry>
@@ -1181,8 +1187,7 @@ MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而�
 
 &lt;h5&gt;1.MEX文件&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;  
-    &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include “mex.h”  &lt;/span&gt;
     &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;    *timestwo.c-example found in API guide  &lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;    *  &lt;/span&gt;
@@ -1191,7 +1196,7 @@ MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而�
 &lt;span class=&quot;cm&quot;&gt;    *This is a MEX-File for MATLAB.  &lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;    *Copyright(c)  &lt;/span&gt;
 &lt;span class=&quot;cm&quot;&gt;    */&lt;/span&gt;  
-    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timestwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt; 
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timestwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]);&lt;/span&gt; 
     &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timestwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; 
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
     &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
@@ -1229,16 +1234,14 @@ MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而�
     &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxGetPr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxGetPr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plhs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;timestwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;matlab命令行上输入以下语句：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    mex testmex.cpp&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mex testmex.cpp&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;testmex&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;testmex&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;2.MAT文件：&lt;/h5&gt;
@@ -1258,13 +1261,13 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
 
 &lt;h5&gt;4、主要函数举例:&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;    &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——打开&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;创建&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——打开&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;创建&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——打开&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;创建一个&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;文件；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matClose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pMF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——关闭一个&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;文件；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxCreateDoubleMatrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxComplexity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;err&quot;&gt;#创建一个（复）双精度矩阵；&lt;/span&gt;
+       &lt;span class=&quot;cp&quot;&gt;#创建一个（复）双精度矩阵；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxCreateSparse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nzmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxComplexity&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-       &lt;span class=&quot;err&quot;&gt;#创建一个稀疏矩阵；&lt;/span&gt;
+       &lt;span class=&quot;cp&quot;&gt;#创建一个稀疏矩阵；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matGetNextArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pMF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——获得&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;文件里面下一个矩阵；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxGetName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——获得矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的名称；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxSetName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——为矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;设置一个名称；&lt;/span&gt;
@@ -1274,9 +1277,8 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxGetIr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——获得稀疏矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ir&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;指针；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxGetJc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——获得稀疏矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jc&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;指针；&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;matPutArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pMF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;err&quot;&gt;#把矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pA&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;存储入&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;文件&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pMAF&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;；&lt;/span&gt;  
-    &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxDestroyArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——释放矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（把它从内存中撤销）；&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+     &lt;span class=&quot;cp&quot;&gt;#把矩阵pA存储入MAT文件pMAF；  &lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxDestroyArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——释放矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（把它从内存中撤销）；&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -1375,10 +1377,9 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
    <id>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</id>
    <content type="html">&lt;p&gt;三条命令搞定：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;sudo apt-get install oracle-java8-installer
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java7-installer
-sudo update-alternatives --config java
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -1399,40 +1400,33 @@ sudo update-alternatives --config java
 
 &lt;p&gt;/etc/apt/sources.list中添加如下两行：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
-    deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
+    deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;检索签名：&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;sudo apt-key add -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;sudo apt-key add -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;安装与llvm-3.4,clang-3.4相关的所有包：&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    apt-get install clang-3.4 clang-3.4-doc libclang-common-3.4-dev libclang-3.4-dev libclang1-3.4 libclang1-3.4-dbg libllvm-3.4-ocaml-dev libllvm3.4 libllvm3.4-dbg lldb-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-doc llvm-3.4-examples llvm-3.4-runtime clang-modernize-3.4 clang-format-3.4 python-clang-3.4 lldb-3.4-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;apt-get install clang-3.4 clang-3.4-doc libclang-common-3.4-dev libclang-3.4-dev libclang1-3.4 libclang1-3.4-dbg libllvm-3.4-ocaml-dev libllvm3.4 libllvm3.4-dbg lldb-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-doc llvm-3.4-examples llvm-3.4-runtime clang-modernize-3.4 clang-format-3.4 python-clang-3.4 lldb-3.4-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;安装libcxx：&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;查看g++使用的头文件:&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;  
-    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; g++ -Wp,-v -x c++ - -fsyntax-only
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; g++ -Wp,-v -x c++ - -fsyntax-only&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;将会输出类似如下结果：&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; 
-    ignoring nonexistent directory &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/include/x86_64-linux-gnu&amp;quot;&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ignoring nonexistent directory &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/include/x86_64-linux-gnu&amp;quot;&lt;/span&gt;
     ignoring nonexistent directory &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../../../x86_64-linux-gnu/include&amp;quot;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;### #include &amp;quot;...&amp;quot; search starts here:&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;### include &amp;lt;...&amp;gt; search starts here:&lt;/span&gt;
@@ -1444,47 +1438,42 @@ sudo update-alternatives --config java
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
     /usr/include/x86_64-linux-gnu
     /usr/include
-    End of search list.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    End of search list.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;编译安装libcxx：&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang &lt;span class=&quot;nv&quot;&gt;CXX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang++ cmake -G &lt;span class=&quot;s2&quot;&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; -DLIBCXX_CXX_ABI&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;libsupc++ - &lt;span class=&quot;nv&quot;&gt;DLIBCXX_LIBSUPCXX_INCLUDE_PATHS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&amp;quot;&lt;/span&gt; -DCMAKE_BUILD_TYPE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Release -DCMAKE_INSTALL_PREFIX&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr &amp;lt;libc++-source-dir&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang &lt;span class=&quot;nv&quot;&gt;CXX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang++ cmake -G &lt;span class=&quot;s2&quot;&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; -DLIBCXX_CXX_ABI&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;libsupc++ - &lt;span class=&quot;nv&quot;&gt;DLIBCXX_LIBSUPCXX_INCLUDE_PATHS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&amp;quot;&lt;/span&gt; -DCMAKE_BUILD_TYPE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Release -DCMAKE_INSTALL_PREFIX&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr &amp;lt;libc++-source-dir&amp;gt;
     make
-    sudo make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h5&gt;安装libcxxabi&lt;/h5&gt;
 
 &lt;p&gt;首先安装相关依赖：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;下载源码并编译：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libcxxabi/lib
     ./buildit
     sudo cp libc++abi.so.1.0 /usr/lib
     sudo ln -s /usr/lib/libc++abi.so.1.0 /usr/lib/libc++abi.so.1
-    sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;使用libc++abi来安装libc++&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libcxx
     mkdir build
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;build
     &lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang &lt;span class=&quot;nv&quot;&gt;CXX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang++ cmake -G &lt;span class=&quot;s2&quot;&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; -DLIBCXX_CXX_ABI&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;libcxxabi -  &lt;span class=&quot;nv&quot;&gt;DLIBCXX_LIBCXXABI_INCLUDE_PATHS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;libc++abi-source-dir&amp;gt;/include&amp;quot;&lt;/span&gt; -  &lt;span class=&quot;nv&quot;&gt;DCMAKE_BUILD_TYPE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Release -DCMAKE_INSTALL_PREFIX&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr ../
     make
-    sudo make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;至此ubuntu 12.04上的LLVM环境就算搭建好了。&lt;/p&gt;
@@ -1498,7 +1487,7 @@ sudo update-alternatives --config java
    <id>http://i.justpic.org/2014/04/04/mysqldump-summary</id>
    <content type="html">&lt;h3&gt;Mysql导入导出&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;导出所有库  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;导出所有库  
     mysqldump -uusername -ppassword --all-databases&amp;gt;all.sql
 导入所有库
     mysql&amp;gt;source all.sql&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1516,22 +1505,34 @@ sudo update-alternatives --config java
     mysql&amp;gt;user db1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     mysql&amp;gt;source tb1tb2.sql&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 mysqldump字符集设置
-    &lt;span class=&quot;nv&quot;&gt;$mysqldump&lt;/span&gt; -uusername -ppassword --default-character-set&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8 db1 table1&amp;gt;tb1.sql
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;nv&quot;&gt;$mysqldump&lt;/span&gt; -uusername -ppassword --default-character-set&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8 db1 table1&amp;gt;tb1.sql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Mysql用户管理&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;创建用户
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;创建用户
     mysql&amp;gt; insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;phplamp&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;1234&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     mysql&amp;gt;grant all privileges on *.* to jee@localhost identified by ‘123′；
 修改用户密码 
     mysql&amp;gt; UPDATE mysql.user SET &lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PASSWORD&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;’新密码’&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; WHERE &lt;span class=&quot;nv&quot;&gt;User&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’root’&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     mysql&amp;gt; FLUSH PRIVILEGES&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 显示当前用户    
-    mysql&amp;gt;select USER&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    mysql&amp;gt;select USER&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+
+&lt;h3&gt;Mysql启用远程&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /etc/mysql
+    vi my.cnf  &lt;span class=&quot;c&quot;&gt;#注释bind-address&lt;/span&gt;
+    mysql -uusername -ppassword &lt;span class=&quot;c&quot;&gt;#进入到mysql&lt;/span&gt;
+    grant all privileges on *.* to username@&lt;span class=&quot;s1&quot;&gt;&amp;#39;deniedhost&amp;#39;&lt;/span&gt; identified by &lt;span class=&quot;s1&quot;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    GRANT ALL PRIVILEGES ON *.* TO user_name@&lt;span class=&quot;s1&quot;&gt;&amp;#39;%&amp;#39;&lt;/span&gt; IDENTIFIED BY ‘pass_word’&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#if dynamic ip&lt;/span&gt;
+    flush privileges&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    quit&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Mysql启用远程的目的可能还是为了解决windows python mysql的问题：
+在Windows上只需要安装&lt;a href=&quot;http://www.codegood.com/download/11/&quot;&gt;MySQL-python&lt;/a&gt;后，后期只需要连接到远程mysql后就可以了&lt;/p&gt;
 
 &lt;h3&gt;Mysql 主从复制&lt;/h3&gt;
 
@@ -1576,10 +1577,9 @@ beta&gt; show schemas;&lt;/p&gt;
 
 &lt;h3&gt;Mysql 创建视图&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; * from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-create view v as &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-create view v&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vid,vname,vage&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; as &lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; * from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+create view v&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vid,vname,vage&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;on,where,having的区别&lt;br/&gt;
@@ -1594,7 +1594,8 @@ left join加上where 条件
 第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.&lt;br/&gt;
 第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04&quot;&gt;无法启动mongodb的解决方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04&quot;&gt;无法启动mongodb的解决方法&lt;/a&gt;
+&lt;a href=&quot;http://supportcenter.verio.com/KB/questions.php?questionid=494&quot;&gt;启用远程mysql&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1605,17 +1606,16 @@ left join加上where 条件
    <id>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</id>
    <content type="html">&lt;p&gt;命令行中输入以下命令安装相关包&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;     sudo apt-get install python-software-properties
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
      sudo add-apt-repository ppa:boost-latest/ppa
      sudo apt-get update
      sudo apt-get install libboost1.55-all-dev
      sudo add-apt-repository ppa:ubuntu-toolchain-r/test
      sudo apt-get update
      sudo apt-get install gcc-4.8 g++-4.8
-     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6 
-     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-     sudo update-alternatives --config gcc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 &lt;span class=&quot;m&quot;&gt;60&lt;/span&gt; --slave /usr/bin/g++ g++ /usr/bin/g++-4.6 
+     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt; --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+     sudo update-alternatives --config gcc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;br/&gt;
@@ -1623,24 +1623,21 @@ left join加上where 条件
 编译若出现错误： fatal error:limits can&amp;rsquo;t find?&lt;br/&gt;
 使用以下命令进行修正&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;     &lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#include &amp;lt;limits.h&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; clang -v -xc -o /dev/null -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#include &amp;lt;limits.h&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; clang -v -xc -o /dev/null -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
 其实这是一个llvm的bug&lt;br/&gt;
 临时解决方案&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300&quot;&gt;参考&lt;/a&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$cd&lt;/span&gt; /usr/lib/clang/&amp;lt;clang-version/
-    &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include include
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$cd&lt;/span&gt; /usr/lib/clang/&amp;lt;clang-version/
+    &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include include&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;再次编译可以通过。
 一个查找文件的有用命令:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$grep&lt;/span&gt; notification &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;find ./*&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$grep&lt;/span&gt; notification &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;find ./*&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -1664,8 +1661,7 @@ left join加上where 条件
    <id>http://i.justpic.org/2013/12/04/install-redmine-in-ubuntu</id>
    <content type="html">&lt;p&gt;安装redmine出现权限问题的解决方法&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    chmod 777 &lt;span class=&quot;c&quot;&gt;#命令 来解决权限问题 &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;chmod &lt;span class=&quot;m&quot;&gt;777&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#命令 来解决权限问题&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;具体安装方法可安装下面文章的方法
@@ -1767,7 +1763,7 @@ online game:&lt;br/&gt;
    <id>http://i.justpic.org/2013/10/27/install-project-on-preferati</id>
    <content type="html">&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install nginx
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install nginx
     sudo apt-get install git
     sudo apt-get install mysql-server
     sudo apt-get install python-dev
@@ -1778,67 +1774,60 @@ online game:&lt;br/&gt;
     virtualenv ~/trade
     &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/trade/bin/activate
     install numpy scipy pandas and ta-lib
-    sudo pip install Cython
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo pip install Cython&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;due to blas libs&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
     pip install numpy
-    pip install scipy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    pip install scipy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;install ta-lib&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
     wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
     sudo apt-get  install  build-essential
     tar -zxvf ta-lib-0.4.0-src.tar.gz
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;ta-lib-0.4.0
     ./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr
     make
-    sudo make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;install gevent&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
     tar -zxvf 
     ./configure
     make 
     sudo make install
     &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/www
     git clone https://github.com/pydata/pandas.git
-    git clone https://github.com/mrjbq7/ta-lib.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    git clone https://github.com/mrjbq7/ta-lib.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;update the nginx&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install python-software-properties
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
     sudo apt-get install sotware-properties-common
     sudo add-apt-repository ppa:nginx/stable
     sudo apt-get update
-    sudo apt-get install nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo apt-get install nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;mysql init&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install mysql-server libmysqld-dev
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install mysql-server libmysqld-dev
     pip install MySQL-python
-    insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;用户授权&lt;/strong&gt;&lt;br/&gt;
 给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    mysql&amp;gt;grant all privileges on *.* to username@localhost identified by &lt;span class=&quot;s1&quot;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql&amp;gt;grant all privileges on *.* to username@localhost identified by &lt;span class=&quot;s1&quot;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;
@@ -1866,11 +1855,10 @@ online game:&lt;br/&gt;
    <id>http://i.justpic.org/2013/10/18/install-numpy-scipy-on-ubuntu</id>
    <content type="html">&lt;h4&gt;linux上安装numpy scipy&lt;/h4&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo pip install numpy
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo pip install numpy
     sudo apt-get install libatlas-base-dev gfortran
     sudo pip install scipy
-    sudo pip install matplotlib   &lt;span class=&quot;c&quot;&gt;# recommended&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo pip install matplotlib   &lt;span class=&quot;c&quot;&gt;# recommended&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;
@@ -1913,7 +1901,7 @@ online game:&lt;br/&gt;
 
 &lt;p&gt;按照下面方法配置nginx时出现用户权限问题&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt; server&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;server&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     listen 4002&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     server_name localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     access_log logs/access.log&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1931,8 +1919,7 @@ online game:&lt;br/&gt;
        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
      upstream backend &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
      server 127.0.0.1:3201&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;参照&lt;a href=&quot;http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&quot;&gt;nginx 13:permission denied solved&lt;/a&gt;&lt;br/&gt;
@@ -2088,7 +2075,7 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
    <id>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</id>
    <content type="html">&lt;h4&gt;使用jquery增加元素节点&lt;/h4&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;//add one element in the parent  &lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//add one element in the parent  &lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;li&amp;gt;新增节点：数据结构&amp;lt;/li&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$li_2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;li&amp;gt;新增节点：设计模式&amp;lt;/li&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.nm_ul&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2098,8 +2085,7 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
     &lt;span class=&quot;c1&quot;&gt;//add attribute in the added element: &lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;li title=&amp;#39;新增节点：数据结构&amp;#39;&amp;gt;数据节点&amp;lt;/li&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.nm_ul&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -2137,7 +2123,7 @@ seeother(../)seeother（/）&lt;br/&gt;
 
 &lt;p&gt;代码如下:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;    &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sqlalchemy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sqlalchemy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sqlalchemy.orm&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MetaData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_engine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sqlite://&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;t1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;id&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;primary_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
@@ -2157,8 +2143,7 @@ seeother(../)seeother（/）&lt;br/&gt;
     &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sessionmaker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T2Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T2Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T2Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -2195,7 +2180,7 @@ seeother(../)seeother（/）&lt;br/&gt;
 
 &lt;h1&gt;selecttest.py&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Queue&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#create a socket&lt;/span&gt;
@@ -2263,15 +2248,12 @@ seeother(../)seeother（/）&lt;br/&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;#Remove message queue&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        &lt;span class=&quot;c&quot;&gt;#Remove message queue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;polltest.py&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;  
-    
-    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Queue&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AF_INET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SOCK_STREAM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -2346,13 +2328,12 @@ seeother(../)seeother（/）&lt;br/&gt;
                 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; exception on&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getpeername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;poller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unregister&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;del&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message_queues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+                &lt;span class=&quot;k&quot;&gt;del&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message_queues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;epolltest.py&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;errno&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;network-server&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;InitLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
@@ -2437,13 +2418,12 @@ seeother(../)seeother（/）&lt;br/&gt;
                              &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
                     &lt;span class=&quot;n&quot;&gt;epoll_fd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EPOLLIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EPOLLET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
                 &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+                    &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;commontest.py(client code)&lt;/h1&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;    &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;messages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;This is the message&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
              &lt;span class=&quot;s&quot;&gt;&amp;quot;It will be send&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
              &lt;span class=&quot;s&quot;&gt;&amp;quot;in parts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -2466,8 +2446,7 @@ seeother(../)seeother（/）&lt;br/&gt;
             &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; received &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%s&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getpeername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
                 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;closing socket&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getpeername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+                &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;strong&gt;benchmark&lt;/strong&gt;&lt;br/&gt;
@@ -2487,32 +2466,28 @@ seeother(../)seeother（/）&lt;br/&gt;
 
 &lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install python-software-properties
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
     sudo add-apt-repository ppa:fkrull/deadsnakes
     sudo apt-get update
-    sudo apt-get install python3.3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;建立软链接：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    ln -s /usr/bin/python3.3 /usr/bin/python3.3m
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo add-apt-repository ppa:fkrull/deadsnakes
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
     sudo apt-get update
-    sudo apt-get install python2.4 python2.5 python2.6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    virtualenv -p /usr/bin/python3.3 python3.3env
-    virtualenv -p /usr/bin/python2.7.5 python2.7.5env
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;virtualenv -p /usr/bin/python3.3 python3.3env
+    virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Ok!&lt;/p&gt;
@@ -2546,10 +2521,9 @@ seeother(../)seeother（/）&lt;br/&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /usr/bin/wine
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /usr/bin/wine
     sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /usr/bin/wineserver
-    sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /путь_до_л2/l2.exe
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 
@@ -2566,37 +2540,29 @@ seeother(../)seeother（/）&lt;br/&gt;
 &lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.&lt;br/&gt;
 Code:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$apt&lt;/span&gt;-get install devscripts equivs ubuntu-dev-tools 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$apt&lt;/span&gt;-get install devscripts equivs ubuntu-dev-tools 
     &lt;span class=&quot;nv&quot;&gt;$pull&lt;/span&gt;-debian-source hdf5 experimental    
     &lt;span class=&quot;nv&quot;&gt;$cd&lt;/span&gt; hdf5-*
     &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; mk-build-deps -ir
-    &lt;span class=&quot;nv&quot;&gt;$debuild&lt;/span&gt; -us -uc
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;nv&quot;&gt;$debuild&lt;/span&gt; -us -uc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,由于本机为64bit linux,下载64位下的二进制包：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$wget&lt;/span&gt; http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$wget&lt;/span&gt; http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;解压后，并在.bashrc中设置：&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$export&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$LD_LIBRARY_PATH&lt;/span&gt;:/usr/local/lib:&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/hdf5-1.8.9-linux-x86_64-shared/lib
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$export&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$LD_LIBRARY_PATH&lt;/span&gt;:/usr/local/lib:&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/hdf5-1.8.9-linux-x86_64-shared/lib
     &lt;span class=&quot;nv&quot;&gt;$export&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;HDF5_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/hdf5-1.8.9-linux-x86_64-shared
-    &lt;span class=&quot;nv&quot;&gt;$source&lt;/span&gt; .bashrc
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;span class=&quot;nv&quot;&gt;$source&lt;/span&gt; .bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;安装 blosc (可选)
 安装 lzo2-2 lzo2-dev&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;    sudo apt-get install lzo2-2 lzo2-dev
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install lzo2-2 lzo2-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;至此HDF5可用&lt;/p&gt;

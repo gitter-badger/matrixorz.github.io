@@ -80,7 +80,7 @@
 
 <p>按照下面方法配置nginx时出现用户权限问题</p>
 
-<div class="highlight"><pre><code class="bash"> server<span class="o">{</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">server<span class="o">{</span>
     listen 4002<span class="p">;</span>
     server_name localhost<span class="p">;</span>
     access_log logs/access.log<span class="p">;</span>
@@ -98,8 +98,7 @@
        <span class="o">}</span>
      upstream backend <span class="o">{</span>
      server 127.0.0.1:3201<span class="p">;</span>
-     <span class="o">}</span>
-</code></pre></div>
+     <span class="o">}</span></code></pre></div>
 
 
 <p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a><br/>
@@ -251,6 +250,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 
 
   <!--

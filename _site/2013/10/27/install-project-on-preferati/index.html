@@ -78,7 +78,7 @@
 
   <p>Install OpenQuant Project</p>
 
-<div class="highlight"><pre><code class="bash">    sudo apt-get install nginx
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install nginx
     sudo apt-get install git
     sudo apt-get install mysql-server
     sudo apt-get install python-dev
@@ -89,67 +89,60 @@
     virtualenv ~/trade
     <span class="nb">source</span> ~/trade/bin/activate
     install numpy scipy pandas and ta-lib
-    sudo pip install Cython
-</code></pre></div>
+    sudo pip install Cython</code></pre></div>
 
 
 <p><strong>due to blas libs</strong></p>
 
-<div class="highlight"><pre><code class="bash">    sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
     pip install numpy
-    pip install scipy
-</code></pre></div>
+    pip install scipy</code></pre></div>
 
 
 <p><strong>install ta-lib</strong></p>
 
-<div class="highlight"><pre><code class="bash">    <span class="nb">cd</span> ~
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~
     wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
     sudo apt-get  install  build-essential
     tar -zxvf ta-lib-0.4.0-src.tar.gz
     <span class="nb">cd </span>ta-lib-0.4.0
     ./configure --prefix<span class="o">=</span>/usr
     make
-    sudo make install
-</code></pre></div>
+    sudo make install</code></pre></div>
 
 
 <p><strong>install gevent</strong></p>
 
-<div class="highlight"><pre><code class="bash">    wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
     tar -zxvf 
     ./configure
     make 
     sudo make install
     <span class="nb">cd</span> ~/www
     git clone https://github.com/pydata/pandas.git
-    git clone https://github.com/mrjbq7/ta-lib.git
-</code></pre></div>
+    git clone https://github.com/mrjbq7/ta-lib.git</code></pre></div>
 
 
 <p><strong>update the nginx</strong></p>
 
-<div class="highlight"><pre><code class="bash">    sudo apt-get install python-software-properties
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install python-software-properties
     sudo apt-get install sotware-properties-common
     sudo add-apt-repository ppa:nginx/stable
     sudo apt-get update
-    sudo apt-get install nginx
-</code></pre></div>
+    sudo apt-get install nginx</code></pre></div>
 
 
 <p><strong>mysql init</strong></p>
 
-<div class="highlight"><pre><code class="bash">    sudo apt-get install mysql-server libmysqld-dev
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install mysql-server libmysqld-dev
     pip install MySQL-python
-    insert into mysql.user<span class="o">(</span>Host,User,Password<span class="o">)</span> values<span class="o">(</span><span class="s2">&quot;localhost&quot;</span>,<span class="s2">&quot;username&quot;</span>,password<span class="o">(</span><span class="s2">&quot;password&quot;</span><span class="o">))</span><span class="p">;</span>
-</code></pre></div>
+    insert into mysql.user<span class="o">(</span>Host,User,Password<span class="o">)</span> values<span class="o">(</span><span class="s2">&quot;localhost&quot;</span>,<span class="s2">&quot;username&quot;</span>,password<span class="o">(</span><span class="s2">&quot;password&quot;</span><span class="o">))</span><span class="p">;</span></code></pre></div>
 
 
 <p><strong>用户授权</strong><br/>
 给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。</p>
 
-<div class="highlight"><pre><code class="bash">    mysql&gt;grant all privileges on *.* to username@localhost identified by <span class="s1">&#39;password&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mysql&gt;grant all privileges on *.* to username@localhost identified by <span class="s1">&#39;password&#39;</span><span class="p">;</span></code></pre></div>
 
 
 <p><strong>install redis</strong>
@@ -294,6 +287,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 
 
   <!--
