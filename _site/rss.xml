@@ -5,8 +5,8 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2015-03-14T11:57:53+08:00</lastBuildDate>
-        <pubDate>2015-03-14T11:57:53+08:00</pubDate>
+        <lastBuildDate>2015-04-02T00:34:19+08:00</lastBuildDate>
+        <pubDate>2015-04-02T00:34:19+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -26,6 +26,19 @@
 &lt;p&gt;至此安装libxml2dom完毕&lt;/p&gt;
 
 &lt;h3&gt;windows 64安装pycurl小记&lt;/h3&gt;
+
+&lt;p&gt;首先下载&lt;a href=&quot;http://curl.haxx.se/gknw.net/7.40.0/dist-w64/curl-7.40.0-devel-mingw64.7z&quot;&gt;curl 64bit mingw&lt;/a&gt;&lt;br/&gt;
+然后git clone https://github.com/pycurl/pycurl.git，进入到pycurl目录，修改setup.py&lt;br/&gt;
+    CURL_DIR=$CURL_PATH
+ 编译，安装，完毕。
+ 以上方法还是没有安装成功，还是使用上面网站里的编译好的安装包进行安装，下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/pycurl-7.19.5.1-cp27-none-win_amd64.whl&quot;&gt;pycurl-7.19.5.1-cp27-none-win_amd64.whl&lt;/a&gt;(注意27才能安装)  &lt;br/&gt;
+ 使用以下命令进行安装：
+     pip wheel pycurl-7.19.5.1-cp27-none-win_amd64.whl
+     pip install &amp;ndash;&lt;/p&gt;
+
+&lt;h3&gt;windows上的python环境搭建：&lt;/h3&gt;
+
+&lt;p&gt;安装Anaconda。（基本上这个就够了）&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2015/03/14/use-python-in-windows</link>
                 <guid>http://i.justpic.org/2015/03/14/use-python-in-windows</guid>
@@ -839,7 +852,9 @@ $$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;&lt;br/&gt;
 &lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://techtalks.tv/talks/plenary-talk-are-deepnetworks-a-soluSon-to-curse-of-dimensionality/60315/&quot;&gt;Plenary Talk:Are Deep Networks a Solution to Curse of Dimensionality&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;https://staff.fnwi.uva.nl/t.e.j.mensink/rdg/slides/2scatnets.pdf&quot;&gt;2scatnet&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</link>
                 <guid>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</guid>
