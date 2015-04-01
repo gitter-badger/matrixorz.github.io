@@ -4,6 +4,7 @@ title: "HaiHai"
 ---
 
 <section class="content">
+<div id="main">
   <ul class="listing">
     {% for post in paginator.posts %}
       {% unless post.draft %}
@@ -13,19 +14,53 @@ title: "HaiHai"
       {% endunless %}
     {% endfor %}
   </ul>
-
-<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
   {% else %}
-    <span class="previous">Previous</span>
+    <span>&laquo; Prev</span>
   {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: '/' | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
   {% if paginator.next_page %}
-    <a href="/page{{ paginator.next_page }}" class="next">Next</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
   {% else %}
-    <span class="next ">Next</span>
+    <span>Next &raquo;</span>
   {% endif %}
 </div>
+{% endif %}
+</div>
+{% for tag in site.tags %}
+  <ul class="tag_tag" id="{{ tag[0] }}-ref">    
+        <div class="category tagcloud">
+                <h3>{{ tag[0] }}</h3>
+        </div>
+  </ul>
+  <ul class="tag_post">
+          {% assign page_list_ex = tag[1] %}  
+          {% include Inan/page_list_ex %}
+  </ul>
+{% endfor %}
+
+</div>
+
+{% include Inan/tag_select %}
+
 </section>
+<section class="widget">
+<aside id="secondary" class="span-6 last">
+        {% include site-sidebar.html %}
+</aside>
+</section>
+
+

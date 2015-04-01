@@ -8,5 +8,5 @@ draft: true
 ---
 {% include JB/setup %}
 
-https://github.com/pbharrin/machinelearninginaction
-zhan.renren.com/quantitativefinance?checked=true
+[machine learning in action](https://github.com/pbharrin/machinelearninginaction)  
+[case](zhan.renren.com/quantitativefinance?checked=true)

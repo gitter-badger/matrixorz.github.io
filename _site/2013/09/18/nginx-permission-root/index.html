@@ -15,22 +15,26 @@
 
   <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
 
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
-  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
-  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/theme/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/theme/css/site.css" type="text/css"/>
+  <link href="/theme/css/animation.css" rel="stylesheet" type="text/css">
+  
+  <link href="/theme/css/fontello.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css" type="text/css"/>
+  <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/theme/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/theme/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.useso.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
   <script type="text/javascript" src="/js/application.js"></script>
 </head>
 
 <body>
   <section class="sidebar">
     <a href="/">
-      <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=150" height="75" width="75" class="avatar" />
+      <img src="http://justpic.b0.upaiyun.com/upload/w-vj3xq.png?s=150" height="75" width="75" class="avatar" />
     </a>
 
     <section class="name">
@@ -39,18 +43,16 @@
         <span id="lname">Hai</span>
       </a>
     </section>
-
     <section class="meta">
-      <a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://github.com/matrixorz" target="_blank"><i class="fa fa-github"></i></a>
       <a href="https://twitter.com/matrixorz" target="_blank"><i class="fa fa-twitter"></i></a>
       <a href="http://weibo.com/u/1803769420" target="_blank"><i class="fa fa-weibo"></i></a>
       <a href="/atom.xml"><i class="fa fa-rss"></i></a>
     </section>
-
     <section class="sections">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about/projects.html">Projects</a></li>
+        <li><a href="/about/projects.html">Portfolio</a></li>
         <li><a href="/startup">Startup</a></li>
         <li><a href="/resources.html">Resources</a></li>
         <li><a href="/presentation.html">Presentation</a></li>
@@ -60,7 +62,12 @@
     </section>
   </section>
 
-  <section class="content">
+  
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  <script type="text/javascript" src="/js/outliner.js"></script>
+<section class="content">
   <h1>
     <a href="/2013/09/18/nginx-permission-root">nginx permission root</a>
   </h1>
@@ -69,80 +76,191 @@
     September 18, 2013
   </section>
 
-  
-<h1 id="nginx-">nginx 权限问题的解决方法</h1>
+  <h4>nginx 权限问题的解决方法</h4>
 
-<p>按照下面方法配置nginx时出现用户权限问题
-	server{
-	listen 4002;
-	server_name localhost;
-	access_log logs/access.log;</p>
+<p>按照下面方法配置nginx时出现用户权限问题</p>
 
-<pre><code>location / {
-   proxy_set_header X-Real-IP $remote_addr;
-   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-   proxy_set_header Host $http_host;
-   proxy_set_header X-NginxX-Proxy true;
-   
-   proxy_pass http://backend;
-   proxy_redirect off;
-   
-   proxy_http_version 1.1;
-   proxy_set_header Upgrade $http_upgrade;
-   proxy_set_header Connection "upgrade";
-   }
-   }
- upstream backend {
- server 127.0.0.1:3201;
- } 参照[nginx 13:permission denied solved](http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain)
-</code></pre>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">server<span class="o">{</span>
+    listen 4002<span class="p">;</span>
+    server_name localhost<span class="p">;</span>
+    access_log logs/access.log<span class="p">;</span>
+    location / <span class="o">{</span>
+       proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+       proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+       proxy_set_header Host <span class="nv">$http_host</span><span class="p">;</span>
+       proxy_set_header X-NginxX-Proxy <span class="nb">true</span><span class="p">;</span>
+       proxy_pass http://backend<span class="p">;</span>
+       proxy_redirect off<span class="p">;</span>      
+       proxy_http_version 1.1<span class="p">;</span>
+       proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+       proxy_set_header Connection <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
+       <span class="o">}</span>
+       <span class="o">}</span>
+     upstream backend <span class="o">{</span>
+     server 127.0.0.1:3201<span class="p">;</span>
+     <span class="o">}</span></code></pre></div>
 
-<p>The root directive is the problem here. Quote from the doc:</p>
 
-<p>note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.</p>
-
-<p>Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:</p>
+<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a><br/>
+The root directive is the problem here. Quote from the doc:<br/>
+note: Keep in mind that the root will still append the directory to the request so that a request for &ldquo;/i/top.gif&rdquo; will not look in &ldquo;/spool/w3/top.gif&rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.<br/>
+Basically, only use root for real roots: if the content is to be at / use root. If it&rsquo;s going to end on a subfolder, use alias:</p>
 
 <pre><code>location  /map/ {
   alias  /home/user/public_html/map/;
-} Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
+}  
 </code></pre>
 
+<p>Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map</p>
 
-  <!-- TODO: bio here -->
-  <section class="meta">
-    <h3>Discussion, links, and tweets</h3>
-    <section class="copy">
-      <a href="https://twitter.com/matrixorz" target="_blank">
-        <img src="http://www.gravatar.com/avatar/60b5076bc49c5f6157687e39a34ad5cc?s=142" height="50" width="50" />
-      </a>
-
-    </section>
-  </section>
-  
-
-
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'justpic'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-
-
+<section align="right">
+<br/>
+<span>
+	<a  href="/2013/09/12/asynchroussynchrousblockingunblocking-network" class="pageNav"  >Older</a>
+	&nbsp;&nbsp;&nbsp;
+	<a  href="/2013/09/29/git" class="pageNav"  >New</a>
+</span>
 </section>
 
-  
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://i.justpic.org/2013/09/29/git';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+            "HTML-CSS": {linebreaks: {automatic: true}},
+            SVG: {linebreaks: {automatic: true}}
+            });
+</script>
+  <!-- TODO: bio here -->
+
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <!--  <section class="copy">
+      <a href="http://weibo.com/u/1803769420" target="_blank">
+        <img src="http://justpic.b0.upaiyun.com/upload/w-vj3xq.png?s=142" height="50" width="50" />
+      </a>
+
+    </section> -->
+  </section>
+  <aside id="secondary" class="span-6 last">
+              <div id="navbar">
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav" id="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+
+        </ul>
+    </nav>
+</div>
+
+
+
+            
+<script>
+
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+       $("#menu-close").click(function(e) {
+
+        //e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+       });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+  </aside>
+  <!--
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"justpic"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+  </script>-->
+  <!-- Duoshuo Comment BEGIN -->
+<ul class="ds-recent-visitors"></ul>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"justpic"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<div id="comments">
+   <div class="ds-thread"  data-thread-key="/2013/09/18/nginx-permission-root" data-title="nginx permission root - Just Pic"</div>
+</div>
+<!-- Duoshuo Comment END -->
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?935cbc366c51f51db03d4f731823788e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+  <!--
+
+
+
+-->
+</section>
+
+   
   
 </body>
 

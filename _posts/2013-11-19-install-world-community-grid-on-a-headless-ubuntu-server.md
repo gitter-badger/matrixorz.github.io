@@ -4,6 +4,7 @@ title: "install World Community Grid on a headless Ubuntu Server"
 description: ""
 category: 
 tags: []
+published: false
 ---
 {% include JB/setup %}
 在ubuntu上安装BOINC

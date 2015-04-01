@@ -2,6 +2,7 @@
 layout: default
 title: resolution to scipy installation error
 categories: python
+published: false
 ---
 #ubuntu上安装scipy出错解决方法
 

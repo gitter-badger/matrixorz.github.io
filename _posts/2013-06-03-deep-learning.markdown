@@ -2,6 +2,8 @@
 layout: post
 title: deep learning
 categories: machine learning
+draft: true
+published: false
 ---
 
 {{ post.title }} 

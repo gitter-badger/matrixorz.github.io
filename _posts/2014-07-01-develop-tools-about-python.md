@@ -56,6 +56,10 @@ config.vm.network :private_network,ip:"192.168.33.10"
    $vagrant ssh
    $vagrant status
    $vagrant destroy
+
+参考:  
+[vagrant multi vm](http://stackoverflow.com/questions/24072916/multi-vm-in-one-vagrantfile-could-i-set-different-memory-size-for-each-of-them)  
+[vagrant install hadoop]()  
    
 开发环境中Apache/nginx取消静态文件缓存
 
@@ -63,6 +67,7 @@ Apache
 EnableSendfile off
 
 Nginx
-sendfile off
+sendfile off  
+
 
 

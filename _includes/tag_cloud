@@ -1,0 +1,25 @@
+{% for tag in site.categories %}
+    {% assign t=tag.first %}
+    {% assign posts=tag.last %}
+    <a class="tag tag0" title="0 posts" href="/categories/.html"></a>
+{% endfor %}
+
+<div class="category">
+    <h4>Tag Cloud</h4>
+
+<div id="wpcumuluscontent">
+    <embed 
+    type="application/x-shockwave-flash" 
+    src="/files/tagcloud.swf" 
+    id="tagcloudflash" 
+    name="tagcloudflash" 
+    bgcolor="#474c52" 
+    quality="high" 
+    wmode="transparent" 
+    allowscriptaccess="always" 
+    flashvars="tcolor=0xffffff&amp;tcolor2=0xb6bcc1&amp;hicolor=0xa1ff66&amp;tspeed=100&amp;distr=true&amp;mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+style%3d%27font-size:12pt%27+class%3D%27tag tag11%27+title%3D%2711+posts%27+href%3D%27%2Fcategories%2Fweb development.html%27%3Eweb development%3C%2Fa%3E%3Ca+style%3d%27font-size:12pt%27+class%3D%27tag tag4%27+title%3D%274+posts%27+href%3D%27%2Fcategories%2Fgeneral.html%27%3Egeneral%3C%2Fa%3E%3Ca+style%3d%27font-size:12pt%27+class%3D%27tag tag10%27+title%3D%2710+posts%27+href%3D%27%2Fcategories%2Fdevelopment.html%27%3Edevelopment%3C%2Fa%3E%3C%2Ftags%3E" 
+    height="300" 
+    width="250">
+    </embed>
+</div>
+</div>

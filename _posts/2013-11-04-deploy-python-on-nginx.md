@@ -8,6 +8,5 @@ draft: true
 ---
 {% include JB/setup %}
 
-[tornado with nginx](serholiu.com/tornado-nginx-supervisord)
-
+[tornado with nginx](serholiu.com/tornado-nginx-supervisord)  
 [gunicorn with nginx](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/)

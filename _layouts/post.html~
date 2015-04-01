@@ -1,0 +1,80 @@
+---
+layout: layout
+---
+{% include JB/setup %}
+<script type="text/javascript"
+         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<section class="content">
+  <h1>
+    <a href="{{ page.url }}">{{ page.title }}</a>
+  </h1>
+
+  <section class="byline">
+    {{ page.date | date: "%B %e, %Y" }}
+  </section>
+
+  {{ content }}
+<section align="right">
+<br/>
+<span>
+	<a {% if page.previous %} href="{{ page.previous.url }}" class="pageNav"{% endif %} {% unless page.previous %} class="pageNavInvalid" {% endunless %} >Older</a>
+	&nbsp;&nbsp;&nbsp;
+	<a {% if page.next %} href="{{ page.next.url }}" class="pageNav"{% endif %} {% unless page.next %} class="pageNavInvalid" {% endunless %} >New</a>
+</span>
+</section>
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            {% if page.previous %}
+        url = '{{ site.url }}{{ page.previous.url }}';
+        {% endif %}
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            {% if page.next %}
+        url = '{{ site.url }}{{ page.next.url }}';
+        {% endif %}
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+            "HTML-CSS": {linebreaks: {automatic: true}},
+            SVG: {linebreaks: {automatic: true}}
+            });
+</script>
+  <!-- TODO: bio here -->
+
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://weibo.com/u/{{ site.weibo }}" target="_blank">
+        <img src="{{ site.gravatar_url }}?s=142" height="50" width="50" />
+      </a>
+
+    </section>
+  </section>
+   <script type="text/javascript">
+  var duoshuoQuery = {short_name:"justpic"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+  </script>
+  {% include custom/duoshuo %}
+  {% include custom/analytics %}
+  <!--{% include JB/comments %}-->
+</section>
