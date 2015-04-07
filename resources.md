@@ -28,4 +28,5 @@ Resources
 [Computational Modeling
 Group](http://cmg.soton.ac.uk/research/categories/programming-languages/python/)  
 [online cv
-journals](http://www.cse.iitm.ac.in/~sdas/vplab/onlinecvjournals.html)
+journals](http://www.cse.iitm.ac.in/~sdas/vplab/onlinecvjournals.html)  
+[wavelets guide](http://faculty.gvsu.edu/aboufade/web/wavelets/tutorials.htm)  
