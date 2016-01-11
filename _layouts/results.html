@@ -1,6 +1,7 @@
 ---
 layout: layout
 ---
+
 <section class="content">
 <div id="primary" class="span-17">
 
@@ -36,14 +37,20 @@ layout: layout
 		},true);
 	</script>
 
-	{{ content }}
-
 </div>
 </section>
-<section class="widget">
+
+<!-- <section class="widget">
 <div id="secondary" class="span-6 last">
 	{% include site-sidebar.html %}
 </div>
 
 <div class="c"></div>
+</section> -->
+
+{% include Inan/tag_select %}
+<section class="widget">
+<aside id="secondary" class="span-6 last">
+        {% include site-sidebar.html %}
+</aside>
 </section>

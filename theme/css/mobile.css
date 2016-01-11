@@ -1,3 +1,5 @@
+
+@media (max-width: 640px) {
 .sidebar {
   position: inherit;
   width: inherit;
@@ -27,4 +29,16 @@
   padding: 5px 25px;
   width: inherit; }
   .content h1 {
-    margin: 0 0 5px 0; }
+    margin: 0 0 5px 0; 
+  }
+.widget {
+    position: fixed;
+    right: 40px;
+    top: 15px;
+    max-width: 250px;
+    margin-left: 20px;
+    float: right;
+}
+
+}
+
