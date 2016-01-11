@@ -60,6 +60,9 @@ a {
     .sidebar .sections li {
       list-style: none;
       margin-bottom: 7px; }
+  .foot {
+    text-algin:center;
+  }
   .widget {
    position: fixed;
    right: 50px;
