@@ -4,105 +4,13 @@
  <title>Just Pic</title>
  <link href="http://i.justpic.org/" rel="self"/>
  <link href="http://i.justpic.org"/>
- <updated>2016-01-11T09:24:21+08:00</updated>
+ <updated>2016-01-11T16:27:39+08:00</updated>
  <id>http://i.justpic.org</id>
  <author>
    <name></name>
    <email></email>
  </author>
 
- 
- <entry>
-   <title>pythonÊµÏÖµ¥µãµÇÂ¼</title>
-   <link href="http://i.justpic.org/2015/06/28/python"/>
-   <updated>2015-06-28T00:00:00+08:00</updated>
-   <id>http://i.justpic.org/2015/06/28/python</id>
-   <content type="html">&lt;h2&gt;Single Sign-On，SAML oauth与OpenID&lt;/h2&gt;
-
-&lt;p&gt;单点登录(sso)&lt;br/&gt;
-单点登录较多的应用于服务器端的身份验证，随着互联网技术的发展，一个微博社交账号可以使用在多个网站上，这背后就是单点登录的功劳。
-那么说到单点登录，与常见的Oauth、OpenID、
-Oauth中又分为OAuth1.0和OAuth2.0技术，还有Two authentifactor Identification又有什么区别呢？
-实现sso可以通过OAuth、OpenID和SAML&lt;/p&gt;
-
-&lt;p&gt;openid与sso
-openid是一种用于以用户为中心的数字身份的分散的开放式免费框架。
-openid的简介：
-EndUser：使用OpenId标识符作为网络通行证的用户。
-OpenId依赖方(RP):一种在线资源，使用OpenId识别可以访问他的对象。
-OpenId提供者（OP）：一个站点，用户可以在该站点声明OpenId，随后登录并为任意RP验证身份。
-RP通常由用户提供的标识符呈现，该标识符被规范化为声明的标识符。用户的浏览器将被重定向到OP，这样用户便可以提供密码 并得到身份验证。RP不知道耶不关心声明的标识符是如何获得验证的；它只想知道OP是否成功验证了用户身份。如果验证成功，用户代理会被转发到用户正视图访问的安全资源中。如果用户得不到验证，RP会拒绝任何访问。
-OP负责发出标识符并执行用户身份验证。OP手机并保留每个用户的一些基本信息。当要求OP验证声明的标识符时，用户的浏览器直接转到登录页面，用户在该页面输入其密码，此时的控制权在于OP，如果用户成功得到身份验证，OP会将浏览器转到RP制定的位置（在一个特殊的“return-to”URL中）。如果用户不能进行身份验证，他可能会受到来自OP的消息，指出验证失败。
-openid与sso对比
-使用范围：
-SSO单点登录使用在一个企业、公司的范围内，实现各个系统的认证整合是可行的，但是实现全网的认证整合则不可行。
-OpenID不是一个具体的实现或者产品，而是一个规范，是一个被认可的统一的规范，参见：openid。net。该规范建立的目的，就是实现全网的认证信息共享。任何公司和组织，都可以根据规范，开发自己的OpenIdｐｒｏｖｉｄｅｒ，将自己的认证用户数据库提供全网“共享”。&lt;/p&gt;
-
-&lt;p&gt;ＯｐｅｎＩｄ与ＳＳＯ相比，是松耦合的认证整合，不会限制于某个认证平台，是更加开放的系统。&lt;/p&gt;
-
-&lt;p&gt;实现：
-ＳＳＯ的实现可能依赖于Cookie，涉及到Cookie名称校验、发放和匹配等，需要对Web应用的认证进行该着，开发量大，SSO服务器需要对Web应用开放特定端口、API，以便Web应用能够从服务器获取登录状态信息，影响登录服务器的安全性。
-OpenID和认证中心是松耦合，应用无需事先和某个认证中心绑定。登录时用户手工输入在任意一个认证中心的OpenID URL，OpenID使用标准的Https协议，并且不来与Cookie。让全网不同架构的Web应用服务器和OpenID的整合提供可能，OpenID提供了几乎各种语言的API便于应用在登录中添加OpenID登录功能。
-OAuth（开放授权）是一个开放标准，允许用户让第三方应用访问该用户在某一网站上存储的私密的资源（如照片，视频，联系人列表），而无需将用户名和密码提供给第三方应用。
-OAuth协议为用户资源的授权提供了一个安全的、开放而又简易的标准。与以往的授权方式不同之处是OAuth的授权不会使第三方触及到用户的账号信息（如用户名与密码），即第三方无需使用用户的用户名与密码就可以申请获得该用户资源的授权，因此OAuth是安全的。同时，任何第三方都可以使用OAuth认证服务，任何服务提高商都可以实现吱声的OAuth认证服务，因而OAuth是开放的。
-OAuth简史：
-2007年12月4日发布了OAuth Core1.0，此版本的协议存在严重的安全漏洞：OAuth Security Advisory：2009.1，更详细的安全漏洞可以参考：Explaining the OAuth Session Fixation Attack。2009年6月24日发布了OAuth Core 1.0 Revision A:此版本的协议修复了前一版本的安全漏洞，并成为RFC5849，我们现在使用的OAuth版本多半是以此版本为基础的。
-OAuth2.0是OAuth协议的下一版本，但不想后兼容OAuth1.0.OAuth 2.0关注客户端开发者的简易型，同时为Web应用，左面应用和手机，物联网设备提供专门的认证流程。&lt;/p&gt;
-
-&lt;p&gt;OAuth 角色：
-Consumer：消费方
-Service Provider：服务提供者
-User：用户&lt;/p&gt;
-
-&lt;p&gt;OAuth流程：
-用户访问客户端的网站，想操作用户存放在服务提供方的资源。
-客户端想服务提供方请求一个临时令牌。
-服务提供方验证客户端的身份后，授予一个临时令牌。
-客户端获得临时令牌后，将用户引导至服务提供方的授权页面请求用户授权。在这个过程中将临时令牌和客户端的毁掉连接发送给服务提供方。
-用户在服务提供方的网页输入用户名和密码，让后授权该客户端访问所请求的资源。
-授权成功后，服务提供方引导用户返回客户端的网页。
-客户端根据临时令牌从服务提供方哪里获取访问令牌。
-服务提供方根据临时令牌和用户的授权情况授予客户端访问令牌。
-客户端使用获取的访问令牌访问存放在服务提供方上的手保护的资源。&lt;/p&gt;
-
-&lt;p&gt;两条腿的OAuth与三条腿的OAuth相比，因为没有用户的参与，所以在流程中就不会涉及用户授权的环节，也就不需要使用Token，而主要通过Consumer Key和Consumer Secret来完成签名的，此时的ConsumerKey和Consumer Secret基本等价于账号和密码的作用。&lt;/p&gt;
-
-&lt;p&gt;注意到OAuth中为什么要使用authrization_code来交换access_token,
-如果之间返回access_token,协议将变得更加简洁，而且少一次client与AS之间的交互，性能也更优。那为何不这么设计呢，原因如下：
-1.浏览器的redirect_uri是一个不安全信道，此方式不适合于传递敏感数据(如access_token).因为uri可能通过HTTP referrer被传递给其他而异站点，也可能存在于浏览器cacher或log文件中，这九个攻击者盗取access—&lt;em&gt;token带来了很多机会。另外，此协议也不应该假设R
-0用户代理的行为是可信赖的，因为RO的浏览器可能早已被攻击者植入了跨站脚本用来监听access_token。因此，access_token通过R0的用户代理传给Client，会显著扩大access_token被泄露的风险。但authorization_code可以通过redirect_uri方式来传递，是因为authorization_code并不像access_token一样敏感。及时authrization_code被泄露，攻击者也无法直接拿到access_token,因为拿authrization_code去交换access_token是需要验证Client的真实身份。也就是说，除了Client之外，其他人拿authrization &lt;/em&gt;code是没有用的。此外，access_token应该只办法给Client使用，其他任何主题（包括R0)都不应该获取access_token(client指第三方应用),此外，access_token应该制办法给Client使用，其他任何主体(包括R0)都不应该获取access_token。协议的设计应能保证Client是唯一有能力获取access_token的主体。引入authrization_code之后，便可以保证Client是access_token的唯一持有人。当然，Client也是唯一的有义务需要保护access_token不被泄露。
-2.引入authorization还会带来如下的好处。由于协议需要验证Client的身份，如果不引入authorization_code，这个Client的身份认真只能通过第一步的redirect_uri来传递。同样由于redirect_uri是一个不安全的信道，这就额外要求Client必须使用数字签名技术来进行身份认真，而不能用简单的密码或口令认证方式。引入authorization_code之后，AS可以直接对Client进行身份认证。而且可以支持任意的Client认证方式。&lt;/p&gt;
-
-&lt;p&gt;OAuth与OpenID的区别：
-OAuth关注的是authorization授权，即：用户能做什么，而OpenID侧重的是authentication认证，即：用户是谁“
-OpenID、OAuth联合使用例子：
-OpenID用户希望访问其在example.com的账户
-example.com提示用户输入他的OpenID
-用户给出了他的OpenID，比如说”http://user.myopenid.com&quot;
-example.com跳转到了用户的OpenID提供商myopenid.com
-用户在myopenid.com提示的界面输入用户名密码登录
-myopenid.com询问用户是否登录到example.com
-用户同意后myopenid.com跳转回example.com
-example.com 允许用户访问其账号
-用户在使用example.com时希望从mycontacts.com导入他的联系人
-example.com(Consumer)把用户送往mycontacts.com（Service Provider）
-mycontacts.com询问用户是不是希望授权example.com访问他在mycontact.com的联系人
-用户确定
-mycontacts.com把用户送回example.com
-example.com从mycontacts.com拿到联系人
-example.com告诉用户导入成功
-sso与cas服务器&lt;/p&gt;
-
-&lt;p&gt;单点登录与加密技术，说道认证，也就不得不提到加密技术，一般来说有对称加密和非对称加密，其中ssh使用的加密技术就是非对称加密技术，通过分发公钥实现了内容的加密和解密。
-以上内容如有错误和纰漏，欢迎指正。&lt;/p&gt;
-
-&lt;p&gt;http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=9cDBwMbHx8HExrWEhNuWmpg
-参考:
-&lt;a href=&quot;http://www.mutuallyhuman.com/blog/2013/05/09/choosing-an-sso-strategy-saml-vs-oauth2/&quot;&gt;Choosing an SSO Strategy:SAML vs OAuth2&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html&quot;&gt;理解OAuth2.0&lt;/a&gt;
-&lt;a href=&quot;http://www.biaodianfu.com/learn-openid.html&quot;&gt;OpenID学习笔记&lt;/a&gt;&lt;/p&gt;
-</content>
- </entry>
  
  <entry>
    <title>use python in windows</title>
