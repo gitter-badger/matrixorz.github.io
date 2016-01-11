@@ -5,7 +5,7 @@ title: "About"
 
 About Me
 ======
-I'm Neros,A python programmer,I am intrested in statistic and Financial Modeling.
+I am a python programmer and intrested in statistic and Financial Modeling.
 I like travel and movies when i am free.
 In the virtual world,I often go to the sites follows:
 
