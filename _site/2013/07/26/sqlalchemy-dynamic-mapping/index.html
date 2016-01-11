@@ -49,8 +49,8 @@
     July 26, 2013
   </section>
 
-  <h1>sqlalchemy动态映射</h1>
-
+  
+<h1 id="sqlalchemy">sqlalchemy动态映射</h1>
 <p>代码如下:</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="o">*</span>
@@ -74,8 +74,6 @@
     <span class="n">sess</span><span class="o">.</span><span class="n">add_all</span><span class="p">([</span><span class="n">T1Foo</span><span class="p">(),</span><span class="n">T1Foo</span><span class="p">(),</span><span class="n">T2Foo</span><span class="p">(),</span><span class="n">T1Foo</span><span class="p">()])</span>
     <span class="k">print</span> <span class="n">sess</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">T1Foo</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="k">print</span> <span class="n">sess</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">T2Foo</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span></code></pre></div>
-
-
 
 
 <section align="right">

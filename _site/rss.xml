@@ -5,40 +5,38 @@
         <description>Just Pic - </description>
         <link>http://i.justpic.org</link>
         <link>http://i.justpic.org</link>
-        <lastBuildDate>2016-01-12T02:37:06+08:00</lastBuildDate>
-        <pubDate>2016-01-12T02:37:06+08:00</pubDate>
+        <lastBuildDate>2016-01-12T03:41:57+08:00</lastBuildDate>
+        <pubDate>2016-01-12T03:41:57+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>use python in windows</title>
-                <description>&lt;h3&gt;windows 64安装libxml2dom小记&lt;/h3&gt;
-
-&lt;h5&gt;用于解决no module named libxmlmods等错误&lt;/h5&gt;
-
-&lt;p&gt;此&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/&quot;&gt;网站&lt;/a&gt;上面有编译好了的各种python windows包.&lt;br/&gt;
-我们首先下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/libxml2_python-2.9.2-cp27-none-win_amd64.whl&quot;&gt;libxml2-python&lt;/a&gt;&lt;br/&gt;
-然后使用pip wheel安装：&lt;br/&gt;
-    pip wheeel libxml2_python-2.9.2-cp27-none-win_amd64.whl&lt;br/&gt;
-    pip install &amp;ndash;use-wheel &amp;ndash;no-index &amp;ndash;find-links=wheelhouse libxml2-python
+                <description>
+&lt;h3 id=&quot;windows-64libxml2dom&quot;&gt;windows 64安装libxml2dom小记&lt;/h3&gt;
+&lt;p&gt;#####用于解决no module named libxmlmods等错误&lt;br /&gt;
+此&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/&quot;&gt;网站&lt;/a&gt;上面有编译好了的各种python windows包.&lt;br /&gt;
+我们首先下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/libxml2_python-2.9.2-cp27-none-win_amd64.whl&quot;&gt;libxml2-python&lt;/a&gt;&lt;br /&gt;
+然后使用pip wheel安装：&lt;br /&gt;
+    pip wheeel libxml2_python-2.9.2-cp27-none-win_amd64.whl&lt;br /&gt;
+    pip install –use-wheel –no-index –find-links=wheelhouse libxml2-python
     easy_install libxml2dom&lt;/p&gt;
 
 &lt;p&gt;至此安装libxml2dom完毕&lt;/p&gt;
 
-&lt;h3&gt;windows 64安装pycurl小记&lt;/h3&gt;
-
-&lt;p&gt;首先下载&lt;a href=&quot;http://curl.haxx.se/gknw.net/7.40.0/dist-w64/curl-7.40.0-devel-mingw64.7z&quot;&gt;curl 64bit mingw&lt;/a&gt;&lt;br/&gt;
-然后git clone https://github.com/pycurl/pycurl.git，进入到pycurl目录，修改setup.py&lt;br/&gt;
+&lt;h3 id=&quot;windows-64pycurl&quot;&gt;windows 64安装pycurl小记&lt;/h3&gt;
+&lt;p&gt;首先下载&lt;a href=&quot;http://curl.haxx.se/gknw.net/7.40.0/dist-w64/curl-7.40.0-devel-mingw64.7z&quot;&gt;curl 64bit mingw&lt;/a&gt;&lt;br /&gt;
+然后git clone https://github.com/pycurl/pycurl.git，进入到pycurl目录，修改setup.py&lt;br /&gt;
     CURL_DIR=$CURL_PATH
  编译，安装，完毕。
- 以上方法还是没有安装成功，还是使用上面网站里的编译好的安装包进行安装，下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/pycurl-7.19.5.1-cp27-none-win_amd64.whl&quot;&gt;pycurl-7.19.5.1-cp27-none-win_amd64.whl&lt;/a&gt;(注意27才能安装)  &lt;br/&gt;
+ 以上方法还是没有安装成功，还是使用上面网站里的编译好的安装包进行安装，下载&lt;a href=&quot;http://www.lfd.uci.edu/~gohlke/pythonlibs/z94jfosk/pycurl-7.19.5.1-cp27-none-win_amd64.whl&quot;&gt;pycurl-7.19.5.1-cp27-none-win_amd64.whl&lt;/a&gt;(注意27才能安装)  &lt;br /&gt;
  使用以下命令进行安装：
      pip wheel pycurl-7.19.5.1-cp27-none-win_amd64.whl
-     pip install &amp;ndash;&lt;/p&gt;
+     pip install –&lt;/p&gt;
 
-&lt;h3&gt;windows上的python环境搭建：&lt;/h3&gt;
-
+&lt;h3 id=&quot;windowspython&quot;&gt;windows上的python环境搭建：&lt;/h3&gt;
 &lt;p&gt;安装Anaconda。（基本上这个就够了）&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2015/03/14/use-python-in-windows</link>
                 <guid>http://i.justpic.org/2015/03/14/use-python-in-windows</guid>
@@ -47,27 +45,21 @@
 
         <item>
                 <title>RHadoop环境搭建</title>
-                <description>&lt;h3&gt;Rhadoop环境搭建&lt;/h3&gt;
-
-&lt;p&gt;在集成R和hadoop之前需要将hadoop以及R运行环境安装好,hadoop的安装可参见&lt;a href=&quot;http://i.justpic.org/2014/11/22/ubuntu-install-hadoop/&quot;&gt;hadoop2.4.1安装笔记&lt;/a&gt;.&lt;br/&gt;
+                <description>
+&lt;h3 id=&quot;rhadoop&quot;&gt;Rhadoop环境搭建&lt;/h3&gt;
+&lt;p&gt;在集成R和hadoop之前需要将hadoop以及R运行环境安装好,hadoop的安装可参见&lt;a href=&quot;http://i.justpic.org/2014/11/22/ubuntu-install-hadoop/&quot;&gt;hadoop2.4.1安装笔记&lt;/a&gt;.&lt;br /&gt;
 1.下载相关安装包:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$wget https://raw.githubusercontent.com/RevolutionAnalytics/rhdfs/master/build/rhdfs_1.0.8.tar.gz
 $wget https://raw.githubusercontent.com/RevolutionAnalytics/rmr2/3.1.0/build/rmr2_3.1.0.tar.gz 
-$wget https://raw.githubusercontent.com/RevolutionAnalytics/rhbase/master/build/rhbase_1.2.0.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
+$wget https://raw.githubusercontent.com/RevolutionAnalytics/rhbase/master/build/rhbase_1.2.0.tar.gz 2.安装R包:
 
-&lt;p&gt;2.安装R包:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$R
+$R
 &amp;gt;install.packages(c(&quot;rJava&quot;, &quot;Rcpp&quot;, &quot;RJSONIO&quot;, &quot;bitops&quot;, &quot;digest&quot;, &quot;functional&quot;, &quot;stringr&quot;, &quot;plyr&quot;, &quot;reshape2&quot;, &quot;caTools&quot;))
 &amp;gt;install.packages(pkgs=&quot;rhdfs_1.0.8.tar.gz&quot;)
-&amp;gt;install.packages(pkgs=&quot;rmr2_3.1.0.tar.gz&quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&amp;gt;install.packages(pkgs=&quot;rmr2_3.1.0.tar.gz&quot;) 3.启动hadoop后测试安装是否成功
 
-&lt;p&gt;3.启动hadoop后测试安装是否成功&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;library(rhdfs)
+&amp;gt;library(rhdfs)
 &amp;gt;hdfs.init()
 &amp;gt;hdfs.ls(&quot;/&quot;)
 &amp;gt;library(rmr2)
@@ -75,28 +67,24 @@ $wget https://raw.githubusercontent.com/RevolutionAnalytics/rhbase/master/build/
 &amp;gt;from.dfs(mapreduce(to.dfs(1:100)))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;eclipse上搭建R开发环境&lt;/h3&gt;
-
+&lt;h3 id=&quot;eclipser&quot;&gt;eclipse上搭建R开发环境&lt;/h3&gt;
 &lt;p&gt;eclipse上通过StatET来开发R程序,可以通过安装StatET直接在eclipse上建立R项目并执行R语言程序.
-R与Java语言的交互是通过JRI来完成的,需要在eclipse中安装RJava Eclipse Plugin和加载jri包来完成.jri的包的位置在rjava包的安装目录下面&lt;/p&gt;
-
-&lt;h3&gt;eclipse上搭建hadoop开发环境&lt;/h3&gt;
-
-&lt;p&gt;安装hadoop eclipse插件来开发hadoop环境下的mapreduce程序:&lt;br/&gt;
-具体插件安装方式可以参见&lt;a href=&quot;https://github.com/winghc/hadoop2x-eclipse-plugin.git&quot;&gt;hadoop2x-eclipse-plugin&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;eclipse上WTP插件的安装&lt;/h3&gt;
-
-&lt;p&gt;WTP方便在eclipse上开发J2EE程序,可以通过添加源地址方便的安装:&lt;br/&gt;
-源地址的一般格式为http://download.eclipse.org/webtools/repository/kepler(eclipse version)  &lt;br/&gt;
-Spark结合R语言开发&amp;hellip;&lt;br/&gt;
-参考:&lt;br/&gt;
+R与Java语言的交互是通过JRI来完成的,需要在eclipse中安装RJava Eclipse Plugin和加载jri包来完成.jri的包的位置在rjava包的安装目录下面
+###eclipse上搭建hadoop开发环境
+安装hadoop eclipse插件来开发hadoop环境下的mapreduce程序:&lt;br /&gt;
+具体插件安装方式可以参见&lt;a href=&quot;https://github.com/winghc/hadoop2x-eclipse-plugin.git&quot;&gt;hadoop2x-eclipse-plugin&lt;/a&gt;
+###eclipse上WTP插件的安装
+WTP方便在eclipse上开发J2EE程序,可以通过添加源地址方便的安装:&lt;br /&gt;
+源地址的一般格式为http://download.eclipse.org/webtools/repository/kepler(eclipse version)  &lt;br /&gt;
+Spark结合R语言开发…&lt;br /&gt;
+参考:&lt;br /&gt;
 &lt;a href=&quot;http://www.cnblogs.com/honglvlan/p/3732769.html&quot;&gt;Install RHadoop with Hadoopn 2.2&lt;/a&gt;
 &lt;a href=&quot;https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads&quot;&gt;RHadoop wiki&lt;/a&gt;
 &lt;a href=&quot;https://www.evernote.com/shard/s185/sh/744fa0fe-495d-4406-b546-99ed9a71458f/d32c1e6d1ef2796a2515ad408d28241f&quot;&gt;eclipse安装StatET&lt;/a&gt;
 &lt;a href=&quot;http://www.distream.org/?p=447&quot;&gt;JRI的问题&lt;/a&gt;
-&lt;a href=&quot;http://dirk.eddelbuettel.com/papers/useR2010hpcTutorialHandout.pdf&quot;&gt;R语言学习资料&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;http://dirk.eddelbuettel.com/papers/useR2010hpcTutorialHandout.pdf&quot;&gt;R语言学习资料&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3MTI0NTUyMQ==&amp;amp;mid=200139451&amp;amp;idx=1&amp;amp;sn=8a1188528cf06cf5ec46736eb1a0f588&amp;amp;scene=2&amp;amp;from=timeline&amp;amp;isappinstalled=0#rd&quot;&gt;combine Hadoop with R&lt;/a&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/11/28/rhadoop</link>
                 <guid>http://i.justpic.org/2014/11/28/rhadoop</guid>
@@ -105,63 +93,40 @@ Spark结合R语言开发&amp;hellip;&lt;br/&gt;
 
         <item>
                 <title>hadoop 2.4.1 上安装spark 1.1.0</title>
-                <description>&lt;h3&gt;Yarn模式安装Spark 1.1.0&lt;/h3&gt;
-
+                <description>
+&lt;h3 id=&quot;yarnspark-110&quot;&gt;Yarn模式安装Spark 1.1.0&lt;/h3&gt;
 &lt;p&gt;1.在github上下载Spark源码到本地:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git clone https://github.com/apache/spark.git
 cd spark
-git checkout v1.1.0 #取出1.1.0版本的saprk
-&lt;/code&gt;&lt;/pre&gt;
+git checkout v1.1.0 #取出1.1.0版本的saprk 2.修改pom.xml:
 
-&lt;p&gt;2.修改pom.xml:&lt;/p&gt;
+&amp;lt;protobuf.version&amp;gt;2.5.0&amp;lt;/protobuf.version&amp;gt;  
+#修改为hadoop所使用的对应hadoop版本 3.编译:
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;protobuf.version&amp;gt;2.5.0&amp;lt;/protobuf.version&amp;gt;  
-#修改为hadoop所使用的对应hadoop版本
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;3.编译:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./make-distribution.sh --tgz --skip-java-test -Dyarn.version=2.4.1
+./make-distribution.sh --tgz --skip-java-test -Dyarn.version=2.4.1
 -Dhadoop.version=2.4.1 -Pyarn
 #生成spark-1.1.0-bin.tgz文件
 tar -zxvf spark-1.1.0-bin.tgz 
 mv spark-1.1.0-bin.tgz/* /usr/local/spark/
 sudo adduser spark
-chown -R spark.spark /usr/local/spark
-&lt;/code&gt;&lt;/pre&gt;
+chown -R spark.spark /usr/local/spark 4.添加环境变量:
 
-&lt;p&gt;4.添加环境变量:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export SPARK_HOME=/usr/local/spark
+export SPARK_HOME=/usr/local/spark
 export
 SPARK_HOME=$SPARK_HOME/lib/spark-assembly-1.0.2-hadoop2.4.1.jar
-export PATH=$SPARK_HOME/bin:$PATH
-&lt;/code&gt;&lt;/pre&gt;
+export PATH=$SPARK_HOME/bin:$PATH 5.修改conf目录下的spark-env.sh,添加环境变量:
 
-&lt;p&gt;5.修改conf目录下的spark-env.sh,添加环境变量:&lt;/p&gt;
+export HADOOP_CONF=$HADOOP_INSTALL/etc/hadoop
+export YARN_CONF_dIR=$HADOOP_INSTALL/etc/hadoop 6.测试:
 
-&lt;pre&gt;&lt;code&gt;export HADOOP_CONF=$HADOOP_INSTALL/etc/hadoop
-export YARN_CONF_dIR=$HADOOP_INSTALL/etc/hadoop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;6.测试:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;spark-submit --class org.apache.spark.example.SparkPi --master \
+spark-submit --class org.apache.spark.example.SparkPi --master \
 yarn-cluster --num-executors 1 --driver-memory 1g --executor-memory
-1g --executor-cores 1 lib/spark-examples*.jar 1
-&lt;/code&gt;&lt;/pre&gt;
+1g --executor-cores 1 lib/spark-examples*.jar 1 7.使用PySpark:   交互终端  
 
-&lt;p&gt;7.使用PySpark:&lt;br/&gt;
-交互终端&lt;/p&gt;
+pyspark --master yarn Ipython Notebook   把下面代码加到~/.bashrc
 
-&lt;pre&gt;&lt;code&gt;pyspark --master yarn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ipython Notebook&lt;br/&gt;
-把下面代码加到~/.bashrc&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function pyspark_yarn() {
+function pyspark_yarn() {
 PORT=$1
 NOTEBOOK_DIR=$2
 source /home/spark/pyenvs/py2.7/bin/activate   
@@ -173,20 +138,18 @@ $SPARK_HOME/bin/pyspark --master yarn --deploy-mode client $*
 }
 
 source ~/.bashrc
-pyspark port work_directory
+pyspark port work_directory 进入到http://localhost:port访问Ipython Notebook
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;进入到http://localhost:port访问Ipython Notebook&lt;/p&gt;
 
 &lt;p&gt;tips:
 mvn download the dependency libs to the dir lib
 mvn dependency:copy-dependencies -DoutputDirectory=lib
--DincludeScope=compile&lt;/p&gt;
+-DincludeScope=compile  &lt;/p&gt;
 
-&lt;p&gt;参考&lt;br/&gt;
+&lt;p&gt;参考&lt;br /&gt;
 &lt;a href=&quot;http://blog.csdn.net/jiushuai/article/details/38757999&quot;&gt;spark 1.1.0 on hadoop
-2.4.1安装笔记&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.zhihu.com/question/23655827&quot;&gt;知乎上关于Spark入门学习的回答&lt;/a&gt;&lt;br/&gt;
+2.4.1安装笔记&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.zhihu.com/question/23655827&quot;&gt;知乎上关于Spark入门学习的回答&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://nbviewer.ipython.org/gist/fperez/6384491/00-Setup-IPython-PySpark.ipynb&quot;&gt;setting up the Ipython Notebook  with PySpark and AMPCamp EC2
 cluster&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -197,56 +160,33 @@ cluster&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>Ubuntu 14.04 install hadoop 2.4.1 note</title>
-                <description>&lt;h3&gt;Ubuntu 14.04 install Hadoop 2.4.1笔记&lt;/h3&gt;
+                <description>
+&lt;h3 id=&quot;ubuntu-1404-install-hadoop-241&quot;&gt;Ubuntu 14.04 install Hadoop 2.4.1笔记&lt;/h3&gt;
+&lt;p&gt;####说明:&lt;br /&gt;
+集群机器:
+Master: 10.211.55.1&lt;br /&gt;
+Slave1: 10.211.55.10&lt;br /&gt;
+Slave2…&lt;br /&gt;
+这里还是以两台机器为例:Master和Slave1.  &lt;/p&gt;
 
-&lt;h4&gt;说明:&lt;/h4&gt;
+&lt;p&gt;下载好hadoop-2.4.1的执行文件包和安装好java执行环境(这里选择的是oracle-java7-installer).  &lt;br /&gt;
+为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop  &lt;/p&gt;
 
-&lt;p&gt;集群机器:
-Master: 10.211.55.1&lt;br/&gt;
-Slave1: 10.211.55.10&lt;br/&gt;
-Slave2&amp;hellip;&lt;br/&gt;
-这里还是以两台机器为例:Master和Slave1.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hadoop,以及用户目录/home/hadoop   在Master和Slave1上分别编辑文件/etc/hosts:(添加以下两行)
 
-&lt;p&gt;下载好hadoop-2.4.1的执行文件包和安装好java执行环境(这里选择的是oracle-java7-installer).  &lt;br/&gt;
-为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop&lt;/p&gt;
+10.211.55.1  Master  
+10.211.55.10 Slave1    完成hosts修改后,保证Master和Slave1之间能够ping通.   ssh无密码登录配置   Master节点终端上操作: 
+ 
+cd ~/.ssh
+ssh-keygen -t rsa   Master节点需要无密码登录ssh本机,Master节点上操作:
 
-&lt;pre&gt;&lt;code&gt;sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hadoop,以及用户目录/home/hadoop  
-&lt;/code&gt;&lt;/pre&gt;
+cat ~/.ssh/id_rsa.pub&amp;gt;&amp;gt;~/.ssh/authorized_keys  
+ssh Master #测试   将Master的公钥传输到Slave1节点  
 
-&lt;p&gt;在Master和Slave1上分别编辑文件/etc/hosts:(添加以下两行)&lt;/p&gt;
+ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop@Slave1  #ssh-copy-id 把Master的公钥追加到Slave1的.ssh/authorized_keys上
+ssh hadoop@Slave1  #or ssh Slave1 配置完网络交互环境后,下面进行hadoop配置文件的设置:   Master节点上操作   1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.4.1.jar设置到HADOOP_STREAMING环境变量中,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.   2.进入到$HADOOP_HOME/etc/hadoop目录下,对slave,core-site.xml,hdfs-site.xml,mapred-site.xml(该文件若不存在,需要从模板中复制一份)   slave文件中记录Slave的名字Slave1(如果有多个Slave记录多个对应的名字).   core-site.xml:  
 
-&lt;pre&gt;&lt;code&gt;10.211.55.1  Master  
-10.211.55.10 Slave1   
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;完成hosts修改后,保证Master和Slave1之间能够ping通.&lt;br/&gt;
-ssh无密码登录配置&lt;br/&gt;
-Master节点终端上操作:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/.ssh
-ssh-keygen -t rsa  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Master节点需要无密码登录ssh本机,Master节点上操作:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cat ~/.ssh/id_rsa.pub&amp;gt;&amp;gt;~/.ssh/authorized_keys  
-ssh Master #测试  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;将Master的公钥传输到Slave1节点&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop@Slave1  #ssh-copy-id 把Master的公钥追加到Slave1的.ssh/authorized_keys上
-ssh hadoop@Slave1  #or ssh Slave1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;配置完网络交互环境后,下面进行hadoop配置文件的设置:&lt;br/&gt;
-Master节点上操作&lt;br/&gt;
-1.将hadoop-2.4.1的安装目录设置到环境变量HADOOP_HOME,并将$HADOOP_HOME/sbin添加到环境变量PATH,$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.4.1.jar设置到HADOOP_STREAMING环境变量中,在/etc/profile(全局用户)或者~/.bashrc(当前用户)中进行相应的相关修改.&lt;br/&gt;
-2.进入到$HADOOP_HOME/etc/hadoop目录下,对slave,core-site.xml,hdfs-site.xml,mapred-site.xml(该文件若不存在,需要从模板中复制一份)&lt;br/&gt;
-slave文件中记录Slave的名字Slave1(如果有多个Slave记录多个对应的名字).&lt;br/&gt;
-core-site.xml:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+&amp;lt;property&amp;gt;
     &amp;lt;name&amp;gt;fs.defaultFS&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;hdfs://Master:9000&amp;lt;/value&amp;gt;
 &amp;lt;/property&amp;gt;
@@ -254,12 +194,9 @@ core-site.xml:&lt;/p&gt;
     &amp;lt;name&amp;gt;hadoop.tmp.dir&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;file:/usr/local/hadoop/tmp&amp;lt;/value&amp;gt;
     &amp;lt;description&amp;gt;Abase for other temporary directories.&amp;lt;/description&amp;gt;
-&amp;lt;/property&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/property&amp;gt; hdfs-site.xml:
 
-&lt;p&gt;hdfs-site.xml:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+&amp;lt;property&amp;gt;
     &amp;lt;name&amp;gt;dfs.namenode.secondary.http-address&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;Master:50090&amp;lt;/value&amp;gt;
 &amp;lt;/property&amp;gt;
@@ -274,68 +211,53 @@ core-site.xml:&lt;/p&gt;
 &amp;lt;property&amp;gt;
     &amp;lt;name&amp;gt;dfs.replication&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;1&amp;lt;/value&amp;gt;
-&amp;lt;/property&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/property&amp;gt; mapred-site.xml:
 
-&lt;p&gt;mapred-site.xml:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+&amp;lt;property&amp;gt;
 &amp;lt;name&amp;gt;mapreduce.framework.name&amp;lt;/name&amp;gt;
 &amp;lt;value&amp;gt;yarn&amp;lt;/value&amp;gt;
-&amp;lt;/property&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/property&amp;gt; yarn-site.xml:
 
-&lt;p&gt;yarn-site.xml:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;property&amp;gt;
+&amp;lt;property&amp;gt;
     &amp;lt;name&amp;gt;yarn.resourcemanager.hostname&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;Master&amp;lt;/value&amp;gt;
 &amp;lt;/property&amp;gt;
 &amp;lt;property&amp;gt;
     &amp;lt;name&amp;gt;yarn.nodemanager.aux-services&amp;lt;/name&amp;gt;
     &amp;lt;value&amp;gt;mapreduce_shuffle&amp;lt;/value&amp;gt;
-&amp;lt;/property&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/property&amp;gt; 3.配置好hadoop相关配置文件后,将Master上的整个Hadoop安装目录复制到各个Slave节点上  
 
-&lt;p&gt;3.配置好hadoop相关配置文件后,将Master上的整个Hadoop安装目录复制到各个Slave节点上&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;scp -r $HADOOP_HOME Slave1:~/ 
+scp -r $HADOOP_HOME Slave1:~/ 
 ssh Slave
-sudo chown -R hadoop.hadoop $HADOOP_HOME #$HADOOP_HOME为Slave节点上的Hadoop安装目录  
-&lt;/code&gt;&lt;/pre&gt;
+sudo chown -R hadoop.hadoop $HADOOP_HOME #$HADOOP_HOME为Slave节点上的Hadoop安装目录   4.初始化namenode和启动hadoop集群   Master上操作:  
 
-&lt;p&gt;4.初始化namenode和启动hadoop集群&lt;br/&gt;
-Master上操作:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hdfs namenode -format
+hdfs namenode -format
 start-dfs.sh
 start-yarn.sh
 
 jps  #检查是否启动了Nameode,SecondaryNameNode,ResourceManager,(Jps)进程
 ssh Slave1 #登录到Slave1 
-jps #检查是否启动了DataNode,NodeManager,(Jps)进程.
+jps #检查是否启动了DataNode,NodeManager,(Jps)进程. 5.检查DataNode运行情况:
+
+hdfs dfsadmin -report #Master节点上操作
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;5.检查DataNode运行情况:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hdfs dfsadmin -report #Master节点上操作
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hadoop安装完毕!&lt;br/&gt;
-参考资料:&lt;br/&gt;
-&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2012/09/18/2689902.html&quot;&gt;Hadoop2.0详细配置教程&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;https://www.evernote.com/shard/s185/sh/fd5ec181-a6b6-4a74-9261-38e0754b65da/f62975e507065959e1259690c5ab1c5a&quot;&gt;hadoop全分布式集群模式的搭建实验&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2013/05/18/3085248.html&quot;&gt;使用Ambari快速部署Hadoop大数据环境&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;Writing an hadoop mapreduce program in python&lt;/a&gt;&lt;br/&gt;
+&lt;p&gt;Hadoop安装完毕!&lt;br /&gt;
+参考资料:&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2012/09/18/2689902.html&quot;&gt;Hadoop2.0详细配置教程&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.evernote.com/shard/s185/sh/fd5ec181-a6b6-4a74-9261-38e0754b65da/f62975e507065959e1259690c5ab1c5a&quot;&gt;hadoop全分布式集群模式的搭建实验&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/scotoma/archive/2013/05/18/3085248.html&quot;&gt;使用Ambari快速部署Hadoop大数据环境&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;Writing an hadoop mapreduce program in python&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://www.cnblogs.com/end/archive/2012/08/13/2636175.html&quot;&gt;如何使用python为Hadoop编写一个简单的MapReduce&lt;/a&gt;
 &lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;writing an hadoop mapreduce program in python&lt;/a&gt;
-&lt;a href=&quot;http://blog.csdn.net/wf1982/article/details/8798870&quot;&gt;使用Vagrant在虚拟机安装hadoop集群&lt;/a&gt;
+&lt;a href=&quot;http://blog.csdn.net/wf1982/article/details/8798870&quot;&gt;使用Vagrant在虚拟机安装hadoop集群&lt;/a&gt; 
 &lt;a href=&quot;http://www.letiantian.me/2014-10-16-hadoop-2-4-1-stand-alone-install-and-config/&quot;&gt;hadoop
-2.4.1单机伪分布式安装和配置&lt;/a&gt;&lt;br/&gt;
+2.4.1单机伪分布式安装和配置&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://www.powerxing.com/install-hadoop-cluster-2-4-1/&quot;&gt;Hadoop 集群安装配置教程Hadoop 2.4.1/Ubuntu
-14.04&lt;/a&gt;&lt;br/&gt;
+14.04&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://www.ibm.com/developerworks/cn/opensource/os-cn-hadoop-yarn/&quot;&gt;Yarn
 introduction&lt;/a&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/11/22/ubuntu-install-hadoop</link>
                 <guid>http://i.justpic.org/2014/11/22/ubuntu-install-hadoop</guid>
@@ -344,21 +266,23 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>html5新特性</title>
-                <description>&lt;p&gt;1.新的文档类型&lt;br/&gt;
-2.脚本和链接无需type&lt;br/&gt;
-3.语义Header和Footer&lt;br/&gt;
-4.Hgroup&lt;br/&gt;
-5.标记元素&lt;br/&gt;
-6.图形元素&lt;br/&gt;
-7.重新定义&lt;small&gt;&lt;br/&gt;
-8.占位符&lt;br/&gt;
-9.必要属性&lt;br/&gt;
-10.Autofocus属性(Autofocus Attribute)&lt;br/&gt;
-11.Audio支持(Audio Support)&lt;br/&gt;
-12.Video支持(Video Support)&lt;br/&gt;
-13.视频预载&lt;br/&gt;
-14.显示控制条&lt;br/&gt;
-15.正则表达式&lt;/p&gt;
+                <description>
+&lt;p&gt;1.新的文档类型&lt;br /&gt;
+2.脚本和链接无需type&lt;br /&gt;
+3.语义Header和Footer&lt;br /&gt;
+4.Hgroup&lt;br /&gt;
+5.标记元素&lt;br /&gt;
+6.图形元素&lt;br /&gt;
+7.重新定义&lt;small&gt;&lt;br /&gt;
+8.占位符&lt;br /&gt;
+9.必要属性&lt;br /&gt;
+10.Autofocus属性(Autofocus Attribute)&lt;br /&gt;
+11.Audio支持(Audio Support)&lt;br /&gt;
+12.Video支持(Video Support)&lt;br /&gt;
+13.视频预载&lt;br /&gt;
+14.显示控制条&lt;br /&gt;
+15.正则表达式  &lt;/small&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/10/20/html5</link>
                 <guid>http://i.justpic.org/2014/10/20/html5</guid>
@@ -367,11 +291,12 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>J2EE复习</title>
-                <description>&lt;p&gt;&lt;a href=&quot;https://github.com/gongdongdong/j2ee_project&quot;&gt;J2EE&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;Image-r3&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;https://github.com/gongdongdong/j2ee_project&quot;&gt;J2EE&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;Image-r3&lt;/a&gt;  &lt;/p&gt;
 
-&lt;p&gt;系统一点的：&lt;br/&gt;
-&lt;a href=&quot;https://github.com/ysc/APDPlat&quot;&gt;APDPlat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;系统一点的：&lt;br /&gt;
+&lt;a href=&quot;https://github.com/ysc/APDPlat&quot;&gt;APDPlat&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/10/14/j2ee</link>
                 <guid>http://i.justpic.org/2014/10/14/j2ee</guid>
@@ -380,7 +305,8 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>implement Linklist with a static array</title>
-                <description>&lt;p&gt;参考&lt;br/&gt;
+                <description>
+&lt;p&gt;参考&lt;br /&gt;
 &lt;a href=&quot;http://blog.csdn.net/njzhiyuan/article/details/8232025&quot;&gt;数组实现链表&lt;/a&gt;
 &lt;a href=&quot;http://www2.gliet.edu.cn/jpkc/datastructure/course/course_content.asp?chapter_id=2&amp;amp;section_id=9&quot;&gt;链表的数组描述与实现&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -391,17 +317,18 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>python play with hadoop</title>
-                <description>&lt;h2&gt;hadoop的安装&lt;/h2&gt;
+                <description>
+&lt;h2 id=&quot;hadoop&quot;&gt;hadoop的安装&lt;/h2&gt;
 
-&lt;h3&gt;单机环境&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;单机环境&lt;/h3&gt;
 
-&lt;h3&gt;多机环境&lt;/h3&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;多机环境&lt;/h3&gt;
 
-&lt;h3&gt;测试demo&lt;/h3&gt;
+&lt;h3 id=&quot;demo&quot;&gt;测试demo&lt;/h3&gt;
 
-&lt;h3&gt;分析&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;分析&lt;/h3&gt;
 
-&lt;p&gt;参考:&lt;br/&gt;
+&lt;p&gt;参考:&lt;br /&gt;
 &lt;a href=&quot;http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&quot;&gt;Writing an hadoop MapReduce Program in Python&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/09/28/python-play-with-hadoop</link>
@@ -411,10 +338,12 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>dynamic programming</title>
-                <description>&lt;p&gt;参考文章：&lt;br/&gt;
-&lt;a href=&quot;http://www.topcoder.com/tc?d1=tutorials&amp;amp;d2=dynProg&amp;amp;module=Static&quot;&gt;Dynamic Programming:From novice to advanced&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://blog.csdn.net/xzz_hust/article/details/12528659&quot;&gt;中文版本&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;web.stanford.edu/class/cs97si/04-dynamic-programming.pdf&quot;&gt;CS 97SI&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;参考文章：&lt;br /&gt;
+&lt;a href=&quot;http://www.topcoder.com/tc?d1=tutorials&amp;amp;d2=dynProg&amp;amp;module=Static&quot;&gt;Dynamic Programming:From novice to advanced&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://blog.csdn.net/xzz_hust/article/details/12528659&quot;&gt;中文版本&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;web.stanford.edu/class/cs97si/04-dynamic-programming.pdf&quot;&gt;CS 97SI&lt;/a&gt;  &lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/09/25/dynamic-programming</link>
                 <guid>http://i.justpic.org/2014/09/25/dynamic-programming</guid>
@@ -423,7 +352,8 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>ROC曲线分析</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://download.bioon.com.cn/upload/201302/09164003_6172.pdf&quot;&gt;ROC分析的基本原理&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://download.bioon.com.cn/upload/201302/09164003_6172.pdf&quot;&gt;ROC分析的基本原理&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/09/10/roc</link>
                 <guid>http://i.justpic.org/2014/09/10/roc</guid>
@@ -432,96 +362,97 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>latex math symbol</title>
-                <description>&lt;h4&gt;latex数学符号&lt;/h4&gt;
-
-&lt;p&gt;数学模式重音符&lt;br/&gt;
-\(\hat{a}\)  \hat{a}   \(\check{a}\)  \check{a}  \(\tilde{a}\) \tilde{a}  \(\acute{a}\) \acute{a}&lt;br/&gt;
-\(\grave{a}\)  \grave{a}  \(\dot{a}\)  \dot{a}  \(\ddot{a}\) \ddot{a}  \(\breve{a}\)  \breve{a}&lt;br/&gt;
+                <description>
+&lt;h4 id=&quot;latex&quot;&gt;latex数学符号&lt;/h4&gt;
+&lt;p&gt;数学模式重音符&lt;br /&gt;
+\(\hat{a}\)  \hat{a}   \(\check{a}\)  \check{a}  \(\tilde{a}\) \tilde{a}  \(\acute{a}\) \acute{a}&lt;br /&gt;
+\(\grave{a}\)  \grave{a}  \(\dot{a}\)  \dot{a}  \(\ddot{a}\) \ddot{a}  \(\breve{a}\)  \breve{a}&lt;br /&gt;
 \(\bar{a}\)   \bar{a}   \(\vec{a}\)   \vec{a}  \(\widehat{A}\) \widehat{A} \(\widetilde{A}\) \widetilde{A}&lt;/p&gt;
 
-&lt;p&gt;小写希腊字母表&lt;br/&gt;
-\(\alpha\) \alpha  \(\theta\) \theta \(o\) o  \(\upsilon\) \upsilon&lt;br/&gt;
+&lt;p&gt;小写希腊字母表&lt;br /&gt;
+\(\alpha\) \alpha  \(\theta\) \theta \(o\) o  \(\upsilon\) \upsilon&lt;br /&gt;
 \(\beta\) \beta \(\vartheta\) \vartheta  \(\pi\) \pi \(\phi\) \phi
-\(\gamma\) \gamma \(\iota\) \iota \(\varpi\) \varpi \(\varphi\) \varphi&lt;br/&gt;
-\(\delta\) \delta \(\kappa\) \kappa \(\rho\) \rho \(\chi\) \chi
-\(\epsilon\) \epsilon \(\lambda\) \lambda \(\varrho\) \varrho \(\psi\) \psi&lt;br/&gt;
-\(\varepsilon\) \varepsilon \(\mu\) \mu \(\sigma\) \sigma \(\omega\) \omega&lt;br/&gt;
-\(\zeta\) \zeta \(\nu\) \nu \(\varsigma\) \varsigma \(\eta\) \eta
-\(\xi\) \xi \(\tau\) \tau&lt;/p&gt;
+\(\gamma\) \gamma \(\iota\) \iota \(\varpi\) \varpi \(\varphi\) \varphi&lt;br /&gt;
+\(\delta\) \delta \(\kappa\) \kappa \(\rho\) \rho \(\chi\) \chi 
+\(\epsilon\) \epsilon \(\lambda\) \lambda \(\varrho\) \varrho \(\psi\) \psi&lt;br /&gt;
+\(\varepsilon\) \varepsilon \(\mu\) \mu \(\sigma\) \sigma \(\omega\) \omega&lt;br /&gt;
+\(\zeta\) \zeta \(\nu\) \nu \(\varsigma\) \varsigma \(\eta\) \eta 
+\(\xi\) \xi \(\tau\) \tau  &lt;/p&gt;
 
-&lt;p&gt;大写希腊字母&lt;br/&gt;
+&lt;p&gt;大写希腊字母&lt;br /&gt;
 \(\Gamma\) \Gamma \(\Lambda\) \Lambda \(\Sigma\) \Sigma \(\Psi\) \Psi
-\(\Delta\) \Delta \(\Xi\) \Xi \(\Upsilon\) \Upsilon  \(\Omega\) \Omega&lt;br/&gt;
-\(\Theta\) \Theta \(\Pi\) \Pi \(\Phi\) \Phi&lt;/p&gt;
+\(\Delta\) \Delta \(\Xi\) \Xi \(\Upsilon\) \Upsilon  \(\Omega\) \Omega&lt;br /&gt;
+\(\Theta\) \Theta \(\Pi\) \Pi \(\Phi\) \Phi  &lt;/p&gt;
 
-&lt;p&gt;二元关系符&lt;br/&gt;
-\(&amp;lt;\) &amp;lt; \(&gt;\) &gt; \(=\)  =&lt;br/&gt;
-\(\leq or \le\) \leq or \le &lt;br/&gt;
-\(\geq or \ge\) \geq or \g
+&lt;p&gt;二元关系符&lt;br /&gt;
+\(&amp;lt;\) &amp;lt; \(&amp;gt;\) &amp;gt; \(=\)  =&lt;br /&gt;
+\(\leq or \le\) \leq or \le &lt;br /&gt;
+\(\geq or \ge\) \geq or \g 
 \(\equiv\)  \equiv
-\(\ll\) \ll&lt;br/&gt;
-\(\gg\) \gg&lt;br/&gt;
-\(\doteq\) \doteq&lt;br/&gt;
-\(\prec\) \prec&lt;br/&gt;
-\(\succ\) \succ&lt;br/&gt;
+\(\ll\) \ll&lt;br /&gt;
+\(\gg\) \gg&lt;br /&gt;
+\(\doteq\) \doteq&lt;br /&gt;
+\(\prec\) \prec&lt;br /&gt;
+\(\succ\) \succ&lt;br /&gt;
 \(\sim\)  \sim
-\(\preceq\) \preceq&lt;br/&gt;
-\(\succeq\) \succeq&lt;br/&gt;
-\(\simeq\) \simeq&lt;br/&gt;
-\(\subset\) \subset&lt;br/&gt;
-\(\supset\) \supset&lt;br/&gt;
-\(\approx\) \approx&lt;br/&gt;
-\(\subseteq\) \subseteq&lt;br/&gt;
-\(\supseteq\) \supseteq&lt;br/&gt;
-\(\cong\) \cong&lt;br/&gt;
+\(\preceq\) \preceq&lt;br /&gt;
+\(\succeq\) \succeq&lt;br /&gt;
+\(\simeq\) \simeq&lt;br /&gt;
+\(\subset\) \subset&lt;br /&gt;
+\(\supset\) \supset&lt;br /&gt;
+\(\approx\) \approx&lt;br /&gt;
+\(\subseteq\) \subseteq&lt;br /&gt;
+\(\supseteq\) \supseteq&lt;br /&gt;
+\(\cong\) \cong&lt;br /&gt;
 \(\sqsubset\) \sqsubset
-\(\sqsupset\) \sqsupset&lt;br/&gt;
-\(\Join\) \Join&lt;br/&gt;
-\(\in\) \in&lt;br/&gt;
-\(\ni\) \ni,\owns&lt;br/&gt;
-\(\propto\) \propto&lt;br/&gt;
-\(\vdash\) \vdash&lt;br/&gt;
-\(\dashv\) \dashv&lt;br/&gt;
-\(\models\) \models
-\(\mid\) \mid&lt;br/&gt;
-\(\parallel\) \parallel&lt;br/&gt;
-\(\perp\) \perp&lt;br/&gt;
-\(\smile\) \smile&lt;br/&gt;
-\(\frown\) \frown&lt;br/&gt;
-\(\asymp\) \asymp&lt;br/&gt;
-\(:\)  :&lt;br/&gt;
-\(\notin\) \notin&lt;br/&gt;
-\(\neq\) \neq or \ne&lt;br/&gt;
-二元运算符号&lt;br/&gt;
-\(+\) +    \(-\) - \(\triangleleft\) \triangleleft&lt;br/&gt;
-\(\pm\) \pm \(\mp\) \mp \(\triangleright\) \triangleright&lt;br/&gt;
-\(\cdot\) \cdot \(\div\) \div  &lt;br/&gt;
-\(\times\) \times   \(\setminus\) \setminus \(\star\) \star &lt;br/&gt;
-\(\cup\) \cup \(\cap\) \cap \(\ast\) \ast&lt;br/&gt;
-\(\sqcup\) \sqcup \(\circ\) \circ&lt;br/&gt;
-\(\vee\) \vee,\lor \(\wedge\) \wedge,\land  \(\bullet\) \bullet&lt;br/&gt;
-\(\oplus\) \oplus \(\ominus\)  \ominus \(\diamond\)  \diamond&lt;br/&gt;
-\(\odot\) \odot \(\oslash\) \oslash \(\uplus\) \uplus&lt;br/&gt;
-\(\otimes\) \otimes \(\bigcirc\) \bigcirc \(\amalg\)&lt;br/&gt;
-\(\bigtriangleup\) \(\bigtriangledown\) \(\dagger\)  \dagger&lt;br/&gt;
-\(\lhd\) \lhd \(\rhd\) \rhd \(\ddagger\) \ddagger&lt;br/&gt;
-\(\unlhd\) \unlhd \(\unrhd\) \unrhd \(\wr\) \wr&lt;/p&gt;
+\(\sqsupset\) \sqsupset&lt;br /&gt;
+\(\Join\) \Join&lt;br /&gt;
+\(\in\) \in&lt;br /&gt;
+\(\ni\) \ni,\owns&lt;br /&gt;
+\(\propto\) \propto&lt;br /&gt;
+\(\vdash\) \vdash&lt;br /&gt;
+\(\dashv\) \dashv&lt;br /&gt;
+\(\models\) \models 
+\(\mid\) \mid&lt;br /&gt;
+\(\parallel\) \parallel&lt;br /&gt;
+\(\perp\) \perp&lt;br /&gt;
+\(\smile\) \smile&lt;br /&gt;
+\(\frown\) \frown&lt;br /&gt;
+\(\asymp\) \asymp&lt;br /&gt;
+\(:\)  :&lt;br /&gt;
+\(\notin\) \notin&lt;br /&gt;
+\(\neq\) \neq or \ne&lt;br /&gt;
+二元运算符号&lt;br /&gt;
+\(+\) +    \(-\) - \(\triangleleft\) \triangleleft&lt;br /&gt;
+\(\pm\) \pm \(\mp\) \mp \(\triangleright\) \triangleright&lt;br /&gt;
+\(\cdot\) \cdot \(\div\) \div  &lt;br /&gt;
+\(\times\) \times   \(\setminus\) \setminus \(\star\) \star &lt;br /&gt;
+\(\cup\) \cup \(\cap\) \cap \(\ast\) \ast&lt;br /&gt;
+\(\sqcup\) \sqcup \(\circ\) \circ&lt;br /&gt;
+\(\vee\) \vee,\lor \(\wedge\) \wedge,\land  \(\bullet\) \bullet&lt;br /&gt;
+\(\oplus\) \oplus \(\ominus\)  \ominus \(\diamond\)  \diamond&lt;br /&gt;
+\(\odot\) \odot \(\oslash\) \oslash \(\uplus\) \uplus&lt;br /&gt;
+\(\otimes\) \otimes \(\bigcirc\) \bigcirc \(\amalg\)&lt;br /&gt;
+\(\bigtriangleup\) \(\bigtriangledown\) \(\dagger\)  \dagger&lt;br /&gt;
+\(\lhd\) \lhd \(\rhd\) \rhd \(\ddagger\) \ddagger&lt;br /&gt;
+\(\unlhd\) \unlhd \(\unrhd\) \unrhd \(\wr\) \wr  &lt;/p&gt;
 
-&lt;p&gt;大尺寸运算符&lt;br/&gt;
-\(\sum\) \sum \(\bigcup\) \bigcup \(\bigvee\) \bigvee   \(\bigoplus\) \bigoplus&lt;br/&gt;
-\(\prod\) \prod \(\bigcap\) \bigcap \(\bigwedge\) \bigwedge  \(\bigotimes\) \bigotimes
-\(\coprod\) \coprod \(\bigsqcup\) \bigsqcup \(\bigodot\) \bigodot \(\int\) \int
-\(\oint\) \oint \(\biguplus\) \biguplus&lt;/p&gt;
+&lt;p&gt;大尺寸运算符&lt;br /&gt;
+\(\sum\) \sum \(\bigcup\) \bigcup \(\bigvee\) \bigvee   \(\bigoplus\) \bigoplus&lt;br /&gt;
+\(\prod\) \prod \(\bigcap\) \bigcap \(\bigwedge\) \bigwedge  \(\bigotimes\) \bigotimes 
+\(\coprod\) \coprod \(\bigsqcup\) \bigsqcup \(\bigodot\) \bigodot \(\int\) \int 
+\(\oint\) \oint \(\biguplus\) \biguplus  &lt;/p&gt;
 
-&lt;p&gt;箭头&lt;br/&gt;
-\(\leftarrow\) \leftarrow or \gets \(\longleftarrow\)  \longleftarrow&lt;br/&gt;
-\(\uparrow\) \uparrow  \(\rightarrow\) \rightarrow or \to &lt;br/&gt;
-\(\longrightarrow\) \longrightarrow   \(\downarrow\) \downarrow&lt;br/&gt;
-\(\leftrightarrow\) \leftrightarrow \(\longleftrightarrow\) \longleftrightarrow&lt;/p&gt;
+&lt;p&gt;箭头&lt;br /&gt;
+\(\leftarrow\) \leftarrow or \gets \(\longleftarrow\)  \longleftarrow&lt;br /&gt;
+\(\uparrow\) \uparrow  \(\rightarrow\) \rightarrow or \to &lt;br /&gt;
+\(\longrightarrow\) \longrightarrow   \(\downarrow\) \downarrow&lt;br /&gt;
+\(\leftrightarrow\) \leftrightarrow \(\longleftrightarrow\) \longleftrightarrow &lt;/p&gt;
 
-&lt;p&gt;参考&lt;br/&gt;
+&lt;p&gt;参考&lt;br /&gt;
 &lt;a href=&quot;http://math.ecnu.edu.cn/~latex/docs/others/mathsymb.pdf&quot;&gt;mathsymb.pdf&lt;/a&gt;
 &lt;a href=&quot;http://mohu.org/info/symbols/symbols.htm&quot;&gt;常用数学符号的LaTex表示方法&lt;/a&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/09/10/latex-math-symbol</link>
                 <guid>http://i.justpic.org/2014/09/10/latex-math-symbol</guid>
@@ -530,7 +461,8 @@ introduction&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>ubuntu 14.04 install haskell</title>
-                <description>&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
+                <description>
+&lt;p&gt;haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo aptitude build-dep ghc
 sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
@@ -542,14 +474,12 @@ make -j8
 sudo paco -D make install
 sudo aptitude purge ghc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;编辑.bashrc文件&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/ghc/bin:$PATH&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
 ghci   &lt;span class=&quot;c&quot;&gt;#验证是否安装成功&lt;/span&gt;
 sudo aptitude purge ghc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Cabal是Haskell的一个package，提供Haskell包安装框架，类似python的easy_install、debian的apt-get等。
 cabal-install是另一个Haskell包安装库，提供了cabal命令行程序，该程序在安装新包时会自动解决包依赖关系。
@@ -565,14 +495,12 @@ vim ~/.bahsrc
 &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
 cabal update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;安装包haskell-platform中包含这些包，但是由于使用apt-get安装时不能获得最新的版本或者会出现一些问题，比如network-2.6.0.2通过cabal总是安装不上，报编译错误
 这种使用源码安装的方式很好的解决了这些问题。非常高效！&lt;/p&gt;
 
 &lt;p&gt;在安装相关haskell包的时候可能会出现broken package错误，可以通过以下命令在haskell中移除broken package&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ghc-pkg check --simple-output &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; xargs -n &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; ghc-pkg unregister --force&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;&lt;a href=&quot;http://howistart.org/posts/haskell/1&quot;&gt;how i start&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -583,70 +511,63 @@ cabal update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
         <item>
                 <title>pca</title>
-                <description>&lt;h3&gt;PCA简介&lt;/h3&gt;
+                <description>
+&lt;h3 id=&quot;pca&quot;&gt;PCA简介&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;PCA是Principal Component Analysis(主成分分析)的缩写，此方法的目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性代数角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元,将原数据投影到该数据空间上，就可以达到降维的目的。    &lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;blockquote&gt;&lt;p&gt;PCA是Principal Component Analysis(主成分分析)的缩写，此方法的目标是找到数据中最主要的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭露出隐藏在复杂数据背后的简单结构。从线性代数角度来看，PCA目标是找到一组正交基去重新描述得到的数据空间，这个维度就是主元,将原数据投影到该数据空间上，就可以达到降维的目的。&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;h4&gt;K-L变换与PCA&lt;/h4&gt;
-
+&lt;h4 id=&quot;k-lpca&quot;&gt;K-L变换与PCA&lt;/h4&gt;
 &lt;p&gt;K-L变换是Karhunen-Loeve变换的简称，是一种特殊的正交变换。它是建立在统计特性基础上的一种变换，也称做霍特林(Hotelling)变换。
 K-L变换的优点是去相关性，是均方误差意义下的最佳变换。
-设随机向量 \(X \in R^{n} \)(n阶列向量),它的均值向量为 \(m_x \),则协方差矩阵可以表示为：&lt;br/&gt;
-$$Cov(x)= E{(X-m_x) \times (X-m_x)^{T}}$$
+设随机向量 \(X \in R^{n} \)(n阶列向量),它的均值向量为 \(m_x \),则协方差矩阵可以表示为：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Cov(x)= E{(X-m_x) \times (X-m_x)^{T}}&lt;/script&gt;
 \(Cov(x)\)是一个n*n阶的实对称矩阵。
-K-L变换定义了一个正交变换\(A \in R^{n \times n}\),将\(X \in R^{n}\)的向量映射到用\(Y \in R^{n}\)代表的向量，并且使Y向量中的各分量间不相关：&lt;br/&gt;
-$$Y=A \times (X-m_x) $$&lt;/p&gt;
+K-L变换定义了一个正交变换\(A \in R^{n \times n}\),将\(X \in R^{n}\)的向量映射到用\(Y \in R^{n}\)代表的向量，并且使Y向量中的各分量间不相关：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Y=A \times (X-m_x) &lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;PCA算法的理论依据是K-L变换，通过寻找线性变换W，实现对高维数据的降维。&lt;/p&gt;
+&lt;p&gt;PCA算法的理论依据是K-L变换，通过寻找线性变换W，实现对高维数据的降维。  &lt;/p&gt;
 
-&lt;p&gt;混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;/p&gt;
-
-&lt;h4&gt;PCA的主要思想：&lt;/h4&gt;
-
-&lt;p&gt;1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；&lt;br/&gt;
-2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现方法就是对协方差矩阵进行对角化。&lt;/p&gt;
-
-&lt;h4&gt;PCA的模型中存在假设条件：&lt;/h4&gt;
-
-&lt;p&gt;1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；&lt;br/&gt;
-2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。&lt;br/&gt;
-3.数据本身具有较高的信躁比。&lt;br/&gt;
-4.假设主元向量之间是正交的。&lt;/p&gt;
-
-&lt;h4&gt;PCA的可视化理解&lt;/h4&gt;
-
-&lt;h4&gt;PCA的求解方法：&lt;/h4&gt;
-
-&lt;p&gt;SVD(奇异值分解)方法
+&lt;p&gt;混乱的数据中通常包含三种成分：噪音、旋转和冗余。在区分噪音的时候，可以使用信噪比或者方差来衡量，方差大的是主要信号或者主要分量；方差较小的则认为是噪音或者次要分量；对于旋转，则对基向量进行旋转，使得信噪比或者方差较大的基向量就是主元方向；在判断各个观测变量之间是否冗余时，可以借助协方差矩阵来进行衡量和判断。&lt;br /&gt;
+####PCA的主要思想：
+1.最小化冗余量，对应于协方差矩阵的非对角线元素要尽量小；&lt;br /&gt;
+2.最大化信号，对应于要使协方差矩阵的对角线上的元素尽可能的大。对角线上的元素值越大，也就是对应于越重要的主元。该思想实现方法就是对协方差矩阵进行对角化。&lt;br /&gt;
+####PCA的模型中存在假设条件：
+1.PCA的内部模型是线性的，kernel-PCA就是使用非线性的权值对PCA扩展；&lt;br /&gt;
+2.针对的样本的概率分布模型只限于指数概率分布模型。从而扩展出ICP（独立主元分析）。&lt;br /&gt;
+3.数据本身具有较高的信躁比。&lt;br /&gt;
+4.假设主元向量之间是正交的。&lt;br /&gt;
+####PCA的可视化理解
+####PCA的求解方法：
+SVD(奇异值分解)方法
 K-L变换适用于方阵，但现实中，得到的大部分矩阵不是方阵，奇异值分解方法可以获得一个变换描述矩阵的重要特征。奇异值分解的形式：
-$$A=U\Sigma V^{T}$$
-其中A是一个\(N\times M\)的矩阵，得到的\(U\)是一个\(N\times N\)的方阵(里面的向量是正交的，U里面的向量称为左奇异向量),\(\Sigma\)是一个\(N\times M\)的矩阵(除了对角线的元素都是0,对角线上的元素成为奇异值),\(V^{T}\)(V的转置)是一个\(M\times M\)的矩阵，里面的向量也是正交的，\(V^{T}\)里面的向量称为右奇异向量)。 &lt;br/&gt;
-奇异值是怎么和特征值对应起来的。&lt;br/&gt;
-$$(A^{T}A)v_i=\lambda v_i$$
-这里得到的v，就是上面的右奇异向量。此处我们还可以得到左奇异值\(\sigma_i\)和左奇异向量\(\mu_i\) &lt;br/&gt;
-$$\sigma_i=\sqrt{\lambda_i}$$
-$$\mu_i=\frac{1}{\sigma_i}Av_i$$&lt;br/&gt;
-这里的\(A^{T}A\)与后面的协方差矩阵的形式统一了以来，求解出来的\(V^{T}\)与后面的\(S^{T}S\)是同构的。&lt;br/&gt;
-$$(AA^{T})\mu_i=(AA^{T})\frac{1}{\sigma_i}Av_i=\frac{1}{\sigma_i}AA^{T}Av_i=\frac{1}{\sigma_i}A(\lambda_i v_i)=A(\frac{1}{\sigma_i}v_i)=Au_i$$&lt;br/&gt;
-得到左奇异向量或者右奇异向量后，按照特征值递减顺序组成特征向量矩阵。&lt;br/&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A=U\Sigma V^{T}&lt;/script&gt;
+其中A是一个\(N\times M\)的矩阵，得到的\(U\)是一个\(N\times N\)的方阵(里面的向量是正交的，U里面的向量称为左奇异向量),\(\Sigma\)是一个\(N\times M\)的矩阵(除了对角线的元素都是0,对角线上的元素成为奇异值),\(V^{T}\)(V的转置)是一个\(M\times M\)的矩阵，里面的向量也是正交的，\(V^{T}\)里面的向量称为右奇异向量)。 &lt;br /&gt;
+奇异值是怎么和特征值对应起来的。&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(A^{T}A)v_i=\lambda v_i&lt;/script&gt;
+这里得到的v，就是上面的右奇异向量。此处我们还可以得到左奇异值\(\sigma_i\)和左奇异向量\(\mu_i\) &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\sigma_i=\sqrt{\lambda_i}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mu_i=\frac{1}{\sigma_i}Av_i&lt;/script&gt;&lt;br /&gt;
+这里的\(A^{T}A\)与后面的协方差矩阵的形式统一了以来，求解出来的\(V^{T}\)与后面的\(S^{T}S\)是同构的。&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;(AA^{T})\mu_i=(AA^{T})\frac{1}{\sigma_i}Av_i=\frac{1}{\sigma_i}AA^{T}Av_i=\frac{1}{\sigma_i}A(\lambda_i v_i)=A(\frac{1}{\sigma_i}v_i)=Au_i&lt;/script&gt;&lt;br /&gt;
+得到左奇异向量或者右奇异向量后，按照特征值递减顺序组成特征向量矩阵。&lt;br /&gt;
 则左奇异向量矩阵为\(U&lt;em&gt;{n\times r}\),右奇异向量矩阵为\(V&lt;/em&gt;{r\times m}^{T}\) ,r的大小取决于\(A^{T}A\)所求得的特征矩阵\(\Sigma\).
-如何把\(A&lt;em&gt;{n*m}\)变成\(A&lt;/em&gt;{n&lt;em&gt;r}\)：&lt;br/&gt;
-$$A^{N\times M} V^{M\times r}=A^{N\times r}$$
-如何把\(A_{n&lt;/em&gt;m}\)变成\(A&lt;em&gt;{r*m}\)：&lt;br/&gt;
-$$U&lt;/em&gt;{r\times T}^{T} A^{N\times M}=A^{r\times M}$$&lt;/p&gt;
+如何把\(A&lt;em&gt;{n*m}\)变成\(A&lt;/em&gt;{n&lt;em&gt;r}\)：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;A^{N\times M} V^{M\times r}=A^{N\times r}&lt;/script&gt; 
+如何把\(A_{n&lt;/em&gt;m}\)变成\(A_{r*m}\)：&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;U_{r\times T}^{T} A^{N\times M}=A^{r\times M}&lt;/script&gt; &lt;/p&gt;
 
 &lt;p&gt;弄清楚了SVD与PCA的关系后，PCA是SVD的再次包装，就知道怎么求解PCA了。&lt;/p&gt;
 
-&lt;p&gt;另外一种等价的方法
-求协方差矩阵的特征向量矩阵&lt;br/&gt;
+&lt;p&gt;另外一种等价的方法 
+求协方差矩阵的特征向量矩阵&lt;br /&gt;
 协方差矩阵的计算可以通过下面的公式计算:
-$$Cov(S)=\frac{S^{T}S}{N-1}$$&lt;br/&gt;
+&lt;script type=&quot;math/tex&quot;&gt;Cov(S)=\frac{S^{T}S}{N-1}&lt;/script&gt;&lt;br /&gt;
 其中\(S \in R^{n\times d}\) 是中心化后的矩阵，
-协方差矩阵的计算方式(matlab代码实现)：&lt;br/&gt;
+协方差矩阵的计算方式(matlab代码实现)：&lt;br /&gt;
 随机产生一个10*3维的整数矩阵作为样本集，10为样本的个数，3为样本的维数。&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;协方差是计算不同维度间的协方差，样本矩阵的每行是一个样本，每列为一个维度，所以我们要按列计算均值。&lt;/p&gt;
 
@@ -654,8 +575,7 @@ $$Cov(S)=\frac{S^{T}S}{N-1}$$&lt;br/&gt;
 &lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;计算dim1与dim2,dim1与dim3,dim2与dim3的协方差：&lt;/p&gt;
+&lt;p&gt;计算dim1与dim2,dim1与dim3,dim2与dim3的协方差：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -665,45 +585,43 @@ $$Cov(S)=\frac{S^{T}S}{N-1}$$&lt;br/&gt;
 &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;^&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;协方差矩阵也可以这样计算，先让样本矩阵中心化，即每一维度减去该维度的均值，使每一维度上的均值为0,然后直接用新得到的样本矩阵乘上它的转置，然后除以(N-1)。该方法可以由前面的公式推导出来。
 matlab代码实现如下：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;repmat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MySample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;%  中心化样本矩阵，使各维度均值为0&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;#39;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。&lt;br/&gt;
+&lt;p&gt;为什么在PCA中，协方差矩阵的特征向量就是主元，等价于原矩阵的奇异值分解,主元并非降维后的样本矩阵，而是投影矩阵，原矩阵可通过投影矩阵投影达到降维的目的。&lt;br /&gt;
 假设协方差特征矩阵为\(P_1\)(正交化后的特征矩阵为\(P\)),PCA降维后的样本矩阵为\(S_1\),
 根据PCA的目的，\(S_1\)中的各个维度间的协方差基本为零，也就是说，\(S_1\)的协方差矩阵
 为\(\mit\Lambda_1\),满足如下等式：
-$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1$$
+&lt;script type=&quot;math/tex&quot;&gt;\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1&lt;/script&gt;
 又因为
-$$P^{T}CP=\mit\Lambda \Rightarrow P_1^{T}CP_1=\mit\Lambda_1$$
+&lt;script type=&quot;math/tex&quot;&gt;P^{T}CP=\mit\Lambda \Rightarrow P_1^{T}CP_1=\mit\Lambda_1&lt;/script&gt;
 带入可得：
-$$\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}$$
+&lt;script type=&quot;math/tex&quot;&gt;\frac{S_1^{T}S_1}{N-1}=\mit\Lambda_1 = P_1^{T}CP_1=P_1^{T}(\frac{S_1^{T}S_1}{N-1})P_1=\frac{(SP_1)^{T}(SP_1)}{N-1} \Rightarrow S_1=SP_1 ,S_1\in R^{N\times p}&lt;/script&gt;
 由于样本矩阵 \(S^{N \times d}\) 的每一行是一个样本，特征向量矩阵\(P_1^{d \times p}\)的每一列是一个特征向量。右乘\(P_1\)相当于每个样本乘以\(P_1\)的特征向量为基进行线性变换，得到的新样本矩阵\(S_1 \in R^{N\times p}\)中的每个样本的维数变为了p，完成了降维操作。
-实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为&quot;主成分&quot;,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。&lt;br/&gt;
+实际上，\(P_1\)的特征向量就是低维空间新的坐标系，称之为”主成分”,\(S_1\)的协方差矩阵\(\mit\Lambda_1\)为近对角矩阵，说明不同维度间已经基本独立，噪声和冗余的数据已经不见了。&lt;br /&gt;
 但使用svd解决PCA问题,可以同时得到两个方向上的PCA。实际上在SVD中，左奇异向量需要右乘元矩阵，可以对原矩阵做列变换，可以把原矩阵的每列作为一个特征，每一行代表一个样本，进行特征维度缩减，维度由m变为r，右奇异向量\(V^{T}\)需要左乘原矩阵A，相当于对A的行向量做变换，A的每一行可看成一个特征，进行维度缩减，维度又原来的n变为r。&lt;/p&gt;
 
 &lt;p&gt;观察PCA后的样本协方差矩阵和原始矩阵的协方差矩阵可以发现各个维度上的方差有所变化，但对角线之和没有变，能量重新得到了分配，这就是降噪的功劳。
 将原矩阵与投影矩阵相称可得到降维后的矩阵。&lt;/p&gt;
 
-&lt;h4&gt;svd与LSI&lt;/h4&gt;
-
+&lt;h4 id=&quot;svdlsi&quot;&gt;svd与LSI&lt;/h4&gt;
 &lt;p&gt;PCA与LDA是特征抽取的两种主要经典方法
 LDA(线性评判分析)
 信号表示：特征抽取后的特征要能够精确地表示样本信息，使得信息丢失很小，对应的方法是PCA
 信号分类：特征抽取后的特征，要使得分类后的准确率很高，不能比原来特征进行分类的准确率低。对于线性来说，对应的方法是LDA
 PCA不具有鉴别特性
-LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。&lt;br/&gt;
+LDA与PCA的目标不一样，导致他们的方法也不一样。PCA得到的投影空间是协方差矩阵的特征向量，而LDA则是通过求得一个变换W，使得变换之后的新均值之差最大，方差最大，变换W就是特征的投影方向。&lt;br /&gt;
 PCA做分类时一般使用主向量作为特征进行分类，而不是降维后的矩阵来做分类。&lt;/p&gt;
 
-&lt;p&gt;参考文章：&lt;br/&gt;
-&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;PCA与SVD&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://blog.sina.com.cn/blog_6163bdeb0102eds7.html&quot;&gt;Kernel PCA的推导&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考文章：&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;奇异值分解及其应用&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://wenku.baidu.com/view/14ca1548e518964bcf847c28.html?re=view&quot;&gt;百度文库&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html&quot;&gt;PCA与SVD&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://blog.sina.com.cn/blog_6163bdeb0102eds7.html&quot;&gt;Kernel PCA的推导&lt;/a&gt;  &lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/09/05/pca</link>
                 <guid>http://i.justpic.org/2014/09/05/pca</guid>
@@ -712,67 +630,71 @@ PCA做分类时一般使用主向量作为特征进行分类，而不是降维�
 
         <item>
                 <title>模式识别</title>
-                <description>&lt;h4&gt;关于模式识别和计算机应用方向, 可以选择的主题&lt;/h4&gt;
+                <description>
+&lt;h4 id=&quot;section&quot;&gt;关于模式识别和计算机应用方向, 可以选择的主题&lt;/h4&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;数学方面&lt;br/&gt;
-1)  矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. &lt;br/&gt;
-2)  广义逆与子空间&lt;br/&gt;
-3)  最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义&lt;br/&gt;
-4)  凸分析与凸优化的基本知识及其几何意义&lt;br/&gt;
-5)  常用的几种优化方法. &lt;br/&gt;
-其实以上在某种意义下是相通的.&lt;br/&gt;
-6)  微分几何、黎曼几何的基本概念和知识&lt;br/&gt;
-7)  李群与李代数的基本知识 &lt;br/&gt;
-8)  图和谱图的基本知识&lt;br/&gt;
-以上知识，作为一个做算法的研究者都应该了解或是掌握的数学知识&lt;br/&gt;
-9)  模糊数学（模糊数学不是好数学，是玩游戏，做模糊数学有关的东西前途不明朗）
-10) 时间序列分析的主要方法和最近新方法.&lt;br/&gt;
-11) 分形和混沌&lt;br/&gt;
-12) 常用微分方程的基本类型和解法&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;专业方向&lt;br/&gt;
-1）PCA, FA, MDS &lt;br/&gt;
+  &lt;li&gt;
+    &lt;p&gt;数学方面&lt;br /&gt;
+1)	矩阵的各种分解. 比如, LU, QR, Cholesky, SVD, Polar. &lt;br /&gt;
+2)	广义逆与子空间&lt;br /&gt;
+3)	最小二乘法, 特别齐性方程Ax=b的各种解法及其几何意义&lt;br /&gt;
+4)	凸分析与凸优化的基本知识及其几何意义&lt;br /&gt;
+5)	常用的几种优化方法. &lt;br /&gt;
+其实以上在某种意义下是相通的.&lt;br /&gt;
+6)	微分几何、黎曼几何的基本概念和知识&lt;br /&gt;
+7)	李群与李代数的基本知识 &lt;br /&gt;
+8)	图和谱图的基本知识&lt;br /&gt;
+以上知识，作为一个做算法的研究者都应该了解或是掌握的数学知识&lt;br /&gt;
+9)	模糊数学（模糊数学不是好数学，是玩游戏，做模糊数学有关的东西前途不明朗） 
+10)	时间序列分析的主要方法和最近新方法.&lt;br /&gt;
+11)	分形和混沌&lt;br /&gt;
+12)	常用微分方程的基本类型和解法  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;专业方向&lt;br /&gt;
+1）PCA, FA, MDS &lt;br /&gt;
    这3个事最典型的降维方法，也是最古典的。但是他们已经出现很多变种，应用在计
 算机的各个领域。拿PCA做例子，比如Local PCA, Sparse PCA, Probabilistic PCA, Non
-negative PCA.&lt;br/&gt;
-2) ICA ( Independent Component Analysis )&lt;br/&gt;
+negative PCA.&lt;br /&gt;
+2) ICA ( Independent Component Analysis )&lt;br /&gt;
   独立元分析是降维分析中又一经典方法，其有很多种形式。在语音识别，人脸识别等
 分类领域中广泛应用。最近又有Nonnegative ICA 出现。特别地李群与李代数（Toral子代
-数）的引入为这个经典的方法有注入了新鲜的活力。&lt;br/&gt;
-3）NMF ( Nonnegative Matrix Factorization)&lt;br/&gt;
+数）的引入为这个经典的方法有注入了新鲜的活力。&lt;br /&gt;
+3）NMF ( Nonnegative Matrix Factorization)&lt;br /&gt;
    非负矩阵因子是99年发表在Nature上的一片经典论文。它是继PCA and ICA之后的又
 一产生广泛影响的降维方法。非负矩阵因子有着明显的几何意义，使其潜力无限，但又非
-常难以发掘。&lt;br/&gt;
-4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps)
+常难以发掘。&lt;br /&gt;
+4）LLE ( Locally Linear Embedding ) and LE ( Laplacian Eigenmaps) 
    局部线性嵌入和拉普拉斯特征映射分别发表在Science (2000) 和 Neural Computa
 tion (2003)上，是非线性降维的里程碑。他们在计算机应用领域产生深远影响是大势所趋
 。特别LE的线性形式LPP (Locality Preserving Projections) 在人脸识别领域已大显身
 手，继Fisherfaces又一著名方法Laplacianfaces就是基于LPP. 另外基于谱聚类的方法也
-可以很容易的从LE中导出，它正是图像分割领域研究的热点。&lt;br/&gt;
-5）HMM (Hidden Markov Model) &lt;br/&gt;
-6) Wavelet &lt;br/&gt;
+可以很容易的从LE中导出，它正是图像分割领域研究的热点。&lt;br /&gt;
+5）HMM (Hidden Markov Model) &lt;br /&gt;
+6) Wavelet &lt;br /&gt;
 7) RBFNN (Radial Base Function Neural Network) and SOM (Self-organizing ma
-p)&lt;br/&gt;
+p)&lt;br /&gt;
  径向基神经网络和自组织映射是神经网络中最常用的2种方法。随着几何优化的方法
-引入神经网络，这些方法又焕发出新的生机和用途。&lt;br/&gt;
+引入神经网络，这些方法又焕发出新的生机和用途。&lt;br /&gt;
 8）SVM （Support Vector Machine）
    支持向量机是数据挖掘中的一朵奇葩，已经广泛应用于各种任务中。随着几何方法
-和Clifford 代数的引入，SVM必将更加充满生机。&lt;br/&gt;
-9）EM (Expectation Maximum)&lt;br/&gt;
+和Clifford 代数的引入，SVM必将更加充满生机。&lt;br /&gt;
+9）EM (Expectation Maximum)&lt;br /&gt;
    EM算法是参数估计中最经典、最有效、而且最常用的方法。常用于 Bayesian Mode
-l or GMM中&lt;br/&gt;
-10）Guassian Mixture Model&lt;br/&gt;
+l or GMM中&lt;br /&gt;
+10）Guassian Mixture Model&lt;br /&gt;
    GMM是信号处理和模式识别中最经典的方法，也是最广泛应用的方法，比如，语音识
-别、人脸识别、目标监测、图像分割&lt;br/&gt;
- 11）Bayesian Model or Bayesian Network&lt;br/&gt;
- 其中 9）、10）、11）经常是成三成双的出现&lt;br/&gt;
+别、人脸识别、目标监测、图像分割&lt;br /&gt;
+ 11）Bayesian Model or Bayesian Network&lt;br /&gt;
+ 其中 9）、10）、11）经常是成三成双的出现&lt;br /&gt;
  12）Kernel Methods
-    基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;br/&gt;
-比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..&lt;/p&gt;&lt;/li&gt;
+    基于核的方法正是现在国际领域中研究的热点，基本上大多数经典方法都已核化，&lt;br /&gt;
+比如Kernel PCA, Kernel FA, Kernel LDA, Kernel-based MDS, LLE, LE, ……..    &lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-
-&lt;h4&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;
+&lt;h4 id=&quot;bbs&quot;&gt;注明：以上内容转载在清华BBS上的一篇回复，仅作学习参考和填坑之用。&lt;/h4&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/22/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>
@@ -790,21 +712,22 @@ l or GMM中&lt;br/&gt;
 
         <item>
                 <title>python finance</title>
-                <description>&lt;p&gt;&lt;strong&gt;books&lt;/strong&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;Financial Modeling in python&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;python for finance&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;Building Machine Learning System with Python&lt;/a&gt;&lt;br/&gt;
-&lt;strong&gt;Softwares&lt;/strong&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;pandas&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;scikit-learn&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;quantlib&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;ta-lib&lt;/a&gt; &lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;zipline&lt;/a&gt;&lt;br/&gt;
-&lt;strong&gt;Online Resource&lt;/strong&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;Quantopian&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;pythonquants&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;ultratrade&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://quant-econ.net/&quot;&gt;quant-econ&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;strong&gt;books&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;Financial Modeling in python&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;python for finance&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;Building Machine Learning System with Python&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;Softwares&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;pandas&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;scikit-learn&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;quantlib&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;ta-lib&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;zipline&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;Online Resource&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;Quantopian&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;pythonquants&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;ultratrade&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://quant-econ.net/&quot;&gt;quant-econ&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/16/python-finance</link>
                 <guid>http://i.justpic.org/2014/08/16/python-finance</guid>
@@ -813,24 +736,25 @@ l or GMM中&lt;br/&gt;
 
         <item>
                 <title>线性代数中的矩阵</title>
-                <description>&lt;p&gt;关于列向量和行向量：&lt;br/&gt;
-列向量通常用单个字母来表示，行向量表示为列向量的转置。 &lt;br/&gt;
-假设\(a^{T}\)和\(b\)分别是一个行向量和一个列向量 &lt;br/&gt;
-內积定义：\(a^{T} \cdot b\);&lt;br/&gt;
-外积定义: \(a \times b\);&lt;br/&gt;
-线性变换中的行变换、列变换的理解：&lt;br/&gt;
-矩阵乘法对应了一个变换，是把一个向量变成另一个方向或长度的新向量。在这个变换过程中，原向量主要发生旋转、伸缩的变化。如果矩阵对某些向量只发生伸缩变换，不产生旋转效果，那么这些向量就称为这个矩阵的特征向量，伸缩的比列就是特征值。对角矩阵（对称矩阵）只对向量进行伸缩，不作旋转。&lt;br/&gt;
-左乘和右乘的区别：&lt;br/&gt;
-一个矩阵如果左乘一个坐标基，相当于对该矩阵作行变换，坐标基的每个列向量为基向量。&lt;br/&gt;
-一个矩阵如果右乘一个坐标基，相当于对该矩阵做列变换，坐标基的每个行向量为基向量。&lt;br/&gt;
+                <description>
+&lt;p&gt;关于列向量和行向量：&lt;br /&gt;
+列向量通常用单个字母来表示，行向量表示为列向量的转置。 &lt;br /&gt;
+假设\(a^{T}\)和\(b\)分别是一个行向量和一个列向量 &lt;br /&gt;
+內积定义：\(a^{T} \cdot b\);&lt;br /&gt;
+外积定义: \(a \times b\);&lt;br /&gt;
+线性变换中的行变换、列变换的理解：&lt;br /&gt;
+矩阵乘法对应了一个变换，是把一个向量变成另一个方向或长度的新向量。在这个变换过程中，原向量主要发生旋转、伸缩的变化。如果矩阵对某些向量只发生伸缩变换，不产生旋转效果，那么这些向量就称为这个矩阵的特征向量，伸缩的比列就是特征值。对角矩阵（对称矩阵）只对向量进行伸缩，不作旋转。&lt;br /&gt;
+左乘和右乘的区别：&lt;br /&gt;
+一个矩阵如果左乘一个坐标基，相当于对该矩阵作行变换，坐标基的每个列向量为基向量。&lt;br /&gt;
+一个矩阵如果右乘一个坐标基，相当于对该矩阵做列变换，坐标基的每个行向量为基向量。&lt;br /&gt;
 理解的时候可以看成一个不变，一个在变。&lt;/p&gt;
 
-&lt;p&gt;参考 &lt;br/&gt;
-&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br/&gt;
-&lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;  &lt;br/&gt;
-&lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;  &lt;br/&gt;
-&lt;a href=&quot;sina2sohu.diandian.com/post/2012-08-17/40035658104&quot;&gt;matrix factorization&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考 &lt;br /&gt;
+&lt;a href=&quot;http://www.52cs.org/?p=175&quot;&gt;矩阵的理解&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;http://www.blog.huajh7.com/variational-bayes&quot;&gt;变分&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://sites.google.com/site/igorcarron2/matrixfactorizations&quot;&gt;矩阵分解的森林(The Advance Matrix Factorization Jungle)&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;http://www.docin.com/p-719129238.html&quot;&gt;低秩矩阵分解理论&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;sina2sohu.diandian.com/post/2012-08-17/40035658104&quot;&gt;matrix factorization&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/10/</link>
                 <guid>http://i.justpic.org/2014/08/</guid>
@@ -839,21 +763,24 @@ l or GMM中&lt;br/&gt;
 
         <item>
                 <title>ScatNet</title>
-                <description>&lt;p&gt;散射卷积网络(ScatNet)通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。
+                <description>
+&lt;p&gt;散射卷积网络(ScatNet)通过卷积网络对图像的小波系数做级联运算，运用深度学习的思想，生成树状结构的散射系数，使用散射系数作为特征进行学习。
 理解和分析scatnet就暂且从下面这幅图入手
 &lt;img src=&quot;/images/st.jpg&quot; alt=&quot;scat transform&quot; /&gt;
 在这里，\(f\)为输入的图像矩阵数据、\(\phi\)代表一个小波函数、m代表变换的阶数、J代表尺度,\(\lambda\)代表路径对应于m定义的各个阶，左上箭头代表计算出的散射系数、U代表的是各个小波系数的模结果。散射算子对U变换将会计算出该层散射系数S和下一层的U。
-若散射变换的方向数为C，总阶数为m，则第q阶散射变换沿频率递减的路径数为\(C^{q}(^J_q)\)，假设图像的橡树大小为N，采样值为\(\omega 2^{J}\),则每条散射路径有\(N\omega^{-2}2^{-2J}\)个系数，则所有的系数个数为 &lt;br/&gt;
-$$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$&lt;/p&gt;
+若散射变换的方向数为C，总阶数为m，则第q阶散射变换沿频率递减的路径数为\(C^{q}(^J_q)\)，假设图像的橡树大小为N，采样值为\(\omega 2^{J}\),则每条散射路径有\(N\omega^{-2}2^{-2J}\)个系数，则所有的系数个数为 &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)&lt;/script&gt;  &lt;/p&gt;
 
-&lt;blockquote&gt;&lt;p&gt;散射卷积网络、小波变换、分形、自然常数之间的关系总是相互缠绕，数学搞不懂
-参考文章与资料：&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;散射卷积网络、小波变换、分形、自然常数之间的关系总是相互缠绕，数学搞不懂
+参考文章与资料：&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://techtalks.tv/talks/plenary-talk-are-deepnetworks-a-soluSon-to-curse-of-dimensionality/60315/&quot;&gt;Plenary Talk:Are Deep Networks a Solution to Curse of Dimensionality&lt;/a&gt;&lt;br/&gt;
+&lt;p&gt;&lt;a href=&quot;http://arxiv.org/abs/1203.1513&quot;&gt;Invariant Scattering Convolution Networks&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.itsoc.org/resources/media/isit-2013-istanbul/MallatISIT2013.pdf&quot;&gt;High Dimensional Classification with Invariant Deep Networks&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.di.ens.fr/data/software/scatnet/&quot;&gt;ScatNet&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.dailymotion.com/video/x10r1zw_stephane-mallat-mathematicien_tech&quot;&gt;S.Mallat的一个访谈&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://techtalks.tv/talks/plenary-talk-are-deepnetworks-a-soluSon-to-curse-of-dimensionality/60315/&quot;&gt;Plenary Talk:Are Deep Networks a Solution to Curse of Dimensionality&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://staff.fnwi.uva.nl/t.e.j.mensink/rdg/slides/2scatnets.pdf&quot;&gt;2scatnet&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/wavelet,research,pattern%20recognition/2014/08/09/scatnet</link>
@@ -863,35 +790,30 @@ $$N\omega^{-2}2^{-2J} \sum_{q=0}^m C^{q}(^J_q)$$&lt;/p&gt;
 
         <item>
                 <title>python web development</title>
-                <description>&lt;p&gt;两篇很好的文章：&lt;/p&gt;
+                <description>
+&lt;p&gt;两篇很好的文章：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;br/&gt;
+&lt;p&gt;&lt;a href=&quot;http://siddontang.github.io/high-performance-server/2012/09/02/step-by-step-network/&quot;&gt;深入浅出网络模型&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://berb.github.io/diploma-thesis/original/index.html&quot;&gt;Concurrent Programming for Scalable Web Architectures&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;使用python web框架开发项目&lt;/h3&gt;
-
-&lt;h4&gt;技术选型&lt;/h4&gt;
-
-&lt;p&gt;tornado  &amp;ndash;epool，pre_fork,异步io的集合体&lt;br/&gt;
-mongodb  &amp;ndash;nosql技术，读快写慢&lt;br/&gt;
-rq/mrq   &amp;ndash;redis队列，传递消息，方便快捷&lt;br/&gt;
-pandas   &amp;ndash;处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;/p&gt;
-
-&lt;h4&gt;参考项目&lt;/h4&gt;
-
-&lt;p&gt;nbviewer &amp;ndash;tornado中如何做并行化 futures  &lt;br/&gt;
-pyspider &amp;ndash;flask 后台队列的实现和控制，架构方面&lt;/p&gt;
-
-&lt;h4&gt;云存储&lt;/h4&gt;
-
-&lt;p&gt;baidupcs-sdk &amp;ndash;免费，但有token限制，可以使用refresh token使其永久有效&lt;br/&gt;
-pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;br/&gt;
-hdf5的使用可参考&lt;br/&gt;
-&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;&lt;br/&gt;
-mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt; &lt;br/&gt;
+&lt;h3 id=&quot;python-web&quot;&gt;使用python web框架开发项目&lt;/h3&gt;
+&lt;p&gt;####技术选型
+tornado  –epool，pre_fork,异步io的集合体&lt;br /&gt;
+mongodb  –nosql技术，读快写慢&lt;br /&gt;
+rq/mrq   –redis队列，传递消息，方便快捷&lt;br /&gt;
+pandas   –处理数据的好帮手，方便操作数据，模型优化可借用scikit-learn&lt;br /&gt;
+####参考项目
+nbviewer –tornado中如何做并行化 futures  &lt;br /&gt;
+pyspider –flask 后台队列的实现和控制，架构方面&lt;br /&gt;
+####云存储
+baidupcs-sdk –免费，但有token限制，可以使用refresh token使其永久有效&lt;br /&gt;
+pandas io方面一直没有什么好的工具，hdf5，mongodb都是相对较好的选择&lt;br /&gt;
+hdf5的使用可参考&lt;br /&gt;
+&lt;a href=&quot;https://github.com/yinhm/datafeed&quot;&gt;datafeed&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/14262433/large-data-work-flows-using-pandas&quot;&gt;large data flow in pandas&lt;/a&gt;&lt;br /&gt;
+mongodb的使用可参考&lt;a href=&quot;&quot;&gt;openquant&lt;/a&gt; &lt;br /&gt;
 &lt;a href=&quot;http://golubenco.org/understanding-the-code-inside-tornado-the-asynchronous-web-server-powering-friendfeed.html&quot;&gt;Understand
-tornado&lt;/a&gt;&lt;/p&gt;
+tornado&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/08/07/python-web-development</link>
                 <guid>http://i.justpic.org/2014/08/07/python-web-development</guid>
@@ -900,26 +822,25 @@ tornado&lt;/a&gt;&lt;/p&gt;
 
         <item>
                 <title>sort algorithm</title>
-                <description>&lt;p&gt;对于堆排序，需要自底向上构建堆，排序时要自上而下作堆的调整。&lt;/p&gt;
+                <description>
+&lt;p&gt;对于堆排序，需要自底向上构建堆，排序时要自上而下作堆的调整。&lt;/p&gt;
 
 &lt;p&gt;排序算法的特点讨论
 &lt;img src=&quot;http://a.hiphotos.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30%3Bt%3Dgif/sign=b944a959d31373f0e13267cdc566209e/96dda144ad345982dab0d4b00ef431adcbef84dd.jpg&quot; alt=&quot;各类排序算法时间复杂度和空间复杂度对比表&quot; /&gt;&lt;/p&gt;
 
-&lt;h2&gt;稳定排序&lt;/h2&gt;
+&lt;h2 id=&quot;section&quot;&gt;稳定排序&lt;/h2&gt;
+&lt;p&gt;冒泡排序&lt;br /&gt;
+归并排序&lt;br /&gt;
+基数排序&lt;br /&gt;
+插入排序  &lt;/p&gt;
 
-&lt;p&gt;冒泡排序&lt;br/&gt;
-归并排序&lt;br/&gt;
-基数排序&lt;br/&gt;
-插入排序&lt;/p&gt;
-
-&lt;h2&gt;不稳定排序&lt;/h2&gt;
-
-&lt;p&gt;选择排序:  &lt;br/&gt;
-5(前) 8 5(后) 2 9   &amp;ndash;&gt; 2 8 5(后) 5(前) 9&lt;br/&gt;
-快速排序:&lt;br/&gt;
-5 3(前) 3(中) 4 3(后) 8 9 10 11 &amp;ndash;&gt; 3(后) 3(前) 3(中) 4 5 8 9 10 11&lt;br/&gt;
-希尔排序:&lt;br/&gt;
-改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。&lt;/p&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;不稳定排序&lt;/h2&gt;
+&lt;p&gt;选择排序:  &lt;br /&gt;
+5(前) 8 5(后) 2 9   –&amp;gt; 2 8 5(后) 5(前) 9&lt;br /&gt;
+快速排序:&lt;br /&gt;
+5 3(前) 3(中) 4 3(后) 8 9 10 11 –&amp;gt; 3(后) 3(前) 3(中) 4 5 8 9 10 11&lt;br /&gt;
+希尔排序:&lt;br /&gt;
+改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。  &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;void insertion_sort(int data[],int n,int increment)
 {
@@ -930,8 +851,8 @@ tornado&lt;/a&gt;&lt;/p&gt;
   {
       swap(&amp;amp;data[j],&amp;amp;data[j-increment]);
   }
-
-
+ 
+ 
      }
 }
 void shellsort(int data[],int n)
@@ -943,10 +864,8 @@ for(i=n/2;i&amp;gt;0;i/2)
   {
     insertion_sort(data,n,i);
   }
- }
+ }    }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;   }&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/07/30/sort-algorithm</link>
                 <guid>http://i.justpic.org/2014/07/30/sort-algorithm</guid>
@@ -955,10 +874,11 @@ for(i=n/2;i&amp;gt;0;i/2)
 
         <item>
                 <title>python optimization</title>
-                <description>&lt;p&gt; 首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;br/&gt;
- 判断程序为io-bound任务还是cpu-bound任务。&lt;br/&gt;
- io-bound任务程序使用gevent来优化&lt;br/&gt;
- cpu-bound任务程序使用multiprocess来优化&lt;br/&gt;
+                <description>
+&lt;p&gt;首先使用cprofile分析单进程，单线程环境中的性能差的部分，进行算法改写和优化，必要情况下可以通过cpython嵌入c/c++代码。&lt;br /&gt;
+ 判断程序为io-bound任务还是cpu-bound任务。&lt;br /&gt;
+ io-bound任务程序使用gevent来优化&lt;br /&gt;
+ cpu-bound任务程序使用multiprocess来优化&lt;br /&gt;
  使用队列服务进行任务分发，将大任务分成多个子任务部署于多机环境（集群）。注意：调度和单点故障。&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/python%20development/2014/07/28/python-optimization</link>
@@ -968,8 +888,9 @@ for(i=n/2;i&amp;gt;0;i/2)
 
         <item>
                 <title>data visualization</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://cyrille.rossant.net/scientific-python-in-the-browser-its-coming/&quot;&gt;一篇python数据可视化总结很好的文章&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000345/index.html&quot;&gt;D3 learning&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://danielfrg.com/blog/2013/02/05/d3-backbone-tornado-histogram-csv/&quot;&gt;使用tornado D3.js 进行数据可视化&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/data%20science/2014/07/19/data-visualization</link>
@@ -979,7 +900,8 @@ for(i=n/2;i&amp;gt;0;i/2)
 
         <item>
                 <title>erlang learning</title>
-                <description>&lt;p&gt;erlang学习教程&lt;br/&gt;
+                <description>
+&lt;p&gt;erlang学习教程&lt;br /&gt;
 &lt;a href=&quot;http://www.howistart.org/posts/erlang/1&quot;&gt;start erlang&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/07/01/erlang-learning</link>
@@ -989,7 +911,8 @@ for(i=n/2;i&amp;gt;0;i/2)
 
         <item>
                 <title>develop tools about python</title>
-                <description>&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+                <description>
+&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
 
 &lt;p&gt;vagrant介绍
 vagrant是一款用来构建虚拟开发环境的工具，非常适合php/python/ruby/java这类语言开发Web语言，如果说virtualenv是一个python包环境的封装，那么可以说vagrant是在一个操作系统层面上的封装，而且是跨平台的，当然也有docker，关于docker与vagrant的区别可见&lt;a href=&quot;https://www.dockboard.org/docker-vs-vagrant-why-this-two-technologies-aren&#39;t-competing/&quot;&gt;这篇文章&lt;/a&gt;.&lt;/p&gt;
@@ -1024,7 +947,7 @@ $cd /vagrant  #虚拟机下的/vagrant是宿主机上的 devpath
 &lt;p&gt;其他设置
     vagrant出事化后，会在初始化目录里生成一个Vagrantfile的配置文件。
     Vagrant默认是使用端口映射方式将虚拟机的端口映射本机从而实现类似http://localhost:80这种访问方式，host-only模式显得更方便，打开Vagrantfile，将下面这行的注释去掉
-config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
+config.vm.network :private_network,ip:”192.168.33.10”
 重启虚拟机，这样就能用192.168.33.10访问这台机器。&lt;/p&gt;
 
 &lt;p&gt;打包分发
@@ -1033,7 +956,7 @@ config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
 
 &lt;p&gt;常用命令&lt;/p&gt;
 
-&lt;p&gt;   $vagrant init
+&lt;p&gt;$vagrant init
    $vagrant up
    $vagrant halt
    $vagrant reload
@@ -1041,9 +964,9 @@ config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
    $vagrant status
    $vagrant destroy&lt;/p&gt;
 
-&lt;p&gt;参考:&lt;br/&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/24072916/multi-vm-in-one-vagrantfile-could-i-set-different-memory-size-for-each-of-them&quot;&gt;vagrant multi vm&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;vagrant install hadoop&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考:&lt;br /&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/24072916/multi-vm-in-one-vagrantfile-could-i-set-different-memory-size-for-each-of-them&quot;&gt;vagrant multi vm&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;vagrant install hadoop&lt;/a&gt;  &lt;/p&gt;
 
 &lt;p&gt;开发环境中Apache/nginx取消静态文件缓存&lt;/p&gt;
 
@@ -1051,7 +974,8 @@ config.vm.network :private_network,ip:&amp;ldquo;192.168.33.10&amp;rdquo;
 EnableSendfile off&lt;/p&gt;
 
 &lt;p&gt;Nginx
-sendfile off&lt;/p&gt;
+sendfile off  &lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/07/01/develop-tools-about-python</link>
                 <guid>http://i.justpic.org/2014/07/01/develop-tools-about-python</guid>
@@ -1060,12 +984,14 @@ sendfile off&lt;/p&gt;
 
         <item>
                 <title>install pypy from source</title>
-                <description>&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
+                <description>
+&lt;pre&gt;&lt;code&gt;hg clone https://bitbucket.org/pypy/pypy
 cd pypy/pypy/goal
 python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
 [config opt](http://pypy.readthedocs.org/en/latest/config/opt.html)
 &lt;/code&gt;&lt;/pre&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/06/23/install-pypy-from-source</link>
                 <guid>http://i.justpic.org/2014/06/23/install-pypy-from-source</guid>
@@ -1074,7 +1000,8 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>android emulator note</title>
-                <description>&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;https://software.intel.com/zh-cn/blogs/2012/03/12/how-to-start-intel-hardware-assisted-virtualization-hypervisor-on-linux-to-speed-up-intel-android-x86-gingerbread-emulator&quot;&gt;intel Hardware-assisted Virtualization Speed Up android&lt;/a&gt;
 &lt;a href=&quot;http://blag.felixhummel.de/junk/android_emulator.html&quot;&gt;Android Emulator on Ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2014/06/14/android-emulator-note</link>
@@ -1084,22 +1011,20 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>vps initialization</title>
-                <description>&lt;p&gt;添加用户：&lt;/p&gt;
+                <description>
+&lt;p&gt;添加用户：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;useradd options &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;添加用户组:&lt;/p&gt;
+&lt;p&gt;添加用户组:  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;groupadd options &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;配置权限:&lt;/p&gt;
+&lt;p&gt;配置权限: &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;username&amp;gt; all=(all:all) all&amp;#39;&lt;/span&gt; /etc/sudoers&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;ssh登陆禁用密码:&lt;/p&gt;
+&lt;p&gt;ssh登陆禁用密码:  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#本机：  &lt;/span&gt;
     ssh-keygen  &lt;span class=&quot;c&quot;&gt;#生成公钥、密钥对&lt;/span&gt;
@@ -1110,8 +1035,6 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 &lt;span class=&quot;c&quot;&gt;#重启ssh  &lt;/span&gt;
     sudo service ssh restart&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-
 </description>
                 <link>http://i.justpic.org/2014/06/06/vps-initialization</link>
                 <guid>http://i.justpic.org/2014/06/06/vps-initialization</guid>
@@ -1120,8 +1043,8 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>http reversed on ssh</title>
-                <description>&lt;h2&gt;建立一个简单的反向http代理&lt;/h2&gt;
-
+                <description>
+&lt;h2 id=&quot;http&quot;&gt;建立一个简单的反向http代理&lt;/h2&gt;
 &lt;p&gt;nginx 配置情况&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;upstream tunnel&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -1140,8 +1063,8 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
     ssh -R 8080:localhost:&amp;lt;port&amp;gt; &amp;lt;user_name&amp;gt;@&amp;lt;server&amp;gt;
     &lt;span class=&quot;c&quot;&gt;#port is your local application used ,and url is the url you will to visit public&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;a href=&quot;http://ripples.so/&quot;&gt;ripples.so&lt;/a&gt; is a localtunnel site that can expose your local website.&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</link>
                 <guid>http://i.justpic.org/2014/06/05/http-reversed-on-ssh</guid>
@@ -1150,7 +1073,8 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>Java call matlab</title>
-                <description>&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
+                <description>
+&lt;p&gt;与C++/C调用matlab不同的是，C++是&lt;a href=&quot;http://blog.segmentfault.com/simbest/1190000000417000&quot;&gt;调用matlab的生成动态库&lt;/a&gt;或者使用matlab引擎，而java是调用matlab代码打包成的jar包。&lt;/p&gt;
 
 &lt;p&gt;使用deploytool命令打开matlab打包工具
 打包完成后在eclipse除导入该包外，还要导入目录 toolbox/javabuilder/jar/javabuilder.jar包
@@ -1164,18 +1088,19 @@ python ../../rpython/bin/rpython --opt=jit targetpypystandalone.py
 
         <item>
                 <title>deploy sites on nginx</title>
-                <description>&lt;p&gt;使用nginx部署网站发现80端口一直被占用，使用一下方法杀死占用80端口进程
-Then it means nginx or some other process is already using port 80.&lt;/p&gt;
+                <description>
+&lt;p&gt;使用nginx部署网站发现80端口一直被占用，使用一下方法杀死占用80端口进程
+[emerg]: bind() to 0.0.0.0:80 failed (98: Address already in use)&lt;/p&gt;
+
+&lt;p&gt;Then it means nginx or some other process is already using port 80.&lt;/p&gt;
 
 &lt;p&gt;You can kill it using:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo fuser -k 80/tcp&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;And then try restarting nginx again:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;service nginx start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 </description>
                 <link>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</link>
                 <guid>http://i.justpic.org/2014/05/22/deploy-sites-on-nginx</guid>
@@ -1184,18 +1109,18 @@ Then it means nginx or some other process is already using port 80.&lt;/p&gt;
 
         <item>
                 <title>Matlab C混合编程</title>
-                <description>&lt;p&gt;用C++（或者C）语言操作MATLAB，有三种途径：&lt;br/&gt;
-·MEX文件&lt;br/&gt;
-在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：&lt;br/&gt;
-对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。&lt;br/&gt;
-对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。&lt;br/&gt;
-·MAT文件应用程序 &lt;br/&gt;
-MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。&lt;br/&gt;
-为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。 &lt;br/&gt;
-·引擎应用程序&lt;br/&gt;
-MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而把MATLAB用作一个计算引擎。MATLAB引擎程序指的是那些通过管道（在UNIX系统中）或者ActiveX（在Windows系统中）与独立MATLAB进程进行通信的C/C++或者Fortran程序。&lt;/p&gt;
-
-&lt;h5&gt;1.MEX文件&lt;/h5&gt;
+                <description>
+&lt;p&gt;用C++（或者C）语言操作MATLAB，有三种途径：&lt;br /&gt;
+·MEX文件&lt;br /&gt;
+在MATLAB中可调用的C或Fortran语言程序称为MEX文件。MATLAB可以直接把MEX文件视为它的内建函数进行调用。MEX文件是动态链接的子例程，MATLAB解释器可以自动载入并执行它。MEX文件主要有以下用途：&lt;br /&gt;
+对于大量现有的C或者Fortran程序可以无须改写成MATLAB专用的M文件格式而在MATLAB中执行。&lt;br /&gt;
+对于那些MATLAB运算速度过慢的算法，可以用C或者Frotran语言编写以提高效率。&lt;br /&gt;
+·MAT文件应用程序 &lt;br /&gt;
+MAT文件是MATLAB专用的用于保存数据至磁盘和向MATLAB导入、从MATLAB导出数据的数据文件格式。MAT文件提供了一种简便的机制，它允许你在两个平台之间以灵活的方式移动数据。而且，它还提供了一种途径来向其它单机MATLAB应用导入或者导出数据。&lt;br /&gt;
+为了简化在MATLAB环境之外对MAT文件的使用，MATLAB给出了一个操作例程库，通过它，我们可以使用C/C++或者Fortran程序读写MAT文件。 &lt;br /&gt;
+·引擎应用程序&lt;br /&gt;
+MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而把MATLAB用作一个计算引擎。MATLAB引擎程序指的是那些通过管道（在UNIX系统中）或者ActiveX（在Windows系统中）与独立MATLAB进程进行通信的C/C++或者Fortran程序。&lt;br /&gt;
+#####1.MEX文件&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include “mex.h”  &lt;/span&gt;
     &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
@@ -1246,30 +1171,24 @@ MATLAB提供了一系列的例程使得别的程序可以调用MATLAB，从而�
     &lt;span class=&quot;n&quot;&gt;timestwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;matlab命令行上输入以下语句：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mex testmex.cpp&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;testmex&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;2.MAT文件：&lt;/h5&gt;
-
-&lt;p&gt;libmat.dll:用于操作mat文件&lt;br/&gt;
-libmx.dll:用于操作mat文件中的矩阵&lt;br/&gt;
-MATLAB中常用的矩阵类型：&lt;/p&gt;
-
-&lt;h5&gt;3.(复）双精度矩阵：&lt;/h5&gt;
-
-&lt;p&gt;MATLAB中最常用的数据类型便是（复）双精度、非稀疏矩阵，这些矩阵的元素都是双精度（double）的，矩阵的尺寸为m×n，其中m是总行数，m是总列数。矩阵数据实际存放在两个双精度向量中——一个向量存放的是数据的实部，另一个向量存放的是数据的虚部。指向这两个向量的指针一般被写做“pr” （pointer to real data，指向实数据的指针）和“pi” （pointer to imaginary data，指向虚数据的指针）”。如果一个矩阵的pi为空的话，说明它是实双精度矩阵。&lt;br/&gt;
-稀疏矩阵（Sparse Matrices）&lt;br/&gt;
-MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。&lt;br/&gt;
+&lt;h5 id=&quot;mat&quot;&gt;2.MAT文件：&lt;/h5&gt;
+&lt;p&gt;libmat.dll:用于操作mat文件&lt;br /&gt;
+libmx.dll:用于操作mat文件中的矩阵&lt;br /&gt;
+MATLAB中常用的矩阵类型：&lt;br /&gt;
+#####3.(复）双精度矩阵：&lt;br /&gt;
+MATLAB中最常用的数据类型便是（复）双精度、非稀疏矩阵，这些矩阵的元素都是双精度（double）的，矩阵的尺寸为m×n，其中m是总行数，m是总列数。矩阵数据实际存放在两个双精度向量中——一个向量存放的是数据的实部，另一个向量存放的是数据的虚部。指向这两个向量的指针一般被写做“pr” （pointer to real data，指向实数据的指针）和“pi” （pointer to imaginary data，指向虚数据的指针）”。如果一个矩阵的pi为空的话，说明它是实双精度矩阵。&lt;br /&gt;
+稀疏矩阵（Sparse Matrices）&lt;br /&gt;
+MATLAB中稀疏矩阵的存储格式与众不同。如同双精度矩阵一样，它拥有参数pr和pi，同时它还具用三个附加的参数：nzmax，ir以及jc。&lt;br /&gt;
 nzmax是个整型数，其值为向量ir及pr、pi（如果存在的话）可能的最大长度。它是稀疏矩阵中不为零的元素的个数。
-ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。&lt;br/&gt;
-jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中包含的是列号信息。对于任意的j，如果0≤j≥N-1，jc[j]是第j列中第一个非零项在ir、pr（以及pi）中的序号，jc[j+1]-1是第j列最后一个非零项的序号。因此jc[N]总等于nnz——矩阵中非零项的总个数。如果nnz小于nzmax，可以继续向矩阵中添加非零项而无需分配额外的存储空间&amp;lt;&lt;/p&gt;
-
-&lt;h5&gt;4、主要函数举例:&lt;/h5&gt;
+ir指向一个长度为nzmax的整型数阵列，阵列包含的是pr和pi中对应元素的行号。&lt;br /&gt;
+jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中包含的是列号信息。对于任意的j，如果0≤j≥N-1，jc[j]是第j列中第一个非零项在ir、pr（以及pi）中的序号，jc[j+1]-1是第j列最后一个非零项的序号。因此jc[N]总等于nnz——矩阵中非零项的总个数。如果nnz小于nzmax，可以继续向矩阵中添加非零项而无需分配额外的存储空间&amp;lt;&lt;br /&gt;
+#####4、主要函数举例:  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——打开&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;创建&lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MATFile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——打开&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;创建一个&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;文件；&lt;/span&gt;
@@ -1290,8 +1209,6 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
      &lt;span class=&quot;cp&quot;&gt;#把矩阵pA存储入MAT文件pMAF；  &lt;/span&gt;
     &lt;span class=&quot;err&quot;&gt;·&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mxDestroyArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mxArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;——释放矩阵&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;（把它从内存中撤销）；&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-
 </description>
                 <link>http://i.justpic.org/2014/05/06/matlab-c</link>
                 <guid>http://i.justpic.org/2014/05/06/matlab-c</guid>
@@ -1300,7 +1217,8 @@ jc指向一个长度为N+1的整型数阵列（N为矩阵的列数），其中�
 
         <item>
                 <title>tornado with i18n</title>
-                <description>&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
+                <description>
+&lt;p&gt;i18n是国际化的简称（Internationalization,去掉开始的I和最后的N，中间一共18个字符）。
 tornado中使用i18n需要下面两个工具
 两个工具:pygettext,msgfmt，两个相关文件:po文件和mo文件&lt;/p&gt;
 
@@ -1329,11 +1247,11 @@ msgfmt messages.po&lt;/p&gt;
 &lt;p&gt;cn目录是所对应的语言，LC_MESSAGES是gettext.py文件里要求的
 mo文件必须和所定义的域同名
 gettext.py中有
-modfile=os.path.join(localedir,lang,&amp;lsquo;LC_MESSAGES&amp;rsquo;,&amp;lsquo;%s.mo&amp;rsquo; %domain)&lt;/p&gt;
+modfile=os.path.join(localedir,lang,’LC_MESSAGES’,’%s.mo’ %domain)&lt;/p&gt;
 
 &lt;p&gt;测试：
     $python
-    &gt;&gt;&gt;gettext.install(&amp;lsquo;messages&amp;rsquo;,&amp;lsquo;./locale&amp;rsquo;,unicode=True)
+    »&amp;gt;gettext.install(‘messages’,’./locale’,unicode=True)
 三个参数：
 作用域名，用于限定翻译文件的主名
 路径，存放翻译文件的路径
@@ -1345,15 +1263,10 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
 
 &lt;p&gt;在tornado中使用时:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html)
+&lt;pre&gt;&lt;code&gt;$xgettext -L python -k=_ -o openquant.po $(find . -name \*.py) $(find template/ -name \*.html) 查找所有需要翻译的相关项生成 po 文件
+
+$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo 生成mo文件
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查找所有需要翻译的相关项生成 po 文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$msgfmt openquant.po -o locale/zh_CN/LC_MESSAGES/openquant.mo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;生成mo文件&lt;/p&gt;
 
 &lt;p&gt;完成相关文件的生成后，需要在代码中加载:&lt;/p&gt;
 
@@ -1377,6 +1290,7 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
 &lt;p&gt;&lt;a href=&quot;http://www.ylinux.org/imind/167&quot;&gt;iMind&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://justbm.blogspot.com/2014/01/django.html&quot;&gt;django多国语言&lt;/a&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/04/27/tornado-with-i18n</link>
                 <guid>http://i.justpic.org/2014/04/27/tornado-with-i18n</guid>
@@ -1385,13 +1299,12 @@ unicode，是否使用unicode（如果应用程序是unicode的，此处应设�
 
         <item>
                 <title>install multi version JDK on ubuntu</title>
-                <description>&lt;p&gt;三条命令搞定：&lt;/p&gt;
+                <description>
+&lt;p&gt;三条命令搞定：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java7-installer
 sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 
 </description>
                 <link>http://i.justpic.org/2014/04/19/install-multi-version-jdk-on-ubuntu</link>
@@ -1401,40 +1314,33 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
         <item>
                 <title>open toolchain on ubuntu 12.04</title>
-                <description>&lt;h3&gt;ubuntu 12.04 安装llvm3.4、ios-lang交叉编译环境小记&lt;/h3&gt;
-
-&lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链 &lt;br/&gt;
-安装gcc-4.8如前文所述&lt;a href=&quot;/2014/04/02/gcc-48-on-ubuntu/&quot;&gt;install gcc4.8 on ubuntu 12.04&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5&gt;安装llvm,clang&lt;/h5&gt;
-
-&lt;p&gt;/etc/apt/sources.list中添加如下两行：&lt;/p&gt;
+                <description>
+&lt;h3 id=&quot;ubuntu-1204-llvm34ios-lang&quot;&gt;ubuntu 12.04 安装llvm3.4、ios-lang交叉编译环境小记&lt;/h3&gt;
+&lt;p&gt;在ubuntu 12.04上先安装gcc-4.8，然后安装llvm,clang,libcxx,libcxxabi.由于libcxx和libcxxabi相互依赖，需要两次安装libcxx。最后安装theos等开放的ios开发工具链 &lt;br /&gt;
+安装gcc-4.8如前文所述&lt;a href=&quot;/2014/04/02/gcc-48-on-ubuntu/&quot;&gt;install gcc4.8 on ubuntu 12.04&lt;/a&gt;&lt;br /&gt;
+#####安装llvm,clang
+/etc/apt/sources.list中添加如下两行：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main
     deb-src http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;检索签名：&lt;/h5&gt;
+&lt;h5 id=&quot;section&quot;&gt;检索签名：&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;sudo apt-key add -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;安装与llvm-3.4,clang-3.4相关的所有包：&lt;/h5&gt;
+&lt;h5 id=&quot;llvm-34clang-34&quot;&gt;安装与llvm-3.4,clang-3.4相关的所有包：&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;apt-get install clang-3.4 clang-3.4-doc libclang-common-3.4-dev libclang-3.4-dev libclang1-3.4 libclang1-3.4-dbg libllvm-3.4-ocaml-dev libllvm3.4 libllvm3.4-dbg lldb-3.4 llvm-3.4 llvm-3.4-dev llvm-3.4-doc llvm-3.4-examples llvm-3.4-runtime clang-modernize-3.4 clang-format-3.4 python-clang-3.4 lldb-3.4-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;安装libcxx：&lt;/h5&gt;
+&lt;h5 id=&quot;libcxx&quot;&gt;安装libcxx：&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;查看g++使用的头文件:&lt;/h5&gt;
+&lt;h5 id=&quot;g&quot;&gt;查看g++使用的头文件:&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; g++ -Wp,-v -x c++ - -fsyntax-only&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;将会输出类似如下结果：&lt;/h5&gt;
+&lt;h5 id=&quot;section-1&quot;&gt;将会输出类似如下结果：&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ignoring nonexistent directory &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/local/include/x86_64-linux-gnu&amp;quot;&lt;/span&gt;
     ignoring nonexistent directory &lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/lib/gcc/x86_64-linux- gnu/4.8/../../../../x86_64-linux-gnu/include&amp;quot;&lt;/span&gt;
@@ -1450,22 +1356,18 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     /usr/include
     End of search list.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;编译安装libcxx：&lt;/h5&gt;
+&lt;h5 id=&quot;libcxx-1&quot;&gt;编译安装libcxx：&lt;/h5&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang &lt;span class=&quot;nv&quot;&gt;CXX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;clang++ cmake -G &lt;span class=&quot;s2&quot;&gt;&amp;quot;Unix Makefiles&amp;quot;&lt;/span&gt; -DLIBCXX_CXX_ABI&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;libsupc++ - &lt;span class=&quot;nv&quot;&gt;DLIBCXX_LIBSUPCXX_INCLUDE_PATHS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/usr/include/c++/4.7/;/usr/include/x86_64-linux- gnu/c++/4.7/&amp;quot;&lt;/span&gt; -DCMAKE_BUILD_TYPE&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Release -DCMAKE_INSTALL_PREFIX&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr &amp;lt;libc++-source-dir&amp;gt;
     make
     sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h5&gt;安装libcxxabi&lt;/h5&gt;
-
-&lt;p&gt;首先安装相关依赖：&lt;/p&gt;
+&lt;h5 id=&quot;libcxxabi&quot;&gt;安装libcxxabi&lt;/h5&gt;
+&lt;p&gt;首先安装相关依赖：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install g++ subversion cmake swig python-dev libedit-dev libunwind8 libunwind8-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;下载源码并编译：&lt;/p&gt;
+&lt;p&gt;下载源码并编译：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libcxxabi/lib
@@ -1474,8 +1376,7 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     sudo ln -s /usr/lib/libc++abi.so.1.0 /usr/lib/libc++abi.so.1
     sudo ln -s /usr/lib/libc++abi.so.1 /usr/lib/libc++abi.so&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;使用libc++abi来安装libc++&lt;/p&gt;
+&lt;p&gt;使用libc++abi来安装libc++  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx
     &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libcxx
@@ -1485,8 +1386,8 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     make
     sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;至此ubuntu 12.04上的LLVM环境就算搭建好了。&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</link>
                 <guid>http://i.justpic.org/2014/04/12/open-toolchain-on-ubuntu-1204</guid>
@@ -1495,7 +1396,8 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
         <item>
                 <title>mysql使用总结</title>
-                <description>&lt;h3&gt;Mysql导入导出&lt;/h3&gt;
+                <description>
+&lt;h3 id=&quot;mysql&quot;&gt;Mysql导入导出&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;导出所有库  
     mysqldump -uusername -ppassword --all-databases&amp;gt;all.sql
@@ -1517,8 +1419,7 @@ sudo update-alternatives --config java&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 mysqldump字符集设置
     &lt;span class=&quot;nv&quot;&gt;$mysqldump&lt;/span&gt; -uusername -ppassword --default-character-set&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8 db1 table1&amp;gt;tb1.sql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h3&gt;Mysql用户管理&lt;/h3&gt;
+&lt;h3 id=&quot;mysql-1&quot;&gt;Mysql用户管理&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;创建用户
     mysql&amp;gt; insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;phplamp&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;1234&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1529,8 +1430,7 @@ mysqldump字符集设置
 显示当前用户    
     mysql&amp;gt;select USER&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h3&gt;Mysql启用远程&lt;/h3&gt;
+&lt;h3 id=&quot;mysql-2&quot;&gt;Mysql启用远程&lt;/h3&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /etc/mysql
     vi my.cnf  &lt;span class=&quot;c&quot;&gt;#注释bind-address&lt;/span&gt;
@@ -1540,69 +1440,64 @@ mysqldump字符集设置
     flush privileges&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     quit&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Mysql启用远程的目的可能还是为了解决windows python mysql的问题：
-在Windows上只需要安装&lt;a href=&quot;http://www.codegood.com/download/11/&quot;&gt;MySQL-python&lt;/a&gt;后，后期只需要连接到远程mysql后就可以了&lt;/p&gt;
-
-&lt;h3&gt;Mysql 主从复制&lt;/h3&gt;
-
-&lt;p&gt;mysql复制的用途:&lt;br/&gt;
+在Windows上只需要安装&lt;a href=&quot;http://www.codegood.com/download/11/&quot;&gt;MySQL-python&lt;/a&gt;后，后期只需要连接到远程mysql后就可以了
+###Mysql 主从复制&lt;br /&gt;
+mysql复制的用途:&lt;br /&gt;
 读取扩展
-主备份服务器&lt;br/&gt;
-故障转移服务器&lt;br/&gt;
-地理空间冗余&lt;br/&gt;
-数据仓库&lt;br/&gt;
-基准测试&lt;br/&gt;
-软件更新&lt;br/&gt;
-复制配置(my.cnf):  &lt;br/&gt;
-主服务器配置(Alpha)&lt;br/&gt;
-[mysqld]&lt;br/&gt;
-log-bin=binary-log #log-bin参数启动二进制日志.二进制日志在MySQL环境中提供了多种用途.它为MySQL复制提供了DDL和DML语句流,能够重新应用于复制的从服务器.&lt;br/&gt;
-server-id=1&lt;br/&gt;
-重新启动MySQL后 ,使用SQL命令show master status;进行验证.(对于配置复制的从服务器是必要的)&lt;br/&gt;
-从服务器配置(Beta)&lt;br/&gt;
-[mysqld]&lt;br/&gt;
-server-id=2&lt;br/&gt;
-read_only=TRUE&lt;/p&gt;
+主备份服务器&lt;br /&gt;
+故障转移服务器&lt;br /&gt;
+地理空间冗余&lt;br /&gt;
+数据仓库&lt;br /&gt;
+基准测试&lt;br /&gt;
+软件更新&lt;br /&gt;
+复制配置(my.cnf):  &lt;br /&gt;
+主服务器配置(Alpha)&lt;br /&gt;
+[mysqld]&lt;br /&gt;
+log-bin=binary-log #log-bin参数启动二进制日志.二进制日志在MySQL环境中提供了多种用途.它为MySQL复制提供了DDL和DML语句流,能够重新应用于复制的从服务器.&lt;br /&gt;
+server-id=1&lt;br /&gt;
+重新启动MySQL后 ,使用SQL命令show master status;进行验证.(对于配置复制的从服务器是必要的)&lt;br /&gt;
+从服务器配置(Beta)&lt;br /&gt;
+[mysqld]&lt;br /&gt;
+server-id=2&lt;br /&gt;
+read_only=TRUE  &lt;/p&gt;
 
-&lt;p&gt;show slave status;&lt;br/&gt;
-change master to
-MASTER_HOST=&amp;lsquo;192.168.100.1&amp;rsquo;,#主服务器上的用户名和密码&lt;br/&gt;
-MASTER_USER=&amp;lsquo;rep1&amp;rsquo;,&lt;br/&gt;
-MASTER_PASSWORD=&amp;lsquo;rep12009&amp;rsquo;;&lt;/p&gt;
+&lt;p&gt;show slave status;&lt;br /&gt;
+change master to 
+MASTER_HOST=’192.168.100.1’,#主服务器上的用户名和密码&lt;br /&gt;
+MASTER_USER=’rep1’,&lt;br /&gt;
+MASTER_PASSWORD=’rep12009’;  &lt;/p&gt;
 
-&lt;p&gt;change master to&lt;br/&gt;
-MASTER_LOG_FILE=&amp;lsquo;binary-log.00001&amp;rsquo;,#主服务器上运行show
- master status命令所检索到的日志文件名称和位置.    &lt;br/&gt;
-MASTER_LOG_POS=106;&lt;/p&gt;
+&lt;p&gt;change master to&lt;br /&gt;
+MASTER_LOG_FILE=’binary-log.00001’,#主服务器上运行show
+ master status命令所检索到的日志文件名称和位置.    &lt;br /&gt;
+MASTER_LOG_POS=106;  &lt;/p&gt;
 
-&lt;p&gt;slave start;#启动从服务器验证其操作&lt;br/&gt;
-show slave status;#Slave_IO_Running和Slave_SQL_Running的值为Yes,就证明&quot;主服务器-从服务器&quot;式的MySQL拓扑已经正常运行.&lt;br/&gt;
-测试MySQL复制&lt;br/&gt;
-在alpha上测试下面的代码:&lt;br/&gt;
-PROMPT alpha&gt;;
-alpha&gt;&lt;br/&gt;
-确认从服务器上什么都不存在:&lt;br/&gt;
-beta&gt; show schemas;&lt;/p&gt;
-
-&lt;h3&gt;Mysql 创建视图&lt;/h3&gt;
+&lt;p&gt;slave start;#启动从服务器验证其操作&lt;br /&gt;
+show slave status;#Slave_IO_Running和Slave_SQL_Running的值为Yes,就证明”主服务器-从服务器”式的MySQL拓扑已经正常运行.&lt;br /&gt;
+测试MySQL复制&lt;br /&gt;
+在alpha上测试下面的代码:&lt;br /&gt;
+PROMPT alpha&amp;gt;;
+alpha&amp;gt;&lt;br /&gt;
+确认从服务器上什么都不存在:&lt;br /&gt;
+beta&amp;gt; show schemas;&lt;br /&gt;
+###Mysql 创建视图  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; * from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 create view v as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 create view v&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vid,vname,vage&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; as &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; id,name,age from table&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;on,where,having的区别&lt;br/&gt;
+&lt;p&gt;on,where,having的区别&lt;br /&gt;
 on,where,having这三个都可以加条件的子句中,on是最先执行,where次之,having最后.有时候如果这先后顺序不影响中间结果的话,那最终结果是相同的.但因为on是先把不符合条件的记录过滤后才进行统计,它就可以减少中间运算要处理的数据,按理说应该速度是最快的.&lt;/p&gt;
 
 &lt;p&gt;根据上面的分析,可以知道where应该比having快一点,应为它过滤数据后才进行sum,所以having是最慢的.但也不是说having没用,因为有时在步骤三还没有出来都不知道那个记录才符合要求时,就要用having了.
 left join加上where 条件
-用where是先连接然后再筛选&lt;br/&gt;
-用and是先筛选再连接
-数据库范式:&lt;br/&gt;
-第一范式:强调的是列的原子性.&lt;br/&gt;
-第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.&lt;br/&gt;
-第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.&lt;/p&gt;
+用where是先连接然后再筛选&lt;br /&gt;
+用and是先筛选再连接 
+数据库范式:&lt;br /&gt;
+第一范式:强调的是列的原子性.&lt;br /&gt;
+第二范式:首先使1NF,另外包含两部分内容,一是表必须有一个主键;二是没有包含在主键中的列必须完全依赖于主键,而不能只依赖于主键的一部分.&lt;br /&gt;
+第三范式:首先是2NF,另外非主键列必须直接依赖于主键,不能存在传递依赖.即不能存在:非主键列A依赖于非主键列B,非主键列B依赖于主键的情况.  &lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/16995616/monogodb-service-cannot-start-after-storage-extension-under-ubuntu-12-04&quot;&gt;无法启动mongodb的解决方法&lt;/a&gt;
 &lt;a href=&quot;http://supportcenter.verio.com/KB/questions.php?questionid=494&quot;&gt;启用远程mysql&lt;/a&gt;&lt;/p&gt;
@@ -1614,12 +1509,13 @@ left join加上where 条件
 
         <item>
                 <title>gcc 4.8 on ubuntu</title>
-                <description>&lt;p&gt;命令行中输入以下命令安装相关包&lt;/p&gt;
+                <description>
+&lt;p&gt;命令行中输入以下命令安装相关包&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
-     sudo add-apt-repository ppa:boost-latest/ppa
-     sudo apt-get update
-     sudo apt-get install libboost1.55-all-dev
+	 sudo add-apt-repository ppa:boost-latest/ppa
+	 sudo apt-get update
+	 sudo apt-get install libboost1.55-all-dev
      sudo add-apt-repository ppa:ubuntu-toolchain-r/test
      sudo apt-get update
      sudo apt-get install gcc-4.8 g++-4.8
@@ -1627,29 +1523,24 @@ left join加上where 条件
      sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt; --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
      sudo update-alternatives --config gcc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;br/&gt;
-下载&lt;a href=&quot;&quot;&gt;osxcross&lt;/a&gt;&lt;br/&gt;
-编译若出现错误： fatal error:limits can&amp;rsquo;t find?&lt;br/&gt;
-使用以下命令进行修正&lt;/p&gt;
+&lt;p&gt;安装完gcc-4.8后即可安装llvm-3.4 参考 &lt;a href=&quot;&quot;&gt;llvm/apt&lt;/a&gt;&lt;br /&gt;
+下载&lt;a href=&quot;&quot;&gt;osxcross&lt;/a&gt;&lt;br /&gt;
+编译若出现错误： fatal error:limits can’t find?&lt;br /&gt;
+使用以下命令进行修正       &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#include &amp;lt;limits.h&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; clang -v -xc -o /dev/null -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;使用上述命令排错，依依对照toolchain查找的include顺序，修改include链接，即可解决问题
-其实这是一个llvm的bug&lt;br/&gt;
-临时解决方案&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300&quot;&gt;参考&lt;/a&gt;:&lt;/p&gt;
+其实这是一个llvm的bug&lt;br /&gt;
+临时解决方案&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/llvm-defaults/+bug/1242300&quot;&gt;参考&lt;/a&gt;:  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$cd&lt;/span&gt; /usr/lib/clang/&amp;lt;clang-version/
     &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; ln -sf ../../llvm-3.4/lib/clang/&amp;lt;clang-version&amp;gt;/include include&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;再次编译可以通过。
 一个查找文件的有用命令:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$grep&lt;/span&gt; notification &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;find ./*&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 
 </description>
                 <link>http://i.justpic.org/2014/04/02/gcc-48-on-ubuntu</link>
@@ -1659,8 +1550,10 @@ left join加上where 条件
 
         <item>
                 <title>install windows/linux with usb</title>
-                <description>&lt;p&gt;我们在使用u盘安装windows系统或者linux系统时，会发现不是那么方便，即使有老毛桃这样的现成工具，推荐一个开源的写镜像文件的工具，非常方便。
-&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;我们在使用u盘安装windows系统或者linux系统时，会发现不是那么方便，即使有老毛桃这样的现成工具，推荐一个开源的写镜像文件的工具，非常方便。
+&lt;a href=&quot;https://github.com/pbatard/rufus/&quot;&gt;rufus&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</link>
                 <guid>http://i.justpic.org/2014/04/01/install-windowslinux-with-usb</guid>
@@ -1669,10 +1562,10 @@ left join加上where 条件
 
         <item>
                 <title>install redmine in ubuntu</title>
-                <description>&lt;p&gt;安装redmine出现权限问题的解决方法&lt;/p&gt;
+                <description>
+&lt;p&gt;安装redmine出现权限问题的解决方法   &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;chmod &lt;span class=&quot;m&quot;&gt;777&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#命令 来解决权限问题&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;具体安装方法可安装下面文章的方法
 &lt;a href=&quot;http://redminecrm.com/boards/4/topics/448-installing-redmine-2-2-passenger-nginx-rvm-on-ubuntu-12-04&quot;&gt;install redmine on ubuntu12.04&lt;/a&gt;&lt;/p&gt;
@@ -1684,7 +1577,8 @@ left join加上where 条件
 
         <item>
                 <title>a little surprised</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://www.jstatsoft.org/v27&quot;&gt;yihui&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://cos.name/2013/02/rise-of-the-machine/&quot;&gt;cos&lt;/a&gt;&lt;/p&gt;
 
@@ -1697,7 +1591,8 @@ left join加上where 条件
 
         <item>
                 <title>data analysis</title>
-                <description>&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
+                <description>
+&lt;p&gt;http://www.datagenetics.com/&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/11/09/data-analysis</link>
                 <guid>http://i.justpic.org/2013/11/09/data-analysis</guid>
@@ -1706,7 +1601,8 @@ left join加上where 条件
 
         <item>
                 <title>understand WSGI</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://www.myexception.cn/perl-python/1351788.html&quot;&gt;web.py源码解析&lt;/a&gt;
 &lt;a href=&quot;http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html&quot;&gt;WSGI&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;web server side:&lt;/p&gt;
@@ -1720,14 +1616,15 @@ for data in iterable:
     #send data to client
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;WSGI PEP333 &lt;br/&gt;
-WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）&lt;/p&gt;
+&lt;p&gt;WSGI PEP333 &lt;br /&gt;
+WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chunked-wsgi）       &lt;/p&gt;
 
 &lt;p&gt;后续：&lt;/p&gt;
 
 &lt;p&gt;http://benosteen.wordpress.com&lt;/p&gt;
 
 &lt;p&gt;My swiss army toolkit for distributed/multiproesssing systems&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2013/11/06/python-web</link>
                 <guid>http://i.justpic.org/2013/11/06/python-web</guid>
@@ -1736,23 +1633,24 @@ WSGI中分块传输大文件，使用yield：（rhodesmill.org/brandon/2013/chun
 
         <item>
                 <title>leaning python site</title>
-                <description>&lt;h3&gt;Learning Python Sites&lt;/h3&gt;
+                <description>
+&lt;h3 id=&quot;learning-python-sites&quot;&gt;Learning Python Sites&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker’s Guide to Python&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.codecademy.com/zh/tracks/python&quot;&gt;codecademy课程&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://inventwithpython.com/chapters/&quot;&gt;invent with python&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;medium(中级)&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;通过改错学习python&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;advanced(高级)&lt;/strong&gt; &lt;br /&gt;
+&lt;a href=&quot;http://www.infoq.com/cn/news/2014/04/pyston&quot;&gt;python与llvm结合&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;http://github.com/dropbox/pyston&quot;&gt;pyston&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://anandology.com/python-practice-book&quot;&gt;python practice book&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf&quot;&gt;python作统计分析&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt; &lt;br /&gt;
+online game:&lt;br /&gt;
+&lt;a href=&quot;http://www.checkio.org&quot;&gt;Game&lt;/a&gt;  &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;basic(初级)&lt;/strong&gt;&lt;br/&gt;
-&lt;a href=&quot;docs.python-guide.org/en/latest&quot;&gt;Hitchhiker&amp;rsquo;s Guide to Python&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://woodpecker.org.cn/abyteofpython_cn/chinese/&quot;&gt;A byte of Python(中文的)&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.codecademy.com/zh/tracks/python&quot;&gt;codecademy课程&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://inventwithpython.com/chapters/&quot;&gt;invent with python&lt;/a&gt;&lt;br/&gt;
-&lt;strong&gt;medium(中级)&lt;/strong&gt;&lt;br/&gt;
-&lt;a href=&quot;https://github.com/gregmalcolm/python_koans&quot;&gt;通过改错学习python&lt;/a&gt;&lt;br/&gt;
-&lt;strong&gt;advanced(高级)&lt;/strong&gt; &lt;br/&gt;
-&lt;a href=&quot;http://www.infoq.com/cn/news/2014/04/pyston&quot;&gt;python与llvm结合&lt;/a&gt;  &lt;br/&gt;
-&lt;a href=&quot;http://github.com/dropbox/pyston&quot;&gt;pyston&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://anandology.com/python-practice-book&quot;&gt;python practice book&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.kevinsheppard.com/images/0/09/Python_introduction.pdf&quot;&gt;python作统计分析&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.tuiku.com&quot;&gt;tuiku&lt;/a&gt; &lt;br/&gt;
-online game:&lt;br/&gt;
-&lt;a href=&quot;http://www.checkio.org&quot;&gt;Game&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/11/05/leaning-python-site</link>
                 <guid>http://i.justpic.org/2013/11/05/leaning-python-site</guid>
@@ -1761,7 +1659,8 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>deploy python on nginx</title>
-                <description>&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;serholiu.com/tornado-nginx-supervisord&quot;&gt;tornado with nginx&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/&quot;&gt;gunicorn with nginx&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/11/04/deploy-python-on-nginx</link>
@@ -1771,7 +1670,8 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>install project on preferati</title>
-                <description>&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
+                <description>
+&lt;p&gt;Install OpenQuant Project&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install nginx
     sudo apt-get install git
@@ -1786,13 +1686,11 @@ online game:&lt;br/&gt;
     install numpy scipy pandas and ta-lib
     sudo pip install Cython&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;strong&gt;due to blas libs&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install gfortran libopenblas-dev liblapack-dev g++
     pip install numpy
     pip install scipy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;&lt;strong&gt;install ta-lib&lt;/strong&gt;&lt;/p&gt;
 
@@ -1805,7 +1703,6 @@ online game:&lt;br/&gt;
     make
     sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;strong&gt;install gevent&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz
@@ -1817,7 +1714,6 @@ online game:&lt;br/&gt;
     git clone https://github.com/pydata/pandas.git
     git clone https://github.com/mrjbq7/ta-lib.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;strong&gt;update the nginx&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
@@ -1826,24 +1722,22 @@ online game:&lt;br/&gt;
     sudo apt-get update
     sudo apt-get install nginx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;strong&gt;mysql init&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install mysql-server libmysqld-dev
     pip install MySQL-python
     insert into mysql.user&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Host,User,Password&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;localhost&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;,password&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;&lt;strong&gt;用户授权&lt;/strong&gt;&lt;br/&gt;
-给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用户授权&lt;/strong&gt;&lt;br /&gt;
+给本地用户mql分配可对所有数据库的所有表进行所有操作的权限，并设定口令为123456。  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mysql&amp;gt;grant all privileges on *.* to username@localhost identified by &lt;span class=&quot;s1&quot;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;strong&gt;install redis&lt;/strong&gt;
-具体参考&lt;a href=&quot;http://rubyer.me/blog/638/%20redis.io&quot;&gt;install redis&lt;/a&gt;&lt;/p&gt;
+具体参考&lt;a href=&quot;http://rubyer.me/blog/638/ redis.io&quot;&gt;install redis&lt;/a&gt;  &lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;uwsgi or gunicorn(optional)&lt;/strong&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2013/10/27/install-project-on-preferati</link>
                 <guid>http://i.justpic.org/2013/10/27/install-project-on-preferati</guid>
@@ -1852,8 +1746,9 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>how to write a crawler</title>
-                <description>&lt;p&gt;两篇文章:&lt;br/&gt;
-&lt;a href=&quot;http://www.emanueleminotto.it/how-to-write-a-crawler&quot;&gt;how to wirte a crawler&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;两篇文章:&lt;br /&gt;
+&lt;a href=&quot;http://www.emanueleminotto.it/how-to-write-a-crawler&quot;&gt;how to wirte a crawler&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://benosteen.wordpress.com/2010/02/11/my-swiss-army-toolkit-for-distributedmultiprocessing-systems/&quot;&gt;瑞士小军刀&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/10/26/how-to-write-a-crawler</link>
@@ -1863,13 +1758,13 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>install numpy scipy on ubuntu</title>
-                <description>&lt;h4&gt;linux上安装numpy scipy&lt;/h4&gt;
+                <description>
+&lt;h4 id=&quot;linuxnumpy-scipy&quot;&gt;linux上安装numpy scipy&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo pip install numpy
     sudo apt-get install libatlas-base-dev gfortran
     sudo pip install scipy
     sudo pip install matplotlib   &lt;span class=&quot;c&quot;&gt;# recommended&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Line 2 was necessary for SciPy, otherwise it was complaining that BLAS and a Fortran compiler were missing. Note that gfortran replaces the package g77.&lt;/p&gt;
 </description>
@@ -1880,13 +1775,14 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>python machine learning</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.yuanyong.org/blog/python/k-means-using-python&quot;&gt;k-means&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://jmlr.org/mloss/&quot;&gt;JMLR&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://mloss.org/software/&quot;&gt;machine learning open source&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://www.xavierdupre.fr/blog/2013-09-15_nojs.html&quot;&gt;python machine learning&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.yuanyong.org/blog/python/k-means-using-python&quot;&gt;k-means&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://jmlr.org/mloss/&quot;&gt;JMLR&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://mloss.org/software/&quot;&gt;machine learning open source&lt;/a&gt;&lt;br /&gt;
 中文资料
-&lt;a href=&quot;http://blog.csdn.net/zouxy09/article/details/8775524&quot;&gt;深度学习笔记&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B&quot;&gt;UFLDL教程&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;http://blog.csdn.net/zouxy09/article/details/8775524&quot;&gt;深度学习笔记&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B&quot;&gt;UFLDL教程&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/10/17/python-machine-learning</link>
                 <guid>http://i.justpic.org/2013/10/17/python-machine-learning</guid>
@@ -1895,10 +1791,11 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>git</title>
-                <description>&lt;h1&gt;git学习资料&lt;/h1&gt;
+                <description>
+&lt;h1 id=&quot;git&quot;&gt;git学习资料&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/jbenet/ee6c9ac48068889b0912&quot;&gt;a gist for git&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://gitref.cyj.me/zh/remotes/&quot;&gt;git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/jbenet/ee6c9ac48068889b0912&quot;&gt;a gist for git&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://gitref.cyj.me/zh/remotes/&quot;&gt;git&lt;/a&gt;  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/09/29/git</link>
                 <guid>http://i.justpic.org/2013/09/29/git</guid>
@@ -1907,42 +1804,39 @@ online game:&lt;br/&gt;
 
         <item>
                 <title>nginx permission root</title>
-                <description>&lt;h4&gt;nginx 权限问题的解决方法&lt;/h4&gt;
-
-&lt;p&gt;按照下面方法配置nginx时出现用户权限问题&lt;/p&gt;
+                <description>
+&lt;h4 id=&quot;nginx-&quot;&gt;nginx 权限问题的解决方法&lt;/h4&gt;
+&lt;p&gt;按照下面方法配置nginx时出现用户权限问题  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;server&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    listen 4002&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    server_name localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    access_log logs/access.log&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-       proxy_set_header X-Real-IP &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_set_header X-Forwarded-For &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_set_header Host &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_set_header X-NginxX-Proxy &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_pass http://backend&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_redirect off&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      
-       proxy_http_version 1.1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_set_header Upgrade &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       proxy_set_header Connection &lt;span class=&quot;s2&quot;&gt;&amp;quot;upgrade&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-     upstream backend &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-     server 127.0.0.1:3201&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	listen 4002&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	server_name localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	access_log logs/access.log&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	location / &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	   proxy_set_header X-Real-IP &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_set_header X-Forwarded-For &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_set_header Host &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_set_header X-NginxX-Proxy &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_pass http://backend&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_redirect off&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	   
+	   proxy_http_version 1.1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_set_header Upgrade &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   proxy_set_header Connection &lt;span class=&quot;s2&quot;&gt;&amp;quot;upgrade&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	 upstream backend &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	 server 127.0.0.1:3201&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;参照&lt;a href=&quot;http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&quot;&gt;nginx 13:permission denied solved&lt;/a&gt;&lt;br/&gt;
-The root directive is the problem here. Quote from the doc:&lt;br/&gt;
-note: Keep in mind that the root will still append the directory to the request so that a request for &amp;ldquo;/i/top.gif&amp;rdquo; will not look in &amp;ldquo;/spool/w3/top.gif&amp;rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;br/&gt;
-Basically, only use root for real roots: if the content is to be at / use root. If it&amp;rsquo;s going to end on a subfolder, use alias:&lt;/p&gt;
+&lt;p&gt;参照&lt;a href=&quot;http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain&quot;&gt;nginx 13:permission denied solved&lt;/a&gt;&lt;br /&gt;
+The root directive is the problem here. Quote from the doc:&lt;br /&gt;
+note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.&lt;br /&gt;
+Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:  &lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;location  /map/ {
   alias  /home/user/public_html/map/;
-}  
+}   Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/09/18/nginx-permission-root</link>
                 <guid>http://i.justpic.org/2013/09/18/nginx-permission-root</guid>
@@ -1951,19 +1845,15 @@ Basically, only use root for real roots: if the content is to be at / use root. 
 
         <item>
                 <title>asynchrous,synchrous,blocking,unblocking network</title>
-                <description>&lt;h5&gt;Linux下的五种I/O模型&lt;/h5&gt;
+                <description>
+&lt;h5 id=&quot;linuxio&quot;&gt;Linux下的五种I/O模型&lt;/h5&gt;
+&lt;p&gt;#####阻塞I/O（blocking I/O）
+#####非阻塞I/O（nonblocking I/O）&lt;br /&gt;
+#####I/O服用（select和poll）（I/O multiplexing）
+#####信号驱动I/O（signal driven I/O（SIGIO））
+#####异步I/O（asynchronous I/O（the POSIX aio_functions))
+前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
 
-&lt;h5&gt;阻塞I/O（blocking I/O）&lt;/h5&gt;
-
-&lt;h5&gt;非阻塞I/O（nonblocking I/O）&lt;/h5&gt;
-
-&lt;h5&gt;I/O服用（select和poll）（I/O multiplexing）&lt;/h5&gt;
-
-&lt;h5&gt;信号驱动I/O（signal driven I/O（SIGIO））&lt;/h5&gt;
-
-&lt;h5&gt;异步I/O（asynchronous I/O（the POSIX aio_functions))&lt;/h5&gt;
-
-&lt;p&gt;前四种都是同步，只用最后一种是异步I/O&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</link>
                 <guid>http://i.justpic.org/2013/09/12/asynchroussynchrousblockingunblocking-network</guid>
@@ -1972,7 +1862,8 @@ Basically, only use root for real roots: if the content is to be at / use root. 
 
         <item>
                 <title>machine learning in action</title>
-                <description>&lt;p&gt;&lt;a href=&quot;https://github.com/pbharrin/machinelearninginaction&quot;&gt;machine learning in action&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;https://github.com/pbharrin/machinelearninginaction&quot;&gt;machine learning in action&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;zhan.renren.com/quantitativefinance?checked=true&quot;&gt;case&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/machine%20learning/2013/08/08/machine-learning-in-action</link>
@@ -1982,99 +1873,81 @@ Basically, only use root for real roots: if the content is to be at / use root. 
 
         <item>
                 <title>webpy</title>
-                <description>&lt;h1&gt;webpy 中文文档学习目录&lt;/h1&gt;
-
-&lt;h2&gt;web py&lt;/h2&gt;
-
-&lt;p&gt; &lt;a href=&quot;&quot;&gt;安装 webpy&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;webpy3.0 新手指南&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;webpy基本应用:&lt;/h3&gt;
-
-&lt;p&gt; &lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;提供静态文件访问&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;理解URL控制&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;跳转与重定向&lt;/a&gt;
- &lt;a href=&quot;&quot;&gt;使用子应用&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;提供XML访问&lt;/a&gt;&lt;br/&gt;
- &lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;高级应用:&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;应用处理器，添加钩子和卸载钩子&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何使用web.background&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;自定义NotFound信息&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何流传输大文件&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;对自带的webserver日志进行操作&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;用cherrypy提供SSL支持&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Sessions and user state 会话和用户状态:&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何在调试模式下使用Session&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;在template中使用session&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何操作Cookie&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;用户认证&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;一个在postgreSQL数据库环境下的用户认证的例子&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Utils 实用工具&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何利用Gmail发送邮件&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Templates 模板&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;使用站点布局模板&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;交替式风格 (未译)&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;导入函数到模板中 (未译)&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;模板文件中的i18n支持&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;在web.py中使用Mako模板引擎&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;在web.py中使用Cheetah模板引擎&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;在web.py中使用Jinja2模板引擎&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;如何在谷歌应用程序引擎使用模板&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Testing 测试:&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;Testing with Paste and Nose (未译)&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application&amp;rsquo;s request method (未译)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;User input 用户输入:&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;&quot;&gt;文件上传&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;保存上传的文件&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;上传文件大小限定&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;通过 web.input 接受用户输入&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;怎样使用表单&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;&quot;&gt;显示个别表单字段&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;Database 数据库&lt;/h3&gt;
-
-&lt;p&gt;使用多数据库 &lt;br/&gt;
-Select: 查询数据&lt;br/&gt;
-Update: 更新数据&lt;br/&gt;
-Delete: 删除数据&lt;br/&gt;
-Insert: 新增数据&lt;br/&gt;
-Query: 高级数据库查询&lt;br/&gt;
-怎样使用数据库事务&lt;br/&gt;
-使用 sqlalchemy&lt;br/&gt;
-整合 SQLite UDF (用户定义函数) 到 webpy 数据库层&lt;br/&gt;
-使用字典动态构造where子句&lt;/p&gt;
-
-&lt;h3&gt;Deployment 部署:&lt;/h3&gt;
-
-&lt;p&gt;通过Fastcgi和lighttpd部署  &lt;br/&gt;
-通过Webpy和Nginx with FastCGI搭建Web.py&lt;br/&gt;
-CGI deployment through Apache (未译)&lt;br/&gt;
-mod-pythondeployment through Apache (requested)&lt;br/&gt;
-通过Apache和mod-wsgi部署&lt;br/&gt;
-mod-wsgi deployment through Nginx (未译)&lt;br/&gt;
-Fastcgi deployment through Nginx (未译)&lt;/p&gt;
+                <description>
+&lt;h1 id=&quot;webpy-&quot;&gt;webpy 中文文档学习目录&lt;/h1&gt;
+&lt;p&gt;web py
+——-
+ &lt;a href=&quot;&quot;&gt;安装 webpy&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;webpy3.0 新手指南&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;webpy CookBook&lt;/a&gt;&lt;br /&gt;
+### webpy基本应用:
+ &lt;a href=&quot;&quot;&gt;Hello World&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;提供静态文件访问&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;理解URL控制&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;跳转与重定向&lt;/a&gt; 
+ &lt;a href=&quot;&quot;&gt;使用子应用&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;提供XML访问&lt;/a&gt;&lt;br /&gt;
+ &lt;a href=&quot;&quot;&gt;从post读取原始数据&lt;/a&gt;&lt;br /&gt;
+### 高级应用:
+&lt;a href=&quot;&quot;&gt;用web.ctx获得客户端信息&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;应用处理器，添加钩子和卸载钩子&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何使用web.background&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;自定义NotFound信息&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何流传输大文件&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;对自带的webserver日志进行操作&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;用cherrypy提供SSL支持&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;实时语言切换&lt;/a&gt;&lt;br /&gt;
+### Sessions and user state 会话和用户状态:
+&lt;a href=&quot;&quot;&gt;如何使用Session&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何在调试模式下使用Session&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;在template中使用session&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何操作Cookie&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;用户认证&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;一个在postgreSQL数据库环境下的用户认证的例子&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何在子应用中操作Session&lt;/a&gt;&lt;br /&gt;
+### Utils 实用工具
+&lt;a href=&quot;&quot;&gt;如何发送邮件&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何利用Gmail发送邮件&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;使用soaplib实现webservice&lt;/a&gt;&lt;br /&gt;
+### Templates 模板
+&lt;a href=&quot;&quot;&gt;Templetor: web.py 模板系统&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;使用站点布局模板&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;交替式风格 (未译)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;导入函数到模板中 (未译)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;模板文件中的i18n支持&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Mako模板引擎&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Cheetah模板引擎&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;在web.py中使用Jinja2模板引擎&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;如何在谷歌应用程序引擎使用模板&lt;/a&gt;&lt;br /&gt;
+### Testing 测试:
+&lt;a href=&quot;&quot;&gt;Testing with Paste and Nose (未译)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;RESTful doctesting using an application’s request method (未译)&lt;/a&gt;&lt;br /&gt;
+### User input 用户输入:
+&lt;a href=&quot;&quot;&gt;文件上传&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;保存上传的文件&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;上传文件大小限定&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;通过 web.input 接受用户输入&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;怎样使用表单&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;&quot;&gt;显示个别表单字段&lt;/a&gt;&lt;br /&gt;
+### Database 数据库
+使用多数据库 &lt;br /&gt;
+Select: 查询数据&lt;br /&gt;
+Update: 更新数据&lt;br /&gt;
+Delete: 删除数据&lt;br /&gt;
+Insert: 新增数据&lt;br /&gt;
+Query: 高级数据库查询&lt;br /&gt;
+怎样使用数据库事务&lt;br /&gt;
+使用 sqlalchemy&lt;br /&gt;
+整合 SQLite UDF (用户定义函数) 到 webpy 数据库层&lt;br /&gt;
+使用字典动态构造where子句 &lt;br /&gt;
+### Deployment 部署:
+通过Fastcgi和lighttpd部署  &lt;br /&gt;
+通过Webpy和Nginx with FastCGI搭建Web.py&lt;br /&gt;
+CGI deployment through Apache (未译)&lt;br /&gt;
+mod-pythondeployment through Apache (requested)&lt;br /&gt;
+通过Apache和mod-wsgi部署&lt;br /&gt;
+mod-wsgi deployment through Nginx (未译)&lt;br /&gt;
+Fastcgi deployment through Nginx (未译)  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/08/06/webpy</link>
                 <guid>http://i.justpic.org/2013/08/06/webpy</guid>
@@ -2083,7 +1956,8 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
 
         <item>
                 <title>jquery add element in the html dom</title>
-                <description>&lt;h4&gt;使用jquery增加元素节点&lt;/h4&gt;
+                <description>
+&lt;h4 id=&quot;jquery&quot;&gt;使用jquery增加元素节点&lt;/h4&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//add one element in the parent  &lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;li&amp;gt;新增节点：数据结构&amp;lt;/li&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2097,8 +1971,6 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.nm_ul&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;$parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$li_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-
 </description>
                 <link>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</link>
                 <guid>http://i.justpic.org/2013/07/29/jquery-add-element-in-the-html-dom</guid>
@@ -2107,19 +1979,17 @@ Fastcgi deployment through Nginx (未译)&lt;/p&gt;
 
         <item>
                 <title>web.py note</title>
-                <description>&lt;h1&gt;WSGI&lt;/h1&gt;
+                <description>
+&lt;h1 id=&quot;wsgi&quot;&gt;WSGI&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://archimedeanco.com/wsgi-tutorial/&quot;&gt;ppt&lt;/a&gt;&lt;br /&gt;
+#webpy学习笔记&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://archimedeanco.com/wsgi-tutorial/&quot;&gt;ppt&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1&gt;webpy学习笔记&lt;/h1&gt;
-
-&lt;h5&gt;web.ctx&lt;/h5&gt;
-
-&lt;p&gt;web.loadhook(handler)函数在web请求前执行handler函数&lt;br/&gt;
-web.unloadhook(handler)函数在web请求后执行的handler函数&lt;br/&gt;
-seeother:303临时重定向&lt;br/&gt;
-redirect：301永久重定向 &lt;br/&gt;
-seeother(../)seeother（/）&lt;br/&gt;
+&lt;h5 id=&quot;webctx&quot;&gt;web.ctx&lt;/h5&gt;
+&lt;p&gt;web.loadhook(handler)函数在web请求前执行handler函数&lt;br /&gt;
+web.unloadhook(handler)函数在web请求后执行的handler函数&lt;br /&gt;
+seeother:303临时重定向&lt;br /&gt;
+redirect：301永久重定向 &lt;br /&gt;
+seeother(../)seeother（/）&lt;br /&gt;
 前者返回到上层目录，后者重定向到当强目录，造成 无限次的重定向，是一种错误的用法。&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/07/28/webpy-note</link>
@@ -2129,8 +1999,8 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>sqlalchemy dynamic mapping</title>
-                <description>&lt;h1&gt;sqlalchemy动态映射&lt;/h1&gt;
-
+                <description>
+&lt;h1 id=&quot;sqlalchemy&quot;&gt;sqlalchemy动态映射&lt;/h1&gt;
 &lt;p&gt;代码如下:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sqlalchemy&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
@@ -2155,8 +2025,6 @@ seeother(../)seeother（/）&lt;br/&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T1Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T2Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-
 </description>
                 <link>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</link>
                 <guid>http://i.justpic.org/2013/07/26/sqlalchemy-dynamic-mapping</guid>
@@ -2165,7 +2033,8 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>premature optimization</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://scientopia.org/blogs/goodmath/2011/05/03/the-perils-of-premature-optimization/&quot;&gt;premature optimization&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/07/26/premature-optimization</link>
                 <guid>http://i.justpic.org/2013/07/26/premature-optimization</guid>
@@ -2174,10 +2043,12 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>memo on the trade</title>
-                <description>&lt;p&gt;RTA github&lt;br/&gt;
-&lt;a href=&quot;www.lowindata.com&quot;&gt;backbonejs note&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;www.icoding.co/2012/04/backbonejs-html-2&quot;&gt;backbonejs&lt;/a&gt;&lt;br/&gt;
+                <description>
+&lt;p&gt;RTA github&lt;br /&gt;
+&lt;a href=&quot;www.lowindata.com&quot;&gt;backbonejs note&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;www.icoding.co/2012/04/backbonejs-html-2&quot;&gt;backbonejs&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://code.google.com/p/pyctp/&quot;&gt;pyctp&lt;/a&gt;&lt;/p&gt;
+
 </description>
                 <link>http://i.justpic.org/2013/07/22/memo-on-the-trade</link>
                 <guid>http://i.justpic.org/2013/07/22/memo-on-the-trade</guid>
@@ -2186,9 +2057,9 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>python asynchrous network</title>
-                <description>&lt;h2&gt;select,poll,epoll test in python&lt;/h2&gt;
-
-&lt;h1&gt;selecttest.py&lt;/h1&gt;
+                <description>
+&lt;h2 id=&quot;selectpollepoll-test-in-python&quot;&gt;select,poll,epoll test in python&lt;/h2&gt;
+&lt;p&gt;#selecttest.py&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
@@ -2260,8 +2131,7 @@ seeother(../)seeother（/）&lt;br/&gt;
         &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
         &lt;span class=&quot;c&quot;&gt;#Remove message queue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h1&gt;polltest.py&lt;/h1&gt;
+&lt;h1 id=&quot;polltestpy&quot;&gt;polltest.py&lt;/h1&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;
@@ -2340,8 +2210,7 @@ seeother(../)seeother（/）&lt;br/&gt;
                 &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
                 &lt;span class=&quot;k&quot;&gt;del&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message_queues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h1&gt;epolltest.py&lt;/h1&gt;
+&lt;h1 id=&quot;epolltestpy&quot;&gt;epolltest.py&lt;/h1&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;logging&lt;/span&gt;
     &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;errno&lt;/span&gt;
@@ -2430,8 +2299,7 @@ seeother(../)seeother（/）&lt;br/&gt;
                 &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
                     &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;h1&gt;commontest.py(client code)&lt;/h1&gt;
+&lt;h1 id=&quot;commontestpyclient-code&quot;&gt;commontest.py(client code)&lt;/h1&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;socket&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;messages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;This is the message&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -2458,12 +2326,12 @@ seeother(../)seeother（/）&lt;br/&gt;
                 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;closing socket&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getpeername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;p&gt;&lt;strong&gt;benchmark&lt;/strong&gt;&lt;br /&gt;
+针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;br /&gt;
+针对asyncore的介绍和使用有很好的两篇博客：&lt;br /&gt;
+&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.nightmare.com/medusa/async_sockets.html&quot;&gt;blog2&lt;/a&gt;  &lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;benchmark&lt;/strong&gt;&lt;br/&gt;
-针对epoll的使用有一篇很好的&lt;a href=&quot;scotdoyle.com/python-epoll-howto.html&quot;&gt;博客&lt;/a&gt;&lt;br/&gt;
-针对asyncore的介绍和使用有很好的两篇博客：&lt;br/&gt;
-&lt;a href=&quot;blog.csdn.net/livefun/article/details/8721772&quot;&gt;blog1&lt;/a&gt;&lt;br/&gt;
-&lt;a href=&quot;http://www.nightmare.com/medusa/async_sockets.html&quot;&gt;blog2&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</link>
                 <guid>http://i.justpic.org/python%20network/2013/07/15/python-asynchrous-network</guid>
@@ -2472,33 +2340,29 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>Run Multiple-python on your ubuntu</title>
-                <description>&lt;h5&gt;ubuntu上安装多个版本的python&lt;/h5&gt;
-
-&lt;p&gt;安装python3.3在ubuntu上&lt;/p&gt;
+                <description>
+&lt;h5 id=&quot;ubuntupython&quot;&gt;ubuntu上安装多个版本的python&lt;/h5&gt;
+&lt;p&gt;安装python3.3在ubuntu上  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install python-software-properties
     sudo add-apt-repository ppa:fkrull/deadsnakes
     sudo apt-get update
     sudo apt-get install python3.3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;建立软链接：&lt;/p&gt;
+&lt;p&gt;建立软链接：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ln -s /usr/bin/python3.3 /usr/bin/python3.3m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;安转python2.7.5再ubuntu上:&lt;/p&gt;
+&lt;p&gt;安转python2.7.5再ubuntu上:    &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo add-apt-repository ppa:fkrull/deadsnakes
     sudo apt-get update
     sudo apt-get install python2.4 python2.5 python2.6&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;使用virtualenv来定制自己的环境&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;virtualenv -p /usr/bin/python3.3 python3.3env
     virtualenv -p /usr/bin/python2.7.5 python2.7.5env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Ok!&lt;/p&gt;
 </description>
@@ -2509,7 +2373,8 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>com learning</title>
-                <description>&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://www.vckbase.com/index.php/wv/1315&quot;&gt;深入理解COM&lt;/a&gt;&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/06/14/com-learning</link>
                 <guid>http://i.justpic.org/2013/06/14/com-learning</guid>
@@ -2518,7 +2383,8 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>protobuffer</title>
-                <description>&lt;p&gt;google protobuffer待记&lt;/p&gt;
+                <description>
+&lt;p&gt;google protobuffer待记&lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/2013/06/11/protobuffer</link>
                 <guid>http://i.justpic.org/2013/06/11/protobuffer</guid>
@@ -2527,15 +2393,13 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>install wine on ubuntu 12.04</title>
-                <description>&lt;h1&gt;Wine error&lt;/h1&gt;
+                <description>&lt;h1 id=&quot;wine-error&quot;&gt;Wine error&lt;/h1&gt;
 
 &lt;p&gt;Code for install wine:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /usr/bin/wine
     sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /usr/bin/wineserver
     sudo setcap &lt;span class=&quot;nv&quot;&gt;CAP_NET_RAW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ep /путь_до_л2/l2.exe&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
 
 </description>
                 <link>http://i.justpic.org/linux/2013/06/06/wine-error</link>
@@ -2545,9 +2409,9 @@ seeother(../)seeother（/）&lt;br/&gt;
 
         <item>
                 <title>install hdf5 on ubuntu</title>
-                <description>&lt;h1&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
+                <description>&lt;h1 id=&quot;install-hdf5-on-ubuntu-1204&quot;&gt;install hdf5 on ubuntu 12.04&lt;/h1&gt;
 
-&lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.&lt;br/&gt;
+&lt;p&gt;you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.&lt;br /&gt;
 Code:&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$apt&lt;/span&gt;-get install devscripts equivs ubuntu-dev-tools 
@@ -2556,11 +2420,9 @@ Code:&lt;/p&gt;
     &lt;span class=&quot;nv&quot;&gt;$sudo&lt;/span&gt; mk-build-deps -ir
     &lt;span class=&quot;nv&quot;&gt;$debuild&lt;/span&gt; -us -uc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,由于本机为64bit linux,下载64位下的二进制包：&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$wget&lt;/span&gt; http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;解压后，并在.bashrc中设置：&lt;/p&gt;
 
@@ -2568,14 +2430,12 @@ Code:&lt;/p&gt;
     &lt;span class=&quot;nv&quot;&gt;$export&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;HDF5_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/hdf5-1.8.9-linux-x86_64-shared
     &lt;span class=&quot;nv&quot;&gt;$source&lt;/span&gt; .bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;安装 blosc (可选)
 安装 lzo2-2 lzo2-dev&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt-get install lzo2-2 lzo2-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;至此HDF5可用&lt;/p&gt;
+&lt;p&gt;至此HDF5可用  &lt;/p&gt;
 </description>
                 <link>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</link>
                 <guid>http://i.justpic.org/python/yt-project/2013/06/05/installhdf5</guid>

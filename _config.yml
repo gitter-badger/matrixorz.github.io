@@ -1,19 +1,4 @@
 #URL
-#
-url: http://i.justpic.org/about
-root: /about/
-
-url: http://i.justpic.org/startup
-root: /startup/
-
-url: http://i.justpic.org/philo
-root: /philo/
-markdown: rdiscount
-#markdown: kramdown
-pygments: true
-permalink: /posts/:title
-rdiscount:
-  extensions: [smart]
 
 
 url: http://i.justpic.org

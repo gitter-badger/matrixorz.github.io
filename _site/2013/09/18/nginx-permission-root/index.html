@@ -49,42 +49,39 @@
     September 18, 2013
   </section>
 
-  <h4>nginx 权限问题的解决方法</h4>
-
-<p>按照下面方法配置nginx时出现用户权限问题</p>
+  
+<h4 id="nginx-">nginx 权限问题的解决方法</h4>
+<p>按照下面方法配置nginx时出现用户权限问题  </p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">server<span class="o">{</span>
-    listen 4002<span class="p">;</span>
-    server_name localhost<span class="p">;</span>
-    access_log logs/access.log<span class="p">;</span>
-    location / <span class="o">{</span>
-       proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
-       proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-       proxy_set_header Host <span class="nv">$http_host</span><span class="p">;</span>
-       proxy_set_header X-NginxX-Proxy <span class="nb">true</span><span class="p">;</span>
-       proxy_pass http://backend<span class="p">;</span>
-       proxy_redirect off<span class="p">;</span>      
-       proxy_http_version 1.1<span class="p">;</span>
-       proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
-       proxy_set_header Connection <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
-       <span class="o">}</span>
-       <span class="o">}</span>
-     upstream backend <span class="o">{</span>
-     server 127.0.0.1:3201<span class="p">;</span>
-     <span class="o">}</span></code></pre></div>
+	listen 4002<span class="p">;</span>
+	server_name localhost<span class="p">;</span>
+	access_log logs/access.log<span class="p">;</span>
+	location / <span class="o">{</span>
+	   proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+	   proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+	   proxy_set_header Host <span class="nv">$http_host</span><span class="p">;</span>
+	   proxy_set_header X-NginxX-Proxy <span class="nb">true</span><span class="p">;</span>
+	   proxy_pass http://backend<span class="p">;</span>
+	   proxy_redirect off<span class="p">;</span>	   
+	   proxy_http_version 1.1<span class="p">;</span>
+	   proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+	   proxy_set_header Connection <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
+	   <span class="o">}</span>
+	   <span class="o">}</span>
+	 upstream backend <span class="o">{</span>
+	 server 127.0.0.1:3201<span class="p">;</span>
+	 <span class="o">}</span></code></pre></div>
 
-
-<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a><br/>
-The root directive is the problem here. Quote from the doc:<br/>
-note: Keep in mind that the root will still append the directory to the request so that a request for &ldquo;/i/top.gif&rdquo; will not look in &ldquo;/spool/w3/top.gif&rdquo; like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.<br/>
-Basically, only use root for real roots: if the content is to be at / use root. If it&rsquo;s going to end on a subfolder, use alias:</p>
+<p>参照<a href="http://serverfault.com/questions/246609/trouble-with-nginx-and-serving-from-multiple-directories-under-the-same-domain">nginx 13:permission denied solved</a><br />
+The root directive is the problem here. Quote from the doc:<br />
+note: Keep in mind that the root will still append the directory to the request so that a request for “/i/top.gif” will not look in “/spool/w3/top.gif” like might happen in an Apache-like alias configuration where the location match itself is dropped. Use the alias directive to achieve the Apache-like functionality.<br />
+Basically, only use root for real roots: if the content is to be at / use root. If it’s going to end on a subfolder, use alias:  </p>
 
 <pre><code>location  /map/ {
   alias  /home/user/public_html/map/;
-}  
+}   Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map
 </code></pre>
-
-<p>Also check what user nginx is running as and make sure that this user can access /home/user/public_html/map</p>
 
 <section align="right">
 <br/>

@@ -49,9 +49,9 @@
     June  5, 2013
   </section>
 
-  <h1>install hdf5 on ubuntu 12.04</h1>
+  <h1 id="install-hdf5-on-ubuntu-1204">install hdf5 on ubuntu 12.04</h1>
 
-<p>you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.<br/>
+<p>you can probably install the debian libraries into quantal with no issues, precise is less likely to work, but it might possibly you will have to build it from source to get everything right.<br />
 Code:</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$apt</span>-get install devscripts equivs ubuntu-dev-tools 
@@ -60,11 +60,9 @@ Code:</p>
     <span class="nv">$sudo</span> mk-build-deps -ir
     <span class="nv">$debuild</span> -us -uc</code></pre></div>
 
-
 <p>上述方法现在已经不适用,Google后发现,可以直接使用hdf5二进制包,由于本机为64bit linux,下载64位下的二进制包：</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$wget</span> http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.9/bin/linux-x86_64/hdf5-1.8.9-linux-x86_64-shared.tar.gz</code></pre></div>
-
 
 <p>解压后，并在.bashrc中设置：</p>
 
@@ -72,14 +70,12 @@ Code:</p>
     <span class="nv">$export</span> <span class="nv">HDF5_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/hdf5-1.8.9-linux-x86_64-shared
     <span class="nv">$source</span> .bashrc</code></pre></div>
 
-
 <p>安装 blosc (可选)
 安装 lzo2-2 lzo2-dev</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get install lzo2-2 lzo2-dev</code></pre></div>
 
-
-<p>至此HDF5可用</p>
+<p>至此HDF5可用  </p>
 
 <section align="right">
 <br/>
