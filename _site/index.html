@@ -1595,7 +1595,15 @@ $wget https://ra...
 	<div id="searchbox">
 	<form method="get" id="searchform" action="/results" onsubmit="return checkfrm_search();">
 		<fieldset>
-			<input type="search" required id="q" name="q" value="" placeholder="Site Search" />
+			<input type="search" required id="q" name="q" value="" placeholder="Site Search by Google" />
+		</fieldset>
+	</form>
+</div>
+
+<div id="searchbox">
+	<form method="get" id="searchform" action="/results" onsubmit="return checkfrm_search();">
+		<fieldset>
+			<input type="search" required id="bdcsMain" name="q" value="" placeholder="Site Search by Baidu" />
 		</fieldset>
 	</form>
 </div>
@@ -1796,7 +1804,9 @@ $wget https://ra...
 border="0" alt="Web Counter"></a>Since 2016
 <br>
 </section>
-
+<script type="text/javascript">
+(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=9015297350279794277' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+</script>
 </body>
 
 </html>
