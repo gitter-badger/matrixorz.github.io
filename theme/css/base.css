@@ -222,7 +222,7 @@ padding: 0.4em 0 0.3em 2.5em;
 background: transparent url("/assets/skin/search_off.png") 0.4em 0.4em no-repeat;
 outline: none;
 }
-form .searchform fieldset input {
+form.searchform fieldset input {
     border-width: 0px;
     margin: 0;
     padding: 0.4em 0 0.3em 2.5em;
@@ -271,4 +271,9 @@ form#searchform fieldset {
 margin-bottom: 1em;
 background: transparent url("/assets/skin/opaque_10.png") 0 0 repeat;
 }
+form.searchform fieldset {
+margin-bottom: 1em;
+background: transparent url("/assets/skin/opaque_10.png") 0 0 repeat;
+}
+
 
