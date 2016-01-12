@@ -367,6 +367,7 @@ div.hr {
 
 .category {
 	margin-top: 10px;
+	clear:both;
 }
 
 .category ul, .category ol {
