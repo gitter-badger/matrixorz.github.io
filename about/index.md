@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_about
 title: "About"
 ---
 
@@ -24,4 +24,7 @@ Thanks
 =======
 
 this blog is built with [jekyll]() and the theme [left]()
+
+
+
 
