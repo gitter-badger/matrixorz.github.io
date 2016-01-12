@@ -11,6 +11,7 @@
   .sidebar .name {
     display: inline; 
     margin:0px;
+    float: left;
   }
   .sidebar .name #fname, .sidebar .name #lname {
       font-size: 25px;
