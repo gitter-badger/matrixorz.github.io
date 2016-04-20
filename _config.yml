@@ -14,7 +14,12 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
-
+future: true
+markdown: kramdown
+kramdown:
+    input: GFM
+    hard_wrap: false
+    parse_block_html: true
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 # Themes are encouraged to use these universal variables 

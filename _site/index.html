@@ -93,7 +93,8 @@
 select,poll,epoll test in python
 #selecttest.py
 
-import select
+
+  import select
 import socket
 import Queue
 #create a socket
@@ -101,7 +102,7 @@ server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
-server_address=('localhost',1...
+server_address=('localhost...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/python%20network/2013/07/15/python-asynchrous-network">更多内容...</a></p>
@@ -174,7 +175,8 @@ server_address=('localhost',1...
 			
 ###Mysql导入导出
 
-导出所有库  
+
+  导出所有库  
     mysqldump -uusername -ppassword --all-databases&gt;all.sql
 导入所有库
     mysql&gt;source all.sql;
@@ -184,7 +186,7 @@ server_address=('localhost',1...
     mysql&gt;source db1db2.sql
 导入某个库
     mysql -uusername -ppassword db1&lt;db1.sql;
-    mysq...
+    m...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/04/04/mysqldump-summary">更多内容...</a></p>
@@ -257,7 +259,8 @@ server_address=('localhost',1...
 			
 ###Mysql导入导出
 
-导出所有库  
+
+  导出所有库  
     mysqldump -uusername -ppassword --all-databases&gt;all.sql
 导入所有库
     mysql&gt;source all.sql;
@@ -267,7 +270,7 @@ server_address=('localhost',1...
     mysql&gt;source db1db2.sql
 导入某个库
     mysql -uusername -ppassword db1&lt;db1.sql;
-    mysq...
+    m...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/04/04/mysqldump-summary">更多内容...</a></p>
@@ -334,11 +337,15 @@ Then it means nginx or some other process is already using port 80.
 
 You can kill it using:
 
-    sudo fuser -k 80/tcp
+
+      sudo fuser -k 80/tcp
+
 
 And then try restarting nginx again:
 
-    service nginx start
+
+      service nginx start
+
 
 			
 			<ul>
@@ -401,22 +408,29 @@ And then try restarting nginx again:
 			
 添加用户：
 
-    useradd options &lt;username&gt;
+
+      useradd options &lt;username&gt;
+
 
 添加用户组:
 
-    groupadd options &lt;groupname&gt;
+
+      groupadd options &lt;groupname&gt;
+
 
 配置权限:
 
-    echo '&lt;username&gt; all=(all:all) all' /etc/sudoers
+
+      echo '&lt;username&gt; all=(all:all) all' /etc/sudoers
+
 
 ssh登陆禁用密码:
 
-  
+
+    
 #本机：  
     ssh-keygen  #生成公钥、密钥对
-    ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_key...
+    ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/06/06/vps-initialization">更多内容...</a></p>
@@ -792,11 +806,12 @@ quant-econ
 			
 haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：
 
- 
+
+   
 sudo aptitude build-dep ghc
 sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
 wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
-tar jxvf ghc-7.8.3-src.tar....
+tar jxvf ghc-7.8.3-src.t...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/09/06/ubuntu-1404-install-haskell">更多内容...</a></p>
