@@ -43,137 +43,7 @@
 <div id="main">
   <ul class="listing">
     
-      
-      <li>
-        <span>March 14, 2015</span> <a href="/2015/03/14/use-python-in-windows">use python in windows</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>November 28, 2014</span> <a href="/2014/11/28/rhadoop">RHadoop环境搭建</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>November 25, 2014</span> <a href="/2014/11/25/hadoop-241-spark-110">hadoop 2.4.1 上安装spark 1.1.0</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>November 22, 2014</span> <a href="/2014/11/22/ubuntu-install-hadoop">Ubuntu 14.04 install hadoop 2.4.1 note</a>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      <li>
-        <span>October  9, 2014</span> <a href="/2014/10/09/implement-linklist-with-a-static-array">implement Linklist with a static array</a>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-      <li>
-        <span>September  6, 2014</span> <a href="/2014/09/06/ubuntu-1404-install-haskell">ubuntu 14.04 install haskell</a>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-      <li>
-        <span>August 10, 2014</span> <a href="/2014/08/10/">线性代数中的矩阵</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>August  9, 2014</span> <a href="/wavelet,research,pattern%20recognition/2014/08/09/scatnet">ScatNet</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>August  7, 2014</span> <a href="/2014/08/07/python-web-development">python web development</a>
-      </li>
-      
-    
-      
-    
-      
-      <li>
-        <span>July 28, 2014</span> <a href="/python%20development/2014/07/28/python-optimization">python optimization</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>July 19, 2014</span> <a href="/data%20science/2014/07/19/data-visualization">data visualization</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>July  1, 2014</span> <a href="/2014/07/01/erlang-learning">erlang learning</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>July  1, 2014</span> <a href="/2014/07/01/develop-tools-about-python">develop tools about python</a>
-      </li>
-      
-    
-      
-      <li>
-        <span>June 23, 2014</span> <a href="/2014/06/23/install-pypy-from-source">install pypy from source</a>
-      </li>
-      
-    
   </ul>
-
-<div class="pagination">
-  
-    <span>&laquo; Prev</span>
-  
-
-  
-    
-      <em>1</em>
-    
-  
-    
-      <a href="/page2">2</a>
-    
-  
-    
-      <a href="/page3">3</a>
-    
-  
-
-  
-    <a href="/page2">Next &raquo;</a>
-  
-</div>
 
 </div>
 
@@ -231,7 +101,7 @@ server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server.setblocking(False)
 #set option reused
 server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
-server_address=(&#39;localhos...
+server_address=('localhost',1...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/python%20network/2013/07/15/python-asynchrous-network">更多内容...</a></p>
@@ -302,7 +172,7 @@ server_address=(&#39;localhos...
 			<!-- <br></br> -->
 			
 			
-Mysql导入导出
+###Mysql导入导出
 
 导出所有库  
     mysqldump -uusername -ppassword --all-databases&gt;all.sql
@@ -314,7 +184,7 @@ Mysql导入导出
     mysql&gt;source db1db2.sql
 导入某个库
     mysql -uusername -ppassword db1&lt;db1.sql;
-    mysql&g...
+    mysq...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/04/04/mysqldump-summary">更多内容...</a></p>
@@ -385,7 +255,7 @@ Mysql导入导出
 			<!-- <br></br> -->
 			
 			
-Mysql导入导出
+###Mysql导入导出
 
 导出所有库  
     mysqldump -uusername -ppassword --all-databases&gt;all.sql
@@ -397,7 +267,7 @@ Mysql导入导出
     mysql&gt;source db1db2.sql
 导入某个库
     mysql -uusername -ppassword db1&lt;db1.sql;
-    mysql&g...
+    mysq...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/04/04/mysqldump-summary">更多内容...</a></p>
@@ -464,11 +334,11 @@ Then it means nginx or some other process is already using port 80.
 
 You can kill it using:
 
-sudo fuser -k 80/tcp
+    sudo fuser -k 80/tcp
 
 And then try restarting nginx again:
 
-service nginx start
+    service nginx start
 
 			
 			<ul>
@@ -529,20 +399,21 @@ service nginx start
 			<!-- <br></br> -->
 			
 			
-添加用户：  
+添加用户：
 
-useradd options &lt;username&gt;
+    useradd options &lt;username&gt;
 
-添加用户组:  
+添加用户组:
 
-groupadd options &lt;groupname&gt;
+    groupadd options &lt;groupname&gt;
 
-配置权限: 
+配置权限:
 
-echo &#39;&lt;username&gt; all=(all:all) all&#39; /etc/sudoers
+    echo '&lt;username&gt; all=(all:all) all' /etc/sudoers
 
-ssh登陆禁用密码:  
+ssh登陆禁用密码:
 
+  
 #本机：  
     ssh-keygen  #生成公钥、密钥对
     ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote-host    #将公钥复制到远程服务器的authorized_key...
@@ -673,19 +544,19 @@ D3 learning
 排序算法的特点讨论
 
 
-稳定排序
+##稳定排序
 冒泡排序
 归并排序
 基数排序
-插入排序  
+插入排序
 
-不稳定排序
+##不稳定排序
 选择排序:  
 5(前) 8 5(后) 2 9   –&gt; 2 8 5(后) 5(前) 9
 快速排序:
 5 3(前) 3(中) 4 3(后) 8 9 10 11 –&gt; 3(后) 3(前) 3(中) 4 5 8 9 10 11
 希尔排序:
-改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。  
+改进的插入排序，先将数组等间隔分组，各个分组内进行直接插入排序，迭代分组，知道最后为一组，分组的过程中可能破坏排序的稳定性。
 
 void insertion_sort(int data...
 			
@@ -772,7 +643,7 @@ Online Resource
 Quantopian
 pythonquants
 ultratrade
-quant-econ  
+quant-econ
 
 			
 			<ul>
@@ -858,7 +729,7 @@ Online Resource
 Quantopian
 pythonquants
 ultratrade
-quant-econ  
+quant-econ
 
 			
 			<ul>
@@ -921,10 +792,11 @@ quant-econ
 			
 haskell是一种函数编程式语言，ghc是Glasgow Haskell Compiler的简称，也是Haskell Platform的基础.   下面是安装ghc的步骤：
 
+ 
 sudo aptitude build-dep ghc
 sudo aptitude install git autoconf automake libtool make ncurses-dev g++ llvm gpaco
 wget https://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-src.tar.bz2
-tar jxvf ghc-7.8.3-src.tar.bz...
+tar jxvf ghc-7.8.3-src.tar....
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/09/06/ubuntu-1404-install-haskell">更多内容...</a></p>
@@ -985,10 +857,10 @@ tar jxvf ghc-7.8.3-src.tar.bz...
 			
 			
 J2EE
-Image-r3  
+Image-r3
 
 系统一点的：
-APDPlat  
+APDPlat
 
 			
 			<ul>
@@ -1063,7 +935,7 @@ APDPlat
 12.Video支持(Video Support)
 13.视频预载
 14.显示控制条
-15.正则表达式  
+15.正则表达式
 
 
 			
@@ -1136,18 +1008,18 @@ APDPlat
 			<!-- <br></br> -->
 			
 			
-Ubuntu 14.04 install Hadoop 2.4.1笔记
+###Ubuntu 14.04 install Hadoop 2.4.1笔记
 ####说明:
 集群机器:
 Master: 10.211.55.1
 Slave1: 10.211.55.10
 Slave2…
-这里还是以两台机器为例:Master和Slave1.  
+这里还是以两台机器为例:Master和Slave1.
 
 下载好hadoop-2.4.1的执行文件包和安装好java执行环境(这里选择的是oracle-java7-installer).  
-为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop  
+为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop
 
-sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hado...
+sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hadoo...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/22/ubuntu-install-hadoop">更多内容...</a></p>
@@ -1218,13 +1090,13 @@ sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hado...
 			<!-- <br></br> -->
 			
 			
-Rhadoop环境搭建
+###Rhadoop环境搭建
 在集成R和hadoop之前需要将hadoop以及R运行环境安装好,hadoop的安装可参见hadoop2.4.1安装笔记.
 1.下载相关安装包:
 
 $wget https://raw.githubusercontent.com/RevolutionAnalytics/rhdfs/master/build/rhdfs_1.0.8.tar.gz
 $wget https://raw.githubusercontent.com/RevolutionAnalytics/rmr2/3.1.0/build/rmr2_3.1.0.tar.gz 
-$wget https://ra...
+$wget https:/...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/28/rhadoop">更多内容...</a></p>
@@ -1279,7 +1151,7 @@ $wget https://ra...
 			<!-- <br></br> -->
 			
 			
-Yarn模式安装Spark 1.1.0
+###Yarn模式安装Spark 1.1.0 
 1.在github上下载Spark源码到本地:
 
 git clone https://github.com/apache/spark.git
@@ -1289,7 +1161,7 @@ git checkout v1.1.0 #取出1.1.0版本的saprk 2.修改pom.xml:
 &lt;protobuf.version&gt;2.5.0&lt;/protobuf.version&gt;  
 #修改为hadoop所使用的对应hadoop版本 3.编译:
 
-./make-distribution.sh --tgz --skip-java-test -Dyarn.ver...
+./make-distribution.sh --tgz --skip-java-test -Dyarn...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/25/hadoop-241-spark-110">更多内容...</a></p>
@@ -1344,18 +1216,18 @@ git checkout v1.1.0 #取出1.1.0版本的saprk 2.修改pom.xml:
 			<!-- <br></br> -->
 			
 			
-Ubuntu 14.04 install Hadoop 2.4.1笔记
+###Ubuntu 14.04 install Hadoop 2.4.1笔记
 ####说明:
 集群机器:
 Master: 10.211.55.1
 Slave1: 10.211.55.10
 Slave2…
-这里还是以两台机器为例:Master和Slave1.  
+这里还是以两台机器为例:Master和Slave1.
 
 下载好hadoop-2.4.1的执行文件包和安装好java执行环境(这里选择的是oracle-java7-installer).  
-为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop  
+为了创建一个相对独立的用户环境,在机器Master和Slave1上分别使用以下命令新建用户hadoop
 
-sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hado...
+sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hadoo...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/22/ubuntu-install-hadoop">更多内容...</a></p>
@@ -1426,7 +1298,7 @@ sudo adduser hadoop #该命令会自动创建用户hadoop,用户组hado...
 			<!-- <br></br> -->
 			
 			
-Yarn模式安装Spark 1.1.0
+###Yarn模式安装Spark 1.1.0 
 1.在github上下载Spark源码到本地:
 
 git clone https://github.com/apache/spark.git
@@ -1436,7 +1308,7 @@ git checkout v1.1.0 #取出1.1.0版本的saprk 2.修改pom.xml:
 &lt;protobuf.version&gt;2.5.0&lt;/protobuf.version&gt;  
 #修改为hadoop所使用的对应hadoop版本 3.编译:
 
-./make-distribution.sh --tgz --skip-java-test -Dyarn.ver...
+./make-distribution.sh --tgz --skip-java-test -Dyarn...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/25/hadoop-241-spark-110">更多内容...</a></p>
@@ -1507,13 +1379,13 @@ git checkout v1.1.0 #取出1.1.0版本的saprk 2.修改pom.xml:
 			<!-- <br></br> -->
 			
 			
-Rhadoop环境搭建
+###Rhadoop环境搭建
 在集成R和hadoop之前需要将hadoop以及R运行环境安装好,hadoop的安装可参见hadoop2.4.1安装笔记.
 1.下载相关安装包:
 
 $wget https://raw.githubusercontent.com/RevolutionAnalytics/rhdfs/master/build/rhdfs_1.0.8.tar.gz
 $wget https://raw.githubusercontent.com/RevolutionAnalytics/rmr2/3.1.0/build/rmr2_3.1.0.tar.gz 
-$wget https://ra...
+$wget https:/...
 			
 			<ul>
 				<p style="text-align:right;"><a href="/2014/11/28/rhadoop">更多内容...</a></p>
@@ -1594,9 +1466,11 @@ $wget https://ra...
 	</form>
 </div>
 <div class="searchbox">
-<form class="navbar-form navbar-right searchform" role="search" action="http://i.justpic.org/search/">
+<form class="navbar-form navbar-right searchform" role="search">
                 <fieldset>
+                	<div class="form-group">
                     <input type="text" id="bdcsMain" class="form-control" placeholder="Site Search by Baidu">
+                </div>
                 <fieldset>
 <!--                 <button type="submit" class="btn btn-default hide">Submit</button> -->
 </form>
@@ -1800,10 +1674,20 @@ $wget https://ra...
 border="0" alt="Web Counter"></a>@ 2016~
 <br>
 </section>
-<!-- /*<script type="text/javascript">
-// (function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=9015297350279794277' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
- </script>*/ -->
-<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=7094832176735847501' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
+<script type="text/javascript">
+ (function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=9015297350279794277' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+ </script>
+<script type="text/javascript">
+// (function(){
+//   document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
+//   var bdcs = document.createElement('script');
+//   bdcs.type = 'text/javascript';
+//   bdcs.async = true;
+//   bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=7094832176735847501' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];
+//   s.parentNode.insertBefore(bdcs, s);
+// }
+//   )();
+  </script>
 </body>
 
 </html>
