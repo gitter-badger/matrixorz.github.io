@@ -7,7 +7,7 @@ tags: [sql,mysql]
 ---
 {% include JB/setup %}
 
-###Mysql导入导出
+### Mysql导入导出
 {% highlight bash %}
 导出所有库  
     mysqldump -uusername -ppassword --all-databases>all.sql
@@ -30,7 +30,7 @@ mysqldump字符集设置
     $mysqldump -uusername -ppassword --default-character-set=utf-8 db1 table1>tb1.sql
 {% endhighlight %}
 
-###Mysql用户管理
+### Mysql用户管理
 {% highlight bash %}
 创建用户
     mysql> insert into mysql.user(Host,User,Password) values("localhost","phplamp",password("1234"));
@@ -42,7 +42,7 @@ mysqldump字符集设置
     mysql>select USER();
 {% endhighlight %}  
 
-###Mysql启用远程
+### Mysql启用远程
 {% highlight bash %}
     cd /etc/mysql
     vi my.cnf  #注释bind-address
@@ -54,7 +54,8 @@ mysqldump字符集设置
 {% endhighlight %}
 Mysql启用远程的目的可能还是为了解决windows python mysql的问题：
 在Windows上只需要安装[MySQL-python](http://www.codegood.com/download/11/)后，后期只需要连接到远程mysql后就可以了
-###Mysql 主从复制  
+
+### Mysql 主从复制  
 mysql复制的用途:  
 读取扩展
 主备份服务器  
@@ -93,7 +94,8 @@ PROMPT alpha>;
 alpha>  
 确认从服务器上什么都不存在:  
 beta> show schemas;  
-###Mysql 创建视图  
+
+### Mysql 创建视图  
 {% highlight bash %}
 create view v as select * from table;
 create view v as select id,name,age from table;

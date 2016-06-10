@@ -8,8 +8,10 @@ draft: false
 published: true
 ---
 {% include JB/setup %}
-###Ubuntu 14.04 install Hadoop 2.4.1笔记
-####说明:  
+### Ubuntu 14.04 install Hadoop 2.4.1笔记
+
+
+#### 说明:  
 集群机器:
 Master: 10.211.55.1  
 Slave1: 10.211.55.10  
@@ -88,11 +90,13 @@ yarn-site.xml:
         <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
     </property>
+    
 3.配置好hadoop相关配置文件后,将Master上的整个Hadoop安装目录复制到各个Slave节点上  
     
     scp -r $HADOOP_HOME Slave1:~/ 
     ssh Slave
     sudo chown -R hadoop.hadoop $HADOOP_HOME #$HADOOP_HOME为Slave节点上的Hadoop安装目录  
+    
 4.初始化namenode和启动hadoop集群  
 Master上操作:  
 
@@ -103,12 +107,15 @@ Master上操作:
     jps  #检查是否启动了Nameode,SecondaryNameNode,ResourceManager,(Jps)进程
     ssh Slave1 #登录到Slave1 
     jps #检查是否启动了DataNode,NodeManager,(Jps)进程.
+    
 5.检查DataNode运行情况:
 
     hdfs dfsadmin -report #Master节点上操作
 
 Hadoop安装完毕!  
-参考资料:  
+
+### 参考资料:  
+
 [Hadoop2.0详细配置教程](http://www.cnblogs.com/scotoma/archive/2012/09/18/2689902.html)  
 [hadoop全分布式集群模式的搭建实验](https://www.evernote.com/shard/s185/sh/fd5ec181-a6b6-4a74-9261-38e0754b65da/f62975e507065959e1259690c5ab1c5a)  
 [使用Ambari快速部署Hadoop大数据环境](http://www.cnblogs.com/scotoma/archive/2013/05/18/3085248.html)  

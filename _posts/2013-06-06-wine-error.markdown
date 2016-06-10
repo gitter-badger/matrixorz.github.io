@@ -3,7 +3,7 @@ layout: post
 title: install wine on ubuntu 12.04
 categories: linux
 ---
-#Wine error
+# Wine error
 
 Code for install wine:
 {% highlight bash %}

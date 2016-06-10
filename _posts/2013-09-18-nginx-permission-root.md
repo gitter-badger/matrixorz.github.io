@@ -7,7 +7,7 @@ tags: []
 draft: true
 ---
 {% include JB/setup %}
-####nginx 权限问题的解决方法  
+#### nginx 权限问题的解决方法  
 按照下面方法配置nginx时出现用户权限问题  
 {% highlight bash %}
 	server{

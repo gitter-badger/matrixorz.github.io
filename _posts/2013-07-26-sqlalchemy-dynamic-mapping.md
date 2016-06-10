@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-#sqlalchemy动态映射
+# sqlalchemy动态映射
 代码如下:
 {% highlight python %}
     from sqlalchemy import *

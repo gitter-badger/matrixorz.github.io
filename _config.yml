@@ -1,14 +1,16 @@
 #URL
-
-
-url: http://i.justpic.org
+url: http://localhost:4000
 description: A fantastic blog that is fantastic.
 github: 
     owner_name: matrixorz
 weibo: 1803769420
-gravatar_url: http://justpic.b0.upaiyun.com/upload/w-vj3xq.png
+gravatar_url: http://77fjhm.com1.z0.glb.clouddn.com/1808447.jpeg
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
+
+gems:
+  - jekyll-paginate
+  - jekyll-gist
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
@@ -16,10 +18,30 @@ auto: true
 permalink: /:categories/:year/:month/:day/:title 
 future: true
 markdown: kramdown
-kramdown:
-    input: GFM
-    hard_wrap: false
-    parse_block_html: true
+highlighter: rouge
+#markdown: redcarpet
+#  redcarpet:
+#    extensions:
+#      - hard_wrap
+#      - no_intra_emphasis
+#      - autolink
+#      - strikethrough
+#      - fenced_code_blocks
+#      - with_toc_data
+#      - tables
+#      - underline
+#    hard_wrap: false
+#    parse_block_html: true
+#kramdown:
+#  input: GFM
+#  extensions:
+#    - autolink
+#    - footnotes
+#    - smart
+#  use_coderay: true
+#  syntax_highlighter: rouge
+#  coderay:
+#    coderay_line_numbers:  nil
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 # Themes are encouraged to use these universal variables 

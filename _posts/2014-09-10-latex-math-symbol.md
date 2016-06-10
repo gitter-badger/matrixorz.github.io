@@ -7,7 +7,7 @@ tags: []
 draft: true
 ---
 {% include JB/setup %}
-####latex数学符号
+#### latex数学符号
 数学模式重音符  
 \\(\hat{a}\\)  \\hat{a}   \\(\check{a}\\)  \\check{a}  \\(\tilde{a}\\) \\tilde{a}  \\(\acute{a}\\) \\acute{a}  
 \\(\grave{a}\\)  \\grave{a}  \\(\dot{a}\\)  \\dot{a}  \\(\ddot{a}\\) \\ddot{a}  \\(\breve{a}\\)  \\breve{a}  

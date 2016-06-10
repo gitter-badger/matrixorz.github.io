@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-###Learning Python Sites
+### Learning Python Sites
 **basic(初级)**  
 [Hitchhiker's Guide to Python](docs.python-guide.org/en/latest)  
 [A byte of Python(中文的)](http://woodpecker.org.cn/abyteofpython_cn/chinese/)  
@@ -22,4 +22,4 @@ tags: []
 [tuiku](http://www.tuiku.com)   
 online game:  
 [Game](http://www.checkio.org)  
-
+[Problem Solving with Algorithms and Data Structures](http://interactivepython.org/courselib/static/pythonds/index.html)

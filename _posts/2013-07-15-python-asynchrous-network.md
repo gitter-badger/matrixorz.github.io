@@ -8,7 +8,9 @@ tags: [network]
 {% include JB/setup %}
 select,poll,epoll test in python
 --------------------------------
-#selecttest.py
+
+# selecttest.py
+
 {% highlight python %}
 import select
 import socket
@@ -80,7 +82,8 @@ while inputs:
         s.close()
         #Remove message queue
 {% endhighlight %}
-#polltest.py  
+
+# polltest.py  
 {% highlight python %}  
     
     import socket
@@ -160,7 +163,8 @@ while inputs:
                 s.close()
                 del message_queues[s]
 {% endhighlight %}
-#epolltest.py
+
+# epolltest.py
 {% highlight python %}
     import socket,logging
     import select,errno
@@ -249,7 +253,8 @@ while inputs:
                 else:
                     continue
 {% endhighlight %}    
-#commontest.py(client code)  
+
+# commontest.py(client code)  
 {% highlight python %}
     import socket
     messages = ["This is the message",

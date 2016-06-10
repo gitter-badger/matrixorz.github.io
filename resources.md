@@ -1,13 +1,14 @@
 ---
 layout: page
 title: "Papers"
-draft: true
+draft: false
 ---
 
 
 Resources
-=========
+=========   
 
+## 123   
 [text analysistool from Standford University](http://www.etcml.com/)  
 [Best Paper Awards in Computer Science(since 1996)](http://jeffhuang.com/best_paper_awards.html)  
 [小波相关源码学习](http://www.csee.wvu.edu/~xinl/source.html)  
@@ -29,4 +30,6 @@ Resources
 Group](http://cmg.soton.ac.uk/research/categories/programming-languages/python/)  
 [online cv
 journals](http://www.cse.iitm.ac.in/~sdas/vplab/onlinecvjournals.html)  
-[wavelets guide](http://faculty.gvsu.edu/aboufade/web/wavelets/tutorials.htm)  
+[wavelets guide](http://faculty.gvsu.edu/aboufade/web/wavelets/tutorials.htm)   
+
+## 123

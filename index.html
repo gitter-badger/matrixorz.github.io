@@ -10,11 +10,10 @@ title: "HaiHai"
 <div id="main">
   <ul class="listing">
     {% for post in paginator.posts %}
-      {% unless post.draft %}
+
       <li>
         <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
-      {% endunless %}
     {% endfor %}
   </ul>
 {% if paginator.total_pages > 1 %}
@@ -64,6 +63,3 @@ title: "HaiHai"
         {% include site-sidebar.html %}
 </aside>
 </section>
-
-
-
